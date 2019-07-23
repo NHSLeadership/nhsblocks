@@ -7,9 +7,7 @@ const { withSelect } = wp.data;
 registerBlockType("nhsblocks/latestnews", {
   title: __("Latest Posts / News", "nhsblocks"),
   category: "nhsblocks",
-  supports: {
-    align: [ 'wide', 'full' ]
-  },
+
 
   edit: withSelect( select => {
     return {

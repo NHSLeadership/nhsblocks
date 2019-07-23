@@ -1,6 +1,6 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RichText } = wp.editor;
+const { RichText, InnerBlocks, MediaUpload, InspectorControls } = wp.editor;
 //@todo add in Promo class variations
 //@todo add in width variations
 
@@ -42,11 +42,12 @@ registerBlockType("nhsblocks/promo1", {
     const onChangePromoText = newPromoText => {
       setAttributes({ promoText: newPromoText });
     };
-
+      const ALLOWED_BLOCKS = [];
     return (
         <div className="nhsuk-grid-column-size nhsuk-promo-group__item">
           <div className="nhsuk-promo">
             <div class="nhsuk-promo__content">
+              <InnerBlocks allowedBlocks={ ALLOWED_BLOCKS } />
                 <h3 class="nhsuk-promo__heading">
                   <RichText
                       placeholder={__("Promo Title", "nhsblocks")}
@@ -78,6 +79,7 @@ registerBlockType("nhsblocks/promo1", {
         <div className="nhsuk-grid-column-size nhsuk-promo-group__item">
           <div className="nhsuk-promo">
             <div class="nhsuk-promo__content">
+          <InnerBlocks.Content />
               <h3 class="nhsuk-promo__heading">
                 <RichText.Content value={promoTitle} />
               </h3>
@@ -92,4 +94,64 @@ registerBlockType("nhsblocks/promo1", {
         </div>
     );
   }
+});
+
+registerBlockType("nhsblocks/promoimage", {
+    title: __("Promo Image", "nhsblocks"),
+    parent: ['nhsblocks/promo1'],
+    category: "nhsblocks", // this is an inner block, we dont want it available by itself
+    attributes: {
+        imgUrl: {
+            type: 'string',
+            default: null,
+        }
+    },
+    edit: props => {
+        const {
+            attributes: {
+                imgUrl
+            },
+            className,
+            setAttributes
+        } = props;
+        function onImageSelect(imageObject) {
+            setAttributes({
+                imgUrl: imageObject.sizes.full.url
+            })
+        }
+
+        return [
+            <InspectorControls>
+                <div>
+                <strong>Select a panel image:</strong>
+                    <MediaUpload
+                        onSelect={onImageSelect}
+                        type="image"
+                        value={imgUrl}
+                        render={({ open }) => (
+                            <button onClick={open}>
+                                Upload Image!
+                            </button>
+                        )}
+                    />
+                </div>
+            </InspectorControls>,
+                        <div className="imagewrapper">
+                    <img className="nhsuk-promo__img" src={imgUrl} />
+        </div>
+        ];
+    },
+    save(props) {
+        const {
+            attributes: {
+                imgUrl
+            },
+            className,
+            setAttributes
+        } = props;
+
+        return (
+            <img className="nhsuk-promo__img" src={imgUrl} />
+    );
+    },
 });

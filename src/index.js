@@ -5,6 +5,7 @@
 import "./02-button";
 import "./03-reveal";
 import "./04-panel";
+import "./04a-panel-group";
 import "./05-latestnews";
 import "./06-promo";
 import "./07-testimonial";

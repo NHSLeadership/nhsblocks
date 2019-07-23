@@ -11,7 +11,7 @@ registerBlockType("nhsblocks/panel1", {
     panelTitle: {
       type: "string",
       source: "html",
-      selector: ".nhsuk-panel-with-label__label"
+      selector: "h3"
     },
     panelText: {
       type: "array",
@@ -45,9 +45,9 @@ registerBlockType("nhsblocks/panel1", {
     };
 
     return (
-        <div className="nhsuk-grid-column-size">
-          <div className="nhsuk-panel-with-label">
-            <h3 className="nhsuk-panel-with-label__label">
+        <div className={`${className} nhsuk-grid-column-size`}>
+          <div className="nhsuk-panel">
+            <h3>
               <RichText
                 placeholder={__("Panel Title", "nhsblocks")}
                 value={panelTitle}
@@ -67,7 +67,9 @@ registerBlockType("nhsblocks/panel1", {
   );
   },
   save: props => {
-    const {
+     // console.info(props);
+
+      const {
       attributes: {
         panelTitle,
         panelText }
@@ -75,8 +77,8 @@ registerBlockType("nhsblocks/panel1", {
 
     return (
         <div className="nhsuk-grid-column-size">
-          <div className="nhsuk-panel-with-label">
-            <h3 className="nhsuk-panel-with-label__label">
+          <div className="nhsuk-panel">
+            <h3>
               <RichText.Content value={panelTitle} />
             </h3>
             <div className="paneltext">
@@ -90,3 +92,23 @@ registerBlockType("nhsblocks/panel1", {
     );
   }
 });
+// button variations
+wp.blocks.registerBlockStyle ('nhsblocks/panel1',
+    {
+        name: 'default',
+        label: 'Plain white panel',
+        isDefault: true
+    }
+);
+wp.blocks.registerBlockStyle ('nhsblocks/panel1',
+    {
+        name: 'panel-grey',
+        label: 'Grey'
+    }
+);
+wp.blocks.registerBlockStyle ('nhsblocks/panel1',
+    {
+        name: 'panel-with-label',
+        label: 'With Label'
+    }
+);

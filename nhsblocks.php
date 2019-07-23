@@ -88,7 +88,6 @@ function nhsblocks_register_blocks() {
         'nhsblocks/dodont',
         'nhsblocks/button',
         'nhsblocks/reveal1',
-        'nhsblocks/panel1',
         'nhsblocks/promo1',
         'nhsblocks/quote1',
         'nhsblocks/card',
@@ -103,14 +102,6 @@ function nhsblocks_register_blocks() {
 			'style' => 'nhsblocks-front-end-styles',						// Calls registered stylesheet above
 		) );
 	}
-
-	// Register dynamic block.
-	register_block_type( 'nhsblocks/dynamic', array(
-		'editor_script' => 'nhsblocks-editor-script',
-		'editor_style' => 'nhsblocks-editor-styles',
-		'style' => 'nhsblocks-front-end-styles',
-		'render_callback' => 'nhsblocks_dynamic_render_callback'
-	) );
 
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 	/**
@@ -142,4 +133,61 @@ function nhsblocks_block_classes( $attributes ) {
 
 	return $classes;
 }
+
+// latest news front end rendering
+function nhsblocks_render_block_latest_news( $attributes ) {
+    $total = 6; $columns = 3; $category = '';
+    if ($columns == 2) {
+        $width = 'half';
+    } else {
+        $width = 'third';
+    }
+    $args = array(
+        'posts_per_page'   => $total,
+        'post_status'      => 'publish',
+        'post_type'        => 'post',
+        'order'            => 'DESC',
+        'orderby'          => 'date',
+    );
+    $news_query = new WP_Query( $args);
+    $newsout = '<div class="nhsuk-grid-row">
+                  <div class="nhsuk-panel-group">';
+    $i = 1;
+    if ( $news_query->have_posts() ) :
+        while ( $news_query->have_posts() ) :
+            $news_query->the_post();
+            $newsout .= '<div class="nhsuk-grid-column-one-'.$width.' nhsuk-panel-group__item">
+                         <div class="nhsuk-panel"><h3>';
+            the_title();
+            $newsout .=  '</h3>';
+            $newsout .= the_post_thumbnail();
+            $newsout .= the_excerpt();
+            $newsout .= nightingale_2_0_read_more();
+            $newsout .=  '   </div>
+                      </div>';
+            if ($i == $columns) {
+                $newsout .=  '</div><div class="nhsuk-panel-group">';
+                $i = 0;
+            }
+
+            $i++;
+        endwhile;
+        wp_reset_postdata();
+    else:
+       $newsout .= '<p>'. __('No News').'</p>';
+    endif;
+    $newsout .= '</div></div>';
+    return $newsout;
+    /*$post = $recent_posts[ 0 ];
+    $post_id = $post['ID'];
+    return sprintf(
+        '<a class="wp-block-riad-latest-post" href="%1$s">%2$s</a>',
+        esc_url( get_permalink( $post_id ) ),
+        esc_html( get_the_title( $post_id ) )
+    );*/
+}
+
+register_block_type( 'nhsblocks/latestnews', array(
+    'render_callback' => 'nhsblocks_render_block_latest_news',
+) );
 
