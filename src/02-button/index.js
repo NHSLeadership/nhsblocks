@@ -18,7 +18,7 @@ registerBlockType("nhsblocks/nhsbutton", {
       buttonLink: {
           type: "string",
           source: "attribute",
-          selector: ".wp-block-nhsblocks-nhsbutton a",
+          selector: "a.nhsuk-button",
           attribute: "href"
       },
   },
@@ -48,21 +48,19 @@ registerBlockType("nhsblocks/nhsbutton", {
     };
 
     return (
-        <div className={`${className} something`}>
-            <a href="#0" className="nhsuk-button">
+            <a href="#0" className={`${className} nhsuk-button`}>
             <RichText
               placeholder={__("Button Label", "nhsblocks")}
               value={buttonLabel}
               onChange={onChangeButtonLabel}
             />
-            </a>
             <URLInputButton
-              className="nhsblocks-dropdown__input"
-              label={__("Button URL", "nhsblocks")}
-              onChange={onChangeButtonLink}
-              url={buttonLink}
-            />
-        </div>
+        className="nhsblocks-dropdown__input"
+        label={__("Button URL", "nhsblocks")}
+        onChange={onChangeButtonLink}
+        url={buttonLink}
+        />
+            </a>
   )
   },
   save: props => {
@@ -73,11 +71,29 @@ registerBlockType("nhsblocks/nhsbutton", {
     } = props;
      // console.info(props);
     return (
-        <div className="wp-block-nhsblocks-nhsbutton">
           <a href={buttonLink} className="nhsuk-button">
             <RichText.Content value={buttonLabel} />
           </a>
-        </div>
     )
   }
 });
+// button variations
+wp.blocks.registerBlockStyle ('nhsblocks/nhsbutton',
+    {
+        name: 'default',
+        label: 'Standard',
+        isDefault: true
+    }
+);
+wp.blocks.registerBlockStyle ('nhsblocks/nhsbutton',
+    {
+        name: 'secondary',
+        label: 'Secondary'
+    }
+);
+wp.blocks.registerBlockStyle ('nhsblocks/nhsbutton',
+    {
+        name: 'reverse',
+        label: 'Reverse'
+    }
+);

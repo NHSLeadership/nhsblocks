@@ -43,7 +43,7 @@ registerBlockType("nhsblocks/reveal1", {
     };
 
     return (
-        <details className="nhsuk-details newstyle" open>
+        <details className={`${className} nhsuk-details newstyle`} open>
       <summary className="nhsuk-details__summary" role="button" aria-controls="details-content-"
           aria-expanded="true">
           <span className="nhsuk-details__summary-text">
@@ -72,7 +72,7 @@ registerBlockType("nhsblocks/reveal1", {
     } = props;
 
     return (
-        <details className="nhsuk-details extrastyle" >
+        <details className="nhsuk-details" >
   <summary className="nhsuk-details__summary" role="button" aria-controls="details-content-"
       aria-expanded="false">
       <span className="nhsuk-details__summary-text">
@@ -90,3 +90,16 @@ registerBlockType("nhsblocks/reveal1", {
     );
   }
 });
+wp.blocks.registerBlockStyle ('nhsblocks/reveal1',
+    {
+        name: 'default',
+        label: 'Down Arrow',
+        isDefault: true
+    }
+);
+wp.blocks.registerBlockStyle ('nhsblocks/reveal1',
+    {
+        name: 'expander',
+        label: 'Plus Icon'
+    }
+);

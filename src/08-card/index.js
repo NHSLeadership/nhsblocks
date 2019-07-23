@@ -45,7 +45,7 @@ registerBlockType("nhsblocks/card1", {
     };
 
     return (
-        <div className="nhsuk-grid-column-width nhsuk-care-card nhsuk-care-card--type">
+        <div className={`${className} nhsuk-care-card`}>
               <div className="nhsuk-care-card__heading-container">
                   <h3 className="nhsuk-care-card__heading">
                   <span role="text">
@@ -103,3 +103,23 @@ registerBlockType("nhsblocks/card1", {
     );
   }
 });
+// card variations
+wp.blocks.registerBlockStyle ('nhsblocks/card1',
+    {
+        name: 'default',
+        label: 'Standard Blue',
+        isDefault: true
+    }
+);
+wp.blocks.registerBlockStyle ('nhsblocks/card1',
+    {
+        name: 'urgent',
+        label: 'Urgent (Red)'
+    }
+);
+wp.blocks.registerBlockStyle ('nhsblocks/card1',
+    {
+        name: 'immediate',
+        label: 'Immediate (Red and Black)'
+    }
+);
