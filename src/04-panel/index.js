@@ -1,3 +1,9 @@
+/**
+ *  NHS Panel Element
+ *  @reference: https://nhsuk.github.io/nhsuk-frontend/components/panel/index.html
+ *  @author Tony Blacker, NHS Leadership Academy
+ *  @version 1.0 22nd July 2019
+ */
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { RichText } = wp.editor;
@@ -45,7 +51,7 @@ registerBlockType("nhsblocks/panel1", {
     };
 
     return (
-        <div className={`${className} nhsuk-grid-column-size`}>
+        <div className={`${className}`}>
           <div className="nhsuk-panel">
             <h3>
               <RichText

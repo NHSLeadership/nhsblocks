@@ -1,6 +1,13 @@
+/**
+ *  NHS Promo / Call out  Element
+ *  @reference: https://nhsuk.github.io/nhsuk-frontend/components/promo/index.html
+ *  @author Tony Blacker, NHS Leadership Academy
+ *  @version 1.0 22nd July 2019
+ */
+
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RichText, InnerBlocks, MediaUpload, InspectorControls } = wp.editor;
+const { URLInputButton, RichText, InnerBlocks, MediaUpload, InspectorControls } = wp.editor;
 //@todo add in Promo class variations
 //@todo add in width variations
 
@@ -17,7 +24,13 @@ registerBlockType("nhsblocks/promo1", {
       type: "string",
       source: "html",
       selector: ".nhsuk-promo__description"
-    }
+    },
+      promoLink: {
+          type: "string",
+          source: "attribute",
+          selector: ".nhsuk-promo a",
+          attribute: "href"
+      },
   },
 
   edit: props => {
@@ -26,7 +39,8 @@ registerBlockType("nhsblocks/promo1", {
     const {
       attributes: {
         promoTitle,
-        promoText
+        promoText,
+        promoLink
       },
       className,
       setAttributes
@@ -42,7 +56,12 @@ registerBlockType("nhsblocks/promo1", {
     const onChangePromoText = newPromoText => {
       setAttributes({ promoText: newPromoText });
     };
+      // Grab newPromoLink, set the value of promoLink to newPromoLink.
+      const onChangePromoLink = newPromoLink => {
+          setAttributes({ promoLink: newPromoLink });
+      };
       const ALLOWED_BLOCKS = [];
+
     return (
         <div className="nhsuk-grid-column-size nhsuk-promo-group__item">
           <div className="nhsuk-promo">
@@ -62,6 +81,12 @@ registerBlockType("nhsblocks/promo1", {
                       onChange={onChangePromoText}
                       value={promoText}
                   />
+                  <URLInputButton
+                      className="nhsblocks-dropdown__input"
+                      label={__("Panel Link", "nhsblocks")}
+                      onChange={onChangePromoLink}
+                      url={promoLink}
+                  />
                 </div>
             </div>
           </div>
@@ -72,12 +97,15 @@ registerBlockType("nhsblocks/promo1", {
     const {
       attributes: {
         promoTitle,
-        promoText }
+        promoText,
+        promoLink
+      }
     } = props;
 
     return (
         <div className="nhsuk-grid-column-size nhsuk-promo-group__item">
           <div className="nhsuk-promo">
+          <a href={promoLink} className="nhsuk-promo__link-wrapper">
             <div class="nhsuk-promo__content">
           <InnerBlocks.Content />
               <h3 class="nhsuk-promo__heading">
@@ -90,6 +118,7 @@ registerBlockType("nhsblocks/promo1", {
                   />
               </div>
             </div>
+                      </a>
           </div>
         </div>
     );

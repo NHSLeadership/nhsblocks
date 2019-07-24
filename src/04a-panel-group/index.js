@@ -1,3 +1,10 @@
+/**
+ *  NHS Panel Group Element
+ *  @reference: https://nhsuk.github.io/nhsuk-frontend/components/panel/index.html
+ *  @author Tony Blacker, NHS Leadership Academy
+ *  @version 1.0 22nd July 2019
+ */
+
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { RichText, InnerBlocks } = wp.editor;
@@ -15,7 +22,7 @@ registerBlockType("nhsblocks/panelgroup", {
         <div className="nhsuk-grid-row">
           <div className="nhsuk-panel-group nhsuk-grid-column-full">
               <InnerBlocks
-                allowedBlocks={['nhsblocks/panel1']}
+                allowedBlocks={['nhsblocks/panel1', 'nhsblocks/grid-width']}
               />
           </div>
         </div>
