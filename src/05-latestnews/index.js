@@ -1,3 +1,10 @@
+/**
+ *  NHS Latest News Block
+ *  @reference: n/a - new element for this theme
+ *  @author Tony Blacker, NHS Leadership Academy
+ *  @version 1.0 22nd July 2019
+ */
+
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { RichText } = wp.editor;
@@ -7,9 +14,7 @@ const { withSelect } = wp.data;
 registerBlockType("nhsblocks/latestnews", {
   title: __("Latest Posts / News", "nhsblocks"),
   category: "nhsblocks",
-  supports: {
-    align: [ 'wide', 'full' ]
-  },
+
 
   edit: withSelect( select => {
     return {
