@@ -1,5 +1,3 @@
-import logoWhiteURL from "../../../podkit/src/bv-logo-white.svg";
-
 /**
  *  NHS Promo / Call out  Element
  *  @reference: https://nhsuk.github.io/nhsuk-frontend/components/promo/index.html

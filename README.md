@@ -33,6 +33,6 @@ components](https://nhsuk.github.io/nhsuk-frontend/components)
  - [ ] Dashboard element (non NHSUK frontend component)
  - [ ] Latest News
  - [x] Grouped Promo Panels
- - [ ] Grouped Panels
+ - [x] Grouped Panels
  - [ ] Grouped Reveals
- - [ ] Columns (one-third, one-waurter, two-thirds, one-half, full)
+ - [ ] Columns (one-third, one-qaurter, two-thirds, one-half, full)
