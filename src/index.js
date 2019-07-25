@@ -12,5 +12,6 @@ import "./04-panel";
 import "./04a-panel-group";
 import "./05-latestnews";
 import "./06-promo";
+import "./06a-promo-group";
 import "./07-testimonial";
 import "./08-card";
