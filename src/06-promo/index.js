@@ -7,9 +7,13 @@
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { URLInputButton, RichText, InnerBlocks, MediaUpload, InspectorControls } = wp.editor;
+const {  URLInputButton, RichText, InnerBlocks, MediaUpload, InspectorControls, BlockControls } = wp.editor;
+const { withState } = wp.compose;
+const { SelectControl, PanelBody } = wp.components;
 //@todo add in Promo class variations
 //@todo add in width variations
+
+
 
 registerBlockType("nhsblocks/promo1", {
   title: __("Promo Region", "nhsblocks"),
@@ -31,6 +35,9 @@ registerBlockType("nhsblocks/promo1", {
           selector: ".nhsuk-promo a",
           attribute: "href"
       },
+      columnWidth: {
+        type: "string"
+      }
   },
 
   edit: props => {
@@ -40,7 +47,8 @@ registerBlockType("nhsblocks/promo1", {
       attributes: {
         promoTitle,
         promoText,
-        promoLink
+        promoLink,
+        columnWidth,
       },
       className,
       setAttributes
@@ -60,10 +68,37 @@ registerBlockType("nhsblocks/promo1", {
       const onChangePromoLink = newPromoLink => {
           setAttributes({ promoLink: newPromoLink });
       };
+      const onChangeColumnWidth = newColumnWidth => {
+          setAttributes({ columnWidth: newColumnWidth });
+      };
+      const ChooseWidthControl = withState( {
+          //  default
+          columnWidth: 'nhsuk-grid-column-full  nhsuk-promo-group__item',
+          } )( ( { columnWidth, setState } ) => (
+              <SelectControl
+                  label="Column Width"
+                  value={ columnWidth }
+                  options={ [
+                      { label: 'Full Width', value: 'nhsuk-grid-column-full nhsuk-promo-group__item' },
+                      { label: 'Half Width', value: 'nhsuk-grid-column-one-half nhsuk-promo-group__item' },
+                      { label: 'One Third Width', value: 'nhsuk-grid-column-one-third nhsuk-promo-group__item' },
+                      { label: 'Two Thirds Width', value: 'nhsuk-grid-column-two-thirds nhsuk-promo-group__item' },
+                  ] }
+                  onChange={ onChangeColumnWidth }
+              />
+      ) );
       const ALLOWED_BLOCKS = [];
 
-    return (
-        <div className="nhsuk-grid-column-size nhsuk-promo-group__item">
+    return [
+        <InspectorControls>
+          <PanelBody title="Column Width"
+              icon="welcome-widgets-menus"
+              initialOpen={ true }
+          >
+          <ChooseWidthControl />
+          </PanelBody>
+        </InspectorControls>,
+        <div className={columnWidth}>
           <div className="nhsuk-promo">
             <div class="nhsuk-promo__content">
               <InnerBlocks allowedBlocks={ ALLOWED_BLOCKS } />
@@ -91,19 +126,20 @@ registerBlockType("nhsblocks/promo1", {
             </div>
           </div>
       </div>
-  );
+  ];
   },
   save: props => {
     const {
       attributes: {
         promoTitle,
         promoText,
-        promoLink
+        promoLink,
+        columnWidth
       }
     } = props;
 
     return (
-        <div className="nhsuk-grid-column-size nhsuk-promo-group__item">
+        <div className={columnWidth}>
           <div className="nhsuk-promo">
           <a href={promoLink} className="nhsuk-promo__link-wrapper">
             <div class="nhsuk-promo__content">
