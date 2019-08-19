@@ -14,6 +14,18 @@ const { RichText } = wp.editor;
 registerBlockType("nhsblocks/quote1", {
   title: __("Simple Quote", "nhsblocks"),
   category: "nhsblocks",
+  icon: "format-quote",
+  styles: [
+    {
+      name: "standard",
+      label: __("Standard"),
+      isDefault: true
+    },
+    {
+      name: "quote-reverse",
+      label: __("Inverse")
+    }
+  ],
   attributes: {
     quoteName: {
       type: "string",
@@ -48,8 +60,8 @@ registerBlockType("nhsblocks/quote1", {
     };
 
     return (
-        <div className="nhsuk-grid-column-size nhsuk-promo-group__item">
-          <div className="nhsuk-inset-text">
+
+          <div className={`${className} nhsuk-inset-text`}>
               <span className="nhsuk-u-visually-hidden">Quote / Testimonial: </span>
               <div className="nhsuk-inset-text__quote">
                 <RichText
@@ -67,7 +79,6 @@ registerBlockType("nhsblocks/quote1", {
                   />
               </span>
           </div>
-        </div>
   );
   },
   save: props => {
@@ -76,7 +87,6 @@ registerBlockType("nhsblocks/quote1", {
     } = props;
 
     return (
-        <div className="nhsuk-grid-column-size nhsuk-promo-group__item">
               <div className="nhsuk-inset-text">
                   <span className="nhsuk-u-visually-hidden">Quote / Testimonial: </span>
                   <div className="nhsuk-inset-text__quote">
@@ -89,7 +99,6 @@ registerBlockType("nhsblocks/quote1", {
                     <RichText.Content value={quoteName} />
                   </span>
               </div>
-         </div>
     );
   }
 });

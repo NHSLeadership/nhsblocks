@@ -16,6 +16,18 @@ const {  URLInputButton, RichText, InnerBlocks, MediaUpload, InspectorControls }
 registerBlockType("nhsblocks/promo1", {
   title: __("Promo Region", "nhsblocks"),
   category: "nhsblocks",
+  icon: "megaphone",
+  styles: [
+    {
+      name: "default",
+      label: __("Standard"),
+      isDefault: true
+    },
+    {
+      name: "promo-small",
+      label: __("Smaller Text")
+    }
+  ],
   attributes: {
     promoTitle: {
       type: "string",
@@ -68,10 +80,10 @@ registerBlockType("nhsblocks/promo1", {
       const onImageSelect = imageObject => {
           setAttributes({ promoImg: imageObject.sizes.podkitFeatImg.url });
       };
-      const ALLOWED_BLOCKS = [];
+      const ALLOWED_BLOCKS = [ 'core/image' ];
 
     return (
-          <div className="nhsuk-promo">
+          <div className={`${className} nhsuk-promo`}>
             <div class="nhsuk-promo__content">
               <URLInputButton
                   className="nhsblocks-dropdown__input"
@@ -128,64 +140,4 @@ registerBlockType("nhsblocks/promo1", {
           </div>
     );
   }
-});
-
-registerBlockType("nhsblocks/promoimage", {
-    title: __("Promo Image", "nhsblocks"),
-    parent: ['nhsblocks/promo1'],
-    category: "nhsblocks", // this is an inner block, we dont want it available by itself
-    attributes: {
-        imgUrl: {
-            type: 'string',
-            default: null,
-        }
-    },
-    edit: props => {
-        const {
-            attributes: {
-                imgUrl
-            },
-            className,
-            setAttributes
-        } = props;
-        function onImageSelect(imageObject) {
-            setAttributes({
-                imgUrl: imageObject.sizes.full.url
-            })
-        }
-
-        return [
-            <InspectorControls>
-                <div>
-                <strong>Select a panel image:</strong><br />
-                    <MediaUpload
-                        onSelect={onImageSelect}
-                        type="image"
-                        value={imgUrl}
-                        render={({ open }) => (
-                            <button className="nhsuk-button" onClick={open}>
-                                Upload Image!
-                            </button>
-                        )}
-                    />
-                </div>
-            </InspectorControls>,
-                        <div className="imagewrapper">
-                    <img className="nhsuk-promo__img" src={imgUrl} />
-        </div>
-        ];
-    },
-    save(props) {
-        const {
-            attributes: {
-                imgUrl
-            },
-            className,
-            setAttributes
-        } = props;
-
-        return (
-            <img className="nhsuk-promo__img" src={imgUrl} />
-    );
-    },
 });

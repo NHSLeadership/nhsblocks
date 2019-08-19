@@ -10,9 +10,22 @@ const { RichText } = wp.editor;
 //@todo add in Expander class option
 //console.info(wp.components);
 
+
 registerBlockType("nhsblocks/reveal1", {
   title: __("Simple Reveal", "nhsblocks"),
   category: "nhsblocks",
+  icon: "plus-alt",
+  styles: [
+    {
+      name: "downarrow",
+      label: __("Down Arrow"),
+      isDefault: true
+    },
+    {
+      name: "expander",
+      label: __("Plus Icon")
+    }
+  ],
   attributes: {
     revealTitle: {
       type: "string",
@@ -47,6 +60,7 @@ registerBlockType("nhsblocks/reveal1", {
     const onChangeRevealText = newRevealText => {
       setAttributes({ revealText: newRevealText });
     };
+
 
     return (
         <details className={`${className} nhsuk-details newstyle`} open>
@@ -90,22 +104,9 @@ registerBlockType("nhsblocks/reveal1", {
       multiline="p"
       value={revealText}
       />
-
   </div>
       </details>
     );
   }
 });
-wp.blocks.registerBlockStyle ('nhsblocks/reveal1',
-    {
-        name: 'default',
-        label: 'Down Arrow',
-        isDefault: true
-    }
-);
-wp.blocks.registerBlockStyle ('nhsblocks/reveal1',
-    {
-        name: 'expander',
-        label: 'Plus Icon'
-    }
-);
+
