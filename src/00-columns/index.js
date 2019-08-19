@@ -5,9 +5,7 @@
  */
 
 const { registerBlockType } = wp.blocks;
-/*
-import classnames from 'classnames';
-import Section from '../../components/section';*/
+
 
 const { Fragment } = wp.element;
 const {
@@ -16,11 +14,7 @@ const {
     BaseControl,
     IconButton,
 } = wp.components;
-const {
-    InspectorControls,
-    MediaUpload,
-    InnerBlocks,
-} = wp.editor;
+const {    InnerBlocks } = wp.editor;
 const { __, _x } = wp.i18n;
 
 
@@ -34,20 +28,7 @@ registerBlockType("nhsblocks/section", {
         anchor: true,
     },
     attributes: {
-        colorScheme: {
-            type: 'string',
-            default: 'default',
-        },
-        contentMaxWidth: {
-            type: 'string',
-            default: 'site',
-        },
-        attachmentId: {
-            type: 'number',
-        },
-        attachmentUrl: {
-            type: 'string',
-        },
+
     },
     edit: props => {
         const { attributes, setAttributes } = props;
@@ -61,59 +42,11 @@ registerBlockType("nhsblocks/section", {
         };
 
         return (
-            <Fragment>
-            <InspectorControls>
-            <PanelBody title={ __( 'Section Settings', 'nhsblocks' ) }>
-    <SelectControl
-        label={ __( 'Color Scheme', 'nhsblocks' ) }
-        value={ colorScheme || 'default' }
-        onChange={ value => setAttributes( { colorScheme: ( 'default' !== value ) ? value : undefined } ) }
-        options={ [
-                { value: 'default', label: __( 'Default', 'nhsblocks' ) },
-        { value: 'alternate', label: __( 'Alternate', 'nhsblocks' ) },
-        { value: 'highlight', label: __( 'Highlight', 'nhsblocks' ) },
-    ] }
-        />
-        <SelectControl
-        label={ __( 'Maximum Content Width', 'nhsblocks' ) }
-        value={ contentMaxWidth || 'site' }
-        onChange={ value => setAttributes( { contentMaxWidth: ( 'site' !== value ) ? value : undefined } ) }
-        options={ [
-                { value: 'content', label: __( 'Content Width', 'nhsblocks' ) },
-        { value: 'site', label: __( 'Site Width', 'nhsblocks' ) },
-        { value: 'full', label: __( 'Full Width', 'nhsblocks' ) },
-    ] }
-        />
-        <BaseControl
-        label={ __( 'Background Image', 'nhsblocks' ) }
-    >
-    <MediaUpload
-        onSelect={ onSelectImage }
-        type="image"
-        value={ attachmentId }
-        render={ ( { open } ) => (
-        <IconButton
-        icon="admin-media"
-        onClick={ open }
-            >
-            { attachmentId ? __( 'Edit Image', 'nhsblocks' ) : __( 'Add Image', 'nhsblocks' ) }
-            </IconButton>
-    ) }
-        />
-        </BaseControl>
-        </PanelBody>
-        </InspectorControls>
-        <Section
-        colorScheme={ colorScheme }
-        contentMaxWidth={ contentMaxWidth }
-        className={ classnames(
-                attachmentId && `has-background-image-${ attachmentId }`
-    ) }
-        style={ attachmentUrl ? { backgroundImage: `url('${ attachmentUrl }')` } : undefined }
-            >
+            <div className="nhsuk-grid-row">
+            <div className="nhsuk-panel-group nhsuk-grid-column-full">
             <InnerBlocks />
-            </Section>
-            </Fragment>
+            </div>
+        </div>
     );
     },
     save: props => {
@@ -121,15 +54,10 @@ registerBlockType("nhsblocks/section", {
         const { colorScheme, contentMaxWidth, attachmentId } = attributes;
 
         return (
-            <Section
-        colorScheme={ colorScheme }
-        contentMaxWidth={ contentMaxWidth }
-        className={ classnames(
-                attachmentId && `has-background-image-${ attachmentId }`
-    ) }
-    >
-    <InnerBlocks.Content />
-        </Section>
+            <div className="nhsuk-grid-row">
+            <div className="nhsuk-panel-group nhsuk-grid-column-full">
+            <InnerBlocks.Content />
+            </div></div>
     );
     },
 });
