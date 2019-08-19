@@ -15,6 +15,25 @@ const {
 registerBlockType("nhsblocks/nhsbutton", {
   title: __("Button", "nhsblocks"),
   category: "nhsblocks",
+  icon: "admin-links",
+  styles: [
+    {
+      name: "green",
+      label: __("Standard (Green)"),
+      isDefault: true
+    },
+    {
+      name: "secondary",
+      label: __("Secondary (Grey)")
+    },
+      {
+          name: "reverse",
+          label: __("Reverse (White)")
+      }
+  ],
+  supports: {
+      align: true,
+  },
   attributes: {
       buttonLabel: {
           type: "string",
@@ -83,23 +102,3 @@ registerBlockType("nhsblocks/nhsbutton", {
     )
   }
 });
-// button variations
-wp.blocks.registerBlockStyle ('nhsblocks/nhsbutton',
-    {
-        name: 'default',
-        label: 'Standard',
-        isDefault: true
-    }
-);
-wp.blocks.registerBlockStyle ('nhsblocks/nhsbutton',
-    {
-        name: 'secondary',
-        label: 'Secondary'
-    }
-);
-wp.blocks.registerBlockStyle ('nhsblocks/nhsbutton',
-    {
-        name: 'reverse',
-        label: 'Reverse'
-    }
-);

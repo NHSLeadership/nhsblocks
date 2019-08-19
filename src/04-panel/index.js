@@ -6,24 +6,40 @@
  */
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RichText } = wp.editor;
+const { RichText, InnerBlocks } = wp.editor;
 //@todo add in Panel class variations
 //@todo add in width variations
-
+const TEMPLATE_OPTIONS = [
+        [ 'core/paragraph', { placeholder: 'Panel Text' } ],
+          [ 'nhsblocks/nhsbutton', { align: 'right'} ],
+];
 registerBlockType("nhsblocks/panel1", {
   title: __("Panel Region", "nhsblocks"),
+  description: __("By default this block includes a title, block of text and button link. You can remove the button" +
+      " if you wish by clicking it then clicking three dots on the navigation bar at the top of the page then the" +
+      " bin", "nhsblocks"),
+  icon: "feedback",
   category: "nhsblocks",
+  styles: [
+    {
+      name: "default",
+      label: __("Plain white panel"),
+      isDefault: true
+    },
+    {
+      name: "panel-grey",
+      label: __("Grey")
+    },
+    {
+      name: "panel-with-label",
+      label: __("With Label")
+    }
+  ],
   attributes: {
     panelTitle: {
       type: "string",
       source: "html",
       selector: "h3"
-    },
-    panelText: {
-      type: "array",
-      source: "children",
-      multiline: "p",
-      selector: ".paneltext"
     }
   },
 
@@ -32,8 +48,7 @@ registerBlockType("nhsblocks/panel1", {
     // Lift info from props and populate various constants.
     const {
       attributes: {
-        panelTitle,
-        panelText
+        panelTitle
       },
       className,
       setAttributes
@@ -44,15 +59,8 @@ registerBlockType("nhsblocks/panel1", {
       setAttributes({ panelTitle: newPanelTitle });
     };
 
-
-    // Grab newPanelText, set the value of panelText to newPanelText.
-    const onChangePanelText = newPanelText => {
-      setAttributes({ panelText: newPanelText });
-    };
-
     return (
-        <div className={`${className}`}>
-          <div className="nhsuk-panel">
+        <div className={`${className} nhsuk-panel`}>
             <h3>
               <RichText
                 placeholder={__("Panel Title", "nhsblocks")}
@@ -61,14 +69,10 @@ registerBlockType("nhsblocks/panel1", {
               />
             </h3>
             <div className="paneltext">
-              <RichText
-                multiline="p"
-                placeholder={__("Panel Contents", "nhsblocks")}
-                onChange={onChangePanelText}
-                value={panelText}
+              <InnerBlocks
+                template={ TEMPLATE_OPTIONS }
               />
             </div>
-          </div>
         </div>
   );
   },
@@ -77,44 +81,19 @@ registerBlockType("nhsblocks/panel1", {
 
       const {
       attributes: {
-        panelTitle,
-        panelText }
+        panelTitle }
     } = props;
 
     return (
-        <div className="nhsuk-grid-column-size">
           <div className="nhsuk-panel">
             <h3>
               <RichText.Content value={panelTitle} />
             </h3>
             <div className="paneltext">
-            <RichText.Content
-              multiline="p"
-              value={panelText}
-            />
+                <InnerBlocks.Content />
             </div>
           </div>
-        </div>
     );
   }
 });
-// button variations
-wp.blocks.registerBlockStyle ('nhsblocks/panel1',
-    {
-        name: 'default',
-        label: 'Plain white panel',
-        isDefault: true
-    }
-);
-wp.blocks.registerBlockStyle ('nhsblocks/panel1',
-    {
-        name: 'panel-grey',
-        label: 'Grey'
-    }
-);
-wp.blocks.registerBlockStyle ('nhsblocks/panel1',
-    {
-        name: 'panel-with-label',
-        label: 'With Label'
-    }
-);
+
