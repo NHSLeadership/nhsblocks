@@ -6,7 +6,7 @@
  */
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RichText, InnerBlocks } = wp.editor;
+const { RichText, InnerBlocks } = wp.blockEditor;
 //@todo add in Panel class variations
 //@todo add in width variations
 const TEMPLATE_OPTIONS = [

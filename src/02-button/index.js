@@ -8,7 +8,7 @@ const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const {
     RichText,
-    URLInputButton } = wp.editor;
+    URLInputButton } = wp.blockEditor;
 //@todo align
 //@todo extended classes
 

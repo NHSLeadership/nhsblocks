@@ -6,7 +6,7 @@
  */
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RichText } = wp.editor;
+const { RichText } = wp.blockEditor;
 //@todo add in Expander class option
 //console.info(wp.components);
 
