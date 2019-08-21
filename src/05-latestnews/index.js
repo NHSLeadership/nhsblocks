@@ -7,7 +7,7 @@
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RichText } = wp.editor;
+const { RichText } = wp.blockEditor;
 const { withSelect } = wp.data;
 
 

@@ -7,7 +7,7 @@
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const {  URLInputButton, RichText, InnerBlocks, MediaUpload, InspectorControls } = wp.editor;
+const {  URLInputButton, RichText, InnerBlocks, MediaUpload, InspectorControls } = wp.blockEditor;
 //@todo add in Promo class variations
 //@todo add in width variations
 
