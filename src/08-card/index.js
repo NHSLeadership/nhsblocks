@@ -7,7 +7,7 @@
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RichText } = wp.editor;
+const { RichText } = wp.blockEditor;
 //@todo add in Card class variations
 //@todo add in width variations
 
