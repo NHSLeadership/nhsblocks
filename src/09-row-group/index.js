@@ -8,7 +8,7 @@
 const { useState, setState } = wp.element;
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { InnerBlocks } = wp.editor;
+const { InnerBlocks } = wp.blockEditor;
 const twocolsIcon = wp.element.createElement('svg',
     {
         width: 60,
