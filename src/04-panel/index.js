@@ -55,27 +55,27 @@ registerBlockType("nhsblocks/panel1", {
     } = props;
 
     // Grab newPanelTitle, set the value of panelTitle to newPanelTitle.
-    const onChangePanelTitle = newPanelTitle => {
-      setAttributes({ panelTitle: newPanelTitle });
-    };
+  const onChangePanelTitle = newPanelTitle => {
+    setAttributes({ panelTitle: newPanelTitle });
+  };
 
-    return (
-        <div className={`${className} nhsuk-panel`}>
-            <h3>
-              <RichText
-                placeholder={__("Panel Title", "nhsblocks")}
-                value={panelTitle}
-                onChange={onChangePanelTitle}
-              />
-            </h3>
-            <div className="paneltext">
-              <InnerBlocks
-                template={ TEMPLATE_OPTIONS }
-              />
-            </div>
-        </div>
-  );
-  },
+return (
+    <div className={`${className} nhsuk-panel`}>
+<h3>
+<RichText
+placeholder={__("Panel Title", "nhsblocks")}
+value={panelTitle}
+onChange={onChangePanelTitle}
+/>
+</h3>
+<div className="paneltext">
+    <InnerBlocks
+template={ TEMPLATE_OPTIONS }
+/>
+</div>
+</div>
+);
+},
   save: props => {
      // console.info(props);
 

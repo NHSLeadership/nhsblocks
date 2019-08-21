@@ -5,10 +5,10 @@
  *  @version 1.0 22nd July 2019
  */
 
-const { useState } = wp.element;
+const { useState, setState } = wp.element;
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { InnerBlocks } = wp.editor;
+const { InnerBlocks } = wp.blockEditor;
 const twocolsIcon = wp.element.createElement('svg',
     {
         width: 60,
@@ -293,15 +293,21 @@ registerBlockType("nhsblock/rowgroup", {
 
 
     edit: props => {
-       const [ template, setTemplate ] = useState( null );
-
+        const [ template, setTemplate ] = useState( template );
+        const showTemplateSelector = ( template === null ) || ! template;
         return (
             <div className="nhsuk-grid-row">
             <div className="nhsuk-panel-group nhsuk-grid-column-full">
             <InnerBlocks
-        template={ template }
+        template={ showTemplateSelector ? null : template }
         __experimentalTemplateOptions={ GRID_OPTIONS }
-        __experimentalOnSelectTemplateOption={ setTemplate }
+        __experimentalOnSelectTemplateOption={ ( nextTemplate ) => {
+            if ( nextTemplate === undefined ) {
+                nextTemplate = "'nhsblocks/onehalf','nhsblocks/onehalf'";
+            }
+
+            setTemplate( nextTemplate );
+        } }
         />
         </div>
         </div>
@@ -325,7 +331,7 @@ registerBlockType("nhsblocks/onehalf", {
 
 
     edit: props => {
-        const [ template, setTemplate ] = useState( [] );
+        const [ template, setTemplate ] = useState( null );
         return (
             <div className="nhsuk-grid-column-one-half">
             <InnerBlocks
