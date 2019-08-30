@@ -189,3 +189,13 @@ function nhsblocks_gutenberg_editor_styles() {
 }
 
 add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' );
+
+function nhsblocks_register_style() {
+	wp_register_style( 'nhsblocks', plugins_url( 'style-gutenburg.css', __FILE__ ) );
+}
+add_action( 'init', 'nhsblocks_register_style' );
+
+function nhsblocks_enqueue_style() {
+	wp_enqueue_style( 'nhsblocks' );
+}
+add_action( 'wp_enqueue_scripts', 'nhsblocks_enqueue_style' );

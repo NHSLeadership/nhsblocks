@@ -8617,14 +8617,6 @@ section {
 
 .edit-post-visual-editor {
   /* ==========================================================================
-   ELEMENTS / #FORMS
-   ========================================================================== */
-  /**
- * Make sure our form elements don’t use any UA-specific font styles: we want
- * them to use ours. This may need reverting as more design information becomes
- * available, and we start putting together more complete forms.
- */
-  /* ==========================================================================
    ELEMENTS / #LINKS
    ========================================================================== */
   /**
@@ -8648,27 +8640,6 @@ section {
   /* ==========================================================================
    OBJECTS / #GRID
    ========================================================================== */
-  /* ==========================================================================
-   OBJECTS / #MAIN-WRAPPER
-   ========================================================================== */
-  /**
- * Page wrapper for the grid system
- *
- * Usage:
- * <div class="nhsuk-width-container">
- *   <div class="nhsuk-main-wrapper">
- *    <!-- Wrapper for the main content of your page which applies padding
- *         to the top / bottom -->
- *   </div>
- * </div>
- *
- * Original code taken from GDS (Government Digital Service)
- * https://github.com/alphagov/govuk-frontend
- *
- * 1. In IE11 the `main` element can be used, but is not recognized  –
- *    meaning it's not defined in IE's default style sheet,
- *    so it uses CSS initial value, which is inline.
- */
   /* ==========================================================================
    OBJECTS / #WIDTH-CONTAINER
    ========================================================================== */
@@ -8767,16 +8738,6 @@ section {
  * Usage: class="nhsuk-u-nowrap"
  */
   /* ==========================================================================
-   UTILITIES / #READING-WIDTH
-   ========================================================================== */
-  /**
- * Reading width mixin, add a maximum width
- * to large pieces of content
- *
- * Usage: class="nhsuk-u-reading-width"
- * See tools/mixins
- */
-  /* ==========================================================================
    UTILITIES / #TYPOGRAPHY
    ========================================================================== */
   /**
@@ -8820,13 +8781,6 @@ section {
  * Usage: class="nhsuk-u-width-full"
  */
   background-color: #f0f4f5;
-}
-
-.edit-post-visual-editor button,
-.edit-post-visual-editor input,
-.edit-post-visual-editor select,
-.edit-post-visual-editor textarea {
-  font-family: inherit;
 }
 
 .edit-post-visual-editor a {
@@ -9802,10 +9756,6 @@ section {
   .edit-post-visual-editor .nhsuk-u-nowrap {
     white-space: nowrap;
   }
-}
-
-.edit-post-visual-editor .nhsuk-u-reading-width {
-  max-width: 44em;
 }
 
 .edit-post-visual-editor .nhsuk-u-font-size-64 {

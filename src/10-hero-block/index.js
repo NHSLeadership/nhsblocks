@@ -119,7 +119,7 @@ registerBlockType("nhsblocks/heroinner", {
     title: __("Hero Block Inner Text", "nhsblocks"),
     description: __("Add some text to the header", "nhsblocks"),
     category: "nhsblocks",
-    parent: "nhsblocks/heroblock",
+    parent: ["nhsblocks/heroblock"],
     icon: "nametag",
     attributes: {
         texttitle: {

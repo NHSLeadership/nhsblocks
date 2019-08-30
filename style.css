@@ -3144,7 +3144,7 @@ b {
  * 3. Use a pseudo element to expand the click target area to include the
  *    button's shadow as well, in case users try to click it.
  */
-.nhsuk-button {
+.nhsuk-button, .wp-block-button__link, .wp-block-file__button, .wp-block-file a.wp-block-file__button, .wp-block-file a.wp-block-file__button:active, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:visited {
   font-weight: 400;
   font-size: 16px;
   font-size: 1rem;
@@ -3172,7 +3172,7 @@ b {
 }
 
 @media (min-width: 40.0625em) {
-  .nhsuk-button {
+  .nhsuk-button, .wp-block-button__link, .wp-block-file__button, .wp-block-file a.wp-block-file__button, .wp-block-file a.wp-block-file__button:active, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:visited {
     font-size: 19px;
     font-size: 1.1875rem;
     line-height: 1.47368;
@@ -3180,50 +3180,50 @@ b {
 }
 
 @media print {
-  .nhsuk-button {
+  .nhsuk-button, .wp-block-button__link, .wp-block-file__button, .wp-block-file a.wp-block-file__button, .wp-block-file a.wp-block-file__button:active, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:visited {
     font-size: 14pt;
     line-height: 1.15;
   }
 }
 
-.nhsuk-button:focus {
+.nhsuk-button:focus, .wp-block-button__link:focus, .wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:focus {
   box-shadow: 0 0 0 4px #ffb81C;
   outline: 4px solid transparent;
   outline-offset: 4px;
 }
 
 @media (min-width: 40.0625em) {
-  .nhsuk-button {
+  .nhsuk-button, .wp-block-button__link, .wp-block-file__button, .wp-block-file a.wp-block-file__button, .wp-block-file a.wp-block-file__button:active, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:visited {
     margin-bottom: 36px;
   }
 }
 
 @media (max-width: 40.0525em) {
-  .nhsuk-button {
+  .nhsuk-button, .wp-block-button__link, .wp-block-file__button, .wp-block-file a.wp-block-file__button, .wp-block-file a.wp-block-file__button:active, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:visited {
     padding: 8px 16px;
   }
 }
 
-.nhsuk-button:link, .nhsuk-button:visited, .nhsuk-button:active, .nhsuk-button:hover {
+.nhsuk-button:link, .wp-block-button__link:link, .wp-block-file__button:link, .wp-block-file a.wp-block-file__button:link, .nhsuk-button:visited, .wp-block-button__link:visited, .wp-block-file__button:visited, .wp-block-file a.wp-block-file__button:visited, .nhsuk-button:active, .wp-block-button__link:active, .wp-block-file__button:active, .wp-block-file a.wp-block-file__button:active, .nhsuk-button:hover, .wp-block-button__link:hover, .wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:hover {
   color: #ffffff;
   text-decoration: none;
 }
 
-.nhsuk-button::-moz-focus-inner {
+.nhsuk-button::-moz-focus-inner, .wp-block-button__link::-moz-focus-inner, .wp-block-file__button::-moz-focus-inner, .wp-block-file a.wp-block-file__button::-moz-focus-inner, .wp-block-file a.wp-block-file__button:active::-moz-focus-inner, .wp-block-file a.wp-block-file__button:focus::-moz-focus-inner, .wp-block-file a.wp-block-file__button:hover::-moz-focus-inner, .wp-block-file a.wp-block-file__button:visited::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-.nhsuk-button:hover, .nhsuk-button:focus {
+.nhsuk-button:hover, .wp-block-button__link:hover, .wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:hover, .nhsuk-button:focus, .wp-block-button__link:focus, .wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:focus {
   background-color: #00662f;
 }
 
-.nhsuk-button:active {
+.nhsuk-button:active, .wp-block-button__link:active, .wp-block-file__button:active, .wp-block-file a.wp-block-file__button:active {
   box-shadow: none;
   top: 4px;
 }
 
-.nhsuk-button::before {
+.nhsuk-button::before, .wp-block-button__link::before, .wp-block-file__button::before, .wp-block-file a.wp-block-file__button::before, .wp-block-file a.wp-block-file__button:active::before, .wp-block-file a.wp-block-file__button:focus::before, .wp-block-file a.wp-block-file__button:hover::before, .wp-block-file a.wp-block-file__button:visited::before {
   background: transparent;
   bottom: -6px;
   content: '';
@@ -3234,7 +3234,7 @@ b {
   top: -2px;
 }
 
-.nhsuk-button:active::before {
+.nhsuk-button:active::before, .wp-block-button__link:active::before, .wp-block-file__button:active::before, .wp-block-file a.wp-block-file__button:active::before {
   top: -6px;
 }
 
@@ -3282,7 +3282,13 @@ b {
  */
 .nhsuk-button--disabled,
 .nhsuk-button[disabled="disabled"],
-.nhsuk-button[disabled] {
+.wp-block-button__link[disabled="disabled"],
+.wp-block-file__button[disabled="disabled"],
+.wp-block-file a.wp-block-file__button[disabled="disabled"],
+.nhsuk-button[disabled],
+.wp-block-button__link[disabled],
+.wp-block-file__button[disabled],
+.wp-block-file a.wp-block-file__button[disabled] {
   background-color: #007f3b;
   opacity: 0.5;
   pointer-events: none;
@@ -3290,21 +3296,39 @@ b {
 
 .nhsuk-button--disabled:hover,
 .nhsuk-button[disabled="disabled"]:hover,
-.nhsuk-button[disabled]:hover {
+.wp-block-button__link[disabled="disabled"]:hover,
+.wp-block-file__button[disabled="disabled"]:hover,
+.wp-block-file a.wp-block-file__button[disabled="disabled"]:hover,
+.nhsuk-button[disabled]:hover,
+.wp-block-button__link[disabled]:hover,
+.wp-block-file__button[disabled]:hover,
+.wp-block-file a.wp-block-file__button[disabled]:hover {
   background-color: #007f3b;
   cursor: default;
 }
 
 .nhsuk-button--disabled:focus,
 .nhsuk-button[disabled="disabled"]:focus,
-.nhsuk-button[disabled]:focus {
+.wp-block-button__link[disabled="disabled"]:focus,
+.wp-block-file__button[disabled="disabled"]:focus,
+.wp-block-file a.wp-block-file__button[disabled="disabled"]:focus,
+.nhsuk-button[disabled]:focus,
+.wp-block-button__link[disabled]:focus,
+.wp-block-file__button[disabled]:focus,
+.wp-block-file a.wp-block-file__button[disabled]:focus {
   background-color: #007f3b;
   outline: none;
 }
 
 .nhsuk-button--disabled:active,
 .nhsuk-button[disabled="disabled"]:active,
-.nhsuk-button[disabled]:active {
+.wp-block-button__link[disabled="disabled"]:active,
+.wp-block-file__button[disabled="disabled"]:active,
+.wp-block-file a.wp-block-file__button[disabled="disabled"]:active,
+.nhsuk-button[disabled]:active,
+.wp-block-button__link[disabled]:active,
+.wp-block-file__button[disabled]:active,
+.wp-block-file a.wp-block-file__button[disabled]:active {
   box-shadow: 0 4px 0 #003317;
   top: 0;
 }
@@ -6347,12 +6371,12 @@ b {
   }
 }
 
-.nhsuk-image__img {
+.nhsuk-image__img, .nhsuk-image img {
   display: block;
   width: 100%;
 }
 
-.nhsuk-image__caption {
+.nhsuk-image__caption, .nhsuk-image figcaption, .gallery-caption {
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.71429;
@@ -6360,7 +6384,7 @@ b {
 }
 
 @media (min-width: 40.0625em) {
-  .nhsuk-image__caption {
+  .nhsuk-image__caption, .nhsuk-image figcaption, .gallery-caption {
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.5;
@@ -6368,7 +6392,7 @@ b {
 }
 
 @media print {
-  .nhsuk-image__caption {
+  .nhsuk-image__caption, .nhsuk-image figcaption, .gallery-caption {
     font-size: 14pt;
     line-height: 1.2;
   }
@@ -9961,6 +9985,43 @@ b {
   .nhsuk-u-width-one-quarter {
     width: 25% !important;
   }
+}
+
+.nhsuk-width-container--full {
+  margin: 0;
+  max-width: none;
+}
+
+.nhsuk-panel-group {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.wp-block-button__link, .wp-block-file__button, .wp-block-file a.wp-block-file__button, .wp-block-file a.wp-block-file__button:active, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:visited {
+  border-radius: 4px;
+  background: #007f3b;
+  font-size: #ffffff;
+  padding: 1px 8px;
+  position: relative;
+  top: -5px;
+  margin-bottom: 5px;
+}
+
+.nhsuk-button--reverse:visited, .is-style-reverse:visited {
+  color: #212b32;
+}
+
+.nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item--previous, .nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item--next {
+  width: 30%;
+}
+
+.nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item {
+  width: 8%;
+  float: left;
+}
+
+.nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination__link:hover {
+  box-shadow: 0 0 0 16px #ffcd60 inset;
 }
 
 .has-white-color {
