@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/*********************************************************************************************
+Theme Name: Nightingale 2.0
+Theme URI: http://www.leadershipacademy.nhs.uk/
+Author: Tony Blacker, NHS Leadership Academy
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: nightingale-2-0
+Tags: NHS, NHS Digital, NHS Frontend, National Health Service, Leadership Academy
+Description: NHS Digital frontend framework WordPress theme
+Version: 1.0.0
+
+**********************************************************************************************/
+
+// @todo clean this up, its a hangover from underscores that we could do with getting rid of
+@import 'node_modules/nhsuk-frontend/packages/nhsuk';
+// Core (required)
+@import 'node_modules/nhsuk-frontend/packages/core/all';
+
+// start importing the theme specific settings
+
+@import 'assets/scss/nhs-colours'; // nhs colour pallette
+@import 'assets/scss/nhsl-blocks'; // specific elements for nhsl-blocks plugin
+@import 'assets/scss/style_variations';//gutenberg blocks style variations
+

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: nhsblocks
  * Plugin URI: to follow
@@ -10,18 +9,20 @@
  * @package nhsblocks
  */
 
-defined('ABSPATH') || exit;
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Load translations (if any) for the plugin from the /languages/ folder.
  *
  * @link https://developer.wordpress.org/reference/functions/load_plugin_textdomain/
  */
-add_action('init', 'nhsblocks_load_textdomain');
+add_action( 'init', 'nhsblocks_load_textdomain' );
 
-function nhsblocks_load_textdomain()
-{
-    load_plugin_textdomain('nhsblocks', false, basename(__DIR__) . '/languages');
+/**
+ * Set the domain to be used for translations
+ */
+function nhsblocks_load_textdomain() {
+	load_plugin_textdomain( 'nhsblocks', false, basename( __DIR__ ) . '/languages' );
 }
 
 /**
@@ -29,21 +30,28 @@ function nhsblocks_load_textdomain()
  *
  * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/filters/block-filters/#managing-block-categories
  */
-add_filter('block_categories', 'nhsblocks_block_categories', 10, 2);
+add_filter( 'block_categories', 'nhsblocks_block_categories', 10, 2 );
 
-function nhsblocks_block_categories($categories, $post)
-{
+/**
+ * Create the category.
+ *
+ * @param array   $categories the details of added categories (in this case an array of 1 item).
+ * @param integer $post Unused variable, intended for future expansion of function.
+ *
+ * @return array
+ */
+function nhsblocks_block_categories( $categories, $post ) {
 
-    return array_merge(
-        $categories,
-        array(
-            array(
-                'slug' => 'nhsblocks',
-                'title' => __('NHS Frontend Blocks', 'nhsblocks'),
-                'icon' => 'screen',
-            ),
-        )
-    );
+	return array_merge(
+		$categories,
+		array(
+			array(
+				'slug'  => 'nhsblocks',
+				'title' => __( 'NHS Frontend Blocks', 'nhsblocks' ),
+				'icon'  => 'screen',
+			),
+		)
+	);
 }
 
 /**
@@ -52,69 +60,43 @@ function nhsblocks_block_categories($categories, $post)
  *
  * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
  */
-add_action('init', 'nhsblocks_register_blocks');
+add_action( 'init', 'nhsblocks_register_blocks' );
 
-function nhsblocks_register_blocks()
-{
+/**
+ * Function to initiate the Gutenberg blocks in this theme.
+ */
+function nhsblocks_register_blocks() {
 
-    // If Block Editor is not active, bail.
-    if (!function_exists('register_block_type')) {
-        return;
-    }
+	// If Block Editor is not active, bail.
+	if ( ! function_exists( 'register_block_type' ) ) {
+		return;
+	}
 
-    // Retister the block editor script.
-    wp_register_script(
-        'nhsblocks-editor-script',                                            // label
-        plugins_url('build/index.js', __FILE__),                        // script file
-        array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', "wp-data"),        // dependencies
-        filemtime(plugin_dir_path(__FILE__) . 'build/index.js')        // set version as file last modified time
-    );
+	// Retister the block editor script.
+	wp_register_script(
+		'nhsblocks-editor-script',                                            // label.
+		plugins_url( '/build/index.js', __FILE__ ),                        // script file.
+		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-data' ),        // dependencies.
+		'20190828',
+		'in_footer'
+	);
 
-    // Register the block editor stylesheet.
-    wp_register_style(
-        'nhsblocks-editor-styles',                                            // label
-        plugins_url('build/editor.css', __FILE__),                    // CSS file
-        array('wp-edit-blocks'),                                        // dependencies
-        filemtime(plugin_dir_path(__FILE__) . 'build/editor.css')    // set version as file last modified time
-    );
+	register_block_type(
+		'nhsblocks/panel1',
+		array(
+			'editor_script' => 'nhsblocks-editor-script',                    // Calls registered script above.
+		)
+	);
 
-    // Register the front-end stylesheet.
-    wp_register_style(
-        'nhsblocks-front-end-styles',                                        // label
-        plugins_url('build/style.css', __FILE__),                        // CSS file
-        array(),                                                        // dependencies
-        filemtime(plugin_dir_path(__FILE__) . 'build/style.css')    // set version as file last modified time
-    );
-
-    // Array of block created in this plugin.
-    $blocks = [
-        'nhsblocks/dodont',
-        'nhsblocks/button',
-        'nhsblocks/reveal1',
-        'nhsblocks/promo1',
-        'nhsblocks/quote1',
-        'nhsblocks/card',
-
-    ];
-
-    // Loop through $blocks and register each block with the same script and styles.
-    foreach ($blocks as $block) {
-        register_block_type($block, array(
-            'editor_script' => 'nhsblocks-editor-script',                    // Calls registered script above
-            'editor_style' => 'nhsblocks-editor-styles',                    // Calls registered stylesheet above
-            'style' => 'nhsblocks-front-end-styles',                        // Calls registered stylesheet above
-        ));
-    }
-
-    if (function_exists('wp_set_script_translations')) {
-        /**
-         * Adds internationalization support.
-         *
-         * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/internationalization/
-         * @link https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/
-         */
-        wp_set_script_translations('nhsblocks-editor-script', 'nhsblocks', plugin_dir_path(__FILE__) . '/languages');
-    }
+	if ( function_exists( 'wp_set_script_translations' ) ) {
+		/**
+		 * Adds internationalization support.
+		 *
+		 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/internationalization/
+		 * @link https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/
+		 */
+		wp_set_script_translations( 'nhsblocks-editor-script', 'nhsblocks', plugins_url( '/languages', __FILE__ ) );
+	}
 
 }
 
@@ -122,79 +104,88 @@ function nhsblocks_register_blocks()
  * Build classes based on block attributes.
  * Returns string of classes.
  *
- * $attributes - array - Block attributes.
+ * @param array $attributes - Block attributes.
+ *
+ * @return array $classes - the finished array of classes to attach to blocks.
  */
-function nhsblocks_block_classes($attributes)
-{
-    $classes = null;
-    if ($attributes['align']) {
-        $classes = 'align' . $attributes['align'] . ' ';
-    }
+function nhsblocks_block_classes( $attributes ) {
+	$classes = null;
+	if ( $attributes['align'] ) {
+		$classes = 'align' . $attributes['align'] . ' ';
+	}
 
-    if ($attributes['className']) {
-        $classes .= $attributes['className'];
-    }
+	if ( $attributes['className'] ) {
+		$classes .= $attributes['className'];
+	}
 
-    return $classes;
+	return $classes;
 }
 
-// latest news front end rendering
-function nhsblocks_render_block_latest_news($attributes)
-{
-    $total = 6;
-    $columns = 3;
-    $category = '';
-    if ($columns == 2) {
-        $width = 'half';
-    } else {
-        $width = 'third';
-    }
-    $args = array(
-        'posts_per_page' => $total,
-        'post_status' => 'publish',
-        'post_type' => 'post',
-        'order' => 'DESC',
-        'orderby' => 'date',
-    );
-    $news_query = new WP_Query($args);
-    $newsout = '<div class="nhsuk-grid-row">
-                  <div class="nhsuk-panel-group">';
-    $i = 1;
-    if ($news_query->have_posts()) :
-        while ($news_query->have_posts()) :
-            $news_query->the_post();
-            $newsout .= '<div class="nhsuk-grid-column-one-' . $width . ' nhsuk-panel-group__item">
-                         <div class="nhsuk-panel"><h3>';
-            the_title();
-            $newsout .= '</h3>';
-            $newsout .= the_post_thumbnail();
-            $newsout .= the_excerpt();
-            $newsout .= nightingale_2_0_read_more();
-            $newsout .= '   </div>
-                      </div>';
-            if ($i == $columns) {
-                $newsout .= '</div><div class="nhsuk-panel-group">';
-                $i = 0;
-            }
+/**
+ * Latest news front end rendering
+ *
+ * @param array $attributes The raw data to be processed.
+ *
+ * @return array $newsout The cleaned data to match NHSUK styling and markup.
+ */
+function nhsblocks_render_block_latest_news( $attributes ) {
+	$total    = 6;
+	$columns  = 3;
+	$category = '';
+	if ( 2 === $columns ) {
+		$width = 'half';
+	} else {
+		$width = 'third';
+	}
+	$args       = array(
+		'posts_per_page' => $total,
+		'post_status'    => 'publish',
+		'post_type'      => 'post',
+		'order'          => 'DESC',
+		'orderby'        => 'date',
+	);
+	$news_query = new WP_Query( $args );
+	$newsout    = '<div class="nhsuk-grid-row">
+				  <div class="nhsuk-panel-group">';
+	$i          = 1;
+	if ( $news_query->have_posts() ) :
+		while ( $news_query->have_posts() ) :
+			$news_query->the_post();
+			$newsout .= '<div class="nhsuk-grid-column-one-' . $width . ' nhsuk-panel-group__item">
+						 <div class="nhsuk-panel"><h3>';
+			the_title();
+			$newsout .= '</h3>';
+			$newsout .= the_post_thumbnail();
+			$newsout .= the_excerpt();
+			$newsout .= nhsblocks_read_more();
+			$newsout .= '   </div>
+					  </div>';
+			if ( $i === $columns ) {
+				$newsout .= '</div><div class="nhsuk-panel-group">';
+				$i        = 0;
+			}
 
-            $i++;
-        endwhile;
-        wp_reset_postdata();
-    else:
-        $newsout .= '<p>' . __('No News') . '</p>';
-    endif;
-    $newsout .= '</div></div>';
-    return $newsout;
-    /*$post = $recent_posts[ 0 ];
-    $post_id = $post['ID'];
-    return sprintf(
-        '<a class="wp-block-riad-latest-post" href="%1$s">%2$s</a>',
-        esc_url( get_permalink( $post_id ) ),
-        esc_html( get_the_title( $post_id ) )
-    );*/
+			$i ++;
+		endwhile;
+		wp_reset_postdata();
+		else :
+			$newsout .= '<p>' . __( 'No News', 'nhsblocks' ) . '</p>';
+	endif;
+		$newsout .= '</div></div>';
+
+		return $newsout;
+
 }
 
-register_block_type('nhsblocks/latestnews', array(
-    'render_callback' => 'nhsblocks_render_block_latest_news',
-));
+register_block_type(
+	'nhsblocks/latestnews',
+	array(
+		'render_callback' => 'nhsblocks_blocks_render_block_latest_news',
+	)
+);
 
+function nhsblocks_gutenberg_editor_styles() {
+	wp_enqueue_style( 'nhsl-block-editor-styles', plugins_url( 'style-gutenburg.css', __FILE__ ), false, '1.0', 'all' );
+}
+
+add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' );

@@ -5,15 +5,21 @@
   "main": "src/index.js",
   "devDependencies": {
     "@svgr/webpack": "^4.3.2",
-    "@wordpress/scripts": "^3.3.0",
+    "@wordpress/scripts": "^3.4.0",
     "clauderic/react-sortable-hoc": "^1.9.1",
     "url-loader": "^1.1.2"
   },
   "scripts": {
     "start": "wp-scripts start",
-    "build": "wp-scripts build"
+    "build": "wp-scripts build",
+    "build-scss": "cat style.scss | node_modules/.bin/node-sass --include-path node_modules/ --include-path node_modules/nhsuk-frontend/packages/nhsuk/ style.scss --output-style expanded > style.css | cat style-gutenburg.scss | node_modules/.bin/node-sass --include-path node_modules/ --include-path node_modules/nhsuk-frontend/packages/nhsuk/  style-gutenburg.scss --output-style expanded > style-gutenburg.css",
+    "zip": "zip -r nightingale-2-0.zip ./ -x .git .gitignore *.git/* .DS_Store node_modules/**\\* nhsblocks/node_modules/**\\* nhsblocks/src/**\\* nhsblocks/webpack.config.js nhsblocks/.gitignore"
   },
   "dependencies": {
-    "clone-deep": "^4.0.1"
+    "clone-deep": "^4.0.1",
+    "nhsuk-frontend": "^2.3.0",
+    "node-sass": "^4.12.0",
+    "nunjucks": "^3.2.0",
+    "scss": "^0.2.4"
   }
 }
