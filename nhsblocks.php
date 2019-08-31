@@ -35,7 +35,7 @@ add_filter( 'block_categories', 'nhsblocks_block_categories', 10, 2 );
 /**
  * Create the category.
  *
- * @param array   $categories the details of added categories (in this case an array of 1 item).
+ * @param array $categories the details of added categories (in this case an array of 1 item).
  * @param integer $post Unused variable, intended for future expansion of function.
  *
  * @return array
@@ -121,69 +121,6 @@ function nhsblocks_block_classes( $attributes ) {
 	return $classes;
 }
 
-/**
- * Latest news front end rendering
- *
- * @param array $attributes The raw data to be processed.
- *
- * @return array $newsout The cleaned data to match NHSUK styling and markup.
- */
-function nhsblocks_render_block_latest_news( $attributes ) {
-	$total    = 6;
-	$columns  = 3;
-	$category = '';
-	if ( 2 === $columns ) {
-		$width = 'half';
-	} else {
-		$width = 'third';
-	}
-	$args       = array(
-		'posts_per_page' => $total,
-		'post_status'    => 'publish',
-		'post_type'      => 'post',
-		'order'          => 'DESC',
-		'orderby'        => 'date',
-	);
-	$news_query = new WP_Query( $args );
-	$newsout    = '<div class="nhsuk-grid-row">
-				  <div class="nhsuk-panel-group">';
-	$i          = 1;
-	if ( $news_query->have_posts() ) :
-		while ( $news_query->have_posts() ) :
-			$news_query->the_post();
-			$newsout .= '<div class="nhsuk-grid-column-one-' . $width . ' nhsuk-panel-group__item">
-						 <div class="nhsuk-panel"><h3>';
-			the_title();
-			$newsout .= '</h3>';
-			$newsout .= the_post_thumbnail();
-			$newsout .= the_excerpt();
-			$newsout .= nhsblocks_read_more();
-			$newsout .= '   </div>
-					  </div>';
-			if ( $i === $columns ) {
-				$newsout .= '</div><div class="nhsuk-panel-group">';
-				$i        = 0;
-			}
-
-			$i ++;
-		endwhile;
-		wp_reset_postdata();
-		else :
-			$newsout .= '<p>' . __( 'No News', 'nhsblocks' ) . '</p>';
-	endif;
-		$newsout .= '</div></div>';
-
-		return $newsout;
-
-}
-
-register_block_type(
-	'nhsblocks/latestnews',
-	array(
-		'render_callback' => 'nhsblocks_blocks_render_block_latest_news',
-	)
-);
-
 function nhsblocks_gutenberg_editor_styles() {
 	wp_enqueue_style( 'nhsl-block-editor-styles', plugins_url( 'style-gutenburg.css', __FILE__ ), false, '1.0', 'all' );
 }
@@ -191,11 +128,13 @@ function nhsblocks_gutenberg_editor_styles() {
 add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' );
 
 function nhsblocks_register_style() {
-	wp_register_style( 'nhsblocks', plugins_url( 'style-gutenburg.css', __FILE__ ) );
+	wp_register_style( 'nhsblocks', plugins_url( 'style.css', __FILE__ ) );
 }
+
 add_action( 'init', 'nhsblocks_register_style' );
 
 function nhsblocks_enqueue_style() {
 	wp_enqueue_style( 'nhsblocks' );
 }
+
 add_action( 'wp_enqueue_scripts', 'nhsblocks_enqueue_style' );

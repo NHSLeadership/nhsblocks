@@ -48,25 +48,26 @@ registerBlockType("nhsblocks/heroblock", {
         }
         return ([
             <InspectorControls>
+
             <div>
-                <strong>Select a background color:</strong> <br /><i>(this will be ignored if you choose an image below)</i>
+            <strong>Select a background image:</strong>
+        <MediaUpload
+        onSelect={onImageSelect}
+        type="image"
+        value={backgroundImage}
+        render={({ open }) => (
+        <button className="button button-primary button-hero" onClick={open}>
+            Upload Image!
+        </button>
+    )}
+        />
+        </div>
+        <div>
+                <strong>OR</strong> Select a background color: <br /><i>(this will be ignored if you chose an image above)</i>
                 <ColorPalette
                     value={overlayColor}
                     onChange={onOverlayColorChange}
                 />
-            </div>
-            <div>
-                <strong>Select a background image:</strong>
-                <MediaUpload
-                    onSelect={onImageSelect}
-                    type="image"
-                    value={backgroundImage}
-                    render={({ open }) => (
-                        <button onClick={open}>
-                            Upload Image!
-                        </button>
-                    )}
-                    />
             </div>
             </InspectorControls>,
             <section className={`${className}  nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description`} style={{
@@ -206,7 +207,7 @@ registerBlockType("nhsblocks/heroinner", {
         tagName="p"
         className="nhsuk-body-l nhsuk-u-margin-bottom-0"
         style={{ color:fontColor }}
-        value={attributes.textString}
+        value={attributes.texttext}
         />
         <span className="nhsuk-hero__arrow" aria-hidden="true"></span>
             </div>

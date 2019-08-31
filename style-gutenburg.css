@@ -10369,12 +10369,23 @@ section {
   /* urgent infocard*/
 }
 
+.nhsuk-care-card__heading-container h3 {
+  color: #ffffff !important;
+  margin: 0 !important;
+}
+
 /*panel extension*/
 /* promo extension */
 /*do and dont list extension*/
 .nhsuk-do-dont-list svg.nhsuk-icon {
   width: 35px;
   height: 34px;
+}
+
+/* Inset text inverted link amendment */
+.nhsuk-inset-text is-style-quote-reverse .nhsuk-inset-text__quote a {
+  color: #ffffff;
+  font-weight: 700;
 }
 
 .wp-block-nhsblocks-panel1 .paneltext {
@@ -10385,12 +10396,31 @@ section {
   padding: 0;
 }
 
+.nhsuk-grid-column-full > :first-child {
+  padding-left: 0 !important;
+}
+
+.nhsuk-grid-column-full > :last-child {
+  padding-right: 0 !important;
+}
+
 .nhsuk-hero__overlay {
   margin-bottom: 50px;
 }
 
 .nhsuk-header__search-wrap input[type="text"] {
   border: 1px solid #cccccc;
+}
+
+/* Hero fix so it works on all templates */
+.wp-block-nhsblocks-heroblock {
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  max-width: 100vw;
+  position: relative;
+  right: 50%;
+  width: 100vw;
 }
 
 .is-style-panel-with-label h3 {
