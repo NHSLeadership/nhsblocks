@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: nhsblocks
- * Plugin URI: to follow
+ * Plugin URI:
  * Description: Gutenberg native custom blocks for the NHS Nightingale 2.0 theme.
  * Version: 1.0.0
  * Author: Tony Blacker, NHS Leadership Academy
