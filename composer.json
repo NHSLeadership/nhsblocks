@@ -1,0 +1,8 @@
+{
+  "name": "nhsla/nhsblocks",
+  "description": "Plugin for WordPress to add NHSUK Frontend style components to Gutenberg",
+  "type": "wordpress-plugin",
+  "require": {
+    "composer/installers": "^1.3"
+  }
+}
