@@ -158,7 +158,7 @@ function nhsblocks_activate() {
 		// Deactivate the plugin.
 		deactivate_plugins( plugin_basename( __FILE__ ) );
 		// Throw an error in the WordPress admin console.
-		$error_message = '<p style="font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Oxygen-Sans,Ubuntu,Cantarell,\'Helvetica Neue\',sans-serif;font-size: 13px;line-height: 1.5;color:#444;">' . esc_html__( 'This plugin requires ', 'nhsblocks' ) . '<a href="' . esc_url( 'https://en-gb.wordpress.org/plugins/gutenberg/' ) . '">Gutenberg</a>' . esc_html__( ' plugin to be active.', 'nhsblocks' ) . '</p>';
+		$error_message = '<p style="font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Oxygen-Sans,Ubuntu,Cantarell,\'Helvetica Neue\',sans-serif;font-size: 13px;line-height: 1.5;color:#444;">' . esc_html__( 'This plugin requires ', 'nhsblocks' ) . '<a href="' . esc_url( 'https://en-gb.wordpress.org/plugins/gutenberg/' ) . '">Gutenberg</a>' . esc_html__( ' plugin to be installed and active.', 'nhsblocks' ) . '</p>';
 		die( $error_message ); // WPCS: XSS ok.
 	}
 }
