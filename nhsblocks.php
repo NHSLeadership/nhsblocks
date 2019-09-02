@@ -84,7 +84,7 @@ function nhsblocks_register_blocks() {
 	register_block_type(
 		'nhsblocks/panel1',
 		array(
-			'editor_script' => 'nhsblocks-editor-script',                    // Calls registered script above.
+			'editor_script' => 'nhsblocks-editor-script',                    // Calls registered script above. Registering one brings all. One block to rule them all.
 		)
 	);
 
@@ -121,20 +121,45 @@ function nhsblocks_block_classes( $attributes ) {
 	return $classes;
 }
 
+/**
+ * Queues up the gutenberg editor style
+ */
 function nhsblocks_gutenberg_editor_styles() {
 	wp_enqueue_style( 'nhsl-block-editor-styles', plugins_url( 'style-gutenburg.css', __FILE__ ), false, '1.0', 'all' );
 }
 
-add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' );
+add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' ); // Pulls the enqueued file in to standard wp process.
 
+/**
+ * Queues up the blocks styling for front end
+ */
 function nhsblocks_register_style() {
 	wp_register_style( 'nhsblocks', plugins_url( 'style.css', __FILE__ ) );
 }
 
-add_action( 'init', 'nhsblocks_register_style' );
+add_action( 'init', 'nhsblocks_register_style' ); // Pulls front end styling to standard wp process.
 
 function nhsblocks_enqueue_style() {
 	wp_enqueue_style( 'nhsblocks' );
 }
 
 add_action( 'wp_enqueue_scripts', 'nhsblocks_enqueue_style' );
+
+/**
+ * Checks if the Gutenberg plugin is activated
+ *
+ * If the Gutenberg plugin is not active, then don't allow the
+ * activation of this plugin.
+ *
+ * @since 1.0.0
+ */
+function nhsblocks_activate() {
+	if ( current_user_can( 'activate_plugins' ) && ! is_plugin_active('gutenberg/gutenberg.php') ) {
+		// Deactivate the plugin.
+		deactivate_plugins( plugin_basename( __FILE__ ) );
+		// Throw an error in the WordPress admin console.
+		$error_message = '<p style="font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Oxygen-Sans,Ubuntu,Cantarell,\'Helvetica Neue\',sans-serif;font-size: 13px;line-height: 1.5;color:#444;">' . esc_html__( 'This plugin requires ', 'nhsblocks' ) . '<a href="' . esc_url( 'https://en-gb.wordpress.org/plugins/gutenberg/' ) . '">Gutenberg</a>' . esc_html__( ' plugin to be active.', 'nhsblocks' ) . '</p>';
+		die( $error_message ); // WPCS: XSS ok.
+	}
+}
+register_activation_hook( __FILE__, 'nhsblocks_activate' );
