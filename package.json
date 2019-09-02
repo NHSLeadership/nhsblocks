@@ -13,7 +13,7 @@
     "start": "wp-scripts start",
     "build": "wp-scripts build",
     "build-scss": "cat style.scss | node_modules/.bin/node-sass --include-path node_modules/ --include-path node_modules/nhsuk-frontend/packages/nhsuk/ style.scss --output-style expanded > style.css | cat style-gutenburg.scss | node_modules/.bin/node-sass --include-path node_modules/ --include-path node_modules/nhsuk-frontend/packages/nhsuk/  style-gutenburg.scss --output-style expanded > style-gutenburg.css",
-    "zip": "zip -r nightingale-2-0.zip ./ -x .git .gitignore *.git/* .DS_Store node_modules/**\\* nhsblocks/node_modules/**\\* nhsblocks/src/**\\* nhsblocks/webpack.config.js nhsblocks/.gitignore"
+    "zip": "zip -r nhsblocks.zip ./ -x .git .gitignore *.git/* .DS_Store .package.json .package-lock.json *.scss webpack.config.js .ds_store node_modules/**\\* src/**\\* webpack.config.js n"
   },
   "dependencies": {
     "clone-deep": "^4.0.1",

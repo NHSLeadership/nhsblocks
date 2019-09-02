@@ -339,7 +339,7 @@ registerBlockType("nhsblocks/dashpanel", {
     description: __("Simple image background with text and link to give Dashboard navigation panel"),
     icon: "feedback",
     category: "nhsblocks",
-    parent: "nhsblocks/dashboardnav",
+    parent: ["nhsblocks/dashboardnav"],
 
     attributes: {
         panelTitle: {
@@ -406,23 +406,23 @@ registerBlockType("nhsblocks/dashpanel", {
             />
                 </div>
             <div>
-            <strong>Select a background color:</strong> <br /><i>(this will be ignored if you choose an image below)</i>
-        <ColorPalette
-        value={overlayColor}
-        onChange={onOverlayColorChange}
-        />
-        </div>
-        <div>
-        <strong>Select a background image:</strong>
+            <strong>Select a background image:</strong>
         <MediaUpload
         onSelect={onImageSelect}
         type="image"
         value={backgroundImage}
         render={({ open }) => (
-        <button onClick={open}>
+        <button className="button button-primary button-hero" onClick={open}>
             Upload Image!
         </button>
     )}
+        />
+        </div>
+            <div>
+            <strong>OR</strong> Select a background color: <br /><i>(this will be ignored if you choose an image above)</i>
+        <ColorPalette
+        value={overlayColor}
+        onChange={onOverlayColorChange}
         />
         </div>
         </InspectorControls>,

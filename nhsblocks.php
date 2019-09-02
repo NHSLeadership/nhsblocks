@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: nhsblocks
- * Plugin URI: to follow
+ * Plugin URI:
  * Description: Gutenberg native custom blocks for the NHS Nightingale 2.0 theme.
  * Version: 1.0.0
  * Author: Tony Blacker, NHS Leadership Academy
@@ -35,7 +35,7 @@ add_filter( 'block_categories', 'nhsblocks_block_categories', 10, 2 );
 /**
  * Create the category.
  *
- * @param array   $categories the details of added categories (in this case an array of 1 item).
+ * @param array $categories the details of added categories (in this case an array of 1 item).
  * @param integer $post Unused variable, intended for future expansion of function.
  *
  * @return array
@@ -84,7 +84,7 @@ function nhsblocks_register_blocks() {
 	register_block_type(
 		'nhsblocks/panel1',
 		array(
-			'editor_script' => 'nhsblocks-editor-script',                    // Calls registered script above.
+			'editor_script' => 'nhsblocks-editor-script',                    // Calls registered script above. Registering one brings all. One block to rule them all.
 		)
 	);
 
@@ -122,70 +122,44 @@ function nhsblocks_block_classes( $attributes ) {
 }
 
 /**
- * Latest news front end rendering
- *
- * @param array $attributes The raw data to be processed.
- *
- * @return array $newsout The cleaned data to match NHSUK styling and markup.
+ * Queues up the gutenberg editor style
  */
-function nhsblocks_render_block_latest_news( $attributes ) {
-	$total    = 6;
-	$columns  = 3;
-	$category = '';
-	if ( 2 === $columns ) {
-		$width = 'half';
-	} else {
-		$width = 'third';
-	}
-	$args       = array(
-		'posts_per_page' => $total,
-		'post_status'    => 'publish',
-		'post_type'      => 'post',
-		'order'          => 'DESC',
-		'orderby'        => 'date',
-	);
-	$news_query = new WP_Query( $args );
-	$newsout    = '<div class="nhsuk-grid-row">
-				  <div class="nhsuk-panel-group">';
-	$i          = 1;
-	if ( $news_query->have_posts() ) :
-		while ( $news_query->have_posts() ) :
-			$news_query->the_post();
-			$newsout .= '<div class="nhsuk-grid-column-one-' . $width . ' nhsuk-panel-group__item">
-						 <div class="nhsuk-panel"><h3>';
-			the_title();
-			$newsout .= '</h3>';
-			$newsout .= the_post_thumbnail();
-			$newsout .= the_excerpt();
-			$newsout .= nhsblocks_read_more();
-			$newsout .= '   </div>
-					  </div>';
-			if ( $i === $columns ) {
-				$newsout .= '</div><div class="nhsuk-panel-group">';
-				$i        = 0;
-			}
-
-			$i ++;
-		endwhile;
-		wp_reset_postdata();
-		else :
-			$newsout .= '<p>' . __( 'No News', 'nhsblocks' ) . '</p>';
-	endif;
-		$newsout .= '</div></div>';
-
-		return $newsout;
-
-}
-
-register_block_type(
-	'nhsblocks/latestnews',
-	array(
-		'render_callback' => 'nhsblocks_blocks_render_block_latest_news',
-	)
-);
-
 function nhsblocks_gutenberg_editor_styles() {
 	wp_enqueue_style( 'nhsl-block-editor-styles', plugins_url( 'style-gutenburg.css', __FILE__ ), false, '1.0', 'all' );
 }
 
-add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' );
+add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' ); // Pulls the enqueued file in to standard wp process.
+
+/**
+ * Queues up the blocks styling for front end
+ */
+function nhsblocks_register_style() {
+	wp_register_style( 'nhsblocks', plugins_url( 'style.css', __FILE__ ) );
+}
+
+add_action( 'init', 'nhsblocks_register_style' ); // Pulls front end styling to standard wp process.
+
+function nhsblocks_enqueue_style() {
+	wp_enqueue_style( 'nhsblocks' );
+}
+
+add_action( 'wp_enqueue_scripts', 'nhsblocks_enqueue_style' );
+
+/**
+ * Checks if the Gutenberg plugin is activated
+ *
+ * If the Gutenberg plugin is not active, then don't allow the
+ * activation of this plugin.
+ *
+ * @since 1.0.0
+ */
+function nhsblocks_activate() {
+	if ( current_user_can( 'activate_plugins' ) && ! is_plugin_active('gutenberg/gutenberg.php') ) {
+		// Deactivate the plugin.
+		deactivate_plugins( plugin_basename( __FILE__ ) );
+		// Throw an error in the WordPress admin console.
+		$error_message = '<p style="font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Oxygen-Sans,Ubuntu,Cantarell,\'Helvetica Neue\',sans-serif;font-size: 13px;line-height: 1.5;color:#444;">' . esc_html__( 'This plugin requires ', 'nhsblocks' ) . '<a href="' . esc_url( 'https://en-gb.wordpress.org/plugins/gutenberg/' ) . '">Gutenberg</a>' . esc_html__( ' plugin to be installed and active.', 'nhsblocks' ) . '</p>';
+		die( $error_message ); // WPCS: XSS ok.
+	}
+}
+register_activation_hook( __FILE__, 'nhsblocks_activate' );
