@@ -28,13 +28,12 @@ This section describes how to install the plugin and get it working.
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= Is this plugin restricted to only NHS Organisations =
 
-An answer to that question.
+This plugin has been built specifically for use in the NHS, but it is open source code and you are free to use it on any site.
 
-= What about foo bar? =
-
-Answer to foo bar dilemma.
+== Screenshots ==
+1. This plugin adds a new type of block to your WordPress - titled NHS Frontend - with 10 new blocks based on the NHS Digital Frontend Library
 
 == Changelog ==
 
@@ -51,8 +50,6 @@ Answer to foo bar dilemma.
     * Cards - Information cards. Coloured headers with an arrow pointing to text content. Available as standard care card, warnings (red header) or alerts (red header, black body)
     * Grouped Items - pre configured layouts of elements, with eiter testimonials, panels or promos inside each field.
     * Hero Banner - a full screen width hero image, with optional text overlay box including title and tagline. Ideal for graphically anchoring your website sections.
-
-== Upgrade Notice ==
 
 == Arbitrary section ==
 
