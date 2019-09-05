@@ -3,7 +3,7 @@ Contributors: tblacker
 Tags: gutenberg, blocks, nhs
 Requires at least: 5.0
 Tested up to: 5.2
-Stable tag: 1.0.0
+Stable tag: trunk
 Requires PHP: 5.6
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
