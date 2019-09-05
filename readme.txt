@@ -8,7 +8,7 @@ Requires PHP: 5.6
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-NHS styled blocks for WordPress as developed by the NHS Digital Frontend library.
+NHS styled blocks for WordPress as developed by the NHS Leadership Academy based on the NHS Digital Frontend library.
 
 == Description ==
 
@@ -34,8 +34,22 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 
 == Screenshots ==
 1. This plugin adds a new type of block to your WordPress - titled NHS Frontend - with 10 new blocks based on the NHS Digital Frontend Library
+2. Dashboard Layout - a graphical nav panel for users to jump to sections of your site
+3. Do / Dont lists - Simple lists in a display card with ticks and crosses to denote actions they should or should not take. Can also be used for status updates, projects etc
+4. Buttons - Restyling of buttons to match NHS Digital layouts
+5. Reveal Elements - Either simple arrow based expandable sections, or icon based with plus/minus icons
+6. Panels - Text blocks with title sections to separate your content out cleanly
+7. Promo Blocks - Clean blocks which are completely linked to inner content / external sources with title, text and optional images
+8. Testimonial / Quote - Simple display device for highlighting user feedback, personal quotes or other text you would like to highlight
+9. Grouped blocks - pre-defined layouts for displaying your content in more eye catching ways
+10. Hero - a full screen width block, with optional single colour or image background and optional block of text to anchor the page and set clear purpose
 
 == Changelog ==
+
+= 1.0.1 =
+* Added Base language (English) and ensured full internationalisation. Translations welcome :)
+* Registered all blocks so they show correctly on plugin page
+* Improved Screenshot library for clearer understanding of plugin functionality from within WordPress.org listing / wp-admin search function
 
 = 1.0 =
 * First stable public release of the plugin.
@@ -51,6 +65,6 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
     * Grouped Items - pre configured layouts of elements, with eiter testimonials, panels or promos inside each field.
     * Hero Banner - a full screen width hero image, with optional text overlay box including title and tagline. Ideal for graphically anchoring your website sections.
 
-== Arbitrary section ==
+== Development / Contributing ==
 
 Contributions to development of this work are welcome at [our GitHub repository](https://github.com/NHSLeadership/nhsblocks "NHSBlocks GitHub repo").

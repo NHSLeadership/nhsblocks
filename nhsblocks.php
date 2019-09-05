@@ -90,6 +90,15 @@ function nhsblocks_register_blocks() {
 			'editor_script' => 'nhsblocks-editor-script',                    // Calls registered script above. Registering one brings all. One block to rule them all.
 		)
 	);
+	register_block_type('nhsblocks/dashboardnav');
+	register_block_type('nhsblocks/dodont');
+	register_block_type('nhsblocks/nhsbutton');
+	register_block_type('nhsblocks/reveal1');
+	register_block_type('nhsblocks/promo1');
+	register_block_type('nhsblocks/quote1');
+	register_block_type('nhsblocks/card1');
+	register_block_type('nhsblocks/rowgroup');
+	register_block_type('nhsblocks/heroblock');
 
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		/**

@@ -286,7 +286,7 @@ const ITEM_OPTIONS = [
     },
 ];
 
-registerBlockType("nhsblock/rowgroup", {
+registerBlockType("nhsblocks/rowgroup", {
     title: __("Grouped Items", "nhsblocks"),
     category: "nhsblocks",
     icon: 'layout',
@@ -339,7 +339,7 @@ registerBlockType("nhsblock/rowgroup", {
 registerBlockType("nhsblocks/onehalf", {
     title: __("One Half Width", "nhsblocks"),
     category: "nhsblocks",
-    parent: ["nhsblock/rowgroup"],
+    parent: ["nhsblocks/rowgroup"],
     attributes: {
         template: {
             type: "array"
@@ -384,7 +384,7 @@ registerBlockType("nhsblocks/onehalf", {
 registerBlockType("nhsblocks/onethird", {
     title: __("One Third Width", "nhsblocks"),
     category: "nhsblocks",
-    parent: ["nhsblock/rowgroup"],
+    parent: ["nhsblocks/rowgroup"],
     attributes: {
         template: {
             type: "array"
@@ -430,7 +430,7 @@ registerBlockType("nhsblocks/onethird", {
 registerBlockType("nhsblocks/onequarter", {
     title: __("One Quarter Width", "nhsblocks"),
     category: "nhsblocks",
-    parent: ["nhsblock/rowgroup"],
+    parent: ["nhsblocks/rowgroup"],
     attributes: {
         template: {
             type: "array"
@@ -476,7 +476,7 @@ registerBlockType("nhsblocks/onequarter", {
 registerBlockType("nhsblocks/twothirds", {
     title: __("Two Thirds Width", "nhsblocks"),
     category: "nhsblocks",
-    parent: ["nhsblock/rowgroup"],
+    parent: ["nhsblocks/rowgroup"],
     attributes: {
         template: {
             type: "array"
@@ -522,7 +522,7 @@ registerBlockType("nhsblocks/twothirds", {
 registerBlockType("nhsblocks/threequarters", {
     title: __("Three Quarter Width", "nhsblocks"),
     category: "nhsblocks",
-    parent: ["nhsblock/rowgroup"],
+    parent: ["nhsblocks/rowgroup"],
     attributes: {
         template: {
             type: "array"

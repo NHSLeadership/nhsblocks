@@ -283,7 +283,7 @@ const GRID_OPTIONS = [
     },
 ];
 
-registerBlockType("nhsblock/dashboardnav", {
+registerBlockType("nhsblocks/dashboardnav", {
     title: __("Dashboard Navigation", "nhsblocks"),
     category: "nhsblocks",
     icon: 'tagcloud',
