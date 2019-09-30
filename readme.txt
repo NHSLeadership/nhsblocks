@@ -45,6 +45,9 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 10. Hero - a full screen width block, with optional single colour or image background and optional block of text to anchor the page and set clear purpose
 
 == Changelog ==
+= 1.0.2 =
+* Moved css and js from theme in to the blocks to enable standalone functionality
+* Added css to avoid conflicts with LearnDash (Conflicts triggered by Gutenberg plugin, but not in our gift)
 
 = 1.0.1 =
 * Added Base language (English) and ensured full internationalisation. Translations welcome :)
