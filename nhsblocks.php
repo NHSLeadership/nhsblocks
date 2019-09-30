@@ -87,18 +87,19 @@ function nhsblocks_register_blocks() {
 	register_block_type(
 		'nhsblocks/panel1',
 		array(
-			'editor_script' => 'nhsblocks-editor-script',                    // Calls registered script above. Registering one brings all. One block to rule them all.
+			'editor_script' => 'nhsblocks-editor-script',
+			// Calls registered script above. Registering one brings all. One block to rule them all.
 		)
 	);
-	register_block_type('nhsblocks/dashboardnav');
-	register_block_type('nhsblocks/dodont');
-	register_block_type('nhsblocks/nhsbutton');
-	register_block_type('nhsblocks/reveal1');
-	register_block_type('nhsblocks/promo1');
-	register_block_type('nhsblocks/quote1');
-	register_block_type('nhsblocks/card1');
-	register_block_type('nhsblocks/rowgroup');
-	register_block_type('nhsblocks/heroblock');
+	register_block_type( 'nhsblocks/dashboardnav' );
+	register_block_type( 'nhsblocks/dodont' );
+	register_block_type( 'nhsblocks/nhsbutton' );
+	register_block_type( 'nhsblocks/reveal1' );
+	register_block_type( 'nhsblocks/promo1' );
+	register_block_type( 'nhsblocks/quote1' );
+	register_block_type( 'nhsblocks/card1' );
+	register_block_type( 'nhsblocks/rowgroup' );
+	register_block_type( 'nhsblocks/heroblock' );
 
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		/**
@@ -137,7 +138,7 @@ function nhsblocks_block_classes( $attributes ) {
  * Queues up the gutenberg editor style
  */
 function nhsblocks_gutenberg_editor_styles() {
-	wp_enqueue_style( 'nhsl-block-editor-styles', plugins_url( 'style-gutenburg.css', __FILE__ ), false, '1.0', 'all' );
+	wp_enqueue_style( 'nhsl-block-editor-styles', plugins_url( 'style-gutenburg.css', __FILE__ ), false, '1.1', 'all' );
 }
 
 add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' ); // Pulls the enqueued file in to standard wp process.
@@ -166,7 +167,7 @@ add_action( 'wp_enqueue_scripts', 'nhsblocks_enqueue_style' );
  * @since 1.0.0
  */
 function nhsblocks_activate() {
-	if ( current_user_can( 'activate_plugins' ) && ! is_plugin_active('gutenberg/gutenberg.php') ) {
+	if ( current_user_can( 'activate_plugins' ) && ! is_plugin_active( 'gutenberg/gutenberg.php' ) ) {
 		// Deactivate the plugin.
 		deactivate_plugins( plugin_basename( __FILE__ ) );
 		// Throw an error in the WordPress admin console.
@@ -174,4 +175,24 @@ function nhsblocks_activate() {
 		die( $error_message ); // WPCS: XSS ok.
 	}
 }
+
 register_activation_hook( __FILE__, 'nhsblocks_activate' );
+
+function nhsblocks_hero_footer() {
+	echo "<script>
+	    const heroBlock = document.querySelector('.wp-block-nhsblocks-heroblock');
+	    if ( ( heroBlock ) ) { 
+		    if ( heroBlock.matches('.wp-block-nhsblocks-heroblock') === true ) {
+			    const mainContent = document.querySelector( '#maincontent' );
+			    const wholeDoc = document.querySelector( 'body' );
+			    const breadCrumb = document.querySelector( '.nhsuk-breadcrumb' );
+			    mainContent.prepend( heroBlock );
+			    wholeDoc.removeChild( breadCrumb );
+			    mainContent.style.paddingTop = '0';
+			    heroBlock.style.marginBottom = '70px';
+		    }
+	    }
+	</script>";
+}
+
+add_action( 'wp_footer', 'nhsblocks_hero_footer' );

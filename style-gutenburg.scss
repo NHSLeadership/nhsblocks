@@ -214,3 +214,18 @@ div[data-type="nhsblocks/heroblock"] {
     }
   }
 }
+/*
+Learn dash admin panel mitigation
+ */
+.ld-header-has-tabs .edit-post-layout .edit-post-header {
+  margin-right: 250px !important;
+  left: 0 !important;
+  top: 0 !important;
+  position: inherit !important;
+  width: inherit !important;
+}
+@media (max-width: 782px) {
+  .ld-header-has-tabs .edit-post-layout .edit-post-header {
+    margin-right: 0 !important;
+  }
+}
