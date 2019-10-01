@@ -217,15 +217,33 @@ div[data-type="nhsblocks/heroblock"] {
 /*
 Learn dash admin panel mitigation
  */
-.ld-header-has-tabs .edit-post-layout .edit-post-header {
-  margin-right: 250px !important;
-  left: 0 !important;
-  top: 0 !important;
-  position: inherit !important;
-  width: inherit !important;
-}
-@media (max-width: 782px) {
-  .ld-header-has-tabs .edit-post-layout .edit-post-header {
-    margin-right: 0 !important;
+#sfwd-header {
+  .ld-global-header {
+    position: inherit;
+    h1 {
+      font-size: 1.5rem;
+      margin-block-start: 0.5rem;
+      margin-block-end: 0.5rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.6rem;
+    }
   }
 }
+
+.ld-tabs-ready .ld-tab-buttons a.button, .ld-tabs-ready .ld-tab-buttons button.button {
+  margin-top: 0;
+}
+
+.ld-header-has-tabs {
+  .edit-post-layout {
+    .edit-post-sidebar {
+      top: 225px;
+    }
+    .edit-post-header {
+      top: 170px;
+      padding: 0 7px;
+    }
+  }
+}
+
+/* end LearnDash mitigation routine */
