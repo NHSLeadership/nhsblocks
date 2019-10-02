@@ -187,7 +187,9 @@ function nhsblocks_hero_footer() {
 			    const wholeDoc = document.querySelector( 'body' );
 			    const breadCrumb = document.querySelector( '.nhsuk-breadcrumb' );
 			    mainContent.prepend( heroBlock );
-			    wholeDoc.removeChild( breadCrumb );
+			    if ( breadCrumb ) { 
+			    	wholeDoc.removeChild( breadCrumb );
+			    }
 			    mainContent.style.paddingTop = '0';
 			    heroBlock.style.marginBottom = '70px';
 		    }
