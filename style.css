@@ -3403,62 +3403,62 @@ b {
  *
  * 1. <a> needs to be white because the background colour is black.
  */
-.nhsuk-care-card--urgent .nhsuk-care-card__heading-container, .is-style-urgent .nhsuk-care-card__heading-container {
+.nhsuk-care-card--urgent .nhsuk-care-card__heading-container, .nhsuk-care-card.is-style-urgent .nhsuk-care-card__heading-container {
   background-color: #da291c;
   color: #ffffff;
 }
 
 @media print {
-  .nhsuk-care-card--urgent, .is-style-urgent {
+  .nhsuk-care-card--urgent, .nhsuk-care-card.is-style-urgent {
     border: 6px solid #212b32;
     color: #212b32;
     page-break-inside: avoid;
   }
 }
 
-.nhsuk-care-card--urgent .nhsuk-care-card__arrow:before, .is-style-urgent .nhsuk-care-card__arrow:before, .nhsuk-care-card--urgent .nhsuk-care-card__arrow:after, .is-style-urgent .nhsuk-care-card__arrow:after {
+.nhsuk-care-card--urgent .nhsuk-care-card__arrow:before, .nhsuk-care-card.is-style-urgent .nhsuk-care-card__arrow:before, .nhsuk-care-card--urgent .nhsuk-care-card__arrow:after, .nhsuk-care-card.is-style-urgent .nhsuk-care-card__arrow:after {
   border-color: #da291c;
 }
 
-.nhsuk-care-card--immediate .nhsuk-care-card__heading-container, .is-style-immediate .nhsuk-care-card__heading-container {
+.nhsuk-care-card--immediate .nhsuk-care-card__heading-container, .nhsuk-care-card.is-style-immediate .nhsuk-care-card__heading-container {
   background-color: #da291c;
   color: #ffffff;
 }
 
 @media print {
-  .nhsuk-care-card--immediate, .is-style-immediate {
+  .nhsuk-care-card--immediate, .nhsuk-care-card.is-style-immediate {
     border: 8px solid #212b32;
     color: #212b32;
     page-break-inside: avoid;
   }
 }
 
-.nhsuk-care-card--immediate .nhsuk-care-card__arrow:before, .is-style-immediate .nhsuk-care-card__arrow:before, .nhsuk-care-card--immediate .nhsuk-care-card__arrow:after, .is-style-immediate .nhsuk-care-card__arrow:after {
+.nhsuk-care-card--immediate .nhsuk-care-card__arrow:before, .nhsuk-care-card.is-style-immediate .nhsuk-care-card__arrow:before, .nhsuk-care-card--immediate .nhsuk-care-card__arrow:after, .nhsuk-care-card.is-style-immediate .nhsuk-care-card__arrow:after {
   border-color: #da291c;
 }
 
-.nhsuk-care-card--immediate .nhsuk-care-card__content, .is-style-immediate .nhsuk-care-card__content {
+.nhsuk-care-card--immediate .nhsuk-care-card__content, .nhsuk-care-card.is-style-immediate .nhsuk-care-card__content {
   background-color: #212b32;
   color: #ffffff;
 }
 
-.nhsuk-care-card--immediate .nhsuk-care-card__content a, .is-style-immediate .nhsuk-care-card__content a {
+.nhsuk-care-card--immediate .nhsuk-care-card__content a, .nhsuk-care-card.is-style-immediate .nhsuk-care-card__content a {
   color: #ffffff;
   /* [1] */
 }
 
-.nhsuk-care-card--immediate .nhsuk-care-card__content a:hover, .is-style-immediate .nhsuk-care-card__content a:hover, .nhsuk-care-card--immediate .nhsuk-care-card__content a:focus, .is-style-immediate .nhsuk-care-card__content a:focus {
+.nhsuk-care-card--immediate .nhsuk-care-card__content a:hover, .nhsuk-care-card.is-style-immediate .nhsuk-care-card__content a:hover, .nhsuk-care-card--immediate .nhsuk-care-card__content a:focus, .nhsuk-care-card.is-style-immediate .nhsuk-care-card__content a:focus {
   color: #212b32;
   /* [1] */
 }
 
-.nhsuk-care-card--immediate .nhsuk-details, .is-style-immediate .nhsuk-details,
+.nhsuk-care-card--immediate .nhsuk-details, .nhsuk-care-card.is-style-immediate .nhsuk-details,
 .nhsuk-care-card--immediate .nhsuk-details__summary,
-.is-style-immediate .nhsuk-details__summary {
+.nhsuk-care-card.is-style-immediate .nhsuk-details__summary {
   color: #ffffff;
 }
 
-.nhsuk-care-card--immediate .nhsuk-details__summary:hover, .is-style-immediate .nhsuk-details__summary:hover, .nhsuk-care-card--immediate .nhsuk-details__summary:focus, .is-style-immediate .nhsuk-details__summary:focus {
+.nhsuk-care-card--immediate .nhsuk-details__summary:hover, .nhsuk-care-card.is-style-immediate .nhsuk-details__summary:hover, .nhsuk-care-card--immediate .nhsuk-details__summary:focus, .nhsuk-care-card.is-style-immediate .nhsuk-details__summary:focus {
   color: #212b32;
 }
 
@@ -6479,11 +6479,11 @@ section {
 }
 
 /*care card extension*/
-.is-style-urgent {
+.nhsuk-care-card.is-style-urgent {
   /* urgent infocard*/
 }
 
-.is-style-immediate {
+.nhsuk-care-card.is-style-immediate {
   /* urgent infocard*/
 }
 

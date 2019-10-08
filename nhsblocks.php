@@ -7,7 +7,7 @@
  * License: GPL v3
  * Requires at least: 5.0
  * Tested up to: 5.2.3
- * Version: 1.0.3
+ * Version: 1.0.4
  *
  * @package nhsblocks
  */
@@ -186,12 +186,14 @@ function nhsblocks_hero_footer() {
 			    const mainContent = document.querySelector( '#maincontent' );
 			    const wholeDoc = document.querySelector( 'body' );
 			    const breadCrumb = document.querySelector( '.nhsuk-breadcrumb' );
+			    const articleTitle = document.querySelector( '.entry-header' );
 			    mainContent.prepend( heroBlock );
+			    articleTitle.style.display = 'none';
+			    mainContent.style.paddingTop = '0';
+			    heroBlock.style.marginBottom = '70px';
 			    if ( breadCrumb ) { 
 			    	wholeDoc.removeChild( breadCrumb );
 			    }
-			    mainContent.style.paddingTop = '0';
-			    heroBlock.style.marginBottom = '70px';
 		    }
 	    }
 	</script>";
