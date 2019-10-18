@@ -147,7 +147,7 @@ add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' )
  * Queues up the blocks styling for front end
  */
 function nhsblocks_register_style() {
-	wp_register_style( 'nhsblocks', plugins_url( 'style.css', __FILE__ ) );
+	wp_register_style( 'nhsblocks', plugins_url( 'style.min.css', __FILE__ ) );
 }
 
 add_action( 'init', 'nhsblocks_register_style' ); // Pulls front end styling to standard wp process.

@@ -4,16 +4,16 @@
 // @version 1.0 22nd July 2019
 */
 /* button extension*/
-.is-style-secondary { /* secondary button style*/
+.nhsuk-button.is-style-secondary { /* secondary button style*/
   @extend .nhsuk-button--secondary;
 }
 
-.is-style-reverse { /* reverse button style*/
+.nhsuk-button.is-style-reverse { /* reverse button style*/
   @extend .nhsuk-button--reverse;
 }
 
 /* reveal extension*/
-.is-style-expander { /* expander reveal style*/
+.nhsuk-button.is-style-expander { /* expander reveal style*/
   @extend .nhsuk-expander;
 }
 
@@ -33,11 +33,11 @@
   }
 }
 /*panel extension*/
-.is-style-panel-grey {
+.nhsuk-panel.is-style-panel-grey {
   @extend .nhsuk-panel--grey;
 }
 
-.is-style-panel-with-label {
+.nhsuk-panel.is-style-panel-with-label {
   @extend .nhsuk-panel-with-label;
 
   h3, h3 .rich-text {
@@ -46,7 +46,7 @@
 }
 
 /* promo extension */
-.is-style-promo-small {
+.nhsuk-promo.is-style-promo-small {
   @extend .nhsuk-promo--small;
 }
 

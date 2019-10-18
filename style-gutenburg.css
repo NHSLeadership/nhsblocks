@@ -3336,39 +3336,39 @@ b {
 /**
  * Button variations
  */
-.nhsuk-button--secondary, .is-style-secondary {
+.nhsuk-button--secondary, .nhsuk-button.is-style-secondary, .is-style-secondary.wp-block-button__link, .is-style-secondary.wp-block-file__button, .wp-block-file a.is-style-secondary.wp-block-file__button {
   background-color: #425563;
   box-shadow: 0 4px 0 #232e35;
 }
 
-.nhsuk-button--secondary:hover, .is-style-secondary:hover, .nhsuk-button--secondary:focus, .is-style-secondary:focus {
+.nhsuk-button--secondary:hover, .nhsuk-button.is-style-secondary:hover, .is-style-secondary.wp-block-button__link:hover, .is-style-secondary.wp-block-file__button:hover, .wp-block-file a.is-style-secondary.wp-block-file__button:hover, .nhsuk-button--secondary:focus, .nhsuk-button.is-style-secondary:focus, .is-style-secondary.wp-block-button__link:focus, .is-style-secondary.wp-block-file__button:focus, .wp-block-file a.is-style-secondary.wp-block-file__button:focus {
   background-color: #384854;
 }
 
-.nhsuk-button--secondary.nhsuk-button--disabled, .nhsuk-button--disabled.is-style-secondary {
+.nhsuk-button--secondary.nhsuk-button--disabled, .nhsuk-button--disabled.nhsuk-button.is-style-secondary, .nhsuk-button--disabled.is-style-secondary.wp-block-button__link, .nhsuk-button--disabled.is-style-secondary.wp-block-file__button, .wp-block-file a.nhsuk-button--disabled.is-style-secondary.wp-block-file__button:active, .wp-block-file a.nhsuk-button--disabled.is-style-secondary.wp-block-file__button:focus, .wp-block-file a.nhsuk-button--disabled.is-style-secondary.wp-block-file__button:hover, .wp-block-file a.nhsuk-button--disabled.is-style-secondary.wp-block-file__button:visited {
   background-color: #425563;
 }
 
-.nhsuk-button--reverse, .is-style-reverse {
+.nhsuk-button--reverse, .nhsuk-button.is-style-reverse, .is-style-reverse.wp-block-button__link, .is-style-reverse.wp-block-file__button, .wp-block-file a.is-style-reverse.wp-block-file__button {
   background-color: #ffffff;
   box-shadow: 0 4px 0 #212b32;
   color: #212b32;
 }
 
-.nhsuk-button--reverse:hover, .is-style-reverse:hover, .nhsuk-button--reverse:focus, .is-style-reverse:focus {
+.nhsuk-button--reverse:hover, .nhsuk-button.is-style-reverse:hover, .is-style-reverse.wp-block-button__link:hover, .is-style-reverse.wp-block-file__button:hover, .wp-block-file a.is-style-reverse.wp-block-file__button:hover, .nhsuk-button--reverse:focus, .nhsuk-button.is-style-reverse:focus, .is-style-reverse.wp-block-button__link:focus, .is-style-reverse.wp-block-file__button:focus, .wp-block-file a.is-style-reverse.wp-block-file__button:focus {
   background-color: #f2f2f2;
   color: #212b32;
 }
 
-.nhsuk-button--reverse:link, .is-style-reverse:link {
+.nhsuk-button--reverse:link, .nhsuk-button.is-style-reverse:link, .is-style-reverse.wp-block-button__link:link, .is-style-reverse.wp-block-file__button:link, .wp-block-file a.is-style-reverse.wp-block-file__button:link:active, .wp-block-file a.is-style-reverse.wp-block-file__button:link:focus, .wp-block-file a.is-style-reverse.wp-block-file__button:link:hover, .wp-block-file a.is-style-reverse.wp-block-file__button:link:visited {
   color: #212b32;
 }
 
-.nhsuk-button--reverse.nhsuk-button--disabled, .nhsuk-button--disabled.is-style-reverse {
+.nhsuk-button--reverse.nhsuk-button--disabled, .nhsuk-button--disabled.nhsuk-button.is-style-reverse, .nhsuk-button--disabled.is-style-reverse.wp-block-button__link, .nhsuk-button--disabled.is-style-reverse.wp-block-file__button, .wp-block-file a.nhsuk-button--disabled.is-style-reverse.wp-block-file__button:active, .wp-block-file a.nhsuk-button--disabled.is-style-reverse.wp-block-file__button:focus, .wp-block-file a.nhsuk-button--disabled.is-style-reverse.wp-block-file__button:hover, .wp-block-file a.nhsuk-button--disabled.is-style-reverse.wp-block-file__button:visited {
   background-color: #ffffff;
 }
 
-.nhsuk-button--reverse.nhsuk-button--disabled:focus, .nhsuk-button--disabled.is-style-reverse:focus {
+.nhsuk-button--reverse.nhsuk-button--disabled:focus, .nhsuk-button--disabled.nhsuk-button.is-style-reverse:focus, .nhsuk-button--disabled.is-style-reverse.wp-block-button__link:focus, .nhsuk-button--disabled.is-style-reverse.wp-block-file__button:focus {
   background-color: #ffffff;
 }
 
@@ -3428,56 +3428,80 @@ b {
   top: 0;
 }
 
-.nhsuk-button--secondary[disabled="disabled"], .is-style-secondary[disabled="disabled"],
+.nhsuk-button--secondary[disabled="disabled"], .nhsuk-button.is-style-secondary[disabled="disabled"], .is-style-secondary.wp-block-button__link[disabled="disabled"], .is-style-secondary.wp-block-file__button[disabled="disabled"], .wp-block-file a.is-style-secondary.wp-block-file__button[disabled="disabled"]:active, .wp-block-file a.is-style-secondary.wp-block-file__button[disabled="disabled"]:focus, .wp-block-file a.is-style-secondary.wp-block-file__button[disabled="disabled"]:hover, .wp-block-file a.is-style-secondary.wp-block-file__button[disabled="disabled"]:visited,
 .nhsuk-button--secondary[disabled],
-.is-style-secondary[disabled] {
+.nhsuk-button.is-style-secondary[disabled],
+.is-style-secondary.wp-block-button__link[disabled],
+.is-style-secondary.wp-block-file__button[disabled],
+.wp-block-file a.is-style-secondary.wp-block-file__button[disabled]:active,
+.wp-block-file a.is-style-secondary.wp-block-file__button[disabled]:focus,
+.wp-block-file a.is-style-secondary.wp-block-file__button[disabled]:hover,
+.wp-block-file a.is-style-secondary.wp-block-file__button[disabled]:visited {
   background-color: #425563;
   opacity: 0.5;
 }
 
-.nhsuk-button--secondary[disabled="disabled"]:hover, .is-style-secondary[disabled="disabled"]:hover,
+.nhsuk-button--secondary[disabled="disabled"]:hover, .nhsuk-button.is-style-secondary[disabled="disabled"]:hover, .is-style-secondary.wp-block-button__link[disabled="disabled"]:hover, .is-style-secondary.wp-block-file__button[disabled="disabled"]:hover,
 .nhsuk-button--secondary[disabled]:hover,
-.is-style-secondary[disabled]:hover {
+.nhsuk-button.is-style-secondary[disabled]:hover,
+.is-style-secondary.wp-block-button__link[disabled]:hover,
+.is-style-secondary.wp-block-file__button[disabled]:hover {
   background-color: #425563;
   cursor: default;
 }
 
-.nhsuk-button--secondary[disabled="disabled"]:focus, .is-style-secondary[disabled="disabled"]:focus,
+.nhsuk-button--secondary[disabled="disabled"]:focus, .nhsuk-button.is-style-secondary[disabled="disabled"]:focus, .is-style-secondary.wp-block-button__link[disabled="disabled"]:focus, .is-style-secondary.wp-block-file__button[disabled="disabled"]:focus,
 .nhsuk-button--secondary[disabled]:focus,
-.is-style-secondary[disabled]:focus {
+.nhsuk-button.is-style-secondary[disabled]:focus,
+.is-style-secondary.wp-block-button__link[disabled]:focus,
+.is-style-secondary.wp-block-file__button[disabled]:focus {
   outline: none;
 }
 
-.nhsuk-button--secondary[disabled="disabled"]:active, .is-style-secondary[disabled="disabled"]:active,
+.nhsuk-button--secondary[disabled="disabled"]:active, .nhsuk-button.is-style-secondary[disabled="disabled"]:active, .is-style-secondary.wp-block-button__link[disabled="disabled"]:active, .is-style-secondary.wp-block-file__button[disabled="disabled"]:active,
 .nhsuk-button--secondary[disabled]:active,
-.is-style-secondary[disabled]:active {
+.nhsuk-button.is-style-secondary[disabled]:active,
+.is-style-secondary.wp-block-button__link[disabled]:active,
+.is-style-secondary.wp-block-file__button[disabled]:active {
   box-shadow: 0 4px 0 #232e35;
   top: 0;
 }
 
-.nhsuk-button--reverse[disabled="disabled"], .is-style-reverse[disabled="disabled"],
+.nhsuk-button--reverse[disabled="disabled"], .nhsuk-button.is-style-reverse[disabled="disabled"], .is-style-reverse.wp-block-button__link[disabled="disabled"], .is-style-reverse.wp-block-file__button[disabled="disabled"], .wp-block-file a.is-style-reverse.wp-block-file__button[disabled="disabled"]:active, .wp-block-file a.is-style-reverse.wp-block-file__button[disabled="disabled"]:focus, .wp-block-file a.is-style-reverse.wp-block-file__button[disabled="disabled"]:hover, .wp-block-file a.is-style-reverse.wp-block-file__button[disabled="disabled"]:visited,
 .nhsuk-button--reverse[disabled],
-.is-style-reverse[disabled] {
+.nhsuk-button.is-style-reverse[disabled],
+.is-style-reverse.wp-block-button__link[disabled],
+.is-style-reverse.wp-block-file__button[disabled],
+.wp-block-file a.is-style-reverse.wp-block-file__button[disabled]:active,
+.wp-block-file a.is-style-reverse.wp-block-file__button[disabled]:focus,
+.wp-block-file a.is-style-reverse.wp-block-file__button[disabled]:hover,
+.wp-block-file a.is-style-reverse.wp-block-file__button[disabled]:visited {
   background-color: #ffffff;
   opacity: 0.5;
 }
 
-.nhsuk-button--reverse[disabled="disabled"]:hover, .is-style-reverse[disabled="disabled"]:hover,
+.nhsuk-button--reverse[disabled="disabled"]:hover, .nhsuk-button.is-style-reverse[disabled="disabled"]:hover, .is-style-reverse.wp-block-button__link[disabled="disabled"]:hover, .is-style-reverse.wp-block-file__button[disabled="disabled"]:hover,
 .nhsuk-button--reverse[disabled]:hover,
-.is-style-reverse[disabled]:hover {
+.nhsuk-button.is-style-reverse[disabled]:hover,
+.is-style-reverse.wp-block-button__link[disabled]:hover,
+.is-style-reverse.wp-block-file__button[disabled]:hover {
   background-color: #ffffff;
   cursor: default;
 }
 
-.nhsuk-button--reverse[disabled="disabled"]:focus, .is-style-reverse[disabled="disabled"]:focus,
+.nhsuk-button--reverse[disabled="disabled"]:focus, .nhsuk-button.is-style-reverse[disabled="disabled"]:focus, .is-style-reverse.wp-block-button__link[disabled="disabled"]:focus, .is-style-reverse.wp-block-file__button[disabled="disabled"]:focus,
 .nhsuk-button--reverse[disabled]:focus,
-.is-style-reverse[disabled]:focus {
+.nhsuk-button.is-style-reverse[disabled]:focus,
+.is-style-reverse.wp-block-button__link[disabled]:focus,
+.is-style-reverse.wp-block-file__button[disabled]:focus {
   outline: none;
 }
 
-.nhsuk-button--reverse[disabled="disabled"]:active, .is-style-reverse[disabled="disabled"]:active,
+.nhsuk-button--reverse[disabled="disabled"]:active, .nhsuk-button.is-style-reverse[disabled="disabled"]:active, .is-style-reverse.wp-block-button__link[disabled="disabled"]:active, .is-style-reverse.wp-block-file__button[disabled="disabled"]:active,
 .nhsuk-button--reverse[disabled]:active,
-.is-style-reverse[disabled]:active {
+.nhsuk-button.is-style-reverse[disabled]:active,
+.is-style-reverse.wp-block-button__link[disabled]:active,
+.is-style-reverse.wp-block-file__button[disabled]:active {
   box-shadow: 0 4px 0 #212b32;
   top: 0;
 }
@@ -4099,40 +4123,40 @@ b {
  * 4. When a group of details is used reduce the
  *    margin between them so they sit together.
  */
-.nhsuk-expander, .is-style-expander {
+.nhsuk-expander, .nhsuk-button.is-style-expander, .is-style-expander.wp-block-button__link, .is-style-expander.wp-block-file__button, .wp-block-file a.is-style-expander.wp-block-file__button {
   background-color: #ffffff;
 }
 
-.nhsuk-expander .nhsuk-details__summary, .is-style-expander .nhsuk-details__summary {
+.nhsuk-expander .nhsuk-details__summary, .nhsuk-button.is-style-expander .nhsuk-details__summary, .is-style-expander.wp-block-button__link .nhsuk-details__summary, .is-style-expander.wp-block-file__button .nhsuk-details__summary {
   padding: 16px;
   background-color: #ffffff;
   display: block;
 }
 
 @media (min-width: 40.0625em) {
-  .nhsuk-expander .nhsuk-details__summary, .is-style-expander .nhsuk-details__summary {
+  .nhsuk-expander .nhsuk-details__summary, .nhsuk-button.is-style-expander .nhsuk-details__summary, .is-style-expander.wp-block-button__link .nhsuk-details__summary, .is-style-expander.wp-block-file__button .nhsuk-details__summary {
     padding: 24px;
   }
 }
 
-.nhsuk-expander .nhsuk-details__summary:before, .is-style-expander .nhsuk-details__summary:before {
+.nhsuk-expander .nhsuk-details__summary:before, .nhsuk-button.is-style-expander .nhsuk-details__summary:before, .is-style-expander.wp-block-button__link .nhsuk-details__summary:before, .is-style-expander.wp-block-file__button .nhsuk-details__summary:before {
   display: none !important;
 }
 
-.nhsuk-expander .nhsuk-details__summary:focus, .is-style-expander .nhsuk-details__summary:focus {
+.nhsuk-expander .nhsuk-details__summary:focus, .nhsuk-button.is-style-expander .nhsuk-details__summary:focus, .is-style-expander.wp-block-button__link .nhsuk-details__summary:focus, .is-style-expander.wp-block-file__button .nhsuk-details__summary:focus {
   box-shadow: 0 0 0 4px #ffb81C;
 }
 
-.nhsuk-expander .nhsuk-details__summary:hover, .is-style-expander .nhsuk-details__summary:hover {
+.nhsuk-expander .nhsuk-details__summary:hover, .nhsuk-button.is-style-expander .nhsuk-details__summary:hover, .is-style-expander.wp-block-button__link .nhsuk-details__summary:hover, .is-style-expander.wp-block-file__button .nhsuk-details__summary:hover {
   box-shadow: 0 0 0 4px #ffcd60;
 }
 
-.nhsuk-expander .nhsuk-details__summary:hover, .is-style-expander .nhsuk-details__summary:hover, .nhsuk-expander .nhsuk-details__summary:active, .is-style-expander .nhsuk-details__summary:active, .nhsuk-expander .nhsuk-details__summary:focus, .is-style-expander .nhsuk-details__summary:focus {
+.nhsuk-expander .nhsuk-details__summary:hover, .nhsuk-button.is-style-expander .nhsuk-details__summary:hover, .is-style-expander.wp-block-button__link .nhsuk-details__summary:hover, .is-style-expander.wp-block-file__button .nhsuk-details__summary:hover, .nhsuk-expander .nhsuk-details__summary:active, .nhsuk-button.is-style-expander .nhsuk-details__summary:active, .is-style-expander.wp-block-button__link .nhsuk-details__summary:active, .is-style-expander.wp-block-file__button .nhsuk-details__summary:active, .nhsuk-expander .nhsuk-details__summary:focus, .nhsuk-button.is-style-expander .nhsuk-details__summary:focus, .is-style-expander.wp-block-button__link .nhsuk-details__summary:focus, .is-style-expander.wp-block-file__button .nhsuk-details__summary:focus {
   /* [2] */
   outline: 0;
 }
 
-.nhsuk-expander .nhsuk-details__summary-text, .is-style-expander .nhsuk-details__summary-text {
+.nhsuk-expander .nhsuk-details__summary-text, .nhsuk-button.is-style-expander .nhsuk-details__summary-text, .is-style-expander.wp-block-button__link .nhsuk-details__summary-text, .is-style-expander.wp-block-file__button .nhsuk-details__summary-text {
   background: url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__plus' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23005eb8'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M12 8v8M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat;
   background-size: 32px;
   color: #005eb8;
@@ -4142,7 +4166,7 @@ b {
   position: relative;
 }
 
-.nhsuk-expander .nhsuk-details__text, .is-style-expander .nhsuk-details__text {
+.nhsuk-expander .nhsuk-details__text, .nhsuk-button.is-style-expander .nhsuk-details__text, .is-style-expander.wp-block-button__link .nhsuk-details__text, .is-style-expander.wp-block-file__button .nhsuk-details__text {
   padding: 16px;
   border-left: 0;
   margin-left: 0;
@@ -4150,16 +4174,16 @@ b {
 }
 
 @media (min-width: 40.0625em) {
-  .nhsuk-expander .nhsuk-details__text, .is-style-expander .nhsuk-details__text {
+  .nhsuk-expander .nhsuk-details__text, .nhsuk-button.is-style-expander .nhsuk-details__text, .is-style-expander.wp-block-button__link .nhsuk-details__text, .is-style-expander.wp-block-file__button .nhsuk-details__text {
     padding: 24px;
   }
 }
 
-.nhsuk-expander[open] .nhsuk-details__summary, .is-style-expander[open] .nhsuk-details__summary {
+.nhsuk-expander[open] .nhsuk-details__summary, .nhsuk-button.is-style-expander[open] .nhsuk-details__summary, .is-style-expander.wp-block-button__link[open] .nhsuk-details__summary, .is-style-expander.wp-block-file__button[open] .nhsuk-details__summary {
   border-bottom: 1px solid #f0f4f5;
 }
 
-.nhsuk-expander[open] .nhsuk-details__summary-text, .is-style-expander[open] .nhsuk-details__summary-text {
+.nhsuk-expander[open] .nhsuk-details__summary-text, .nhsuk-button.is-style-expander[open] .nhsuk-details__summary-text, .is-style-expander.wp-block-button__link[open] .nhsuk-details__summary-text, .is-style-expander.wp-block-file__button[open] .nhsuk-details__summary-text {
   background: url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__minus' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23005eb8'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat;
   /* [3] */
   background-size: 32px;
@@ -5113,10 +5137,8 @@ b {
    * 4. Custom height and width of svg icons
    * 5. Custom spacing to position the search icon
    * 6. Drop shadow on search suggestions dopdown box, custom spread and blur
-   * 7. Needs !important because autocomplete js adds inline styling so need to
-   *    override
-   * 8. Z-index to bring the dropdown to the front
-   * 9. No current spacing at 12px so using this value
+   * 7. Z-index to bring the dropdown to the front
+   * 8. No current spacing at 12px so using this value
 */
 .autocomplete-container {
   display: inline-block;
@@ -5127,10 +5149,6 @@ b {
     display: inline;
     width: 100%;
   }
-}
-
-.autocomplete__wrapper {
-  position: relative;
 }
 
 @media (max-width: 40.0525em) {
@@ -5175,7 +5193,7 @@ b {
     height: 40px;
     /* [3] */
     padding: 0 12px;
-    /* [9] */
+    /* [8] */
     width: 235px;
     /* [3] */
   }
@@ -5210,8 +5228,9 @@ b {
   padding: 16px;
   position: absolute;
   top: 100%;
+  width: 100%;
   z-index: 1;
-  /* [8] */
+  /* [7] */
 }
 
 @media (max-width: 40.0525em) {
@@ -5222,8 +5241,6 @@ b {
     padding-left: 0;
     padding-right: 0;
     position: relative;
-    top: auto !important;
-    width: 100% !important;
   }
 }
 
@@ -5241,7 +5258,7 @@ b {
   cursor: pointer;
   font-size: 16px;
   padding-bottom: 12px;
-  /* [9] */
+  /* [8] */
   text-align: left;
   text-decoration: underline;
 }
@@ -7353,13 +7370,13 @@ b {
 
 /* Panel colour variant
    ========================================================================== */
-.nhsuk-panel--grey, .is-style-panel-grey {
+.nhsuk-panel--grey, .nhsuk-panel.is-style-panel-grey {
   background-color: #f0f4f5;
 }
 
 /* Panel with label
    ========================================================================== */
-.nhsuk-panel-with-label, .is-style-panel-with-label {
+.nhsuk-panel-with-label, .nhsuk-panel.is-style-panel-with-label {
   margin-bottom: 40px;
   margin-top: 40px;
   padding: 24px;
@@ -7368,40 +7385,40 @@ b {
   padding-top: 0 !important;
 }
 
-.nhsuk-panel-with-label > *:first-child, .is-style-panel-with-label > *:first-child {
+.nhsuk-panel-with-label > *:first-child, .nhsuk-panel.is-style-panel-with-label > *:first-child {
   margin-top: 0;
 }
 
-.nhsuk-panel-with-label > *:last-child, .is-style-panel-with-label > *:last-child {
+.nhsuk-panel-with-label > *:last-child, .nhsuk-panel.is-style-panel-with-label > *:last-child {
   margin-bottom: 0;
 }
 
 @media (min-width: 40.0625em) {
-  .nhsuk-panel-with-label, .is-style-panel-with-label {
+  .nhsuk-panel-with-label, .nhsuk-panel.is-style-panel-with-label {
     margin-bottom: 48px;
   }
 }
 
 @media (min-width: 40.0625em) {
-  .nhsuk-panel-with-label, .is-style-panel-with-label {
+  .nhsuk-panel-with-label, .nhsuk-panel.is-style-panel-with-label {
     margin-top: 48px;
   }
 }
 
 @media (min-width: 40.0625em) {
-  .nhsuk-panel-with-label, .is-style-panel-with-label {
+  .nhsuk-panel-with-label, .nhsuk-panel.is-style-panel-with-label {
     padding: 32px;
   }
 }
 
 @media print {
-  .nhsuk-panel-with-label, .is-style-panel-with-label {
+  .nhsuk-panel-with-label, .nhsuk-panel.is-style-panel-with-label {
     border: 1px solid #212b32;
     page-break-inside: avoid;
   }
 }
 
-.nhsuk-panel-with-label__label, .is-style-panel-with-label h3, .is-style-panel-with-label h3 .rich-text {
+.nhsuk-panel-with-label__label, .nhsuk-panel.is-style-panel-with-label h3, .nhsuk-panel.is-style-panel-with-label h3 .rich-text {
   font-size: 20px;
   font-size: 1.25rem;
   line-height: 1.4;
@@ -7415,7 +7432,7 @@ b {
 }
 
 @media (min-width: 40.0625em) {
-  .nhsuk-panel-with-label__label, .is-style-panel-with-label h3, .is-style-panel-with-label h3 .rich-text {
+  .nhsuk-panel-with-label__label, .nhsuk-panel.is-style-panel-with-label h3, .nhsuk-panel.is-style-panel-with-label h3 .rich-text {
     font-size: 24px;
     font-size: 1.5rem;
     line-height: 1.33333;
@@ -7423,14 +7440,14 @@ b {
 }
 
 @media print {
-  .nhsuk-panel-with-label__label, .is-style-panel-with-label h3, .is-style-panel-with-label h3 .rich-text {
+  .nhsuk-panel-with-label__label, .nhsuk-panel.is-style-panel-with-label h3, .nhsuk-panel.is-style-panel-with-label h3 .rich-text {
     font-size: 18pt;
     line-height: 1.15;
   }
 }
 
 @media (max-width: 40.0525em) {
-  .nhsuk-panel-with-label__label, .is-style-panel-with-label h3, .is-style-panel-with-label h3 .rich-text {
+  .nhsuk-panel-with-label__label, .nhsuk-panel.is-style-panel-with-label h3, .nhsuk-panel.is-style-panel-with-label h3 .rich-text {
     margin-left: -24px;
     margin-right: -24px;
     padding: 8px 24px;
@@ -7439,7 +7456,7 @@ b {
 }
 
 @media print {
-  .nhsuk-panel-with-label__label, .is-style-panel-with-label h3, .is-style-panel-with-label h3 .rich-text {
+  .nhsuk-panel-with-label__label, .nhsuk-panel.is-style-panel-with-label h3, .nhsuk-panel.is-style-panel-with-label h3 .rich-text {
     background: none;
     color: #212b32;
     top: 0;
@@ -7447,11 +7464,11 @@ b {
 }
 
 @media print {
-  .nhsuk-panel-with-label__label, .is-style-panel-with-label h3, .is-style-panel-with-label h3 .rich-text {
+  .nhsuk-panel-with-label__label, .nhsuk-panel.is-style-panel-with-label h3, .nhsuk-panel.is-style-panel-with-label h3 .rich-text {
     color: #212b32;
     fill: #212b32;
   }
-  .nhsuk-panel-with-label__label:active, .is-style-panel-with-label h3:active, .is-style-panel-with-label h3 .rich-text:active, .nhsuk-panel-with-label__label:focus, .is-style-panel-with-label h3:focus, .is-style-panel-with-label h3 .rich-text:focus, .nhsuk-panel-with-label__label:visited, .is-style-panel-with-label h3:visited, .is-style-panel-with-label h3 .rich-text:visited {
+  .nhsuk-panel-with-label__label:active, .nhsuk-panel.is-style-panel-with-label h3:active, .nhsuk-panel.is-style-panel-with-label h3 .rich-text:active, .nhsuk-panel-with-label__label:focus, .nhsuk-panel.is-style-panel-with-label h3:focus, .nhsuk-panel.is-style-panel-with-label h3 .rich-text:focus, .nhsuk-panel-with-label__label:visited, .nhsuk-panel.is-style-panel-with-label h3:visited, .nhsuk-panel.is-style-panel-with-label h3 .rich-text:visited {
     color: #212b32;
   }
 }
@@ -7632,14 +7649,14 @@ b {
 /**
  * Promo small reduces the size of the text heading and description.
  */
-.nhsuk-promo--small .nhsuk-promo__heading, .is-style-promo-small .nhsuk-promo__heading {
+.nhsuk-promo--small .nhsuk-promo__heading, .nhsuk-promo.is-style-promo-small .nhsuk-promo__heading {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
 }
 
 @media (min-width: 40.0625em) {
-  .nhsuk-promo--small .nhsuk-promo__heading, .is-style-promo-small .nhsuk-promo__heading {
+  .nhsuk-promo--small .nhsuk-promo__heading, .nhsuk-promo.is-style-promo-small .nhsuk-promo__heading {
     font-size: 19px;
     font-size: 1.1875rem;
     line-height: 1.47368;
@@ -7647,20 +7664,20 @@ b {
 }
 
 @media print {
-  .nhsuk-promo--small .nhsuk-promo__heading, .is-style-promo-small .nhsuk-promo__heading {
+  .nhsuk-promo--small .nhsuk-promo__heading, .nhsuk-promo.is-style-promo-small .nhsuk-promo__heading {
     font-size: 14pt;
     line-height: 1.15;
   }
 }
 
-.nhsuk-promo--small .nhsuk-promo__description, .is-style-promo-small .nhsuk-promo__description {
+.nhsuk-promo--small .nhsuk-promo__description, .nhsuk-promo.is-style-promo-small .nhsuk-promo__description {
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.71429;
 }
 
 @media (min-width: 40.0625em) {
-  .nhsuk-promo--small .nhsuk-promo__description, .is-style-promo-small .nhsuk-promo__description {
+  .nhsuk-promo--small .nhsuk-promo__description, .nhsuk-promo.is-style-promo-small .nhsuk-promo__description {
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.5;
@@ -7668,7 +7685,7 @@ b {
 }
 
 @media print {
-  .nhsuk-promo--small .nhsuk-promo__description, .is-style-promo-small .nhsuk-promo__description {
+  .nhsuk-promo--small .nhsuk-promo__description, .nhsuk-promo.is-style-promo-small .nhsuk-promo__description {
     font-size: 14pt;
     line-height: 1.2;
   }
@@ -10068,7 +10085,7 @@ section {
   margin-bottom: 5px;
 }
 
-.nhsuk-button--reverse:visited, .is-style-reverse:visited {
+.nhsuk-button--reverse:visited, .nhsuk-button.is-style-reverse:visited, .is-style-reverse.wp-block-button__link:visited, .is-style-reverse.wp-block-file__button:visited, .wp-block-file a.is-style-reverse.wp-block-file__button:visited {
   color: #212b32;
 }
 
@@ -10225,15 +10242,15 @@ section {
   margin-bottom: 36px;
 }
 
-.nhsuk-panel-with-label, .is-style-panel-with-label {
+.nhsuk-panel-with-label, .nhsuk-panel.is-style-panel-with-label {
   width: 100%;
 }
 
-.nhsuk-panel-with-label .nhsuk-panel-with-label__label a, .is-style-panel-with-label .nhsuk-panel-with-label__label a, .nhsuk-panel-with-label .is-style-panel-with-label h3 a, .is-style-panel-with-label .nhsuk-panel-with-label h3 a, .is-style-panel-with-label h3 a, .is-style-panel-with-label h3 .rich-text a, .nhsuk-panel-with-label .nhsuk-panel-with-label__label a:visited, .is-style-panel-with-label .nhsuk-panel-with-label__label a:visited, .nhsuk-panel-with-label .is-style-panel-with-label h3 a:visited, .is-style-panel-with-label .nhsuk-panel-with-label h3 a:visited, .is-style-panel-with-label h3 a:visited, .is-style-panel-with-label h3 .rich-text a:visited {
+.nhsuk-panel-with-label .nhsuk-panel-with-label__label a, .nhsuk-panel.is-style-panel-with-label .nhsuk-panel-with-label__label a, .nhsuk-panel.is-style-panel-with-label h3 a, .nhsuk-panel.is-style-panel-with-label h3 .rich-text a, .nhsuk-panel-with-label .nhsuk-panel-with-label__label a:visited, .nhsuk-panel.is-style-panel-with-label .nhsuk-panel-with-label__label a:visited, .nhsuk-panel.is-style-panel-with-label h3 a:visited {
   color: #ffffff;
 }
 
-.nhsuk-panel-with-label .entry-footer span, .is-style-panel-with-label .entry-footer span {
+.nhsuk-panel-with-label .entry-footer span, .nhsuk-panel.is-style-panel-with-label .entry-footer span {
   padding: 0 10px;
 }
 
@@ -10247,7 +10264,7 @@ section {
   box-shadow: none;
 }
 
-.nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .nhsuk-panel-with-label, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .is-style-panel-with-label {
+.nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .nhsuk-panel-with-label, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .nhsuk-panel.is-style-panel-with-label {
   background: inherit;
   margin: 0;
   padding: 0;
@@ -10256,7 +10273,7 @@ section {
   padding-top: 33.33%;
 }
 
-.nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .nhsuk-panel-with-label .nhsuk-panel-with-label__label, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .is-style-panel-with-label .nhsuk-panel-with-label__label, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .nhsuk-panel-with-label .is-style-panel-with-label h3, .is-style-panel-with-label .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .nhsuk-panel-with-label h3, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .is-style-panel-with-label h3, .is-style-panel-with-label h3 .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .nhsuk-panel-with-label .rich-text, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .is-style-panel-with-label h3 .rich-text {
+.nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .nhsuk-panel-with-label .nhsuk-panel-with-label__label, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .nhsuk-panel.is-style-panel-with-label .nhsuk-panel-with-label__label, .nhsuk-panel.is-style-panel-with-label .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .nhsuk-panel-with-label h3, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .nhsuk-panel.is-style-panel-with-label h3, .nhsuk-panel.is-style-panel-with-label h3 .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .nhsuk-panel-with-label .rich-text, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .nhsuk-panel.is-style-panel-with-label h3 .rich-text {
   z-index: 2;
   top: 0;
   margin: 0 -20px;
@@ -10267,12 +10284,12 @@ section {
   font-size: 1.1rem;
 }
 
-.nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .nhsuk-panel-with-label .nhsuk-dashboard__image, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .is-style-panel-with-label .nhsuk-dashboard__image {
+.nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .nhsuk-panel-with-label .nhsuk-dashboard__image, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .nhsuk-panel.is-style-panel-with-label .nhsuk-dashboard__image {
   width: 100%;
   height: 100%;
 }
 
-.nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .nhsuk-panel-with-label .nhsuk-promo__img, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .is-style-panel-with-label .nhsuk-promo__img {
+.nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .nhsuk-panel-with-label .nhsuk-promo__img, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper .nhsuk-panel.is-style-panel-with-label .nhsuk-promo__img {
   position: relative;
   top: -16px;
   z-index: 1;
@@ -10358,16 +10375,16 @@ section {
 // @version 1.0 22nd July 2019
 */
 /* button extension*/
-.is-style-secondary {
+.nhsuk-button.is-style-secondary, .is-style-secondary.wp-block-button__link, .is-style-secondary.wp-block-file__button, .wp-block-file a.is-style-secondary.wp-block-file__button {
   /* secondary button style*/
 }
 
-.is-style-reverse {
+.nhsuk-button.is-style-reverse, .is-style-reverse.wp-block-button__link, .is-style-reverse.wp-block-file__button, .wp-block-file a.is-style-reverse.wp-block-file__button {
   /* reverse button style*/
 }
 
 /* reveal extension*/
-.is-style-expander {
+.nhsuk-button.is-style-expander, .is-style-expander.wp-block-button__link, .is-style-expander.wp-block-file__button, .wp-block-file a.is-style-expander.wp-block-file__button {
   /* expander reveal style*/
 }
 
@@ -10476,7 +10493,7 @@ h3.nhsuk-do-dont-list__label .rich-text {
   color: #ffffff;
 }
 
-.wp-block-nhsblocks-dashpanel .nhsuk-panel-with-label__label, .wp-block-nhsblocks-dashpanel .is-style-panel-with-label h3, .is-style-panel-with-label .wp-block-nhsblocks-dashpanel h3, .wp-block-nhsblocks-dashpanel .is-style-panel-with-label h3 .rich-text, .is-style-panel-with-label h3 .wp-block-nhsblocks-dashpanel .rich-text {
+.wp-block-nhsblocks-dashpanel .nhsuk-panel-with-label__label, .wp-block-nhsblocks-dashpanel .nhsuk-panel.is-style-panel-with-label h3, .nhsuk-panel.is-style-panel-with-label .wp-block-nhsblocks-dashpanel h3, .wp-block-nhsblocks-dashpanel .nhsuk-panel.is-style-panel-with-label h3 .rich-text, .nhsuk-panel.is-style-panel-with-label h3 .wp-block-nhsblocks-dashpanel .rich-text {
   z-index: 2;
   top: 0;
   margin: 0 -20px;
@@ -10484,7 +10501,7 @@ h3.nhsuk-do-dont-list__label .rich-text {
   max-width: 90%;
 }
 
-.wp-block-nhsblocks-dashpanel .nhsuk-panel-with-label__label .rich-text, .wp-block-nhsblocks-dashpanel .is-style-panel-with-label h3 .rich-text, .is-style-panel-with-label .wp-block-nhsblocks-dashpanel h3 .rich-text, .is-style-panel-with-label h3 .wp-block-nhsblocks-dashpanel .rich-text .rich-text {
+.wp-block-nhsblocks-dashpanel .nhsuk-panel-with-label__label .rich-text, .wp-block-nhsblocks-dashpanel .nhsuk-panel.is-style-panel-with-label h3 .rich-text, .nhsuk-panel.is-style-panel-with-label .wp-block-nhsblocks-dashpanel h3 .rich-text, .nhsuk-panel.is-style-panel-with-label h3 .wp-block-nhsblocks-dashpanel .rich-text .rich-text {
   font-size: 1.1rem;
   color: #fff;
 }

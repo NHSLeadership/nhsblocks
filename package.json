@@ -4,7 +4,7 @@
   "license": "GPL-3.0-or-later",
   "main": "src/index.js",
   "devDependencies": {
-    "@svgr/webpack": "^4.3.2",
+    "@svgr/webpack": "^4.3.3",
     "@wordpress/scripts": "^3.4.0",
     "clauderic/react-sortable-hoc": "^1.9.1",
     "url-loader": "^1.1.2"
@@ -13,13 +13,17 @@
     "start": "wp-scripts start",
     "build": "wp-scripts build",
     "build-scss": "cat style.scss | node_modules/.bin/node-sass --include-path node_modules/ --include-path node_modules/nhsuk-frontend/packages/nhsuk/ style.scss --output-style expanded > style.css | cat style-gutenburg.scss | node_modules/.bin/node-sass --include-path node_modules/ --include-path node_modules/nhsuk-frontend/packages/nhsuk/  style-gutenburg.scss --output-style expanded > style-gutenburg.css",
+    "compress-scss": "postcss style.css > style.min.css",
     "zip": "zip -r nhsblocks.zip ./ -x .git .gitignore *.git/* .DS_Store .package.json .package-lock.json *.scss webpack.config.js .ds_store node_modules/**\\* src/**\\* webpack.config.js n"
   },
   "dependencies": {
     "clone-deep": "^4.0.1",
-    "nhsuk-frontend": "^2.3.0",
+    "cssnano": "^4.1.10",
+    "nhsuk-frontend": "^2.3.2",
     "node-sass": "^4.12.0",
     "nunjucks": "^3.2.0",
+    "postcss": "^7.0.18",
+    "postcss-cli": "^6.1.3",
     "scss": "^0.2.4"
   }
 }
