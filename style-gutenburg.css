@@ -4123,40 +4123,40 @@ b {
  * 4. When a group of details is used reduce the
  *    margin between them so they sit together.
  */
-.nhsuk-expander, .nhsuk-button.is-style-expander, .is-style-expander.wp-block-button__link, .is-style-expander.wp-block-file__button, .wp-block-file a.is-style-expander.wp-block-file__button {
+.nhsuk-expander, .nhsuk-details.is-style-expander {
   background-color: #ffffff;
 }
 
-.nhsuk-expander .nhsuk-details__summary, .nhsuk-button.is-style-expander .nhsuk-details__summary, .is-style-expander.wp-block-button__link .nhsuk-details__summary, .is-style-expander.wp-block-file__button .nhsuk-details__summary {
+.nhsuk-expander .nhsuk-details__summary, .nhsuk-details.is-style-expander .nhsuk-details__summary {
   padding: 16px;
   background-color: #ffffff;
   display: block;
 }
 
 @media (min-width: 40.0625em) {
-  .nhsuk-expander .nhsuk-details__summary, .nhsuk-button.is-style-expander .nhsuk-details__summary, .is-style-expander.wp-block-button__link .nhsuk-details__summary, .is-style-expander.wp-block-file__button .nhsuk-details__summary {
+  .nhsuk-expander .nhsuk-details__summary, .nhsuk-details.is-style-expander .nhsuk-details__summary {
     padding: 24px;
   }
 }
 
-.nhsuk-expander .nhsuk-details__summary:before, .nhsuk-button.is-style-expander .nhsuk-details__summary:before, .is-style-expander.wp-block-button__link .nhsuk-details__summary:before, .is-style-expander.wp-block-file__button .nhsuk-details__summary:before {
+.nhsuk-expander .nhsuk-details__summary:before, .nhsuk-details.is-style-expander .nhsuk-details__summary:before {
   display: none !important;
 }
 
-.nhsuk-expander .nhsuk-details__summary:focus, .nhsuk-button.is-style-expander .nhsuk-details__summary:focus, .is-style-expander.wp-block-button__link .nhsuk-details__summary:focus, .is-style-expander.wp-block-file__button .nhsuk-details__summary:focus {
+.nhsuk-expander .nhsuk-details__summary:focus, .nhsuk-details.is-style-expander .nhsuk-details__summary:focus {
   box-shadow: 0 0 0 4px #ffb81C;
 }
 
-.nhsuk-expander .nhsuk-details__summary:hover, .nhsuk-button.is-style-expander .nhsuk-details__summary:hover, .is-style-expander.wp-block-button__link .nhsuk-details__summary:hover, .is-style-expander.wp-block-file__button .nhsuk-details__summary:hover {
+.nhsuk-expander .nhsuk-details__summary:hover, .nhsuk-details.is-style-expander .nhsuk-details__summary:hover {
   box-shadow: 0 0 0 4px #ffcd60;
 }
 
-.nhsuk-expander .nhsuk-details__summary:hover, .nhsuk-button.is-style-expander .nhsuk-details__summary:hover, .is-style-expander.wp-block-button__link .nhsuk-details__summary:hover, .is-style-expander.wp-block-file__button .nhsuk-details__summary:hover, .nhsuk-expander .nhsuk-details__summary:active, .nhsuk-button.is-style-expander .nhsuk-details__summary:active, .is-style-expander.wp-block-button__link .nhsuk-details__summary:active, .is-style-expander.wp-block-file__button .nhsuk-details__summary:active, .nhsuk-expander .nhsuk-details__summary:focus, .nhsuk-button.is-style-expander .nhsuk-details__summary:focus, .is-style-expander.wp-block-button__link .nhsuk-details__summary:focus, .is-style-expander.wp-block-file__button .nhsuk-details__summary:focus {
+.nhsuk-expander .nhsuk-details__summary:hover, .nhsuk-details.is-style-expander .nhsuk-details__summary:hover, .nhsuk-expander .nhsuk-details__summary:active, .nhsuk-details.is-style-expander .nhsuk-details__summary:active, .nhsuk-expander .nhsuk-details__summary:focus, .nhsuk-details.is-style-expander .nhsuk-details__summary:focus {
   /* [2] */
   outline: 0;
 }
 
-.nhsuk-expander .nhsuk-details__summary-text, .nhsuk-button.is-style-expander .nhsuk-details__summary-text, .is-style-expander.wp-block-button__link .nhsuk-details__summary-text, .is-style-expander.wp-block-file__button .nhsuk-details__summary-text {
+.nhsuk-expander .nhsuk-details__summary-text, .nhsuk-details.is-style-expander .nhsuk-details__summary-text {
   background: url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__plus' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23005eb8'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M12 8v8M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat;
   background-size: 32px;
   color: #005eb8;
@@ -4166,7 +4166,7 @@ b {
   position: relative;
 }
 
-.nhsuk-expander .nhsuk-details__text, .nhsuk-button.is-style-expander .nhsuk-details__text, .is-style-expander.wp-block-button__link .nhsuk-details__text, .is-style-expander.wp-block-file__button .nhsuk-details__text {
+.nhsuk-expander .nhsuk-details__text, .nhsuk-details.is-style-expander .nhsuk-details__text {
   padding: 16px;
   border-left: 0;
   margin-left: 0;
@@ -4174,16 +4174,16 @@ b {
 }
 
 @media (min-width: 40.0625em) {
-  .nhsuk-expander .nhsuk-details__text, .nhsuk-button.is-style-expander .nhsuk-details__text, .is-style-expander.wp-block-button__link .nhsuk-details__text, .is-style-expander.wp-block-file__button .nhsuk-details__text {
+  .nhsuk-expander .nhsuk-details__text, .nhsuk-details.is-style-expander .nhsuk-details__text {
     padding: 24px;
   }
 }
 
-.nhsuk-expander[open] .nhsuk-details__summary, .nhsuk-button.is-style-expander[open] .nhsuk-details__summary, .is-style-expander.wp-block-button__link[open] .nhsuk-details__summary, .is-style-expander.wp-block-file__button[open] .nhsuk-details__summary {
+.nhsuk-expander[open] .nhsuk-details__summary, .nhsuk-details.is-style-expander[open] .nhsuk-details__summary {
   border-bottom: 1px solid #f0f4f5;
 }
 
-.nhsuk-expander[open] .nhsuk-details__summary-text, .nhsuk-button.is-style-expander[open] .nhsuk-details__summary-text, .is-style-expander.wp-block-button__link[open] .nhsuk-details__summary-text, .is-style-expander.wp-block-file__button[open] .nhsuk-details__summary-text {
+.nhsuk-expander[open] .nhsuk-details__summary-text, .nhsuk-details.is-style-expander[open] .nhsuk-details__summary-text {
   background: url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__minus' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23005eb8'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat;
   /* [3] */
   background-size: 32px;
@@ -10041,6 +10041,10 @@ section {
   color: #212b32;
 }
 
+.edit-post-visual-editor .is-style-reverse:visited .editor-rich-text .rich-text, .edit-post-visual-editor is-style-reverse:link .editor-rich-text .rich-text {
+  color: #212b32;
+}
+
 .acf-block-component a {
   pointer-events: none;
   cursor: default;
@@ -10384,7 +10388,7 @@ section {
 }
 
 /* reveal extension*/
-.nhsuk-button.is-style-expander, .is-style-expander.wp-block-button__link, .is-style-expander.wp-block-file__button, .wp-block-file a.is-style-expander.wp-block-file__button {
+.nhsuk-details.is-style-expander {
   /* expander reveal style*/
 }
 

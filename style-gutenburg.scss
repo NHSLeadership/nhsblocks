@@ -54,6 +54,11 @@ ul {
   }
   .is-style-reverse:visited, is-style-reverse:link {
     color: #212b32;
+    .editor-rich-text {
+      .rich-text {
+        color: #212b32;
+      }
+    }
   }
 }
 
