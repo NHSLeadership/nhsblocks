@@ -46,6 +46,11 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 10. Hero - a full screen width block, with optional single colour or image background and optional block of text to anchor the page and set clear purpose
 
 == Changelog ==
+
+= 1.0.5 =
+* IE10/11 compatability with Hero Block
+* Additional css filters for buttons, panels and promos
+
 = 1.0.4 =
 * Reworked js filters to position hero at head of page
 
