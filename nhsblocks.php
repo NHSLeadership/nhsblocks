@@ -182,7 +182,8 @@ function nhsblocks_hero_footer() {
 	echo "<script>
 	    const heroBlock = document.querySelector('.wp-block-nhsblocks-heroblock');
 	    if ( ( heroBlock ) ) { 
-		    if ( heroBlock.matches('.wp-block-nhsblocks-heroblock') === true ) {
+	        matches = heroBlock.matches ? heroBlock.matches('.wp-block-nhsblocks-heroblock') : heroBlock.msMatchesSelector('.wp-block-nhsblocks-heroblock');
+		    if ( matches === true ) {
 			    const mainContent = document.querySelector( '#maincontent' );
 			    const wholeDoc = document.querySelector( 'body' );
 			    const breadCrumb = document.querySelector( '.nhsuk-breadcrumb' );
