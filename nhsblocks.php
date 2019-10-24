@@ -185,10 +185,11 @@ function nhsblocks_hero_footer() {
 	        matches = heroBlock.matches ? heroBlock.matches('.wp-block-nhsblocks-heroblock') : heroBlock.msMatchesSelector('.wp-block-nhsblocks-heroblock');
 		    if ( matches === true ) {
 			    const mainContent = document.querySelector( '#maincontent' );
+			    const contentInner = document.querySelector( '#contentinner' );
 			    const wholeDoc = document.querySelector( 'body' );
 			    const breadCrumb = document.querySelector( '.nhsuk-breadcrumb' );
 			    const articleTitle = document.querySelector( '.entry-header' );
-			    mainContent.prepend( heroBlock );
+			    mainContent.insertBefore( heroBlock, contentInner );
 			    articleTitle.style.display = 'none';
 			    mainContent.style.paddingTop = '0';
 			    heroBlock.style.marginBottom = '70px';
