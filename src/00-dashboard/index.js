@@ -7,281 +7,12 @@
 
 const { useState, setState } = wp.element;
 const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const { RichText, InspectorControls, URLInputButton, ColorPalette, MediaUpload, InnerBlocks } = wp.blockEditor;
-const onecolsIcon = wp.element.createElement('svg',
-    {
-        width: 60,
-        height: 30
-    },
-    wp.element.createElement( 'rect',
-        {
-            x: "0.000",
-            y: "0.000",
-            width: "59.000",
-            height: "30"
-        }
-    ),
-);
-const twocolsIcon = wp.element.createElement('svg',
-    {
-        width: 60,
-        height: 30
-    },
-    wp.element.createElement( 'rect',
-        {
-            x: "31.000",
-            y: "0.000",
-            width: "29.000",
-            height: "30"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "0.000",
-            y: "0.000",
-            width: "29.000",
-            height: "30"
-        }
-    ),
-);
-const threecolsIcon = wp.element.createElement('svg',
-    {
-        width: 60,
-        height: 30
-    },
-    wp.element.createElement( 'rect',
-        {
-            x: "41.000",
-            y: "0.000",
-            width: "19.000",
-            height: "30"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "21.000",
-            y: "0.000",
-            width: "19.000",
-            height: "30"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "0.000",
-            y: "0.000",
-            width: "19.000",
-            height: "30"
-        }
-    ),
-);
+const { registerBlockType, createBlock } = wp.blocks;
+const { RichText, InspectorControls, URLInputButton, ColorPalette, MediaUpload, InnerBlocks, BlockControls, __experimentalBlockVariationPicker } = wp.blockEditor;
+const { useDispatch, useSelect } = wp.data;
+import { get, map, times } from 'lodash';
+import * as Templates from './templates.js';
 
-const threetwocolstworowsIcon = wp.element.createElement('svg',
-    {
-        width: 60,
-        height: 40
-    },
-    wp.element.createElement( 'rect',
-        {
-            x: "41.000",
-            y: "0.000",
-            width: "19.000",
-            height: "19"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "21.000",
-            y: "0.000",
-            width: "19.000",
-            height: "19"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "0.000",
-            y: "0.000",
-            width: "19.000",
-            height: "19"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "31.000",
-            y: "20.000",
-            width: "29.000",
-            height: "19"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "0.000",
-            y: "20.000",
-            width: "29.000",
-            height: "19"
-        }
-    ),
-);
-const threecolstworowsIcon = wp.element.createElement('svg',
-    {
-        width: 60,
-        height: 40
-    },
-    wp.element.createElement( 'rect',
-        {
-            x: "41.000",
-            y: "0.000",
-            width: "19.000",
-            height: "19"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "21.000",
-            y: "0.000",
-            width: "19.000",
-            height: "19"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "0.000",
-            y: "0.000",
-            width: "19.000",
-            height: "19"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "41.000",
-            y: "20.000",
-            width: "19.000",
-            height: "19"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "21.000",
-            y: "20.000",
-            width: "19.000",
-            height: "19"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "0.000",
-            y: "20.000",
-            width: "19.000",
-            height: "19"
-        }
-    ),
-);
-
-const twothreecolstworowsIcon = wp.element.createElement('svg',
-    {
-        width: 60,
-        height: 40
-    },
-    wp.element.createElement( 'rect',
-        {
-            x: "31.000",
-            y: "0.000",
-            width: "29.000",
-            height: "19"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "0.000",
-            y: "0.000",
-            width: "29.000",
-            height: "19"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "41.000",
-            y: "20.000",
-            width: "19.000",
-            height: "19"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "21.000",
-            y: "20.000",
-            width: "19.000",
-            height: "19"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "0.000",
-            y: "20.000",
-            width: "19.000",
-            height: "19"
-        }
-    ),
-);
-const GRID_OPTIONS = [
-    {
-        title: 'Full Width',
-        icon: onecolsIcon,
-        template: [
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-full'} ],
-        ],
-    },{
-        title: 'Two Columns',
-        icon: twocolsIcon,
-        template: [
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-one-half'} ],
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-one-half'} ],
-        ],
-    },
-    {
-        title: 'Three Columns',
-        icon: threecolsIcon,
-        template: [
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-one-third'} ],
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-one-third'} ],
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-one-third'} ],
-        ],
-    },
-    {
-        title: 'Two Columns Then Three Columns',
-        icon: twothreecolstworowsIcon,
-        template: [
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-one-half'} ],
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-one-half'} ],
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-one-third'} ],
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-one-third'} ],
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-one-third'} ],
-        ],
-    },
-    {
-        title: 'Three Columns Then Two Columns',
-        icon: threetwocolstworowsIcon,
-        template: [
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-one-third'} ],
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-one-third'} ],
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-one-third'} ],
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-one-half'} ],
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-one-half'} ],
-        ],
-    },
-    {
-        title: 'Three Columns, Two Rows',
-        icon: threecolstworowsIcon,
-        template: [
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-one-third'} ],
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-one-third'} ],
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-one-third'} ],
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-one-third'} ],
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-one-third'} ],
-            [ 'nhsblocks/dashpanel', { className: 'nhsuk-grid-column-one-third'} ],
-        ],
-    },
-];
 
 registerBlockType("nhsblocks/dashboardnav", {
     title: __("Dashboard Navigation", "nhsblocks"),
@@ -294,24 +25,97 @@ registerBlockType("nhsblocks/dashboardnav", {
     },
 
     edit: props => {
+        const { clientId, name } = props;
         const {
             attributes: {
                 template
             },
             setAttributes,
         } = props;
-        const onChangetemplate = newTemplate => {
-            setAttributes({ template: newTemplate });
+        const { replaceInnerBlocks } = useDispatch( 'core/block-editor' );
+
+        const ALLOWED_BLOCKS = [ 'nhsblocks/dashpanel' ];
+        const {
+            blockType,
+            defaultVariation,
+            hasInnerBlocks,
+            variations,
+        } = useSelect(
+            ( select ) => {
+                const {
+                    __experimentalGetBlockVariations,
+                    getBlockType,
+                    __experimentalGetDefaultBlockVariation,
+                } = select( 'core/blocks' );
+
+                return {
+                    blockType: getBlockType( name ),
+                    defaultVariation: __experimentalGetDefaultBlockVariation(
+                        name,
+                        'block'
+                    ),
+                    hasInnerBlocks:
+                        select( 'core/block-editor' ).getBlocks( clientId ).length >
+                        0,
+                    variations: __experimentalGetBlockVariations( name, 'block' ),
+                };
+            },
+            [ clientId, name ]
+        );
+        const onChangeLayout = (nextVariation, registry) => {
+            if ( nextVariation.attributes ) {
+                props.setAttributes( nextVariation.attributes );
+            }
+            if ( nextVariation.innerBlocks ) {
+                replaceInnerBlocks(
+                    props.clientId,
+                    createBlocksFromInnerBlocksTemplate(
+                nextVariation.innerBlocks
+            )
+            );
+            }
         };
-        const showTemplateSelector = ( template === null ) || ! template;
+        const createBlocksFromInnerBlocksTemplate = ( innerBlocksTemplate ) => {
+            return map(
+                innerBlocksTemplate,
+                ( [ name, attributes, innerBlocks = [] ] ) =>
+                    createBlock(
+                        name,
+                        attributes,
+                        createBlocksFromInnerBlocksTemplate( innerBlocks )
+                    )
+            );
+        };
+        if ( hasInnerBlocks ) {
+            return (
+                <div className="nhsuk-grid-row">
+                <div className="nhsuk-panel-group nhsuk-grid-column-full nhsuk-dashboard">
+
+                <InnerBlocks template={ Templates.GRID_OPTIONS } />
+                </div>
+                </div>
+            );
+        }
         return (
             <div className="nhsuk-grid-row">
             <div className="nhsuk-panel-group nhsuk-grid-column-full nhsuk-dashboard">
-            <InnerBlocks
-        template={ showTemplateSelector ? null : template }
-        __experimentalTemplateOptions={ GRID_OPTIONS }
-        __experimentalOnSelectTemplateOption={ onChangetemplate }
-        />
+
+        <__experimentalBlockVariationPicker
+            variations = { Templates.GRID_OPTIONS }
+            onSelect={ nextVariation => {
+                    if ( nextVariation.attributes ) {
+                        props.setAttributes( nextVariation.attributes );
+                    }
+                    if ( nextVariation.innerBlocks ) {
+                        replaceInnerBlocks(
+                            props.clientId,
+                            createBlocksFromInnerBlocksTemplate(
+                                nextVariation.innerBlocks
+                            )
+                        );
+                    }
+                } }
+            />
         </div>
         </div>
     );

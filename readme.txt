@@ -46,6 +46,12 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 10. Hero - a full screen width block, with optional single colour or image background and optional block of text to anchor the page and set clear purpose
 
 == Changelog ==
+= 1.0.6 =
+* Updated for Gutenberg 7.4 - you will need to update Gutenberg for this plugin to continue functioning
+* Dashboard block and grouped block moved from __experimentalTemplateOptions to __experimentalBlockVariationPicker
+  * This is technical debt and will need revisiting when this feature moves out of experimental phase
+* Button default text added for better UX
+* Button link moved to right hand Inspector area for improved UX
 
 = 1.0.5 =
 * IE10/11 compatability with Hero Block

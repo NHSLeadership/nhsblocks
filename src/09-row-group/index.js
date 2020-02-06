@@ -7,261 +7,16 @@
 
 const { useState, setState } = wp.element;
 const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const { InnerBlocks } = wp.blockEditor;
-const twocolsIcon = wp.element.createElement('svg',
-    {
-        width: 60,
-        height: 30
-    },
-    wp.element.createElement( 'rect',
-        {
-            x: "31.000",
-            y: "0.000",
-            width: "29.000",
-            height: "30"
-        }
-    ),
-        wp.element.createElement( 'rect',
-            {
-                x: "0.000",
-                y: "0.000",
-                width: "29.000",
-                height: "30"
-            }
-        ),
-);
-const threecolsIcon = wp.element.createElement('svg',
-    {
-        width: 60,
-        height: 30
-    },
-    wp.element.createElement( 'rect',
-        {
-            x: "41.000",
-            y: "0.000",
-            width: "19.000",
-            height: "30"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "21.000",
-            y: "0.000",
-            width: "19.000",
-            height: "30"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "0.000",
-            y: "0.000",
-            width: "19.000",
-            height: "30"
-        }
-    ),
-);
+const { registerBlockType, createBlock } = wp.blocks;
+const { InnerBlocks, BlockControls, __experimentalBlockVariationPicker } = wp.blockEditor;
+const { useDispatch, useSelect } = wp.data;
+import { get, map, times } from 'lodash';
 
-const twoleftthirdIcon = wp.element.createElement('svg',
-    {
-        width: 60,
-        height: 30
-    },
-    wp.element.createElement( 'rect',
-        {
-            x: "21.000",
-            y: "0.000",
-            width: "39.000",
-            height: "30"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "0.000",
-            y: "0.000",
-            width: "19.000",
-            height: "30"
-        }
-    ),
-);
-const tworightthirdIcon = wp.element.createElement('svg',
-    {
-        width: 60,
-        height: 30
-    },
-    wp.element.createElement( 'rect',
-        {
-            x: "41.000",
-            y: "0.000",
-            width: "19.000",
-            height: "30"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "0.000",
-            y: "0.000",
-            width: "39.000",
-            height: "30"
-        }
-    )
-);
-const twofourfourIcon = wp.element.createElement('svg',
-    {
-        width: 60,
-        height: 30
-    },
-    wp.element.createElement( 'rect',
-        {
-            x: "46.000",
-            y: "0.000",
-            width: "14.000",
-            height: "30"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "31.000",
-            y: "0.000",
-            width: "14.000",
-            height: "30"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "0.000",
-            y: "0.000",
-            width: "29.000",
-            height: "30"
-        }
-    ),
-);
-
-const fourtwofourIcon = wp.element.createElement('svg',
-    {
-        width: 60,
-        height: 30
-    },
-    wp.element.createElement( 'rect',
-        {
-            x: "46.000",
-            y: "0.000",
-            width: "14.000",
-            height: "30"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "16.000",
-            y: "0.000",
-            width: "29.000",
-            height: "30"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "0.000",
-            y: "0.000",
-            width: "14.000",
-            height: "30"
-        }
-    ),
-);
-
-const fourfourtwoIcon = wp.element.createElement('svg',
-    {
-        width: 60,
-        height: 30
-    },
-    wp.element.createElement( 'rect',
-        {
-            x: "31.000",
-            y: "0.000",
-            width: "29.000",
-            height: "30"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "16.000",
-            y: "0.000",
-            width: "14.000",
-            height: "30"
-        }
-    ),
-    wp.element.createElement( 'rect',
-        {
-            x: "0.000",
-            y: "0.000",
-            width: "14.000",
-            height: "30"
-        }
-    ),
-);
 //@todo add in Panel class variations
 //@todo add in width variations
-const GRID_OPTIONS = [
-    {
-        title: 'Two Columns',
-        icon: twocolsIcon,
-    template: [
-    [ 'nhsblocks/onehalf' ],
-    [ 'nhsblocks/onehalf' ],
-],
-},
-{
-    title: 'Three Columns',
-        icon: threecolsIcon,
-    template: [
-    [ 'nhsblocks/onethird' ],
-    [ 'nhsblocks/onethird' ],
-    [ 'nhsblocks/onethird' ],
-],
-},
-    {
-        title: 'One Third / Two Thirds Columns',
-        icon: twoleftthirdIcon,
-        template: [
-            [ 'nhsblocks/onethird' ],
-            [ 'nhsblocks/twothirds' ]
-        ],
-    },
-    {
-        title: 'Two Thirds / One Third Columns',
-        icon: tworightthirdIcon,
-        template: [
-            [ 'nhsblocks/twothirds' ],
-            [ 'nhsblocks/onethird' ]
-        ],
-    },
-    {
-        title: 'One Quarter / One Half / One Quarter Columns',
-        icon: fourtwofourIcon,
-        template: [
-            [ 'nhsblocks/onequarter' ],
-            [ 'nhsblocks/onehalf' ],
-            [ 'nhsblocks/onequarter' ]
-        ],
-    },
-    {
-        title: 'One Quarter / One Quarter / One Half Columns',
-        icon: fourfourtwoIcon,
-        template: [
-            [ 'nhsblocks/onequarter' ],
-            [ 'nhsblocks/onequarter' ],
-            [ 'nhsblocks/onehalf' ]
-        ],
-    },
-    {
-        title: 'One Half / One Quarter / One Quarter Columns',
-        icon: twofourfourIcon,
-        template: [
-            [ 'nhsblocks/onehalf' ],
-            [ 'nhsblocks/onequarter' ],
-            [ 'nhsblocks/onequarter' ]
-        ],
-    },
-];
+
+import * as Templates from './templates.js';
+
 const ITEM_OPTIONS = [
     {
         title: 'Panel',
@@ -297,24 +52,95 @@ registerBlockType("nhsblocks/rowgroup", {
     },
 
     edit: props => {
+        const { clientId, name } = props;
         const {
             attributes: {
                 template
             },
             setAttributes,
         } = props;
-        const onChangetemplate = newTemplate => {
-            setAttributes({ template: newTemplate });
+        const { replaceInnerBlocks } = useDispatch( 'core/block-editor' );
+
+        const {
+            blockType,
+            defaultVariation,
+            hasInnerBlocks,
+            variations,
+        } = useSelect(
+            ( select ) => {
+                const {
+                    __experimentalGetBlockVariations,
+                    getBlockType,
+                    __experimentalGetDefaultBlockVariation,
+                } = select( 'core/blocks' );
+
+                return {
+                    blockType: getBlockType( name ),
+                    defaultVariation: __experimentalGetDefaultBlockVariation(
+                        name,
+                        'block'
+                    ),
+                    hasInnerBlocks:
+                        select( 'core/block-editor' ).getBlocks( clientId ).length >
+                        0,
+                    variations: __experimentalGetBlockVariations( name, 'block' ),
+                };
+            },
+            [ clientId, name ]
+        );
+        const onChangeLayout = (nextVariation, registry) => {
+            if ( nextVariation.attributes ) {
+                props.setAttributes( nextVariation.attributes );
+            }
+            if ( nextVariation.innerBlocks ) {
+                replaceInnerBlocks(
+                    props.clientId,
+                    createBlocksFromInnerBlocksTemplate(
+                        nextVariation.innerBlocks
+                    )
+                );
+            }
         };
-        const showTemplateSelector = ( template === null ) || ! template;
+        const createBlocksFromInnerBlocksTemplate = ( innerBlocksTemplate ) => {
+            return map(
+                innerBlocksTemplate,
+                ( [ name, attributes, innerBlocks = [] ] ) =>
+                    createBlock(
+                        name,
+                        attributes,
+                        createBlocksFromInnerBlocksTemplate( innerBlocks )
+                    )
+            );
+        };
+        if ( hasInnerBlocks ) {
+            return (
+                <div className="nhsuk-grid-row">
+                <div className="nhsuk-panel-group nhsuk-grid-column-full">
+
+                <InnerBlocks template={ Templates.GRID_OPTIONS } />
+            </div>
+            </div>
+        );
+        }
         return (
             <div className="nhsuk-grid-row">
             <div className="nhsuk-panel-group nhsuk-grid-column-full">
-            <InnerBlocks
-        template={ showTemplateSelector ? null : template }
-        __experimentalTemplateOptions={ GRID_OPTIONS }
-        __experimentalOnSelectTemplateOption={ onChangetemplate }
-        />
+            <__experimentalBlockVariationPicker
+                variations = { Templates.GRID_OPTIONS }
+                onSelect={ nextVariation => {
+                    if ( nextVariation.attributes ) {
+                        props.setAttributes( nextVariation.attributes );
+                    }
+                    if ( nextVariation.innerBlocks ) {
+                        replaceInnerBlocks(
+                            props.clientId,
+                            createBlocksFromInnerBlocksTemplate(
+                                nextVariation.innerBlocks
+                            )
+                        );
+                    }
+                } }
+            />
         </div>
         </div>
     );
@@ -361,8 +187,6 @@ registerBlockType("nhsblocks/onehalf", {
             <div className="nhsuk-grid-column-one-half">
             <InnerBlocks
         template={ showTemplateSelector ? null : template }
-        __experimentalTemplateOptions={ ITEM_OPTIONS }
-        __experimentalOnSelectTemplateOption={ onChangetemplate }
         />
         </div>
     );
@@ -406,8 +230,6 @@ registerBlockType("nhsblocks/onethird", {
             <div className="nhsuk-grid-column-one-third">
             <InnerBlocks
         template={ showTemplateSelector ? null : template }
-        __experimentalTemplateOptions={ ITEM_OPTIONS }
-        __experimentalOnSelectTemplateOption={ onChangetemplate }
         />
         </div>
     );
@@ -452,8 +274,6 @@ registerBlockType("nhsblocks/onequarter", {
             <div className="nhsuk-grid-column-one-quarter">
             <InnerBlocks
         template={ showTemplateSelector ? null : template }
-        __experimentalTemplateOptions={ ITEM_OPTIONS }
-        __experimentalOnSelectTemplateOption={ onChangetemplate }
         />
         </div>
     );
@@ -498,8 +318,6 @@ registerBlockType("nhsblocks/twothirds", {
             <div className="nhsuk-grid-column-two-thirds">
             <InnerBlocks
         template={ showTemplateSelector ? null : template }
-        __experimentalTemplateOptions={ ITEM_OPTIONS }
-        __experimentalOnSelectTemplateOption={ onChangetemplate }
         />
         </div>
     );
@@ -544,8 +362,6 @@ registerBlockType("nhsblocks/threequarters", {
             <div className="nhsuk-grid-column-three-quarters">
             <InnerBlocks
         template={ showTemplateSelector ? null : template }
-        __experimentalTemplateOptions={ ITEM_OPTIONS }
-        __experimentalOnSelectTemplateOption={ onChangetemplate }
         />
         </div>
     );

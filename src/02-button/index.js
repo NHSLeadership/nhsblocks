@@ -8,6 +8,7 @@ const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const {
     RichText,
+    InspectorControls,
     URLInputButton } = wp.blockEditor;
 //@todo align
 //@todo extended classes
@@ -38,7 +39,8 @@ registerBlockType("nhsblocks/nhsbutton", {
       buttonLabel: {
           type: "string",
           source: "html",
-          selector: ".nhsuk-button"
+          selector: ".nhsuk-button",
+          default: __( 'Button title', 'nhsblocks' )
       },
       buttonLink: {
           type: "string",
@@ -72,21 +74,25 @@ registerBlockType("nhsblocks/nhsbutton", {
       setAttributes({ buttonLink: newButtonLink });
     };
 
-    return (
-            <a href="#0" className={`${className} nhsuk-button`}>
-            <RichText
-              placeholder={__("Button Label", "nhsblocks")}
-              value={buttonLabel}
-              onChange={onChangeButtonLabel}
-            />
-            <URLInputButton
+        return ([
+            <InspectorControls>
+            <div>
+            <strong>Add a link for this button</strong>
+        <URLInputButton
         className="nhsblocks-dropdown__input"
         label={__("Button URL", "nhsblocks")}
         onChange={onChangeButtonLink}
         url={buttonLink}
         />
-            </a>
-  )
+        </div>
+        </InspectorControls>,
+            <div className={`${className} nhsuk-button`}>
+            <RichText
+              value={buttonLabel}
+              onChange={onChangeButtonLabel}
+            />
+            </div>
+  ]);
   },
   save: props => {
     const {
