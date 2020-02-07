@@ -244,7 +244,7 @@ registerBlockType("nhsblocks/dashpanel", {
         onChange={onChangePanelTitle}
         />
         </h3>
-        <img src="/wp-content/themes/nightingale-2-0/assets/pixel_trans.png" class="nhsuk-dashboard__image" alt="" />
+        <img src="/wp-content/plugins/nhsblocks/assets/pixel_trans.png" class="nhsuk-dashboard__image" alt="" />
             </div>
         </div>
     ] );
@@ -271,11 +271,39 @@ registerBlockType("nhsblocks/dashpanel", {
 
             <RichText.Content value={panelTitle} />
         </h3>
-        <img src="/wp-content/themes/nightingale-2-0/assets/pixel_trans.png" class="nhsuk-dashboard__image" alt="" />
+        <img src="/wp-content/plugins/nhsblocks/assets/pixel_trans.png" class="nhsuk-dashboard__image" alt={panelTitle} />
             </div>
         </a>
         </div>
     );
-    }
+    },
+    deprecated: [ {
+            save: props => {
+                const {
+                    attributes: {
+                        overlayColor, backgroundImage,  panelTitle, panelLink
+                    }
+                } = props;
+                return (
+                    <div className = "nhsuk-panel-group__item">
+                    <a href={panelLink} className="nhsuk-promo__link-wrapper">
+                    <div class="nhsuk-panel-with-label" style={{
+                    backgroundImage: `url(${backgroundImage})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundColor: overlayColor
+                }}>
+            <h3 class="nhsuk-panel-with-label__label">
+
+                    <RichText.Content value={panelTitle} />
+                </h3>
+                <img src="/wp-content/themes/nightingale-2-0/assets/pixel_trans.png" class="nhsuk-dashboard__image" alt="" />
+                    </div>
+                    </a>
+                    </div>
+                );
+            }
+        }
+    ]
 });
 

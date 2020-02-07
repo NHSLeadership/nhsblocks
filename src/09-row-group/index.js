@@ -17,29 +17,7 @@ import { get, map, times } from 'lodash';
 
 import * as Templates from './templates.js';
 
-const ITEM_OPTIONS = [
-    {
-        title: 'Panel',
-        icon: 'feedback',
-        template: [
-        [ 'nhsblocks/panel1' ]
-    ],
-    },
-    {
-        title: 'Promo',
-        icon: 'megaphone',
-        template: [
-            [ 'nhsblocks/promo1'],
-        ],
-    },
-    {
-        title: 'Quote / Testimonial',
-        icon: 'format-quote',
-        template: [
-        [ 'nhsblocks/quote1'],
-    ],
-    },
-];
+
 
 registerBlockType("nhsblocks/rowgroup", {
     title: __("Grouped Items", "nhsblocks"),

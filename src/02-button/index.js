@@ -9,6 +9,8 @@ const { registerBlockType } = wp.blocks;
 const {
     RichText,
     InspectorControls,
+    BlockControls,
+    BlockVerticalAlignmentToolbar,
     URLInputButton } = wp.blockEditor;
 //@todo align
 //@todo extended classes
@@ -48,6 +50,9 @@ registerBlockType("nhsblocks/nhsbutton", {
           selector: "a.nhsuk-button",
           attribute: "href"
       },
+      verticalAlignment: {
+          type: 'string',
+      },
   },
 
     // https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-edit-save/
@@ -59,7 +64,8 @@ registerBlockType("nhsblocks/nhsbutton", {
     const {
       attributes: {
         buttonLabel,
-        buttonLink
+        buttonLink,
+        verticalAlignment,
       },
       className,
       setAttributes
@@ -67,12 +73,17 @@ registerBlockType("nhsblocks/nhsbutton", {
 
     // Grab newButtonLabel, set the value of buttonLabel to newButtonLabel.
     const onChangeButtonLabel = newButtonLabel => {
-      setAttributes({ buttonLabel: newButtonLabel});
+      setAttributes( { buttonLabel: newButtonLabel } );
     };
     // Grab newButtonLink, set the value of buttonLink to newButtonLink.
     const onChangeButtonLink = newButtonLink => {
-      setAttributes({ buttonLink: newButtonLink });
+      setAttributes( { buttonLink: newButtonLink } );
     };
+    // Change handler to set Block `attributes`
+    const onChangeAlignment =  alignment  => {
+      setAttributes( { verticalAlignment: alignment } );
+    };
+
 
         return ([
             <InspectorControls>
@@ -86,12 +97,19 @@ registerBlockType("nhsblocks/nhsbutton", {
         />
         </div>
         </InspectorControls>,
-            <div className={`${className} nhsuk-button`}>
+
+        <BlockControls>
+        <BlockVerticalAlignmentToolbar
+        onChange={ onChangeAlignment }
+        value={ verticalAlignment }
+        />
+        </BlockControls>,
+        <div className={`${className} nhsuk-button`}>
             <RichText
               value={buttonLabel}
               onChange={onChangeButtonLabel}
             />
-            </div>
+        </div>
   ]);
   },
   save: props => {
