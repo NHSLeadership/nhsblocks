@@ -6,7 +6,7 @@
   "devDependencies": {
     "@svgr/webpack": "^4.3.3",
     "@wordpress/scripts": "^3.4.0",
-    "clauderic/react-sortable-hoc": "^1.9.1",
+    "react-sortable-hoc": "^1.11.0",
     "url-loader": "^1.1.2"
   },
   "scripts": {
