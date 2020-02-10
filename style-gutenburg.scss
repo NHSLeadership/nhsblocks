@@ -178,9 +178,19 @@ ul {
   width: 100%;
   float: left;
 }
-h3.nhsuk-do-dont-list__label {
-  .rich-text {
-    color: #ffffff;
+
+.nhsuk-do-dont-list {
+  h3.nhsuk-do-dont-list__label {
+    .rich-text {
+      color: #ffffff;
+    }
+  }
+  li {
+    span {
+      div.rich-text {
+        padding-left: 40px;
+      }
+    }
   }
 }
 .wp-block-nhsblocks-dashpanel {

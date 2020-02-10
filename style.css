@@ -100,23 +100,33 @@ a:visited {
   color: #330072;
 }
 
-a:focus {
-  background-color: #ffb81C;
-  box-shadow: 0 0 0 4px #ffb81C;
-  color: #212b32;
-  outline: 4px solid transparent;
-  outline-offset: 4px;
-}
-
 a:hover {
-  background-color: #ffcd60;
-  box-shadow: 0 0 0 4px #ffcd60;
-  color: #212b32;
+  color: #7C2855;
   text-decoration: none;
 }
 
+a:focus {
+  background-color: #ffeb3b;
+  box-shadow: 0 -2px #ffeb3b, 0 4px #212b32;
+  color: #212b32;
+  outline: 4px solid transparent;
+  text-decoration: none;
+}
+
+a:focus:hover {
+  text-decoration: none;
+}
+
+a:focus:visited {
+  color: #212b32;
+}
+
+a:focus .nhsuk-icon {
+  fill: #212b32;
+}
+
 a:active {
-  color: #374047;
+  color: #002f5c;
 }
 
 @media print {
@@ -127,6 +137,10 @@ a:active {
     font-size: 14pt;
     /* [2] */
   }
+}
+
+.ie8 a:focus {
+  outline: 1px dotted #212b32;
 }
 
 /* ==========================================================================
@@ -145,7 +159,7 @@ a:active {
  */
 html {
   background-color: #d8dde0;
-  font-family: Frutiger W01, Helvetica, Arial, Sans-serif;
+  font-family: Frutiger W01, Arial, Sans-serif;
   overflow-y: scroll;
   /* [1] */
 }
@@ -175,7 +189,6 @@ body {
  */
 table {
   margin-bottom: 40px;
-  margin-top: 40px;
   border-spacing: 0;
   vertical-align: top;
   width: 100%;
@@ -185,12 +198,6 @@ table {
 @media (min-width: 40.0625em) {
   table {
     margin-bottom: 48px;
-  }
-}
-
-@media (min-width: 40.0625em) {
-  table {
-    margin-top: 48px;
   }
 }
 
@@ -209,9 +216,12 @@ td {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
-  padding: 8px;
+  padding-bottom: 8px;
+  padding-right: 16px;
+  padding-top: 8px;
   border-bottom: 1px solid #d8dde0;
   text-align: left;
+  vertical-align: top;
 }
 
 @media (min-width: 40.0625em) {
@@ -234,8 +244,27 @@ td {
 @media (min-width: 40.0625em) {
   th,
   td {
-    padding: 16px;
+    padding-bottom: 16px;
   }
+}
+
+@media (min-width: 40.0625em) {
+  th,
+  td {
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  th,
+  td {
+    padding-top: 16px;
+  }
+}
+
+th:last-child,
+td:last-child {
+  padding-right: 0;
 }
 
 th {
@@ -282,7 +311,7 @@ caption {
 }
 
 .nhsuk-form-group--error {
-  border-left: 4px solid #da291c;
+  border-left: 4px solid #d5281b;
   padding-left: 16px;
 }
 
@@ -532,7 +561,7 @@ caption {
 }
 
 .nhsuk-icon__cross {
-  fill: #da291c;
+  fill: #d5281b;
 }
 
 .nhsuk-icon__tick {
@@ -981,7 +1010,7 @@ h6,
   font-size: 24px;
   font-size: 1.5rem;
   line-height: 1.33333;
-  color: #425563;
+  color: #4c6272;
   display: block;
   margin-bottom: 4px;
 }
@@ -1006,7 +1035,7 @@ h6,
   font-size: 20px;
   font-size: 1.25rem;
   line-height: 1.4;
-  color: #425563;
+  color: #4c6272;
   display: block;
   margin-bottom: 4px;
 }
@@ -1031,7 +1060,7 @@ h6,
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
-  color: #425563;
+  color: #4c6272;
   display: block;
 }
 
@@ -1252,13 +1281,15 @@ address {
 /* [2] */
 h1 + .nhsuk-lede-text,
 h1 + .nhsuk-lede-text--small {
-  margin-top: -24px;
+  margin-top: -8px;
 }
 
 /**
  * Contextual adjustments
  *
  * Add top padding to headings that appear directly after paragraphs.
+ *
+ * 1. Removes the padding-top because of the lede-text's increased margin-bottom
  *
  * Original code taken from GDS (Government Digital Service)
  * https://github.com/alphagov/nhsuk-frontend
@@ -1365,6 +1396,12 @@ ol + .nhsuk-heading-s {
   ol + .nhsuk-heading-s {
     padding-top: 8px;
   }
+}
+
+/* [1] */
+.nhsuk-lede-text + h2,
+.nhsuk-lede-text + .nhsuk-heading-l {
+  padding-top: 0;
 }
 
 /* Font weight for <strong> and <b> */
@@ -2721,7 +2758,7 @@ b {
  * eg <p class="nhsuk-u-secondary-text-color">Published on: 15 March 2018</p>
  */
 .nhsuk-u-secondary-text-color {
-  color: #425563 !important;
+  color: #4c6272 !important;
 }
 
 /* ==========================================================================
@@ -2842,7 +2879,7 @@ b {
   display: inline-block;
   /* [1] */
   font-weight: 600;
-  padding-left: 42px;
+  padding-left: 38px;
   /* [2] */
   position: relative;
   /* [3] */
@@ -2865,9 +2902,27 @@ b {
   }
 }
 
+.nhsuk-action-link__link:hover .nhsuk-action-link__text {
+  text-decoration: underline;
+  /* [6] */
+}
+
+.nhsuk-action-link__link:focus {
+  background-color: #ffeb3b;
+  box-shadow: 0 -2px #ffeb3b, 0 4px #212b32;
+  color: #212b32;
+  outline: 4px solid transparent;
+  text-decoration: none;
+}
+
+.nhsuk-action-link__link:focus:hover .nhsuk-action-link__text {
+  color: #212b32;
+  text-decoration: none;
+}
+
 @media (max-width: 40.0525em) {
   .nhsuk-action-link__link {
-    padding-left: 36px;
+    padding-left: 26px;
     /* [2] */
   }
 }
@@ -2881,32 +2936,13 @@ b {
   }
 }
 
-.nhsuk-action-link__link:focus {
-  box-shadow: 0 0 0 8px #ffb81C;
-  /* [5] */
-}
-
-.nhsuk-action-link__link:focus .nhsuk-action-link__text {
-  text-decoration: underline;
-}
-
-.nhsuk-action-link__link:hover {
-  box-shadow: 0 0 0 8px #ffcd60;
-  /* [5] */
-}
-
-.nhsuk-action-link__link:hover .nhsuk-action-link__text {
-  text-decoration: underline;
-  /* [6] */
-}
-
 .nhsuk-action-link__link .nhsuk-icon__arrow-right-circle {
   fill: #007f3b;
-  height: 40px;
+  height: 36px;
   left: -3px;
   position: absolute;
-  top: -4px;
-  width: 40px;
+  top: -2px;
+  width: 36px;
 }
 
 @media print {
@@ -2921,10 +2957,11 @@ b {
 
 @media (max-width: 40.0525em) {
   .nhsuk-action-link__link .nhsuk-icon__arrow-right-circle {
-    height: 34px;
-    margin-bottom: -9px;
-    top: -3px;
-    width: 34px;
+    height: 24px;
+    left: -2px;
+    margin-bottom: 0;
+    top: 2px;
+    width: 24px;
   }
 }
 
@@ -2984,11 +3021,11 @@ b {
   text-decoration: underline;
 }
 
-.nhsuk-back-link__link:hover, .nhsuk-back-link__link:focus {
-  color: #212b32;
+.nhsuk-back-link__link:hover .nhsuk-icon__chevron-left {
+  fill: #7C2855;
 }
 
-.nhsuk-back-link__link:hover .nhsuk-icon__chevron-left, .nhsuk-back-link__link:focus .nhsuk-icon__chevron-left {
+.nhsuk-back-link__link:focus .nhsuk-icon__chevron-left {
   fill: #212b32;
 }
 
@@ -3011,7 +3048,7 @@ b {
   background-color: #007f3b;
   border: 2px solid transparent;
   border-radius: 4px;
-  box-shadow: 0 4px 0 #003317;
+  box-shadow: 0 4px 0 #00401e;
   box-sizing: border-box;
   color: #ffffff;
   cursor: pointer;
@@ -3043,12 +3080,6 @@ b {
   }
 }
 
-.nhsuk-button:focus, .wp-block-button__link:focus, .wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:focus {
-  box-shadow: 0 0 0 4px #ffb81C;
-  outline: 4px solid transparent;
-  outline-offset: 4px;
-}
-
 @media (min-width: 40.0625em) {
   .nhsuk-button, .wp-block-button__link, .wp-block-file__button, .wp-block-file a.wp-block-file__button, .wp-block-file a.wp-block-file__button:active, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:visited {
     margin-bottom: 36px;
@@ -3071,12 +3102,21 @@ b {
   padding: 0;
 }
 
-.nhsuk-button:hover, .wp-block-button__link:hover, .wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:hover, .nhsuk-button:focus, .wp-block-button__link:focus, .wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:focus {
+.nhsuk-button:hover, .wp-block-button__link:hover, .wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:hover {
   background-color: #00662f;
 }
 
+.nhsuk-button:focus, .wp-block-button__link:focus, .wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:focus {
+  background: #ffeb3b;
+  box-shadow: 0 4px 0 #212b32;
+  color: #212b32;
+  outline: 4px solid transparent;
+}
+
 .nhsuk-button:active, .wp-block-button__link:active, .wp-block-file__button:active, .wp-block-file a.wp-block-file__button:active {
+  background: #00401e;
   box-shadow: none;
+  color: #ffffff;
   top: 4px;
 }
 
@@ -3099,16 +3139,30 @@ b {
  * Button variations
  */
 .nhsuk-button--secondary, .nhsuk-button.is-style-secondary, .is-style-secondary.wp-block-button__link, .is-style-secondary.wp-block-file__button, .wp-block-file a.is-style-secondary.wp-block-file__button {
-  background-color: #425563;
-  box-shadow: 0 4px 0 #232e35;
+  background-color: #4c6272;
+  box-shadow: 0 4px 0 #263139;
 }
 
-.nhsuk-button--secondary:hover, .nhsuk-button.is-style-secondary:hover, .is-style-secondary.wp-block-button__link:hover, .is-style-secondary.wp-block-file__button:hover, .wp-block-file a.is-style-secondary.wp-block-file__button:hover, .nhsuk-button--secondary:focus, .nhsuk-button.is-style-secondary:focus, .is-style-secondary.wp-block-button__link:focus, .is-style-secondary.wp-block-file__button:focus, .wp-block-file a.is-style-secondary.wp-block-file__button:focus {
-  background-color: #384854;
+.nhsuk-button--secondary:hover, .nhsuk-button.is-style-secondary:hover, .is-style-secondary.wp-block-button__link:hover, .is-style-secondary.wp-block-file__button:hover, .wp-block-file a.is-style-secondary.wp-block-file__button:hover {
+  background-color: #384853;
+}
+
+.nhsuk-button--secondary:focus, .nhsuk-button.is-style-secondary:focus, .is-style-secondary.wp-block-button__link:focus, .is-style-secondary.wp-block-file__button:focus, .wp-block-file a.is-style-secondary.wp-block-file__button:focus {
+  background: #ffeb3b;
+  box-shadow: 0 4px 0 #212b32;
+  color: #212b32;
+  outline: 4px solid transparent;
+}
+
+.nhsuk-button--secondary:active, .nhsuk-button.is-style-secondary:active, .is-style-secondary.wp-block-button__link:active, .is-style-secondary.wp-block-file__button:active, .wp-block-file a.is-style-secondary.wp-block-file__button:active {
+  background: #263139;
+  box-shadow: none;
+  color: #ffffff;
+  top: 4px;
 }
 
 .nhsuk-button--secondary.nhsuk-button--disabled, .nhsuk-button--disabled.nhsuk-button.is-style-secondary, .nhsuk-button--disabled.is-style-secondary.wp-block-button__link, .nhsuk-button--disabled.is-style-secondary.wp-block-file__button, .wp-block-file a.nhsuk-button--disabled.is-style-secondary.wp-block-file__button:active, .wp-block-file a.nhsuk-button--disabled.is-style-secondary.wp-block-file__button:focus, .wp-block-file a.nhsuk-button--disabled.is-style-secondary.wp-block-file__button:hover, .wp-block-file a.nhsuk-button--disabled.is-style-secondary.wp-block-file__button:visited {
-  background-color: #425563;
+  background-color: #4c6272;
 }
 
 .nhsuk-button--reverse, .nhsuk-button.is-style-reverse, .is-style-reverse.wp-block-button__link, .is-style-reverse.wp-block-file__button, .wp-block-file a.is-style-reverse.wp-block-file__button {
@@ -3117,9 +3171,23 @@ b {
   color: #212b32;
 }
 
-.nhsuk-button--reverse:hover, .nhsuk-button.is-style-reverse:hover, .is-style-reverse.wp-block-button__link:hover, .is-style-reverse.wp-block-file__button:hover, .wp-block-file a.is-style-reverse.wp-block-file__button:hover, .nhsuk-button--reverse:focus, .nhsuk-button.is-style-reverse:focus, .is-style-reverse.wp-block-button__link:focus, .is-style-reverse.wp-block-file__button:focus, .wp-block-file a.is-style-reverse.wp-block-file__button:focus {
+.nhsuk-button--reverse:hover, .nhsuk-button.is-style-reverse:hover, .is-style-reverse.wp-block-button__link:hover, .is-style-reverse.wp-block-file__button:hover, .wp-block-file a.is-style-reverse.wp-block-file__button:hover {
   background-color: #f2f2f2;
   color: #212b32;
+}
+
+.nhsuk-button--reverse:focus, .nhsuk-button.is-style-reverse:focus, .is-style-reverse.wp-block-button__link:focus, .is-style-reverse.wp-block-file__button:focus, .wp-block-file a.is-style-reverse.wp-block-file__button:focus {
+  background: #ffeb3b;
+  box-shadow: 0 4px 0 #212b32;
+  color: #212b32;
+  outline: 4px solid transparent;
+}
+
+.nhsuk-button--reverse:active, .nhsuk-button.is-style-reverse:active, .is-style-reverse.wp-block-button__link:active, .is-style-reverse.wp-block-file__button:active, .wp-block-file a.is-style-reverse.wp-block-file__button:active {
+  background: #212b32;
+  box-shadow: none;
+  color: #ffffff;
+  top: 4px;
 }
 
 .nhsuk-button--reverse:link, .nhsuk-button.is-style-reverse:link, .is-style-reverse.wp-block-button__link:link, .is-style-reverse.wp-block-file__button:link, .wp-block-file a.is-style-reverse.wp-block-file__button:link:active, .wp-block-file a.is-style-reverse.wp-block-file__button:link:focus, .wp-block-file a.is-style-reverse.wp-block-file__button:link:hover, .wp-block-file a.is-style-reverse.wp-block-file__button:link:visited {
@@ -3186,7 +3254,7 @@ b {
 .wp-block-button__link[disabled]:active,
 .wp-block-file__button[disabled]:active,
 .wp-block-file a.wp-block-file__button[disabled]:active {
-  box-shadow: 0 4px 0 #003317;
+  box-shadow: 0 4px 0 #00401e;
   top: 0;
 }
 
@@ -3199,7 +3267,7 @@ b {
 .wp-block-file a.is-style-secondary.wp-block-file__button[disabled]:focus,
 .wp-block-file a.is-style-secondary.wp-block-file__button[disabled]:hover,
 .wp-block-file a.is-style-secondary.wp-block-file__button[disabled]:visited {
-  background-color: #425563;
+  background-color: #4c6272;
   opacity: 0.5;
 }
 
@@ -3208,7 +3276,7 @@ b {
 .nhsuk-button.is-style-secondary[disabled]:hover,
 .is-style-secondary.wp-block-button__link[disabled]:hover,
 .is-style-secondary.wp-block-file__button[disabled]:hover {
-  background-color: #425563;
+  background-color: #4c6272;
   cursor: default;
 }
 
@@ -3225,7 +3293,7 @@ b {
 .nhsuk-button.is-style-secondary[disabled]:active,
 .is-style-secondary.wp-block-button__link[disabled]:active,
 .is-style-secondary.wp-block-file__button[disabled]:active {
-  box-shadow: 0 4px 0 #232e35;
+  box-shadow: 0 4px 0 #263139;
   top: 0;
 }
 
@@ -3266,6 +3334,13 @@ b {
 .is-style-reverse.wp-block-file__button[disabled]:active {
   box-shadow: 0 4px 0 #212b32;
   top: 0;
+}
+
+/**
+ * IE8 fix for focus styles
+ */
+.ie8 .nhsuk-button:focus, .ie8 .wp-block-button__link:focus, .ie8 .wp-block-file__button:focus, .ie8 .wp-block-file a.wp-block-file__button:focus, .wp-block-file .ie8 a.wp-block-file__button:focus {
+  outline: 1px dotted #212b32;
 }
 
 /* ==========================================================================
@@ -3428,7 +3503,7 @@ b {
  * 1. <a> needs to be white because the background colour is black.
  */
 .nhsuk-care-card--urgent .nhsuk-care-card__heading-container, .nhsuk-care-card.is-style-urgent .nhsuk-care-card__heading-container {
-  background-color: #da291c;
+  background-color: #d5281b;
   color: #ffffff;
 }
 
@@ -3441,11 +3516,11 @@ b {
 }
 
 .nhsuk-care-card--urgent .nhsuk-care-card__arrow:before, .nhsuk-care-card.is-style-urgent .nhsuk-care-card__arrow:before, .nhsuk-care-card--urgent .nhsuk-care-card__arrow:after, .nhsuk-care-card.is-style-urgent .nhsuk-care-card__arrow:after {
-  border-color: #da291c;
+  border-color: #d5281b;
 }
 
 .nhsuk-care-card--immediate .nhsuk-care-card__heading-container, .nhsuk-care-card.is-style-immediate .nhsuk-care-card__heading-container {
-  background-color: #da291c;
+  background-color: #d5281b;
   color: #ffffff;
 }
 
@@ -3458,7 +3533,7 @@ b {
 }
 
 .nhsuk-care-card--immediate .nhsuk-care-card__arrow:before, .nhsuk-care-card.is-style-immediate .nhsuk-care-card__arrow:before, .nhsuk-care-card--immediate .nhsuk-care-card__arrow:after, .nhsuk-care-card.is-style-immediate .nhsuk-care-card__arrow:after {
-  border-color: #da291c;
+  border-color: #d5281b;
 }
 
 .nhsuk-care-card--immediate .nhsuk-care-card__content, .nhsuk-care-card.is-style-immediate .nhsuk-care-card__content {
@@ -3471,7 +3546,7 @@ b {
   /* [1] */
 }
 
-.nhsuk-care-card--immediate .nhsuk-care-card__content a:hover, .nhsuk-care-card.is-style-immediate .nhsuk-care-card__content a:hover, .nhsuk-care-card--immediate .nhsuk-care-card__content a:focus, .nhsuk-care-card.is-style-immediate .nhsuk-care-card__content a:focus {
+.nhsuk-care-card--immediate .nhsuk-care-card__content a:focus, .nhsuk-care-card.is-style-immediate .nhsuk-care-card__content a:focus {
   color: #212b32;
   /* [1] */
 }
@@ -3482,7 +3557,11 @@ b {
   color: #ffffff;
 }
 
-.nhsuk-care-card--immediate .nhsuk-details__summary:hover, .nhsuk-care-card.is-style-immediate .nhsuk-details__summary:hover, .nhsuk-care-card--immediate .nhsuk-details__summary:focus, .nhsuk-care-card.is-style-immediate .nhsuk-details__summary:focus {
+.nhsuk-care-card--immediate .nhsuk-details__summary:hover, .nhsuk-care-card.is-style-immediate .nhsuk-details__summary:hover {
+  color: #ffffff;
+}
+
+.nhsuk-care-card--immediate .nhsuk-details__summary:focus, .nhsuk-care-card.is-style-immediate .nhsuk-details__summary:focus {
   color: #212b32;
 }
 
@@ -3593,18 +3672,7 @@ b {
 }
 
 .nhsuk-details__summary:hover {
-  background-color: #ffcd60;
-  box-shadow: 0 0 0 4px #ffcd60;
-  color: #212b32;
-  text-decoration: none;
-}
-
-.nhsuk-details__summary:focus {
-  background-color: #ffb81C;
-  box-shadow: 0 0 0 4px #ffb81C;
-  color: #212b32;
-  outline: 4px solid transparent;
-  outline-offset: 4px;
+  color: #7C2855;
 }
 
 .nhsuk-details__summary:before {
@@ -3625,21 +3693,18 @@ b {
 }
 
 .nhsuk-details__summary:focus {
-  box-shadow: 0 0 0 8px #ffb81C;
+  background-color: #ffeb3b;
+  box-shadow: 0 -2px #ffeb3b, 0 4px #212b32;
   color: #212b32;
+  outline: 4px solid transparent;
+  text-decoration: none;
 }
 
-.nhsuk-details__summary:focus .nhsuk-details__summary-text {
-  color: #212b32;
+.nhsuk-details__summary:focus .nhsuk-icon {
+  fill: #212b32;
 }
 
-.nhsuk-details__summary:hover {
-  background-color: #ffcd60;
-  box-shadow: 0 0 0 8px #ffcd60;
-}
-
-.nhsuk-details__summary:hover .nhsuk-details__summary-text {
-  color: #212b32;
+.nhsuk-details__summary:hover .nhsuk-details__summary-text, .nhsuk-details__summary:focus .nhsuk-details__summary-text {
   text-decoration: none;
 }
 
@@ -3700,14 +3765,15 @@ b {
 }
 
 .nhsuk-expander .nhsuk-details__summary, .nhsuk-details.is-style-expander .nhsuk-details__summary {
-  padding: 16px;
   background-color: #ffffff;
+  border-top: 4px solid transparent;
   display: block;
+  padding: 20px 24px 24px;
 }
 
-@media (min-width: 40.0625em) {
+@media (max-width: 40.0525em) {
   .nhsuk-expander .nhsuk-details__summary, .nhsuk-details.is-style-expander .nhsuk-details__summary {
-    padding: 24px;
+    padding: 12px 16px 16px;
   }
 }
 
@@ -3715,17 +3781,21 @@ b {
   display: none !important;
 }
 
+.nhsuk-expander .nhsuk-details__summary:hover .nhsuk-details__summary-text, .nhsuk-details.is-style-expander .nhsuk-details__summary:hover .nhsuk-details__summary-text {
+  color: #7C2855;
+}
+
 .nhsuk-expander .nhsuk-details__summary:focus, .nhsuk-details.is-style-expander .nhsuk-details__summary:focus {
-  box-shadow: 0 0 0 4px #ffb81C;
+  box-shadow: none;
 }
 
-.nhsuk-expander .nhsuk-details__summary:hover, .nhsuk-details.is-style-expander .nhsuk-details__summary:hover {
-  box-shadow: 0 0 0 4px #ffcd60;
-}
-
-.nhsuk-expander .nhsuk-details__summary:hover, .nhsuk-details.is-style-expander .nhsuk-details__summary:hover, .nhsuk-expander .nhsuk-details__summary:active, .nhsuk-details.is-style-expander .nhsuk-details__summary:active, .nhsuk-expander .nhsuk-details__summary:focus, .nhsuk-details.is-style-expander .nhsuk-details__summary:focus {
-  /* [2] */
-  outline: 0;
+.nhsuk-expander .nhsuk-details__summary:focus .nhsuk-details__summary-text, .nhsuk-details.is-style-expander .nhsuk-details__summary:focus .nhsuk-details__summary-text {
+  background-color: #ffeb3b;
+  box-shadow: 0 -2px #ffeb3b, 0 4px #212b32;
+  color: #212b32;
+  outline: 4px solid transparent;
+  text-decoration: none;
+  background: #ffeb3b url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__plus' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='32' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='002f5c'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M12 8v8M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat;
 }
 
 .nhsuk-expander .nhsuk-details__summary-text, .nhsuk-details.is-style-expander .nhsuk-details__summary-text {
@@ -3733,13 +3803,16 @@ b {
   background-size: 32px;
   color: #005eb8;
   cursor: pointer;
-  display: block;
+  display: inline-block;
   padding: 8px 8px 8px 38px;
   position: relative;
 }
 
 .nhsuk-expander .nhsuk-details__text, .nhsuk-details.is-style-expander .nhsuk-details__text {
-  padding: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 0;
   border-left: 0;
   margin-left: 0;
   margin-top: 0;
@@ -3747,12 +3820,35 @@ b {
 
 @media (min-width: 40.0625em) {
   .nhsuk-expander .nhsuk-details__text, .nhsuk-details.is-style-expander .nhsuk-details__text {
-    padding: 24px;
+    padding-bottom: 24px;
   }
 }
 
-.nhsuk-expander[open] .nhsuk-details__summary, .nhsuk-details.is-style-expander[open] .nhsuk-details__summary {
-  border-bottom: 1px solid #f0f4f5;
+@media (min-width: 40.0625em) {
+  .nhsuk-expander .nhsuk-details__text, .nhsuk-details.is-style-expander .nhsuk-details__text {
+    padding-left: 24px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-expander .nhsuk-details__text, .nhsuk-details.is-style-expander .nhsuk-details__text {
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-expander .nhsuk-details__text, .nhsuk-details.is-style-expander .nhsuk-details__text {
+    padding-top: 0;
+  }
+}
+
+.nhsuk-expander[open] .nhsuk-details__summary:focus .nhsuk-details__summary-text, .nhsuk-details.is-style-expander[open] .nhsuk-details__summary:focus .nhsuk-details__summary-text {
+  background: #ffeb3b url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__minus' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='32' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='002f5c'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat;
+  /* [3] */
+}
+
+.nhsuk-expander[open] .nhsuk-details__summary:focus:hover .nhsuk-details__summary-text, .nhsuk-details.is-style-expander[open] .nhsuk-details__summary:focus:hover .nhsuk-details__summary-text {
+  text-decoration: none;
 }
 
 .nhsuk-expander[open] .nhsuk-details__summary-text, .nhsuk-details.is-style-expander[open] .nhsuk-details__summary-text {
@@ -3854,7 +3950,7 @@ b {
   background-color: #005eb8;
   color: #ffffff;
   display: inline-block;
-  margin: 0 -32px 8px;
+  margin: 0 0 8px -32px;
   padding: 8px 32px;
   position: relative;
   top: -16px;
@@ -3879,7 +3975,7 @@ b {
 @media (max-width: 40.0525em) {
   .nhsuk-do-dont-list__label {
     margin-left: -24px;
-    margin-right: -24px;
+    margin-right: 0;
     padding: 8px 24px;
     top: -8px;
   }
@@ -3904,123 +4000,6 @@ b {
 }
 
 /* ==========================================================================
-   COMPONENTS / #EMERGENCY-ALERT
-   ========================================================================== */
-/**
- * 1. Use inverted link colours due to the yellow
- *    ($color_nhsuk-yellow) background.
- */
-.nhsuk-global-alert {
-  background-color: #ffeb3b;
-  padding-bottom: 24px;
-  padding-top: 24px;
-}
-
-@media print {
-  .nhsuk-global-alert {
-    display: none;
-  }
-}
-
-.nhsuk-global-alert a {
-  color: #005eb8;
-  /* [1] */
-}
-
-.nhsuk-global-alert a:focus {
-  background-color: #003d78;
-  box-shadow: 0 0 0 4px #003d78;
-  color: #ffffff;
-  outline: 4px solid transparent;
-  outline-offset: 4px;
-}
-
-.nhsuk-global-alert a:hover {
-  background-color: #005eb8;
-  box-shadow: 0 0 0 4px #005eb8;
-  color: #ffffff;
-}
-
-.nhsuk-global-alert a:active {
-  background-color: #002f5c;
-  box-shadow: 0 0 0 4px #003d78;
-  color: #ffffff;
-}
-
-.nhsuk-global-alert__heading {
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 1.4;
-  margin: 0;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-global-alert__heading {
-    font-size: 24px;
-    font-size: 1.5rem;
-    line-height: 1.33333;
-  }
-}
-
-@media print {
-  .nhsuk-global-alert__heading {
-    font-size: 18pt;
-    line-height: 1.15;
-  }
-}
-
-.nhsuk-global-alert__content {
-  position: relative;
-}
-
-.nhsuk-global-alert__content > *:first-child {
-  margin-top: 0;
-}
-
-.nhsuk-global-alert__content > *:last-child {
-  margin-bottom: 0;
-}
-
-.nhsuk-global-alert__message {
-  margin-top: 8px;
-  margin-bottom: 0;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-global-alert__message {
-    margin-top: 8px;
-  }
-}
-
-.nhsuk-global-alert__updated {
-  margin-top: 8px;
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 1.66667;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-global-alert__updated {
-    margin-top: 8px;
-  }
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-global-alert__updated {
-    font-size: 14px;
-    font-size: 0.875rem;
-    line-height: 1.71429;
-  }
-}
-
-@media print {
-  .nhsuk-global-alert__updated {
-    font-size: 12pt;
-    line-height: 1.2;
-  }
-}
-
-/* ==========================================================================
    COMPONENTS/ #ERROR-MESSAGE
    ========================================================================== */
 .nhsuk-error-message {
@@ -4029,7 +4008,7 @@ b {
   font-size: 1rem;
   line-height: 1.5;
   clear: both;
-  color: #da291c;
+  color: #d5281b;
   display: block;
   margin-bottom: 16px;
 }
@@ -4055,13 +4034,11 @@ b {
 /**
  * 1. Cross-component class - adjusts styling of list component.
  * 2. Override default link styling to use error colour
- * 3. When the link has focus, the text colour needs to be darker to ensure that
- *    colour contrast is still acceptable
  */
 .nhsuk-error-summary {
   padding: 16px;
   margin-bottom: 48px;
-  border: 4px solid #da291c;
+  border: 4px solid #d5281b;
 }
 
 @media (min-width: 40.0625em) {
@@ -4076,16 +4053,16 @@ b {
   }
 }
 
-.nhsuk-error-summary:focus {
-  box-shadow: 0 0 0 4px #ffb81C;
-  outline: 4px solid transparent;
-  outline-offset: 4px;
-}
-
 @media (min-width: 40.0625em) {
   .nhsuk-error-summary {
-    border: 4px solid #da291c;
+    border: 4px solid #d5281b;
   }
+}
+
+.nhsuk-error-summary:focus {
+  border: 4px solid #212b32;
+  box-shadow: 0 0 0 4px #ffeb3b;
+  outline: 4px solid transparent;
 }
 
 .nhsuk-error-summary__title {
@@ -4162,173 +4139,16 @@ b {
   /* 2 */
 }
 
-.nhsuk-error-summary__list a:focus {
-  background-color: #ffb81C;
-  outline: 4px solid #ffb81C;
-  outline-offset: 0;
-}
-
 .nhsuk-error-summary__list a:link, .nhsuk-error-summary__list a:visited, .nhsuk-error-summary__list a:hover, .nhsuk-error-summary__list a:active {
-  color: #da291c;
-}
-
-.nhsuk-error-summary__list a:hover {
-  color: #212b32;
+  color: #d5281b;
 }
 
 .nhsuk-error-summary__list a:focus {
-  /* 3 */
-  color: #212b32;
-}
-
-/* ==========================================================================
-    COMPONENTS / #FEEDBACK-BANNER
-   ========================================================================== */
-/**
- * 1. Hide the banner until it is triggered by Javascript.
- * 2. Bring banner in front of rest of page content.
- * 3. Avoid the banner title overlapping close button.
- * 4. Avoid the banner title overlapping close button on
- *    small mobile devices (below 320px).
- * 5. Change the cursor to a pointer on hover.
- * 6. Repositions the banner into the normal flow of the page, ie not fixed.
- */
-.nhsuk-feedback-banner {
-  background-color: #ffffff;
-  bottom: 0;
-  box-shadow: 0 -4px 0 0 rgba(33, 43, 50, 0.16);
-  display: none;
-  /* [1] */
-  margin: 0 auto;
-  padding-bottom: 24px;
-  padding-top: 24px;
-  position: fixed;
-  width: 100%;
-  z-index: 20;
-  /* [2] */
-}
-
-@media print {
-  .nhsuk-feedback-banner {
-    display: none;
-  }
-}
-
-.nhsuk-feedback-banner.js-inview {
-  /* [6] */
-  bottom: auto;
-  position: relative;
-}
-
-.nhsuk-feedback-banner__heading {
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 1.4;
-  margin: 0;
-  padding-right: 40px;
-  /* [3] */
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-feedback-banner__heading {
-    font-size: 24px;
-    font-size: 1.5rem;
-    line-height: 1.33333;
-  }
-}
-
-@media print {
-  .nhsuk-feedback-banner__heading {
-    font-size: 18pt;
-    line-height: 1.15;
-  }
-}
-
-.nhsuk-feedback-banner__content {
-  position: relative;
-}
-
-.nhsuk-feedback-banner__content:after {
-  clear: both;
-  content: '';
-  display: block;
-}
-
-.nhsuk-feedback-banner__message {
-  margin-bottom: 0;
-  margin-top: 8px;
-  padding-bottom: 24px;
-  /* [4] */
-}
-
-@media (min-width: 20em) {
-  .nhsuk-feedback-banner__message {
-    padding-bottom: 0;
-  }
-}
-
-.nhsuk-feedback-banner__close {
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 1.66667;
-  color: #005eb8;
-  background: none;
-  border: 0;
-  color: #212b32;
-  cursor: pointer;
-  /* [5] */
-  padding: 0;
-  position: absolute;
-  right: 0;
-  text-decoration: underline;
-  top: 0;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-feedback-banner__close {
-    font-size: 14px;
-    font-size: 0.875rem;
-    line-height: 1.71429;
-  }
-}
-
-@media print {
-  .nhsuk-feedback-banner__close {
-    font-size: 12pt;
-    line-height: 1.2;
-  }
-}
-
-.nhsuk-feedback-banner__close:visited {
-  color: #330072;
-}
-
-.nhsuk-feedback-banner__close:focus {
-  background-color: #ffb81C;
-  box-shadow: 0 0 0 4px #ffb81C;
+  background-color: #ffeb3b;
+  box-shadow: 0 -2px #ffeb3b, 0 4px #212b32;
   color: #212b32;
   outline: 4px solid transparent;
-  outline-offset: 4px;
-}
-
-.nhsuk-feedback-banner__close:hover {
-  background-color: #ffcd60;
-  box-shadow: 0 0 0 4px #ffcd60;
-  color: #212b32;
   text-decoration: none;
-}
-
-.nhsuk-feedback-banner__close:active {
-  color: #374047;
-}
-
-@media (max-width: 19.99em) {
-  .nhsuk-feedback-banner__close {
-    bottom: 0;
-    position: absolute;
-    right: 0;
-    top: auto;
-  }
 }
 
 /* ==========================================================================
@@ -4454,6 +4274,7 @@ b {
  * 11. Give the description box a max width.
  * 13. Remove the arrow in Windows high contrast mode.
  * 14. Reduce spacing and change positioning for Windows high contrast mode.
+ * 15. Prevent text breaking out of box on smaller sizes
  */
 .nhsuk-hero--image-description .nhsuk-hero-content {
   background-color: #005eb8;
@@ -4462,7 +4283,6 @@ b {
   padding: 24px;
   position: relative;
   top: 70px;
-  width: 85%;
 }
 
 .nhsuk-hero--image-description .nhsuk-hero-content .nhsuk-hero__arrow {
@@ -4510,6 +4330,13 @@ b {
   .nhsuk-hero--image-description .nhsuk-hero-content .nhsuk-hero__arrow {
     display: none;
     /* [13] */
+  }
+}
+
+@media (min-width: 23.4375em) {
+  .nhsuk-hero--image-description .nhsuk-hero-content {
+    /* [15] */
+    width: 85%;
   }
 }
 
@@ -4981,20 +4808,14 @@ b {
 }
 
 .nhsuk-list-panel__link:hover {
-  box-shadow: 0 -1px 0 0 #ffcd60;
-  /* [5] */
+  text-decoration: underline;
+  /* [7] */
 }
 
 .nhsuk-list-panel__link:focus {
-  box-shadow: 0 -1px 0 0 #ffb81C;
-  /* [5] */
-}
-
-.nhsuk-list-panel__link:hover, .nhsuk-list-panel__link:focus {
-  border-color: transparent;
-  /* [6] */
-  text-decoration: underline;
-  /* [7] */
+  background-color: #ffeb3b;
+  border-bottom: 1px solid #212b32;
+  box-shadow: inset 0 -4px 0 0 #212b32;
 }
 
 @media (max-width: 40.0525em) {
@@ -5005,7 +4826,7 @@ b {
 
 .nhsuk-list-panel--results-items__no-results {
   border-bottom: 1px solid #d8dde0;
-  color: #425563;
+  color: #4c6272;
   margin: 0;
   padding: 16px;
 }
@@ -5085,11 +4906,23 @@ b {
   color: #005eb8;
 }
 
-.nhsuk-back-to-top__link:hover, .nhsuk-back-to-top__link:focus {
-  color: #212b32;
+.nhsuk-back-to-top__link:hover {
+  color: #7C2855;
 }
 
-.nhsuk-back-to-top__link:hover .nhsuk-icon, .nhsuk-back-to-top__link:focus .nhsuk-icon {
+.nhsuk-back-to-top__link:hover .nhsuk-icon {
+  fill: #7C2855;
+}
+
+.nhsuk-back-to-top__link:focus {
+  background-color: #ffeb3b;
+  box-shadow: 0 -2px #ffeb3b, 0 4px #212b32;
+  color: #212b32;
+  outline: 4px solid transparent;
+  text-decoration: none;
+}
+
+.nhsuk-back-to-top__link:focus .nhsuk-icon {
   fill: #212b32;
 }
 
@@ -5201,7 +5034,7 @@ b {
   background-color: #005eb8;
   color: #ffffff;
   display: inline-block;
-  margin: 0 -32px 8px;
+  margin: 0 0 8px -32px;
   padding: 8px 32px;
   position: relative;
   top: -16px;
@@ -5225,7 +5058,7 @@ b {
 @media (max-width: 40.0525em) {
   .nhsuk-panel-with-label__label, .nhsuk-panel.is-style-panel-with-label h3, .nhsuk-panel.is-style-panel-with-label h3 .rich-text {
     margin-left: -24px;
-    margin-right: -24px;
+    margin-right: 0;
     padding: 8px 24px;
     top: -8px;
   }
@@ -5328,33 +5161,39 @@ b {
   /* [5] */
 }
 
-.nhsuk-promo__link-wrapper:focus {
-  background-color: #ffffff;
-  box-shadow: 0 0 0 4px #ffb81C;
-}
-
-.nhsuk-promo__link-wrapper:focus .nhsuk-promo__heading {
-  text-decoration: underline;
-  /* [6] */
-}
-
-.nhsuk-promo__link-wrapper:focus .nhsuk-promo__heading,
-.nhsuk-promo__link-wrapper:focus .nhsuk-promo__description {
-  color: #212b32;
-}
-
 .nhsuk-promo__link-wrapper:hover {
   background-color: #ffffff;
-  box-shadow: 0 0 0 4px #ffb81C;
   color: #005eb8;
 }
 
+.nhsuk-promo__link-wrapper:hover .nhsuk-promo__heading {
+  color: #7C2855;
+}
+
+.nhsuk-promo__link-wrapper:focus {
+  background-color: #ffffff;
+  box-shadow: 0 4px 0 0 #d8dde0;
+}
+
+.nhsuk-promo__link-wrapper:focus .nhsuk-promo__heading {
+  background-color: #ffeb3b;
+  box-shadow: 0 -2px #ffeb3b, 0 4px #212b32;
+  color: #212b32;
+  outline: 4px solid transparent;
+  text-decoration: none;
+}
+
 .nhsuk-promo__link-wrapper:active {
-  background-color: #f0f4f5;
+  background-color: #ffffff;
   /* [7] */
-  box-shadow: 0 0 0 4px #ffbf33;
+  box-shadow: none;
   top: 4px;
   /* [7] */
+}
+
+.nhsuk-promo__link-wrapper:active .nhsuk-promo__heading {
+  background: none;
+  box-shadow: none;
 }
 
 .nhsuk-promo__link-wrapper:hover .nhsuk-promo__heading, .nhsuk-promo__link-wrapper:active .nhsuk-promo__heading {
@@ -5379,6 +5218,7 @@ b {
   font-size: 20px;
   font-size: 1.25rem;
   line-height: 1.4;
+  display: inline-block;
   margin-bottom: 16px;
   text-decoration: underline;
 }
@@ -5417,7 +5257,7 @@ b {
 }
 
 .nhsuk-promo__description {
-  color: #425563;
+  color: #4c6272;
 }
 
 /* Promo size variant
@@ -5735,7 +5575,7 @@ b {
   background-color: #ffeb3b;
   color: #212b32;
   display: inline-block;
-  margin: 0 -32px 8px;
+  margin: 0 0 8px -32px;
   padding: 8px 32px;
   position: relative;
   top: -16px;
@@ -5760,7 +5600,7 @@ b {
 @media (max-width: 40.0525em) {
   .nhsuk-warning-callout__label {
     margin-left: -24px;
-    margin-right: -24px;
+    margin-right: 0;
     padding: 8px 24px;
     top: -8px;
   }
@@ -5882,7 +5722,7 @@ section {
 }
 
 .nhsuk-icon__cross {
-  fill: #da291c;
+  fill: #d5281b;
 }
 
 .nhsuk-icon__tick {
@@ -6376,11 +6216,11 @@ section {
 }
 
 .has-emergency-red-color {
-  color: #da291c;
+  color: #d5281b;
 }
 
 .has-emergency-red-background-color {
-  background-color: #da291c;
+  background-color: #d5281b;
 }
 
 .has-nhs-yellow-color {
