@@ -8,6 +8,9 @@ const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const {
     RichText,
+    InspectorControls,
+    BlockControls,
+    BlockVerticalAlignmentToolbar,
     URLInputButton } = wp.blockEditor;
 //@todo align
 //@todo extended classes
@@ -38,13 +41,17 @@ registerBlockType("nhsblocks/nhsbutton", {
       buttonLabel: {
           type: "string",
           source: "html",
-          selector: ".nhsuk-button"
+          selector: ".nhsuk-button",
+          default: __( 'Button title', 'nhsblocks' )
       },
       buttonLink: {
           type: "string",
           source: "attribute",
           selector: "a.nhsuk-button",
           attribute: "href"
+      },
+      verticalAlignment: {
+          type: 'string',
       },
   },
 
@@ -57,7 +64,8 @@ registerBlockType("nhsblocks/nhsbutton", {
     const {
       attributes: {
         buttonLabel,
-        buttonLink
+        buttonLink,
+        verticalAlignment,
       },
       className,
       setAttributes
@@ -65,28 +73,44 @@ registerBlockType("nhsblocks/nhsbutton", {
 
     // Grab newButtonLabel, set the value of buttonLabel to newButtonLabel.
     const onChangeButtonLabel = newButtonLabel => {
-      setAttributes({ buttonLabel: newButtonLabel});
+      setAttributes( { buttonLabel: newButtonLabel } );
     };
     // Grab newButtonLink, set the value of buttonLink to newButtonLink.
     const onChangeButtonLink = newButtonLink => {
-      setAttributes({ buttonLink: newButtonLink });
+      setAttributes( { buttonLink: newButtonLink } );
+    };
+    // Change handler to set Block `attributes`
+    const onChangeAlignment =  alignment  => {
+      setAttributes( { verticalAlignment: alignment } );
     };
 
-    return (
-            <a href="#0" className={`${className} nhsuk-button`}>
-            <RichText
-              placeholder={__("Button Label", "nhsblocks")}
-              value={buttonLabel}
-              onChange={onChangeButtonLabel}
-            />
-            <URLInputButton
+
+        return ([
+            <InspectorControls>
+            <div>
+            <strong>Add a link for this button</strong>
+        <URLInputButton
         className="nhsblocks-dropdown__input"
         label={__("Button URL", "nhsblocks")}
         onChange={onChangeButtonLink}
         url={buttonLink}
         />
-            </a>
-  )
+        </div>
+        </InspectorControls>,
+
+        <BlockControls>
+        <BlockVerticalAlignmentToolbar
+        onChange={ onChangeAlignment }
+        value={ verticalAlignment }
+        />
+        </BlockControls>,
+        <div className={`${className} nhsuk-button`}>
+            <RichText
+              value={buttonLabel}
+              onChange={onChangeButtonLabel}
+            />
+        </div>
+  ]);
   },
   save: props => {
     const {

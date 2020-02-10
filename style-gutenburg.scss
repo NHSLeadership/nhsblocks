@@ -183,7 +183,12 @@ h3.nhsuk-do-dont-list__label {
     color: #ffffff;
   }
 }
+
+
 .wp-block-nhsblocks-dashpanel {
+  .nhsuk-panel-with-label {
+    padding-bottom: 40%;
+  }
   .nhsuk-panel-with-label__label {
     z-index: 2;
     top: 0;

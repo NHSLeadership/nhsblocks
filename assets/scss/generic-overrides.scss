@@ -23,8 +23,8 @@
   .wp-block-button__link, .wp-block-file__button, .wp-block-file a.wp-block-file__button, .wp-block-file a.wp-block-file__button:active, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:visited {
     @extend .nhsuk-button;
     border-radius: 4px;
-    background: $nhsuk-button-colour;
-    font-size: $nhsuk-button-text-colour;
+    background: $nhsuk-button-color;
+    font-size: $nhsuk-button-text-color;
     padding: 1px 8px;
     position: relative;
     top: -5px;
@@ -52,7 +52,7 @@
     }
 
     .nhsuk-pagination__link:hover {
-      box-shadow: 0 0 0 16px #ffcd60 inset;
+      box-shadow: 0 0 0 16px $color_nhsuk-yellow inset;
     }
   }
 }

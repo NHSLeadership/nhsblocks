@@ -23,11 +23,13 @@ registerBlockType("nhsblocks/heroblock", {
         },
         backgroundImage: {
             type: 'string',
-            default: '/wp-content/themes/nightingale-2-0/assets/pixel_trans.png',
+            default: '/wp-content/plugins/nhsblocks/assets/pixel_trans.png',
         },
     },
     edit: props => {
-        const TEMPLATE_OPTIONS = [];
+        const TEMPLATE_OPTIONS = [
+            [ 'nhsblocks/heroinner', {  } ]
+        ];
         const {
             setAttributes,
             attributes,
