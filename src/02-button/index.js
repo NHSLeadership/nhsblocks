@@ -41,8 +41,7 @@ registerBlockType("nhsblocks/nhsbutton", {
       buttonLabel: {
           type: "string",
           source: "html",
-          selector: ".nhsuk-button",
-          default: __( 'Button title', 'nhsblocks' )
+          selector: ".nhsuk-button"
       },
       buttonLink: {
           type: "string",
@@ -108,6 +107,7 @@ registerBlockType("nhsblocks/nhsbutton", {
             <RichText
               value={buttonLabel}
               onChange={onChangeButtonLabel}
+              placeholder='Button label'
             />
         </div>
   ]);
