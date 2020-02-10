@@ -10747,16 +10747,8 @@ section {
   padding-left: 34px;
 }
 
-.nhsuk-button, .wp-block-button__link, .wp-block-file__button, .wp-block-file a.wp-block-file__button, .wp-block-file a.wp-block-file__button:active, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:visited {
-  /*
-  move the url field outside of the button
-   */
-}
-
-.nhsuk-button .editor-url-input__button, .wp-block-button__link .editor-url-input__button, .wp-block-file__button .editor-url-input__button, .wp-block-file a.wp-block-file__button .editor-url-input__button {
-  position: absolute;
-  right: -50px;
-  top: 0;
+.nhsuk-button:before, .wp-block-button__link:before, .wp-block-file__button:before, .wp-block-file a.wp-block-file__button:before, .wp-block-file a.wp-block-file__button:active:before, .wp-block-file a.wp-block-file__button:focus:before, .wp-block-file a.wp-block-file__button:hover:before, .wp-block-file a.wp-block-file__button:visited:before {
+  position: relative !important;
 }
 
 .wp-block-nhsblocks-panel1 {
@@ -10887,8 +10879,12 @@ section {
   float: left;
 }
 
-h3.nhsuk-do-dont-list__label .rich-text {
+.nhsuk-do-dont-list h3.nhsuk-do-dont-list__label .rich-text {
   color: #ffffff;
+}
+
+.nhsuk-do-dont-list li span div.rich-text {
+  padding-left: 40px;
 }
 
 .wp-block-nhsblocks-dashpanel .nhsuk-panel-with-label, .wp-block-nhsblocks-dashpanel .nhsuk-panel.is-style-panel-with-label {
@@ -10963,3 +10959,9 @@ Learn dash admin panel mitigation
 }
 
 /* end LearnDash mitigation routine */
+/* clearfix after grouped items to sort out some display wirdiness */
+.block-editor-inner-blocks:after {
+  clear: both;
+  content: '';
+  display: block;
+}

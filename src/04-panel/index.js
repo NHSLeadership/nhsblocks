@@ -94,6 +94,6 @@ template={ TEMPLATE_OPTIONS }
             </div>
           </div>
     );
-  }
+  },
 });
 
