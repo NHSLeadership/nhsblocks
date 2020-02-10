@@ -27,7 +27,9 @@ registerBlockType("nhsblocks/heroblock", {
         },
     },
     edit: props => {
-        const TEMPLATE_OPTIONS = [];
+        const TEMPLATE_OPTIONS = [
+            [ 'nhsblocks/heroinner', {  } ]
+        ];
         const {
             setAttributes,
             attributes,
