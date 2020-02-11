@@ -17,10 +17,6 @@ ul {
 .edit-post-visual-editor { // target only the editor itself
 
 
-
-
-
-
   // Elements
 //  @import 'node_modules/nhsuk-frontend/packages/core/elements/forms';
   @import 'node_modules/nhsuk-frontend/packages/core/elements/links';
@@ -121,13 +117,8 @@ ul {
 }
 
 .nhsuk-button {
-  /*
-  move the url field outside of the button
-   */
-  .editor-url-input__button {
-    position: absolute;
-    right: -50px;
-    top: 0;
+  &:before {
+    position: relative !important;
   }
 }
 
@@ -178,12 +169,26 @@ ul {
   width: 100%;
   float: left;
 }
-h3.nhsuk-do-dont-list__label {
-  .rich-text {
-    color: #ffffff;
+.nhsuk-do-dont-list {
+  h3.nhsuk-do-dont-list__label {
+    .rich-text {
+      color: #ffffff;
+    }
+  }
+  li {
+    span {
+      div.rich-text {
+        padding-left: 40px;
+      }
+    }
   }
 }
+
+
 .wp-block-nhsblocks-dashpanel {
+  .nhsuk-panel-with-label {
+    padding-bottom: 40%;
+  }
   .nhsuk-panel-with-label__label {
     z-index: 2;
     top: 0;
@@ -252,3 +257,8 @@ Learn dash admin panel mitigation
 }
 
 /* end LearnDash mitigation routine */
+
+/* clearfix after grouped items to sort out some display wirdiness */
+.block-editor-inner-blocks {
+  @include clearfix();
+}
