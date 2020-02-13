@@ -48,13 +48,14 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 == Changelog ==
 = 1.1.0 =
 * Updated for Gutenberg 7.4 - you will need to update Gutenberg for this plugin to continue functioning
-* Dashboard block and grouped block moved from __experimentalTemplateOptions to __experimentalBlockVariationPicker
+* Dashboard block and grouped block changed from __experimentalTemplateOptions to __experimentalBlockVariationPicker
   * This is technical debt and will need revisiting when this feature moves out of experimental phase
 * Button default text added for better UX
 * Button link moved to right hand Inspector area for improved UX
 * Incorrect image name on dashboard block. _appears to be a breaking change - it isnt!_ Any previously created
 dashboard, when edited will come up as invalid content due to this fix. You will need to click the three dots on the
 block editor and click "resolve" to repair.
+* Corrected some funky and unusual css bugs
 
 = 1.0.5 =
 * IE10/11 compatability with Hero Block
