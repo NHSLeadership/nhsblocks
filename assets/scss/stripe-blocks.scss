@@ -1,0 +1,29 @@
+section.nhsuk-section:nth-of-type(odd){
+    background: $color_nhsuk-grey-5;
+}
+section.nhsuk-section:nth-of-type(even),
+[data-type="nhsblocks/stripesblock"]:nth-of-type(even) {
+    background: $color_nhsuk-white;
+}
+
+section,
+[data-type="nhsblocks/stripesblock"] .is-block-content{
+	padding-top: 64px;
+	padding-bottom: 64px;
+	@include clearfix();
+}
+
+.nhsuk-striped-blocks{
+
+	border: 1px dotted $color_nhsuk-grey-1;
+
+	[data-type="nhsblocks/stripeblock"]{
+
+		&:nth-of-type(odd) {
+	    	background: $color_nhsuk-grey-5;
+	    }
+	    &:nth-of-type(even) {
+		    background: $color_nhsuk-white;
+		}
+	}
+}
