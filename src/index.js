@@ -15,3 +15,5 @@ import "./07-testimonial";
 import "./08-card";
 import "./09-row-group";
 import "./10-hero-block";
+
+import "./14-filters";

@@ -6,6 +6,7 @@
   "devDependencies": {
     "@svgr/webpack": "^5.1.0",
     "@wordpress/scripts": "^7.0.1",
+    "classnames": "^2.2.6",
     "url-loader": "^1.1.2"
   },
   "scripts": {
