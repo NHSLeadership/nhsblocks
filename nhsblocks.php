@@ -100,6 +100,7 @@ function nhsblocks_register_blocks() {
 	register_block_type( 'nhsblocks/card1' );
 	register_block_type( 'nhsblocks/rowgroup' );
 	register_block_type( 'nhsblocks/heroblock' );
+	register_block_type( 'nhsblocks/reviewdate' );
 
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		/**
