@@ -58,12 +58,28 @@ registerBlockType(
 
 					let anchor = 'nhs-block-anchor-' + i;
 
-					dynamicArray.push( { text: block.attributes.content, url: anchor } );
-					block.attributes.anchor = anchor;
+					dynamicArray.push( { text: block.attributes.content, url: anchor, id: block.clientId } );
 					
 				}
 
-			})
+			});
+
+			let updateHeading = ()=>{
+
+				setAttributes({ h2titles: dynamicArray });
+
+				for (var i = dynamicArray.length - 1; i >= 0; i--) {
+
+					let block = select('core/block-editor').getBlock( dynamicArray[i].id );
+					block.attributes.anchor = dynamicArray[i].url;
+				}
+			}
+
+			let is_same = h2titles.length == dynamicArray.length && h2titles.every(function(element, index) {
+
+				return ( dynamicArray[index].text === element.text &&  dynamicArray[index].url === element.url );
+
+			});
 
 	        return (
 	        	<div>
@@ -94,11 +110,11 @@ registerBlockType(
 
 					}
 
-
 					<p>		            
 		        	<Button 
-						onClick={ ()=> setAttributes({ h2titles: dynamicArray }) }
+						onClick={ updateHeading  }
 						className="is-primary"
+						disabled={ is_same }
 					>Update Heading Block
 					</Button></p>
 					</ol>
