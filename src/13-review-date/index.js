@@ -31,7 +31,6 @@ registerBlockType("nhsblocks/reviewdate", {
 			if( savedDate ){
 				const postDate = new Date( savedDate );
 				let formattedDate = format( 'd F Y', postDate );
-				let locked = false;
 
 				if ( lastSaved !== formattedDate ) {					
 
