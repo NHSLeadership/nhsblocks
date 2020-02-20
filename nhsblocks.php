@@ -101,6 +101,8 @@ function nhsblocks_register_blocks() {
 	register_block_type( 'nhsblocks/rowgroup' );
 	register_block_type( 'nhsblocks/heroblock' );
 
+	register_block_type( 'nhsblocks/pagination' );
+
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		/**
 		 * Adds internationalization support.
