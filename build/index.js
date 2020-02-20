@@ -36,17 +36,32 @@
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
 /******/ 		}
 /******/ 	};
 /******/
 /******/ 	// define __esModule on exports
 /******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
 /******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -2120,52 +2135,54 @@ var _wp$blockEditor = wp.blockEditor,
 var _wp$data = wp.data,
     dispatch = _wp$data.dispatch,
     subscribe = _wp$data.subscribe,
-    select = _wp$data.select;
+    select = _wp$data.select,
+    withSelect = _wp$data.withSelect;
 registerBlockType("nhsblocks/reviewdate", {
   title: __("Review Date", "nhsblocks"),
   category: "nhsblocks",
   icon: "update",
   attributes: {
     lastSaved: {
-      type: "array",
-      source: "children",
-      selector: "span"
+      type: "string",
+      source: "html",
+      selector: ".last-saved-date"
     }
   },
-  edit: function edit(props) {
-    var className = props.className,
-        setAttributes = props.setAttributes,
-        lastSaved = props.attributes.lastSaved;
-    var postDate = new Date(select('core/editor').getEditedPostAttribute('modified'));
-    var formattedDate = format('d F Y', postDate);
-    var locked = false;
-    subscribe(function () {
-      var isSavingPost = select('core/editor').isSavingPost();
-      var isAutosavingPost = select('core/editor').isAutosavingPost();
-      console.log(lastSaved); // Alot of jiggery pokery to avoid infinate loop
+  edit: withSelect(function (select) {
+    return {
+      savedDate: select('core/editor').getEditedPostAttribute('modified')
+    };
+  })(function (_ref) {
+    var savedDate = _ref.savedDate,
+        className = _ref.className,
+        setAttributes = _ref.setAttributes,
+        lastSaved = _ref.attributes.lastSaved;
 
-      if (isSavingPost && !isAutosavingPost) {
-        if (lastSaved !== formattedDate) {
-          if (!locked) {
-            locked = true;
-            dispatch('core/editor').lockPostSaving('futurelock');
-            setAttributes({
-              lastSaved: formattedDate
-            });
-            dispatch('core/editor').unlockPostSaving('futurelock');
-            locked = false;
-            dispatch('core/editor').savePost();
-          }
+    if (savedDate) {
+      var postDate = new Date(savedDate);
+      var formattedDate = format('d F Y', postDate);
+      var locked = false;
+
+      if (lastSaved !== formattedDate) {
+        if (typeof lastSaved === "undefined") {
+          setAttributes({
+            lastSaved: formattedDate
+          });
+          dispatch('core/editor').savePost();
+        } else {
+          setAttributes({
+            lastSaved: formattedDate
+          });
         }
       }
-    });
-    var savedDate = lastSaved ? lastSaved : formattedDate;
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      class: "nhsuk-review-date"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", {
-      class: "nhsuk-body-s"
-    }, "Page last reviewed: ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null, lastSaved)));
-  },
+
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+        class: "nhsuk-review-date"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", {
+        class: "nhsuk-body-s"
+      }, "Page last reviewed: ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null, lastSaved)));
+    }
+  }),
   save: function save(props) {
     var className = props.className,
         lastSaved = props.attributes.lastSaved;
@@ -2173,7 +2190,9 @@ registerBlockType("nhsblocks/reviewdate", {
       class: "nhsuk-review-date"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", {
       class: "nhsuk-body-s"
-    }, "Page last reviewed: ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null, lastSaved)));
+    }, "Page last reviewed: ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+      class: "last-saved-date"
+    }, lastSaved)));
   }
 });
 
@@ -2462,7 +2481,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+ // import "./13-review-date/reviewdate-2";
 
 /***/ }),
 

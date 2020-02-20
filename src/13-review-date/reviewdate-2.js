@@ -11,8 +11,8 @@ const { RichText, InnerBlocks } = wp.blockEditor;
 const { dispatch, subscribe, select, withSelect } = wp.data;
 
 
-registerBlockType("nhsblocks/reviewdate", {
-    title: __("Review Date", "nhsblocks"),
+registerBlockType("nhsblocks/reviewdatetwo", {
+    title: __("Review Date Two", "nhsblocks"),
     category: "nhsblocks",
     icon: "update",
     attributes: {
@@ -31,39 +31,35 @@ registerBlockType("nhsblocks/reviewdate", {
 			if( savedDate ){
 				const postDate = new Date( savedDate );
 				let formattedDate = format( 'd F Y', postDate );
-				let locked = false;
-
-				if ( lastSaved !== formattedDate ) {					
-
-					if( typeof lastSaved === "undefined" ){
-						setAttributes( { lastSaved: formattedDate } );
-						dispatch( 'core/editor' ).savePost();
-					}else{
-						setAttributes( { lastSaved: formattedDate } );
-					}						                    
-
-				}
 
 				return (
 					<div class="nhsuk-review-date">
 					  <p class="nhsuk-body-s">
-					    Page last reviewed: <span>{ lastSaved }</span>
+					    Page last reviewed: <span>{ formattedDate }</span>
 					  </p>
 					</div>
 				);
 			}
 			
 		}),
-	save: props =>{
+	save: withSelect( select => {
+            return {
+                savedDate: select( 'core/editor' ).getEditedPostAttribute( 'modified' )
+            };
+        } ) ( ( { savedDate, className} ) => {
 
-		const { className, attributes:{ lastSaved } } = props;
+			if( savedDate ){
+				const postDate = new Date( savedDate );
+				let formattedDate = format( 'd F Y', postDate );
 
-		return (
-			<div class="nhsuk-review-date">
-			  <p class="nhsuk-body-s">
-			    Page last reviewed: <span class="last-saved-date">{ lastSaved }</span>
-			  </p>
-			</div>
-		);
-	}
+				return (
+					<div class="nhsuk-review-date">
+					  <p class="nhsuk-body-s">
+					    Page last reviewed: <span>{ formattedDate }</span>
+					  </p>
+					</div>
+				);
+			}
+			
+		}),
 });
