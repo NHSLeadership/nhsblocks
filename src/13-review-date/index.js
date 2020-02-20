@@ -45,9 +45,9 @@ registerBlockType("nhsblocks/reviewdate", {
 				}
 
 				return (
-					<div class="nhsuk-review-date">
-					  <p class="nhsuk-body-s">
-					    Page last reviewed: <span>{ lastSaved }</span>
+					<div className="nhsuk-review-date">
+					  <p className="nhsuk-body-s">
+					    Page last reviewed: <span className="last-saved-date">{ lastSaved }</span>
 					  </p>
 					</div>
 				);
@@ -59,9 +59,9 @@ registerBlockType("nhsblocks/reviewdate", {
 		const { className, attributes:{ lastSaved } } = props;
 
 		return (
-			<div class="nhsuk-review-date">
-			  <p class="nhsuk-body-s">
-			    Page last reviewed: <span class="last-saved-date">{ lastSaved }</span>
+			<div className="nhsuk-review-date">
+			  <p className="nhsuk-body-s">
+			    Page last reviewed: <span className="last-saved-date">{ lastSaved }</span>
 			  </p>
 			</div>
 		);
