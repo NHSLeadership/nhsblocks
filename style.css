@@ -1,13 +1,13 @@
 @charset "UTF-8";
 /*********************************************************************************************
-Plugin Name: NHS Blocks
+Theme Name: Nightingale 2.0
 Theme URI: http://www.leadershipacademy.nhs.uk/
 Author: Tony Blacker, NHS Leadership Academy
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: nhsblocks
 Tags: NHS, NHS Digital, NHS Frontend, National Health Service, Leadership Academy
-Description: NHS Digital frontend framework blocks plugin, companion to the Nightinagle WordPress theme
+Description: NHS Digital frontend framework WordPress theme
 Version: 1.0.9
 
 **********************************************************************************************/
@@ -12733,6 +12733,46 @@ b {
 
 .nhsuk-care-card.is-style-immediate {
   /* urgent infocard*/
+}
+
+.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card,
+.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout {
+  /* Warning Callout */
+  background-color: #fff9c4;
+}
+
+.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container,
+.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container {
+  background-color: #ffeb3b;
+  display: inline-block;
+  top: -16px;
+  margin-bottom: 8px;
+  padding: 8px 32px;
+  position: relative;
+}
+
+.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container h3,
+.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container h3 {
+  background-color: #ffeb3b;
+  color: #212b32 !important;
+}
+
+.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span {
+  color: #212b32;
+}
+
+.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__arrow,
+.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__arrow,
+.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__arrow,
+.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__arrow {
+  display: none;
+}
+
+.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__content,
+.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__content {
+  background-color: #fff9c4;
+  padding-top: 0;
 }
 
 .nhsuk-care-card__heading-container h3 {

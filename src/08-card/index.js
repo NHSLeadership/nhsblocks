@@ -131,3 +131,10 @@ wp.blocks.registerBlockStyle ('nhsblocks/card1',
 		label: 'Immediate (Red and Black)'
 	}
 );
+
+wp.blocks.registerBlockStyle ('nhsblocks/card1',
+	{
+		name: 'warning-callout',
+		label: 'Warning Callout (Yellow)'
+	}
+);
