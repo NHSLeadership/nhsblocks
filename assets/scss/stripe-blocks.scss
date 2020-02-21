@@ -6,7 +6,7 @@ section.nhsuk-section:nth-of-type(even),
     background: $color_nhsuk-white;
 }
 
-section,
+section.nhsuk-section,
 [data-type="nhsblocks/stripesblock"] .is-block-content{
 	padding-top: 64px;
 	padding-bottom: 64px;
