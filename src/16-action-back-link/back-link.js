@@ -61,7 +61,7 @@ registerBlockType("nhsblocks/backlink", {
 
         return(
             <div className="nhsuk-back-link">
-              <a className="nhsuk-back-link__link js-back-link" onclick="window.history.back()">
+              <a className="nhsuk-back-link__link js-back-link" onclick="window.history.back()" href="#">
                 { arrows.back }
                 <span>{ backText }</span></a>
             </div>
