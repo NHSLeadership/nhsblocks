@@ -57,7 +57,7 @@ registerBlockType(
 		},
 		save: props => {
 			return(
-				<nav className="{ className } nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
+				<nav className="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
 				  <h2 className="nhsuk-u-visually-hidden">{ __('Contents', 'nhsblocks') }</h2>
 				  <ol className="nhsuk-contents-list__list">
 				  	<InnerBlocks.Content />

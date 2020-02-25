@@ -7,14 +7,14 @@
 
 ?>
 
-<nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
+<nav class="nhsuk-contents-list" role="navigation" aria-label="Headings on this page">
   <h2 class="nhsuk-u-visually-hidden">Contents</h2>
   <ol class="nhsuk-contents-list__list">
 
 	<?php foreach ($titles as $key => $title ): ?>
 
 		<li class="nhsuk-contents-list__item">
-	      <a class="nhsuk-contents-list__link" href="#<?php echo $title['url']; ?>"><?php echo $title['text']; ?></a>
+	      <a class="nhsuk-contents-list__link js-scroll-to" href="#<?php echo $title['url']; ?>"><?php echo $title['text']; ?></a>
 	    </li>
 
 	<?php endforeach; ?>

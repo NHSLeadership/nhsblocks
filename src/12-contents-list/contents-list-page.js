@@ -35,7 +35,8 @@ registerBlockType(
 		icon: 'editor-ul',
 		"attributes": {
 			"h2titles": {
-				"type": "array"
+				"type": "array",
+				"default": []
 			}
 		},
 		keywords: [
@@ -45,7 +46,7 @@ registerBlockType(
 		],
 		edit: withSelect( ( select ) => {
         return {
-            blocks: select('core/block-editor').getBlocks(),
+            blocks: select('core/block-editor').getBlocks()
 	        };
 	    } )( ( { blocks, className, setAttributes, attributes: { h2titles } } ) => {
 
@@ -75,11 +76,18 @@ registerBlockType(
 				}
 			}
 
-			let is_same = h2titles.length == dynamicArray.length && h2titles.every(function(element, index) {
+
+
+			let is_same = h2titles.length == dynamicArray.length && h2titles.every( function( element, index ) {
 
 				return ( dynamicArray[index].text === element.text &&  dynamicArray[index].url === element.url );
 
 			});
+
+			console.log( h2titles, dynamicArray );
+
+
+			//let is_same = false;
 
 	        return (
 	        	<div>
@@ -93,7 +101,7 @@ registerBlockType(
 
 		            	return(
 
-		            		<li className="nhsuk-contents-list__item">
+		            		<li className="nhsuk-contents-list__item" key={ block.url }>
 
 			        			<a className="nhsuk-contents-list__link" href={ '#' + block.url }>
 			            			{ block.text }

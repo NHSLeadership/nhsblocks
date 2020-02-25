@@ -298,6 +298,27 @@ function nhsblocks_hero_footer() {
 			    }
 		    }
 	    }
+	    // Page Link JS
+	    let url = window.location.href.split(/[?#]/)[0];
+		let pageList = document.querySelectorAll('.nhsuk-contents-list li.nhsuk-contents-list__item');
+		for (var i = pageList.length - 1; i >= 0; i--) {
+			let ele = pageList[i];
+			let link = ele.children[0].href;
+			if( link === url ){
+				let txt = ele.innerText;
+				ele.innerHTML = txt;
+			}
+		}
+		// Smooth scroll to link
+		jQuery( document ).ready(function( $ ) {
+		    $('.js-scroll-to').on('click', function(e) {
+		    	e.preventDefault();
+		    	let link = $(this).attr('href');
+			    $('html, body').animate({
+			        scrollTop: $( link ).offset().top - 50
+			    }, 200);
+			});
+		});		
 	</script>";
 }
 
