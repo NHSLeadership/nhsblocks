@@ -12696,10 +12696,6 @@ b {
   width: 100%;
 }
 
-.wp-block-nhsblocks-promo1 .nhsuk-image img {
-  width: 100%;
-}
-
 .wp-block-nhsblocks-promo1 img.nhsuk-promo__img {
   width: 100%;
   height: auto;
@@ -12712,10 +12708,6 @@ b {
 .wp-block-nhsblocks-promo1 .nhsuk-promo__description,
 .wp-block-nhsblocks-promo1 .nhsuk-promo__heading {
   padding: 0 32px;
-}
-
-.wp-block-nhsblocks-rowgroup .nhsuk-grid-column-full > :first-child {
-  padding-left: 15px !important;
 }
 
 .nhsuk-inset-text--rev, .is-style-quote-reverse {
