@@ -7,7 +7,7 @@
  * License: GPL v3
  * Requires at least: 5.0
  * Tested up to: 5.3.2
- * Version: 1.1.0
+ * Version: 1.1.2
  *
  * @package nhsblocks
  */
