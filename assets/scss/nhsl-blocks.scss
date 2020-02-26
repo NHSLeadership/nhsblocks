@@ -82,9 +82,11 @@
 .wp-block-nhsblocks-promo1 {
   .nhsuk-image{
     width: 100%;
+    img{
+      width: 100%;
+    }
   }
   img.nhsuk-promo__img {
-    // padding: 10px;
     width: 100%;
     height: auto;
   }
@@ -97,6 +99,10 @@
     .nhsuk-promo__heading{
       padding: 0 32px;
     }
+}
+
+.wp-block-nhsblocks-rowgroup .nhsuk-grid-column-full>:first-child {
+    padding-left: 15px !important;
 }
 
 //reversed quote tweak
