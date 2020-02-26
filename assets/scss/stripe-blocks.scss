@@ -1,11 +1,9 @@
 section.nhsuk-section:nth-of-type(odd){
     background: $color_nhsuk-grey-5;
-    padding: 20px;
 }
 section.nhsuk-section:nth-of-type(even),
 [data-type="nhsblocks/stripesblock"]:nth-of-type(even) {
     background: $color_nhsuk-white;
-    padding: 20px;
 }
 
 .page-template-full-width-page section.nhsuk-section{
@@ -14,10 +12,10 @@ section.nhsuk-section:nth-of-type(even),
 	width: 100vw;
 }
 
-section,
+section.nhsuk-section,
 [data-type="nhsblocks/stripesblock"] .is-block-content{
-	padding-top: 64px;
-	padding-bottom: 64px;
+
+	padding: 64px 20px;
 	@include clearfix();
 }
 

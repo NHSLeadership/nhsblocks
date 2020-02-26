@@ -10729,13 +10729,18 @@ section.nhsuk-section:nth-of-type(even),
   background: #ffffff;
 }
 
-section,
-[data-type="nhsblocks/stripesblock"] .is-block-content {
-  padding-top: 64px;
-  padding-bottom: 64px;
+.page-template-full-width-page section.nhsuk-section {
+  margin: 0 calc(50% - 50vw);
+  max-width: 100vw;
+  width: 100vw;
 }
 
-section:after,
+section.nhsuk-section,
+[data-type="nhsblocks/stripesblock"] .is-block-content {
+  padding: 64px 20px;
+}
+
+section.nhsuk-section:after,
 [data-type="nhsblocks/stripesblock"] .is-block-content:after {
   clear: both;
   content: '';
