@@ -10460,43 +10460,6 @@ section {
   color: #ffffff;
 }
 
-.nhsuk-width-container--full {
-  margin: 0;
-  max-width: none;
-}
-
-.nhsuk-panel-group {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.wp-block-button__link, .wp-block-file__button, .wp-block-file a.wp-block-file__button, .wp-block-file a.wp-block-file__button:active, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:visited {
-  border-radius: 4px;
-  background: #007f3b;
-  font-size: #ffffff;
-  padding: 1px 8px;
-  position: relative;
-  top: -5px;
-  margin-bottom: 5px;
-}
-
-.nhsuk-button--reverse:visited, .nhsuk-button.is-style-reverse:visited, .is-style-reverse.wp-block-button__link:visited, .is-style-reverse.wp-block-file__button:visited, .wp-block-file a.is-style-reverse.wp-block-file__button:visited {
-  color: #212b32;
-}
-
-.nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item--previous, .nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item--next {
-  width: 30%;
-}
-
-.nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item {
-  width: 8%;
-  float: left;
-}
-
-.nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination__link:hover {
-  box-shadow: 0 0 0 16px #ffeb3b inset;
-}
-
 .has-white-color {
   color: #ffffff;
 }
@@ -10633,6 +10596,43 @@ section {
   background-color: #ffb81C;
 }
 
+.nhsuk-width-container--full {
+  margin: 0;
+  max-width: none;
+}
+
+.nhsuk-panel-group {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.wp-block-button__link, .wp-block-file__button, .wp-block-file a.wp-block-file__button, .wp-block-file a.wp-block-file__button:active, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:visited {
+  border-radius: 4px;
+  background: #007f3b;
+  font-size: #ffffff;
+  padding: 1px 8px;
+  position: relative;
+  top: -5px;
+  margin-bottom: 5px;
+}
+
+.nhsuk-button--reverse:visited, .nhsuk-button.is-style-reverse:visited, .is-style-reverse.wp-block-button__link:visited, .is-style-reverse.wp-block-file__button:visited, .wp-block-file a.is-style-reverse.wp-block-file__button:visited {
+  color: #212b32;
+}
+
+.nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item--previous, .nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item--next {
+  width: 30%;
+}
+
+.nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item {
+  width: 8%;
+  float: left;
+}
+
+.nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination__link:hover {
+  box-shadow: 0 0 0 16px #ffeb3b inset;
+}
+
 .nhsuk-promo-group__item {
   margin-bottom: 36px;
 }
@@ -10705,8 +10705,22 @@ section {
   max-height: 200px;
 }
 
-.nhsuk-promo img.nhsuk-promo__img {
-  padding: 10px;
+.wp-block-nhsblocks-promo1 .nhsuk-image {
+  width: 100%;
+}
+
+.wp-block-nhsblocks-promo1 img.nhsuk-promo__img {
+  width: 100%;
+  height: auto;
+}
+
+.wp-block-nhsblocks-promo1 .nhsuk-promo__content {
+  padding: 0;
+}
+
+.wp-block-nhsblocks-promo1 .nhsuk-promo__description,
+.wp-block-nhsblocks-promo1 .nhsuk-promo__heading {
+  padding: 0 32px;
 }
 
 .nhsuk-inset-text--rev, .is-style-quote-reverse {

@@ -1,13 +1,13 @@
 @charset "UTF-8";
 /*********************************************************************************************
-Plugin Name: NHS Blocks
+Theme Name: Nightingale 2.0
 Theme URI: http://www.leadershipacademy.nhs.uk/
 Author: Tony Blacker, NHS Leadership Academy
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: nhsblocks
 Tags: NHS, NHS Digital, NHS Frontend, National Health Service, Leadership Academy
-Description: NHS Digital frontend framework blocks plugin, companion to the Nightinagle WordPress theme
+Description: NHS Digital frontend framework WordPress theme
 Version: 1.0.9
 
 **********************************************************************************************/
@@ -12692,8 +12692,22 @@ b {
   max-height: 200px;
 }
 
-.nhsuk-promo img.nhsuk-promo__img {
-  padding: 10px;
+.wp-block-nhsblocks-promo1 .nhsuk-image {
+  width: 100%;
+}
+
+.wp-block-nhsblocks-promo1 img.nhsuk-promo__img {
+  width: 100%;
+  height: auto;
+}
+
+.wp-block-nhsblocks-promo1 .nhsuk-promo__content {
+  padding: 0;
+}
+
+.wp-block-nhsblocks-promo1 .nhsuk-promo__description,
+.wp-block-nhsblocks-promo1 .nhsuk-promo__heading {
+  padding: 0 32px;
 }
 
 .nhsuk-inset-text--rev, .is-style-quote-reverse {
