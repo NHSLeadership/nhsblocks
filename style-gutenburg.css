@@ -10608,7 +10608,6 @@ section {
 
 .wp-block-button__link, .wp-block-file__button, .wp-block-file a.wp-block-file__button, .wp-block-file a.wp-block-file__button:active, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:visited {
   border-radius: 4px;
-
   background: #007f3b;
   font-size: #ffffff;
   padding: 1px 8px;
@@ -10839,6 +10838,46 @@ section.nhsuk-section:after,
 
 .nhsuk-care-card.is-style-immediate {
   /* urgent infocard*/
+}
+
+.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card,
+.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout {
+  /* Warning Callout */
+  background-color: #fff9c4;
+}
+
+.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container,
+.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container {
+  background-color: #ffeb3b;
+  display: inline-block;
+  top: -16px;
+  margin-bottom: 8px;
+  padding: 8px 32px;
+  position: relative;
+}
+
+.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container h3,
+.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container h3 {
+  background-color: #ffeb3b;
+  color: #212b32 !important;
+}
+
+.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span {
+  color: #212b32;
+}
+
+.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__arrow,
+.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__arrow,
+.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__arrow,
+.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__arrow {
+  display: none;
+}
+
+.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__content,
+.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__content {
+  background-color: #fff9c4;
+  padding-top: 0;
 }
 
 .nhsuk-care-card__heading-container h3 {
