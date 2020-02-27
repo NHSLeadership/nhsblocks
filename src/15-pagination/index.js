@@ -25,6 +25,12 @@ registerBlockType("nhsblocks/pagination", {
     title: __("Pagination", "nhsblocks"),
     category: "nhsblocks",
     icon: "arrow-right-alt",
+    example: {
+        attributes: {
+            prevText: __( 'Page Title'),
+            nextText: __( 'Page Title'),
+        },
+    },
     attributes: {
         prevLink: {
             type: "string",
