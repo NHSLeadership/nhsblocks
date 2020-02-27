@@ -97,46 +97,30 @@ registerBlockType("nhsblocks/promo1", {
 		};
 		const ALLOWED_BLOCKS = ['core/image'];
 
-		return (
-			< div
-		className = {`${className} nhsuk-promo`
-	}>
-	<
-		div
-	class
-		= "nhsuk-promo__content" >
-			< URLInputButton
-		className = "nhsblocks-dropdown__input"
-		label = {__("Panel Link", "nhsblocks"
-	)
-	}
-		onChange = {onChangePromoLink}
-		url = {promoLink}
-		/>
-		< InnerBlocks
-		allowedBlocks = {ALLOWED_BLOCKS}
-		/>
-		< h3
-	class
-		= "nhsuk-promo__heading" >
-			< RichText
-		placeholder = {__("Promo Title", "nhsblocks"
-	)
-	}
-		value = {promoTitle}
-		onChange = {onChangePromoTitle}
-		/>
-		< /h3>
-		< div
-		className = "nhsuk-promo__description" >
-			< RichText
-		multiline = "p"
-		placeholder = {__("Promo Contents", "nhsblocks"
-	)
-	}
-		onChange = {onChangePromoText}
-		value = {promoText}
-		/>
+    return (
+          <div className={`${className} nhsuk-promo`}>
+            <div className="nhsuk-promo__content">
+              <URLInputButton
+                  className="nhsblocks-dropdown__input"
+                  label={__("Panel Link", "nhsblocks")}
+                  onChange={onChangePromoLink}
+                  url={promoLink}
+              />
+              <InnerBlocks allowedBlocks={ ALLOWED_BLOCKS} />
+                <h3 className="nhsuk-promo__heading">
+                  <RichText
+                      placeholder={__("Promo Title", "nhsblocks")}
+                      value={promoTitle}
+                      onChange={onChangePromoTitle}
+                  />
+                </h3>
+                <div className="nhsuk-promo__description">
+                  <RichText
+                      multiline="p"
+                      placeholder={__("Promo Contents", "nhsblocks")}
+                      onChange={onChangePromoText}
+                      value={promoText}
+                  />
 
 		< /div>
 		< /div>
@@ -154,36 +138,24 @@ props => {
 			promoLink,
 		}
 	} = props;
+    return (
+          <div className="nhsuk-promo">
+          <a href={promoLink} className="nhsuk-promo__link-wrapper">
+            <div className="nhsuk-promo__content">
+          <InnerBlocks.Content />
+              <h3 className="nhsuk-promo__heading">
+                <RichText.Content value={promoTitle} />
+              </h3>
+              <div className="nhsuk-promo__description">
+                  <RichText.Content
+                      multiline="p"
+                      value={promoText}
+                  />
+              </div>
+            </div>
+                      </a>
+          </div>
+    );
+  }
+});
 
-	return (
-		< div
-	className = "nhsuk-promo" >
-		< a
-	href = {promoLink}
-	className = "nhsuk-promo__link-wrapper" >
-		< div
-class
-	= "nhsuk-promo__content" >
-		< InnerBlocks.Content / >
-		< h3
-class
-	= "nhsuk-promo__heading" >
-		< RichText.Content
-	value = {promoTitle}
-	/>
-	< /h3>
-	< div
-	className = "nhsuk-promo__description" >
-		< RichText.Content
-	multiline = "p"
-	value = {promoText}
-	/>
-	< /div>
-	< /div>
-	< /a>
-	< /div>
-)
-	;
-}
-})
-;

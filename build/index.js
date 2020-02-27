@@ -1,1 +1,2419 @@
-!function(e){var t={};function n(l){if(t[l])return t[l].exports;var a=t[l]={i:l,l:!1,exports:{}};return e[l].call(a.exports,a,a.exports,n),a.l=!0,a.exports}n.m=e,n.c=t,n.d=function(e,t,l){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:l})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var l=Object.create(null);if(n.r(l),Object.defineProperty(l,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var a in e)n.d(l,a,function(t){return e[t]}.bind(null,a));return l},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=6)}([function(e,t){!function(){e.exports=this.wp.element}()},function(e,t,n){var l=n(3),a=n(4),s=n(5);e.exports=function(e,t){return l(e)||a(e,t)||s()}},function(e,t){!function(){e.exports=this.lodash}()},function(e,t){e.exports=function(e){if(Array.isArray(e))return e}},function(e,t){e.exports=function(e,t){var n=[],l=!0,a=!1,s=void 0;try{for(var c,r=e[Symbol.iterator]();!(l=(c=r.next()).done)&&(n.push(c.value),!t||n.length!==t);l=!0);}catch(e){a=!0,s=e}finally{try{l||null==r.return||r.return()}finally{if(a)throw s}}return n}},function(e,t){e.exports=function(){throw new TypeError("Invalid attempt to destructure non-iterable instance")}},function(e,t,n){"use strict";n.r(t);var l=n(1),a=n.n(l),s=n(0),c=n(2),r=wp.element.createElement("svg",{width:60,height:30},wp.element.createElement("rect",{x:"0.000",y:"0.000",width:"59.000",height:"30"})),o=wp.element.createElement("svg",{width:60,height:30},wp.element.createElement("rect",{x:"31.000",y:"0.000",width:"29.000",height:"30"}),wp.element.createElement("rect",{x:"0.000",y:"0.000",width:"29.000",height:"30"})),i=wp.element.createElement("svg",{width:60,height:30},wp.element.createElement("rect",{x:"41.000",y:"0.000",width:"19.000",height:"30"}),wp.element.createElement("rect",{x:"21.000",y:"0.000",width:"19.000",height:"30"}),wp.element.createElement("rect",{x:"0.000",y:"0.000",width:"19.000",height:"30"})),u=wp.element.createElement("svg",{width:60,height:40},wp.element.createElement("rect",{x:"41.000",y:"0.000",width:"19.000",height:"19"}),wp.element.createElement("rect",{x:"21.000",y:"0.000",width:"19.000",height:"19"}),wp.element.createElement("rect",{x:"0.000",y:"0.000",width:"19.000",height:"19"}),wp.element.createElement("rect",{x:"31.000",y:"20.000",width:"29.000",height:"19"}),wp.element.createElement("rect",{x:"0.000",y:"20.000",width:"29.000",height:"19"})),h=wp.element.createElement("svg",{width:60,height:40},wp.element.createElement("rect",{x:"41.000",y:"0.000",width:"19.000",height:"19"}),wp.element.createElement("rect",{x:"21.000",y:"0.000",width:"19.000",height:"19"}),wp.element.createElement("rect",{x:"0.000",y:"0.000",width:"19.000",height:"19"}),wp.element.createElement("rect",{x:"41.000",y:"20.000",width:"19.000",height:"19"}),wp.element.createElement("rect",{x:"21.000",y:"20.000",width:"19.000",height:"19"}),wp.element.createElement("rect",{x:"0.000",y:"20.000",width:"19.000",height:"19"})),m=wp.element.createElement("svg",{width:60,height:40},wp.element.createElement("rect",{x:"31.000",y:"0.000",width:"29.000",height:"19"}),wp.element.createElement("rect",{x:"0.000",y:"0.000",width:"29.000",height:"19"}),wp.element.createElement("rect",{x:"41.000",y:"20.000",width:"19.000",height:"19"}),wp.element.createElement("rect",{x:"21.000",y:"20.000",width:"19.000",height:"19"}),wp.element.createElement("rect",{x:"0.000",y:"20.000",width:"19.000",height:"19"})),b=wp.element.createElement("svg",{width:60,height:30},wp.element.createElement("rect",{x:"21.000",y:"0.000",width:"39.000",height:"30"}),wp.element.createElement("rect",{x:"0.000",y:"0.000",width:"19.000",height:"30"})),d=wp.element.createElement("svg",{width:60,height:30},wp.element.createElement("rect",{x:"41.000",y:"0.000",width:"19.000",height:"30"}),wp.element.createElement("rect",{x:"0.000",y:"0.000",width:"39.000",height:"30"})),k=wp.element.createElement("svg",{width:60,height:30},wp.element.createElement("rect",{x:"46.000",y:"0.000",width:"14.000",height:"30"}),wp.element.createElement("rect",{x:"31.000",y:"0.000",width:"14.000",height:"30"}),wp.element.createElement("rect",{x:"0.000",y:"0.000",width:"29.000",height:"30"})),p=wp.element.createElement("svg",{width:60,height:30},wp.element.createElement("rect",{x:"46.000",y:"0.000",width:"14.000",height:"30"}),wp.element.createElement("rect",{x:"16.000",y:"0.000",width:"29.000",height:"30"}),wp.element.createElement("rect",{x:"0.000",y:"0.000",width:"14.000",height:"30"})),g=wp.element.createElement("svg",{width:60,height:30},wp.element.createElement("rect",{x:"31.000",y:"0.000",width:"29.000",height:"30"}),wp.element.createElement("rect",{x:"16.000",y:"0.000",width:"14.000",height:"30"}),wp.element.createElement("rect",{x:"0.000",y:"0.000",width:"14.000",height:"30"})),E=wp.i18n.__,v=[{name:"fullwidth",label:E("Full Width","nhsblocks"),icon:r,innerBlocks:[["nhsblocks/dashpanel",{className:"nhsuk-grid-column-full"}]]},{name:"twocols",label:E("Two Columns","nhsblocks"),isDefault:!0,icon:o,innerBlocks:[["nhsblocks/dashpanel",{className:"nhsuk-grid-column-one-half"}],["nhsblocks/dashpanel",{className:"nhsuk-grid-column-one-half"}]]},{name:"threecols",label:E("Three Columns","nhsblocks"),icon:i,innerBlocks:[["nhsblocks/dashpanel",{className:"nhsuk-grid-column-one-third"}],["nhsblocks/dashpanel",{className:"nhsuk-grid-column-one-third"}],["nhsblocks/dashpanel",{className:"nhsuk-grid-column-one-third"}]]},{name:"twothreecols",label:E("Two Columns Then Three Columns","nhsblocks"),icon:m,innerBlocks:[["nhsblocks/dashpanel",{className:"nhsuk-grid-column-one-half"}],["nhsblocks/dashpanel",{className:"nhsuk-grid-column-one-half"}],["nhsblocks/dashpanel",{className:"nhsuk-grid-column-one-third"}],["nhsblocks/dashpanel",{className:"nhsuk-grid-column-one-third"}],["nhsblocks/dashpanel",{className:"nhsuk-grid-column-one-third"}]]},{name:"threetwocols",label:E("Three Columns then Two Columns","nhsblocks"),icon:u,innerBlocks:[["nhsblocks/dashpanel",{className:"nhsuk-grid-column-one-third"}],["nhsblocks/dashpanel",{className:"nhsuk-grid-column-one-third"}],["nhsblocks/dashpanel",{className:"nhsuk-grid-column-one-third"}],["nhsblocks/dashpanel",{className:"nhsuk-grid-column-one-half"}],["nhsblocks/dashpanel",{className:"nhsuk-grid-column-one-half"}]]},{name:"threethreecols",label:E("Three Columns on Two Rows","nhsblocks"),icon:h,innerBlocks:[["nhsblocks/dashpanel",{className:"nhsuk-grid-column-one-third"}],["nhsblocks/dashpanel",{className:"nhsuk-grid-column-one-third"}],["nhsblocks/dashpanel",{className:"nhsuk-grid-column-one-third"}],["nhsblocks/dashpanel",{className:"nhsuk-grid-column-one-third"}],["nhsblocks/dashpanel",{className:"nhsuk-grid-column-one-third"}],["nhsblocks/dashpanel",{className:"nhsuk-grid-column-one-third"}]]}],O=wp.element,w=(O.useState,O.setState,wp.i18n.__),j=wp.blocks,f=j.registerBlockType,y=j.createBlock,_=wp.blockEditor,x=_.RichText,N=_.InspectorControls,T=_.URLInputButton,C=_.ColorPalette,B=_.MediaUpload,I=_.InnerBlocks,S=(_.BlockControls,_.__experimentalBlockVariationPicker),L=wp.data,A=L.useDispatch,R=L.useSelect;f("nhsblocks/dashboardnav",{title:w("Dashboard Navigation","nhsblocks"),category:"nhsblocks",icon:"tagcloud",attributes:{template:{type:"array"}},edit:function(e){var t=e.clientId,n=e.name,l=(e.attributes.template,e.setAttributes,A("core/block-editor").replaceInnerBlocks),r=R((function(e){var l=e("core/blocks"),a=l.__experimentalGetBlockVariations,s=l.getBlockType,c=l.__experimentalGetDefaultBlockVariation;return{blockType:s(n),defaultVariation:c(n,"block"),hasInnerBlocks:e("core/block-editor").getBlocks(t).length>0,variations:a(n,"block")}}),[t,n]),o=(r.blockType,r.defaultVariation,r.hasInnerBlocks),i=(r.variations,function e(t){return Object(c.map)(t,(function(t){var n=a()(t,3),l=n[0],s=n[1],c=n[2];return y(l,s,e(void 0===c?[]:c))}))});return o?Object(s.createElement)("div",{className:"nhsuk-grid-row"},Object(s.createElement)("div",{className:"nhsuk-panel-group nhsuk-grid-column-full nhsuk-dashboard"},Object(s.createElement)(I,{template:v}))):Object(s.createElement)("div",{className:"nhsuk-grid-row"},Object(s.createElement)("div",{className:"nhsuk-panel-group nhsuk-grid-column-full nhsuk-dashboard"},Object(s.createElement)(S,{variations:v,onSelect:function(t){t.attributes&&e.setAttributes(t.attributes),t.innerBlocks&&l(e.clientId,i(t.innerBlocks))}})))},save:function(e){e.attributes.template;return Object(s.createElement)("div",{className:"nhsuk-grid-row"},Object(s.createElement)("div",{className:"nhsuk-panel-group nhsuk-dashboard"},Object(s.createElement)(I.Content,null)))}}),f("nhsblocks/dashpanel",{title:w("Dashboard Region","nhsblocks"),description:w("Simple image background with text and link to give Dashboard navigation panel"),icon:"feedback",category:"nhsblocks",parent:["nhsblocks/dashboardnav"],attributes:{panelTitle:{type:"string",source:"html",selector:"h3"},panelLink:{type:"string",source:"attribute",selector:".nhsuk-promo__link-wrapper",attribute:"href"},backgroundImage:{type:"string",default:"/wp-content/plugins/nhsblocks/assets/pixel_trans.png"},overlayColor:{type:"string",default:"#ffffff"}},edit:function(e){var t=e.setAttributes,n=e.attributes,l=e.className,a=n.overlayColor,c=n.backgroundImage,r=n.panelTitle,o=n.panelLink;return[Object(s.createElement)(N,null,Object(s.createElement)("div",null,Object(s.createElement)("strong",null,"Add a link for this panel"),Object(s.createElement)(T,{className:"nhsblocks-dropdown__input",label:w("Dashboard Link","nhsblocks"),onChange:function(e){t({panelLink:e})},url:o})),Object(s.createElement)("div",null,Object(s.createElement)("strong",null,"Select a background image:"),Object(s.createElement)(B,{onSelect:function(e){t({backgroundImage:e.sizes.full.url})},type:"image",value:c,render:function(e){var t=e.open;return Object(s.createElement)("button",{className:"button button-primary button-hero",onClick:t},"Upload Image!")}})),Object(s.createElement)("div",null,Object(s.createElement)("strong",null,"OR")," Select a background color: ",Object(s.createElement)("br",null),Object(s.createElement)("i",null,"(this will be ignored if you choose an image above)"),Object(s.createElement)(C,{value:a,onChange:function(e){t({overlayColor:e})}}))),Object(s.createElement)("div",{className:"".concat(l," nhsuk-panel-group__item")},Object(s.createElement)("div",{class:"nhsuk-panel-with-label",style:{backgroundColor:a,backgroundImage:"url(".concat(c,")"),backgroundSize:"cover",backgroundPosition:"center"}},Object(s.createElement)("h3",{class:"nhsuk-panel-with-label__label"},Object(s.createElement)(x,{placeholder:w("Panel Title","nhsblocks"),value:r,onChange:function(e){t({panelTitle:e})}})),Object(s.createElement)("img",{src:"/wp-content/plugins/nhsblocks/assets/pixel_trans.png",class:"nhsuk-dashboard__image",alt:""})))]},save:function(e){var t=e.attributes,n=t.overlayColor,l=t.backgroundImage,a=t.panelTitle,c=t.panelLink;return Object(s.createElement)("div",{className:"nhsuk-panel-group__item"},Object(s.createElement)("a",{href:c,className:"nhsuk-promo__link-wrapper"},Object(s.createElement)("div",{class:"nhsuk-panel-with-label",style:{backgroundImage:"url(".concat(l,")"),backgroundSize:"cover",backgroundPosition:"center",backgroundColor:n}},Object(s.createElement)("h3",{class:"nhsuk-panel-with-label__label"},Object(s.createElement)(x.Content,{value:a})),Object(s.createElement)("img",{src:"/wp-content/plugins/nhsblocks/assets/pixel_trans.png",class:"nhsuk-dashboard__image",alt:a}))))},deprecated:[{save:function(e){var t=e.attributes,n=t.overlayColor,l=t.backgroundImage,a=t.panelTitle,c=t.panelLink;return Object(s.createElement)("div",{className:"nhsuk-panel-group__item"},Object(s.createElement)("a",{href:c,className:"nhsuk-promo__link-wrapper"},Object(s.createElement)("div",{class:"nhsuk-panel-with-label",style:{backgroundImage:"url(".concat(l,")"),backgroundSize:"cover",backgroundPosition:"center",backgroundColor:n}},Object(s.createElement)("h3",{class:"nhsuk-panel-with-label__label"},Object(s.createElement)(x.Content,{value:a})),Object(s.createElement)("img",{src:"/wp-content/themes/nightingale-2-0/assets/pixel_trans.png",class:"nhsuk-dashboard__image",alt:""}))))}}]});var P=wp.i18n.__,q=wp.blocks.registerBlockType,D=wp.blockEditor,U=D.RichText,M=D.InnerBlocks;q("nhsblocks/dodont",{title:P("Do and Don't List","nhsblocks"),category:"nhsblocks",icon:"yes-alt",attributes:{panelTitle:{type:"string",source:"html",selector:"h3"}},edit:function(e){var t=e.attributes.panelTitle,n=(e.className,e.setAttributes);return Object(s.createElement)("div",{className:"nhsuk-do-dont-list"},Object(s.createElement)("h3",{className:"nhsuk-do-dont-list__label"},Object(s.createElement)(U,{placeholder:P("Panel Title","nhsblocks"),value:t,onChange:function(e){n({panelTitle:e})}})),Object(s.createElement)("ul",{className:"nhsuk-list nhsuk-list--cross"},Object(s.createElement)(M,{allowedBlocks:[]})))},save:function(e){var t=e.attributes,n=t.panelTitle;t.panelText;return Object(s.createElement)("div",{className:"nhsuk-do-dont-list"},Object(s.createElement)("h3",{className:"nhsuk-do-dont-list__label"},Object(s.createElement)(U.Content,{value:n})),Object(s.createElement)("ul",{className:"nhsuk-list nhsuk-list--cross"},Object(s.createElement)(M.Content,null)))}}),q("nhsblocks/doitem",{title:P("List Item with Tick","nhsblocks"),category:"nhsblocks",icon:"yes",parent:["nhsblocks/dodont"],attributes:{panelText:{type:"string",source:"html",selector:"span"}},edit:function(e){var t=e.attributes.panelText,n=e.setAttributes;return Object(s.createElement)("li",null,Object(s.createElement)("svg",{class:"nhsuk-icon nhsuk-icon__tick",xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",fill:"none","aria-hidden":"true"},Object(s.createElement)("path",{"stroke-width":"4","stroke-linecap":"round",d:"M18.4 7.8l-8.5 8.4L5.6 12"})),Object(s.createElement)("span",null,Object(s.createElement)(U,{placeholder:P("Text","nhsblocks"),value:t,onChange:function(e){n({panelText:e})}})))},save:function(e){var t=e.attributes.panelText;return Object(s.createElement)("li",null,Object(s.createElement)("svg",{class:"nhsuk-icon nhsuk-icon__tick",xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",fill:"none","aria-hidden":"true"},Object(s.createElement)("path",{"stroke-width":"4","stroke-linecap":"round",d:"M18.4 7.8l-8.5 8.4L5.6 12"})),Object(s.createElement)("span",null,Object(s.createElement)(U.Content,{value:t})))}}),q("nhsblocks/dontitem",{title:P("List Item with Cross","nhsblocks"),category:"nhsblocks",icon:"no-alt",parent:["nhsblocks/dodont"],attributes:{panelText:{type:"string",source:"html",selector:"span"}},edit:function(e){var t=e.attributes.panelText,n=e.setAttributes;return Object(s.createElement)("li",null,Object(s.createElement)("svg",{class:"nhsuk-icon nhsuk-icon__cross",xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24","aria-hidden":"true"},Object(s.createElement)("path",{d:"M17 18.5c-.4 0-.8-.1-1.1-.4l-10-10c-.6-.6-.6-1.6 0-2.1.6-.6 1.5-.6 2.1 0l10 10c.6.6.6 1.5 0 2.1-.3.3-.6.4-1 .4z"}),Object(s.createElement)("path",{d:"M7 18.5c-.4 0-.8-.1-1.1-.4-.6-.6-.6-1.5 0-2.1l10-10c.6-.6 1.5-.6 2.1 0 .6.6.6 1.5 0 2.1l-10 10c-.3.3-.6.4-1 .4z"})),Object(s.createElement)("span",null,Object(s.createElement)(U,{placeholder:P("Text","nhsblocks"),value:t,onChange:function(e){n({panelText:e})}})))},save:function(e){var t=e.attributes.panelText;return Object(s.createElement)("li",null,Object(s.createElement)("svg",{class:"nhsuk-icon nhsuk-icon__cross",xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24","aria-hidden":"true"},Object(s.createElement)("path",{d:"M17 18.5c-.4 0-.8-.1-1.1-.4l-10-10c-.6-.6-.6-1.6 0-2.1.6-.6 1.5-.6 2.1 0l10 10c.6.6.6 1.5 0 2.1-.3.3-.6.4-1 .4z"}),Object(s.createElement)("path",{d:"M7 18.5c-.4 0-.8-.1-1.1-.4-.6-.6-.6-1.5 0-2.1l10-10c.6-.6 1.5-.6 2.1 0 .6.6.6 1.5 0 2.1l-10 10c-.3.3-.6.4-1 .4z"})),Object(s.createElement)("span",null,Object(s.createElement)(U.Content,{value:t})))}});var Q=wp.i18n.__,z=wp.blocks.registerBlockType,V=wp.blockEditor,H=V.RichText,W=V.InspectorControls,G=V.BlockControls,F=V.BlockVerticalAlignmentToolbar,Y=V.URLInputButton;z("nhsblocks/nhsbutton",{title:Q("Button","nhsblocks"),category:"nhsblocks",icon:"admin-links",styles:[{name:"green",label:Q("Standard (Green)"),isDefault:!0},{name:"secondary",label:Q("Secondary (Grey)")},{name:"reverse",label:Q("Reverse (White)")}],supports:{align:!0},attributes:{buttonLabel:{type:"string",source:"html",selector:".nhsuk-button"},buttonLink:{type:"string",source:"attribute",selector:"a.nhsuk-button",attribute:"href"},verticalAlignment:{type:"string"}},edit:function(e){var t=e.attributes,n=t.buttonLabel,l=t.buttonLink,a=t.verticalAlignment,c=e.className,r=e.setAttributes;return[Object(s.createElement)(W,null,Object(s.createElement)("div",null,Object(s.createElement)("strong",null,"Add a link for this button"),Object(s.createElement)(Y,{className:"nhsblocks-dropdown__input",label:Q("Button URL","nhsblocks"),onChange:function(e){r({buttonLink:e})},url:l}))),Object(s.createElement)(G,null,Object(s.createElement)(F,{onChange:function(e){r({verticalAlignment:e})},value:a})),Object(s.createElement)("div",{className:"".concat(c," nhsuk-button")},Object(s.createElement)(H,{value:n,onChange:function(e){r({buttonLabel:e})},placeholder:"Button label"}))]},save:function(e){var t=e.attributes,n=t.buttonLabel,l=t.buttonLink;return Object(s.createElement)("a",{href:l,className:"nhsuk-button"},Object(s.createElement)(H.Content,{value:n}))}});var J=wp.i18n.__,K=wp.blocks.registerBlockType,X=wp.blockEditor.RichText;K("nhsblocks/reveal1",{title:J("Simple Reveal","nhsblocks"),category:"nhsblocks",icon:"plus-alt",styles:[{name:"downarrow",label:J("Down Arrow"),isDefault:!0},{name:"expander",label:J("Plus Icon")}],attributes:{revealTitle:{type:"string",source:"html",selector:".nhsuk-details__summary-text"},revealText:{type:"string",source:"html",selector:".nhsuk-details__text"},expanderBox:{type:"string"}},edit:function(e){var t=e.attributes,n=t.revealTitle,l=t.revealText,a=e.className,c=e.setAttributes;return Object(s.createElement)("details",{className:"".concat(a," nhsuk-details newstyle"),open:!0},Object(s.createElement)("summary",{className:"nhsuk-details__summary",role:"button","aria-controls":"details-content-","aria-expanded":"true"},Object(s.createElement)("span",{className:"nhsuk-details__summary-text"},Object(s.createElement)(X,{placeholder:J("Reveal Title","nhsblocks"),value:n,onChange:function(e){c({revealTitle:e})}}))),Object(s.createElement)("div",{className:"nhsuk-details__text",id:"details-content-","aria-hidden":"false"},Object(s.createElement)(X,{multiline:"p",placeholder:J("Reveal Contents","nhsblocks"),onChange:function(e){c({revealText:e})},value:l})))},save:function(e){var t=e.attributes,n=t.revealTitle,l=t.revealText;return Object(s.createElement)("details",{className:"nhsuk-details"},Object(s.createElement)("summary",{className:"nhsuk-details__summary",role:"button","aria-controls":"details-content-","aria-expanded":"false"},Object(s.createElement)("span",{className:"nhsuk-details__summary-text"},Object(s.createElement)(X.Content,{value:n}))),Object(s.createElement)("div",{className:"nhsuk-details__text",id:"details-content-","aria-hidden":"false"},Object(s.createElement)(X.Content,{multiline:"p",value:l})))}});var Z=wp.i18n.__,$=wp.blocks.registerBlockType,ee=wp.blockEditor,te=ee.RichText,ne=ee.InnerBlocks,le=[["core/paragraph",{placeholder:"Panel Text"}],["nhsblocks/nhsbutton",{align:"right"}]];$("nhsblocks/panel1",{title:Z("Panel Region","nhsblocks"),description:Z("By default this block includes a title, block of text and button link. You can remove the button if you wish by clicking it then clicking three dots on the navigation bar at the top of the page then the bin","nhsblocks"),icon:"feedback",category:"nhsblocks",styles:[{name:"default",label:Z("Plain white panel"),isDefault:!0},{name:"panel-grey",label:Z("Grey")},{name:"panel-with-label",label:Z("With Label")}],attributes:{panelTitle:{type:"string",source:"html",selector:"h3"}},edit:function(e){var t=e.attributes.panelTitle,n=e.className,l=e.setAttributes;return Object(s.createElement)("div",{className:"".concat(n," nhsuk-panel")},Object(s.createElement)("h3",null,Object(s.createElement)(te,{placeholder:Z("Panel Title","nhsblocks"),value:t,onChange:function(e){l({panelTitle:e})}})),Object(s.createElement)("div",{className:"paneltext"},Object(s.createElement)(ne,{template:le})))},save:function(e){var t=e.attributes.panelTitle;return Object(s.createElement)("div",{className:"nhsuk-panel"},Object(s.createElement)("h3",null,Object(s.createElement)(te.Content,{value:t})),Object(s.createElement)("div",{className:"paneltext"},Object(s.createElement)(ne.Content,null)))}});var ae=wp.i18n.__,se=wp.blocks.registerBlockType,ce=wp.blockEditor,re=ce.URLInputButton,oe=ce.RichText,ie=ce.InnerBlocks;ce.MediaUpload,ce.InspectorControls;se("nhsblocks/promo1",{title:ae("Promo Region","nhsblocks"),category:"nhsblocks",icon:"megaphone",styles:[{name:"default",label:ae("Standard"),isDefault:!0},{name:"promo-small",label:ae("Smaller Text")}],attributes:{promoTitle:{type:"string",source:"html",selector:".nhsuk-promo__heading"},promoText:{type:"string",source:"html",selector:".nhsuk-promo__description"},promoLink:{type:"string",source:"attribute",selector:".nhsuk-promo a",attribute:"href"}},edit:function(e){var t=e.attributes,n=t.promoTitle,l=t.promoText,a=t.promoLink,c=e.className,r=e.setAttributes;return Object(s.createElement)("div",{className:"".concat(c," nhsuk-promo")},Object(s.createElement)("div",{class:"nhsuk-promo__content"},Object(s.createElement)(re,{className:"nhsblocks-dropdown__input",label:ae("Panel Link","nhsblocks"),onChange:function(e){r({promoLink:e})},url:a}),Object(s.createElement)(ie,{allowedBlocks:["core/image"]}),Object(s.createElement)("h3",{class:"nhsuk-promo__heading"},Object(s.createElement)(oe,{placeholder:ae("Promo Title","nhsblocks"),value:n,onChange:function(e){r({promoTitle:e})}})),Object(s.createElement)("div",{className:"nhsuk-promo__description"},Object(s.createElement)(oe,{multiline:"p",placeholder:ae("Promo Contents","nhsblocks"),onChange:function(e){r({promoText:e})},value:l}))))},save:function(e){var t=e.attributes,n=t.promoTitle,l=t.promoText,a=t.promoLink;return Object(s.createElement)("div",{className:"nhsuk-promo"},Object(s.createElement)("a",{href:a,className:"nhsuk-promo__link-wrapper"},Object(s.createElement)("div",{class:"nhsuk-promo__content"},Object(s.createElement)(ie.Content,null),Object(s.createElement)("h3",{class:"nhsuk-promo__heading"},Object(s.createElement)(oe.Content,{value:n})),Object(s.createElement)("div",{className:"nhsuk-promo__description"},Object(s.createElement)(oe.Content,{multiline:"p",value:l})))))}});var ue=wp.i18n.__,he=wp.blocks.registerBlockType,me=wp.blockEditor.RichText;he("nhsblocks/quote1",{title:ue("Simple Quote","nhsblocks"),category:"nhsblocks",icon:"format-quote",styles:[{name:"standard",label:ue("Standard"),isDefault:!0},{name:"quote-reverse",label:ue("Inverse")}],attributes:{quoteName:{type:"string",source:"html",selector:".nhsuk-inset-text__quote-attribution"},quoteText:{type:"array",source:"children",multiline:"p",selector:".nhsuk-inset-text__quote"}},edit:function(e){var t=e.attributes,n=t.quoteName,l=t.quoteText,a=e.className,c=e.setAttributes;return Object(s.createElement)("div",{className:"".concat(a," nhsuk-inset-text")},Object(s.createElement)("span",{className:"nhsuk-u-visually-hidden"},"Quote / Testimonial: "),Object(s.createElement)("div",{className:"nhsuk-inset-text__quote"},Object(s.createElement)(me,{multiline:"p",placeholder:ue("Quote","nhsblocks"),onChange:function(e){c({quoteText:e})},value:l})),Object(s.createElement)("span",{className:"nhsuk-inset-text__quote-attribution"},Object(s.createElement)(me,{placeholder:ue("Quote Name","nhsblocks"),value:n,onChange:function(e){c({quoteName:e})}})))},save:function(e){var t=e.attributes,n=t.quoteName,l=t.quoteText;return Object(s.createElement)("div",{className:"nhsuk-inset-text"},Object(s.createElement)("span",{className:"nhsuk-u-visually-hidden"},"Quote / Testimonial: "),Object(s.createElement)("div",{className:"nhsuk-inset-text__quote"},Object(s.createElement)(me.Content,{multiline:"p",value:l})),Object(s.createElement)("span",{className:"nhsuk-inset-text__quote-attribution"},Object(s.createElement)(me.Content,{value:n})))}});var be=wp.i18n.__,de=wp.blocks.registerBlockType,ke=wp.blockEditor.RichText;de("nhsblocks/card1",{title:be("Card Region","nhsblocks"),category:"nhsblocks",icon:"category",attributes:{cardTitle:{type:"string",source:"html",selector:".nhsuk-care-card__heading-text"},cardText:{type:"array",source:"children",multiline:"p",selector:".nhsuk-care-card__content"}},edit:function(e){var t=e.attributes,n=t.cardTitle,l=t.cardText,a=e.className,c=e.setAttributes;return Object(s.createElement)("div",{className:"".concat(a," nhsuk-care-card")},Object(s.createElement)("div",{className:"nhsuk-care-card__heading-container"},Object(s.createElement)("h3",{className:"nhsuk-care-card__heading"},Object(s.createElement)("span",{role:"text"},Object(s.createElement)("span",{className:"nhsuk-u-visually-hidden"},"Non-urgent advice: "),Object(s.createElement)("span",{className:"nhsuk-care-card__heading-text"},Object(s.createElement)(ke,{placeholder:be("Card Title","nhsblocks"),value:n,onChange:function(e){c({cardTitle:e})}})))),Object(s.createElement)("span",{className:"nhsuk-care-card__arrow","aria-hidden":"true"})),Object(s.createElement)("div",{className:"nhsuk-care-card__content"},Object(s.createElement)(ke,{multiline:"p",placeholder:be("Card Contents","nhsblocks"),onChange:function(e){c({cardText:e})},value:l})))},save:function(e){var t=e.attributes,n=t.cardTitle,l=t.cardText;return Object(s.createElement)("div",{className:"nhsuk-grid-column-width nhsuk-care-card nhsuk-care-card--type"},Object(s.createElement)("div",{className:"nhsuk-care-card__heading-container"},Object(s.createElement)("h3",{className:"nhsuk-care-card__heading"},Object(s.createElement)("span",{role:"text"},Object(s.createElement)("span",{className:"nhsuk-u-visually-hidden"},"Non-urgent advice: "),Object(s.createElement)("span",{className:"nhsuk-care-card__heading-text"},Object(s.createElement)(ke.Content,{value:n})))),Object(s.createElement)("span",{className:"nhsuk-care-card__arrow","aria-hidden":"true"})),Object(s.createElement)("div",{className:"nhsuk-care-card__content"},Object(s.createElement)(ke.Content,{multiline:"p",value:l})))}}),wp.blocks.registerBlockStyle("nhsblocks/card1",{name:"default",label:"Standard Blue",isDefault:!0}),wp.blocks.registerBlockStyle("nhsblocks/card1",{name:"urgent",label:"Urgent (Red)"}),wp.blocks.registerBlockStyle("nhsblocks/card1",{name:"immediate",label:"Immediate (Red and Black)"});var pe=wp.i18n.__,ge=[{name:"twocols",label:"nhsblocks",isDefault:!0,icon:o,innerBlocks:[["nhsblocks/onehalf"],["nhsblocks/onehalf"]]},{name:"threecols",label:pe("Three Columns","nhsblocks"),icon:i,innerBlocks:[["nhsblocks/onethird"],["nhsblocks/onethird"],["nhsblocks/onethird"]]},{name:"one3two3",label:pe("One Third / Two Thirds Columns","nhsblocks"),icon:b,innerBlocks:[["nhsblocks/onethird"],["nhsblocks/twothirds"]]},{name:"two3one3",label:pe("Two Thirds / One Third Columns","nhsblocks"),icon:d,innerBlocks:[["nhsblocks/twothirds"],["nhsblocks/onethird"]]},{name:"one4one2one4",label:pe("One Quarter / One Half / One Quarter Columns","nhsblocks"),icon:p,innerBlocks:[["nhsblocks/onequarter"],["nhsblocks/onehalf"],["nhsblocks/onequarter"]]},{name:"one4one4one2",label:pe("One Quarter / One Quarter / One Half Columns","nhsblocks"),icon:g,innerBlocks:[["nhsblocks/onequarter"],["nhsblocks/onequarter"],["nhsblocks/onehalf"]]},{name:"one2one4one4",label:pe("One Half / One Quarter / One Quarter Columns","nhsblocks"),icon:k,innerBlocks:[["nhsblocks/onehalf"],["nhsblocks/onequarter"],["nhsblocks/onequarter"]]}],Ee=wp.element,ve=(Ee.useState,Ee.setState,wp.i18n.__),Oe=wp.blocks,we=Oe.registerBlockType,je=Oe.createBlock,fe=wp.blockEditor,ye=fe.InnerBlocks,_e=(fe.BlockControls,fe.__experimentalBlockVariationPicker),xe=wp.data,Ne=xe.useDispatch,Te=xe.useSelect;we("nhsblocks/rowgroup",{title:ve("Grouped Items","nhsblocks"),category:"nhsblocks",icon:"layout",attributes:{template:{type:"array"}},edit:function(e){var t=e.clientId,n=e.name,l=(e.attributes.template,e.setAttributes,Ne("core/block-editor").replaceInnerBlocks),r=Te((function(e){var l=e("core/blocks"),a=l.__experimentalGetBlockVariations,s=l.getBlockType,c=l.__experimentalGetDefaultBlockVariation;return{blockType:s(n),defaultVariation:c(n,"block"),hasInnerBlocks:e("core/block-editor").getBlocks(t).length>0,variations:a(n,"block")}}),[t,n]),o=(r.blockType,r.defaultVariation,r.hasInnerBlocks),i=(r.variations,function e(t){return Object(c.map)(t,(function(t){var n=a()(t,3),l=n[0],s=n[1],c=n[2];return je(l,s,e(void 0===c?[]:c))}))});return o?Object(s.createElement)("div",{className:"nhsuk-grid-row"},Object(s.createElement)("div",{className:"nhsuk-panel-group nhsuk-grid-column-full"},Object(s.createElement)(ye,{template:ge}))):Object(s.createElement)("div",{className:"nhsuk-grid-row"},Object(s.createElement)("div",{className:"nhsuk-panel-group nhsuk-grid-column-full"},Object(s.createElement)(_e,{variations:ge,onSelect:function(t){t.attributes&&e.setAttributes(t.attributes),t.innerBlocks&&l(e.clientId,i(t.innerBlocks))}})))},save:function(e){e.attributes.template;return Object(s.createElement)("div",{className:"nhsuk-grid-row"},Object(s.createElement)("div",{className:"nhsuk-panel-group nhsuk-grid-column-full"},Object(s.createElement)(ye.Content,null)))}}),we("nhsblocks/onehalf",{title:ve("One Half Width","nhsblocks"),category:"nhsblocks",parent:["nhsblocks/rowgroup"],attributes:{template:{type:"array"}},edit:function(e){var t=e.attributes.template,n=(e.setAttributes,null===t||!t);return Object(s.createElement)("div",{className:"nhsuk-grid-column-one-half"},Object(s.createElement)(ye,{template:n?null:t}))},save:function(e){e.attributes.template;return Object(s.createElement)("div",{className:"nhsuk-grid-column-one-half"},Object(s.createElement)(ye.Content,null))}}),we("nhsblocks/onethird",{title:ve("One Third Width","nhsblocks"),category:"nhsblocks",parent:["nhsblocks/rowgroup"],attributes:{template:{type:"array"}},edit:function(e){var t=e.attributes.template,n=(e.setAttributes,null===t||!t);return Object(s.createElement)("div",{className:"nhsuk-grid-column-one-third"},Object(s.createElement)(ye,{template:n?null:t}))},save:function(e){e.attributes.template;return Object(s.createElement)("div",{className:"nhsuk-grid-column-one-third"},Object(s.createElement)(ye.Content,null))}}),we("nhsblocks/onequarter",{title:ve("One Quarter Width","nhsblocks"),category:"nhsblocks",parent:["nhsblocks/rowgroup"],attributes:{template:{type:"array"}},edit:function(e){var t=e.attributes.template,n=(e.setAttributes,null===t||!t);return Object(s.createElement)("div",{className:"nhsuk-grid-column-one-quarter"},Object(s.createElement)(ye,{template:n?null:t}))},save:function(e){e.attributes.template;return Object(s.createElement)("div",{className:"nhsuk-grid-column-one-quarter"},Object(s.createElement)(ye.Content,null))}}),we("nhsblocks/twothirds",{title:ve("Two Thirds Width","nhsblocks"),category:"nhsblocks",parent:["nhsblocks/rowgroup"],attributes:{template:{type:"array"}},edit:function(e){var t=e.attributes.template,n=(e.setAttributes,null===t||!t);return Object(s.createElement)("div",{className:"nhsuk-grid-column-two-thirds"},Object(s.createElement)(ye,{template:n?null:t}))},save:function(e){e.attributes.template;return Object(s.createElement)("div",{className:"nhsuk-grid-column-two-thirds"},Object(s.createElement)(ye.Content,null))}}),we("nhsblocks/threequarters",{title:ve("Three Quarter Width","nhsblocks"),category:"nhsblocks",parent:["nhsblocks/rowgroup"],attributes:{template:{type:"array"}},edit:function(e){var t=e.attributes.template,n=(e.setAttributes,null===t||!t);return Object(s.createElement)("div",{className:"nhsuk-grid-column-three-quarters"},Object(s.createElement)(ye,{template:n?null:t}))},save:function(e){e.attributes.template;return Object(s.createElement)("div",{className:"nhsuk-grid-column-three-quarters"},Object(s.createElement)(ye.Content,null))}});var Ce=wp.i18n.__,Be=wp.blocks.registerBlockType,Ie=wp.blockEditor,Se=Ie.RichText,Le=Ie.InspectorControls,Ae=Ie.ColorPalette,Re=Ie.MediaUpload,Pe=Ie.InnerBlocks;Be("nhsblocks/heroblock",{title:Ce("Hero Block","nhsblocks"),description:Ce("Full width zone, designed to go at the top of your page with an optional image background, texta area and call to action","nhsblocks"),category:"nhsblocks",icon:"schedule",attributes:{overlayColor:{type:"string",default:"#005eb8"},backgroundImage:{type:"string",default:"/wp-content/plugins/nhsblocks/assets/pixel_trans.png"}},edit:function(e){var t=e.setAttributes,n=e.attributes,l=e.className,a=n.overlayColor,c=n.backgroundImage;return[Object(s.createElement)(Le,null,Object(s.createElement)("div",null,Object(s.createElement)("strong",null,"Select a background image:"),Object(s.createElement)(Re,{onSelect:function(e){t({backgroundImage:e.sizes.full.url})},type:"image",value:c,render:function(e){var t=e.open;return Object(s.createElement)("button",{className:"button button-primary button-hero",onClick:t},"Upload Image!")}})),Object(s.createElement)("div",null,Object(s.createElement)("strong",null,"OR")," Select a background color: ",Object(s.createElement)("br",null),Object(s.createElement)("i",null,"(this will be ignored if you chose an image above)"),Object(s.createElement)(Ae,{value:a,onChange:function(e){t({overlayColor:e})}}))),Object(s.createElement)("section",{className:"".concat(l,"  nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description"),style:{backgroundColor:a,backgroundImage:"url(".concat(c,")"),backgroundSize:"cover",backgroundPosition:"center"}},Object(s.createElement)("div",{className:"nhsuk-hero__overlay"},Object(s.createElement)("div",{className:"nhsuk-width-container"},Object(s.createElement)("div",{className:"nhsuk-grid-row"},Object(s.createElement)("div",{className:"nhsuk-grid-column-two-thirds"},Object(s.createElement)(Pe,{template:[["nhsblocks/heroinner",{}]]}))))))]},save:function(e){var t=e.attributes,n=(e.className,t.overlayColor),l=t.backgroundImage;return Object(s.createElement)("section",{className:"nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description",style:{backgroundImage:"url(".concat(l,")"),backgroundSize:"cover",backgroundPosition:"center",backgroundColor:n}},Object(s.createElement)("div",{className:"nhsuk-hero__overlay"},Object(s.createElement)("div",{className:"nhsuk-width-container"},Object(s.createElement)("div",{className:"nhsuk-grid-row"},Object(s.createElement)("div",{className:"nhsuk-grid-column-two-thirds"},Object(s.createElement)(Pe.Content,null))))))}}),Be("nhsblocks/heroinner",{title:Ce("Hero Block Inner Text","nhsblocks"),description:Ce("Add some text to the header","nhsblocks"),category:"nhsblocks",parent:["nhsblocks/heroblock"],icon:"nametag",attributes:{texttitle:{type:"array",source:"children",selector:"h1"},texttext:{type:"array",source:"children",selector:"p"},fontColor:{type:"string",default:"#ffffff"}},edit:function(e){var t=e.setAttributes,n=e.attributes,l=(e.className,n.fontColor);return[Object(s.createElement)(Le,null,Object(s.createElement)("div",null,Object(s.createElement)("strong",null,"Select a font color:"),Object(s.createElement)(Ae,{value:l,onChange:function(e){t({fontColor:e})}}))),Object(s.createElement)("div",{className:"nhsuk-hero-content"},Object(s.createElement)(Se,{tagName:"h1",className:"nhsuk-u-margin-bottom-3",value:n.texttitle,onChange:function(e){t({texttitle:e})},placeholder:"Enter your text here!",style:{color:l}}),Object(s.createElement)(Se,{tagName:"p",className:"nhsuk-body-l nhsuk-u-margin-bottom-0",value:n.texttext,onChange:function(e){t({texttext:e})},placeholder:"Enter your text here!",style:{color:l}}),Object(s.createElement)("span",{className:"nhsuk-hero__arrow","aria-hidden":"true"}))]},save:function(e){var t=e.attributes,n=(e.className,t.fontColor);return Object(s.createElement)("div",{className:"nhsuk-hero-content"},Object(s.createElement)(Se.Content,{tagName:"h1",className:"nhsuk-u-margin-bottom-3",style:{color:n},value:t.texttitle}),Object(s.createElement)(Se.Content,{tagName:"p",className:"nhsuk-body-l nhsuk-u-margin-bottom-0",style:{color:n},value:t.texttext}),Object(s.createElement)("span",{className:"nhsuk-hero__arrow","aria-hidden":"true"}))}});var qe=wp.i18n.__,De=wp.blocks.registerBlockType,Ue=wp.blockEditor,Me=(Ue.RichText,Ue.URLInput),Qe=Ue.InnerBlocks,ze=wp.element.Fragment,Ve=wp.components.TextControl;De("nhsblocks/contentslist",{title:qe("Contents List","nhsblocks"),description:qe("Use contents lists to allow users to navigate between related pages, for example about a single condition.","nhsblocks"),category:"nhsblocks",icon:"editor-ul",keywords:[qe("Contents List","nhsblocks"),qe("Navigation","nhsblocks"),qe("Related pages","nhsblocks")],example:{innerBlocks:[{name:"nhsblocks/contentslistitem",attributes:{text:"About",url:"#"}},{name:"nhsblocks/contentslistitem",attributes:{text:"Symptoms",url:"#"}},{name:"nhsblocks/contentslistitem",attributes:{text:"When to see a doctor",url:"#"}}]},edit:function(e){e.className,e.setAttributes,e.attributes.title;return Object(s.createElement)("nav",{className:"{ className } nhsuk-contents-list",role:"navigation","aria-label":"Pages in this guide"},Object(s.createElement)("h2",{className:"nhsuk-u-visually-hidden"},qe("Contents","nhsblocks")),Object(s.createElement)("ol",{className:"nhsuk-contents-list__list"},Object(s.createElement)(Qe,{template:[["nhsblocks/contentslistitem",{}]],allowedBlocks:["nhsblocks/contentslistitem"]})))},save:function(e){return Object(s.createElement)("nav",{className:"nhsuk-contents-list",role:"navigation","aria-label":"Pages in this guide"},Object(s.createElement)("h2",{className:"nhsuk-u-visually-hidden"},qe("Contents","nhsblocks")),Object(s.createElement)("ol",{className:"nhsuk-contents-list__list"},Object(s.createElement)(Qe.Content,null)))}}),De("nhsblocks/contentslistitem",{title:qe("Contents List Item","nhsblocks"),description:qe("List Item to go into the contents list","nhsblocks"),category:"nhsblocks",icon:"editor-ul",parent:["nhsblocks/contentslist"],attributes:{text:{type:"array",source:"children",selector:".pagename"},url:{type:"string",source:"attribute",attribute:"href",selector:"a"}},edit:function(e){e.className;var t=e.setAttributes,n=e.isSelected,l=e.attributes,a=l.text,c=l.url;return Object(s.createElement)("li",{className:"nhsuk-contents-list__item"},n?Object(s.createElement)("div",null,Object(s.createElement)(Ve,{id:"example-input-field",label:(qe("Link Text"),"nhsblocks"),value:a,onChange:function(e){return t({text:e})}}),Object(s.createElement)(Me,{className:"nhsuk-contents-list__link",value:c,onChange:function(e){return t({url:e})},placeholder:"Page Link (start typing to choose link)"})):Object(s.createElement)(ze,null,c?Object(s.createElement)("a",{className:"nhsuk-contents-list__link",href:"{ url }"},a):Object(s.createElement)("span",{className:"nhsuk-contents-list__current"},a)))},save:function(e){e.className;var t=e.attributes,n=t.text,l=t.url;return Object(s.createElement)(ze,null,l?Object(s.createElement)("li",{className:"nhsuk-contents-list__item"},Object(s.createElement)("a",{className:"pagename nhsuk-contents-list__link",href:l},n)):Object(s.createElement)("li",{className:"nhsuk-contents-list__item","aria-current":"page"},Object(s.createElement)("span",{className:"pagename nhsuk-contents-list__current"},n)))}});var He=wp.i18n.__,We=wp.blocks.registerBlockType,Ge=wp.blockEditor,Fe=(Ge.RichText,Ge.URLInput,Ge.InnerBlocks,wp.data),Ye=Fe.withSelect,Je=(Fe.subscribe,Fe.select),Ke=(wp.element.Fragment,wp.components),Xe=Ke.Button;Ke.TextControl;We("nhsblocks/contentslistpage",{title:He("Contents List within a page","nhsblocks"),description:He("Use contents lists to allow users to navigate sections within a page. This will automatically add all h2 tags on this page to a scrollable list ","nhsblocks"),category:"nhsblocks",icon:"editor-ul",example:{attributes:{h2titles:[{text:"Heading number one",url:"#1",id:"11111"},{text:"Heading number two",url:"#2",id:"22222"},{text:"Heading number three",url:"#3",id:"33333"}]}},attributes:{h2titles:{type:"array",default:[]}},keywords:[He("Contents List Page","nhsblocks"),He("Navigation","nhsblocks"),He("Related sections on page","nhsblocks")],edit:Ye((function(e){return{blocks:e("core/block-editor").getBlocks()}}))((function(e){var t=e.blocks,n=(e.className,e.setAttributes),l=e.attributes.h2titles,a=[];t.map((function(e,t){if("core/heading"===e.name&&2===e.attributes.level){var n="nhs-block-anchor-"+t;a.push({text:e.attributes.content,url:n,id:e.clientId})}}));var c=l.length==a.length&&l.every((function(e,t){return a[t].text===e.text&&a[t].url===e.url}));return Object(s.createElement)("div",null,Object(s.createElement)("nav",{className:"{ className } nhsuk-contents-list",role:"navigation","aria-label":"Pages in this guide"},Object(s.createElement)("h2",{className:"nhsuk-u-visually-hidden"},He("Contents","nhsblocks")),Object(s.createElement)("ol",{className:"nhsuk-contents-list__list"},l?l.map((function(e){return Object(s.createElement)("li",{className:"nhsuk-contents-list__item",key:e.url},Object(s.createElement)("a",{className:"nhsuk-contents-list__link",href:"#"+e.url},e.text))})):Object(s.createElement)("p",null,"Press the button below to make a table of contents for this page"),Object(s.createElement)("p",null,Object(s.createElement)(Xe,{onClick:function(){n({h2titles:a});for(var e=a.length-1;e>=0;e--){Je("core/block-editor").getBlock(a[e].id).attributes.anchor=a[e].url}},className:"is-primary",disabled:c},"Update Heading Block")))))})),save:function(e){e.attributes.h2titles;return null}})}]);
+
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./node_modules/@babel/runtime/helpers/arrayWithHoles.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithHoles.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+module.exports = _arrayWithHoles;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _iterableToArrayLimit(arr, i) {
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+module.exports = _iterableToArrayLimit;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/nonIterableRest.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/nonIterableRest.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance");
+}
+
+module.exports = _nonIterableRest;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/slicedToArray.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/slicedToArray.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayWithHoles = __webpack_require__(/*! ./arrayWithHoles */ "./node_modules/@babel/runtime/helpers/arrayWithHoles.js");
+
+var iterableToArrayLimit = __webpack_require__(/*! ./iterableToArrayLimit */ "./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js");
+
+var nonIterableRest = __webpack_require__(/*! ./nonIterableRest */ "./node_modules/@babel/runtime/helpers/nonIterableRest.js");
+
+function _slicedToArray(arr, i) {
+  return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || nonIterableRest();
+}
+
+module.exports = _slicedToArray;
+
+/***/ }),
+
+/***/ "./src/00-dashboard/index.js":
+/*!***********************************!*\
+  !*** ./src/00-dashboard/index.js ***!
+  \***********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _templates_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./templates.js */ "./src/00-dashboard/templates.js");
+
+
+
+/**
+ *  NHS Panel Group Element
+ *  @reference: https://nhsuk.github.io/nhsuk-frontend/components/panel/index.html
+ *  @author Tony Blacker, NHS Leadership Academy
+ *  @version 1.0 22nd July 2019
+ */
+var _wp$element = wp.element,
+    useState = _wp$element.useState,
+    setState = _wp$element.setState;
+var __ = wp.i18n.__;
+var _wp$blocks = wp.blocks,
+    registerBlockType = _wp$blocks.registerBlockType,
+    createBlock = _wp$blocks.createBlock;
+var _wp$blockEditor = wp.blockEditor,
+    RichText = _wp$blockEditor.RichText,
+    InspectorControls = _wp$blockEditor.InspectorControls,
+    URLInputButton = _wp$blockEditor.URLInputButton,
+    ColorPalette = _wp$blockEditor.ColorPalette,
+    MediaUpload = _wp$blockEditor.MediaUpload,
+    InnerBlocks = _wp$blockEditor.InnerBlocks,
+    BlockControls = _wp$blockEditor.BlockControls,
+    __experimentalBlockVariationPicker = _wp$blockEditor.__experimentalBlockVariationPicker;
+var _wp$data = wp.data,
+    useDispatch = _wp$data.useDispatch,
+    useSelect = _wp$data.useSelect;
+
+
+registerBlockType("nhsblocks/dashboardnav", {
+  title: __("Dashboard Navigation", "nhsblocks"),
+  category: "nhsblocks",
+  icon: 'tagcloud',
+  attributes: {
+    template: {
+      type: "array"
+    }
+  },
+  edit: function edit(props) {
+    var clientId = props.clientId,
+        name = props.name;
+    var template = props.attributes.template,
+        setAttributes = props.setAttributes;
+
+    var _useDispatch = useDispatch('core/block-editor'),
+        replaceInnerBlocks = _useDispatch.replaceInnerBlocks;
+
+    var ALLOWED_BLOCKS = ['nhsblocks/dashpanel'];
+
+    var _useSelect = useSelect(function (select) {
+      var _select = select('core/blocks'),
+          __experimentalGetBlockVariations = _select.__experimentalGetBlockVariations,
+          getBlockType = _select.getBlockType,
+          __experimentalGetDefaultBlockVariation = _select.__experimentalGetDefaultBlockVariation;
+
+      return {
+        blockType: getBlockType(name),
+        defaultVariation: __experimentalGetDefaultBlockVariation(name, 'block'),
+        hasInnerBlocks: select('core/block-editor').getBlocks(clientId).length > 0,
+        variations: __experimentalGetBlockVariations(name, 'block')
+      };
+    }, [clientId, name]),
+        blockType = _useSelect.blockType,
+        defaultVariation = _useSelect.defaultVariation,
+        hasInnerBlocks = _useSelect.hasInnerBlocks,
+        variations = _useSelect.variations;
+
+    var onChangeLayout = function onChangeLayout(nextVariation, registry) {
+      if (nextVariation.attributes) {
+        props.setAttributes(nextVariation.attributes);
+      }
+
+      if (nextVariation.innerBlocks) {
+        replaceInnerBlocks(props.clientId, createBlocksFromInnerBlocksTemplate(nextVariation.innerBlocks));
+      }
+    };
+
+    var createBlocksFromInnerBlocksTemplate = function createBlocksFromInnerBlocksTemplate(innerBlocksTemplate) {
+      return Object(lodash__WEBPACK_IMPORTED_MODULE_2__["map"])(innerBlocksTemplate, function (_ref) {
+        var _ref2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_ref, 3),
+            name = _ref2[0],
+            attributes = _ref2[1],
+            _ref2$ = _ref2[2],
+            innerBlocks = _ref2$ === void 0 ? [] : _ref2$;
+
+        return createBlock(name, attributes, createBlocksFromInnerBlocksTemplate(innerBlocks));
+      });
+    };
+
+    if (hasInnerBlocks) {
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+        className: "nhsuk-grid-row"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+        className: "nhsuk-panel-group nhsuk-grid-column-full nhsuk-dashboard"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(InnerBlocks, {
+        template: _templates_js__WEBPACK_IMPORTED_MODULE_3__["GRID_OPTIONS"]
+      })));
+    }
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "nhsuk-grid-row"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "nhsuk-panel-group nhsuk-grid-column-full nhsuk-dashboard"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(__experimentalBlockVariationPicker, {
+      variations: _templates_js__WEBPACK_IMPORTED_MODULE_3__["GRID_OPTIONS"],
+      onSelect: function onSelect(nextVariation) {
+        if (nextVariation.attributes) {
+          props.setAttributes(nextVariation.attributes);
+        }
+
+        if (nextVariation.innerBlocks) {
+          replaceInnerBlocks(props.clientId, createBlocksFromInnerBlocksTemplate(nextVariation.innerBlocks));
+        }
+      }
+    })));
+  },
+  save: function save(props) {
+    var template = props.attributes.template;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "nhsuk-grid-row"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "nhsuk-panel-group nhsuk-dashboard"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(InnerBlocks.Content, null)));
+  }
+});
+registerBlockType("nhsblocks/dashpanel", {
+  title: __("Dashboard Region", "nhsblocks"),
+  description: __("Simple image background with text and link to give Dashboard navigation panel"),
+  icon: "feedback",
+  category: "nhsblocks",
+  parent: ["nhsblocks/dashboardnav"],
+  attributes: {
+    panelTitle: {
+      type: "string",
+      source: "html",
+      selector: "h3"
+    },
+    panelLink: {
+      type: "string",
+      source: "attribute",
+      selector: ".nhsuk-promo__link-wrapper",
+      attribute: "href"
+    },
+    backgroundImage: {
+      type: 'string',
+      default: '/wp-content/plugins/nhsblocks/assets/pixel_trans.png'
+    },
+    overlayColor: {
+      type: 'string',
+      default: '#ffffff'
+    }
+  },
+  edit: function edit(props) {
+    // Lift info from props and populate various constants.
+    var setAttributes = props.setAttributes,
+        attributes = props.attributes,
+        className = props.className;
+    var overlayColor = attributes.overlayColor,
+        backgroundImage = attributes.backgroundImage,
+        panelTitle = attributes.panelTitle,
+        panelLink = attributes.panelLink; // Grab newPanelLink, set the value of panelLink to newPanelLink.
+
+    var onChangePanelLink = function onChangePanelLink(newPanelLink) {
+      setAttributes({
+        panelLink: newPanelLink
+      });
+    };
+
+    function onOverlayColorChange(changes) {
+      setAttributes({
+        overlayColor: changes
+      });
+    }
+
+    function onImageSelect(imageObject) {
+      setAttributes({
+        backgroundImage: imageObject.sizes.full.url
+      });
+    } // Grab newPanelTitle, set the value of panelTitle to newPanelTitle.
+
+
+    var onChangePanelTitle = function onChangePanelTitle(newPanelTitle) {
+      setAttributes({
+        panelTitle: newPanelTitle
+      });
+    };
+
+    return [Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(InspectorControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("strong", null, "Add a link for this panel"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(URLInputButton, {
+      className: "nhsblocks-dropdown__input",
+      label: __("Dashboard Link", "nhsblocks"),
+      onChange: onChangePanelLink,
+      url: panelLink
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("strong", null, "Select a background image:"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(MediaUpload, {
+      onSelect: onImageSelect,
+      type: "image",
+      value: backgroundImage,
+      render: function render(_ref3) {
+        var open = _ref3.open;
+        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("button", {
+          className: "button button-primary button-hero",
+          onClick: open
+        }, "Upload Image!");
+      }
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("strong", null, "OR"), " Select a background color: ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("br", null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("i", null, "(this will be ignored if you choose an image above)"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(ColorPalette, {
+      value: overlayColor,
+      onChange: onOverlayColorChange
+    }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "".concat(className, " nhsuk-panel-group__item")
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      class: "nhsuk-panel-with-label",
+      style: {
+        backgroundColor: overlayColor,
+        backgroundImage: "url(".concat(backgroundImage, ")"),
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("h3", {
+      class: "nhsuk-panel-with-label__label"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RichText, {
+      placeholder: __("Panel Title", "nhsblocks"),
+      value: panelTitle,
+      onChange: onChangePanelTitle
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("img", {
+      src: "/wp-content/plugins/nhsblocks/assets/pixel_trans.png",
+      class: "nhsuk-dashboard__image",
+      alt: ""
+    })))];
+  },
+  save: function save(props) {
+    // console.info(props);
+    var _props$attributes = props.attributes,
+        overlayColor = _props$attributes.overlayColor,
+        backgroundImage = _props$attributes.backgroundImage,
+        panelTitle = _props$attributes.panelTitle,
+        panelLink = _props$attributes.panelLink;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "nhsuk-panel-group__item"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("a", {
+      href: panelLink,
+      className: "nhsuk-promo__link-wrapper"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      class: "nhsuk-panel-with-label",
+      style: {
+        backgroundImage: "url(".concat(backgroundImage, ")"),
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundColor: overlayColor
+      }
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("h3", {
+      class: "nhsuk-panel-with-label__label"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RichText.Content, {
+      value: panelTitle
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("img", {
+      src: "/wp-content/plugins/nhsblocks/assets/pixel_trans.png",
+      class: "nhsuk-dashboard__image",
+      alt: panelTitle
+    }))));
+  },
+  deprecated: [{
+    save: function save(props) {
+      var _props$attributes2 = props.attributes,
+          overlayColor = _props$attributes2.overlayColor,
+          backgroundImage = _props$attributes2.backgroundImage,
+          panelTitle = _props$attributes2.panelTitle,
+          panelLink = _props$attributes2.panelLink;
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+        className: "nhsuk-panel-group__item"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("a", {
+        href: panelLink,
+        className: "nhsuk-promo__link-wrapper"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+        class: "nhsuk-panel-with-label",
+        style: {
+          backgroundImage: "url(".concat(backgroundImage, ")"),
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundColor: overlayColor
+        }
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("h3", {
+        class: "nhsuk-panel-with-label__label"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RichText.Content, {
+        value: panelTitle
+      })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("img", {
+        src: "/wp-content/themes/nightingale-2-0/assets/pixel_trans.png",
+        class: "nhsuk-dashboard__image",
+        alt: ""
+      }))));
+    }
+  }]
+});
+
+/***/ }),
+
+/***/ "./src/00-dashboard/templates.js":
+/*!***************************************!*\
+  !*** ./src/00-dashboard/templates.js ***!
+  \***************************************/
+/*! exports provided: GRID_OPTIONS */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GRID_OPTIONS", function() { return GRID_OPTIONS; });
+/* harmony import */ var _icons_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../icons.js */ "./src/icons.js");
+/**
+ *  NHS Dashboard Template definement
+ *  @author Tony Blacker, NHS Leadership Academy
+ *  @version 1.0 6th February 2020
+ */
+var __ = wp.i18n.__;
+
+var GRID_OPTIONS = [{
+  name: 'fullwidth',
+  label: __('Full Width', 'nhsblocks'),
+  icon: _icons_js__WEBPACK_IMPORTED_MODULE_0__["onecolsIcon"],
+  innerBlocks: [['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-full'
+  }]]
+}, {
+  name: 'twocols',
+  label: __('Two Columns', 'nhsblocks'),
+  isDefault: true,
+  icon: _icons_js__WEBPACK_IMPORTED_MODULE_0__["twocolsIcon"],
+  innerBlocks: [['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-one-half'
+  }], ['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-one-half'
+  }]]
+}, {
+  name: 'threecols',
+  label: __('Three Columns', 'nhsblocks'),
+  icon: _icons_js__WEBPACK_IMPORTED_MODULE_0__["threecolsIcon"],
+  innerBlocks: [['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-one-third'
+  }], ['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-one-third'
+  }], ['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-one-third'
+  }]]
+}, {
+  name: 'twothreecols',
+  label: __('Two Columns Then Three Columns', 'nhsblocks'),
+  icon: _icons_js__WEBPACK_IMPORTED_MODULE_0__["twothreecolstworowsIcon"],
+  innerBlocks: [['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-one-half'
+  }], ['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-one-half'
+  }], ['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-one-third'
+  }], ['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-one-third'
+  }], ['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-one-third'
+  }]]
+}, {
+  name: 'threetwocols',
+  label: __('Three Columns then Two Columns', 'nhsblocks'),
+  icon: _icons_js__WEBPACK_IMPORTED_MODULE_0__["threetwocolstworowsIcon"],
+  innerBlocks: [['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-one-third'
+  }], ['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-one-third'
+  }], ['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-one-third'
+  }], ['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-one-half'
+  }], ['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-one-half'
+  }]]
+}, {
+  name: 'threethreecols',
+  label: __('Three Columns on Two Rows', 'nhsblocks'),
+  icon: _icons_js__WEBPACK_IMPORTED_MODULE_0__["threecolstworowsIcon"],
+  innerBlocks: [['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-one-third'
+  }], ['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-one-third'
+  }], ['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-one-third'
+  }], ['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-one-third'
+  }], ['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-one-third'
+  }], ['nhsblocks/dashpanel', {
+    className: 'nhsuk-grid-column-one-third'
+  }]]
+}];
+
+/***/ }),
+
+/***/ "./src/01-dodont/index.js":
+/*!********************************!*\
+  !*** ./src/01-dodont/index.js ***!
+  \********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+
+/**
+ * Do / Dont listing
+ *  @reference: https://nhsuk.github.io/nhsuk-frontend/components/do-dont-list/index.html
+ *  @author Tony Blacker, NHS Leadership Academy
+ *  @version 1.0 22nd July 2019
+ */
+var __ = wp.i18n.__;
+var registerBlockType = wp.blocks.registerBlockType;
+var _wp$blockEditor = wp.blockEditor,
+    RichText = _wp$blockEditor.RichText,
+    InnerBlocks = _wp$blockEditor.InnerBlocks;
+registerBlockType("nhsblocks/dodont", {
+  title: __("Do and Don't List", "nhsblocks"),
+  category: "nhsblocks",
+  icon: "yes-alt",
+  attributes: {
+    panelTitle: {
+      type: "string",
+      source: "html",
+      selector: "h3"
+    }
+  },
+  edit: function edit(props) {
+    // Lift info from props and populate various constants.
+    var panelTitle = props.attributes.panelTitle,
+        className = props.className,
+        setAttributes = props.setAttributes; // Grab newPanelTitle, set the value of panelTitle to newPanelTitle.
+
+    var onChangePanelTitle = function onChangePanelTitle(newPanelTitle) {
+      setAttributes({
+        panelTitle: newPanelTitle
+      });
+    };
+
+    var ALLOWED_BLOCKS = [];
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-do-dont-list"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h3", {
+      className: "nhsuk-do-dont-list__label"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      placeholder: __("Panel Title", "nhsblocks"),
+      value: panelTitle,
+      onChange: onChangePanelTitle
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("ul", {
+      className: "nhsuk-list nhsuk-list--cross"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InnerBlocks, {
+      allowedBlocks: ALLOWED_BLOCKS
+    })));
+  },
+  save: function save(props) {
+    // console.info(props);
+    var _props$attributes = props.attributes,
+        panelTitle = _props$attributes.panelTitle,
+        panelText = _props$attributes.panelText;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-do-dont-list"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h3", {
+      className: "nhsuk-do-dont-list__label"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      value: panelTitle
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("ul", {
+      className: "nhsuk-list nhsuk-list--cross"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InnerBlocks.Content, null)));
+  }
+});
+registerBlockType("nhsblocks/doitem", {
+  title: __("List Item with Tick", "nhsblocks"),
+  category: "nhsblocks",
+  icon: "yes",
+  parent: ["nhsblocks/dodont"],
+  attributes: {
+    panelText: {
+      type: "string",
+      source: "html",
+      selector: "span"
+    }
+  },
+  edit: function edit(props) {
+    // Lift info from props and populate various constants.
+    var panelText = props.attributes.panelText,
+        setAttributes = props.setAttributes; // Grab newPanelText, set the value of panelText to newPanelText.
+
+    var onChangePanelText = function onChangePanelText(newPanelText) {
+      setAttributes({
+        panelText: newPanelText
+      });
+    };
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("li", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("svg", {
+      class: "nhsuk-icon nhsuk-icon__tick",
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      "aria-hidden": "true"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("path", {
+      "stroke-width": "4",
+      "stroke-linecap": "round",
+      d: "M18.4 7.8l-8.5 8.4L5.6 12"
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      placeholder: __("Text", "nhsblocks"),
+      value: panelText,
+      onChange: onChangePanelText
+    })));
+  },
+  save: function save(props) {
+    // console.info(props);
+    var panelText = props.attributes.panelText;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("li", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("svg", {
+      class: "nhsuk-icon nhsuk-icon__tick",
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      "aria-hidden": "true"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("path", {
+      "stroke-width": "4",
+      "stroke-linecap": "round",
+      d: "M18.4 7.8l-8.5 8.4L5.6 12"
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      value: panelText
+    })));
+  }
+});
+registerBlockType("nhsblocks/dontitem", {
+  title: __("List Item with Cross", "nhsblocks"),
+  category: "nhsblocks",
+  icon: "no-alt",
+  parent: ["nhsblocks/dodont"],
+  attributes: {
+    panelText: {
+      type: "string",
+      source: "html",
+      selector: "span"
+    }
+  },
+  edit: function edit(props) {
+    // Lift info from props and populate various constants.
+    var panelText = props.attributes.panelText,
+        setAttributes = props.setAttributes; // Grab newPanelText, set the value of panelText to newPanelText.
+
+    var onChangePanelText = function onChangePanelText(newPanelText) {
+      setAttributes({
+        panelText: newPanelText
+      });
+    };
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("li", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("svg", {
+      class: "nhsuk-icon nhsuk-icon__cross",
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 24 24",
+      "aria-hidden": "true"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("path", {
+      d: "M17 18.5c-.4 0-.8-.1-1.1-.4l-10-10c-.6-.6-.6-1.6 0-2.1.6-.6 1.5-.6 2.1 0l10 10c.6.6.6 1.5 0 2.1-.3.3-.6.4-1 .4z"
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("path", {
+      d: "M7 18.5c-.4 0-.8-.1-1.1-.4-.6-.6-.6-1.5 0-2.1l10-10c.6-.6 1.5-.6 2.1 0 .6.6.6 1.5 0 2.1l-10 10c-.3.3-.6.4-1 .4z"
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      placeholder: __("Text", "nhsblocks"),
+      value: panelText,
+      onChange: onChangePanelText
+    })));
+  },
+  save: function save(props) {
+    // console.info(props);
+    var panelText = props.attributes.panelText;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("li", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("svg", {
+      class: "nhsuk-icon nhsuk-icon__cross",
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 24 24",
+      "aria-hidden": "true"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("path", {
+      d: "M17 18.5c-.4 0-.8-.1-1.1-.4l-10-10c-.6-.6-.6-1.6 0-2.1.6-.6 1.5-.6 2.1 0l10 10c.6.6.6 1.5 0 2.1-.3.3-.6.4-1 .4z"
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("path", {
+      d: "M7 18.5c-.4 0-.8-.1-1.1-.4-.6-.6-.6-1.5 0-2.1l10-10c.6-.6 1.5-.6 2.1 0 .6.6.6 1.5 0 2.1l-10 10c-.3.3-.6.4-1 .4z"
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      value: panelText
+    })));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/02-button/index.js":
+/*!********************************!*\
+  !*** ./src/02-button/index.js ***!
+  \********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+
+/**
+ * NHS Styled Buttons
+ *  @reference: https://nhsuk.github.io/nhsuk-frontend/components/button/index.html
+ *  @author Tony Blacker, NHS Leadership Academy
+ *  @version 1.0 22nd July 2019
+ */
+var __ = wp.i18n.__;
+var registerBlockType = wp.blocks.registerBlockType;
+var _wp$blockEditor = wp.blockEditor,
+    RichText = _wp$blockEditor.RichText,
+    InspectorControls = _wp$blockEditor.InspectorControls,
+    BlockControls = _wp$blockEditor.BlockControls,
+    BlockVerticalAlignmentToolbar = _wp$blockEditor.BlockVerticalAlignmentToolbar,
+    URLInputButton = _wp$blockEditor.URLInputButton; //@todo align
+//@todo extended classes
+
+registerBlockType("nhsblocks/nhsbutton", {
+  title: __("Button", "nhsblocks"),
+  category: "nhsblocks",
+  icon: "admin-links",
+  styles: [{
+    name: "green",
+    label: __("Standard (Green)"),
+    isDefault: true
+  }, {
+    name: "secondary",
+    label: __("Secondary (Grey)")
+  }, {
+    name: "reverse",
+    label: __("Reverse (White)")
+  }],
+  supports: {
+    align: true
+  },
+  attributes: {
+    buttonLabel: {
+      type: "string",
+      source: "html",
+      selector: ".nhsuk-button"
+    },
+    buttonLink: {
+      type: "string",
+      source: "attribute",
+      selector: "a.nhsuk-button",
+      attribute: "href"
+    },
+    verticalAlignment: {
+      type: 'string'
+    }
+  },
+  // https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-edit-save/
+  edit: function edit(props) {
+    // Props parameter holds all the info.
+    //console.info(props);
+    // Lift info from props and populate various constants.
+    var _props$attributes = props.attributes,
+        buttonLabel = _props$attributes.buttonLabel,
+        buttonLink = _props$attributes.buttonLink,
+        verticalAlignment = _props$attributes.verticalAlignment,
+        className = props.className,
+        setAttributes = props.setAttributes; // Grab newButtonLabel, set the value of buttonLabel to newButtonLabel.
+
+    var onChangeButtonLabel = function onChangeButtonLabel(newButtonLabel) {
+      setAttributes({
+        buttonLabel: newButtonLabel
+      });
+    }; // Grab newButtonLink, set the value of buttonLink to newButtonLink.
+
+
+    var onChangeButtonLink = function onChangeButtonLink(newButtonLink) {
+      setAttributes({
+        buttonLink: newButtonLink
+      });
+    }; // Change handler to set Block `attributes`
+
+
+    var onChangeAlignment = function onChangeAlignment(alignment) {
+      setAttributes({
+        verticalAlignment: alignment
+      });
+    };
+
+    return [Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InspectorControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("strong", null, "Add a link for this button"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(URLInputButton, {
+      className: "nhsblocks-dropdown__input",
+      label: __("Button URL", "nhsblocks"),
+      onChange: onChangeButtonLink,
+      url: buttonLink
+    }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(BlockControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(BlockVerticalAlignmentToolbar, {
+      onChange: onChangeAlignment,
+      value: verticalAlignment
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "".concat(className, " nhsuk-button")
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      value: buttonLabel,
+      onChange: onChangeButtonLabel,
+      placeholder: "Button label"
+    }))];
+  },
+  save: function save(props) {
+    var _props$attributes2 = props.attributes,
+        buttonLabel = _props$attributes2.buttonLabel,
+        buttonLink = _props$attributes2.buttonLink; // console.info(props);
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("a", {
+      href: buttonLink,
+      className: "nhsuk-button"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      value: buttonLabel
+    }));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/03-reveal/index.js":
+/*!********************************!*\
+  !*** ./src/03-reveal/index.js ***!
+  \********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+
+/**
+ *  Reveal / Expander Element
+ *  @reference: https://nhsuk.github.io/nhsuk-frontend/components/details/expander.html
+ *  @author Tony Blacker, NHS Leadership Academy
+ *  @version 1.0 22nd July 2019
+ */
+var __ = wp.i18n.__;
+var registerBlockType = wp.blocks.registerBlockType;
+var RichText = wp.blockEditor.RichText; //@todo add in Expander class option
+//console.info(wp.components);
+
+registerBlockType("nhsblocks/reveal1", {
+  title: __("Simple Reveal", "nhsblocks"),
+  category: "nhsblocks",
+  icon: "plus-alt",
+  styles: [{
+    name: "downarrow",
+    label: __("Down Arrow"),
+    isDefault: true
+  }, {
+    name: "expander",
+    label: __("Plus Icon")
+  }],
+  attributes: {
+    revealTitle: {
+      type: "string",
+      source: "html",
+      selector: ".nhsuk-details__summary-text"
+    },
+    revealText: {
+      type: "string",
+      source: "html",
+      selector: ".nhsuk-details__text"
+    },
+    expanderBox: {
+      type: "string"
+    }
+  },
+  edit: function edit(props) {
+    // Lift info from props and populate various constants.
+    var _props$attributes = props.attributes,
+        revealTitle = _props$attributes.revealTitle,
+        revealText = _props$attributes.revealText,
+        className = props.className,
+        setAttributes = props.setAttributes; // Grab newRevealTitle, set the value of revealTitle to newRevealTitle.
+
+    var onChangeRevealTitle = function onChangeRevealTitle(newRevealTitle) {
+      setAttributes({
+        revealTitle: newRevealTitle
+      });
+    }; // Grab revealText, set the value of revealText to newRevealtext
+
+
+    var onChangeRevealText = function onChangeRevealText(newRevealText) {
+      setAttributes({
+        revealText: newRevealText
+      });
+    };
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("details", {
+      className: "".concat(className, " nhsuk-details newstyle"),
+      open: true
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("summary", {
+      className: "nhsuk-details__summary",
+      role: "button",
+      "aria-controls": "details-content-",
+      "aria-expanded": "true"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+      className: "nhsuk-details__summary-text"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      placeholder: __("Reveal Title", "nhsblocks"),
+      value: revealTitle,
+      onChange: onChangeRevealTitle
+    }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-details__text",
+      id: "details-content-",
+      "aria-hidden": "false"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      multiline: "p",
+      placeholder: __("Reveal Contents", "nhsblocks"),
+      onChange: onChangeRevealText,
+      value: revealText
+    })));
+  },
+  save: function save(props) {
+    var _props$attributes2 = props.attributes,
+        revealTitle = _props$attributes2.revealTitle,
+        revealText = _props$attributes2.revealText;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("details", {
+      className: "nhsuk-details"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("summary", {
+      className: "nhsuk-details__summary",
+      role: "button",
+      "aria-controls": "details-content-",
+      "aria-expanded": "false"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+      className: "nhsuk-details__summary-text"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      value: revealTitle
+    }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-details__text",
+      id: "details-content-",
+      "aria-hidden": "false"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      multiline: "p",
+      value: revealText
+    })));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/04-panel/index.js":
+/*!*******************************!*\
+  !*** ./src/04-panel/index.js ***!
+  \*******************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+
+/**
+ *  NHS Panel Element
+ *  @reference: https://nhsuk.github.io/nhsuk-frontend/components/panel/index.html
+ *  @author Tony Blacker, NHS Leadership Academy
+ *  @version 1.0 22nd July 2019
+ */
+var __ = wp.i18n.__;
+var registerBlockType = wp.blocks.registerBlockType;
+var _wp$blockEditor = wp.blockEditor,
+    RichText = _wp$blockEditor.RichText,
+    InnerBlocks = _wp$blockEditor.InnerBlocks; //@todo add in Panel class variations
+//@todo add in width variations
+
+var TEMPLATE_OPTIONS = [['core/paragraph', {
+  placeholder: 'Panel Text'
+}], ['nhsblocks/nhsbutton', {
+  align: 'right'
+}]];
+registerBlockType("nhsblocks/panel1", {
+  title: __("Panel Region", "nhsblocks"),
+  description: __("By default this block includes a title, block of text and button link. You can remove the button" + " if you wish by clicking it then clicking three dots on the navigation bar at the top of the page then the" + " bin", "nhsblocks"),
+  icon: "feedback",
+  category: "nhsblocks",
+  styles: [{
+    name: "default",
+    label: __("Plain white panel"),
+    isDefault: true
+  }, {
+    name: "panel-grey",
+    label: __("Grey")
+  }, {
+    name: "panel-with-label",
+    label: __("With Label")
+  }],
+  attributes: {
+    panelTitle: {
+      type: "string",
+      source: "html",
+      selector: "h3"
+    }
+  },
+  edit: function edit(props) {
+    // Lift info from props and populate various constants.
+    var panelTitle = props.attributes.panelTitle,
+        className = props.className,
+        setAttributes = props.setAttributes; // Grab newPanelTitle, set the value of panelTitle to newPanelTitle.
+
+    var onChangePanelTitle = function onChangePanelTitle(newPanelTitle) {
+      setAttributes({
+        panelTitle: newPanelTitle
+      });
+    };
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "".concat(className, " nhsuk-panel")
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h3", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      placeholder: __("Panel Title", "nhsblocks"),
+      value: panelTitle,
+      onChange: onChangePanelTitle
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "paneltext"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InnerBlocks, {
+      template: TEMPLATE_OPTIONS
+    })));
+  },
+  save: function save(props) {
+    // console.info(props);
+    var panelTitle = props.attributes.panelTitle;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-panel"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h3", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      value: panelTitle
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "paneltext"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InnerBlocks.Content, null)));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/06-promo/index.js":
+/*!*******************************!*\
+  !*** ./src/06-promo/index.js ***!
+  \*******************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+
+/**
+ *  NHS Promo / Call out  Element
+ *  @reference: https://nhsuk.github.io/nhsuk-frontend/components/promo/index.html
+ *  @author Tony Blacker, NHS Leadership Academy
+ *  @version 1.0 22nd July 2019
+ */
+var __ = wp.i18n.__;
+var registerBlockType = wp.blocks.registerBlockType;
+var _wp$blockEditor = wp.blockEditor,
+    URLInputButton = _wp$blockEditor.URLInputButton,
+    RichText = _wp$blockEditor.RichText,
+    InnerBlocks = _wp$blockEditor.InnerBlocks,
+    MediaUpload = _wp$blockEditor.MediaUpload,
+    InspectorControls = _wp$blockEditor.InspectorControls; //@todo add in Promo class variations
+//@todo add in width variations
+
+registerBlockType("nhsblocks/promo1", {
+  title: __("Promo Region", "nhsblocks"),
+  category: "nhsblocks",
+  icon: "megaphone",
+  styles: [{
+    name: "default",
+    label: __("Standard"),
+    isDefault: true
+  }, {
+    name: "promo-small",
+    label: __("Smaller Text")
+  }],
+  attributes: {
+    promoTitle: {
+      type: "string",
+      source: "html",
+      selector: ".nhsuk-promo__heading"
+    },
+    promoText: {
+      type: "string",
+      source: "html",
+      selector: ".nhsuk-promo__description"
+    },
+    promoLink: {
+      type: "string",
+      source: "attribute",
+      selector: ".nhsuk-promo a",
+      attribute: "href"
+    }
+  },
+  edit: function edit(props) {
+    // Lift info from props and populate various constants.
+    var _props$attributes = props.attributes,
+        promoTitle = _props$attributes.promoTitle,
+        promoText = _props$attributes.promoText,
+        promoLink = _props$attributes.promoLink,
+        className = props.className,
+        setAttributes = props.setAttributes; // Grab newPromoTitle, set the value of promoTitle to newPromoTitle.
+
+    var onChangePromoTitle = function onChangePromoTitle(newPromoTitle) {
+      setAttributes({
+        promoTitle: newPromoTitle
+      });
+    }; // Grab newPromoText, set the value of promoText to newPromoText.
+
+
+    var onChangePromoText = function onChangePromoText(newPromoText) {
+      setAttributes({
+        promoText: newPromoText
+      });
+    }; // Grab newPromoLink, set the value of promoLink to newPromoLink.
+
+
+    var onChangePromoLink = function onChangePromoLink(newPromoLink) {
+      setAttributes({
+        promoLink: newPromoLink
+      });
+    };
+
+    var onChangeColumnWidth = function onChangeColumnWidth(newColumnWidth) {
+      setAttributes({
+        columnWidth: newColumnWidth
+      });
+    };
+
+    var onImageSelect = function onImageSelect(imageObject) {
+      setAttributes({
+        promoImg: imageObject.sizes.podkitFeatImg.url
+      });
+    };
+
+    var ALLOWED_BLOCKS = ['core/image'];
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "".concat(className, " nhsuk-promo")
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-promo__content"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(URLInputButton, {
+      className: "nhsblocks-dropdown__input",
+      label: __("Panel Link", "nhsblocks"),
+      onChange: onChangePromoLink,
+      url: promoLink
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InnerBlocks, {
+      allowedBlocks: ALLOWED_BLOCKS
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h3", {
+      className: "nhsuk-promo__heading"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      placeholder: __("Promo Title", "nhsblocks"),
+      value: promoTitle,
+      onChange: onChangePromoTitle
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-promo__description"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      multiline: "p",
+      placeholder: __("Promo Contents", "nhsblocks"),
+      onChange: onChangePromoText,
+      value: promoText
+    }))));
+  },
+  save: function save(props) {
+    var _props$attributes2 = props.attributes,
+        promoTitle = _props$attributes2.promoTitle,
+        promoText = _props$attributes2.promoText,
+        promoLink = _props$attributes2.promoLink;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-promo"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("a", {
+      href: promoLink,
+      className: "nhsuk-promo__link-wrapper"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-promo__content"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InnerBlocks.Content, null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h3", {
+      className: "nhsuk-promo__heading"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      value: promoTitle
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-promo__description"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      multiline: "p",
+      value: promoText
+    })))));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/07-testimonial/index.js":
+/*!*************************************!*\
+  !*** ./src/07-testimonial/index.js ***!
+  \*************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+
+/**
+ *  NHS Testimonial / Quote Element
+ *  @reference: https://nhsuk.github.io/nhsuk-frontend/components/inset-text/index.html
+ *  @author Tony Blacker, NHS Leadership Academy
+ *  @version 1.0 22nd July 2019
+ */
+var __ = wp.i18n.__;
+var registerBlockType = wp.blocks.registerBlockType;
+var RichText = wp.blockEditor.RichText; //@todo add in Expander class option
+//console.info(wp.components);
+
+registerBlockType("nhsblocks/quote1", {
+  title: __("Simple Quote", "nhsblocks"),
+  category: "nhsblocks",
+  icon: "format-quote",
+  styles: [{
+    name: "standard",
+    label: __("Standard"),
+    isDefault: true
+  }, {
+    name: "quote-reverse",
+    label: __("Inverse")
+  }],
+  attributes: {
+    quoteName: {
+      type: "string",
+      source: "html",
+      selector: ".nhsuk-inset-text__quote-attribution"
+    },
+    quoteText: {
+      type: "array",
+      source: "children",
+      multiline: "p",
+      selector: ".nhsuk-inset-text__quote"
+    }
+  },
+  edit: function edit(props) {
+    // Lift info from props and populate various constants.
+    var _props$attributes = props.attributes,
+        quoteName = _props$attributes.quoteName,
+        quoteText = _props$attributes.quoteText,
+        className = props.className,
+        setAttributes = props.setAttributes; // Grab newQuoteName, set the value of quoteName to newQuoteName.
+
+    var onChangeQuoteName = function onChangeQuoteName(newQuoteName) {
+      setAttributes({
+        quoteName: newQuoteName
+      });
+    }; // Grab quoteText, set the value of quoteText to newQuotetext
+
+
+    var onChangeQuoteText = function onChangeQuoteText(newQuoteText) {
+      setAttributes({
+        quoteText: newQuoteText
+      });
+    };
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "".concat(className, " nhsuk-inset-text")
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+      className: "nhsuk-u-visually-hidden"
+    }, "Quote / Testimonial: "), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-inset-text__quote"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      multiline: "p",
+      placeholder: __("Quote", "nhsblocks"),
+      onChange: onChangeQuoteText,
+      value: quoteText
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+      className: "nhsuk-inset-text__quote-attribution"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      placeholder: __("Quote Name", "nhsblocks"),
+      value: quoteName,
+      onChange: onChangeQuoteName
+    })));
+  },
+  save: function save(props) {
+    var _props$attributes2 = props.attributes,
+        quoteName = _props$attributes2.quoteName,
+        quoteText = _props$attributes2.quoteText;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-inset-text"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+      className: "nhsuk-u-visually-hidden"
+    }, "Quote / Testimonial: "), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-inset-text__quote"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      multiline: "p",
+      value: quoteText
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+      className: "nhsuk-inset-text__quote-attribution"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      value: quoteName
+    })));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/08-card/index.js":
+/*!******************************!*\
+  !*** ./src/08-card/index.js ***!
+  \******************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+
+/**
+ *  NHS Care Card Element
+ *  @reference: https://nhsuk.github.io/nhsuk-frontend/components/care-card/care-card-non-urgent.html
+ *  @author Tony Blacker, NHS Leadership Academy
+ *  @version 1.0 22nd July 2019
+ */
+var __ = wp.i18n.__;
+var registerBlockType = wp.blocks.registerBlockType;
+var RichText = wp.blockEditor.RichText; //@todo add in Card class variations
+//@todo add in width variations
+
+registerBlockType("nhsblocks/card1", {
+  title: __("Card Region", "nhsblocks"),
+  category: "nhsblocks",
+  icon: "category",
+  attributes: {
+    cardTitle: {
+      type: "string",
+      source: "html",
+      selector: ".nhsuk-care-card__heading-text"
+    },
+    cardText: {
+      type: "array",
+      source: "children",
+      multiline: "p",
+      selector: ".nhsuk-care-card__content"
+    }
+  },
+  edit: function edit(props) {
+    // Lift info from props and populate various constants.
+    var _props$attributes = props.attributes,
+        cardTitle = _props$attributes.cardTitle,
+        cardText = _props$attributes.cardText,
+        className = props.className,
+        setAttributes = props.setAttributes; // Grab newCardTitle, set the value of cardTitle to newCardTitle.
+
+    var onChangeCardTitle = function onChangeCardTitle(newCardTitle) {
+      setAttributes({
+        cardTitle: newCardTitle
+      });
+    }; // Grab newCardText, set the value of cardText to newCardText.
+
+
+    var onChangeCardText = function onChangeCardText(newCardText) {
+      setAttributes({
+        cardText: newCardText
+      });
+    };
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "".concat(className, " nhsuk-care-card")
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-care-card__heading-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h3", {
+      className: "nhsuk-care-card__heading"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+      role: "text"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+      className: "nhsuk-u-visually-hidden"
+    }, "Non-urgent advice: "), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+      className: "nhsuk-care-card__heading-text"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      placeholder: __("Card Title", "nhsblocks"),
+      value: cardTitle,
+      onChange: onChangeCardTitle
+    })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+      className: "nhsuk-care-card__arrow",
+      "aria-hidden": "true"
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-care-card__content"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      multiline: "p",
+      placeholder: __("Card Contents", "nhsblocks"),
+      onChange: onChangeCardText,
+      value: cardText
+    })));
+  },
+  save: function save(props) {
+    var _props$attributes2 = props.attributes,
+        cardTitle = _props$attributes2.cardTitle,
+        cardText = _props$attributes2.cardText;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-grid-column-width nhsuk-care-card nhsuk-care-card--type"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-care-card__heading-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h3", {
+      className: "nhsuk-care-card__heading"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+      role: "text"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+      className: "nhsuk-u-visually-hidden"
+    }, "Non-urgent advice: "), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+      className: "nhsuk-care-card__heading-text"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      value: cardTitle
+    })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+      className: "nhsuk-care-card__arrow",
+      "aria-hidden": "true"
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-care-card__content"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      multiline: "p",
+      value: cardText
+    })));
+  }
+}); // card variations
+
+wp.blocks.registerBlockStyle('nhsblocks/card1', {
+  name: 'default',
+  label: 'Standard Blue',
+  isDefault: true
+});
+wp.blocks.registerBlockStyle('nhsblocks/card1', {
+  name: 'urgent',
+  label: 'Urgent (Red)'
+});
+wp.blocks.registerBlockStyle('nhsblocks/card1', {
+  name: 'immediate',
+  label: 'Immediate (Red and Black)'
+});
+
+/***/ }),
+
+/***/ "./src/09-row-group/index.js":
+/*!***********************************!*\
+  !*** ./src/09-row-group/index.js ***!
+  \***********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _templates_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./templates.js */ "./src/09-row-group/templates.js");
+
+
+
+/**
+ *  NHS Panel Group Element
+ *  @reference: https://nhsuk.github.io/nhsuk-frontend/components/panel/index.html
+ *  @author Tony Blacker, NHS Leadership Academy
+ *  @version 1.0 22nd July 2019
+ */
+var _wp$element = wp.element,
+    useState = _wp$element.useState,
+    setState = _wp$element.setState;
+var __ = wp.i18n.__;
+var _wp$blocks = wp.blocks,
+    registerBlockType = _wp$blocks.registerBlockType,
+    createBlock = _wp$blocks.createBlock;
+var _wp$blockEditor = wp.blockEditor,
+    InnerBlocks = _wp$blockEditor.InnerBlocks,
+    BlockControls = _wp$blockEditor.BlockControls,
+    __experimentalBlockVariationPicker = _wp$blockEditor.__experimentalBlockVariationPicker;
+var _wp$data = wp.data,
+    useDispatch = _wp$data.useDispatch,
+    useSelect = _wp$data.useSelect;
+ //@todo add in Panel class variations
+//@todo add in width variations
+
+
+registerBlockType("nhsblocks/rowgroup", {
+  title: __("Grouped Items", "nhsblocks"),
+  category: "nhsblocks",
+  icon: 'layout',
+  attributes: {
+    template: {
+      type: "array"
+    }
+  },
+  edit: function edit(props) {
+    var clientId = props.clientId,
+        name = props.name;
+    var template = props.attributes.template,
+        setAttributes = props.setAttributes;
+
+    var _useDispatch = useDispatch('core/block-editor'),
+        replaceInnerBlocks = _useDispatch.replaceInnerBlocks;
+
+    var _useSelect = useSelect(function (select) {
+      var _select = select('core/blocks'),
+          __experimentalGetBlockVariations = _select.__experimentalGetBlockVariations,
+          getBlockType = _select.getBlockType,
+          __experimentalGetDefaultBlockVariation = _select.__experimentalGetDefaultBlockVariation;
+
+      return {
+        blockType: getBlockType(name),
+        defaultVariation: __experimentalGetDefaultBlockVariation(name, 'block'),
+        hasInnerBlocks: select('core/block-editor').getBlocks(clientId).length > 0,
+        variations: __experimentalGetBlockVariations(name, 'block')
+      };
+    }, [clientId, name]),
+        blockType = _useSelect.blockType,
+        defaultVariation = _useSelect.defaultVariation,
+        hasInnerBlocks = _useSelect.hasInnerBlocks,
+        variations = _useSelect.variations;
+
+    var onChangeLayout = function onChangeLayout(nextVariation, registry) {
+      if (nextVariation.attributes) {
+        props.setAttributes(nextVariation.attributes);
+      }
+
+      if (nextVariation.innerBlocks) {
+        replaceInnerBlocks(props.clientId, createBlocksFromInnerBlocksTemplate(nextVariation.innerBlocks));
+      }
+    };
+
+    var createBlocksFromInnerBlocksTemplate = function createBlocksFromInnerBlocksTemplate(innerBlocksTemplate) {
+      return Object(lodash__WEBPACK_IMPORTED_MODULE_2__["map"])(innerBlocksTemplate, function (_ref) {
+        var _ref2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_ref, 3),
+            name = _ref2[0],
+            attributes = _ref2[1],
+            _ref2$ = _ref2[2],
+            innerBlocks = _ref2$ === void 0 ? [] : _ref2$;
+
+        return createBlock(name, attributes, createBlocksFromInnerBlocksTemplate(innerBlocks));
+      });
+    };
+
+    if (hasInnerBlocks) {
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+        className: "nhsuk-grid-row"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+        className: "nhsuk-panel-group nhsuk-grid-column-full"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(InnerBlocks, {
+        template: _templates_js__WEBPACK_IMPORTED_MODULE_3__["GRID_OPTIONS"]
+      })));
+    }
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "nhsuk-grid-row"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "nhsuk-panel-group nhsuk-grid-column-full"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(__experimentalBlockVariationPicker, {
+      variations: _templates_js__WEBPACK_IMPORTED_MODULE_3__["GRID_OPTIONS"],
+      onSelect: function onSelect(nextVariation) {
+        if (nextVariation.attributes) {
+          props.setAttributes(nextVariation.attributes);
+        }
+
+        if (nextVariation.innerBlocks) {
+          replaceInnerBlocks(props.clientId, createBlocksFromInnerBlocksTemplate(nextVariation.innerBlocks));
+        }
+      }
+    })));
+  },
+  save: function save(props) {
+    var template = props.attributes.template;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "nhsuk-grid-row"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "nhsuk-panel-group nhsuk-grid-column-full"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(InnerBlocks.Content, null)));
+  }
+});
+registerBlockType("nhsblocks/onehalf", {
+  title: __("One Half Width", "nhsblocks"),
+  category: "nhsblocks",
+  parent: ["nhsblocks/rowgroup"],
+  attributes: {
+    template: {
+      type: "array"
+    }
+  },
+  edit: function edit(props) {
+    var template = props.attributes.template,
+        setAttributes = props.setAttributes;
+
+    var onChangetemplate = function onChangetemplate(newTemplate) {
+      setAttributes({
+        template: newTemplate
+      });
+    };
+
+    var showTemplateSelector = template === null || !template;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "nhsuk-grid-column-one-half"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(InnerBlocks, {
+      template: showTemplateSelector ? null : template
+    }));
+  },
+  save: function save(props) {
+    var template = props.attributes.template;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "nhsuk-grid-column-one-half"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(InnerBlocks.Content, null));
+  }
+});
+registerBlockType("nhsblocks/onethird", {
+  title: __("One Third Width", "nhsblocks"),
+  category: "nhsblocks",
+  parent: ["nhsblocks/rowgroup"],
+  attributes: {
+    template: {
+      type: "array"
+    }
+  },
+  edit: function edit(props) {
+    var template = props.attributes.template,
+        setAttributes = props.setAttributes;
+
+    var onChangetemplate = function onChangetemplate(newTemplate) {
+      setAttributes({
+        template: newTemplate
+      });
+    };
+
+    var showTemplateSelector = template === null || !template;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "nhsuk-grid-column-one-third"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(InnerBlocks, {
+      template: showTemplateSelector ? null : template
+    }));
+  },
+  save: function save(props) {
+    var template = props.attributes.template;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "nhsuk-grid-column-one-third"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(InnerBlocks.Content, null));
+  }
+});
+registerBlockType("nhsblocks/onequarter", {
+  title: __("One Quarter Width", "nhsblocks"),
+  category: "nhsblocks",
+  parent: ["nhsblocks/rowgroup"],
+  attributes: {
+    template: {
+      type: "array"
+    }
+  },
+  edit: function edit(props) {
+    var template = props.attributes.template,
+        setAttributes = props.setAttributes;
+
+    var onChangetemplate = function onChangetemplate(newTemplate) {
+      setAttributes({
+        template: newTemplate
+      });
+    };
+
+    var showTemplateSelector = template === null || !template;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "nhsuk-grid-column-one-quarter"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(InnerBlocks, {
+      template: showTemplateSelector ? null : template
+    }));
+  },
+  save: function save(props) {
+    var template = props.attributes.template;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "nhsuk-grid-column-one-quarter"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(InnerBlocks.Content, null));
+  }
+});
+registerBlockType("nhsblocks/twothirds", {
+  title: __("Two Thirds Width", "nhsblocks"),
+  category: "nhsblocks",
+  parent: ["nhsblocks/rowgroup"],
+  attributes: {
+    template: {
+      type: "array"
+    }
+  },
+  edit: function edit(props) {
+    var template = props.attributes.template,
+        setAttributes = props.setAttributes;
+
+    var onChangetemplate = function onChangetemplate(newTemplate) {
+      setAttributes({
+        template: newTemplate
+      });
+    };
+
+    var showTemplateSelector = template === null || !template;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "nhsuk-grid-column-two-thirds"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(InnerBlocks, {
+      template: showTemplateSelector ? null : template
+    }));
+  },
+  save: function save(props) {
+    var template = props.attributes.template;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "nhsuk-grid-column-two-thirds"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(InnerBlocks.Content, null));
+  }
+});
+registerBlockType("nhsblocks/threequarters", {
+  title: __("Three Quarter Width", "nhsblocks"),
+  category: "nhsblocks",
+  parent: ["nhsblocks/rowgroup"],
+  attributes: {
+    template: {
+      type: "array"
+    }
+  },
+  edit: function edit(props) {
+    var template = props.attributes.template,
+        setAttributes = props.setAttributes;
+
+    var onChangetemplate = function onChangetemplate(newTemplate) {
+      setAttributes({
+        template: newTemplate
+      });
+    };
+
+    var showTemplateSelector = template === null || !template;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "nhsuk-grid-column-three-quarters"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(InnerBlocks, {
+      template: showTemplateSelector ? null : template
+    }));
+  },
+  save: function save(props) {
+    var template = props.attributes.template;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "nhsuk-grid-column-three-quarters"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(InnerBlocks.Content, null));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/09-row-group/templates.js":
+/*!***************************************!*\
+  !*** ./src/09-row-group/templates.js ***!
+  \***************************************/
+/*! exports provided: GRID_OPTIONS */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GRID_OPTIONS", function() { return GRID_OPTIONS; });
+/* harmony import */ var _icons_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../icons.js */ "./src/icons.js");
+/**
+ *  NHS Group Template definement
+ *  @author Tony Blacker, NHS Leadership Academy
+ *  @version 1.0 6th February 2020
+ */
+var __ = wp.i18n.__;
+
+var GRID_OPTIONS = [{
+  name: 'twocols',
+  label: ('Two Columns', 'nhsblocks'),
+  isDefault: true,
+  icon: _icons_js__WEBPACK_IMPORTED_MODULE_0__["twocolsIcon"],
+  innerBlocks: [['nhsblocks/onehalf'], ['nhsblocks/onehalf']]
+}, {
+  name: 'threecols',
+  label: __('Three Columns', 'nhsblocks'),
+  icon: _icons_js__WEBPACK_IMPORTED_MODULE_0__["threecolsIcon"],
+  innerBlocks: [['nhsblocks/onethird'], ['nhsblocks/onethird'], ['nhsblocks/onethird']]
+}, {
+  name: 'one3two3',
+  label: __('One Third / Two Thirds Columns', 'nhsblocks'),
+  icon: _icons_js__WEBPACK_IMPORTED_MODULE_0__["twoleftthirdIcon"],
+  innerBlocks: [['nhsblocks/onethird'], ['nhsblocks/twothirds']]
+}, {
+  name: 'two3one3',
+  label: __('Two Thirds / One Third Columns', 'nhsblocks'),
+  icon: _icons_js__WEBPACK_IMPORTED_MODULE_0__["tworightthirdIcon"],
+  innerBlocks: [['nhsblocks/twothirds'], ['nhsblocks/onethird']]
+}, {
+  name: 'one4one2one4',
+  label: __('One Quarter / One Half / One Quarter Columns', 'nhsblocks'),
+  icon: _icons_js__WEBPACK_IMPORTED_MODULE_0__["fourtwofourIcon"],
+  innerBlocks: [['nhsblocks/onequarter'], ['nhsblocks/onehalf'], ['nhsblocks/onequarter']]
+}, {
+  name: 'one4one4one2',
+  label: __('One Quarter / One Quarter / One Half Columns', 'nhsblocks'),
+  icon: _icons_js__WEBPACK_IMPORTED_MODULE_0__["fourfourtwoIcon"],
+  innerBlocks: [['nhsblocks/onequarter'], ['nhsblocks/onequarter'], ['nhsblocks/onehalf']]
+}, {
+  name: 'one2one4one4',
+  label: __('One Half / One Quarter / One Quarter Columns', 'nhsblocks'),
+  icon: _icons_js__WEBPACK_IMPORTED_MODULE_0__["twofourfourIcon"],
+  innerBlocks: [['nhsblocks/onehalf'], ['nhsblocks/onequarter'], ['nhsblocks/onequarter']]
+}];
+
+/***/ }),
+
+/***/ "./src/10-hero-block/index.js":
+/*!************************************!*\
+  !*** ./src/10-hero-block/index.js ***!
+  \************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+
+/**
+ *  NHS Hero  Element
+ *  @reference: https://nhsuk.github.io/nhsuk-frontend/components/promo/index.html
+ *  @author Tony Blacker, NHS Leadership Academy
+ *  @version 1.0 22nd July 2019
+ */
+var __ = wp.i18n.__;
+var registerBlockType = wp.blocks.registerBlockType;
+var _wp$blockEditor = wp.blockEditor,
+    RichText = _wp$blockEditor.RichText,
+    InspectorControls = _wp$blockEditor.InspectorControls,
+    ColorPalette = _wp$blockEditor.ColorPalette,
+    MediaUpload = _wp$blockEditor.MediaUpload,
+    InnerBlocks = _wp$blockEditor.InnerBlocks;
+registerBlockType("nhsblocks/heroblock", {
+  title: __("Hero Block", "nhsblocks"),
+  description: __("Full width zone, designed to go at the top of your page with an optional image background," + " texta area and call to action", "nhsblocks"),
+  category: "nhsblocks",
+  icon: "schedule",
+  attributes: {
+    overlayColor: {
+      type: 'string',
+      default: '#005eb8'
+    },
+    backgroundImage: {
+      type: 'string',
+      default: '/wp-content/plugins/nhsblocks/assets/pixel_trans.png'
+    }
+  },
+  edit: function edit(props) {
+    var TEMPLATE_OPTIONS = [['nhsblocks/heroinner', {}]];
+    var setAttributes = props.setAttributes,
+        attributes = props.attributes,
+        className = props.className;
+    var overlayColor = attributes.overlayColor,
+        backgroundImage = attributes.backgroundImage;
+
+    function onOverlayColorChange(changes) {
+      setAttributes({
+        overlayColor: changes
+      });
+    }
+
+    function onImageSelect(imageObject) {
+      setAttributes({
+        backgroundImage: imageObject.sizes.full.url
+      });
+    }
+
+    return [Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InspectorControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("strong", null, "Select a background image:"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(MediaUpload, {
+      onSelect: onImageSelect,
+      type: "image",
+      value: backgroundImage,
+      render: function render(_ref) {
+        var open = _ref.open;
+        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
+          className: "button button-primary button-hero",
+          onClick: open
+        }, "Upload Image!");
+      }
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("strong", null, "OR"), " Select a background color: ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("br", null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("i", null, "(this will be ignored if you chose an image above)"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(ColorPalette, {
+      value: overlayColor,
+      onChange: onOverlayColorChange
+    }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("section", {
+      className: "".concat(className, "  nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description"),
+      style: {
+        backgroundColor: overlayColor,
+        backgroundImage: "url(".concat(backgroundImage, ")"),
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-hero__overlay"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-width-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-grid-row"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-grid-column-two-thirds"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InnerBlocks, {
+      template: TEMPLATE_OPTIONS
+    }))))))];
+  },
+  save: function save(props) {
+    var attributes = props.attributes,
+        className = props.className;
+    var overlayColor = attributes.overlayColor,
+        backgroundImage = attributes.backgroundImage;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("section", {
+      className: "nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description",
+      style: {
+        backgroundImage: "url(".concat(backgroundImage, ")"),
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundColor: overlayColor
+      }
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-hero__overlay"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-width-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-grid-row"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-grid-column-two-thirds"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InnerBlocks.Content, null))))));
+  }
+});
+registerBlockType("nhsblocks/heroinner", {
+  title: __("Hero Block Inner Text", "nhsblocks"),
+  description: __("Add some text to the header", "nhsblocks"),
+  category: "nhsblocks",
+  parent: ["nhsblocks/heroblock"],
+  icon: "nametag",
+  attributes: {
+    texttitle: {
+      type: 'array',
+      source: 'children',
+      selector: 'h1'
+    },
+    texttext: {
+      type: 'array',
+      source: 'children',
+      selector: 'p'
+    },
+    fontColor: {
+      type: 'string',
+      default: '#ffffff'
+    }
+  },
+  edit: function edit(props) {
+    var setAttributes = props.setAttributes,
+        attributes = props.attributes,
+        className = props.className;
+    var fontColor = attributes.fontColor;
+
+    function onTitleChange(changes) {
+      setAttributes({
+        texttitle: changes
+      });
+    }
+
+    function onTextChange(changes) {
+      setAttributes({
+        texttext: changes
+      });
+    }
+
+    function onTextColorChange(changes) {
+      setAttributes({
+        fontColor: changes
+      });
+    }
+
+    return [Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InspectorControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("strong", null, "Select a font color:"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(ColorPalette, {
+      value: fontColor,
+      onChange: onTextColorChange
+    }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-hero-content"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      tagName: "h1",
+      className: "nhsuk-u-margin-bottom-3",
+      value: attributes.texttitle,
+      onChange: onTitleChange,
+      placeholder: "Enter your text here!",
+      style: {
+        color: fontColor
+      }
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      tagName: "p",
+      className: "nhsuk-body-l nhsuk-u-margin-bottom-0",
+      value: attributes.texttext,
+      onChange: onTextChange,
+      placeholder: "Enter your text here!",
+      style: {
+        color: fontColor
+      }
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+      className: "nhsuk-hero__arrow",
+      "aria-hidden": "true"
+    }))];
+  },
+  save: function save(props) {
+    var attributes = props.attributes,
+        className = props.className;
+    var fontColor = attributes.fontColor;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "nhsuk-hero-content"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      tagName: "h1",
+      className: "nhsuk-u-margin-bottom-3",
+      style: {
+        color: fontColor
+      },
+      value: attributes.texttitle
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      tagName: "p",
+      className: "nhsuk-body-l nhsuk-u-margin-bottom-0",
+      style: {
+        color: fontColor
+      },
+      value: attributes.texttext
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+      className: "nhsuk-hero__arrow",
+      "aria-hidden": "true"
+    }));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/icons.js":
+/*!**********************!*\
+  !*** ./src/icons.js ***!
+  \**********************/
+/*! exports provided: onecolsIcon, twocolsIcon, threecolsIcon, threetwocolstworowsIcon, threecolstworowsIcon, twothreecolstworowsIcon, twoleftthirdIcon, tworightthirdIcon, twofourfourIcon, fourtwofourIcon, fourfourtwoIcon */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onecolsIcon", function() { return onecolsIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "twocolsIcon", function() { return twocolsIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "threecolsIcon", function() { return threecolsIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "threetwocolstworowsIcon", function() { return threetwocolstworowsIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "threecolstworowsIcon", function() { return threecolstworowsIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "twothreecolstworowsIcon", function() { return twothreecolstworowsIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "twoleftthirdIcon", function() { return twoleftthirdIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tworightthirdIcon", function() { return tworightthirdIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "twofourfourIcon", function() { return twofourfourIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fourtwofourIcon", function() { return fourtwofourIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fourfourtwoIcon", function() { return fourfourtwoIcon; });
+/**
+ *  NHS Layout icon definement
+ *  @author Tony Blacker, NHS Leadership Academy
+ *  @version 1.0 6th February 2020
+ */
+var onecolsIcon = wp.element.createElement('svg', {
+  width: 60,
+  height: 30
+}, wp.element.createElement('rect', {
+  x: "0.000",
+  y: "0.000",
+  width: "59.000",
+  height: "30"
+}));
+var twocolsIcon = wp.element.createElement('svg', {
+  width: 60,
+  height: 30
+}, wp.element.createElement('rect', {
+  x: "31.000",
+  y: "0.000",
+  width: "29.000",
+  height: "30"
+}), wp.element.createElement('rect', {
+  x: "0.000",
+  y: "0.000",
+  width: "29.000",
+  height: "30"
+}));
+var threecolsIcon = wp.element.createElement('svg', {
+  width: 60,
+  height: 30
+}, wp.element.createElement('rect', {
+  x: "41.000",
+  y: "0.000",
+  width: "19.000",
+  height: "30"
+}), wp.element.createElement('rect', {
+  x: "21.000",
+  y: "0.000",
+  width: "19.000",
+  height: "30"
+}), wp.element.createElement('rect', {
+  x: "0.000",
+  y: "0.000",
+  width: "19.000",
+  height: "30"
+}));
+var threetwocolstworowsIcon = wp.element.createElement('svg', {
+  width: 60,
+  height: 40
+}, wp.element.createElement('rect', {
+  x: "41.000",
+  y: "0.000",
+  width: "19.000",
+  height: "19"
+}), wp.element.createElement('rect', {
+  x: "21.000",
+  y: "0.000",
+  width: "19.000",
+  height: "19"
+}), wp.element.createElement('rect', {
+  x: "0.000",
+  y: "0.000",
+  width: "19.000",
+  height: "19"
+}), wp.element.createElement('rect', {
+  x: "31.000",
+  y: "20.000",
+  width: "29.000",
+  height: "19"
+}), wp.element.createElement('rect', {
+  x: "0.000",
+  y: "20.000",
+  width: "29.000",
+  height: "19"
+}));
+var threecolstworowsIcon = wp.element.createElement('svg', {
+  width: 60,
+  height: 40
+}, wp.element.createElement('rect', {
+  x: "41.000",
+  y: "0.000",
+  width: "19.000",
+  height: "19"
+}), wp.element.createElement('rect', {
+  x: "21.000",
+  y: "0.000",
+  width: "19.000",
+  height: "19"
+}), wp.element.createElement('rect', {
+  x: "0.000",
+  y: "0.000",
+  width: "19.000",
+  height: "19"
+}), wp.element.createElement('rect', {
+  x: "41.000",
+  y: "20.000",
+  width: "19.000",
+  height: "19"
+}), wp.element.createElement('rect', {
+  x: "21.000",
+  y: "20.000",
+  width: "19.000",
+  height: "19"
+}), wp.element.createElement('rect', {
+  x: "0.000",
+  y: "20.000",
+  width: "19.000",
+  height: "19"
+}));
+var twothreecolstworowsIcon = wp.element.createElement('svg', {
+  width: 60,
+  height: 40
+}, wp.element.createElement('rect', {
+  x: "31.000",
+  y: "0.000",
+  width: "29.000",
+  height: "19"
+}), wp.element.createElement('rect', {
+  x: "0.000",
+  y: "0.000",
+  width: "29.000",
+  height: "19"
+}), wp.element.createElement('rect', {
+  x: "41.000",
+  y: "20.000",
+  width: "19.000",
+  height: "19"
+}), wp.element.createElement('rect', {
+  x: "21.000",
+  y: "20.000",
+  width: "19.000",
+  height: "19"
+}), wp.element.createElement('rect', {
+  x: "0.000",
+  y: "20.000",
+  width: "19.000",
+  height: "19"
+}));
+var twoleftthirdIcon = wp.element.createElement('svg', {
+  width: 60,
+  height: 30
+}, wp.element.createElement('rect', {
+  x: "21.000",
+  y: "0.000",
+  width: "39.000",
+  height: "30"
+}), wp.element.createElement('rect', {
+  x: "0.000",
+  y: "0.000",
+  width: "19.000",
+  height: "30"
+}));
+var tworightthirdIcon = wp.element.createElement('svg', {
+  width: 60,
+  height: 30
+}, wp.element.createElement('rect', {
+  x: "41.000",
+  y: "0.000",
+  width: "19.000",
+  height: "30"
+}), wp.element.createElement('rect', {
+  x: "0.000",
+  y: "0.000",
+  width: "39.000",
+  height: "30"
+}));
+var twofourfourIcon = wp.element.createElement('svg', {
+  width: 60,
+  height: 30
+}, wp.element.createElement('rect', {
+  x: "46.000",
+  y: "0.000",
+  width: "14.000",
+  height: "30"
+}), wp.element.createElement('rect', {
+  x: "31.000",
+  y: "0.000",
+  width: "14.000",
+  height: "30"
+}), wp.element.createElement('rect', {
+  x: "0.000",
+  y: "0.000",
+  width: "29.000",
+  height: "30"
+}));
+var fourtwofourIcon = wp.element.createElement('svg', {
+  width: 60,
+  height: 30
+}, wp.element.createElement('rect', {
+  x: "46.000",
+  y: "0.000",
+  width: "14.000",
+  height: "30"
+}), wp.element.createElement('rect', {
+  x: "16.000",
+  y: "0.000",
+  width: "29.000",
+  height: "30"
+}), wp.element.createElement('rect', {
+  x: "0.000",
+  y: "0.000",
+  width: "14.000",
+  height: "30"
+}));
+var fourfourtwoIcon = wp.element.createElement('svg', {
+  width: 60,
+  height: 30
+}, wp.element.createElement('rect', {
+  x: "31.000",
+  y: "0.000",
+  width: "29.000",
+  height: "30"
+}), wp.element.createElement('rect', {
+  x: "16.000",
+  y: "0.000",
+  width: "14.000",
+  height: "30"
+}), wp.element.createElement('rect', {
+  x: "0.000",
+  y: "0.000",
+  width: "14.000",
+  height: "30"
+}));
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _00_dashboard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./00-dashboard */ "./src/00-dashboard/index.js");
+/* harmony import */ var _01_dodont__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./01-dodont */ "./src/01-dodont/index.js");
+/* harmony import */ var _02_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./02-button */ "./src/02-button/index.js");
+/* harmony import */ var _03_reveal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./03-reveal */ "./src/03-reveal/index.js");
+/* harmony import */ var _04_panel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./04-panel */ "./src/04-panel/index.js");
+/* harmony import */ var _06_promo__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./06-promo */ "./src/06-promo/index.js");
+/* harmony import */ var _07_testimonial__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./07-testimonial */ "./src/07-testimonial/index.js");
+/* harmony import */ var _08_card__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./08-card */ "./src/08-card/index.js");
+/* harmony import */ var _09_row_group__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./09-row-group */ "./src/09-row-group/index.js");
+/* harmony import */ var _10_hero_block__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./10-hero-block */ "./src/10-hero-block/index.js");
+/**
+ * Import blocks as components.
+ * variations to styling required for gutenberg native blocks
+ *  @author Tony Blacker, NHS Leadership Academy
+ *  @version 1.1 19th August 2019
+ */
+
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+
+/***/ "@wordpress/element":
+/*!******************************************!*\
+  !*** external {"this":["wp","element"]} ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["element"]; }());
+
+/***/ }),
+
+/***/ "lodash":
+/*!**********************************!*\
+  !*** external {"this":"lodash"} ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["lodash"]; }());
+
+/***/ })
+
+/******/ });
+//# sourceMappingURL=index.js.map

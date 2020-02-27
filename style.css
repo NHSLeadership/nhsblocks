@@ -12692,8 +12692,22 @@ b {
   max-height: 200px;
 }
 
-.nhsuk-promo img.nhsuk-promo__img {
-  padding: 10px;
+.wp-block-nhsblocks-promo1 .nhsuk-image {
+  width: 100%;
+}
+
+.wp-block-nhsblocks-promo1 img.nhsuk-promo__img {
+  width: 100%;
+  height: auto;
+}
+
+.wp-block-nhsblocks-promo1 .nhsuk-promo__content {
+  padding: 0;
+}
+
+.wp-block-nhsblocks-promo1 .nhsuk-promo__description,
+.wp-block-nhsblocks-promo1 .nhsuk-promo__heading {
+  padding: 0 32px;
 }
 
 .nhsuk-inset-text--rev, .is-style-quote-reverse {
