@@ -13,6 +13,25 @@ registerBlockType("nhsblocks/dodont", {
     title: __("Do and Don't List", "nhsblocks"),
     category: "nhsblocks",
     icon: "yes-alt",
+    example: {
+        attributes: {
+            panelTitle: 'Do and Dont List',
+        },
+        innerBlocks: [
+            {
+                name: 'nhsblocks/doitem',
+                attributes: {
+                    panelText: 'This is an item to definitely do',
+                },
+            },
+            {
+                name: 'nhsblocks/dontitem',
+                attributes: {
+                    panelText: 'This is an item to definitely NOT do',
+                },
+            },
+        ],
+    },
     attributes: {
         panelTitle: {
             type: "string",

@@ -37,6 +37,13 @@ registerBlockType("nhsblocks/nhsbutton", {
   supports: {
       align: true,
   },
+  example: {
+      attributes: {
+          buttonLabel: 'NHS styled button',
+          buttonLink: 'https://www.nhs.uk',
+          verticalAlignment: 'left',
+      }
+  },
   attributes: {
       buttonLabel: {
           type: "string",
