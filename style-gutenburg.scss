@@ -277,21 +277,29 @@ Grouped Items blocks admin styles
       font-size: 12px;
       padding: 2px 5px;
     }
+    .block-editor-block-list__layout{
 
-    [data-type="nhsblocks/onethird"],
-    [data-type="nhsblocks/onehalf"],
-    [data-type="nhsblocks/twothirds"],
-    [data-type="nhsblocks/onequarter"],
-    [data-type="nhsblocks/threequarters"]{
-      padding: 0;
-      border: 1px dashed $color_nhsuk-black;
-
-      &.has-child-selected{
-        border: 3px solid $color_nhsuk-warm-yellow;
-        position: relative;
-        z-index: 5;
+      & > div{
+        clear: both;
       }
-    }
+
+      [data-type="nhsblocks/onethird"],
+      [data-type="nhsblocks/onehalf"],
+      [data-type="nhsblocks/twothirds"],
+      [data-type="nhsblocks/onequarter"],
+      [data-type="nhsblocks/threequarters"]{
+        padding: 0;
+        border: 1px dashed $color_nhsuk-black;
+        clear: none;
+
+        &.has-child-selected{
+          border: 3px solid $color_nhsuk-warm-yellow;
+          position: relative;
+          z-index: 5;
+        }
+      }
+
+  }
 
     %innerBlocks{
       float: none;
