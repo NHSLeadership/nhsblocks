@@ -100,8 +100,8 @@ function nhsblocks_register_blocks() {
 	register_block_type( 'nhsblocks/card1' );
 	register_block_type( 'nhsblocks/rowgroup' );
 	register_block_type( 'nhsblocks/heroblock' );
+	register_block_type( 'nhsblocks/reviewdate' );
 	register_block_type( 'nhsblocks/stripesblock' );
-	register_block_type( 'nhsblocks/stripeblock' );
 
 	register_block_type( 'nhsblocks/pagination' );
 

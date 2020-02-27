@@ -17,6 +17,7 @@ import "./09-row-group";
 import "./10-hero-block";
 import "./11-section-stripes";
 
+import "./13-review-date";
 
 import "./15-pagination";
 import "./16-action-back-link/action-link"
