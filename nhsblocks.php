@@ -7,7 +7,7 @@
  * License: GPL v3
  * Requires at least: 5.0
  * Tested up to: 5.3.2
- * Version: 1.1.0
+ * Version: 1.1.2
  *
  * @package nhsblocks
  */
@@ -100,6 +100,8 @@ function nhsblocks_register_blocks() {
 	register_block_type( 'nhsblocks/card1' );
 	register_block_type( 'nhsblocks/rowgroup' );
 	register_block_type( 'nhsblocks/heroblock' );
+	register_block_type( 'nhsblocks/stripesblock' );
+	register_block_type( 'nhsblocks/stripeblock' );
 
 	register_block_type( 'nhsblocks/pagination' );
 

@@ -1,13 +1,13 @@
 @charset "UTF-8";
 /*********************************************************************************************
-Plugin Name: NHS Blocks
+Theme Name: Nightingale 2.0
 Theme URI: http://www.leadershipacademy.nhs.uk/
 Author: Tony Blacker, NHS Leadership Academy
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: nhsblocks
 Tags: NHS, NHS Digital, NHS Frontend, National Health Service, Leadership Academy
-Description: NHS Digital frontend framework blocks plugin, companion to the Nightinagle WordPress theme
+Description: NHS Digital frontend framework WordPress theme
 Version: 1.0.9
 
 **********************************************************************************************/
@@ -12447,43 +12447,6 @@ b {
   margin-bottom: 0;
 }
 
-.nhsuk-width-container--full {
-  margin: 0;
-  max-width: none;
-}
-
-.nhsuk-panel-group {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.wp-block-button__link, .wp-block-file__button, .wp-block-file a.wp-block-file__button, .wp-block-file a.wp-block-file__button:active, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:visited {
-  border-radius: 4px;
-  background: #007f3b;
-  font-size: #ffffff;
-  padding: 1px 8px;
-  position: relative;
-  top: -5px;
-  margin-bottom: 5px;
-}
-
-.nhsuk-button--reverse:visited, .nhsuk-button.is-style-reverse:visited, .is-style-reverse.wp-block-button__link:visited, .is-style-reverse.wp-block-file__button:visited, .wp-block-file a.is-style-reverse.wp-block-file__button:visited {
-  color: #212b32;
-}
-
-.nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item--previous, .nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item--next {
-  width: 30%;
-}
-
-.nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item {
-  width: 8%;
-  float: left;
-}
-
-.nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination__link:hover {
-  box-shadow: 0 0 0 16px #ffeb3b inset;
-}
-
 .has-white-color {
   color: #ffffff;
 }
@@ -12525,11 +12488,11 @@ b {
 }
 
 .has-nhs-light-grey-color {
-  color: e8edee;
+  color: #e8edee;
 }
 
 .has-nhs-light-grey-background-color {
-  background-color: e8edee;
+  background-color: #e8edee;
 }
 
 .has-nhs-dark-grey-color {
@@ -12618,6 +12581,43 @@ b {
 
 .has-nhs-warm-yellow-background-color {
   background-color: #ffb81C;
+}
+
+.nhsuk-width-container--full {
+  margin: 0;
+  max-width: none;
+}
+
+.nhsuk-panel-group {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.wp-block-button__link, .wp-block-file__button, .wp-block-file a.wp-block-file__button, .wp-block-file a.wp-block-file__button:active, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:visited {
+  border-radius: 4px;
+  background: #006747;
+  font-size: #ffffff;
+  padding: 1px 8px;
+  position: relative;
+  top: -5px;
+  margin-bottom: 5px;
+}
+
+.nhsuk-button--reverse:visited, .nhsuk-button.is-style-reverse:visited, .is-style-reverse.wp-block-button__link:visited, .is-style-reverse.wp-block-file__button:visited, .wp-block-file a.is-style-reverse.wp-block-file__button:visited {
+  color: #212b32;
+}
+
+.nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item--previous, .nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item--next {
+  width: 30%;
+}
+
+.nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item {
+  width: 8%;
+  float: left;
+}
+
+.nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination__link:hover {
+  box-shadow: 0 0 0 16px #ffeb3b inset;
 }
 
 .nhsuk-promo-group__item {
@@ -12787,4 +12787,43 @@ b {
   position: relative;
   right: 50%;
   width: 100vw;
+}
+
+section.nhsuk-section:nth-of-type(odd) {
+  background: #f0f4f5;
+}
+
+section.nhsuk-section:nth-of-type(even),
+[data-type="nhsblocks/stripesblock"]:nth-of-type(even) {
+  background: #ffffff;
+}
+
+.page-template-full-width-page section.nhsuk-section {
+  margin: 0 calc(50% - 50vw);
+  max-width: 100vw;
+  width: 100vw;
+}
+
+section.nhsuk-section,
+[data-type="nhsblocks/stripesblock"] .is-block-content {
+  padding: 64px 20px;
+}
+
+section.nhsuk-section:after,
+[data-type="nhsblocks/stripesblock"] .is-block-content:after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+.nhsuk-striped-blocks {
+  border: 1px dotted #4c6272;
+}
+
+.nhsuk-striped-blocks [data-type="nhsblocks/stripeblock"]:nth-of-type(odd) {
+  background: #f0f4f5;
+}
+
+.nhsuk-striped-blocks [data-type="nhsblocks/stripeblock"]:nth-of-type(even) {
+  background: #ffffff;
 }
