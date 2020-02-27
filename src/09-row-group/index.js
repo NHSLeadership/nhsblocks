@@ -5,24 +5,22 @@
  *  @version 1.0 22nd July 2019
  */
 
-const { useState, setState } = wp.element;
+//const { useState, setState } = wp.element;
 const { __ } = wp.i18n;
 const { registerBlockType, createBlock } = wp.blocks;
-const { InnerBlocks, BlockControls, __experimentalBlockVariationPicker } = wp.blockEditor;
+const { InnerBlocks, __experimentalBlockVariationPicker } = wp.blockEditor;
 const { useDispatch, useSelect } = wp.data;
-import { get, map, times } from 'lodash';
-
-//@todo add in Panel class variations
-//@todo add in width variations
+import { map } from 'lodash';
 
 import * as Templates from './templates.js';
-
-
 
 registerBlockType("nhsblocks/rowgroup", {
     title: __("Grouped Items", "nhsblocks"),
     category: "nhsblocks",
     icon: 'layout',
+    example: {
+
+    },
     attributes: {
         template: {
             type: "array"
@@ -47,21 +45,21 @@ registerBlockType("nhsblocks/rowgroup", {
         } = useSelect(
             ( select ) => {
                 const {
-                    __experimentalGetBlockVariations,
+                    getBlockVariations,
                     getBlockType,
-                    __experimentalGetDefaultBlockVariation,
+                    getDefaultBlockVariation,
                 } = select( 'core/blocks' );
 
                 return {
                     blockType: getBlockType( name ),
-                    defaultVariation: __experimentalGetDefaultBlockVariation(
+                    defaultVariation: getDefaultBlockVariation(
                         name,
                         'block'
                     ),
                     hasInnerBlocks:
                         select( 'core/block-editor' ).getBlocks( clientId ).length >
                         0,
-                    variations: __experimentalGetBlockVariations( name, 'block' ),
+                    variations: getBlockVariations( name, 'block' ),
                 };
             },
             [ clientId, name ]
