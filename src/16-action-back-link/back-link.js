@@ -23,6 +23,11 @@ registerBlockType("nhsblocks/backlink", {
         __( 'Back Link previous question pages', 'nhsblocks' ),
         __( 'transactional services multi-page forms', 'nhsblocks' ),
     ],
+    example: {
+        attributes: {
+            backText: __( 'Go back' )
+        },
+    },
     attributes: {
         backText: {
             type: "string",

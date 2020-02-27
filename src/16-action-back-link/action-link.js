@@ -23,6 +23,11 @@ registerBlockType("nhsblocks/actionlink", {
         __( 'signpost start', 'nhsblocks' ),
         __( 'transactional services multi-page forms', 'nhsblocks' ),
     ],
+    example: {
+        attributes: {
+            actionText: __( 'Call to Action' )
+        },
+    },
     attributes: {
         actionText: {
             type: "string",
