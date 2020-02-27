@@ -15,6 +15,13 @@ registerBlockType("nhsblocks/card1", {
   title: __("Card Region", "nhsblocks"),
   category: "nhsblocks",
   icon: "category",
+
+	example: {
+		attributes: {
+			cardTitle: 'This is a card',
+			cardText: 'This is the content of the card',
+		},
+	},
   attributes: {
 	cardTitle: {
 	  type: "string",

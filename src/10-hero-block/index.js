@@ -16,6 +16,20 @@ registerBlockType("nhsblocks/heroblock", {
         " texta area and call to action", "nhsblocks"),
     category: "nhsblocks",
     icon: "schedule",
+    example: {
+        attributes: {
+            backgroundImage: 'https://assets.nhs.uk/prod/images/S_0818_homepage_hero_1_F0147446.width-1000.jpg',
+        },
+        innerBlocks: [
+            {
+                name: 'nhsblocks/heroinner',
+                attributes: {
+                    texttitle: 'This is a title',
+                    texttext: 'This is a subtitle',
+                },
+            },
+        ],
+    },
     attributes: {
         overlayColor: {
             type: 'string',

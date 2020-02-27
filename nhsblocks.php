@@ -7,7 +7,7 @@
  * License: GPL v3
  * Requires at least: 5.0
  * Tested up to: 5.3.2
- * Version: 1.1.0
+ * Version: 1.1.2
  *
  * @package nhsblocks
  */
@@ -102,7 +102,10 @@ function nhsblocks_register_blocks() {
 	register_block_type( 'nhsblocks/heroblock' );
 	register_block_type( 'nhsblocks/contentslist' );
 	register_block_type( 'nhsblocks/contentslistitem' );
-	// register_block_type( 'nhsblocks/contentslistpage' );
+	register_block_type( 'nhsblocks/reviewdate' );
+	register_block_type( 'nhsblocks/stripesblock' );
+
+	register_block_type( 'nhsblocks/pagination' );
 
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		/**
