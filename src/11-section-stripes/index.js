@@ -12,6 +12,56 @@ registerBlockType("nhsblocks/stripesblock", {
     icon: "menu-alt",
     attributes: {
     },
+    example: {
+        innerBlocks: [
+            {
+                name: 'nhsblocks/stripeblock',
+                innerBlocks: [
+                    {
+                        name: 'core/paragraph',
+                        attributes: {
+                            /* translators: example text. */
+                            content: __(
+                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et eros eu felis.'
+                            ),
+                        },
+                    },
+                    {
+                        name: 'core/paragraph',
+                        attributes: {
+                            /* translators: example text. */
+                            content: __(
+                                'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.'
+                            ),
+                        },
+                    },
+                ],
+            },
+            {
+                name: 'nhsblocks/stripeblock',
+                innerBlocks: [
+                    {
+                        name: 'core/paragraph',
+                        attributes: {
+                            /* translators: example text. */
+                            content: __(
+                                'Etiam et egestas lorem. Vivamus sagittis sit amet dolor quis lobortis. Integer sed fermentum arcu, id vulputate lacus. Etiam fermentum sem eu quam hendrerit.'
+                            ),
+                        },
+                    },
+                    {
+                        name: 'core/paragraph',
+                        attributes: {
+                            /* translators: example text. */
+                            content: __(
+                                'Nam risus massa, ullamcorper consectetur eros fermentum, porta aliquet ligula. Sed vel mauris nec enim.'
+                            ),
+                        },
+                    },
+                ],
+            },
+        ],
+    },
     getEditWrapperProps(){
 		return { 'data-align': 'full' };
 	},
