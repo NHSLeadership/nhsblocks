@@ -103,6 +103,8 @@ function nhsblocks_register_blocks() {
 	register_block_type( 'nhsblocks/stripesblock' );
 	register_block_type( 'nhsblocks/stripeblock' );
 
+	register_block_type( 'nhsblocks/pagination' );
+
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		/**
 		 * Adds internationalization support.
