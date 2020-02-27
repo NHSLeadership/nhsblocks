@@ -15,6 +15,11 @@ registerBlockType("nhsblocks/reviewdate", {
     title: __("Review Date", "nhsblocks"),
     category: "nhsblocks",
     icon: "update",
+    example: {
+		attributes: {
+			lastSaved: __( '5 July 1948' ),
+		},
+	},
     attributes: {
         lastSaved: {
             type: "string",
