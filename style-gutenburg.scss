@@ -87,6 +87,8 @@ ul {
 @import 'assets/scss/nhs-colours'; // nhs colour pallette
 @import 'assets/scss/generic-overrides'; // generic over-rides to remove default wordpress styling issues
 @import 'assets/scss/nhsl-blocks'; // specific elements for nhsl-blocks plugin
+@import 'assets/scss/stripe-blocks';
+
 .editor-post-title__input {
   font-family: $nhsuk-font, $nhsuk-font-fallback;;
   @extend h1;
@@ -257,6 +259,104 @@ Learn dash admin panel mitigation
 }
 
 /* end LearnDash mitigation routine */
+
+/*
+Grouped Items blocks admin styles
+*/
+
+.block-editor-block-list__layout{
+
+  [data-type="nhsblocks/rowgroup"] .nhsuk-grid-row{
+
+    border: 1px dashed $color_nhsuk-bright-blue;
+    &:before{
+      content: 'Grouped Items';
+      background-color: $color_nhsuk-bright-blue;
+      color: $color_nhsuk-white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 12px;
+      padding: 2px 5px;
+    }
+    .block-editor-block-list__layout{
+
+      & > div{
+        clear: both;
+      }
+
+      [data-type="nhsblocks/onethird"],
+      [data-type="nhsblocks/onehalf"],
+      [data-type="nhsblocks/twothirds"],
+      [data-type="nhsblocks/onequarter"],
+      [data-type="nhsblocks/threequarters"]{
+        padding: 0;
+        border: 1px dashed $color_nhsuk-black;
+        clear: none;
+
+        &.has-child-selected{
+          border: 3px solid $color_nhsuk-warm-yellow;
+          position: relative;
+          z-index: 5;
+        }
+      }
+
+  }
+
+    %innerBlocks{
+      float: none;
+      width: 100%;
+    }
+
+    [data-type="nhsblocks/onethird"]{
+      @extend .nhsuk-grid-column-one-third;     
+
+      .nhsuk-grid-column-one-third{
+        @extend %innerBlocks;
+      }    
+
+    }
+
+    [data-type="nhsblocks/onehalf"]{
+      @extend .nhsuk-grid-column-one-half;
+
+      .nhsuk-grid-column-one-half{
+        @extend %innerBlocks;
+      }
+
+    }
+
+    [data-type="nhsblocks/twothirds"]{
+      @extend .nhsuk-grid-column-two-thirds;
+
+      .nhsuk-grid-column-two-thirds{
+        @extend %innerBlocks;
+      }
+
+    }
+
+    [data-type="nhsblocks/onequarter"]{
+      @extend .nhsuk-grid-column-one-quarter;
+
+      .nhsuk-grid-column-one-quarter{
+        @extend %innerBlocks;
+      }
+
+    }
+
+    [data-type="nhsblocks/threequarters"]{
+      @extend .nhsuk-grid-column-three-quarters;
+
+      .nhsuk-grid-column-three-quarters{
+        @extend %innerBlocks;
+      }
+    }
+  }
+
+}
+
+
+
 
 /* clearfix after grouped items to sort out some display wirdiness */
 .block-editor-inner-blocks {

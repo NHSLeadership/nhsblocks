@@ -4,7 +4,7 @@ Tags: gutenberg, blocks, nhs
 Plugin URI: https://digital.leadershipacademy.nhs.uk/digital-capabilities/websites/nhs-blocks-user-guide/
 Requires at least: 5.0
 Tested up to: 5.2.3
-Stable tag: 1.0.4
+Stable tag: 1.1.2
 Requires PHP: 5.6
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -46,15 +46,24 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 10. Hero - a full screen width block, with optional single colour or image background and optional block of text to anchor the page and set clear purpose
 
 == Changelog ==
+= 1.1.2 =
+* Added examples to show in block selector region for all blocks.
+* Amended Dashboard and Groups to be Gutenberg 7.5 compatible
+* Updated upstream NPM libraries - principle change being NHSUK Frontend library
+
+= 1.1.1 =
+* Minor update for stable tag update.
+
 = 1.1.0 =
 * Updated for Gutenberg 7.4 - you will need to update Gutenberg for this plugin to continue functioning
-* Dashboard block and grouped block moved from __experimentalTemplateOptions to __experimentalBlockVariationPicker
+* Dashboard block and grouped block changed from __experimentalTemplateOptions to __experimentalBlockVariationPicker
   * This is technical debt and will need revisiting when this feature moves out of experimental phase
 * Button default text added for better UX
 * Button link moved to right hand Inspector area for improved UX
 * Incorrect image name on dashboard block. _appears to be a breaking change - it isnt!_ Any previously created
 dashboard, when edited will come up as invalid content due to this fix. You will need to click the three dots on the
 block editor and click "resolve" to repair.
+* Corrected some funky and unusual css bugs
 
 = 1.0.5 =
 * IE10/11 compatability with Hero Block

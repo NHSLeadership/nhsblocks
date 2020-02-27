@@ -5,12 +5,11 @@
  *  @version 1.0 22nd July 2019
  */
 
-const { useState, setState } = wp.element;
 const { __ } = wp.i18n;
 const { registerBlockType, createBlock } = wp.blocks;
-const { RichText, InspectorControls, URLInputButton, ColorPalette, MediaUpload, InnerBlocks, BlockControls, __experimentalBlockVariationPicker } = wp.blockEditor;
+const { RichText, InspectorControls, URLInputButton, ColorPalette, MediaUpload, InnerBlocks, __experimentalBlockVariationPicker } = wp.blockEditor;
 const { useDispatch, useSelect } = wp.data;
-import { get, map, times } from 'lodash';
+import { map } from 'lodash';
 import * as Templates from './templates.js';
 
 
@@ -18,6 +17,9 @@ registerBlockType("nhsblocks/dashboardnav", {
     title: __("Dashboard Navigation", "nhsblocks"),
     category: "nhsblocks",
     icon: 'tagcloud',
+    example: {
+
+    },
     attributes: {
         template: {
             type: "array"
@@ -43,21 +45,21 @@ registerBlockType("nhsblocks/dashboardnav", {
         } = useSelect(
             ( select ) => {
                 const {
-                    __experimentalGetBlockVariations,
+                    getBlockVariations,
                     getBlockType,
-                    __experimentalGetDefaultBlockVariation,
+                    getDefaultBlockVariation,
                 } = select( 'core/blocks' );
 
                 return {
                     blockType: getBlockType( name ),
-                    defaultVariation: __experimentalGetDefaultBlockVariation(
+                    defaultVariation: getDefaultBlockVariation(
                         name,
                         'block'
                     ),
                     hasInnerBlocks:
                         select( 'core/block-editor' ).getBlocks( clientId ).length >
                         0,
-                    variations: __experimentalGetBlockVariations( name, 'block' ),
+                    variations: getBlockVariations( name, 'block' ),
                 };
             },
             [ clientId, name ]
