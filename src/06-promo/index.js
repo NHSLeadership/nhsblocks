@@ -5,82 +5,97 @@
  *  @version 1.0 22nd July 2019
  */
 
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const {  URLInputButton, RichText, InnerBlocks, MediaUpload, InspectorControls } = wp.blockEditor;
+const {__} = wp.i18n;
+const {registerBlockType} = wp.blocks;
+const {URLInputButton, RichText, InnerBlocks, MediaUpload, InspectorControls} = wp.blockEditor;
 //@todo add in Promo class variations
 //@todo add in width variations
 
 
-
 registerBlockType("nhsblocks/promo1", {
-  title: __("Promo Region", "nhsblocks"),
-  category: "nhsblocks",
-  icon: "megaphone",
-  styles: [
-    {
-      name: "default",
-      label: __("Standard"),
-      isDefault: true
-    },
-    {
-      name: "promo-small",
-      label: __("Smaller Text")
-    }
-  ],
-  attributes: {
-    promoTitle: {
-      type: "string",
-      source: "html",
-      selector: ".nhsuk-promo__heading"
-    },
-    promoText: {
-      type: "string",
-      source: "html",
-      selector: ".nhsuk-promo__description"
-    },
-      promoLink: {
-          type: "string",
-          source: "attribute",
-          selector: ".nhsuk-promo a",
-          attribute: "href"
-      }
-  },
+	title: __("Promo Region", "nhsblocks"),
+	category: "nhsblocks",
+	icon: "megaphone",
+	styles: [
+		{
+			name: "default",
+			label: __("Standard"),
+			isDefault: true
+		},
+		{
+			name: "promo-small",
+			label: __("Smaller Text")
+		}
+	],
+	example: {
+		attributes: {
+			promoTitle: 'Promo Box',
+			promoText: 'This is the content of the box to send users to your promoted page',
+			promoLink: 'https://www.nhs.uk',
+			align: 'center',
+		},
+		innerBlocks: [
+			{
+				name: 'core/image',
+				attributes: {
+					url: 'https://assets.nhs.uk/prod/images/A_0218_healthy-eating-main_BATM01_copy.width-690.jpg',
+				},
+			},
+		],
+	},
+	attributes: {
+		promoTitle: {
+			type: "string",
+			source: "html",
+			selector: ".nhsuk-promo__heading",
+		},
+		promoText: {
+			type: "string",
+			source: "html",
+			selector: ".nhsuk-promo__description",
+		},
+		promoLink: {
+			type: "string",
+			source: "attribute",
+			selector: ".nhsuk-promo a",
+			attribute: "href",
+		},
+	},
 
-  edit: props => {
+	edit: props => {
 
-    // Lift info from props and populate various constants.
-    const {
-      attributes: {
-        promoTitle,
-        promoText,
-        promoLink,
-      },
-      className,
-      setAttributes
-    } = props;
+		// Lift info from props and populate various constants.
+		const {
+			attributes: {
+				promoTitle,
+				promoText,
+				promoLink,
+			},
+			className,
+			setAttributes
+		} = props;
 
-    // Grab newPromoTitle, set the value of promoTitle to newPromoTitle.
-    const onChangePromoTitle = newPromoTitle => {
-      setAttributes({ promoTitle: newPromoTitle });
-    };
+		// Grab newPromoTitle, set the value of promoTitle to newPromoTitle.
+		const onChangePromoTitle = newPromoTitle => {
+			setAttributes({promoTitle: newPromoTitle});
+		};
 
 
-    // Grab newPromoText, set the value of promoText to newPromoText.
-    const onChangePromoText = newPromoText => {
-      setAttributes({ promoText: newPromoText });
-    };
-      // Grab newPromoLink, set the value of promoLink to newPromoLink.
-      const onChangePromoLink = newPromoLink => {
-          setAttributes({ promoLink: newPromoLink });
-      };
-      const onChangeColumnWidth = newColumnWidth => {
-          setAttributes({ columnWidth: newColumnWidth });
-      };
-      const onImageSelect = imageObject => {
-          setAttributes({ promoImg: imageObject.sizes.podkitFeatImg.url });
-      };
-      const ALLOWED_BLOCKS = [ 'core/image' ];
+		// Grab newPromoText, set the value of promoText to newPromoText.
+		const onChangePromoText = newPromoText => {
+			setAttributes({promoText: newPromoText});
+		};
+		// Grab newPromoLink, set the value of promoLink to newPromoLink.
+		const onChangePromoLink = newPromoLink => {
+			setAttributes({promoLink: newPromoLink});
+		};
+		const onChangeColumnWidth = newColumnWidth => {
+			setAttributes({columnWidth: newColumnWidth});
+		};
+		const onImageSelect = imageObject => {
+			setAttributes({promoImg: imageObject.sizes.podkitFeatImg.url});
+		};
+		const ALLOWED_BLOCKS = ['core/image'];
 
     return (
           <div className={`${className} nhsuk-promo`}>
@@ -107,20 +122,22 @@ registerBlockType("nhsblocks/promo1", {
                       value={promoText}
                   />
 
-                </div>
-            </div>
-          </div>
-  );
-  },
-  save: props => {
-    const {
-      attributes: {
-        promoTitle,
-        promoText,
-        promoLink,
-      }
-    } = props;
-
+		< /div>
+		< /div>
+		< /div>
+	)
+		;
+	},
+	save
+:
+props => {
+	const {
+		attributes: {
+			promoTitle,
+			promoText,
+			promoLink,
+		}
+	} = props;
     return (
           <div className="nhsuk-promo">
           <a href={promoLink} className="nhsuk-promo__link-wrapper">
@@ -141,3 +158,4 @@ registerBlockType("nhsblocks/promo1", {
     );
   }
 });
+
