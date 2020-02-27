@@ -103,3 +103,96 @@
     width: 100%;
   }
 }
+
+// Image Block alternate style
+
+.is-style-nhsuk-image{
+  @extend .nhsuk-image;
+
+  figcaption{
+    margin: 0;
+  }
+}
+
+figure.is-style-nhsuk-table-responsive{
+  
+  @extend .nhsuk-table-responsive;
+
+  thead, tr, th, td {
+    border: 0;
+  }
+
+  table {
+    margin-bottom: 40px;
+    border-spacing: 0;
+    vertical-align: top;
+    width: 100%;
+  }
+
+  thead th {
+    border-bottom: 2px solid $color_nhsuk-grey-4;
+  }
+
+  th {
+    font-weight: 600;
+  }
+
+  th,
+  td {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 8px 16px 8px 0;
+    border-bottom: 1px solid $color_nhsuk-grey-4;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th:last-child,
+  td:last-child {
+    padding-right: 0;
+  }
+
+  figcaption {
+    -webkit-clip-path: inset(50%);
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  @media (min-width: 40.0625em) {
+
+    table {
+      margin-bottom: 48px;
+    }
+
+    th,
+    td {
+      font-size: 19px;
+      font-size: 1.1875rem;
+      line-height: 1.47368;
+      padding-bottom: 16px;
+      padding-right: 24px;
+      padding-top: 16px;
+    }
+  }
+
+  @media print {
+    table {
+      page-break-inside: avoid;
+    }
+
+    th,
+    td {
+      font-size: 14pt;
+      line-height: 1.15;
+    }
+  }  
+}

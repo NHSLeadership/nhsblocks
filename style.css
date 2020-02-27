@@ -6670,7 +6670,7 @@ b {
  * 3. Avoid image printing full width of a page.
  * 4. Removes top margin from subsequent nhsuk-image.
  */
-.nhsuk-image {
+.nhsuk-image, .is-style-nhsuk-image {
   background-color: #ffffff;
   border-bottom: 1px solid #d8dde0;
   margin-bottom: 32px;
@@ -6682,48 +6682,48 @@ b {
 }
 
 @media (min-width: 40.0625em) {
-  .nhsuk-image {
+  .nhsuk-image, .is-style-nhsuk-image {
     margin-bottom: 40px;
   }
 }
 
 @media (min-width: 40.0625em) {
-  .nhsuk-image {
+  .nhsuk-image, .is-style-nhsuk-image {
     margin-top: 40px;
   }
 }
 
 @media (min-width: 48.0625em) {
-  .nhsuk-image {
+  .nhsuk-image, .is-style-nhsuk-image {
     width: 66.66667%;
     /* [2] */
   }
 }
 
 @media print {
-  .nhsuk-image {
+  .nhsuk-image, .is-style-nhsuk-image {
     width: 50%;
     /* [3] */
   }
 }
 
-.nhsuk-image + .nhsuk-image {
+.nhsuk-image + .nhsuk-image, .is-style-nhsuk-image + .nhsuk-image, .nhsuk-image + .is-style-nhsuk-image, .is-style-nhsuk-image + .is-style-nhsuk-image {
   margin-top: 0;
   /* [4] */
 }
 
 @media (min-width: 40.0625em) {
-  .nhsuk-image + .nhsuk-image {
+  .nhsuk-image + .nhsuk-image, .is-style-nhsuk-image + .nhsuk-image, .nhsuk-image + .is-style-nhsuk-image, .is-style-nhsuk-image + .is-style-nhsuk-image {
     margin-top: 0;
   }
 }
 
-.nhsuk-image__img, .nhsuk-image img {
+.nhsuk-image__img, .nhsuk-image img, .is-style-nhsuk-image img {
   display: block;
   width: 100%;
 }
 
-.nhsuk-image__caption, .nhsuk-image figcaption, .gallery-caption {
+.nhsuk-image__caption, .nhsuk-image figcaption, .is-style-nhsuk-image figcaption, .gallery-caption {
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.71429;
@@ -6731,7 +6731,7 @@ b {
 }
 
 @media (min-width: 40.0625em) {
-  .nhsuk-image__caption, .nhsuk-image figcaption, .gallery-caption {
+  .nhsuk-image__caption, .nhsuk-image figcaption, .is-style-nhsuk-image figcaption, .gallery-caption {
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.5;
@@ -6739,7 +6739,7 @@ b {
 }
 
 @media print {
-  .nhsuk-image__caption, .nhsuk-image figcaption, .gallery-caption {
+  .nhsuk-image__caption, .nhsuk-image figcaption, .is-style-nhsuk-image figcaption, .gallery-caption {
     font-size: 14pt;
     line-height: 1.2;
   }
@@ -8509,7 +8509,7 @@ b {
   }
 }
 
-.nhsuk-table__panel-with-heading-tab .nhsuk-table-responsive,
+.nhsuk-table__panel-with-heading-tab .nhsuk-table-responsive, .nhsuk-table__panel-with-heading-tab figure.is-style-nhsuk-table-responsive,
 .nhsuk-table__panel-with-heading-tab .nhsuk-table {
   margin: 0;
   /* [1] */
@@ -8567,7 +8567,7 @@ b {
  *
  * 1. Margin is removed so there isn't double spacing.
  */
-.nhsuk-table-responsive {
+.nhsuk-table-responsive, figure.is-style-nhsuk-table-responsive {
   margin-bottom: 40px;
   display: block;
   -webkit-overflow-scrolling: touch;
@@ -8577,12 +8577,12 @@ b {
 }
 
 @media (min-width: 40.0625em) {
-  .nhsuk-table-responsive {
+  .nhsuk-table-responsive, figure.is-style-nhsuk-table-responsive {
     margin-bottom: 48px;
   }
 }
 
-.nhsuk-table-responsive .nhsuk-table {
+.nhsuk-table-responsive .nhsuk-table, figure.is-style-nhsuk-table-responsive .nhsuk-table {
   margin: 0;
   /* [1] */
 }
@@ -12707,8 +12707,87 @@ b {
   width: 100%;
 }
 
-.nhsuk-promo .nhsuk-promo__content .nhsuk-image {
+.nhsuk-promo .nhsuk-promo__content .nhsuk-image, .nhsuk-promo .nhsuk-promo__content .is-style-nhsuk-image {
   width: 100%;
+}
+
+.is-style-nhsuk-image figcaption {
+  margin: 0;
+}
+
+figure.is-style-nhsuk-table-responsive thead, figure.is-style-nhsuk-table-responsive tr, figure.is-style-nhsuk-table-responsive th, figure.is-style-nhsuk-table-responsive td {
+  border: 0;
+}
+
+figure.is-style-nhsuk-table-responsive table {
+  margin-bottom: 40px;
+  border-spacing: 0;
+  vertical-align: top;
+  width: 100%;
+}
+
+figure.is-style-nhsuk-table-responsive thead th {
+  border-bottom: 2px solid #d8dde0;
+}
+
+figure.is-style-nhsuk-table-responsive th {
+  font-weight: 600;
+}
+
+figure.is-style-nhsuk-table-responsive th,
+figure.is-style-nhsuk-table-responsive td {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 8px 16px 8px 0;
+  border-bottom: 1px solid #d8dde0;
+  text-align: left;
+  vertical-align: top;
+}
+
+figure.is-style-nhsuk-table-responsive th:last-child,
+figure.is-style-nhsuk-table-responsive td:last-child {
+  padding-right: 0;
+}
+
+figure.is-style-nhsuk-table-responsive figcaption {
+  -webkit-clip-path: inset(50%);
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@media (min-width: 40.0625em) {
+  figure.is-style-nhsuk-table-responsive table {
+    margin-bottom: 48px;
+  }
+  figure.is-style-nhsuk-table-responsive th,
+  figure.is-style-nhsuk-table-responsive td {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.47368;
+    padding-bottom: 16px;
+    padding-right: 24px;
+    padding-top: 16px;
+  }
+}
+
+@media print {
+  figure.is-style-nhsuk-table-responsive table {
+    page-break-inside: avoid;
+  }
+  figure.is-style-nhsuk-table-responsive th,
+  figure.is-style-nhsuk-table-responsive td {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
 }
 
 /*
