@@ -3,12 +3,17 @@ $color_nhsuk-dark-blue: #003087;
 $color_nhsuk-bright-blue: #0072ce;
 $color_nhsuk-light-blue: #41b6e6;
 $color_nhsuk-mid-grey: #768692;
-$color_nhsuk-light-grey: e8edee;
+$color_nhsuk-light-grey: #e8edee;
 $color_nhsuk-dark-grey: #425563;
 $color_nhsuk-pink: #ae2573;
 $color_nhsuk-light-purple: #704c9c;
 $color_nhsuk-light-green: #78be20;
 $color_nhsuk-dark-green: #006747;
+
+$nhsuk-button-color: $color_nhsuk-dark-green;
+$nhsuk-button-text-color: $color_nhsuk-white;
+
+
 $colours: (
         'white'         : $color_nhsuk-white,
         'nhs-dark-blue' : $color_nhsuk_dark-blue,

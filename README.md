@@ -1,6 +1,15 @@
-# WordPress Blocks for NHS Theme
+# WordPress Gutenberg Blocks for NHS Theme
 
-This repository houses the native Gutenberg blocks for the Nightingale 2.0 theme from NHS Leadership Academy. This is a standalone plugin, but is intended to be used in concert with the Nightingale 2.0 theme. The plugin and theme together complete the WordPress deployment of the NHSUK Frontend design.
+This repository houses the native Gutenberg blocks for the Nightingale WordPress theme from NHS Leadership Academy. 
+This is a standalone plugin, but is intended to be used in concert with the Nightingale 2.0 theme. The plugin and theme together complete the WordPress deployment of the NHSUK Frontend design.
+
+## Requirements
+This plugin requires minimum Wordpress 5.0 and Gutenberg 7.4 - the Gutenberg version is a very important requirement!
+ If you already have the Gutenberg plugin, please ensure it is updated _before_ installing the plugin. If you don't 
+ already have the Gutenberg plugin, we recommend you install that first.
+ 
+ Whilst designed for the Nightingale WordPress theme, this plugin is a standalone and has its own css included, so 
+ can be included to any WordPress site meeting the minimum requirements above.
 
 ## Deployment Instructions
 Download the `nhsblocks.zip` from this repository. Install this to your wordpress via admin > plugins > add new > upload. Go to your wordpress admin, 
@@ -38,5 +47,5 @@ components](https://nhsuk.github.io/nhsuk-frontend/components)
  - [x] Promo panel
  - [x] Promo panel variants (with and without image, with and without link)
  - [x] Dashboard element (non NHSUK frontend component)
- - [ ] Latest News
+ - [x] Latest News - this has been moved to be a part of the theme as it is a theme function
  - [x] Grouped Columns (one-third, one-qaurter, two-thirds, one-half, full to make full rows)

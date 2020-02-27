@@ -26,6 +26,12 @@ registerBlockType("nhsblocks/quote1", {
       label: __("Inverse")
     }
   ],
+    example: {
+      attributes: {
+          quoteName: 'Tony Blacker',
+          quoteText: 'Nightingale is an incredibly flexible theme. With NHSBlocks added in, it is amazing.',
+      },
+    },
   attributes: {
     quoteName: {
       type: "string",
