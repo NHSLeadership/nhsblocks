@@ -35,6 +35,31 @@ registerBlockType(
 			__( 'Navigation', 'nhsblocks' ),
 			__( 'Related pages', 'nhsblocks' ),
 		],
+		example: {
+			innerBlocks: [
+				{
+					name: 'nhsblocks/contentslistitem',
+					attributes: {
+						text: 'About',
+						url: '#'
+					}
+				},
+				{
+					name: 'nhsblocks/contentslistitem',
+					attributes: {
+						text: 'Symptoms',
+						url: '#'
+					}
+				},
+				{
+					name: 'nhsblocks/contentslistitem',
+					attributes: {
+						text: 'When to see a doctor',
+						url: '#'
+					}
+				},
+			],
+		},
 		edit: props => {
 			const { className, setAttributes, attributes: { title } } = props;
 			const TEMPLATE_OPTIONS = [

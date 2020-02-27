@@ -33,6 +33,27 @@ registerBlockType(
 		description: __('Use contents lists to allow users to navigate sections within a page. This will automatically add all h2 tags on this page to a scrollable list ', 'nhsblocks' ),
 		category: 'nhsblocks',
 		icon: 'editor-ul',
+		example: {
+			attributes: {
+				h2titles: [
+					{
+						text: "Heading number one",
+						url: "#1",
+						id: "11111"
+					},
+					{
+						text: "Heading number two",
+						url: "#2",
+						id: "22222"
+					},
+					{
+						text: "Heading number three",
+						url: "#3",
+						id: "33333"
+					}
+				]
+			}
+		},
 		"attributes": {
 			"h2titles": {
 				"type": "array",
@@ -84,10 +105,6 @@ registerBlockType(
 
 			});
 
-			console.log( h2titles, dynamicArray );
-
-
-			//let is_same = false;
 
 	        return (
 	        	<div>
