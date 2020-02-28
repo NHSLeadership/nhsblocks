@@ -15,5 +15,11 @@ import "./07-testimonial";
 import "./08-card";
 import "./09-row-group";
 import "./10-hero-block";
-
+import "./11-section-stripes";
+import "./12-contents-list";
+import "./12-contents-list/contents-list-page"
+import "./13-review-date";
 import "./14-filters";
+import "./15-pagination";
+import "./16-action-back-link/action-link"
+import "./16-action-back-link/back-link"

@@ -26,6 +26,39 @@
   @extend .nhsuk-care-card--immediate;
 }
 
+.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card,
+.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout { /* Warning Callout */
+  
+  background-color: $color_nhsuk-pale-yellow;
+
+  .nhsuk-care-card__heading-container{
+    background-color: $color_nhsuk-yellow;
+    display: inline-block;
+    top: -16px;
+    margin-bottom: 8px;
+    padding: 8px 32px;
+    position: relative;
+
+    h3{
+      background-color: $color_nhsuk-yellow;
+      color: $color_nhsuk-black !important;
+    }
+    .nhsuk-care-card__heading span{
+      color: $color_nhsuk-black;
+    }
+  }
+
+  .nhsuk-care-card__arrow,
+  .nhsuk-care-card__arrow{
+    display: none;
+  }
+
+  .nhsuk-care-card__content{
+    background-color: $color_nhsuk-pale-yellow;
+    padding-top: 0;
+  }
+}
+
 .nhsuk-care-card__heading-container {
   h3 {
     color: #ffffff !important;

@@ -24,7 +24,6 @@
     overflow: hidden;
     margin-bottom: 2rem;
 
-
     .nhsuk-promo__link-wrapper {
       background: inherit;
       box-shadow: none;
@@ -80,10 +79,24 @@
 
 }
 // promo box tweak
-.nhsuk-promo {
-  img.nhsuk-promo__img {
-    padding: 10px;
+.wp-block-nhsblocks-promo1 {
+  .nhsuk-image{
+    width: 100%;
   }
+  img.nhsuk-promo__img {
+    // padding: 10px;
+    width: 100%;
+    height: auto;
+  }
+
+  .nhsuk-promo__content{
+      padding: 0;
+    }
+
+    .nhsuk-promo__description,
+    .nhsuk-promo__heading{
+      padding: 0 32px;
+    }
 }
 
 //reversed quote tweak

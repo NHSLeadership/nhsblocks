@@ -1,12 +1,13 @@
 {
   "name": "nhsblocks",
-  "version": "1.0.5",
+  "version": "1.1.2",
   "license": "GPL-3.0-or-later",
   "main": "src/index.js",
   "devDependencies": {
     "@svgr/webpack": "^5.1.0",
     "@wordpress/scripts": "^7.0.1",
     "classnames": "^2.2.6",
+    "node-wp-i18n": "^1.2.3",
     "url-loader": "^1.1.2"
   },
   "scripts": {
@@ -19,10 +20,10 @@
   "dependencies": {
     "clone-deep": "^4.0.1",
     "cssnano": "^4.1.10",
-    "nhsuk-frontend": "^3.0.2",
+    "nhsuk-frontend": "^3.0.3",
     "node-sass": "^4.13.1",
     "nunjucks": "^3.2.0",
-    "postcss": "^7.0.26",
+    "postcss": "^7.0.27",
     "postcss-cli": "^7.1.0",
     "react-sortable-hoc": "^1.11.0",
     "scss": "^0.2.4"

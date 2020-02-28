@@ -15,6 +15,13 @@ registerBlockType("nhsblocks/card1", {
   title: __("Card Region", "nhsblocks"),
   category: "nhsblocks",
   icon: "category",
+
+	example: {
+		attributes: {
+			cardTitle: 'This is a card',
+			cardText: 'This is the content of the card',
+		},
+	},
   attributes: {
 	cardTitle: {
 	  type: "string",
@@ -129,5 +136,12 @@ wp.blocks.registerBlockStyle ('nhsblocks/card1',
 	{
 		name: 'immediate',
 		label: 'Immediate (Red and Black)'
+	}
+);
+
+wp.blocks.registerBlockStyle ('nhsblocks/card1',
+	{
+		name: 'warning-callout',
+		label: 'Warning Callout (Yellow)'
 	}
 );
