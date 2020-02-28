@@ -10650,7 +10650,7 @@ section {
 
 .wp-block-button__link, .wp-block-file__button, .wp-block-file a.wp-block-file__button, .wp-block-file a.wp-block-file__button:active, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:visited {
   border-radius: 4px;
-  background: #007f3b;
+  background: #006747;
   font-size: #ffffff;
   padding: 1px 8px;
   position: relative;
@@ -10747,7 +10747,7 @@ section {
   max-height: 200px;
 }
 
-.wp-block-nhsblocks-promo1 .nhsuk-image {
+.wp-block-nhsblocks-promo1 .nhsuk-image, .wp-block-nhsblocks-promo1 .is-style-nhsuk-image {
   width: 100%;
 }
 
@@ -10865,6 +10865,8 @@ figure.is-style-nhsuk-table-responsive figcaption {
     font-size: 14pt;
     line-height: 1.15;
   }
+}
+
 section.nhsuk-section:nth-of-type(odd) {
   background: #f0f4f5;
 }
@@ -11051,7 +11053,7 @@ section.nhsuk-section:after,
 }
 
 .nhsuk-header__search-wrap input[type="text"] {
-  border: 1px solid #cccccc;
+  border: 1px solid #aeb7bd;
 }
 
 /* Hero fix so it works on all templates */
@@ -11125,7 +11127,7 @@ section.nhsuk-section:after,
 
 .wp-block-nhsblocks-dashpanel .nhsuk-panel-with-label__label .rich-text, .wp-block-nhsblocks-dashpanel .nhsuk-panel.is-style-panel-with-label h3 .rich-text, .nhsuk-panel.is-style-panel-with-label .wp-block-nhsblocks-dashpanel h3 .rich-text, .nhsuk-panel.is-style-panel-with-label h3 .wp-block-nhsblocks-dashpanel .rich-text .rich-text {
   font-size: 1.1rem;
-  color: #fff;
+  color: #ffffff;
 }
 
 div[data-type="nhsblocks/heroblock"] {
@@ -11228,6 +11230,12 @@ Grouped Items blocks admin styles
 .block-editor-block-list__layout [data-type="nhsblocks/rowgroup"] .nhsuk-grid-row [data-type="nhsblocks/onethird"] .nhsuk-grid-column-one-third, .block-editor-block-list__layout [data-type="nhsblocks/rowgroup"] .nhsuk-grid-row [data-type="nhsblocks/onethird"] [data-type="nhsblocks/onethird"], .block-editor-block-list__layout [data-type="nhsblocks/rowgroup"] .nhsuk-grid-row [data-type="nhsblocks/onehalf"] .nhsuk-grid-column-one-half, .block-editor-block-list__layout [data-type="nhsblocks/rowgroup"] .nhsuk-grid-row [data-type="nhsblocks/onehalf"] [data-type="nhsblocks/onehalf"], .block-editor-block-list__layout [data-type="nhsblocks/rowgroup"] .nhsuk-grid-row [data-type="nhsblocks/twothirds"] .nhsuk-grid-column-two-thirds, .block-editor-block-list__layout [data-type="nhsblocks/rowgroup"] .nhsuk-grid-row [data-type="nhsblocks/twothirds"] [data-type="nhsblocks/twothirds"], .block-editor-block-list__layout [data-type="nhsblocks/rowgroup"] .nhsuk-grid-row [data-type="nhsblocks/onequarter"] .nhsuk-grid-column-one-quarter, .block-editor-block-list__layout [data-type="nhsblocks/rowgroup"] .nhsuk-grid-row [data-type="nhsblocks/onequarter"] [data-type="nhsblocks/onequarter"], .block-editor-block-list__layout [data-type="nhsblocks/rowgroup"] .nhsuk-grid-row [data-type="nhsblocks/threequarters"] .nhsuk-grid-column-three-quarters, .block-editor-block-list__layout [data-type="nhsblocks/rowgroup"] .nhsuk-grid-row [data-type="nhsblocks/threequarters"] [data-type="nhsblocks/threequarters"] {
   float: none;
   width: 100%;
+}
+
+/* make the table cells more obvious when editing */
+.is-selected figure.is-style-nhsuk-table-responsive thead, .is-selected figure.is-style-nhsuk-table-responsive tr, .is-selected figure.is-style-nhsuk-table-responsive th, .is-selected figure.is-style-nhsuk-table-responsive td {
+  border: 1px dashed #aeb7bd;
+  min-width: 2rem;
 }
 
 /* clearfix after grouped items to sort out some display wirdiness */

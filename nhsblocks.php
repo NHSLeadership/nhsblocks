@@ -1,13 +1,14 @@
 <?php
 /*
- * Plugin Name: nhsblocks
+ * Plugin Name: NHS Blocks
  * Plugin URI: https://github.com/NHSLeadership/nhsblocks
- * Description: Gutenberg native custom blocks companion plugin for the NHS Nightingale theme (can also be standalone).
+ * Description: Gutenberg native custom blocks companion plugin for the NHS Nightingale theme (can also be standalone). Based on nhsuk frontend framework.
  * Author: Tony Blacker, NHS Leadership Academy
  * License: GPL v3
  * Requires at least: 5.0
  * Tested up to: 5.3.2
- * Version: 1.1.2
+ * Version: 1.1.3
+ * Stable tag: 1.1.3
  *
  * @package nhsblocks
  */

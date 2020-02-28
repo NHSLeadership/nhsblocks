@@ -45,14 +45,14 @@ ul {
   @import 'node_modules/nhsuk-frontend/packages/core/utilities/widths';
   background-color: $color_nhsuk-grey-5;
   .nhsuk-button:link, .wp-block-button__link:link, .wp-block-file__button:link, .wp-block-file a.wp-block-file__button:link, .nhsuk-button:visited, .wp-block-button__link:visited, .wp-block-file__button:visited, .wp-block-file a.wp-block-file__button:visited, .nhsuk-button:active, .wp-block-button__link:active, .wp-block-file__button:active, .wp-block-file a.wp-block-file__button:active, .nhsuk-button:hover, .wp-block-button__link:hover, .wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:hover {
-    color: #ffffff;
+    color: $color_nhsuk-white;
     text-decoration: none;
   }
   .is-style-reverse:visited, is-style-reverse:link {
-    color: #212b32;
+    color: $color_nhsuk-black;
     .editor-rich-text {
       .rich-text {
-        color: #212b32;
+        color: $color_nhsuk-black;
       }
     }
   }
@@ -95,9 +95,9 @@ ul {
 }
 //promo panel blockquote address button
 .nhsuk-promo {
-  background: #ffffff;
+  background: $color_nhsuk-white;
   border: 1px solid transparent;
-  box-shadow: 0 4px 0 0 #d8dde0;
+  box-shadow: 0 4px 0 0 $color_nhsuk-grey-4;
   .nhsuk-promo__content {
     .editor-url-input__button {
       width: 100%;
@@ -174,7 +174,7 @@ ul {
 .nhsuk-do-dont-list {
   h3.nhsuk-do-dont-list__label {
     .rich-text {
-      color: #ffffff;
+      color: $color_nhsuk-white;
     }
   }
   li {
@@ -199,7 +199,7 @@ ul {
     max-width: 90%;
     .rich-text {
       font-size: 1.1rem;
-      color: #fff;
+      color: $color_nhsuk-white;
     }
   }
 }
@@ -309,11 +309,11 @@ Grouped Items blocks admin styles
     }
 
     [data-type="nhsblocks/onethird"]{
-      @extend .nhsuk-grid-column-one-third;     
+      @extend .nhsuk-grid-column-one-third;
 
       .nhsuk-grid-column-one-third{
         @extend %innerBlocks;
-      }    
+      }
 
     }
 
@@ -355,7 +355,15 @@ Grouped Items blocks admin styles
 
 }
 
-
+/* make the table cells more obvious when editing */
+.is-selected {
+  figure.is-style-nhsuk-table-responsive{
+    thead, tr, th, td {
+      border: 1px dashed $color_nhsuk-grey-3;
+      min-width: 2rem;
+    }
+  }
+}
 
 
 /* clearfix after grouped items to sort out some display wirdiness */
