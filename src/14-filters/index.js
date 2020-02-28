@@ -12,15 +12,15 @@ wp.domReady( () => {
 		'core/image',
 		[
 			{
-				name: 'default',
-				label: 'Default',
-				
-			},
-			{
 				name: 'nhsuk-image',
 				label: 'NHS Image',
 				isDefault: true,
-			}
+			},
+			{
+				name: 'default',
+				label: 'Default',
+				
+			}			
 		]
 	);
 
@@ -31,12 +31,18 @@ wp.domReady( () => {
 
 	registerBlockStyle(
 		'core/table',
-		[
+		[	
 			{
 				name: 'nhsuk-table-responsive',
 				label: 'NHS Table',
 				isDefault: true,
+			},
+			{
+				name: 'default',
+				label: 'Default',
+				
 			}
+			
 		]
 	);
 } );

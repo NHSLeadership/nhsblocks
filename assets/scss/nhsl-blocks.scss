@@ -165,6 +165,14 @@ figure.is-style-nhsuk-table-responsive{
     position: absolute;
     white-space: nowrap;
     width: 1px;
+    
+    .wp-admin &{
+      width: auto;
+      clip: auto;
+      height: auto;
+      position: relative;
+      clip-path: unset;
+    }
   }
 
   @media (min-width: 40.0625em) {

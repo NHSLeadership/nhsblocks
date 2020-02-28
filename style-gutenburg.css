@@ -10777,6 +10777,14 @@ figure.is-style-nhsuk-table-responsive figcaption {
   width: 1px;
 }
 
+.wp-admin figure.is-style-nhsuk-table-responsive figcaption {
+  width: auto;
+  clip: auto;
+  height: auto;
+  position: relative;
+  clip-path: unset;
+}
+
 @media (min-width: 40.0625em) {
   figure.is-style-nhsuk-table-responsive table {
     margin-bottom: 48px;
