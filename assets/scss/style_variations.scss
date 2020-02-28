@@ -28,7 +28,7 @@
 
 .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card,
 .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout { /* Warning Callout */
-  
+
   background-color: $color_nhsuk-pale-yellow;
 
   .nhsuk-care-card__heading-container{
@@ -61,7 +61,7 @@
 
 .nhsuk-care-card__heading-container {
   h3 {
-    color: #ffffff !important;
+    color: $color_nhsuk-white !important;
     margin: 0 !important;
   }
 }
@@ -97,7 +97,7 @@
 .nhsuk-inset-text is-style-quote-reverse {
   .nhsuk-inset-text__quote {
     a {
-      color: #ffffff;
+      color: $color_nhsuk-white;
       font-weight: 700;
     }
   }
@@ -130,7 +130,7 @@
 
 .nhsuk-header__search-wrap {
   input[type="text"] {
-    border: 1px solid #cccccc;
+    border: 1px solid $color_nhsuk-grey-3;
   }
 }
 

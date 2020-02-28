@@ -1,10 +1,11 @@
 === NHS Blocks ===
 Contributors: tblacker
 Tags: gutenberg, blocks, nhs
+Plugin Name:: NHS Blocks
 Plugin URI: https://digital.leadershipacademy.nhs.uk/digital-capabilities/websites/nhs-blocks-user-guide/
 Requires at least: 5.0
 Tested up to: 5.2.3
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 Requires PHP: 5.6
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -46,6 +47,29 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 10. Hero - a full screen width block, with optional single colour or image background and optional block of text to anchor the page and set clear purpose
 
 == Changelog ==
+
+= 1.1.3 =
+Addition of multiple new blocks:
+* Section Stripes - full width alternating white and grey stripes that can have inner blocks within. Great for full
+width homepages and landing pages.
+* Contents list - 2 options:
+   * Page contents - will autodetect all h2 tags on the page and show anchor links to them
+   * Other pages - you can manually add links to other pages (or external resources) in an easy to use list.
+* Review Date  - add the block and an area will be added to your page showing the date of when it was last reviewed (i.e
+. now)
+* Pagination - want a prev and next button. Add this block, and manually configure your previous and next links. Great
+for process flows or user guides.
+* Action link - want to suggest a user follows a link, but dont want a button. Use an action link
+* Back link - let users step back a page. (This uses javascript -1, so if users land on the page from another site and
+click this they will go back where they came from....)
+Additions of style options to pre-existing blocks:
+* Core table block can now be styled like nhsuk frontend, with fully responsive tables
+* Images can now be amended to nhusk styling
+* Addition of warning callout option to cards. Particularly useful for Covid-19 alerts
+Thanks to @verytwisty for all the pull requests and support, 90% of this update is her work.
+(Also some remedial work to ensure inner block compatability with Gutenberg 7.6 and some minor housekeeping with file
+structures)
+
 = 1.1.2 =
 * Added examples to show in block selector region for all blocks.
 * Amended Dashboard and Groups to be Gutenberg 7.5 compatible
