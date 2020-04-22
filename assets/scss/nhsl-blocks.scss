@@ -36,10 +36,9 @@
       margin: 0;
       margin-top: 0;
       margin-bottom: 0;
-      padding: 0;
       background-size: cover;
       position: relative;
-      padding-top: 33.33%;
+      padding: 33.33% 0;
 
       .nhsuk-panel-with-label__label {
         z-index: 2;
@@ -128,7 +127,7 @@
 }
 
 figure.is-style-nhsuk-table-responsive{
-  
+
   @extend .nhsuk-table-responsive;
 
   thead, tr, th, td {
@@ -178,7 +177,7 @@ figure.is-style-nhsuk-table-responsive{
     position: absolute;
     white-space: nowrap;
     width: 1px;
-    
+
     .wp-admin &{
       width: auto;
       clip: auto;
@@ -215,5 +214,5 @@ figure.is-style-nhsuk-table-responsive{
       font-size: 14pt;
       line-height: 1.15;
     }
-  }  
+  }
 }
