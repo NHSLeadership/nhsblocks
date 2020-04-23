@@ -18,6 +18,8 @@ NHS styled blocks for WordPress using the Gutenberg editor, based on the excelle
 
 This plugin is designed principally for use by NHS organisations, but can be used by anybody.
 
+This plugin requires Gutenberg 7.9.1 (as a standalone plugin) to be installed and active.
+
 == Installation ==
 
 This section describes how to install the plugin and get it working.
