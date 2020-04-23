@@ -1,4 +1,4 @@
-.block-editor-editor-skeleton__content { // target only the editor itself
+.edit-post-visual-editor, .block-editor-block-styles { // target only the editor itself
   //@import 'node_modules/nhsuk-frontend/packages/nhsuk';
 
   @import 'assets/scss/nhsuk-replacement';
@@ -7,72 +7,14 @@
 	list-style : none;
   }
 
-  background-color : $color_nhsuk-grey-5;
-
-  .nhsuk-button:link, .wp-block-button__link:link, .wp-block-file__button:link, .wp-block-file a.wp-block-file__button:link, .nhsuk-button:visited, .wp-block-button__link:visited, .wp-block-file__button:visited, .wp-block-file a.wp-block-file__button:visited, .nhsuk-button:active, .wp-block-button__link:active, .wp-block-file__button:active, .wp-block-file a.wp-block-file__button:active, .nhsuk-button:hover, .wp-block-button__link:hover, .wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:hover {
-	color           : #ffffff;
-	text-decoration : none;
-  }
-
-  .is-style-reverse:visited, is-style-reverse:link {
-	color : #212b32;
-  }
-
-  div.components-toolbar > div {
-	display : -ms-flex;
-  }
-
-  .nhsuk-header__search-form {
-	height : 0;
-  }
-
-  .wp-block {
-	max-width : 800px;
-  }
-
-  .wp-block[data-align=wide] { /* it can be "data-align=full" and also "right", "left" and "center" */
-	max-width : 1228px;
-  }
-
-  // start importing the theme specific settings
-
   @import 'assets/scss/generic-overrides'; // generic over-rides to remove default wordpress styling issues
   @import 'assets/scss/nhs-colours'; // nhs colour pallette
-  .editor-post-title__input {
-	font-family : $nhsuk-font, $nhsuk-font-fallback;
-	@extend h1;
-  }
+
 
   @import 'assets/scss/style_variations'; //gutenberg blocks style variations
 
-  background-color : $color_nhsuk-grey-5;
-
-  .nhsuk-button:link, .wp-block-button__link:link, .wp-block-file__button:link, .wp-block-file a.wp-block-file__button:link, .nhsuk-button:visited, .wp-block-button__link:visited, .wp-block-file__button:visited, .wp-block-file a.wp-block-file__button:visited, .nhsuk-button:active, .wp-block-button__link:active, .wp-block-file__button:active, .wp-block-file a.wp-block-file__button:active, .nhsuk-button:hover, .wp-block-button__link:hover, .wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:hover {
-	color           : $color_nhsuk-white;
-	text-decoration : none;
-  }
-
-  .is-style-reverse:visited, is-style-reverse:link {
-	color : $color_nhsuk-black;
-
-	.editor-rich-text {
-	  .rich-text {
-		color : $color_nhsuk-black;
-	  }
-	}
-  }
-
-
-  .acf-block-component {
-	a {
-	  pointer-events : none;
-	  cursor         : default;
-	  // this has been added on purpose to prevent links in blocks being clickable - its really annoying when editing to accidentally click a link and be taken off the edit screen!
-	}
-  }
-
   .wp-block {
-	max-width : 800px;
+	max-width : 983px;
   }
 
   .wp-block[data-align=wide] { /* it can be "data-align=full" and also "right", "left" and "center" */
@@ -83,12 +25,7 @@
 	font-family : $nhsuk-font, $nhsuk-font-fallback;
 	font-size   : 16px;
 
-	.nhsuk-care-card__heading {
-	  span {
-		font-size : 24px;
-		color     : $color_nhsuk-white;
-	  }
-	}
+
   }
 
   // start importing the theme specific settings
@@ -98,10 +35,6 @@
   @import 'assets/scss/nhsl-blocks'; // specific elements for nhsl-blocks plugin
   @import 'assets/scss/stripe-blocks';
 
-  .editor-post-title__input {
-	font-family : $nhsuk-font, $nhsuk-font-fallback;;
-	@extend h1;
-  }
 
   //promo panel blockquote address button
   .nhsuk-promo {
