@@ -3606,6 +3606,10 @@
   background: none;
 }
 
+.edit-post-visual-editor .nhsuk-breadcrumb__link:focus:hover, .block-editor-block-styles .nhsuk-breadcrumb__link:focus:hover {
+  color: #212b32;
+}
+
 .edit-post-visual-editor .nhsuk-breadcrumb__link:visited, .block-editor-block-styles .nhsuk-breadcrumb__link:visited {
   color: #005eb8;
 }
@@ -3741,6 +3745,10 @@
 }
 
 .edit-post-visual-editor .nhsuk-button:focus:visited, .edit-post-visual-editor .wp-block-button__link:focus:visited, .edit-post-visual-editor .wp-block-file__button:focus:visited, .edit-post-visual-editor .wp-block-file a.wp-block-file__button:focus:visited, .block-editor-block-styles .wp-block-file .edit-post-visual-editor a.wp-block-file__button:focus:visited, .block-editor-block-styles .nhsuk-button:focus:visited, .edit-post-visual-editor .wp-block-file .block-editor-block-styles a.wp-block-file__button:focus:visited, .block-editor-block-styles .wp-block-button__link:focus:visited, .block-editor-block-styles .wp-block-file__button:focus:visited, .block-editor-block-styles .wp-block-file a.wp-block-file__button:focus:visited {
+  color: #212b32;
+}
+
+.edit-post-visual-editor .nhsuk-button:focus:visited:active, .edit-post-visual-editor .wp-block-button__link:focus:visited:active, .edit-post-visual-editor .wp-block-file__button:focus:visited:active, .block-editor-block-styles .nhsuk-button:focus:visited:active, .block-editor-block-styles .wp-block-button__link:focus:visited:active, .block-editor-block-styles .wp-block-file__button:focus:visited:active {
   color: #ffffff;
 }
 
@@ -6367,6 +6375,10 @@
 
 .edit-post-visual-editor .nhsuk-header__transactional-service-name--link:focus, .block-editor-block-styles .nhsuk-header__transactional-service-name--link:focus {
   text-decoration: none;
+}
+
+.edit-post-visual-editor .nhsuk-header__transactional-service-name--link:focus:hover, .block-editor-block-styles .nhsuk-header__transactional-service-name--link:focus:hover {
+  color: #212b32;
 }
 
 .edit-post-visual-editor .nhsuk-header--transactional .nhsuk-header__link, .block-editor-block-styles .nhsuk-header--transactional .nhsuk-header__link {

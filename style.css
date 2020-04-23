@@ -2847,6 +2847,10 @@ b {
   background: none;
 }
 
+.nhsuk-breadcrumb__link:focus:hover {
+  color: #212b32;
+}
+
 .nhsuk-breadcrumb__link:visited {
   color: #005eb8;
 }
@@ -2994,6 +2998,10 @@ b {
 }
 
 .nhsuk-button:focus:visited, .wp-block-button__link:focus:visited, .wp-block-file__button:focus:visited, .wp-block-file a.wp-block-file__button:focus:visited {
+  color: #212b32;
+}
+
+.nhsuk-button:focus:visited:active, .wp-block-button__link:focus:visited:active, .wp-block-file__button:focus:visited:active {
   color: #ffffff;
 }
 
@@ -5706,6 +5714,10 @@ b {
 
 .nhsuk-header__transactional-service-name--link:focus {
   text-decoration: none;
+}
+
+.nhsuk-header__transactional-service-name--link:focus:hover {
+  color: #212b32;
 }
 
 .nhsuk-header--transactional .nhsuk-header__link {
