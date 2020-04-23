@@ -13,18 +13,7 @@ Version: 1.1.3
 **********************************************************************************************/
 
 // Components
-@import 'node_modules/nhsuk-frontend/packages/nhsuk';
-@import 'node_modules/nhsuk-frontend/packages/core/all';
-@import 'node_modules/nhsuk-frontend/packages/components/button/button';
-@import 'node_modules/nhsuk-frontend/packages/components/care-card/care-card';
-@import 'node_modules/nhsuk-frontend/packages/components/details/details';
-@import 'node_modules/nhsuk-frontend/packages/components/do-dont-list/do-dont-list';
-@import 'node_modules/nhsuk-frontend/packages/components/hero/hero';
-@import 'node_modules/nhsuk-frontend/packages/components/inset-text/inset-text';
-@import 'node_modules/nhsuk-frontend/packages/components/label/label';
-@import 'node_modules/nhsuk-frontend/packages/components/list-panel/list-panel';
-@import 'node_modules/nhsuk-frontend/packages/components/panel/panel';
-@import 'node_modules/nhsuk-frontend/packages/components/promo/promo';
+@import 'assets/scss/nhsuk-replacement';
 
 
 // start importing the theme specific settings
