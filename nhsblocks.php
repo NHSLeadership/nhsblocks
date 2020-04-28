@@ -252,7 +252,10 @@ add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' )
  * Queues up the blocks styling for front end
  */
 function nhsblocks_register_style() {
-	wp_register_style( 'nhsblocks', plugins_url( 'style.min.css', __FILE__ ) );
+	$theme = wp_get_theme(); // gets the current theme
+	if ( 'nightingale' == $theme->name || 'nightingale' == $theme->parent_theme ) {
+		wp_register_style( 'nhsblocks', plugins_url( 'style.min.css', __FILE__ ) );
+	}
 }
 
 add_action( 'init', 'nhsblocks_register_style' ); // Pulls front end styling to standard wp process.

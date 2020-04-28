@@ -8717,6 +8717,7 @@ b {
   background-size: cover;
   position: relative;
   padding: 33.33% 0;
+  height: 100%;
 }
 
 .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-panel-with-label .nhsuk-panel-with-label__label, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-panel.is-style-panel-with-label .nhsuk-panel-with-label__label, .nhsuk-panel.is-style-panel-with-label .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-panel-with-label h3, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-panel.is-style-panel-with-label h3, .nhsuk-panel.is-style-panel-with-label h3 .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-panel-with-label .rich-text, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-panel.is-style-panel-with-label h3 .rich-text {
