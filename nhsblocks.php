@@ -243,7 +243,10 @@ function nhsblocks_block_classes( $attributes ) {
  * Queues up the gutenberg editor style
  */
 function nhsblocks_gutenberg_editor_styles() {
-	wp_enqueue_style( 'nhsl-block-editor-styles', plugins_url( 'style-gutenburg.css', __FILE__ ), false, '1.1', 'all' );
+	$theme = wp_get_theme(); // gets the current theme
+	if ( 'nightingale' == $theme->name || 'nightingale' == $theme->parent_theme ) {
+		wp_enqueue_style( 'nhsl-block-editor-styles', plugins_url( 'style-gutenburg.css', __FILE__ ), false, '1.1', 'all' );
+	}
 }
 
 add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' ); // Pulls the enqueued file in to standard wp process.
@@ -261,7 +264,10 @@ function nhsblocks_register_style() {
 add_action( 'init', 'nhsblocks_register_style' ); // Pulls front end styling to standard wp process.
 
 function nhsblocks_enqueue_style() {
-	wp_enqueue_style( 'nhsblocks' );
+	$theme = wp_get_theme(); // gets the current theme
+	if ( 'nightingale' == $theme->name || 'nightingale' == $theme->parent_theme ) {
+		wp_enqueue_style( 'nhsblocks' );
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'nhsblocks_enqueue_style' );
