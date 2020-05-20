@@ -180,7 +180,7 @@ function nhsblocks_register_dynamic_blocks() {
 
 
 
-function nhsblocks_block_renderer( string $name, array $attributes, string $content = null ) : string {
+function nhsblocks_block_renderer( string $name, array $attributes, string $content = null ) {
 
 	// change template name slash to scores
 	$template_name = str_replace( '/', '-', $name );
