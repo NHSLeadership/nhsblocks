@@ -313,6 +313,21 @@ function nhsblocks_hero_footer() {
 		    }
 	    }
 	    // Page Link JS
+	    const careCardWarning = document.querySelector('.nhsuk-care-card.is-style-warning-callout');
+	    if ( ( careCardWarning ) ) {
+	    	const visuallyHidden = careCardWarning.querySelector('.nhsuk-u-visually-hidden');
+	    	jQuery(visuallyHidden).html('Warning advice: ');
+	    }
+	    const careCardUrgent = document.querySelector('.nhsuk-care-card.is-style-urgent');
+	    if ( ( careCardUrgent ) ) {
+	    	const visuallyHidden = careCardUrgent.querySelector('.nhsuk-u-visually-hidden');
+	    	jQuery(visuallyHidden).html('Urgent advice: ');
+	    }
+	    const careCardImmediate = document.querySelector('.nhsuk-care-card.is-style-immediate');
+	    if ( ( careCardImmediate ) ) {
+	    	const visuallyHidden = careCardImmediate.querySelector('.nhsuk-u-visually-hidden');
+	    	jQuery(visuallyHidden).html('Immediate action required: ');
+	    }
 
 	    ( function(){
 	    	let url = window.location.href.split(/[?#]/)[0];
