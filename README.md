@@ -1,15 +1,19 @@
 # WordPress Gutenberg Blocks for NHS Theme
 
 This repository houses the native Gutenberg blocks for the Nightingale WordPress theme from NHS Leadership Academy. 
-This is a standalone plugin, but is intended to be used in concert with the Nightingale 2.0 theme. The plugin and theme together complete the WordPress deployment of the NHSUK Frontend design.
+This is a standalone plugin, but is intended to be used in concert with the [Nightingale](https://wordpress.org/themes/nightingale) theme. The plugin and theme together complete the WordPress deployment of the NHSUK Frontend design.
 
 ## Requirements
-This plugin requires minimum Wordpress 5.0 and Gutenberg 7.4 - the Gutenberg version is a very important requirement!
- If you already have the Gutenberg plugin, please ensure it is updated _before_ installing the plugin. If you don't 
- already have the Gutenberg plugin, we recommend you install that first.
+This plugin requires minimum Wordpress 5.0 
+
+If you are running the Gutenberg plugin as a separate entity (Gutenberg is built in to the core of WordPress - this
+ ONLY applies if you also have the plugin) then the NHSBlocks plugin may have some unexpected behaviour. The
+  NHSBlocks plugin is built to use the core version of Gutenberg included in WordPress.
  
  Whilst designed for the Nightingale WordPress theme, this plugin is a standalone and has its own css included, so 
- can be included to any WordPress site meeting the minimum requirements above.
+ can be included to any WordPress site meeting the minimum requirements above. If you ARE running the Nightingale
+  theme, the plugin stylesheets will be supressed and the the theme stylesheet will cover everyting so there will be
+   no duplication of css.
 
 ## Deployment Instructions
 Download the `nhsblocks.zip` from this repository. Install this to your wordpress via admin > plugins > add new > upload. Go to your wordpress admin, 
@@ -31,21 +35,3 @@ This plugin was written by Tony Blacker, NHS Leadership Academy Digital Delivery
 provided by [Morten Rand-Hendriksen](https://mor10.com/) and extended out to match the [NHSUK Frontend library 
 components](https://nhsuk.github.io/nhsuk-frontend/components) 
 
-## Progress
- - [x] Add in buttons
- - [x] Button variations (standard green, grey [secondary] and white [reverse])
- - [x] Add in Reveal
- - [x] Reveal variations (Expander)
- - [x] Care Cards
- - [x] Care Card Variations (non urgent [blue header], urgent [red header], immediate [red header, black body])
- - [x] Do / Dont List
- - [x] Panel
- - [x] Panel variations (standard [white], with label [white with blue masthead], grey)
- - [x] Testimonial / Quote
- - [x] Testimonial variant (standard [white background, blue left hand border], inverted [blue background, white left
-  hand border] - inverted is non standard NHSUK Frontend component)
- - [x] Promo panel
- - [x] Promo panel variants (with and without image, with and without link)
- - [x] Dashboard element (non NHSUK frontend component)
- - [x] Latest News - this has been moved to be a part of the theme as it is a theme function
- - [x] Grouped Columns (one-third, one-qaurter, two-thirds, one-half, full to make full rows)

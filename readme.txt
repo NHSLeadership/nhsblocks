@@ -24,7 +24,8 @@ This plugin requires Gutenberg 7.9.1 (as a standalone plugin) to be installed an
 
 This section describes how to install the plugin and get it working.
 
-1. This plugin requires that the Gutenberg plugin (running as a plugin) is already installed and active on your site to get the latest developments and techniques available.
+1. This plugin uses the core version of Gutenberg included in WordPress 5.2 and higher. If you also run the Gutenberg
+plugin, you may encounter issues.
 2. Upload the plugin files to the `/wp-content/plugins/plugin-name` directory, or install the plugin through the WordPress plugins screen directly.
 3. Activate the plugin through the 'Plugins' screen in WordPress
 4. Navigate to edit or create any page or post.
@@ -49,6 +50,15 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 10. Hero - a full screen width block, with optional single colour or image background and optional block of text to anchor the page and set clear purpose
 
 == Changelog ==
+
+= 1.1.5 =
+ * visually hidden messages modified on care cards so status is reflected to screen readers
+ * removed php7.4 declaration types for backwards compatability
+ * updated dependencies in composer
+ * Removed requirement for separate Gutenberg plugin - instead use core WP version of Gutenberg. If you currently have
+ the Gutenberg plugin purely for the NHSBlocks plugin to work, we actively encourage you to remove the Gutenberg plugin
+ from your deployment to improve stability and performance.
+ *
 
 = 1.1.4 =
 * Removed a lot of excess styling in the css
