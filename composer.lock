@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a62a9df4bdd8afe51d6a30c88272ead",
+    "content-hash": "44fbb71a0538967e3cf5320ef2bf0ec9",
     "packages": [
         {
             "name": "composer/installers",
@@ -132,24 +132,6 @@
                 "zikula"
             ],
             "time": "2020-04-07T06:57:05+00:00"
-        },
-        {
-            "name": "wpackagist-plugin/gutenberg",
-            "version": "7.9.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/7.9.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.7.9.1.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/gutenberg/"
         }
     ],
     "packages-dev": [],

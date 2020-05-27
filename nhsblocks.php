@@ -272,25 +272,6 @@ function nhsblocks_enqueue_style() {
 
 add_action( 'wp_enqueue_scripts', 'nhsblocks_enqueue_style' );
 
-/**
- * Checks if the Gutenberg plugin is activated
- *
- * If the Gutenberg plugin is not active, then don't allow the
- * activation of this plugin.
- *
- * @since 1.0.0
- */
-function nhsblocks_activate() {
-	if ( current_user_can( 'activate_plugins' ) && ! is_plugin_active( 'gutenberg/gutenberg.php' ) ) {
-		// Deactivate the plugin.
-		deactivate_plugins( plugin_basename( __FILE__ ) );
-		// Throw an error in the WordPress admin console.
-		$error_message = '<p style="font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Oxygen-Sans,Ubuntu,Cantarell,\'Helvetica Neue\',sans-serif;font-size: 13px;line-height: 1.5;color:#444;">' . esc_html__( 'This plugin requires ', 'nhsblocks' ) . '<a href="' . esc_url( 'https://en-gb.wordpress.org/plugins/gutenberg/' ) . '">Gutenberg</a>' . esc_html__( ' plugin to be installed and active.', 'nhsblocks' ) . '</p>';
-		die( $error_message ); // WPCS: XSS ok.
-	}
-}
-
-register_activation_hook( __FILE__, 'nhsblocks_activate' );
 
 function nhsblocks_hero_footer() {
 	echo "<script>
