@@ -3,9 +3,9 @@ Contributors: tblacker
 Tags: gutenberg, blocks, nhs
 Plugin Name:: NHS Blocks
 Plugin URI: https://digital.leadershipacademy.nhs.uk/digital-capabilities/websites/nhs-blocks-user-guide/
-Requires at least: 5.0
-Tested up to: 5.2.3
-Stable tag: 1.1.5
+Requires at least: 5.3
+Tested up to: 5.4.1
+Stable tag: 1.1.6
 Requires PHP: 5.6
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -18,7 +18,11 @@ NHS styled blocks for WordPress using the Gutenberg editor, based on the excelle
 
 This plugin is designed principally for use by NHS organisations, but can be used by anybody.
 
-This plugin requires Gutenberg 7.9.1 (as a standalone plugin) to be installed and active.
+This plugin previously required Gutenberg 7.9.1 (as a standalone plugin) to be installed and active. This requirement
+has now been removed and it uses the native Gutenberg that ships with WordPress 5.3 and higher. If you also have the
+Gutenberg plugin installed we strongly encourage you to deactivate the Gutenberg plugin as it may cause future conflicts
+ with the nhsblocks plugin (at time of writing it doesn't, but Gutenberg updates every fortnight and we don't plan to do
+  fortnightly releases of nhsblocks)
 
 == Installation ==
 
@@ -51,14 +55,16 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 
 == Changelog ==
 
-= 1.1.5 =
- * visually hidden messages modified on care cards so status is reflected to screen readers
- * removed php7.4 declaration types for backwards compatability
- * updated dependencies in composer
+= 1.1.6 =
  * Removed requirement for separate Gutenberg plugin - instead use core WP version of Gutenberg. If you currently have
  the Gutenberg plugin purely for the NHSBlocks plugin to work, we actively encourage you to remove the Gutenberg plugin
  from your deployment to improve stability and performance.
- *
+ * visually hidden messages modified on care cards so status is reflected to screen readers
+ * removed php7.4 declaration types for backwards compatability
+ * updated dependencies in composer
+ * Ensured default values added to all text fields to make it easier to edit, improved UX
+ * Added preview styling to block chooser so you can see what each block does before selecting it.
+ * Modified logic on action link to make it more stable (and reduce incidence of "Resolve block" notifications)
 
 = 1.1.4 =
 * Removed a lot of excess styling in the css

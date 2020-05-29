@@ -25,26 +25,31 @@ registerBlockType("nhsblocks/actionlink", {
     ],
     example: {
         attributes: {
-            actionText: __( 'Call to Action' )
+            actionText: __( 'Call to Action' ),
         },
     },
     attributes: {
         actionText: {
             type: "string",
             source: "html",
-            selector: ".nhsuk-action-link__text",
-            default: "Action Link Text"
+            selector: ".nhsuk-action-link__text"
         },
         actionLink: {
             type: "string",
             source: "attribute",
             attribute: "href",
             selector: "a.nhsuk-action-link__link"
+        },
+        arrowsvgs: {
+            type: "string",
+            source: "html",
+            selector: "svg",
+            default: arrows.action
         }
     },
     edit: props => {
 
-            const { className, setAttributes, isSelected, attributes: { actionText, actionLink } } = props;
+            const { className, setAttributes, isSelected, attributes: { actionText, actionLink, arrowssvgs } } = props;
 
             return (
                 <div className="nhsuk-action-link">
@@ -56,12 +61,14 @@ registerBlockType("nhsblocks/actionlink", {
                     isSelected ? (
                         <div>
                             <TextControl
-                                label={ __('Action Link Text', 'nhsblocks') }
+                                label={ __(' ', 'nhsblocks') }
+                                placeholder={__("Call to Action", "nhsblocks")}
                                 value={ actionText }
                                 onChange={ actionText => setAttributes({ actionText }) }
                             />
                             <URLInput
                                 value={ actionLink }
+                                placeholder={__("Add a link (type to search or paste a whole url)", "nhsblocks")}
                                 onChange={ actionLink => setAttributes( { actionLink } ) }
                             />
                         </div>
@@ -72,7 +79,7 @@ registerBlockType("nhsblocks/actionlink", {
         },
     save: props => {
 
-        const { className, attributes: { actionText, actionLink } } = props;
+        const { className, attributes: { actionText, actionLink, arrowssvgs } } = props;
 
         return(
             <div className="nhsuk-action-link">

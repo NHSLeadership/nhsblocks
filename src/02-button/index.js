@@ -4,6 +4,8 @@
  *  @author Tony Blacker, NHS Leadership Academy
  *  @version 1.0 22nd July 2019
  */
+import {ldlms_get_custom_label_lower} from "../../../sfwd-lms/includes/gutenberg/blocks/ldlms";
+
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const {
@@ -94,7 +96,7 @@ registerBlockType("nhsblocks/nhsbutton", {
         return ([
             <InspectorControls>
             <div>
-            <strong>Add a link for this button</strong>
+            <strong>Add a link for this button by clicking the chain icon below.</strong>
         <URLInputButton
         className="nhsblocks-dropdown__input"
         label={__("Button URL", "nhsblocks")}
