@@ -14,5 +14,5 @@
   "plugins": [
     "node_modules/wp-hookdoc/plugin",
     "plugins/markdown"
-  ],
+  ]
 }
