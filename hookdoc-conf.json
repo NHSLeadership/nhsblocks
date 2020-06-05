@@ -6,8 +6,7 @@
   },
   "source": {
     "include": [
-      "./",
-      "includes"
+      "./"
     ],
     "includePattern": ".+\\.(php)?$"
   },
