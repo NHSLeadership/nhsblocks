@@ -15,7 +15,8 @@
     "build": "wp-scripts build",
     "build-scss": "cat style.scss | node_modules/.bin/node-sass --include-path node_modules/ --include-path node_modules/nhsuk-frontend/packages/nhsuk/ style.scss --output-style expanded > style.css | cat style-gutenburg.scss | node_modules/.bin/node-sass --include-path node_modules/ --include-path node_modules/nhsuk-frontend/packages/nhsuk/  style-gutenburg.scss --output-style expanded > style-gutenburg.css",
     "compress-scss": "postcss style.css > style.min.css",
-    "zip": "zip -r nhsblocks.zip ./ -x .git .gitignore *.git/* .DS_Store .package.json .package-lock.json *.scss webpack.config.js nhsblocks.zip  postcss.config.css README.md .wordpress-org/**\\* .ds_store vendor/**\\* node_modules/**\\* src/**\\* webpack.config.js n"
+    "zip": "zip -r nhsblocks.zip ./ -x .git .gitignore *.git/* .DS_Store .package.json .package-lock.json *.scss webpack.config.js nhsblocks.zip  postcss.config.css README.md .wordpress-org/**\\* .ds_store vendor/**\\* node_modules/**\\* src/**\\* webpack.config.js n",
+    "build:docs": "rm -rf hookdocs/ && jsdoc -c hookdoc-conf.json"
   },
   "dependencies": {
     "clone-deep": "^4.0.1",
@@ -27,5 +28,9 @@
     "postcss-cli": "^7.1.1",
     "react-sortable-hoc": "^1.11.0",
     "scss": "^0.2.4"
+  },
+  "devDependencies": {
+    "jsdoc": "~3.6.3",
+    "wp-hookdoc": "^0.2.0"
   }
 }
