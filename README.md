@@ -23,6 +23,8 @@ and activate the NHS Blocks plugin. Then edit your pages, your new blocks are al
  
 ## Development Instructions
 To develop your own modifications, you will need to download the full [repo from GitHub](https://github.com/NHSLeadership/nhsblocks) - ideally you should be in your `wp-content/plugins` folder.
+- Technical documentation can be found at https://nhsleadership.github.io/nhsblocks/index.html
+
 Once you have this locally, you will need to change directory to `wp-content/plugins/nhsblocks`. Start by running `npm run install` to download and setup all the required node modules.
  - Any changes to styles can be made in the `assets/scss` folder. To regenerate the css, you will need to run `npm run build-scss`.
  - Any changes to the blocks themselves can be made in the `src` folder. Once changes are complete, you will need to regenerate the js by running `npm run build`. This will generate new files in the `build` folder.
