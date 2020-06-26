@@ -34,6 +34,16 @@
   @import 'assets/scss/generic-overrides'; // generic over-rides to remove default wordpress styling issues
   @import 'assets/scss/nhsl-blocks'; // specific elements for nhsl-blocks plugin
   @import 'assets/scss/stripe-blocks';
+  [data-type="nhsblocks/stripesblock"] {
+	width: 100%;
+	max-width: 100%;
+	margin-left: 36px !important;
+	margin-right: 36px !important;
+	[data-type="nhsblocks/stripeblock"] {
+	  max-width: 100%;
+	  margin: 0 auto;
+	}
+  }
 
 
   //promo panel blockquote address button

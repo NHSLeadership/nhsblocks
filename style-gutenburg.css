@@ -10324,6 +10324,18 @@
   background: #ffffff;
 }
 
+.edit-post-visual-editor [data-type="nhsblocks/stripesblock"], .block-editor-block-styles [data-type="nhsblocks/stripesblock"], .block-editor-inserter__menu-help-panel [data-type="nhsblocks/stripesblock"] {
+  width: 100%;
+  max-width: 100%;
+  margin-left: 36px !important;
+  margin-right: 36px !important;
+}
+
+.edit-post-visual-editor [data-type="nhsblocks/stripesblock"] [data-type="nhsblocks/stripeblock"], .block-editor-block-styles [data-type="nhsblocks/stripesblock"] [data-type="nhsblocks/stripeblock"], .block-editor-inserter__menu-help-panel [data-type="nhsblocks/stripesblock"] [data-type="nhsblocks/stripeblock"] {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 .edit-post-visual-editor .nhsuk-promo, .block-editor-block-styles .nhsuk-promo, .block-editor-inserter__menu-help-panel .nhsuk-promo {
   background: #ffffff;
   border: 1px solid transparent;
