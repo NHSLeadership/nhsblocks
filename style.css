@@ -8976,6 +8976,10 @@ figure.is-style-nhsuk-table-responsive figcaption {
 
 /*panel extension*/
 /* promo extension */
+.nhsuk-promo figure {
+  margin: 0;
+}
+
 /*do and dont list extension*/
 .nhsuk-do-dont-list svg.nhsuk-icon {
   width: 35px;
@@ -8998,6 +9002,10 @@ figure.is-style-nhsuk-table-responsive figcaption {
 
 .nhsuk-hero__overlay {
   margin-bottom: 50px;
+}
+
+.nhsuk-hero__overlay .nhsuk-grid-column-two-thirds {
+  padding: 0;
 }
 
 .nhsuk-header__search-wrap input[type="text"] {
