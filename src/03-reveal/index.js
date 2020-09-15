@@ -7,7 +7,10 @@
 const {__} = wp.i18n;
 const {registerBlockType} = wp.blocks;
 const {RichText} = wp.blockEditor;
-
+const { compose, withInstanceId } = wp.compose;
+const UniqueId = ({instanceId}) => {
+	return (details-content-{instanceID})
+}
 
 registerBlockType("nhsblocks/reveal1", {
 	title: __("Simple Reveal", "nhsblocks"),
@@ -47,11 +50,11 @@ registerBlockType("nhsblocks/reveal1", {
 		}
 	},
 
-	edit: props => {
 
+	edit: props => {
 		// Lift info from props and populate various constants.
 		const {
-			attributes: {revealTitle, revealText},
+			attributes: {revealTitle, revealText, UniqueID},
 			className,
 			setAttributes
 		} = props;
@@ -74,7 +77,7 @@ registerBlockType("nhsblocks/reveal1", {
 		< summary
 		className = "nhsuk-details__summary"
 		role = "button"
-		aria-controls = "details-content-"
+		aria-controls = {UniqueID}
 		aria-expanded = "true" >
 			< span className = "nhsuk-details__summary-text" >
 			< RichText
@@ -86,7 +89,7 @@ registerBlockType("nhsblocks/reveal1", {
 		< /summary>
 		< div
 		className = "nhsuk-details__text"
-		id = "details-content-"
+		id = {UniqueID}
 		aria-hidden = "false" >
 			< RichText
                 multiline = "p"
@@ -101,7 +104,7 @@ registerBlockType("nhsblocks/reveal1", {
 	},
 	save: props => {
 		const {
-			attributes: {revealTitle, revealText}
+			attributes: {revealTitle, revealText, UniqueID}
 		} = props;
 
 		return (
@@ -110,7 +113,7 @@ registerBlockType("nhsblocks/reveal1", {
 			< summary
 		className = "nhsuk-details__summary"
 		role = "button"
-		aria-controls = "details-content-"
+		aria-controls = {UniqueID}
 		aria-expanded = "false" >
 			< span
 		className = "nhsuk-details__summary-text" >
@@ -121,7 +124,7 @@ registerBlockType("nhsblocks/reveal1", {
 		< /summary>
 		< div
 		className = "nhsuk-details__text"
-		id = "details-content-"
+		id = {UniqueID}
 		aria-hidden = "false" >
 			< RichText.Content
 		multiline = "p"
