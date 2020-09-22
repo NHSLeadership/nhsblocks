@@ -18,7 +18,7 @@ var PanelBody = _wp$components.PanelBody;
 var TextControl = _wp$components.TextControl;
 var RangeControl = _wp$components.RangeControl;
 var defaultName = Math.random().toString(36).substring(2, 15);
-var defaultPassword = Math.random().toString(36).substring(2, 15);
+var defaultSecret = Math.random().toString(36).substring(2, 15);
 
 registerBlockType("nhsblocks/videomeetup", {
     title: __("Video Meetup", "nhsblocks"),
@@ -28,8 +28,8 @@ registerBlockType("nhsblocks/videomeetup", {
     keywords: [__('jitsi', 'video-meetup'), __('jitsi', 'video-meetup')],
     example: {
         attributes: {
-            roomname: defaultName,
-            password: '',
+            roomname: 'RoomName',
+            secret: 'Secret',
             domainname: "meet.jit.si",
             width: 700,
             height: 500,
@@ -42,11 +42,11 @@ registerBlockType("nhsblocks/videomeetup", {
         },
         roomname: {
             type: 'string',
-            default: defaultName
+            default: 'RoomName'
         },
-        password: {
+        secret: {
             type: 'string',
-            default: defaultPassword
+            default: defaultSecret
         },
         width: {
             type: 'number',
@@ -67,7 +67,7 @@ registerBlockType("nhsblocks/videomeetup", {
         var _props$attributes = props.attributes,
             domainname = _props$attributes.domainname,
             roomname = _props$attributes.roomname,
-            password = _props$attributes.password,
+            secret = _props$attributes.secret,
             width = _props$attributes.width,
             height = _props$attributes.height;
 
@@ -94,11 +94,11 @@ registerBlockType("nhsblocks/videomeetup", {
                 }
             }),
             wp.element.createElement(TextControl, {
-                label: __('Password'),
-                value: password,
+                label: __('secret'),
+                value: secret,
                 onChange: function onChange(val) {
                     return setAttributes({
-                        password: val
+                        secret: val
                     });
                 }
             }),
@@ -129,17 +129,15 @@ registerBlockType("nhsblocks/videomeetup", {
             className: "jitsi-wrapper",
             "data-domain": domainname,
             "data-room": roomname,
-            "data-pass": password,
+            "data-secret": secret,
             "data-width": width,
             "data-height": height,
-            "data-user": 'Presenter'
         }, (domainname + '/').concat(roomname)));
     },
     save: function save(props) {
         var _props$attributes = props.attributes,
-            username = _props$attributes.username,
             roomname = _props$attributes.roomname,
-            password = _props$attributes.password,
+            secret = _props$attributes.secret,
             width = _props$attributes.width,
             height = _props$attributes.height,
             domainname = _props$attributes.domainname;
@@ -148,10 +146,9 @@ registerBlockType("nhsblocks/videomeetup", {
             className: "jitsi-wrapper",
             "data-domain": domainname,
             "data-room": roomname,
-            "data-pass": password,
+            "data-secret": secret,
             "data-width": width,
             "data-height": height,
-            "data-user": username,
         });
     }
 });
