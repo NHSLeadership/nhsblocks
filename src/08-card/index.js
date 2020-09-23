@@ -7,9 +7,12 @@
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RichText } = wp.blockEditor;
+const { RichText, InnerBlocks } = wp.blockEditor;
 //@todo add in Card class variations
 //@todo add in width variations
+const TEMPLATE_OPTIONS = [
+	['core/image', {align: 'right', width: 150}],
+];
 
 registerBlockType("nhsblocks/card1", {
   title: __("Card Region", "nhsblocks"),
@@ -21,6 +24,15 @@ registerBlockType("nhsblocks/card1", {
 			cardTitle: 'This is a card',
 			cardText: 'This is the content of the card',
 		},
+		innerBlocks: [
+			{
+				name: 'core/image',
+				attributes: {
+					align: 'right',
+					width: 150,
+				},
+			},
+		],
 	},
   attributes: {
 	cardTitle: {
@@ -77,6 +89,9 @@ registerBlockType("nhsblocks/card1", {
 				  <span className="nhsuk-care-card__arrow" aria-hidden="true"></span>
 			  </div>
 			  <div className="nhsuk-care-card__content">
+				  <InnerBlocks
+	  				  template = {TEMPLATE_OPTIONS}
+				  />
 				  <RichText
 					  multiline="p"
 					  placeholder={__("Card Contents", "nhsblocks")}
@@ -108,6 +123,7 @@ registerBlockType("nhsblocks/card1", {
 				<span className="nhsuk-care-card__arrow" aria-hidden="true"></span>
 			</div>
 			<div className="nhsuk-care-card__content">
+			  <InnerBlocks.Content />
 			  <RichText.Content
 				 multiline="p"
 				 value={cardText}
