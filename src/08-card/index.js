@@ -7,12 +7,15 @@
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RichText, InnerBlocks } = wp.blockEditor;
+const { RichText, InnerBlocks, InspectorControls } = wp.blockEditor;
+const { ToggleControl, PanelBody, PanelRow, RadioControl } = wp.components;
+const { withState } = wp.compose;
 //@todo add in Card class variations
 //@todo add in width variations
 const TEMPLATE_OPTIONS = [
 	['core/image', {align: 'right', width: 150}],
 ];
+
 
 registerBlockType("nhsblocks/card1", {
   title: __("Card Region", "nhsblocks"),
@@ -35,6 +38,10 @@ registerBlockType("nhsblocks/card1", {
 		],
 	},
   attributes: {
+	  innerBlocks_length: {
+		  type: "number",
+		  default: 0
+	  },
 	cardTitle: {
 	  type: "string",
 	  source: "html",
@@ -45,17 +52,22 @@ registerBlockType("nhsblocks/card1", {
 		source: "children",
 		multiline: "p",
 	  selector: ".nhsuk-care-card__content"
-	}
+	},
+	  withImage: {
+	  	type: 'boolean',
+		  default: false,
+	  },
   },
 
   edit: props => {
-
 	// Lift info from props and populate various constants.
 	const {
 	  attributes: {
-		cardTitle,
-		cardText
+			cardTitle,
+			cardText,
+		  withImage,
 	  },
+		clientId,
 	  className,
 	  setAttributes
 	} = props;
@@ -71,7 +83,15 @@ registerBlockType("nhsblocks/card1", {
 	  setAttributes({ cardText: newCardText });
 	};
 
-	return (
+
+	return ( [
+		<InspectorControls>
+					<ToggleControl
+				  label="Include an image?"
+				  checked={withImage}
+				  onChange={(newval) => setAttributes({ withImage: newval })}
+				  />
+		</InspectorControls>,
 		<div className={`${className} nhsuk-care-card`}>
 			  <div className="nhsuk-care-card__heading-container">
 				  <h3 className="nhsuk-care-card__heading">
@@ -89,9 +109,11 @@ registerBlockType("nhsblocks/card1", {
 				  <span className="nhsuk-care-card__arrow" aria-hidden="true"></span>
 			  </div>
 			  <div className="nhsuk-care-card__content">
-				  <InnerBlocks
+		  {withImage === true && (
+		  	<InnerBlocks
 	  				  template = {TEMPLATE_OPTIONS}
 				  />
+      )}
 				  <RichText
 					  multiline="p"
 					  placeholder={__("Card Contents", "nhsblocks")}
@@ -100,13 +122,15 @@ registerBlockType("nhsblocks/card1", {
 				  />
 			  </div>
 		</div>
-  );
+  ] );
   },
   save: props => {
 	const {
 	  attributes: {
-		cardTitle,
-		cardText }
+			cardTitle,
+			cardText,
+		  withImage,
+	  }
 	} = props;
 
 	return (
@@ -123,7 +147,9 @@ registerBlockType("nhsblocks/card1", {
 				<span className="nhsuk-care-card__arrow" aria-hidden="true"></span>
 			</div>
 			<div className="nhsuk-care-card__content">
-			  <InnerBlocks.Content />
+		  {withImage === true && (
+		  	<InnerBlocks.Content />
+      )}
 			  <RichText.Content
 				 multiline="p"
 				 value={cardText}
@@ -132,7 +158,44 @@ registerBlockType("nhsblocks/card1", {
 		  </div>
 
 	);
-  }
+  },
+	deprecated: [
+		{
+				attributes: {
+					cardTitle: {
+						type: "string",
+						source: "html",
+						selector: ".nhsuk-care-card__heading-text"
+					},
+					cardText: {
+						type: "array",
+						source: "children",
+						multiline: "p",
+						selector: ".nhsuk-care-card__content"
+					},
+				},
+			save: ( {attributes} ) =>
+				<div className="nhsuk-grid-column-width nhsuk-care-card nhsuk-care-card--type">
+				<div className="nhsuk-care-card__heading-container">
+				<h3 className="nhsuk-care-card__heading">
+				<span role="text">
+				<span className="nhsuk-u-visually-hidden">Non-urgent advice: </span>
+			<span className="nhsuk-care-card__heading-text">
+				<RichText.Content value={cardTitle} />
+			</span>
+			</span>
+			</h3>
+			<span className="nhsuk-care-card__arrow" aria-hidden="true"></span>
+				</div>
+				<div className="nhsuk-care-card__content">
+				<RichText.Content
+			multiline="p"
+			value={cardText}
+			/>
+			</div>
+			</div>,
+		},
+	],
 });
 // card variations
 wp.blocks.registerBlockStyle ('nhsblocks/card1',
