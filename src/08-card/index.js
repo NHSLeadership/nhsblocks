@@ -86,11 +86,15 @@ registerBlockType("nhsblocks/card1", {
 
 	return ( [
 		<InspectorControls>
+			<PanelBody>
+				<PanelRow>
 					<ToggleControl
 				  label="Include an image?"
 				  checked={withImage}
 				  onChange={(newval) => setAttributes({ withImage: newval })}
 				  />
+				</PanelRow>
+			</PanelBody>
 		</InspectorControls>,
 		<div className={`${className} nhsuk-care-card`}>
 			  <div className="nhsuk-care-card__heading-container">
