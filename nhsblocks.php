@@ -8,8 +8,8 @@
  * Requires at least: 5.0
  * Tested up to: 5.4.1
  *
- * Version: 1.1.7
- * Stable tag: 1.1.7
+ * Version: 1.1.8
+ * Stable tag: 1.1.8
  *
  * @package nhsblocks
  */
@@ -24,14 +24,14 @@ defined( 'ABSPATH' ) || exit;
 add_action( 'init', 'nhsblocks_load_textdomain' );
 
 /**
- * Set the domain to be used for translations
+ * Set the domain to be used for translations.
  */
 function nhsblocks_load_textdomain() {
 	load_plugin_textdomain( 'nhsblocks', false, basename( __DIR__ ) . '/languages' );
 }
 
 /**
- * Add custom "nhsblocks" block category
+ * Add custom "nhsblocks" block category.
  *
  * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/filters/block-filters/#managing-block-categories
  */
