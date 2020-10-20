@@ -10089,6 +10089,14 @@
   margin-bottom: 36px;
 }
 
+.edit-post-visual-editor .nhsuk-care-card, .block-editor-block-styles .nhsuk-care-card, .block-editor-inserter__menu-help-panel .nhsuk-care-card {
+  width: 100%;
+}
+
+.edit-post-visual-editor .nhsuk-care-card .nhsuk-care-card-content, .block-editor-block-styles .nhsuk-care-card .nhsuk-care-card-content, .block-editor-inserter__menu-help-panel .nhsuk-care-card .nhsuk-care-card-content {
+  overflow: auto;
+}
+
 .edit-post-visual-editor .nhsuk-panel-with-label, .edit-post-visual-editor .nhsuk-panel.is-style-panel-with-label, .block-editor-block-styles .nhsuk-panel-with-label, .block-editor-block-styles .nhsuk-panel.is-style-panel-with-label, .block-editor-inserter__menu-help-panel .nhsuk-panel-with-label, .block-editor-inserter__menu-help-panel .nhsuk-panel.is-style-panel-with-label {
   width: 100%;
 }
@@ -10099,6 +10107,10 @@
 
 .edit-post-visual-editor .nhsuk-panel-with-label .entry-footer span, .edit-post-visual-editor .nhsuk-panel.is-style-panel-with-label .entry-footer span, .block-editor-block-styles .nhsuk-panel-with-label .entry-footer span, .block-editor-block-styles .nhsuk-panel.is-style-panel-with-label .entry-footer span, .block-editor-inserter__menu-help-panel .nhsuk-panel-with-label .entry-footer span, .block-editor-inserter__menu-help-panel .nhsuk-panel.is-style-panel-with-label .entry-footer span {
   padding: 0 10px;
+}
+
+.edit-post-visual-editor .nhsuk-details .nhsuk-details__text, .block-editor-block-styles .nhsuk-details .nhsuk-details__text, .block-editor-inserter__menu-help-panel .nhsuk-details .nhsuk-details__text {
+  overflow: auto;
 }
 
 .edit-post-visual-editor .nhsuk-dashboard .nhsuk-panel-group__item, .block-editor-block-styles .nhsuk-dashboard .nhsuk-panel-group__item, .block-editor-inserter__menu-help-panel .nhsuk-dashboard .nhsuk-panel-group__item {
@@ -10166,10 +10178,6 @@
   height: auto;
 }
 
-.edit-post-visual-editor .wp-block-nhsblocks-promo1 .nhsuk-promo__content, .block-editor-block-styles .wp-block-nhsblocks-promo1 .nhsuk-promo__content, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-promo1 .nhsuk-promo__content {
-  padding: 0;
-}
-
 .edit-post-visual-editor .wp-block-nhsblocks-promo1 .nhsuk-promo__description,
 .edit-post-visual-editor .wp-block-nhsblocks-promo1 .nhsuk-promo__heading, .block-editor-block-styles .wp-block-nhsblocks-promo1 .nhsuk-promo__description,
 .block-editor-block-styles .wp-block-nhsblocks-promo1 .nhsuk-promo__heading, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-promo1 .nhsuk-promo__description,
@@ -10188,8 +10196,55 @@
   width: 100%;
 }
 
+.edit-post-visual-editor #content .nhsuk-main-wrapper .nhsuk-inset-text.is-style-quote-warning, .edit-post-visual-editor .nhsuk-inset-text.is-style-quote-warning, .block-editor-block-styles #content .nhsuk-main-wrapper .nhsuk-inset-text.is-style-quote-warning, .block-editor-block-styles .nhsuk-inset-text.is-style-quote-warning, .block-editor-inserter__menu-help-panel #content .nhsuk-main-wrapper .nhsuk-inset-text.is-style-quote-warning, .block-editor-inserter__menu-help-panel .nhsuk-inset-text.is-style-quote-warning {
+  border-left-color: #ffeb3b;
+}
+
+.edit-post-visual-editor #content .nhsuk-main-wrapper .nhsuk-inset-text.is-style-quote-warning-reverse, .edit-post-visual-editor .nhsuk-inset-text.is-style-quote-warning-reverse, .block-editor-block-styles #content .nhsuk-main-wrapper .nhsuk-inset-text.is-style-quote-warning-reverse, .block-editor-block-styles .nhsuk-inset-text.is-style-quote-warning-reverse, .block-editor-inserter__menu-help-panel #content .nhsuk-main-wrapper .nhsuk-inset-text.is-style-quote-warning-reverse, .block-editor-inserter__menu-help-panel .nhsuk-inset-text.is-style-quote-warning-reverse {
+  background: #ffeb3b;
+  border: 10px solid #ffeb3b;
+  box-shadow: inset 12px 0px 0px 0px #212b32;
+  box-sizing: border-box;
+  padding-left: 30px;
+  margin: 1rem 0;
+  color: #212b32;
+  width: 100%;
+}
+
+.edit-post-visual-editor #content .nhsuk-main-wrapper .nhsuk-inset-text.is-style-quote-alert, .edit-post-visual-editor .is-style-quote-alert.nhsuk-inset-text, .block-editor-block-styles #content .nhsuk-main-wrapper .nhsuk-inset-text.is-style-quote-alert, .block-editor-block-styles .is-style-quote-alert.nhsuk-inset-text, .block-editor-inserter__menu-help-panel #content .nhsuk-main-wrapper .nhsuk-inset-text.is-style-quote-alert, .block-editor-inserter__menu-help-panel .is-style-quote-alert.nhsuk-inset-text {
+  border-left-color: #d5281b;
+}
+
+.edit-post-visual-editor #content .nhsuk-main-wrapper .nhsuk-inset-text.is-style-quote-alert-reverse, .edit-post-visual-editor .is-style-quote-alert-reverse.nhsuk-inset-text, .block-editor-block-styles #content .nhsuk-main-wrapper .nhsuk-inset-text.is-style-quote-alert-reverse, .block-editor-block-styles .is-style-quote-alert-reverse.nhsuk-inset-text, .block-editor-inserter__menu-help-panel #content .nhsuk-main-wrapper .nhsuk-inset-text.is-style-quote-alert-reverse, .block-editor-inserter__menu-help-panel .is-style-quote-alert-reverse.nhsuk-inset-text {
+  background: #d5281b;
+  border: 10px solid #d5281b;
+  box-shadow: inset 12px 0px 0px 0px #ffffff;
+  box-sizing: border-box;
+  padding-left: 30px;
+  margin: 1rem 0;
+  color: #ffffff;
+  width: 100%;
+}
+
+.edit-post-visual-editor .nhsuk-promo .nhsuk-promo__content, .block-editor-block-styles .nhsuk-promo .nhsuk-promo__content, .block-editor-inserter__menu-help-panel .nhsuk-promo .nhsuk-promo__content {
+  padding: 0 0 16px 0;
+}
+
 .edit-post-visual-editor .nhsuk-promo .nhsuk-promo__content .nhsuk-image, .edit-post-visual-editor .nhsuk-promo .nhsuk-promo__content .is-style-nhsuk-image, .block-editor-block-styles .nhsuk-promo .nhsuk-promo__content .nhsuk-image, .block-editor-block-styles .nhsuk-promo .nhsuk-promo__content .is-style-nhsuk-image, .block-editor-inserter__menu-help-panel .nhsuk-promo .nhsuk-promo__content .nhsuk-image, .block-editor-inserter__menu-help-panel .nhsuk-promo .nhsuk-promo__content .is-style-nhsuk-image {
   width: 100%;
+  padding: 0;
+}
+
+.edit-post-visual-editor .nhsuk-promo .nhsuk-promo__content .nhsuk-promo__heading, .block-editor-block-styles .nhsuk-promo .nhsuk-promo__content .nhsuk-promo__heading, .block-editor-inserter__menu-help-panel .nhsuk-promo .nhsuk-promo__content .nhsuk-promo__heading {
+  padding: 8px 16px;
+}
+
+.edit-post-visual-editor .nhsuk-promo .nhsuk-promo__content .nhsuk-promo__description, .edit-post-visual-editor .nhsuk-promo .nhsuk-promo__content p, .block-editor-block-styles .nhsuk-promo .nhsuk-promo__content .nhsuk-promo__description, .block-editor-block-styles .nhsuk-promo .nhsuk-promo__content p, .block-editor-inserter__menu-help-panel .nhsuk-promo .nhsuk-promo__content .nhsuk-promo__description, .block-editor-inserter__menu-help-panel .nhsuk-promo .nhsuk-promo__content p {
+  padding: 8px;
+}
+
+.edit-post-visual-editor .nhsuk-promo .nhsuk-promo__content .nhsuk-readmore, .block-editor-block-styles .nhsuk-promo .nhsuk-promo__content .nhsuk-readmore, .block-editor-inserter__menu-help-panel .nhsuk-promo .nhsuk-promo__content .nhsuk-readmore {
+  padding: 0 32px 8px 0;
 }
 
 .edit-post-visual-editor .is-style-nhsuk-image figcaption, .block-editor-block-styles .is-style-nhsuk-image figcaption, .block-editor-inserter__menu-help-panel .is-style-nhsuk-image figcaption {
@@ -10258,8 +10313,10 @@
 }
 
 @media (min-width: 40.0625em) {
-  .edit-post-visual-editor figure.is-style-nhsuk-table-responsive table, .block-editor-block-styles figure.is-style-nhsuk-table-responsive table, .block-editor-inserter__menu-help-panel figure.is-style-nhsuk-table-responsive table {
-    margin-bottom: 48px;
+  .edit-post-visual-editor figure.is-style-nhsuk-table-responsive, .block-editor-block-styles figure.is-style-nhsuk-table-responsive, .block-editor-inserter__menu-help-panel figure.is-style-nhsuk-table-responsive {
+    /*table {
+      margin-bottom: 48px;
+    }*/
   }
   .edit-post-visual-editor figure.is-style-nhsuk-table-responsive th,
   .edit-post-visual-editor figure.is-style-nhsuk-table-responsive td, .block-editor-block-styles figure.is-style-nhsuk-table-responsive th,
@@ -10285,6 +10342,10 @@
     font-size: 14pt;
     line-height: 1.15;
   }
+}
+
+.edit-post-visual-editor .nhsuk-table-responsive table, .edit-post-visual-editor figure.is-style-nhsuk-table-responsive table, .edit-post-visual-editor .is-style-nhsuk-table-responsive table, .edit-post-visual-editor table, .block-editor-block-styles .nhsuk-table-responsive table, .block-editor-block-styles figure.is-style-nhsuk-table-responsive table, .block-editor-block-styles .is-style-nhsuk-table-responsive table, .block-editor-block-styles table, .block-editor-inserter__menu-help-panel .nhsuk-table-responsive table, .block-editor-inserter__menu-help-panel figure.is-style-nhsuk-table-responsive table, .block-editor-inserter__menu-help-panel .is-style-nhsuk-table-responsive table, .block-editor-inserter__menu-help-panel table {
+  margin: 0;
 }
 
 .edit-post-visual-editor section.nhsuk-section:nth-of-type(odd), .block-editor-block-styles section.nhsuk-section:nth-of-type(odd), .block-editor-inserter__menu-help-panel section.nhsuk-section:nth-of-type(odd) {
