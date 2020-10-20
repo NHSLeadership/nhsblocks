@@ -6,8 +6,11 @@
  */
 const {__} = wp.i18n;
 const {registerBlockType} = wp.blocks;
-const {RichText} = wp.blockEditor;
-
+const { RichText, InnerBlocks, InspectorControls } = wp.blockEditor;
+const { ToggleControl, PanelBody, PanelRow, RadioControl } = wp.components;
+const TEMPLATE_OPTIONS = [
+	['core/image', {align: 'right', width: 150}],
+];
 
 registerBlockType("nhsblocks/reveal1", {
 	title: __("Simple Reveal", "nhsblocks"),
@@ -44,6 +47,10 @@ registerBlockType("nhsblocks/reveal1", {
 		},
 		expanderBox: {
 			type: "string"
+		},
+		withImage: {
+			type: 'boolean',
+			default: false,
 		}
 	},
 
@@ -51,9 +58,9 @@ registerBlockType("nhsblocks/reveal1", {
 
 		// Lift info from props and populate various constants.
 		const {
-			attributes: {revealTitle, revealText},
+			attributes: {revealTitle, revealText, withImage},
 			className,
-			setAttributes
+			setAttributes,
 		} = props;
 
 		// Grab newRevealTitle, set the value of revealTitle to newRevealTitle.
@@ -67,10 +74,21 @@ registerBlockType("nhsblocks/reveal1", {
 		};
 
 
-		return (
+		return ( [
+			<InspectorControls>
+				<PanelBody>
+					<PanelRow>
+						<ToggleControl
+							label="Include an image?"
+							checked={withImage}
+							onChange={(newval) => setAttributes({ withImage: newval })}
+						/>
+					</PanelRow>
+				</PanelBody>
+			</InspectorControls>,
 			< details
 		        className = {`${className} nhsuk-details newstyle`}
-		    open >
+		open >
 		< summary
 		className = "nhsuk-details__summary"
 		role = "button"
@@ -88,6 +106,11 @@ registerBlockType("nhsblocks/reveal1", {
 		className = "nhsuk-details__text"
 		id = "details-content-"
 		aria-hidden = "false" >
+			{withImage === true && (
+					<InnerBlocks
+				template = {TEMPLATE_OPTIONS}
+				/>
+			)}
 			< RichText
                 multiline = "p"
                 placeholder = {__("Reveal Contents", "nhsblocks") }
@@ -97,40 +120,89 @@ registerBlockType("nhsblocks/reveal1", {
 
 		< /div>
 		< /details>
-	);
+	]);
 	},
 	save: props => {
 		const {
-			attributes: {revealTitle, revealText}
+			attributes: {revealTitle, revealText, withImage}
 		} = props;
 
 		return (
-			< details
-		className = "nhsuk-details" >
-			< summary
-		className = "nhsuk-details__summary"
-		role = "button"
-		aria-controls = "details-content-"
-		aria-expanded = "false" >
-			< span
-		className = "nhsuk-details__summary-text" >
-			< RichText.Content
-		value = {revealTitle}
-		/>
-		< /span>
-		< /summary>
-		< div
-		className = "nhsuk-details__text"
-		id = "details-content-"
-		aria-hidden = "false" >
-			< RichText.Content
-		multiline = "p"
-		value = {revealText}
-		/>
-		< /div>
+			<details className = "nhsuk-details">
+				<summary
+				className = "nhsuk-details__summary"
+				role = "button"
+				aria-controls = "details-content-"
+				aria-expanded = "false" >
+					< span
+						className = "nhsuk-details__summary-text" >
+						< RichText.Content
+							value = {revealTitle}
+							/>
+					< /span>
+				< /summary>
+				< div
+					className = "nhsuk-details__text"
+					id = "details-content-"
+					aria-hidden = "false" >
+						{withImage === true && (
+							<InnerBlocks.Content />
+						)}
+						< RichText.Content
+					multiline = "p"
+					value = {revealText}
+					/>
+				< /div>
 		< /details>
-	)
-		;
-	}
+	);
+	},
+	deprecated: [
+		{
+				attributes: {
+					revealTitle: {
+						type: "string",
+						source: "html",
+						selector: ".nhsuk-details__summary-text"
+					},
+					revealText: {
+						type: "string",
+						source: "html",
+						selector: ".nhsuk-details__text"
+					},
+					expanderBox: {
+						type: "string"
+					}
+				},
+			save: ( {attributes} ) =>
+				< details
+				className = {`${className} nhsuk-details newstyle`}
+				open >
+					< summary
+					className = "nhsuk-details__summary"
+					role = "button"
+					aria-controls = "details-content-"
+					aria-expanded = "true" >
+						< span className = "nhsuk-details__summary-text" >
+							< RichText
+							placeholder = {__("Reveal Title", "nhsblocks")}
+							value = {revealTitle}
+							onChange = {onChangeRevealTitle}
+							/>
+						< /span>
+					< /summary>
+					< div
+					className = "nhsuk-details__text"
+					id = "details-content-"
+					aria-hidden = "false" >
+						< RichText
+							multiline = "p"
+							placeholder = {__("Reveal Contents", "nhsblocks") }
+							onChange = {onChangeRevealText}
+							value = {revealText}
+							/>
+					< /div>
+				< /details>,
+		}
+	]
 });
 

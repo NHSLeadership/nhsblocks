@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: nhsblocks
 Tags: NHS, NHS Digital, NHS Frontend, National Health Service, Leadership Academy
 Description: Gutenberg native custom blocks companion plugin for the NHS Nightingale theme (can also be standalone).
-Version: 1.1.5
+Version: 1.1.7
 
 **********************************************************************************************/
 /* ==========================================================================
@@ -8713,6 +8713,14 @@ b {
   margin-bottom: 36px;
 }
 
+.nhsuk-care-card {
+  width: 100%;
+}
+
+.nhsuk-care-card .nhsuk-care-card-content {
+  overflow: auto;
+}
+
 .nhsuk-panel-with-label, .nhsuk-panel.is-style-panel-with-label {
   width: 100%;
 }
@@ -8723,6 +8731,10 @@ b {
 
 .nhsuk-panel-with-label .entry-footer span, .nhsuk-panel.is-style-panel-with-label .entry-footer span {
   padding: 0 10px;
+}
+
+.nhsuk-details .nhsuk-details__text {
+  overflow: auto;
 }
 
 .nhsuk-dashboard .nhsuk-panel-group__item {
@@ -8790,10 +8802,6 @@ b {
   height: auto;
 }
 
-.wp-block-nhsblocks-promo1 .nhsuk-promo__content {
-  padding: 0;
-}
-
 .wp-block-nhsblocks-promo1 .nhsuk-promo__description,
 .wp-block-nhsblocks-promo1 .nhsuk-promo__heading {
   padding: 0 32px;
@@ -8810,8 +8818,55 @@ b {
   width: 100%;
 }
 
+#content .nhsuk-main-wrapper .nhsuk-inset-text.is-style-quote-warning, .nhsuk-inset-text.is-style-quote-warning {
+  border-left-color: #ffeb3b;
+}
+
+#content .nhsuk-main-wrapper .nhsuk-inset-text.is-style-quote-warning-reverse, .nhsuk-inset-text.is-style-quote-warning-reverse {
+  background: #ffeb3b;
+  border: 10px solid #ffeb3b;
+  box-shadow: inset 12px 0px 0px 0px #212b32;
+  box-sizing: border-box;
+  padding-left: 30px;
+  margin: 1rem 0;
+  color: #212b32;
+  width: 100%;
+}
+
+#content .nhsuk-main-wrapper .nhsuk-inset-text.is-style-quote-alert, .is-style-quote-alert.nhsuk-inset-text {
+  border-left-color: #d5281b;
+}
+
+#content .nhsuk-main-wrapper .nhsuk-inset-text.is-style-quote-alert-reverse, .is-style-quote-alert-reverse.nhsuk-inset-text {
+  background: #d5281b;
+  border: 10px solid #d5281b;
+  box-shadow: inset 12px 0px 0px 0px #ffffff;
+  box-sizing: border-box;
+  padding-left: 30px;
+  margin: 1rem 0;
+  color: #ffffff;
+  width: 100%;
+}
+
+.nhsuk-promo .nhsuk-promo__content {
+  padding: 0 0 16px 0;
+}
+
 .nhsuk-promo .nhsuk-promo__content .nhsuk-image, .nhsuk-promo .nhsuk-promo__content .is-style-nhsuk-image {
   width: 100%;
+  padding: 0;
+}
+
+.nhsuk-promo .nhsuk-promo__content .nhsuk-promo__heading {
+  padding: 8px 16px;
+}
+
+.nhsuk-promo .nhsuk-promo__content .nhsuk-promo__description, .nhsuk-promo .nhsuk-promo__content p {
+  padding: 8px;
+}
+
+.nhsuk-promo .nhsuk-promo__content .nhsuk-readmore {
+  padding: 0 32px 8px 0;
 }
 
 .is-style-nhsuk-image figcaption {
@@ -8876,8 +8931,10 @@ figure.is-style-nhsuk-table-responsive figcaption {
 }
 
 @media (min-width: 40.0625em) {
-  figure.is-style-nhsuk-table-responsive table {
-    margin-bottom: 48px;
+  figure.is-style-nhsuk-table-responsive {
+    /*table {
+      margin-bottom: 48px;
+    }*/
   }
   figure.is-style-nhsuk-table-responsive th,
   figure.is-style-nhsuk-table-responsive td {
@@ -8899,6 +8956,10 @@ figure.is-style-nhsuk-table-responsive figcaption {
     font-size: 14pt;
     line-height: 1.15;
   }
+}
+
+.nhsuk-table-responsive table, figure.is-style-nhsuk-table-responsive table, .is-style-nhsuk-table-responsive table, table {
+  margin: 0;
 }
 
 /*

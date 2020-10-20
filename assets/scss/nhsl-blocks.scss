@@ -25,6 +25,13 @@
   }
 }
 
+// Details / expander element
+.nhsuk-details {
+  .nhsuk-details__text {
+    overflow: auto;
+  }
+}
+
 //Dashboard group extended from panel group
 .nhsuk-dashboard {
   .nhsuk-panel-group__item {
