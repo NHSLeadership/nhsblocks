@@ -77,7 +77,7 @@ function nhsblocks_register_blocks() {
 		return;
 	}
 
-	// Retister the block editor script.
+	// Register the block editor script.
 	wp_register_script(
 		'nhsblocks-editor-script',                                            // label.
 		plugins_url( '/build/index.js', __FILE__ ),                        // script file.
@@ -106,6 +106,28 @@ function nhsblocks_register_blocks() {
 	register_block_type( 'nhsblocks/contentslistitem' );
 	register_block_type( 'nhsblocks/reviewdate' );
 	register_block_type( 'nhsblocks/stripesblock' );
+
+    function wpdc_enqueue_sample_script() {
+        wp_enqueue_script( 'wpdc-sample-script', get_template_directory_uri() . '/assets/js/sample-script.js' );
+    }
+    add_action( 'wp_enqueue_script', 'wpdc_enqueue_registered_sample_script' );
+
+    // Register the Jitsi embed script
+    wp_register_script(
+        'nhsblocks-jitsi-script',
+        plugins_url( '/src/17-video-meetup/jitsi.js', __FILE__ ),
+        // dependencies
+        array( 'jquery' ),
+        '20200915',
+        'in_footer'
+    );
+
+    register_block_type( 'nhsblocks/videomeetup',
+        array(
+            'editor_script' => 'nhsblocks-jitsi-script',
+            // Calls registered script above.
+        )
+    );
 
 	register_block_type( 'nhsblocks/pagination' );
 
@@ -337,6 +359,21 @@ function nhsblocks_hero_footer() {
 
 add_action( 'wp_footer', 'nhsblocks_hero_footer' );
 
+function wpdc_enqueue_jitsi_script() {
+    if ( has_block( 'nhsblocks/videomeetup' ) ) {
+        $current_user = wp_get_current_user();
+        $display_name = '';
+        if (0 != $current_user->ID) {
+            $display_name = $current_user->display_name ? $current_user->display_name : ($current_user->first_name.' '.$current_user->last_name);
+        }
+        wp_enqueue_script('jitsi-api', 'https://jitsi-test-1.staging.nhsla.net/external_api.js', array(), false);
+        wp_enqueue_script('jitsi-script', plugins_url('/src/17-video-meetup/jitsi.js', __FILE__),
+            array('jquery', 'wp-blocks'), filemtime(plugin_dir_path(__FILE__).'/src/17-video-meetup/jitsi.js'));
+        wp_add_inline_script('jitsi-script', "const displayname='".$display_name."';", 'before');
+    }
+}
+// Alternatively action of 'enqueue_block_assets' could be used
+add_action( 'wp_footer', 'wpdc_enqueue_jitsi_script' );
 
 
 

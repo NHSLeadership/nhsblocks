@@ -17,9 +17,10 @@ import "./09-row-group";
 import "./10-hero-block";
 import "./11-section-stripes";
 import "./12-contents-list";
-import "./12-contents-list/contents-list-page"
+import "./12-contents-list/contents-list-page";
 import "./13-review-date";
 import "./14-filters";
 import "./15-pagination";
-import "./16-action-back-link/action-link"
-import "./16-action-back-link/back-link"
+import "./16-action-back-link/action-link";
+import "./16-action-back-link/back-link";
+import "./17-video-meetup";
