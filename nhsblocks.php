@@ -256,7 +256,7 @@ add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' )
  */
 function nhsblocks_register_style() {
 	$theme = wp_get_theme(); // gets the current theme
-	if ( 'nightingale' == $theme->name || 'nightingale' == $theme->parent_theme ) {
+	if ( 'Nightingale' !== $theme->name || 'Nightingale' !== $theme->parent_theme ) {
 		wp_register_style( 'nhsblocks', plugins_url( 'style.min.css', __FILE__ ) );
 	}
 }
@@ -265,7 +265,7 @@ add_action( 'init', 'nhsblocks_register_style' ); // Pulls front end styling to 
 
 function nhsblocks_enqueue_style() {
 	$theme = wp_get_theme(); // gets the current theme
-	if ( 'nightingale' == $theme->name || 'nightingale' == $theme->parent_theme ) {
+	if ( 'Nightingale' !== $theme->name || 'Nightingale' !== $theme->parent_theme ) {
 		wp_enqueue_style( 'nhsblocks' );
 	}
 }
@@ -274,16 +274,27 @@ add_action( 'wp_enqueue_scripts', 'nhsblocks_enqueue_style' );
 
 
 function nhsblocks_hero_footer() {
-	echo "<script>
-	    const heroBlock = document.querySelector('.wp-block-nhsblocks-heroblock');
+	$theme = wp_get_theme(); // gets the current theme
+	$scriptout = '<script>
+	    const heroBlock = document.querySelector(\'.wp-block-nhsblocks-heroblock\');
 	    if ( ( heroBlock ) ) { 
-	        matches = heroBlock.matches ? heroBlock.matches('.wp-block-nhsblocks-heroblock') : heroBlock.msMatchesSelector('.wp-block-nhsblocks-heroblock');
-		    if ( matches === true ) {
-			    const mainContent = document.querySelector( '#maincontent' );
+	        matches = heroBlock.matches ? heroBlock.matches(\'.wp-block-nhsblocks-heroblock\') : heroBlock.msMatchesSelector(\'.wp-block-nhsblocks-heroblock\');
+		    if ( matches === true ) { ';
+	if ( 'Nightingale' === $theme->name || 'Nightingale' === $theme->parent_theme ) {
+		$scriptout .= "
+				const mainContent = document.querySelector( 'main' );
 			    const contentInner = document.querySelector( '#contentinner' );
 			    const wholeDoc = document.querySelector( 'body' );
 			    const breadCrumb = document.querySelector( '.nhsuk-breadcrumb' );
-			    const articleTitle = document.querySelector( '.entry-header' );
+			    const articleTitle = document.querySelector( '.entry-header' );";
+	} else {
+		$scriptout .= "
+			    const mainContent = document.querySelector( 'main' );
+			    const contentInner = document.querySelector( 'article' );
+			    const wholeDoc = document.querySelector( 'body' );
+			    const articleTitle = document.querySelector( '.entry-header' );";
+	}
+	$scriptout .= "			    
 			    mainContent.insertBefore( heroBlock, contentInner );
 			    articleTitle.style.display = 'none';
 			    mainContent.style.paddingTop = '0';
@@ -332,7 +343,8 @@ function nhsblocks_hero_footer() {
 			    }, 200);
 			});
 		});		
-	</script>";
+		</script>";
+	echo $scriptout;
 }
 
 add_action( 'wp_footer', 'nhsblocks_hero_footer' );

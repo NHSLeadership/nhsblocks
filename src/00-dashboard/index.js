@@ -280,31 +280,44 @@ registerBlockType("nhsblocks/dashpanel", {
     );
     },
     deprecated: [ {
-            save: props => {
-                const {
-                    attributes: {
-                        overlayColor, backgroundImage,  panelTitle, panelLink
-                    }
-                } = props;
-                return (
+        attributes: {
+            panelTitle: {
+                type: "string",
+                source: "html",
+                selector: "h3"
+            },
+            panelLink: {
+                type: "string",
+                source: "attribute",
+                selector: ".nhsuk-promo__link-wrapper",
+                attribute: "href"
+            },
+            backgroundImage: {
+                type: 'string',
+                default: '/wp-content/plugins/nhsblocks/assets/pixel_trans.png',
+            },
+            overlayColor: {
+                type: 'string',
+                default: '#ffffff',
+            },
+        },
+        save: ( {attributes} ) =>
                     <div className = "nhsuk-panel-group__item">
-                    <a href={panelLink} className="nhsuk-promo__link-wrapper">
+                    <a href={attributes.panelLink} className="nhsuk-promo__link-wrapper">
                     <div class="nhsuk-panel-with-label" style={{
-                    backgroundImage: `url(${backgroundImage})`,
+                    backgroundImage: `url(${attributes.backgroundImage})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         backgroundColor: overlayColor
                 }}>
             <h3 class="nhsuk-panel-with-label__label">
 
-                    <RichText.Content value={panelTitle} />
+                    <RichText.Content value={attributes.panelTitle} />
                 </h3>
                 <img src="/wp-content/themes/nightingale-2-0/assets/pixel_trans.png" class="nhsuk-dashboard__image" alt="" />
                     </div>
                     </a>
-                    </div>
-                );
-            }
+                    </div>,
         }
     ]
 });
