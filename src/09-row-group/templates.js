@@ -11,7 +11,7 @@ import * as Icons from '../icons.js';
 export const GRID_OPTIONS = [
     {
         name: 'twocols',
-        label: ('Two Columns', 'nhsblocks'),
+        label: ('Two Columns Generic', 'nhsblocks'),
         isDefault: true,
         icon: Icons.twocolsIcon,
         innerBlocks: [
@@ -21,7 +21,7 @@ export const GRID_OPTIONS = [
     },
     {
         name: 'threecols',
-        label: __('Three Columns', 'nhsblocks'),
+        label: __('Three Columns Generic', 'nhsblocks'),
         icon: Icons.threecolsIcon,
         innerBlocks: [
             [ 'nhsblocks/onethird' ],
@@ -31,7 +31,7 @@ export const GRID_OPTIONS = [
     },
     {
         name: 'one3two3',
-        label: __('One Third / Two Thirds Columns', 'nhsblocks'),
+        label: __('One Third / Two Thirds Columns Generic', 'nhsblocks'),
         icon: Icons.twoleftthirdIcon,
         innerBlocks: [
             [ 'nhsblocks/onethird' ],
@@ -40,7 +40,7 @@ export const GRID_OPTIONS = [
     },
     {
         name: 'two3one3',
-        label: __('Two Thirds / One Third Columns', 'nhsblocks'),
+        label: __('Two Thirds / One Third Columns Generic', 'nhsblocks'),
         icon: Icons.tworightthirdIcon,
         innerBlocks: [
             [ 'nhsblocks/twothirds' ],
@@ -49,7 +49,7 @@ export const GRID_OPTIONS = [
     },
     {
         name: 'one4one2one4',
-        label: __('One Quarter / One Half / One Quarter Columns', 'nhsblocks'),
+        label: __('One Quarter / One Half / One Quarter Columns Generic', 'nhsblocks'),
         icon: Icons.fourtwofourIcon,
         innerBlocks: [
             [ 'nhsblocks/onequarter' ],
@@ -59,7 +59,7 @@ export const GRID_OPTIONS = [
     },
     {
         name: 'one4one4one2',
-        label: __('One Quarter / One Quarter / One Half Columns', 'nhsblocks'),
+        label: __('One Quarter / One Quarter / One Half Columns Generic', 'nhsblocks'),
         icon: Icons.fourfourtwoIcon,
         innerBlocks: [
             [ 'nhsblocks/onequarter' ],
@@ -69,7 +69,7 @@ export const GRID_OPTIONS = [
     },
     {
         name: 'one2one4one4',
-        label: __('One Half / One Quarter / One Quarter Columns', 'nhsblocks'),
+        label: __('One Half / One Quarter / One Quarter Columns Generic', 'nhsblocks'),
         icon: Icons.twofourfourIcon,
         innerBlocks: [
             [ 'nhsblocks/onehalf' ],

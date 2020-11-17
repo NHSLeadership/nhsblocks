@@ -244,7 +244,7 @@ function nhsblocks_block_classes( $attributes ) {
  */
 function nhsblocks_gutenberg_editor_styles() {
 	$theme = wp_get_theme(); // gets the current theme
-	if ( 'nightingale' == $theme->name || 'nightingale' == $theme->parent_theme ) {
+	if ( 'Nightingale' !== $theme->name || 'Nightingale' !== $theme->parent_theme ) {
 		wp_enqueue_style( 'nhsl-block-editor-styles', plugins_url( 'style-gutenburg.css', __FILE__ ), false, '1.1', 'all' );
 	}
 }
