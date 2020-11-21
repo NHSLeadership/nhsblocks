@@ -277,6 +277,7 @@ function nhsblocks_hero_footer() {
 	$theme = wp_get_theme(); // gets the current theme
 	$scriptout = '<script>
 	    const heroBlock = document.querySelector(\'.wp-block-nhsblocks-heroblock\');
+	    const removeElements = (elms) => elms.forEach(el => el.remove());
 	    if ( ( heroBlock ) ) { 
 	        matches = heroBlock.matches ? heroBlock.matches(\'.wp-block-nhsblocks-heroblock\') : heroBlock.msMatchesSelector(\'.wp-block-nhsblocks-heroblock\');
 		    if ( matches === true ) { ';
@@ -286,7 +287,9 @@ function nhsblocks_hero_footer() {
 			    const contentInner = document.querySelector( '#contentinner' );
 			    const wholeDoc = document.querySelector( 'body' );
 			    const breadCrumb = document.querySelector( '.nhsuk-breadcrumb' );
-			    const articleTitle = document.querySelector( '.entry-header' );";
+			    const articleTitle = document.querySelector( '.entry-header' );
+			    const sectionTitle = wholeDoc.querySelector( '#nhsuk-tabbed-title' );
+			    const tabbedTabs = document.querySelector( '.nhsuk-bordered-tabs-container' );";
 	} else {
 		$scriptout .= "
 			    const mainContent = document.querySelector( 'main' );
@@ -298,9 +301,18 @@ function nhsblocks_hero_footer() {
 			    mainContent.insertBefore( heroBlock, contentInner );
 			    articleTitle.style.display = 'none';
 			    mainContent.style.paddingTop = '0';
-			    heroBlock.style.marginBottom = '70px';
+			    if ( tabbedTabs ) {
+			    	mainContent.insertBefore( tabbedTabs, contentInner );
+			    	heroBlock.style.borderBottom = '70px solid white';
+			    	heroBlock.style.marginBottom = 'none';
+			    } else {
+			    	heroBlock.style.marginBottom = '70px';
+			    }
 			    if ( breadCrumb ) { 
 			    	wholeDoc.removeChild( breadCrumb );
+			    }
+			    if ( sectionTitle ) { 
+			    	removeElements( document.querySelectorAll(\"#nhsuk-tabbed-title\") );
 			    }
 		    }
 	    }
