@@ -128,29 +128,29 @@ registerBlockType("nhsblocks/reveal1", {
 		} = props;
 
 		return (
-			<details className = "nhsuk-details">
+			<details className="nhsuk-details">
 				<summary
-				className = "nhsuk-details__summary"
-				role = "button"
-				aria-controls = "details-content-"
-				aria-expanded = "false" >
+				className="nhsuk-details__summary"
+				role="button"
+				aria-controls="details-content-"
+				aria-expanded="false" >
 					< span
-						className = "nhsuk-details__summary-text" >
+						className="nhsuk-details__summary-text" >
 						< RichText.Content
-							value = {revealTitle}
+							value={revealTitle}
 							/>
 					< /span>
 				< /summary>
 				< div
-					className = "nhsuk-details__text"
-					id = "details-content-"
-					aria-hidden = "false" >
+					className="nhsuk-details__text"
+					id="details-content-"
+					aria-hidden="false" >
 						{withImage === true && (
 							<InnerBlocks.Content />
 						)}
 						< RichText.Content
-					multiline = "p"
-					value = {revealText}
+					multiline="p"
+					value={revealText}
 					/>
 				< /div>
 		< /details>
@@ -168,9 +168,6 @@ registerBlockType("nhsblocks/reveal1", {
 						type: "string",
 						source: "html",
 						selector: ".nhsuk-details__text"
-					},
-					expanderBox: {
-						type: "string"
 					}
 				},
 			save: ( {attributes} ) =>
