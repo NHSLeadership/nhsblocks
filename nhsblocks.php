@@ -77,13 +77,13 @@ function nhsblocks_register_blocks() {
 		return;
 	}
 
-	// Retister the block editor script.
+	// Register the block editor script.
 	wp_register_script(
 		'nhsblocks-editor-script',                                            // label.
 		plugins_url( '/build/index.js', __FILE__ ),                        // script file.
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-data' ),        // dependencies.
-		'20201202',
-		'in_footer'
+		'20201202', // version
+		'in_footer' // where to load
 	);
 
 	register_block_type(
@@ -256,7 +256,12 @@ add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' )
  */
 function nhsblocks_register_style() {
 	$theme = wp_get_theme(); // gets the current theme
-	if ( 'Nightingale' !== $theme->name ) {
+	$parent = wp_get_theme( get_template() );
+	/*echo '<pre>';
+	echo print_r($theme);
+	echo '</pre>';
+	die();*/
+	if ( 'Nightingale' !== $theme->name && ( 'Nightingale' !== $parent->name ) ) {
 		wp_register_style( 'nhsblocks', plugins_url( 'style.min.css', __FILE__ ) );
 	}
 }
