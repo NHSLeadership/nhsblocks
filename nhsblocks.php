@@ -257,10 +257,6 @@ add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' )
 function nhsblocks_register_style() {
 	$theme = wp_get_theme(); // gets the current theme
 	$parent = wp_get_theme( get_template() );
-	/*echo '<pre>';
-	echo print_r($theme);
-	echo '</pre>';
-	die();*/
 	if ( 'Nightingale' !== $theme->name && ( 'Nightingale' !== $parent->name ) ) {
 		wp_register_style( 'nhsblocks', plugins_url( 'style.min.css', __FILE__ ) );
 	}
