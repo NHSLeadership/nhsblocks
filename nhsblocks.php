@@ -82,7 +82,7 @@ function nhsblocks_register_blocks() {
 		'nhsblocks-editor-script',                                            // label.
 		plugins_url( '/build/index.js', __FILE__ ),                        // script file.
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-data' ),        // dependencies.
-		'20190828',
+		'20201202',
 		'in_footer'
 	);
 
