@@ -65,28 +65,7 @@
     margin: 0 !important;
   }
 }
-/*panel extension*/
-.nhsuk-panel.is-style-panel-grey {
-  @extend .nhsuk-panel--grey;
-}
 
-.nhsuk-panel.is-style-panel-with-label {
-  @extend .nhsuk-panel-with-label;
-
-  h3, h3 .rich-text {
-    @extend .nhsuk-panel-with-label__label;
-  }
-}
-
-/* promo extension */
-.nhsuk-promo.is-style-promo-small {
-  @extend .nhsuk-promo--small;
-}
-.nhsuk-promo {
-  figure {
-    margin: 0;
-  }
-}
 
 /*do and dont list extension*/
 .nhsuk-do-dont-list {
@@ -108,18 +87,7 @@
   }
 }
 
-.wp-block-nhsblocks-panel1 {
-  .paneltext {
-    display: flow-root;
-  }
-}
 
-// fix for ever diminishing panels
-.wp-block-nhsblock-rowgroup {
-  .nhsuk-panel-group {
-    padding: 0;
-  }
-}
 
 
 .nhsuk-hero__overlay {
@@ -144,4 +112,32 @@
   position: relative;
   right: 50%;
   width: 100vw;
+}
+
+// new card variations
+.nhsuk-card {
+  .nhsuk-card__description {
+    display: flow-root;
+  }
+}
+.nhsuk-card.is-style-panel-with-label {
+  @extend .nhsuk-card--feature;
+  .nhsuk-card__content {
+    @extend .nhsuk-card__content--feature;
+
+    h2 {
+      @extend .nhsuk-card__heading;
+      @extend .nhsuk-card__heading--feature;
+      @extend .nhsuk-heading-m;
+    }
+  }
+}
+.nhsuk-card.is-style-panel-grey {
+  background: inherit;
+  border: none;
+}
+.nhsuk-card {
+  figure {
+    margin: 0;
+  }
 }
