@@ -279,6 +279,7 @@ function nhsblocks_hero_footer() {
 	$scriptout = '<script>
 	    const heroBlock = document.querySelector(\'.wp-block-nhsblocks-heroblock\');
 	    const removeElements = (elms) => elms.forEach(el => el.remove());
+	    const tabbedTabs = document.querySelector( \'.nhsuk-bordered-tabs-container\' );
 	    if ( ( heroBlock ) ) { 
 	        matches = heroBlock.matches ? heroBlock.matches(\'.wp-block-nhsblocks-heroblock\') : heroBlock.msMatchesSelector(\'.wp-block-nhsblocks-heroblock\');
 		    if ( matches === true ) { ';
@@ -316,7 +317,35 @@ function nhsblocks_hero_footer() {
 			    	removeElements( document.querySelectorAll(\"#nhsuk-tabbed-title\") );
 			    }
 		    }
-	    }
+	    } else if ( tabbedTabs ) {;"
+			if ( 'Nightingale' === $theme->name || 'Nightingale' === $theme->parent_theme ) {
+				$scriptout .= "
+						const mainContent = document.querySelector( 'main' );
+					    const contentInner = document.querySelector( '#contentinner' );
+					    const wholeDoc = document.querySelector( 'body' );
+					    const breadCrumb = document.querySelector( '.nhsuk-breadcrumb' );
+					    const articleTitle = document.querySelector( '.entry-header' );
+					    const sectionTitle = wholeDoc.querySelector( '#nhsuk-tabbed-title' );";
+
+			} else {
+				$scriptout .= "
+					    const mainContent = document.querySelector( 'main' );
+					    const contentInner = document.querySelector( 'article' );
+					    const wholeDoc = document.querySelector( 'body' );
+					    const articleTitle = document.querySelector( '.entry-header' );";
+			}
+
+			$scriptout .= "
+	        mainContent.insertBefore( tabbedTabs, contentInner );
+	        if ( breadCrumb ) {
+			    	wholeDoc.removeChild( breadCrumb );
+			    }
+			    if ( sectionTitle ) {
+			    	removeElements( document.querySelectorAll( '#nhsuk-tabbed-title' ) );
+			}
+			articleTitle.style.marginTop = '20px';
+			mainContent.style.paddingTop = '0';
+	    }		
 	    // Page Link JS
 	    const careCardWarning = document.querySelector('.nhsuk-care-card.is-style-warning-callout');
 	    if ( ( careCardWarning ) ) {
