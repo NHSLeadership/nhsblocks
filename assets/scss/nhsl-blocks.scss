@@ -1,27 +1,9 @@
-.nhsuk-promo-group__item {
-  margin-bottom: 36px;
-}
+
 
 .nhsuk-care-card {
   width: 100%;
   .nhsuk-care-card-content {
     overflow: auto;
-  }
-}
-
-.nhsuk-panel-with-label {
-  width: 100%;
-
-  .nhsuk-panel-with-label__label {
-    a, a:visited {
-      color: $color_nhsuk-white;
-    }
-  }
-
-  .entry-footer {
-    span {
-      padding: 0 10px;
-    }
   }
 }
 
@@ -92,24 +74,7 @@
   }
 
 }
-// promo box tweak
-.wp-block-nhsblocks-promo1 {
-  .nhsuk-image{
-    width: 100%;
-  }
-  img.nhsuk-promo__img {
-    // padding: 10px;
-    width: 100%;
-    height: auto;
-  }
 
-
-
-  .nhsuk-promo__description,
-  .nhsuk-promo__heading{
-    padding: 0 32px;
-  }
-}
 
 //reversed quote tweak
 .nhsuk-inset-text--rev, .is-style-quote-reverse {
