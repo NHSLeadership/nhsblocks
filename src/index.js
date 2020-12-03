@@ -11,7 +11,6 @@ import "./02-button";
 import "./03-reveal";
 import "./04-panel";
 import "./06-promo";
-import "./06a-promo-group";
 import "./07-testimonial";
 import "./08-card";
 import "./09-row-group";

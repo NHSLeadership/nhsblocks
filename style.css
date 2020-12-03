@@ -110,26 +110,6 @@ a:active {
   outline: 1px dotted #212b32;
 }
 
-.nhsuk-link--no-visited-state:link {
-  color: #005eb8;
-}
-
-.nhsuk-link--no-visited-state:visited {
-  color: #005eb8;
-}
-
-.nhsuk-link--no-visited-state:hover {
-  color: #7C2855;
-}
-
-.nhsuk-link--no-visited-state:active {
-  color: #002f5c;
-}
-
-.nhsuk-link--no-visited-state:focus {
-  color: #212b32;
-}
-
 /* ==========================================================================
    OBJECTS / #GRID
    ========================================================================== */
@@ -601,7 +581,7 @@ h2,
 }
 
 h3,
-.nhsuk-heading-m, .nhsuk-card.is-style-panel-with-label .nhsuk-card__content h2 {
+.nhsuk-heading-m {
   font-size: 20px;
   font-size: 1.25rem;
   line-height: 1.4;
@@ -613,7 +593,7 @@ h3,
 
 @media (min-width: 40.0625em) {
   h3,
-  .nhsuk-heading-m, .nhsuk-card.is-style-panel-with-label .nhsuk-card__content h2 {
+  .nhsuk-heading-m {
     font-size: 24px;
     font-size: 1.5rem;
     line-height: 1.33333;
@@ -622,7 +602,7 @@ h3,
 
 @media print {
   h3,
-  .nhsuk-heading-m, .nhsuk-card.is-style-panel-with-label .nhsuk-card__content h2 {
+  .nhsuk-heading-m {
     font-size: 18pt;
     line-height: 1.15;
   }
@@ -630,7 +610,7 @@ h3,
 
 @media (min-width: 40.0625em) {
   h3,
-  .nhsuk-heading-m, .nhsuk-card.is-style-panel-with-label .nhsuk-card__content h2 {
+  .nhsuk-heading-m {
     margin-bottom: 24px;
   }
 }
@@ -1077,19 +1057,15 @@ ol + .nhsuk-heading-l {
 p + h3, .nhsuk-body-m + h3, address + h3,
 p + .nhsuk-heading-m,
 .nhsuk-body-m + .nhsuk-heading-m,
-address + .nhsuk-heading-m, .nhsuk-card.is-style-panel-with-label .nhsuk-card__content p + h2, .nhsuk-card.is-style-panel-with-label .nhsuk-card__content .nhsuk-body-m + h2, .nhsuk-card.is-style-panel-with-label .nhsuk-card__content address + h2,
+address + .nhsuk-heading-m,
 .nhsuk-body-s + h3,
 .nhsuk-body-s + .nhsuk-heading-m,
-.nhsuk-card.is-style-panel-with-label .nhsuk-card__content .nhsuk-body-s + h2,
 .nhsuk-list + h3,
 ul + h3,
 ol + h3,
 .nhsuk-list + .nhsuk-heading-m,
 ul + .nhsuk-heading-m,
 ol + .nhsuk-heading-m,
-.nhsuk-card.is-style-panel-with-label .nhsuk-card__content .nhsuk-list + h2,
-.nhsuk-card.is-style-panel-with-label .nhsuk-card__content ul + h2,
-.nhsuk-card.is-style-panel-with-label .nhsuk-card__content ol + h2,
 p + h4,
 .nhsuk-body-m + h4,
 address + h4,
@@ -1111,19 +1087,15 @@ ol + .nhsuk-heading-s {
   p + h3, .nhsuk-body-m + h3, address + h3,
   p + .nhsuk-heading-m,
   .nhsuk-body-m + .nhsuk-heading-m,
-  address + .nhsuk-heading-m, .nhsuk-card.is-style-panel-with-label .nhsuk-card__content p + h2, .nhsuk-card.is-style-panel-with-label .nhsuk-card__content .nhsuk-body-m + h2, .nhsuk-card.is-style-panel-with-label .nhsuk-card__content address + h2,
+  address + .nhsuk-heading-m,
   .nhsuk-body-s + h3,
   .nhsuk-body-s + .nhsuk-heading-m,
-  .nhsuk-card.is-style-panel-with-label .nhsuk-card__content .nhsuk-body-s + h2,
   .nhsuk-list + h3,
   ul + h3,
   ol + h3,
   .nhsuk-list + .nhsuk-heading-m,
   ul + .nhsuk-heading-m,
   ol + .nhsuk-heading-m,
-  .nhsuk-card.is-style-panel-with-label .nhsuk-card__content .nhsuk-list + h2,
-  .nhsuk-card.is-style-panel-with-label .nhsuk-card__content ul + h2,
-  .nhsuk-card.is-style-panel-with-label .nhsuk-card__content ol + h2,
   p + h4,
   .nhsuk-body-m + h4,
   address + h4,
@@ -2875,16 +2847,16 @@ b {
   background: none;
 }
 
+.nhsuk-breadcrumb__link:focus:hover {
+  color: #212b32;
+}
+
 .nhsuk-breadcrumb__link:visited {
   color: #005eb8;
 }
 
 .nhsuk-breadcrumb__link:visited:hover {
   color: #7C2855;
-}
-
-.nhsuk-breadcrumb__link:focus:hover {
-  color: #212b32;
 }
 
 .nhsuk-breadcrumb__back {
@@ -3268,200 +3240,6 @@ b {
 }
 
 /* ==========================================================================
-   COMPONENTS / #CARD
-   ========================================================================== */
-/**
- * 1. Is needed for the :active top positioning.
- * 2. Border is used to create a divider between the white content
- *    box and an image.
- * 3. Creates the 'pressed down' effect when clicked.
- * 4. Removes padding-top from headings directly after the card group.
- * 5. Includes the border width to achieve the correct left alignment.
- * 6. Stops the heading from spanning the full width of the card.
- * 7. Removes padding top for the feature heading positioning.
- */
-.nhsuk-card {
-  margin-bottom: 40px;
-  background: #ffffff;
-  border: 1px solid #d8dde0;
-  position: relative;
-  /* [1] */
-  width: 100%;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-card {
-    margin-bottom: 48px;
-  }
-}
-
-.nhsuk-card__img {
-  border-bottom: 1px solid #f0f4f5;
-  /* [2] */
-  display: block;
-  width: 100%;
-}
-
-@media print {
-  .nhsuk-card__img {
-    display: none;
-  }
-}
-
-.nhsuk-card__content {
-  padding: 24px;
-  position: relative;
-}
-
-.nhsuk-card__content > *:first-child {
-  margin-top: 0;
-}
-
-.nhsuk-card__content > *:last-child {
-  margin-bottom: 0;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-card__content {
-    padding: 32px;
-  }
-}
-
-.nhsuk-card__heading, .nhsuk-card.is-style-panel-with-label .nhsuk-card__content h2,
-.nhsuk-card__metadata,
-.nhsuk-card__description {
-  margin-bottom: 16px;
-}
-
-/* Clickable card
-  ========================================================================== */
-.nhsuk-card--clickable {
-  border-bottom-width: 4px;
-}
-
-.nhsuk-card--clickable:hover, .nhsuk-card--clickable:active {
-  cursor: pointer;
-}
-
-.nhsuk-card--clickable:hover .nhsuk-card__heading a, .nhsuk-card--clickable:hover .nhsuk-card.is-style-panel-with-label .nhsuk-card__content h2 a, .nhsuk-card.is-style-panel-with-label .nhsuk-card__content .nhsuk-card--clickable:hover h2 a,
-.nhsuk-card--clickable:hover .nhsuk-card__link, .nhsuk-card--clickable:active .nhsuk-card__heading a, .nhsuk-card--clickable:active .nhsuk-card.is-style-panel-with-label .nhsuk-card__content h2 a, .nhsuk-card.is-style-panel-with-label .nhsuk-card__content .nhsuk-card--clickable:active h2 a,
-.nhsuk-card--clickable:active .nhsuk-card__link {
-  color: #7C2855;
-  text-decoration: none;
-}
-
-.nhsuk-card--clickable:hover .nhsuk-card__heading a:focus, .nhsuk-card--clickable:hover .nhsuk-card.is-style-panel-with-label .nhsuk-card__content h2 a:focus, .nhsuk-card.is-style-panel-with-label .nhsuk-card__content .nhsuk-card--clickable:hover h2 a:focus,
-.nhsuk-card--clickable:hover .nhsuk-card__link:focus, .nhsuk-card--clickable:active .nhsuk-card__heading a:focus, .nhsuk-card--clickable:active .nhsuk-card.is-style-panel-with-label .nhsuk-card__content h2 a:focus, .nhsuk-card.is-style-panel-with-label .nhsuk-card__content .nhsuk-card--clickable:active h2 a:focus,
-.nhsuk-card--clickable:active .nhsuk-card__link:focus {
-  color: #212b32;
-}
-
-.nhsuk-card--clickable:hover {
-  border-color: #aeb7bd;
-}
-
-.nhsuk-card--clickable:active {
-  border-color: #aeb7bd;
-  bottom: -1px;
-  /* [3] */
-}
-
-/* Card group
-  ========================================================================== */
-/**
-* Card group allows you to have a row of cards.
-*
-* Flexbox is used to make each card in a row the same height.
-*/
-.nhsuk-card-group {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 16px;
-  padding: 0;
-}
-
-@media (max-width: 48.0525em) {
-  .nhsuk-card-group {
-    margin-bottom: 40px;
-  }
-}
-
-.nhsuk-card-group + h2,
-.nhsuk-card-group + .nhsuk-heading-l,
-.nhsuk-card-group + h3,
-.nhsuk-card-group + .nhsuk-heading-m,
-.nhsuk-card.is-style-panel-with-label .nhsuk-card__content .nhsuk-card-group + h2 {
-  padding-top: 0;
-  /* [4] */
-}
-
-.nhsuk-card-group__item {
-  display: flex;
-  list-style-type: none;
-  margin-bottom: 0;
-}
-
-@media (max-width: 48.0525em) {
-  .nhsuk-card-group__item {
-    flex: 0 0 100%;
-  }
-}
-
-.nhsuk-card-group__item .nhsuk-card {
-  margin-bottom: 32px;
-}
-
-@media (max-width: 48.0525em) {
-  .nhsuk-card-group__item .nhsuk-card {
-    margin-bottom: 16px;
-  }
-  .nhsuk-card-group__item:last-child .nhsuk-card {
-    margin-bottom: 0;
-  }
-}
-
-/* Card feature
-  ========================================================================== */
-.nhsuk-card--feature, .nhsuk-card.is-style-panel-with-label {
-  margin-top: 40px;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-card--feature, .nhsuk-card.is-style-panel-with-label {
-    margin-top: 48px;
-  }
-}
-
-.nhsuk-card__heading--feature, .nhsuk-card.is-style-panel-with-label .nhsuk-card__content h2 {
-  background: #005eb8;
-  color: #ffffff;
-  display: inline-block;
-  left: -25px;
-  /* [5] */
-  margin-bottom: 8px;
-  margin-right: -24px;
-  /* [6] */
-  padding: 8px 24px;
-  position: relative;
-  top: -8px;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-card__heading--feature, .nhsuk-card.is-style-panel-with-label .nhsuk-card__content h2 {
-    left: -33px;
-    /* [5] */
-    margin-right: -32px;
-    /* [6] */
-    padding: 8px 32px;
-    top: -16px;
-  }
-}
-
-.nhsuk-card__content--feature, .nhsuk-card.is-style-panel-with-label .nhsuk-card__content {
-  padding-top: 0 !important;
-}
-
-/* ==========================================================================
    COMPONENTS / #CARE-CARD
    ========================================================================== */
 /**
@@ -3513,23 +3291,8 @@ b {
 }
 
 .nhsuk-care-card__heading-container {
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-bottom: 16px;
-  padding-top: 16px;
+  padding: 16px 24px;
   position: relative;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-care-card__heading-container {
-    padding-left: 32px;
-  }
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-care-card__heading-container {
-    padding-right: 32px;
-  }
 }
 
 .nhsuk-care-card__arrow {
@@ -3550,13 +3313,6 @@ b {
 @media print {
   .nhsuk-care-card__arrow {
     display: none;
-  }
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-care-card__arrow {
-    left: 38px;
-    /* [4] */
   }
 }
 
@@ -3609,13 +3365,8 @@ b {
 }
 
 .nhsuk-care-card__content {
-  padding-bottom: 24px;
-  padding-left: 24px;
-  padding-right: 24px;
   background-color: #ffffff;
-  border: 1px solid #d8dde0;
-  border-top: 0;
-  padding-top: 32px;
+  padding: 32px 24px 24px;
   /* [5] */
 }
 
@@ -3625,24 +3376,6 @@ b {
 
 .nhsuk-care-card__content > *:last-child {
   margin-bottom: 0;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-care-card__content {
-    padding-bottom: 32px;
-  }
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-care-card__content {
-    padding-left: 32px;
-  }
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-care-card__content {
-    padding-right: 32px;
-  }
 }
 
 @media (min-width: 40.0625em) {
@@ -3704,7 +3437,6 @@ b {
 
 .nhsuk-care-card--immediate .nhsuk-care-card__content, .wp-block-nhsblocks-card1.nhsuk-care-card.is-style-immediate .nhsuk-care-card__content {
   background-color: #212b32;
-  border: 0;
   color: #ffffff;
 }
 
@@ -3840,6 +3572,9 @@ b {
 .nhsuk-checkboxes__input:focus + .nhsuk-checkboxes__label::before {
   border: 4px solid #212b32;
   box-shadow: 0 0 0 4px #ffeb3b;
+  outline: 4px solid transparent;
+  /* 1 */
+  outline-offset: 4px;
 }
 
 /* Selected state */
@@ -4005,7 +3740,6 @@ b {
  * 4. Only underline the text, not the arrow
  * 5. Remove the default details marker so we can style our own consistently and
  *    ensure it displays in Firefox
- * 6. Custom padding to left align the details text with the summary
  */
 .nhsuk-details {
   color: #212b32;
@@ -4116,8 +3850,7 @@ b {
   border-left: 4px solid #d8dde0;
   margin-top: 8px;
   padding: 16px;
-  padding-left: 20px;
-  /* [6] */
+  padding-left: 24px;
 }
 
 .nhsuk-details__text > *:first-child {
@@ -4126,6 +3859,11 @@ b {
 
 .nhsuk-details__text > *:last-child {
   margin-bottom: 0;
+}
+
+.nhsuk-details__text p {
+  margin-bottom: 24px;
+  margin-top: 0;
 }
 
 /**
@@ -4141,12 +3879,6 @@ b {
  */
 .nhsuk-expander, .nhsuk-details.is-style-expander {
   background-color: #ffffff;
-  border: 1px solid #d8dde0;
-  border-bottom-width: 4px;
-}
-
-.nhsuk-expander:hover, .nhsuk-details.is-style-expander:hover {
-  border-color: #aeb7bd;
 }
 
 .nhsuk-expander .nhsuk-details__summary, .nhsuk-details.is-style-expander .nhsuk-details__summary {
@@ -4190,7 +3922,7 @@ b {
   color: #005eb8;
   cursor: pointer;
   display: inline-block;
-  padding: 4px 4px 4px 38px;
+  padding: 8px 8px 8px 38px;
   position: relative;
 }
 
@@ -4226,10 +3958,6 @@ b {
   .nhsuk-expander .nhsuk-details__text, .nhsuk-details.is-style-expander .nhsuk-details__text {
     padding-top: 0;
   }
-}
-
-.nhsuk-expander[open], .nhsuk-details.is-style-expander[open] {
-  border-bottom-width: 1px;
 }
 
 .nhsuk-expander[open] .nhsuk-details__summary:focus .nhsuk-details__summary-text, .nhsuk-details.is-style-expander[open] .nhsuk-details__summary:focus .nhsuk-details__summary-text {
@@ -4297,7 +4025,6 @@ b {
   padding: 24px;
   background-color: #ffffff;
   color: #212b32;
-  border: 1px solid #d8dde0;
   padding-top: 0 !important;
   /* [1] */
 }
@@ -4342,7 +4069,7 @@ b {
   background-color: #005eb8;
   color: #ffffff;
   display: inline-block;
-  margin: 0 0 8px -33px;
+  margin: 0 0 8px -32px;
   padding: 8px 32px;
   position: relative;
   top: -16px;
@@ -4366,7 +4093,7 @@ b {
 
 @media (max-width: 40.0525em) {
   .nhsuk-do-dont-list__label {
-    margin-left: -25px;
+    margin-left: -24px;
     margin-right: 0;
     padding: 8px 24px;
     top: -8px;
@@ -5974,19 +5701,19 @@ b {
 }
 
 .nhsuk-header__transactional-service-name--link:visited {
-  color: #ffffff;
-}
-
-.nhsuk-header__transactional-service-name--link:hover {
-  color: #ffffff;
-  text-decoration: none;
+  color: #f0f4f5;
 }
 
 .nhsuk-header__transactional-service-name--link:focus {
   color: #212b32;
   outline: 4px solid transparent;
   outline-offset: 4px;
-  text-decoration: none;
+  text-decoration: underline;
+}
+
+.nhsuk-header__transactional-service-name--link:hover {
+  color: #7C2855;
+  text-decoration: underline;
 }
 
 .nhsuk-header__transactional-service-name--link:active {
@@ -6858,11 +6585,11 @@ b {
 }
 
 .nhsuk-input:focus {
-  border: 2px solid #212b32;
-  box-shadow: inset 0 0 0 2px;
-  outline: 4px solid #ffeb3b;
+  border: 4px solid #212b32;
+  box-shadow: 0 0 0 4px #ffeb3b;
+  outline: 4px solid transparent;
   /* 1 */
-  outline-offset: 0;
+  outline-offset: 4px;
 }
 
 .nhsuk-input::-webkit-outer-spin-button,
@@ -6922,8 +6649,8 @@ b {
   /* [2] */
   margin-bottom: 40px;
   margin-top: 40px;
+  border-left: 12px solid #005eb8;
   padding: 16px;
-  border-left: 8px solid #005eb8;
 }
 
 .nhsuk-inset-text > *:first-child {
@@ -6943,12 +6670,6 @@ b {
 @media (min-width: 40.0625em) {
   .nhsuk-inset-text {
     margin-top: 48px;
-  }
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-inset-text {
-    padding: 24px;
   }
 }
 
@@ -7652,864 +7373,6 @@ b {
 }
 
 /* ==========================================================================
-   COMPONENTS/ #RADIOS
-   ========================================================================== */
-/**
- * 1. remove 300ms pause on mobile.
- * 2. Fix bug in IE11 caused by transform rotate (-45deg).
- */
-.nhsuk-radios__item {
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.5;
-  clear: left;
-  display: block;
-  margin-bottom: 8px;
-  min-height: 40px;
-  padding: 0 0 0 40px;
-  position: relative;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-radios__item {
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 1.47368;
-  }
-}
-
-@media print {
-  .nhsuk-radios__item {
-    font-size: 14pt;
-    line-height: 1.15;
-  }
-}
-
-.nhsuk-radios__item:last-child,
-.nhsuk-radios__item:last-of-type {
-  margin-bottom: 0;
-}
-
-.nhsuk-radios__input {
-  cursor: pointer;
-  height: 40px;
-  left: 0;
-  margin: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  width: 40px;
-  z-index: 1;
-}
-
-.nhsuk-radios__label {
-  -ms-touch-action: manipulation;
-  /* 1 */
-  cursor: pointer;
-  display: inline-block;
-  margin-bottom: 0;
-  padding: 8px 12px 4px;
-  touch-action: manipulation;
-  /* 1 */
-}
-
-.nhsuk-radios__hint {
-  display: block;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-.nhsuk-radios__input + .nhsuk-radios__label::before {
-  background: #ffffff;
-  border: 2px solid #4c6272;
-  border-radius: 50%;
-  box-sizing: border-box;
-  content: '';
-  height: 40px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 40px;
-}
-
-.nhsuk-radios__input + .nhsuk-radios__label::after {
-  background: #4c6272;
-  border: 10px solid #212b32;
-  border-radius: 50%;
-  content: '';
-  height: 0;
-  left: 10px;
-  opacity: 0;
-  position: absolute;
-  top: 10px;
-  width: 0;
-}
-
-/**
- * Focus state
- *
- * 1. Since box-shadows are removed when users customise their colours
- *    We set a transparent outline that is shown instead.
- *    https://accessibility.blog.gov.uk/2017/03/27/how-users-change-colours-on-websites/
- */
-.nhsuk-radios__input:focus + .nhsuk-radios__label::before {
-  border: 4px solid #212b32;
-  box-shadow: 0 0 0 4px #ffeb3b;
-}
-
-/* Selected state */
-.nhsuk-radios__input:checked + .nhsuk-radios__label::after {
-  opacity: 1;
-}
-
-/* Disabled state */
-.nhsuk-radios__input:disabled,
-.nhsuk-radios__input:disabled + .nhsuk-radios__label {
-  cursor: default;
-}
-
-.nhsuk-radios__input:disabled + .nhsuk-radios__label {
-  opacity: .5;
-}
-
-/*
- * Inline variant
- *
- * 1. Prevent inline modifier being used with conditional reveals
- */
-@media (min-width: 40.0625em) {
-  .nhsuk-radios--inline:after {
-    clear: both;
-    content: '';
-    display: block;
-  }
-  .nhsuk-radios--inline .nhsuk-radios__item {
-    clear: none;
-    float: left;
-    margin-right: 24px;
-  }
-}
-
-.nhsuk-radios--inline.nhsuk-radios--conditional {
-  /* 1 */
-}
-
-.nhsuk-radios--inline.nhsuk-radios--conditional .nhsuk-radios__item {
-  float: none;
-  margin-right: 0;
-}
-
-/* Divider variant */
-.nhsuk-radios__divider {
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #212b32;
-  margin-bottom: 8px;
-  text-align: center;
-  width: 40px;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-radios__divider {
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 1.47368;
-  }
-}
-
-@media print {
-  .nhsuk-radios__divider {
-    font-size: 14pt;
-    line-height: 1.15;
-  }
-}
-
-/* Conditional */
-.nhsuk-radios__conditional {
-  margin-bottom: 16px;
-  border-left: 4px solid #4c6272;
-  margin-left: 18px;
-  padding-left: 30px;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-radios__conditional {
-    margin-bottom: 24px;
-  }
-}
-
-.nhsuk-radios__conditional > :last-child {
-  margin-bottom: 0;
-}
-
-.js-enabled .nhsuk-radios__conditional--hidden {
-  display: none;
-}
-
-/* ==========================================================================
-   COMPONENTS / #REVIEW-DATE
-   ========================================================================== */
-.nhsuk-review-date {
-  margin-top: 40px;
-  color: #4c6272;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-review-date {
-    margin-top: 48px;
-  }
-}
-
-/* ==========================================================================
-   COMPONENTS/ #SELECT
-   ========================================================================== */
-.nhsuk-select {
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.5;
-  border: 2px solid #4c6272;
-  box-sizing: border-box;
-  height: 40px;
-  max-width: 100%;
-  padding: 4px;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-select {
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 1.47368;
-  }
-}
-
-@media print {
-  .nhsuk-select {
-    font-size: 14pt;
-    line-height: 1.15;
-  }
-}
-
-.nhsuk-select:focus {
-  border: 2px solid #212b32;
-  box-shadow: inset 0 0 0 2px;
-  outline: 4px solid #ffeb3b;
-  /* 1 */
-  outline-offset: 0;
-}
-
-.nhsuk-select option:active,
-.nhsuk-select option:checked,
-.nhsuk-select:focus::-ms-value {
-  background-color: #005eb8;
-  color: #ffffff;
-}
-
-.nhsuk-select--error {
-  border: 4px solid #d5281b;
-}
-
-/* ==========================================================================
-   COMPONENTS / #SKIP-LINK
-   ========================================================================== */
-/**
- * 1. Hides the skip link off the page,
- * 2. until the link gains focus from keyboard tabbing.
- */
-.nhsuk-skip-link {
-  left: -9999px;
-  /* [1] */
-  padding: 8px;
-  position: absolute;
-}
-
-.nhsuk-skip-link:active, .nhsuk-skip-link:focus {
-  left: 16px;
-  /* [2] */
-  top: 16px;
-  z-index: 2;
-}
-
-.nhsuk-skip-link:visited {
-  color: #212b32;
-}
-
-/* ==========================================================================
-   COMPONENTS/ #SUMMARY-LIST
-   ========================================================================== */
-/**
- * Original code taken from GDS (Government Digital Service)
- * https://github.com/alphagov/govuk-frontend
- *
- * 1. Required to allow us to wrap words that overflow.
- * 2. Reset default user agent styles
- * 3. Automatic wrapping for unbreakable text (e.g. URLs)
- * 4. Fallback for older browsers only
- * 5. In older browsers such as IE8, :last-child is not available,
- *    so only show the border divider where it is available.
- */
-.nhsuk-summary-list {
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.5;
-  margin: 0;
-  /* [2] */
-  margin-bottom: 32px;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-summary-list {
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 1.47368;
-  }
-}
-
-@media print {
-  .nhsuk-summary-list {
-    font-size: 14pt;
-    line-height: 1.15;
-  }
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-summary-list {
-    display: table;
-    table-layout: fixed;
-    /* [1] */
-    width: 100%;
-  }
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-summary-list {
-    margin-bottom: 40px;
-  }
-}
-
-@media (max-width: 40.0525em) {
-  .nhsuk-summary-list__row {
-    border-bottom: 1px solid #d8dde0;
-    margin-bottom: 16px;
-  }
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-summary-list__row {
-    display: table-row;
-  }
-}
-
-.nhsuk-summary-list__key,
-.nhsuk-summary-list__value,
-.nhsuk-summary-list__actions {
-  margin: 0;
-  /* [2] */
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-summary-list__key,
-  .nhsuk-summary-list__value,
-  .nhsuk-summary-list__actions {
-    border-bottom: 1px solid #d8dde0;
-    display: table-cell;
-    padding-bottom: 8px;
-    padding-right: 24px;
-    padding-top: 8px;
-  }
-}
-
-.nhsuk-summary-list__actions {
-  margin-bottom: 16px;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-summary-list__actions {
-    padding-right: 0;
-    text-align: right;
-    width: 20%;
-  }
-}
-
-.nhsuk-summary-list__key,
-.nhsuk-summary-list__value {
-  /* [3] */
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  /* [4] */
-}
-
-.nhsuk-summary-list__key {
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-summary-list__key {
-    width: 30%;
-  }
-}
-
-@media (max-width: 40.0525em) {
-  .nhsuk-summary-list__value {
-    margin-bottom: 16px;
-  }
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-summary-list__value {
-    width: 50%;
-  }
-}
-
-.nhsuk-summary-list__value > p {
-  margin-bottom: 8px;
-}
-
-.nhsuk-summary-list__value > :last-child {
-  margin-bottom: 0;
-}
-
-.nhsuk-summary-list__actions-list {
-  margin: 0;
-  /* [2] */
-  padding: 0;
-  /* [2] */
-  width: 100%;
-}
-
-.nhsuk-summary-list__actions-list-item {
-  display: inline;
-  margin-right: 8px;
-  padding-right: 8px;
-}
-
-/* [5] */
-.nhsuk-summary-list__actions-list-item:not(:last-child) {
-  border-right: 1px solid #d8dde0;
-}
-
-.nhsuk-summary-list__actions-list-item:last-child {
-  border: 0;
-  margin-right: 0;
-  padding-right: 0;
-}
-
-.nhsuk-summary-list--no-border .nhsuk-summary-list__key,
-.nhsuk-summary-list--no-border .nhsuk-summary-list__value,
-.nhsuk-summary-list--no-border .nhsuk-summary-list__actions,
-.nhsuk-summary-list--no-border .nhsuk-summary-list__row {
-  border: 0;
-}
-
-/* ==========================================================================
-   COMPONENTS / #TABLE
-   ========================================================================== */
-/**
- * Table container is used to ensure the table does not break the container.
- *
- * 1. Margin is removed so there isn't double spacing.
- */
-.nhsuk-table-container {
-  margin-bottom: 40px;
-  display: block;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-  overflow-x: auto;
-  width: 100%;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-table-container {
-    margin-bottom: 48px;
-  }
-}
-
-.nhsuk-table-container .nhsuk-table {
-  margin: 0;
-  /* [1] */
-}
-
-/* Table row hover
-========================================================================== */
-/**
- * Table row hover is used to aid readability for users.
- */
-.nhsuk-table__row:hover {
-  background-color: #f0f4f5;
-}
-
-/* Table panel with tab heading
-========================================================================== */
-/**
- * 1. Margin is removed so there isn't double spacing.
- */
-.nhsuk-table__panel-with-heading-tab {
-  margin-bottom: 40px;
-  margin-top: 40px;
-  padding: 24px;
-  background-color: #ffffff;
-  color: #212b32;
-  border: 1px solid #d8dde0;
-  padding-top: 0 !important;
-}
-
-.nhsuk-table__panel-with-heading-tab > *:first-child {
-  margin-top: 0;
-}
-
-.nhsuk-table__panel-with-heading-tab > *:last-child {
-  margin-bottom: 0;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-table__panel-with-heading-tab {
-    margin-bottom: 48px;
-  }
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-table__panel-with-heading-tab {
-    margin-top: 48px;
-  }
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-table__panel-with-heading-tab {
-    padding: 32px;
-  }
-}
-
-@media print {
-  .nhsuk-table__panel-with-heading-tab {
-    border: 1px solid #212b32;
-    page-break-inside: avoid;
-  }
-}
-
-.nhsuk-table__panel-with-heading-tab .nhsuk-table-container,
-.nhsuk-table__panel-with-heading-tab .nhsuk-table {
-  margin: 0;
-  /* [1] */
-}
-
-.nhsuk-table__heading-tab {
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 1.4;
-  background-color: #005eb8;
-  color: #ffffff;
-  display: inline-block;
-  margin: 0 0 8px -33px;
-  padding: 8px 32px;
-  position: relative;
-  top: -16px;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-table__heading-tab {
-    font-size: 24px;
-    font-size: 1.5rem;
-    line-height: 1.33333;
-  }
-}
-
-@media print {
-  .nhsuk-table__heading-tab {
-    font-size: 18pt;
-    line-height: 1.15;
-  }
-}
-
-@media (max-width: 40.0525em) {
-  .nhsuk-table__heading-tab {
-    margin-left: -25px;
-    margin-right: 0;
-    padding: 8px 24px;
-    top: -8px;
-  }
-}
-
-@media print {
-  .nhsuk-table__heading-tab {
-    background: none;
-    color: #212b32;
-    top: 0;
-  }
-}
-
-/* Responsive table
-========================================================================== */
-/**
- * 1. Hiding the thead on mobile
- * 2. Displaying the thead on desktop
- * 3. Removing default screen reader behaviour
- * 4. Assigning role of table-row on desktop to give default screen reader behaviour
- * 5. Using justify content to space out elements in the row on mobile
- * 6. Assigning a minimum width incase of black cell
- * 7. Aligning content to the right on mobile
- * 8. Aligning mobile header to left to split it from the data
- * 9. Hiding mobile specific header from desktop view
- */
-.nhsuk-table-responsive, figure.is-style-nhsuk-table-responsive {
-  margin-bottom: 0;
-  width: 100%;
-}
-
-.nhsuk-table-responsive thead, figure.is-style-nhsuk-table-responsive thead {
-  -webkit-clip-path: inset(50%);
-  border: 0;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* [1] */
-}
-
-@media (min-width: 48.0625em) {
-  .nhsuk-table-responsive thead, figure.is-style-nhsuk-table-responsive thead {
-    -webkit-clip-path: initial;
-    clip: auto;
-    clip-path: initial;
-    display: table-header-group;
-    height: auto;
-    overflow: auto;
-    position: relative;
-    width: auto;
-    /* [2] */
-  }
-}
-
-.nhsuk-table-responsive .nhsuk-table__body .nhsuk-table-responsive__heading, figure.is-style-nhsuk-table-responsive .nhsuk-table__body .nhsuk-table-responsive__heading {
-  font-weight: 600;
-  padding-right: 16px;
-  text-align: left;
-  /* [8] */
-}
-
-@media (min-width: 48.0625em) {
-  .nhsuk-table-responsive .nhsuk-table__body .nhsuk-table-responsive__heading, figure.is-style-nhsuk-table-responsive .nhsuk-table__body .nhsuk-table-responsive__heading {
-    display: none;
-    /* [9] */
-  }
-}
-
-.nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row, figure.is-style-nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row {
-  display: block;
-  /* [3] */
-  margin-bottom: 24px;
-}
-
-.nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row:last-child, figure.is-style-nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row:last-child {
-  margin-bottom: 0;
-}
-
-@media (min-width: 48.0625em) {
-  .nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row, figure.is-style-nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row {
-    display: table-row;
-    /* [4] */
-  }
-}
-
-.nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row th, figure.is-style-nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row th {
-  text-align: right;
-}
-
-@media (min-width: 48.0625em) {
-  .nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row th, figure.is-style-nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row th {
-    text-align: left;
-  }
-}
-
-.nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row td, figure.is-style-nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row td {
-  display: block;
-  display: flex;
-  justify-content: space-between;
-  /* [5] */
-  min-width: 1px;
-  /* [6] */
-}
-
-@media (min-width: 48.0625em) {
-  .nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row td, figure.is-style-nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row td {
-    display: table-cell;
-  }
-}
-
-@media (max-width: 48.0525em) {
-  .nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row td, figure.is-style-nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row td {
-    padding-right: 0;
-    text-align: right;
-    /* [7] */
-  }
-  .nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row td:last-child, figure.is-style-nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row td:last-child {
-    border-bottom: 3px solid #d8dde0;
-  }
-}
-
-/* Numeric tables
-========================================================================== */
-/**
- * Right aligns table cells for numeric tables.
- */
-.nhsuk-table__header--numeric,
-.nhsuk-table__cell--numeric {
-  text-align: right;
-}
-
-/* ==========================================================================
-   COMPONENTS/ #TEXTAREA
-   ========================================================================== */
-.nhsuk-textarea {
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.5;
-  -webkit-appearance: none;
-  border: 2px solid #4c6272;
-  border-radius: 0;
-  box-sizing: border-box;
-  display: block;
-  min-height: 40px;
-  padding: 4px;
-  resize: vertical;
-  width: 100%;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-textarea {
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 1.47368;
-  }
-}
-
-@media print {
-  .nhsuk-textarea {
-    font-size: 14pt;
-    line-height: 1.15;
-  }
-}
-
-.nhsuk-textarea:focus {
-  border: 2px solid #212b32;
-  box-shadow: inset 0 0 0 2px;
-  outline: 4px solid #ffeb3b;
-  /* 1 */
-  outline-offset: 0;
-}
-
-.nhsuk-textarea--error {
-  border: 4px solid #d5281b;
-}
-
-/* ==========================================================================
-   COMPONENTS / #WARNING-CALLOUT
-   ========================================================================== */
-/**
- * 1. Uses @mixin panel-with-label from tools/_mixins.
- * 2. Uses @mixin heading-label from tools/_mixins.
- */
-.nhsuk-warning-callout {
-  margin-bottom: 40px;
-  margin-top: 40px;
-  padding: 24px;
-  background-color: #fff9c4;
-  color: #212b32;
-  border: 1px solid #ffeb3b;
-  padding-top: 0 !important;
-  /* [1] */
-}
-
-.nhsuk-warning-callout > *:first-child {
-  margin-top: 0;
-}
-
-.nhsuk-warning-callout > *:last-child {
-  margin-bottom: 0;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-warning-callout {
-    margin-bottom: 48px;
-  }
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-warning-callout {
-    margin-top: 48px;
-  }
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-warning-callout {
-    padding: 32px;
-  }
-}
-
-@media print {
-  .nhsuk-warning-callout {
-    border: 1px solid #212b32;
-    page-break-inside: avoid;
-  }
-}
-
-.nhsuk-warning-callout__label {
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 1.4;
-  background-color: #ffeb3b;
-  color: #212b32;
-  display: inline-block;
-  margin: 0 0 8px -33px;
-  padding: 8px 32px;
-  position: relative;
-  top: -16px;
-  /* [2] */
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-warning-callout__label {
-    font-size: 24px;
-    font-size: 1.5rem;
-    line-height: 1.33333;
-  }
-}
-
-@media print {
-  .nhsuk-warning-callout__label {
-    font-size: 18pt;
-    line-height: 1.15;
-  }
-}
-
-@media (max-width: 40.0525em) {
-  .nhsuk-warning-callout__label {
-    margin-left: -25px;
-    margin-right: 0;
-    padding: 8px 24px;
-    top: -8px;
-  }
-}
-
-@media print {
-  .nhsuk-warning-callout__label {
-    background: none;
-    color: #212b32;
-    top: 0;
-  }
-}
-
-/* ==========================================================================
    COMPONENTS / #PANEL
    ========================================================================== */
 .nhsuk-panel {
@@ -8568,7 +7431,6 @@ b {
   padding: 24px;
   background-color: #ffffff;
   color: #212b32;
-  border: 1px solid #d8dde0;
   padding-top: 0 !important;
 }
 
@@ -8612,7 +7474,7 @@ b {
   background-color: #005eb8;
   color: #ffffff;
   display: inline-block;
-  margin: 0 0 8px -33px;
+  margin: 0 0 8px -32px;
   padding: 8px 32px;
   position: relative;
   top: -16px;
@@ -8635,7 +7497,7 @@ b {
 
 @media (max-width: 40.0525em) {
   .nhsuk-panel-with-label__label, .nhsuk-panel.is-style-panel-with-label h3, .nhsuk-panel.is-style-panel-with-label h3 .rich-text {
-    margin-left: -25px;
+    margin-left: -24px;
     margin-right: 0;
     padding: 8px 24px;
     top: -8px;
@@ -8927,125 +7789,751 @@ b {
   margin-bottom: 0;
 }
 
-.nhsuk-panel-with-label, .nhsuk-panel.is-style-panel-with-label {
-  width: 100%;
+/* ==========================================================================
+   COMPONENTS/ #RADIOS
+   ========================================================================== */
+/**
+ * 1. remove 300ms pause on mobile.
+ * 2. Fix bug in IE11 caused by transform rotate (-45deg).
+ */
+.nhsuk-radios__item {
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  clear: left;
+  display: block;
+  margin-bottom: 8px;
+  min-height: 40px;
+  padding: 0 0 0 40px;
+  position: relative;
 }
 
-.nhsuk-panel-with-label .nhsuk-panel-with-label__label a, .nhsuk-panel.is-style-panel-with-label .nhsuk-panel-with-label__label a, .nhsuk-panel.is-style-panel-with-label h3 a, .nhsuk-panel.is-style-panel-with-label h3 .rich-text a, .nhsuk-panel-with-label .nhsuk-panel-with-label__label a:visited, .nhsuk-panel.is-style-panel-with-label .nhsuk-panel-with-label__label a:visited, .nhsuk-panel.is-style-panel-with-label h3 a:visited {
-  color: #ffffff;
+@media (min-width: 40.0625em) {
+  .nhsuk-radios__item {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.47368;
+  }
 }
 
-.nhsuk-panel-with-label .entry-footer span, .nhsuk-panel.is-style-panel-with-label .entry-footer span {
-  padding: 0 10px;
+@media print {
+  .nhsuk-radios__item {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
 }
 
-/*panel extension*/
-/* promo extension */
-.nhsuk-promo figure {
-  margin: 0;
-}
-
-.wp-block-nhsblocks-panel1 .paneltext {
-  display: flow-root;
-}
-
-.wp-block-nhsblock-rowgroup .nhsuk-panel-group {
-  padding: 0;
-}
-
-.nhsuk-dashboard .nhsuk-panel-group__item {
-  overflow: hidden;
-  margin-bottom: 2rem;
-}
-
-.nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-promo__link-wrapper {
-  background: inherit;
-  box-shadow: none;
-  width: 100%;
-}
-
-.nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-panel-with-label, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-panel.is-style-panel-with-label {
-  background: inherit;
-  margin: 0;
-  margin-top: 0;
+.nhsuk-radios__item:last-child,
+.nhsuk-radios__item:last-of-type {
   margin-bottom: 0;
-  background-size: cover;
-  position: relative;
-  padding: 33.33% 0;
-  height: 100%;
 }
 
-.nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-panel-with-label .nhsuk-panel-with-label__label, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-panel.is-style-panel-with-label .nhsuk-panel-with-label__label, .nhsuk-panel.is-style-panel-with-label .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-panel-with-label h3, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-panel.is-style-panel-with-label h3, .nhsuk-panel.is-style-panel-with-label h3 .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-panel-with-label .rich-text, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-panel.is-style-panel-with-label h3 .rich-text {
-  z-index: 2;
-  top: 0;
-  margin: 0 -20px;
+.nhsuk-radios__input {
+  cursor: pointer;
+  height: 40px;
+  left: 0;
+  margin: 0;
+  opacity: 0;
   position: absolute;
-  top: 50%;
-  left: 10%;
-  max-width: 90%;
-  font-size: 1.1rem;
-}
-
-.nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-panel-with-label .nhsuk-dashboard__image, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-panel.is-style-panel-with-label .nhsuk-dashboard__image {
-  width: 100%;
-  height: 100%;
-}
-
-.nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-panel-with-label .nhsuk-promo__img, .nhsuk-dashboard .nhsuk-panel-group__item .nhsuk-panel.is-style-panel-with-label .nhsuk-promo__img {
-  position: relative;
-  top: -16px;
+  top: 0;
+  width: 40px;
   z-index: 1;
 }
 
-.nhsuk-dashboard .nhsuk-grid-column-full-width {
-  max-height: 300px;
+.nhsuk-radios__label {
+  -ms-touch-action: manipulation;
+  /* 1 */
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 8px 12px 4px;
+  touch-action: manipulation;
+  /* 1 */
 }
 
-.nhsuk-dashboard .nhsuk-grid-column-one-half {
-  max-height: 250px;
+.nhsuk-radios__hint {
+  display: block;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
-.nhsuk-dashboard .nhsuk-grid-column-one-third, .nhsuk-dashboard .nhsuk-grid-column-two-thirds {
-  max-height: 200px;
+.nhsuk-radios__input + .nhsuk-radios__label::before {
+  background: #ffffff;
+  border: 2px solid #4c6272;
+  border-radius: 50%;
+  box-sizing: border-box;
+  content: '';
+  height: 40px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 40px;
 }
 
-.nhsuk-promo-group__item {
-  margin-bottom: 36px;
+.nhsuk-radios__input + .nhsuk-radios__label::after {
+  background: #4c6272;
+  border: 10px solid #212b32;
+  border-radius: 50%;
+  content: '';
+  height: 0;
+  left: 10px;
+  opacity: 0;
+  position: absolute;
+  top: 10px;
+  width: 0;
 }
 
-.wp-block-nhsblocks-promo1 .nhsuk-image, .wp-block-nhsblocks-promo1 .is-style-nhsuk-image {
-  width: 100%;
+/**
+ * Focus state
+ *
+ * 1. Since box-shadows are removed when users customise their colours
+ *    We set a transparent outline that is shown instead.
+ *    https://accessibility.blog.gov.uk/2017/03/27/how-users-change-colours-on-websites/
+ */
+.nhsuk-radios__input:focus + .nhsuk-radios__label::before {
+  border: 4px solid #212b32;
+  box-shadow: 0 0 0 4px #ffeb3b;
+  outline: 4px solid transparent;
+  /* 1 */
+  outline-offset: 4px;
 }
 
-.wp-block-nhsblocks-promo1 img.nhsuk-promo__img {
-  width: 100%;
-  height: auto;
+/* Selected state */
+.nhsuk-radios__input:checked + .nhsuk-radios__label::after {
+  opacity: 1;
 }
 
-.wp-block-nhsblocks-promo1 .nhsuk-promo__description,
-.wp-block-nhsblocks-promo1 .nhsuk-promo__heading {
-  padding: 0 32px;
+/* Disabled state */
+.nhsuk-radios__input:disabled,
+.nhsuk-radios__input:disabled + .nhsuk-radios__label {
+  cursor: default;
 }
 
-.nhsuk-promo .nhsuk-promo__content {
-  padding: 0 0 16px 0;
+.nhsuk-radios__input:disabled + .nhsuk-radios__label {
+  opacity: .5;
 }
 
-.nhsuk-promo .nhsuk-promo__content .nhsuk-image, .nhsuk-promo .nhsuk-promo__content .is-style-nhsuk-image {
-  width: 100%;
-  padding: 0;
+/*
+ * Inline variant
+ *
+ * 1. Prevent inline modifier being used with conditional reveals
+ */
+@media (min-width: 40.0625em) {
+  .nhsuk-radios--inline:after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+  .nhsuk-radios--inline .nhsuk-radios__item {
+    clear: none;
+    float: left;
+    margin-right: 24px;
+  }
 }
 
-.nhsuk-promo .nhsuk-promo__content .nhsuk-promo__heading {
-  padding: 8px 16px;
+.nhsuk-radios--inline.nhsuk-radios--conditional {
+  /* 1 */
 }
 
-.nhsuk-promo .nhsuk-promo__content .nhsuk-promo__description, .nhsuk-promo .nhsuk-promo__content p {
+.nhsuk-radios--inline.nhsuk-radios--conditional .nhsuk-radios__item {
+  float: none;
+  margin-right: 0;
+}
+
+/* Divider variant */
+.nhsuk-radios__divider {
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212b32;
+  margin-bottom: 8px;
+  text-align: center;
+  width: 40px;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-radios__divider {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.47368;
+  }
+}
+
+@media print {
+  .nhsuk-radios__divider {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+
+/* Conditional */
+.nhsuk-radios__conditional {
+  margin-bottom: 16px;
+  border-left: 4px solid #4c6272;
+  margin-left: 18px;
+  padding-left: 30px;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-radios__conditional {
+    margin-bottom: 24px;
+  }
+}
+
+.nhsuk-radios__conditional > :last-child {
+  margin-bottom: 0;
+}
+
+.js-enabled .nhsuk-radios__conditional--hidden {
+  display: none;
+}
+
+/* ==========================================================================
+   COMPONENTS / #REVIEW-DATE
+   ========================================================================== */
+.nhsuk-review-date {
+  margin-top: 40px;
+  color: #4c6272;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-review-date {
+    margin-top: 48px;
+  }
+}
+
+/* ==========================================================================
+   COMPONENTS/ #SELECT
+   ========================================================================== */
+.nhsuk-select {
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 2px solid #4c6272;
+  box-sizing: border-box;
+  height: 40px;
+  max-width: 100%;
+  padding: 4px;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-select {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.47368;
+  }
+}
+
+@media print {
+  .nhsuk-select {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+
+.nhsuk-select:focus {
+  border: 4px solid #212b32;
+  box-shadow: 0 0 0 4px #ffeb3b;
+  outline: 4px solid transparent;
+  /* 1 */
+  outline-offset: 4px;
+}
+
+.nhsuk-select option:active,
+.nhsuk-select option:checked,
+.nhsuk-select:focus::-ms-value {
+  background-color: #005eb8;
+  color: #ffffff;
+}
+
+.nhsuk-select--error {
+  border: 4px solid #d5281b;
+}
+
+/* ==========================================================================
+   COMPONENTS / #SKIP-LINK
+   ========================================================================== */
+/**
+ * 1. Hides the skip link off the page,
+ * 2. until the link gains focus from keyboard tabbing.
+ */
+.nhsuk-skip-link {
+  left: -9999px;
+  /* [1] */
   padding: 8px;
+  position: absolute;
 }
 
-.nhsuk-promo .nhsuk-promo__content .nhsuk-readmore {
-  padding: 0 32px 8px 0;
+.nhsuk-skip-link:active, .nhsuk-skip-link:focus {
+  left: 16px;
+  /* [2] */
+  top: 16px;
+  z-index: 2;
+}
+
+.nhsuk-skip-link:visited {
+  color: #212b32;
+}
+
+/* ==========================================================================
+   COMPONENTS/ #SUMMARY-LIST
+   ========================================================================== */
+/**
+ * Original code taken from GDS (Government Digital Service)
+ * https://github.com/alphagov/govuk-frontend
+ *
+ * 1. Required to allow us to wrap words that overflow.
+ * 2. Reset default user agent styles
+ * 3. Automatic wrapping for unbreakable text (e.g. URLs)
+ * 4. Fallback for older browsers only
+ * 5. In older browsers such as IE8, :last-child is not available,
+ *    so only show the border divider where it is available.
+ */
+.nhsuk-summary-list {
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  /* [2] */
+  margin-bottom: 32px;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-summary-list {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.47368;
+  }
+}
+
+@media print {
+  .nhsuk-summary-list {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-summary-list {
+    display: table;
+    table-layout: fixed;
+    /* [1] */
+    width: 100%;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-summary-list {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 40.0525em) {
+  .nhsuk-summary-list__row {
+    border-bottom: 1px solid #d8dde0;
+    margin-bottom: 16px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-summary-list__row {
+    display: table-row;
+  }
+}
+
+.nhsuk-summary-list__key,
+.nhsuk-summary-list__value,
+.nhsuk-summary-list__actions {
+  margin: 0;
+  /* [2] */
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-summary-list__key,
+  .nhsuk-summary-list__value,
+  .nhsuk-summary-list__actions {
+    border-bottom: 1px solid #d8dde0;
+    display: table-cell;
+    padding-bottom: 8px;
+    padding-right: 24px;
+    padding-top: 8px;
+  }
+}
+
+.nhsuk-summary-list__actions {
+  margin-bottom: 16px;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-summary-list__actions {
+    padding-right: 0;
+    text-align: right;
+    width: 20%;
+  }
+}
+
+.nhsuk-summary-list__key,
+.nhsuk-summary-list__value {
+  /* [3] */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  /* [4] */
+}
+
+.nhsuk-summary-list__key {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-summary-list__key {
+    width: 30%;
+  }
+}
+
+@media (max-width: 40.0525em) {
+  .nhsuk-summary-list__value {
+    margin-bottom: 16px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-summary-list__value {
+    width: 50%;
+  }
+}
+
+.nhsuk-summary-list__value > p {
+  margin-bottom: 8px;
+}
+
+.nhsuk-summary-list__value > :last-child {
+  margin-bottom: 0;
+}
+
+.nhsuk-summary-list__actions-list {
+  margin: 0;
+  /* [2] */
+  padding: 0;
+  /* [2] */
+  width: 100%;
+}
+
+.nhsuk-summary-list__actions-list-item {
+  display: inline;
+  margin-right: 8px;
+  padding-right: 8px;
+}
+
+/* [5] */
+.nhsuk-summary-list__actions-list-item:not(:last-child) {
+  border-right: 1px solid #d8dde0;
+}
+
+.nhsuk-summary-list__actions-list-item:last-child {
+  border: 0;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.nhsuk-summary-list--no-border .nhsuk-summary-list__key,
+.nhsuk-summary-list--no-border .nhsuk-summary-list__value,
+.nhsuk-summary-list--no-border .nhsuk-summary-list__actions,
+.nhsuk-summary-list--no-border .nhsuk-summary-list__row {
+  border: 0;
+}
+
+/* ==========================================================================
+   COMPONENTS / #TABLE
+   ========================================================================== */
+/* Table row hover
+========================================================================== */
+/**
+ * Table row hover is used to aid readability for users.
+ */
+.nhsuk-table__row:hover {
+  background-color: #f0f4f5;
+}
+
+/* Table panel with tab heading
+========================================================================== */
+/**
+ * 1. Margin is removed so there isn't double spacing.
+ */
+.nhsuk-table__panel-with-heading-tab {
+  margin-bottom: 40px;
+  margin-top: 40px;
+  padding: 24px;
+  background-color: #ffffff;
+  color: #212b32;
+  padding-top: 0 !important;
+}
+
+.nhsuk-table__panel-with-heading-tab > *:first-child {
+  margin-top: 0;
+}
+
+.nhsuk-table__panel-with-heading-tab > *:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-table__panel-with-heading-tab {
+    margin-bottom: 48px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-table__panel-with-heading-tab {
+    margin-top: 48px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-table__panel-with-heading-tab {
+    padding: 32px;
+  }
+}
+
+@media print {
+  .nhsuk-table__panel-with-heading-tab {
+    border: 1px solid #212b32;
+    page-break-inside: avoid;
+  }
+}
+
+.nhsuk-table__panel-with-heading-tab .nhsuk-table-responsive, .nhsuk-table__panel-with-heading-tab figure.is-style-nhsuk-table-responsive,
+.nhsuk-table__panel-with-heading-tab .nhsuk-table {
+  margin: 0;
+  /* [1] */
+}
+
+.nhsuk-table__heading-tab {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  background-color: #005eb8;
+  color: #ffffff;
+  display: inline-block;
+  margin: 0 0 8px -32px;
+  padding: 8px 32px;
+  position: relative;
+  top: -16px;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-table__heading-tab {
+    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: 1.33333;
+  }
+}
+
+@media print {
+  .nhsuk-table__heading-tab {
+    font-size: 18pt;
+    line-height: 1.15;
+  }
+}
+
+@media (max-width: 40.0525em) {
+  .nhsuk-table__heading-tab {
+    margin-left: -24px;
+    margin-right: 0;
+    padding: 8px 24px;
+    top: -8px;
+  }
+}
+
+@media print {
+  .nhsuk-table__heading-tab {
+    background: none;
+    color: #212b32;
+    top: 0;
+  }
+}
+
+/* Responsive table
+========================================================================== */
+/**
+ * Responsive table is used to ensure the table does not break the container.
+ *
+ * 1. Margin is removed so there isn't double spacing.
+ */
+.nhsuk-table-responsive, figure.is-style-nhsuk-table-responsive {
+  margin-bottom: 40px;
+  display: block;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  overflow-x: auto;
+  width: 100%;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-table-responsive, figure.is-style-nhsuk-table-responsive {
+    margin-bottom: 48px;
+  }
+}
+
+.nhsuk-table-responsive .nhsuk-table, figure.is-style-nhsuk-table-responsive .nhsuk-table {
+  margin: 0;
+  /* [1] */
+}
+
+/* Numeric tables
+========================================================================== */
+/**
+ * Right aligns table cells for numeric tables.
+ */
+.nhsuk-table__header--numeric,
+.nhsuk-table__cell--numeric {
+  text-align: right;
+}
+
+/* ==========================================================================
+   COMPONENTS/ #TEXTAREA
+   ========================================================================== */
+.nhsuk-textarea {
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  border: 2px solid #4c6272;
+  border-radius: 0;
+  box-sizing: border-box;
+  display: block;
+  min-height: 40px;
+  padding: 4px;
+  resize: vertical;
+  width: 100%;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-textarea {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.47368;
+  }
+}
+
+@media print {
+  .nhsuk-textarea {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+
+.nhsuk-textarea:focus {
+  border: 4px solid #212b32;
+  box-shadow: 0 0 0 4px #ffeb3b;
+  outline: 4px solid transparent;
+  /* 1 */
+  outline-offset: 4px;
+}
+
+.nhsuk-textarea--error {
+  border: 4px solid #d5281b;
+}
+
+/* ==========================================================================
+   COMPONENTS / #WARNING-CALLOUT
+   ========================================================================== */
+/**
+ * 1. Uses @mixin panel-with-label from tools/_mixins.
+ * 2. Uses @mixin heading-label from tools/_mixins.
+ */
+.nhsuk-warning-callout {
+  margin-bottom: 40px;
+  margin-top: 40px;
+  padding: 24px;
+  background-color: #fff9c4;
+  color: #212b32;
+  padding-top: 0 !important;
+  /* [1] */
+}
+
+.nhsuk-warning-callout > *:first-child {
+  margin-top: 0;
+}
+
+.nhsuk-warning-callout > *:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-warning-callout {
+    margin-bottom: 48px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-warning-callout {
+    margin-top: 48px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-warning-callout {
+    padding: 32px;
+  }
+}
+
+@media print {
+  .nhsuk-warning-callout {
+    border: 1px solid #212b32;
+    page-break-inside: avoid;
+  }
+}
+
+.nhsuk-warning-callout__label {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  background-color: #ffeb3b;
+  color: #212b32;
+  display: inline-block;
+  margin: 0 0 8px -32px;
+  padding: 8px 32px;
+  position: relative;
+  top: -16px;
+  /* [2] */
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-warning-callout__label {
+    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: 1.33333;
+  }
+}
+
+@media print {
+  .nhsuk-warning-callout__label {
+    font-size: 18pt;
+    line-height: 1.15;
+  }
+}
+
+@media (max-width: 40.0525em) {
+  .nhsuk-warning-callout__label {
+    margin-left: -24px;
+    margin-right: 0;
+    padding: 8px 24px;
+    top: -8px;
+  }
+}
+
+@media print {
+  .nhsuk-warning-callout__label {
+    background: none;
+    color: #212b32;
+    top: 0;
+  }
 }
 
 .has-white-color {
@@ -9189,7 +8677,7 @@ b {
   max-width: none;
 }
 
-.nhsuk-card-group {
+.nhsuk-panel-group {
   margin-left: 0;
   margin-right: 0;
 }
@@ -9221,12 +8709,28 @@ b {
   box-shadow: 0 0 0 16px #ffeb3b inset;
 }
 
+.nhsuk-promo-group__item {
+  margin-bottom: 36px;
+}
+
 .nhsuk-care-card {
   width: 100%;
 }
 
 .nhsuk-care-card .nhsuk-care-card-content {
   overflow: auto;
+}
+
+.nhsuk-panel-with-label, .nhsuk-panel.is-style-panel-with-label {
+  width: 100%;
+}
+
+.nhsuk-panel-with-label .nhsuk-panel-with-label__label a, .nhsuk-panel.is-style-panel-with-label .nhsuk-panel-with-label__label a, .nhsuk-panel.is-style-panel-with-label h3 a, .nhsuk-panel.is-style-panel-with-label h3 .rich-text a, .nhsuk-panel-with-label .nhsuk-panel-with-label__label a:visited, .nhsuk-panel.is-style-panel-with-label .nhsuk-panel-with-label__label a:visited, .nhsuk-panel.is-style-panel-with-label h3 a:visited {
+  color: #ffffff;
+}
+
+.nhsuk-panel-with-label .entry-footer span, .nhsuk-panel.is-style-panel-with-label .entry-footer span {
+  padding: 0 10px;
 }
 
 .nhsuk-details .nhsuk-details__text {
@@ -9287,6 +8791,20 @@ b {
 
 .nhsuk-dashboard .nhsuk-grid-column-one-third, .nhsuk-dashboard .nhsuk-grid-column-two-thirds {
   max-height: 200px;
+}
+
+.wp-block-nhsblocks-promo1 .nhsuk-image, .wp-block-nhsblocks-promo1 .is-style-nhsuk-image {
+  width: 100%;
+}
+
+.wp-block-nhsblocks-promo1 img.nhsuk-promo__img {
+  width: 100%;
+  height: auto;
+}
+
+.wp-block-nhsblocks-promo1 .nhsuk-promo__description,
+.wp-block-nhsblocks-promo1 .nhsuk-promo__heading {
+  padding: 0 32px;
 }
 
 .nhsuk-inset-text--rev, .is-style-quote-reverse {
@@ -9517,6 +9035,12 @@ figure.is-style-nhsuk-table-responsive figcaption {
   margin: 0 !important;
 }
 
+/*panel extension*/
+/* promo extension */
+.nhsuk-promo figure {
+  margin: 0;
+}
+
 /*do and dont list extension*/
 .nhsuk-do-dont-list svg.nhsuk-icon {
   width: 35px;
@@ -9527,6 +9051,14 @@ figure.is-style-nhsuk-table-responsive figcaption {
 .nhsuk-inset-text is-style-quote-reverse .nhsuk-inset-text__quote a {
   color: #ffffff;
   font-weight: 700;
+}
+
+.wp-block-nhsblocks-panel1 .paneltext {
+  display: flow-root;
+}
+
+.wp-block-nhsblock-rowgroup .nhsuk-panel-group {
+  padding: 0;
 }
 
 .nhsuk-hero__overlay {
@@ -9550,19 +9082,6 @@ figure.is-style-nhsuk-table-responsive figcaption {
   position: relative;
   right: 50%;
   width: 100vw;
-}
-
-.nhsuk-card .nhsuk-card__description {
-  display: flow-root;
-}
-
-.nhsuk-card.is-style-panel-grey {
-  background: inherit;
-  border: none;
-}
-
-.nhsuk-card figure {
-  margin: 0;
 }
 
 section.nhsuk-section:nth-of-type(odd) {
