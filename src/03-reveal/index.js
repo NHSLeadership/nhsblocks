@@ -7,9 +7,7 @@
 const {__} = wp.i18n;
 const {registerBlockType} = wp.blocks;
 const { RichText, InnerBlocks, InspectorControls } = wp.blockEditor;
-const { ToggleControl, PanelBody, PanelRow, RadioControl, clientId } = wp.components;
-
-
+const { ToggleControl, PanelBody, PanelRow, RadioControl } = wp.components;
 const TEMPLATE_OPTIONS = [
 	['core/image', {align: 'right', width: 150}],
 ];
@@ -47,10 +45,13 @@ registerBlockType("nhsblocks/reveal1", {
 			source: "html",
 			selector: ".nhsuk-details__text"
 		},
+		expanderBox: {
+			type: "string"
+		},
 		withImage: {
 			type: 'boolean',
 			default: false,
-		},
+		}
 	},
 
 	edit: props => {
@@ -93,32 +94,32 @@ registerBlockType("nhsblocks/reveal1", {
 		role = "button"
 		aria-controls = "details-content-"
 		aria-expanded = "true" >
-			<span className="nhsuk-details__summary-text" >
-			<RichText
-                placeholder={__("Reveal Title", "nhsblocks")}
-                value={revealTitle}
-                onChange={onChangeRevealTitle}
+			< span className = "nhsuk-details__summary-text" >
+			< RichText
+                placeholder = {__("Reveal Title", "nhsblocks")}
+                value = {revealTitle}
+                onChange = {onChangeRevealTitle}
             />
 		< /span>
 		< /summary>
 		< div
-		className="nhsuk-details__text"
-		id="details-content-"
-		aria-hidden="false" >
+		className = "nhsuk-details__text"
+		id = "details-content-"
+		aria-hidden = "false" >
 			{withImage === true && (
 					<InnerBlocks
-				template={TEMPLATE_OPTIONS}
+				template = {TEMPLATE_OPTIONS}
 				/>
 			)}
-			<RichText
-                multiline="p"
-                placeholder={__("Reveal Contents", "nhsblocks") }
-                onChange={onChangeRevealText}
-                value={revealText}
+			< RichText
+                multiline = "p"
+                placeholder = {__("Reveal Contents", "nhsblocks") }
+                onChange = {onChangeRevealText}
+                value = {revealText}
             />
 
-		</div>
-		</details>
+		< /div>
+		< /details>
 	]);
 	},
 	save: props => {
@@ -127,32 +128,32 @@ registerBlockType("nhsblocks/reveal1", {
 		} = props;
 
 		return (
-			<details className="nhsuk-details">
+			<details className = "nhsuk-details">
 				<summary
-				className="nhsuk-details__summary"
-				role="button"
-				aria-controls="details-content-"
-				aria-expanded="false" >
+				className = "nhsuk-details__summary"
+				role = "button"
+				aria-controls = "details-content-"
+				aria-expanded = "false" >
 					< span
-						className="nhsuk-details__summary-text" >
+						className = "nhsuk-details__summary-text" >
 						< RichText.Content
 							value = {revealTitle}
 							/>
 					< /span>
 				< /summary>
-				<div
-					className="nhsuk-details__text"
-					id="details-content-"
-					aria-hidden="false" >
+				< div
+					className = "nhsuk-details__text"
+					id = "details-content-"
+					aria-hidden = "false" >
 						{withImage === true && (
 							<InnerBlocks.Content />
 						)}
 						< RichText.Content
-					multiline="p"
-					value={revealText}
+					multiline = "p"
+					value = {revealText}
 					/>
 				< /div>
-		</details>
+		< /details>
 	);
 	},
 	deprecated: [
@@ -167,32 +168,40 @@ registerBlockType("nhsblocks/reveal1", {
 						type: "string",
 						source: "html",
 						selector: ".nhsuk-details__text"
+					},
+					expanderBox: {
+						type: "string"
 					}
 				},
-			save: ( props ) =>
-				<details className="nhsuk-details newstyle"	open>
-					<summary className="nhsuk-details__summary"
-					role="button"
-					aria-controls="details-content-"
-					aria-expanded="true" >
-						<span className="nhsuk-details__summary-text" >
-							<RichText
-							placeholder={__("Reveal Title", "nhsblocks")}
-							value={props.attributes.revealTitle}
+			save: ( {attributes} ) =>
+				< details
+				className = {`${className} nhsuk-details newstyle`}
+				open >
+					< summary
+					className = "nhsuk-details__summary"
+					role = "button"
+					aria-controls = "details-content-"
+					aria-expanded = "true" >
+						< span className = "nhsuk-details__summary-text" >
+							< RichText
+							placeholder = {__("Reveal Title", "nhsblocks")}
+							value = {revealTitle}
+							onChange = {onChangeRevealTitle}
 							/>
-						</span>
-					</summary>
-					<div
-					className="nhsuk-details__text"
-					id="details-content-"
-					aria-hidden="false" >
-						<RichText
-							multiline="p"
-							placeholder={__("Reveal Contents", "nhsblocks") }
-							value={props.attributes.revealText}
+						< /span>
+					< /summary>
+					< div
+					className = "nhsuk-details__text"
+					id = "details-content-"
+					aria-hidden = "false" >
+						< RichText
+							multiline = "p"
+							placeholder = {__("Reveal Contents", "nhsblocks") }
+							onChange = {onChangeRevealText}
+							value = {revealText}
 							/>
-					</div>
-				</details>,
+					< /div>
+				< /details>,
 		}
 	]
 });

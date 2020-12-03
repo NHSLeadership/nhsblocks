@@ -129,11 +129,9 @@
   }
 
   /* Panel Group editor tweak */
-  .nhsuk-promo-group, .nhsuk-card-group, .nhsuk-grid-row {
-	.block-editor-inner-blocks {
-	  width : 100%;
-	  float : left;
-	}
+  .nhsuk-promo-group .block-editor-inner-blocks {
+	width : 100%;
+	float : left;
   }
 
   .nhsuk-do-dont-list {
