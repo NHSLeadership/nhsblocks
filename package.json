@@ -16,10 +16,10 @@
     "build:docs": "rm -rf hookdocs/ && jsdoc -c hookdoc-conf.json"
   },
   "dependencies": {
-    "@wordpress/scripts": "^12.4.0",
+    "@wordpress/scripts": "^12.5.0",
     "clone-deep": "^4.0.1",
     "cssnano": "^4.1.10",
-    "nhsuk-frontend": "^3.1.0",
+    "nhsuk-frontend": "^4.0.0",
     "node-sass": "^4.14.1",
     "nunjucks": "^3.2.2",
     "postcss": "^7.0.35",

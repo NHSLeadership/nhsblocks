@@ -47,23 +47,22 @@ registerBlockType("nhsblocks/promo1", {
 		promoTitle: {
 			type: "string",
 			source: "html",
-			selector: ".nhsuk-promo__heading",
+			selector: ".wp-block-nhsblocks-promo1 .nhsuk-card__link",
 		},
 		promoText: {
 			type: "string",
 			source: "html",
-			selector: ".nhsuk-promo__description",
+			selector: ".wp-block-nhsblocks-promo1 .nhsuk-card__description",
 		},
 		promoLink: {
 			type: "string",
 			source: "attribute",
-			selector: ".nhsuk-promo a",
+			selector: ".wp-block-nhsblocks-promo1 a.nhsuk-card__link",
 			attribute: "href",
 		},
 	},
 
 	edit: props => {
-
 		// Lift info from props and populate various constants.
 		const {
 			attributes: {
@@ -98,64 +97,80 @@ registerBlockType("nhsblocks/promo1", {
 		const ALLOWED_BLOCKS = ['core/image'];
 
     return (
-          <div className={`${className} nhsuk-promo`}>
-            <div className="nhsuk-promo__content">
-              <URLInputButton
-                  className="nhsblocks-dropdown__input"
-                  label={__("Panel Link", "nhsblocks")}
-                  onChange={onChangePromoLink}
-                  url={promoLink}
-              />
-              <InnerBlocks allowedBlocks={ ALLOWED_BLOCKS} />
-                <h3 className="nhsuk-promo__heading">
-                  <RichText
-                      placeholder={__("Promo Title", "nhsblocks")}
-                      value={promoTitle}
-                      onChange={onChangePromoTitle}
-                  />
-                </h3>
-                <div className="nhsuk-promo__description">
-                  <RichText
-                      multiline="p"
-                      placeholder={__("Promo Contents", "nhsblocks")}
-                      onChange={onChangePromoText}
-                      value={promoText}
-                  />
-
-		< /div>
-		< /div>
-		< /div>
+          <div className={`${className} nhsuk-card nhsuk-card--clickable`}>
+            <InnerBlocks allowedBlocks={ ALLOWED_BLOCKS} />
+						<div className="nhsuk-card__content">
+                <h2 className="nhsuk-card__heading nhsuk-heading-m">
+									<URLInputButton className="nhsblocks-dropdown__input" label={__("Panel Link", "nhsblocks")} onChange={onChangePromoLink} url={promoLink} />
+                  <RichText placeholder={__("Promo Title", "nhsblocks")} value={promoTitle} onChange={onChangePromoTitle} />
+                </h2>
+                <div className="nhsuk-card__description">
+                  <RichText multiline="p" placeholder={__("Promo Contents", "nhsblocks")} onChange={onChangePromoText} value={promoText} />
+								< /div>
+						< /div>
+					< /div>
 	)
 		;
 	},
-	save
-:
-props => {
-	const {
-		attributes: {
-			promoTitle,
-			promoText,
-			promoLink,
+	save:
+	props => {
+		const {
+			attributes: {
+				promoTitle,	promoText, promoLink,
+			}
+		} = props;
+	    return (
+	          <div className="nhsuk-card nhsuk-card--clickable">
+							<InnerBlocks.Content />
+							<div class="nhsuk-card__content">
+								<h2 class="nhsuk-card__heading nhsuk-heading-m" >
+									<a href={promoLink} className="nhsuk-card__link" >
+										<RichText.Content value={promoTitle} />
+									</a>
+								</h2>
+		            <div className="nhsuk-card__description">
+		               <RichText.Content multiline="p" value={promoText} />
+		            </div>
+	            </div>
+						</div>
+	    );
+	  },
+	deprecated: [
+
+		{
+			attributes: {
+				promoTitle: {
+					type: "string",
+					source: "html",
+					selector: ".nhsuk-promo__heading",
+				},
+				promoText: {
+					type: "string",
+					source: "html",
+					selector: ".nhsuk-promo__description",
+				},
+				promoLink: {
+					type: "string",
+					source: "attribute",
+					selector: ".nhsuk-promo a",
+					attribute: "href",
+				},
+			},
+				save: ( {attributes} ) =>
+					<div className="nhsuk-promo">
+						<a href={attributes.promoLink} className="nhsuk-promo__link-wrapper">
+							<div className="nhsuk-promo__content">
+								<InnerBlocks.Content />
+								<h3 className="nhsuk-promo__heading">
+									<RichText.Content value={attributes.promoTitle} />
+								</h3>
+								<div className="nhsuk-promo__description">
+									<RichText.Content	multiline="p" value={attributes.promoText} />
+							</div>
+							</div>
+						</a>
+					</div>,
 		}
-	} = props;
-    return (
-          <div className="nhsuk-promo">
-          <a href={promoLink} className="nhsuk-promo__link-wrapper">
-            <div className="nhsuk-promo__content">
-          <InnerBlocks.Content />
-              <h3 className="nhsuk-promo__heading">
-                <RichText.Content value={promoTitle} />
-              </h3>
-              <div className="nhsuk-promo__description">
-                  <RichText.Content
-                      multiline="p"
-                      value={promoText}
-                  />
-              </div>
-            </div>
-                      </a>
-          </div>
-    );
-  }
+	]
 });
 

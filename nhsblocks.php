@@ -77,13 +77,13 @@ function nhsblocks_register_blocks() {
 		return;
 	}
 
-	// Retister the block editor script.
+	// Register the block editor script.
 	wp_register_script(
 		'nhsblocks-editor-script',                                            // label.
 		plugins_url( '/build/index.js', __FILE__ ),                        // script file.
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-data' ),        // dependencies.
-		'20190828',
-		'in_footer'
+		'20201202', // version
+		'in_footer' // where to load
 	);
 
 	register_block_type(
@@ -244,7 +244,7 @@ function nhsblocks_block_classes( $attributes ) {
  */
 function nhsblocks_gutenberg_editor_styles() {
 	$theme = wp_get_theme(); // gets the current theme
-	if ( 'nightingale' == $theme->name || 'nightingale' == $theme->parent_theme ) {
+	if ( 'Nightingale' !== $theme->name ) {
 		wp_enqueue_style( 'nhsl-block-editor-styles', plugins_url( 'style-gutenburg.css', __FILE__ ), false, '1.1', 'all' );
 	}
 }
@@ -256,7 +256,8 @@ add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' )
  */
 function nhsblocks_register_style() {
 	$theme = wp_get_theme(); // gets the current theme
-	if ( 'nightingale' == $theme->name || 'nightingale' == $theme->parent_theme ) {
+	$parent = wp_get_theme( get_template() );
+	if ( 'Nightingale' !== $theme->name && ( 'Nightingale' !== $parent->name ) ) {
 		wp_register_style( 'nhsblocks', plugins_url( 'style.min.css', __FILE__ ) );
 	}
 }
@@ -265,7 +266,7 @@ add_action( 'init', 'nhsblocks_register_style' ); // Pulls front end styling to 
 
 function nhsblocks_enqueue_style() {
 	$theme = wp_get_theme(); // gets the current theme
-	if ( 'nightingale' == $theme->name || 'nightingale' == $theme->parent_theme ) {
+	if ( 'Nightingale' !== $theme->name ) {
 		wp_enqueue_style( 'nhsblocks' );
 	}
 }
@@ -274,25 +275,77 @@ add_action( 'wp_enqueue_scripts', 'nhsblocks_enqueue_style' );
 
 
 function nhsblocks_hero_footer() {
-	echo "<script>
+	$theme = wp_get_theme(); // gets the current theme
+	$scriptout = "<script>
 	    const heroBlock = document.querySelector('.wp-block-nhsblocks-heroblock');
+	    const removeElements = (elms) => elms.forEach(el => el.remove());
+	    const tabbedTabs = document.querySelector( '.nhsuk-bordered-tabs-container' );
 	    if ( ( heroBlock ) ) { 
 	        matches = heroBlock.matches ? heroBlock.matches('.wp-block-nhsblocks-heroblock') : heroBlock.msMatchesSelector('.wp-block-nhsblocks-heroblock');
-		    if ( matches === true ) {
-			    const mainContent = document.querySelector( '#maincontent' );
+		    if ( matches === true ) { ";
+	if ( 'Nightingale' === $theme->name || 'Nightingale' === $theme->parent_theme ) {
+		$scriptout .= "
+				const mainContent = document.querySelector( 'main' );
 			    const contentInner = document.querySelector( '#contentinner' );
 			    const wholeDoc = document.querySelector( 'body' );
 			    const breadCrumb = document.querySelector( '.nhsuk-breadcrumb' );
 			    const articleTitle = document.querySelector( '.entry-header' );
+			    const sectionTitle = wholeDoc.querySelector( '#nhsuk-tabbed-title' );
+			    const tabbedTabs = document.querySelector( '.nhsuk-bordered-tabs-container' );";
+	} else {
+		$scriptout .= "
+			    const mainContent = document.querySelector( 'main' );
+			    const contentInner = document.querySelector( 'article' );
+			    const wholeDoc = document.querySelector( 'body' );
+			    const articleTitle = document.querySelector( '.entry-header' );";
+	}
+	$scriptout .= "			    
 			    mainContent.insertBefore( heroBlock, contentInner );
 			    articleTitle.style.display = 'none';
 			    mainContent.style.paddingTop = '0';
-			    heroBlock.style.marginBottom = '70px';
+			    if ( tabbedTabs ) {
+			    	mainContent.insertBefore( tabbedTabs, contentInner );
+			    	heroBlock.style.borderBottom = '70px solid white';
+			    	heroBlock.style.marginBottom = 'none';
+			    } else {
+			    	heroBlock.style.marginBottom = '70px';
+			    }
 			    if ( breadCrumb ) { 
 			    	wholeDoc.removeChild( breadCrumb );
 			    }
+			    if ( sectionTitle ) { 
+			    	removeElements( document.querySelectorAll('#nhsuk-tabbed-title') );
+			    }
 		    }
-	    }
+	    } else if ( tabbedTabs ) {";
+			if ( 'Nightingale' === $theme->name || 'Nightingale' === $theme->parent_theme ) {
+				$scriptout .= "
+						const mainContent = document.querySelector( 'main' );
+					    const contentInner = document.querySelector( '#contentinner' );
+					    const wholeDoc = document.querySelector( 'body' );
+					    const breadCrumb = document.querySelector( '.nhsuk-breadcrumb' );
+					    const articleTitle = document.querySelector( '.entry-header' );
+					    const sectionTitle = wholeDoc.querySelector( '#nhsuk-tabbed-title' );";
+
+			} else {
+				$scriptout .= "
+					    const mainContent = document.querySelector( 'main' );
+					    const contentInner = document.querySelector( 'article' );
+					    const wholeDoc = document.querySelector( 'body' );
+					    const articleTitle = document.querySelector( '.entry-header' );";
+			}
+
+			$scriptout .= "
+	        mainContent.insertBefore( tabbedTabs, contentInner );
+	        if ( breadCrumb ) {
+			    	wholeDoc.removeChild( breadCrumb );
+			    }
+			    if ( sectionTitle ) {
+			    	removeElements( document.querySelectorAll( '#nhsuk-tabbed-title' ) );
+			}
+			articleTitle.style.marginTop = '20px';
+			mainContent.style.paddingTop = '0';
+	    }		
 	    // Page Link JS
 	    const careCardWarning = document.querySelector('.nhsuk-care-card.is-style-warning-callout');
 	    if ( ( careCardWarning ) ) {
@@ -332,11 +385,8 @@ function nhsblocks_hero_footer() {
 			    }, 200);
 			});
 		});		
-	</script>";
+		</script>";
+	echo $scriptout;
 }
 
 add_action( 'wp_footer', 'nhsblocks_hero_footer' );
-
-
-
-
