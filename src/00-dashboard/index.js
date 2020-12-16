@@ -267,7 +267,7 @@ registerBlockType("nhsblocks/dashpanel", {
             backgroundImage: `url(${backgroundImage})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                backgroundColor: overlayColor
+                backgroundColor: {overlayColor}
         }}>
             <h3 class="nhsuk-panel-with-label__label">
 
