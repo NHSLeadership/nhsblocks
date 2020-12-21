@@ -115,7 +115,7 @@ registerBlockType("nhsblocks/heroblock", {
             backgroundImage: `url(${backgroundImage})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                backgroundColor: {overlayColor}
+                backgroundColor: overlayColor
         }}>
             <div className="nhsuk-hero__overlay">
             <div className="nhsuk-width-container">
