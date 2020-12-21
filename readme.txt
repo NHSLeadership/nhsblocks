@@ -54,10 +54,14 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 10. Hero - a full screen width block, with optional single colour or image background and optional block of text to anchor the page and set clear purpose
 
 == Changelog ==
+
 = 1.2.2 =
  * Updated internal react and react-test-renderer to avoid conflict js error crashing editor
  * Updated reveal deprecated code to ensure continuity of all versions
  * Removed button block dependency on learndash install being present
+
+= 1.2.1 =
+Hotfix to remove react error whenever hero blocks or dashboard panels were triggered.
 
 = 1.2 =
  * Upstream library changed to nhsuk v4

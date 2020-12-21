@@ -2,7 +2,6 @@ const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const {  InnerBlocks } = wp.blockEditor;
 
-console.log('test');
 
 registerBlockType("nhsblocks/stripesblock", {
 
@@ -76,7 +75,7 @@ registerBlockType("nhsblocks/stripesblock", {
 
     	return(
     		<div class="nhsuk-striped-blocks">
-				<InnerBlocks 
+				<InnerBlocks
 					template={ TEMPLATE_OPTIONS }
 					allowedBlocks={ ALLOWED_BLOCKS }
 				/>
@@ -109,7 +108,7 @@ registerBlockType("nhsblocks/stripeblock", {
 
     	return(
 			<div class="nhsuk-width-container">
-				<InnerBlocks 
+				<InnerBlocks
 					allowedBlocks={ ALLOWED_BLOCKS }
 				/>
 			</div>
