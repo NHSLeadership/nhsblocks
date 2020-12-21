@@ -50,7 +50,7 @@ registerBlockType("nhsblocks/reveal1", {
 		withImage: {
 			type: 'boolean',
 			default: false,
-		},
+		}
 	},
 
 	edit: props => {
@@ -90,9 +90,7 @@ registerBlockType("nhsblocks/reveal1", {
 		open >
 		< summary
 		className = "nhsuk-details__summary"
-		role = "button"
-		aria-controls = "details-content-"
-		aria-expanded = "true" >
+		role = "button">
 			<span className="nhsuk-details__summary-text" >
 			<RichText
                 placeholder={__("Reveal Title", "nhsblocks")}
@@ -130,9 +128,7 @@ registerBlockType("nhsblocks/reveal1", {
 			<details className="nhsuk-details">
 				<summary
 				className="nhsuk-details__summary"
-				role="button"
-				aria-controls="details-content-"
-				aria-expanded="false" >
+				role="button" >
 					< span
 						className="nhsuk-details__summary-text" >
 						< RichText.Content
@@ -141,9 +137,7 @@ registerBlockType("nhsblocks/reveal1", {
 					< /span>
 				< /summary>
 				<div
-					className="nhsuk-details__text"
-					id="details-content-"
-					aria-hidden="false" >
+					className="nhsuk-details__text" id = "details-content-" id = "details-content-" aria-hidden = "false">
 						{withImage === true && (
 							<InnerBlocks.Content />
 						)}
@@ -157,43 +151,30 @@ registerBlockType("nhsblocks/reveal1", {
 	},
 	deprecated: [
 		{
-				attributes: {
-					revealTitle: {
-						type: "string",
-						source: "html",
-						selector: ".nhsuk-details__summary-text"
-					},
-					revealText: {
-						type: "string",
-						source: "html",
-						selector: ".nhsuk-details__text"
-					}
+			attributes: {
+				revealTitle: {
+					type: "string",
+					source: "html",
+					selector: ".nhsuk-details__summary-text"
 				},
-			save: ( props ) =>
-				<details className="nhsuk-details newstyle"	open>
-					<summary className="nhsuk-details__summary"
-					role="button"
-					aria-controls="details-content-"
-					aria-expanded="true" >
+				revealText: {
+					type: "string",
+					source: "html",
+					selector: ".nhsuk-details__text"
+				}
+			},
+			save: ( {attributes} ) =>
+				<details className="nhsuk-details newstyle">
+					<summary className="nhsuk-details__summary" role="button" aria-controls="details-content-" aria-expanded="true" >
 						<span className="nhsuk-details__summary-text" >
-							<RichText
-							placeholder={__("Reveal Title", "nhsblocks")}
-							value={props.attributes.revealTitle}
-							/>
+							<RichText placeholder={__("Reveal Title", "nhsblocks")} value={attributes.revealTitle} />
 						</span>
 					</summary>
-					<div
-					className="nhsuk-details__text"
-					id="details-content-"
-					aria-hidden="false" >
-						<RichText
-							multiline="p"
-							placeholder={__("Reveal Contents", "nhsblocks") }
-							value={props.attributes.revealText}
-							/>
+					<div className="nhsuk-details__text" id="details-content-" aria-hidden="false" >
+						<RichText multiline="p" placeholder={__("Reveal Contents", "nhsblocks") } value={attributes.revealText} />
 					</div>
 				</details>,
-		}
-	]
+			},
+		]
 });
 

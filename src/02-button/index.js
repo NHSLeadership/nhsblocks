@@ -4,7 +4,6 @@
  *  @author Tony Blacker, NHS Leadership Academy
  *  @version 1.0 22nd July 2019
  */
-import {ldlms_get_custom_label_lower} from "../../../sfwd-lms/includes/gutenberg/blocks/ldlms";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;

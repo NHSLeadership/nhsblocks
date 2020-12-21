@@ -15,15 +15,11 @@
     "build:docs": "rm -rf hookdocs/ && jsdoc -c hookdoc-conf.json"
   },
   "dependencies": {
-    "@wordpress/scripts": "^12.5.0",
-    "clone-deep": "^4.0.1",
+    "@wordpress/scripts": "^12.6.0",
     "cssnano": "^4.1.10",
     "nhsuk-frontend": "^4.0.0",
-    "node-sass": "^4.14.1",
-    "nunjucks": "^3.2.2",
-    "postcss": "^7.0.35",
-    "postcss-cli": "^7.1.2",
-    "react-sortable-hoc": "^1.11.0",
-    "scss": "^0.2.4"
+    "node-sass": "^5.0.0",
+    "postcss": "^8.2.1",
+    "postcss-cli": "^8.3.1"
   }
 }

@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: nhsblocks
 Tags: NHS, NHS Digital, NHS Frontend, National Health Service, Leadership Academy
 Description: Gutenberg native custom blocks companion plugin for the NHS Nightingale theme (can also be standalone).
-Version: 1.2.1
+Version: 1.2.2
 
 **********************************************************************************************/
 /* ==========================================================================
@@ -9535,10 +9535,6 @@ figure.is-style-nhsuk-table-responsive figcaption {
 
 .nhsuk-hero__overlay .nhsuk-grid-column-two-thirds {
   padding: 0;
-}
-
-.nhsuk-header__search-wrap input[type="text"] {
-  border: 1px solid #aeb7bd;
 }
 
 /* Hero fix so it works on all templates */
