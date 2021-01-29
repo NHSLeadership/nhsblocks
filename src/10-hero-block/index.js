@@ -213,8 +213,18 @@ registerBlockType("nhsblocks/heroinner", {
         const { fontColor } = attributes;
         return (
             <div className="nhsuk-hero-content">
-            <h1>{attributes.texttitle}</h1>
-          <p className="nhsuk-body-l nhsuk-u-margin-bottom-0">{attributes.texttext}</p>
+            <RichText.Content
+        tagName="h1"
+        className="nhsuk-u-margin-bottom-3"
+        style={{ color:fontColor }}
+        value={attributes.texttitle}
+        />
+        <RichText.Content
+        tagName="p"
+        className="nhsuk-body-l nhsuk-u-margin-bottom-0"
+        style={{ color:fontColor }}
+        value={attributes.texttext}
+        />
         <span className="nhsuk-hero__arrow" aria-hidden="true"></span>
             </div>
     )

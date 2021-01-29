@@ -167,11 +167,11 @@ registerBlockType("nhsblocks/reveal1", {
 				<details className="nhsuk-details">
 					<summary className="nhsuk-details__summary" role="button" aria-controls="details-content-" aria-expanded="false" >
 						<span className="nhsuk-details__summary-text" >
-							{attributes.revealTitle}
+							`${attributes.revealTitle}`
 						</span>
 					</summary>
 					<div className="nhsuk-details__text" id="details-content-" aria-hidden="false" >
-						{attributes.revealText}
+						`${attributes.revealText}`
 					</div>
 				</details>,
 			},

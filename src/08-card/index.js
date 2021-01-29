@@ -141,7 +141,7 @@ registerBlockType("nhsblocks/card1", {
 		<div className="nhsuk-grid-column-width nhsuk-care-card nhsuk-care-card--type">
 			<div className="nhsuk-care-card__heading-container">
 			   <h3 className="nhsuk-care-card__heading">
-				 <span role="text">
+				 <span role="heading" aria-level="3">
 					<span className="nhsuk-u-visually-hidden">Non-urgent advice: </span>
 					<span className="nhsuk-care-card__heading-text">
 						<RichText.Content value={cardTitle} />
