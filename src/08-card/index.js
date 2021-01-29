@@ -185,14 +185,17 @@ registerBlockType("nhsblocks/card1", {
 				<span role="text">
 				<span className="nhsuk-u-visually-hidden">Non-urgent advice: </span>
 			<span className="nhsuk-care-card__heading-text">
-				{cardTitle}
+				<RichText.Content value={attributes.cardTitle} />
 			</span>
 			</span>
 			</h3>
 			<span className="nhsuk-care-card__arrow" aria-hidden="true"></span>
 				</div>
 				<div className="nhsuk-care-card__content">
-				{cardText}
+				<RichText.Content
+			multiline="p"
+			value={attributes.cardText}
+			/>
 			</div>
 			</div>,
 		},

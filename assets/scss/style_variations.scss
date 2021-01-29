@@ -30,6 +30,7 @@
 .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout { /* Warning Callout */
 
   background-color: $color_nhsuk-pale-yellow;
+  border: 1px solid $color_nhsuk-yellow;
 
   .nhsuk-care-card__heading-container{
     background-color: $color_nhsuk-yellow;
@@ -56,6 +57,7 @@
   .nhsuk-care-card__content{
     background-color: $color_nhsuk-pale-yellow;
     padding-top: 0;
+    border: 0;
   }
 }
 
