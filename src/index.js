@@ -10,6 +10,7 @@ import "./01-dodont";
 import "./02-button";
 import "./03-reveal";
 import "./04-panel";
+import "./05-tags";
 import "./06-promo";
 import "./06a-promo-group";
 import "./07-testimonial";
