@@ -277,6 +277,14 @@ add_action( 'wp_enqueue_scripts', 'nhsblocks_enqueue_style' );
 function nhsblocks_hero_footer() {
 	$theme = wp_get_theme(); // gets the current theme
 	$scriptout = "<script>
+// Create Element.remove() function if not exist - required for the IE users as el.remove doesnt work otherwise
+if (!('remove' in Element.prototype)) {
+    Element.prototype.remove = function() {
+        if (this.parentNode) {
+            this.parentNode.removeChild(this);
+        }
+    };
+}
 	    const heroBlock = document.querySelector('.wp-block-nhsblocks-heroblock');
 	    const removeElements = (elms) => elms.forEach(el => el.remove());
 	    const tabbedTabs = document.querySelector( '.nhsuk-bordered-tabs-container' );
