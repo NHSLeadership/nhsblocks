@@ -234,7 +234,7 @@ registerBlockType("nhsblocks/dashpanel", {
         </InspectorControls>,
             <div className={`${className} nhsuk-panel-group__item`} >
     <div class="nhsuk-panel-with-label" style={{
-            backgroundColor: overlayColor,
+            backgroundColor: `${overlayColor}`,
                 backgroundImage: `url(${ backgroundImage })`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
@@ -267,7 +267,7 @@ registerBlockType("nhsblocks/dashpanel", {
             backgroundImage: `url(${backgroundImage})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                backgroundColor: overlayColor
+                backgroundColor: `${overlayColor}`
         }}>
             <h3 class="nhsuk-panel-with-label__label">
 
@@ -303,20 +303,19 @@ registerBlockType("nhsblocks/dashpanel", {
         },
         save: ( {attributes} ) =>
                     <div className = "nhsuk-panel-group__item">
-                    <a href={attributes.panelLink} className="nhsuk-promo__link-wrapper">
-                    <div class="nhsuk-panel-with-label" style={{
-                    backgroundImage: `url(${attributes.backgroundImage})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundColor: overlayColor
-                }}>
-            <h3 class="nhsuk-panel-with-label__label">
-
-                    <RichText.Content value={attributes.panelTitle} />
-                </h3>
-                <img src="/wp-content/themes/nightingale-2-0/assets/pixel_trans.png" class="nhsuk-dashboard__image" alt="" />
-                    </div>
-                    </a>
+                        <a href={attributes.panelLink} className="nhsuk-promo__link-wrapper">
+                            <div class="nhsuk-panel-with-label" style={{
+                            backgroundImage: `url(${attributes.backgroundImage})`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                                backgroundColor: `${attributes.overlayColor}`
+                        }}>
+                                <h3 class="nhsuk-panel-with-label__label">
+                                    {attributes.panelTitle}
+                                </h3>
+                                <img src="/wp-content/themes/nightingale-2-0/assets/pixel_trans.png" class="nhsuk-dashboard__image" alt="" />
+                            </div>
+                        </a>
                     </div>,
         }
     ]

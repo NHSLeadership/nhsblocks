@@ -87,7 +87,7 @@ registerBlockType("nhsblocks/heroblock", {
             </div>
             </InspectorControls>,
             <section className={`${className}  nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description`} style={{
-                backgroundColor: overlayColor,
+                backgroundColor: `${overlayColor}`,
                 backgroundImage: `url(${ backgroundImage })`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
@@ -115,7 +115,7 @@ registerBlockType("nhsblocks/heroblock", {
             backgroundImage: `url(${backgroundImage})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                backgroundColor: overlayColor
+                backgroundColor: `${overlayColor}`
         }}>
             <div className="nhsuk-hero__overlay">
             <div className="nhsuk-width-container">
@@ -213,18 +213,8 @@ registerBlockType("nhsblocks/heroinner", {
         const { fontColor } = attributes;
         return (
             <div className="nhsuk-hero-content">
-            <RichText.Content
-        tagName="h1"
-        className="nhsuk-u-margin-bottom-3"
-        style={{ color:fontColor }}
-        value={attributes.texttitle}
-        />
-        <RichText.Content
-        tagName="p"
-        className="nhsuk-body-l nhsuk-u-margin-bottom-0"
-        style={{ color:fontColor }}
-        value={attributes.texttext}
-        />
+            <h1>{attributes.texttitle}</h1>
+          <p className="nhsuk-body-l nhsuk-u-margin-bottom-0">{attributes.texttext}</p>
         <span className="nhsuk-hero__arrow" aria-hidden="true"></span>
             </div>
     )

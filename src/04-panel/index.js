@@ -128,7 +128,7 @@ registerBlockType('nhsblocks/panel1', {
       save: ( {attributes} ) =>
           <div className = "nhsuk-panel" >
             <h3>
-              < RichText.Content value = { attributes.panelTitle } />
+              { attributes.panelTitle }
             </h3>
             <div className = "paneltext" >
               <InnerBlocks.Content />
