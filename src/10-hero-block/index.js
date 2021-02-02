@@ -87,7 +87,7 @@ registerBlockType("nhsblocks/heroblock", {
             </div>
             </InspectorControls>,
             <section className={`${className}  nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description`} style={{
-                backgroundColor: overlayColor,
+                backgroundColor: `${overlayColor}`,
                 backgroundImage: `url(${ backgroundImage })`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
@@ -115,7 +115,7 @@ registerBlockType("nhsblocks/heroblock", {
             backgroundImage: `url(${backgroundImage})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                backgroundColor: overlayColor
+                backgroundColor: `${overlayColor}`
         }}>
             <div className="nhsuk-hero__overlay">
             <div className="nhsuk-width-container">

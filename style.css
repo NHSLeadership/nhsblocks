@@ -9548,6 +9548,7 @@ figure.is-style-nhsuk-table-responsive figcaption {
 .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout {
   /* Warning Callout */
   background-color: #fff9c4;
+  border: 1px solid #ffeb3b;
 }
 
 .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container,
@@ -9582,6 +9583,7 @@ figure.is-style-nhsuk-table-responsive figcaption {
 .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__content {
   background-color: #fff9c4;
   padding-top: 0;
+  border: none;
 }
 
 .nhsuk-care-card__heading-container h3 {

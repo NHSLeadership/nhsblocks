@@ -277,8 +277,8 @@ add_action( 'wp_enqueue_scripts', 'nhsblocks_enqueue_style' );
 function nhsblocks_hero_footer() {
 	$theme = wp_get_theme(); // gets the current theme
 	$scriptout = "<script>
+
 	    const heroBlock = document.querySelector('.wp-block-nhsblocks-heroblock');
-	    const removeElements = (elms) => elms.forEach(el => el.remove());
 	    const tabbedTabs = document.querySelector( '.nhsuk-bordered-tabs-container' );
 	    if ( ( heroBlock ) ) { 
 	        matches = heroBlock.matches ? heroBlock.matches('.wp-block-nhsblocks-heroblock') : heroBlock.msMatchesSelector('.wp-block-nhsblocks-heroblock');

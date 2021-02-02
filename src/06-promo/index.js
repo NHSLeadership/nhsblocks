@@ -162,10 +162,10 @@ registerBlockType("nhsblocks/promo1", {
 							<div className="nhsuk-promo__content">
 								<InnerBlocks.Content />
 								<h3 className="nhsuk-promo__heading">
-									<RichText.Content value={attributes.promoTitle} />
+									{attributes.promoTitle}
 								</h3>
 								<div className="nhsuk-promo__description">
-									<RichText.Content	multiline="p" value={attributes.promoText} />
+									{attributes.promoText}
 							</div>
 							</div>
 						</a>

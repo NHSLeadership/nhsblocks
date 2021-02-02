@@ -164,14 +164,14 @@ registerBlockType("nhsblocks/reveal1", {
 				}
 			},
 			save: ( {attributes} ) =>
-				<details className="nhsuk-details newstyle">
-					<summary className="nhsuk-details__summary" role="button" aria-controls="details-content-" aria-expanded="true" >
+				<details className="nhsuk-details">
+					<summary className="nhsuk-details__summary" role="button" aria-controls="details-content-" aria-expanded="false" >
 						<span className="nhsuk-details__summary-text" >
-							<RichText placeholder={__("Reveal Title", "nhsblocks")} value={attributes.revealTitle} />
+							`${attributes.revealTitle}`
 						</span>
 					</summary>
 					<div className="nhsuk-details__text" id="details-content-" aria-hidden="false" >
-						<RichText multiline="p" placeholder={__("Reveal Contents", "nhsblocks") } value={attributes.revealText} />
+						`${attributes.revealText}`
 					</div>
 				</details>,
 			},
