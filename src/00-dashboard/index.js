@@ -311,7 +311,7 @@ registerBlockType("nhsblocks/dashpanel", {
                                 backgroundColor: `${attributes.overlayColor}`
                         }}>
                                 <h3 class="nhsuk-panel-with-label__label">
-                                    {attributes.panelTitle}
+                                    `${attributes.panelTitle}`
                                 </h3>
                                 <img src="/wp-content/themes/nightingale-2-0/assets/pixel_trans.png" class="nhsuk-dashboard__image" alt="" />
                             </div>

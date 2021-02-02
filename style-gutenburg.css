@@ -12422,7 +12422,7 @@
 .block-editor-inserter__menu-help-panel .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__content {
   background-color: #fff9c4;
   padding-top: 0;
-  border: 0;
+  border: none;
 }
 
 .edit-post-visual-editor .nhsuk-care-card__heading-container h3, .block-editor-block-styles .nhsuk-care-card__heading-container h3, .block-editor-inserter__menu-help-panel .nhsuk-care-card__heading-container h3 {
@@ -13056,7 +13056,7 @@
 .block-editor-inserter__menu-help-panel .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__content {
   background-color: #fff9c4;
   padding-top: 0;
-  border: 0;
+  border: none;
 }
 
 .edit-post-visual-editor .nhsuk-care-card__heading-container h3, .block-editor-block-styles .nhsuk-care-card__heading-container h3, .block-editor-inserter__menu-help-panel .nhsuk-care-card__heading-container h3 {
