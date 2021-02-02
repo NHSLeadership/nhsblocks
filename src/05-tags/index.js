@@ -12,8 +12,6 @@ const {
     InspectorControls,
     BlockControls,
     BlockVerticalAlignmentToolbar } = wp.blockEditor;
-//@todo align
-//@todo extended classes
 
 registerBlockType("nhsblocks/tags", {
   title: __("Tag", "nhsblocks"),
@@ -88,7 +86,6 @@ registerBlockType("nhsblocks/tags", {
     // https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-edit-save/
     edit: props => {
     // Props parameter holds all the info.
-    //console.info(props);
 
     // Lift info from props and populate various constants.
     const {
