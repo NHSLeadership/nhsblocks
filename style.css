@@ -4180,12 +4180,12 @@ b {
   color: #212b32;
   outline: 4px solid transparent;
   text-decoration: none;
-  background: #ffeb3b url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__plus' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='002f5c'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M12 8v8M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat;
+  background: #ffeb3b url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__plus' xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='002f5c'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M12 8v8M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat;
   background-size: 32px 32px;
 }
 
 .nhsuk-expander .nhsuk-details__summary-text, .nhsuk-details.is-style-expander .nhsuk-details__summary-text {
-  background: url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__plus' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23005eb8'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M12 8v8M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat;
+  background: url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__plus' xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23005eb8'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M12 8v8M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat;
   background-size: 32px 32px;
   color: #005eb8;
   cursor: pointer;
@@ -4233,7 +4233,7 @@ b {
 }
 
 .nhsuk-expander[open] .nhsuk-details__summary:focus .nhsuk-details__summary-text, .nhsuk-details.is-style-expander[open] .nhsuk-details__summary:focus .nhsuk-details__summary-text {
-  background: #ffeb3b url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__minus' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='002f5c'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat;
+  background: #ffeb3b url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__minus' xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='002f5c'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat;
   /* [3] */
   background-size: 32px 32px;
 }
@@ -4243,7 +4243,7 @@ b {
 }
 
 .nhsuk-expander[open] .nhsuk-details__summary-text, .nhsuk-details.is-style-expander[open] .nhsuk-details__summary-text {
-  background: url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__minus' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23005eb8'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat;
+  background: url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__minus' xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23005eb8'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat;
   /* [3] */
   background-size: 32px 32px;
 }
@@ -4882,6 +4882,8 @@ b {
  * 16. Use non variable colour to follow NHS England guidelines on logo colour
  * 17. On print stylesheets remove the header link
  * 18. Remove random top margin in Safari
+ * 19. Align close icon with nav item arrow icons
+ * 20. Add nhsuk-spacing(9) to align right and left main nav with header
  */
 /* ==========================================================================
    COMPONENTS / #HEADER / #AUTOCOMPLETE
@@ -4895,9 +4897,13 @@ b {
    * 6. Drop shadow on search suggestions dopdown box, custom spread and blur
    * 7. Z-index to bring the dropdown to the front
    * 8. No current spacing at 12px so using this value
+   * 9. Z-index to being search box to the front for focus state style
+   * 10. Custom padding to stop text jumping on focus
 */
 .autocomplete-container {
   display: inline-block;
+  z-index: 1;
+  /* [9] */
 }
 
 @media (max-width: 40.0525em) {
@@ -4932,10 +4938,12 @@ b {
     /* [3] */
   }
   .autocomplete__input:focus {
-    border: 4px solid #ffeb3b;
-    box-shadow: inset 0 0 0 4px #212b32;
+    border: 4px solid #212b32;
+    box-shadow: 0 0 0 4px #ffeb3b;
     outline: 4px solid transparent;
     outline-offset: 4px;
+    padding: 0 13px;
+    /* [10] */
   }
 }
 
@@ -4958,10 +4966,12 @@ b {
     /* [3] */
   }
   .autocomplete__input:focus {
-    border: 1px solid #ffeb3b;
-    box-shadow: inset 0 0 0 4px #ffeb3b;
+    border: 2px solid #212b32;
+    box-shadow: 0 0 0 4px #ffeb3b;
     outline: 4px solid transparent;
     outline-offset: 4px;
+    padding: 0 11px;
+    /* [10] */
   }
   .autocomplete__input::placeholder {
     color: #768692;
@@ -5167,12 +5177,12 @@ b {
   box-shadow: 0 0 0 4px #003d78;
 }
 
-.nhsuk-header__link:focus .nhsuk-logo {
-  box-shadow: 0 0 0 4px #ffeb3b;
+.nhsuk-header__link:focus {
+  box-shadow: none;
 }
 
-.nhsuk-header__link:focus:hover .nhsuk-logo {
-  box-shadow: 0 0 0 4px #ffeb3b;
+.nhsuk-header__link:focus .nhsuk-logo {
+  box-shadow: 0 0 0 4px #ffeb3b, 0 4px 0 4px #212b32;
 }
 
 @media print {
@@ -5284,7 +5294,7 @@ b {
   outline: 4px solid transparent;
   /* 1 */
   outline-offset: 4px;
-  box-shadow: none;
+  box-shadow: 0 0 0 2px #ffeb3b, 0 4px 0 2px #212b32;
 }
 
 .nhsuk-header__search-toggle:focus .nhsuk-icon {
@@ -5385,8 +5395,7 @@ b {
   }
   .nhsuk-search__submit:focus {
     background-color: #ffeb3b;
-    border-bottom: 4px solid #212b32;
-    box-shadow: inset 0 0 0 4px #ffeb3b;
+    box-shadow: 0 -4px #ffeb3b, 0 4px #212b32;
     outline: 4px solid transparent;
     outline-offset: 4px;
   }
@@ -5399,12 +5408,6 @@ b {
   .nhsuk-search__submit:focus .nhsuk-icon {
     fill: #212b32;
   }
-  .nhsuk-search__submit:active {
-    background-color: #00401e;
-  }
-  .nhsuk-search__submit:active .nhsuk-icon {
-    fill: #ffffff;
-  }
   .nhsuk-search__close {
     background-color: transparent;
     border: 0;
@@ -5412,7 +5415,9 @@ b {
     height: 40px;
     padding: 0;
     width: 40px;
-    margin-left: 16px;
+    margin-left: 8px;
+    margin-right: -8px;
+    /* [19] */
     margin-top: 8px;
   }
   .nhsuk-search__close .nhsuk-icon__close {
@@ -5482,10 +5487,6 @@ b {
     /* [2] */
     line-height: inherit;
     outline: none;
-    padding-left: 9px;
-    /* [7] */
-    padding-top: 2px;
-    /* [7] */
     width: 44px;
     /* [2] */
   }
@@ -5501,6 +5502,7 @@ b {
   }
   .nhsuk-search__submit:hover {
     background-color: #003d78;
+    border: 1px solid #ffffff;
     cursor: pointer;
   }
   .nhsuk-search__submit:hover .nhsuk-icon__search {
@@ -5514,7 +5516,7 @@ b {
     outline: 4px solid transparent;
     /* 1 */
     outline-offset: 4px;
-    box-shadow: none;
+    box-shadow: 0 -2px #ffeb3b, 0 4px #212b32;
   }
   .nhsuk-search__submit:focus .nhsuk-icon {
     fill: #212b32;
@@ -5625,7 +5627,7 @@ b {
   outline: 4px solid transparent;
   /* 1 */
   outline-offset: 4px;
-  box-shadow: none;
+  box-shadow: 0 0 0 2px #ffeb3b, 0 4px 0 2px #212b32;
 }
 
 .nhsuk-header__menu-toggle:focus .nhsuk-icon {
@@ -5693,7 +5695,7 @@ b {
   width: 40px;
   overflow: hidden;
   position: absolute;
-  right: 16px;
+  right: 8px;
   top: 8px;
   white-space: nowrap;
 }
@@ -5771,6 +5773,10 @@ b {
   top: 11px;
 }
 
+.nhsuk-header__navigation-link:visited {
+  color: #005eb8;
+}
+
 @media (min-width: 61.875em) {
   .nhsuk-header__navigation-link:visited {
     color: #ffffff;
@@ -5778,10 +5784,15 @@ b {
 }
 
 .nhsuk-header__navigation-link:hover {
-  background-color: #003d78;
   box-shadow: none;
-  color: #ffffff;
+  color: #005eb8;
   text-decoration: underline;
+}
+
+@media (min-width: 61.875em) {
+  .nhsuk-header__navigation-link:hover {
+    color: #ffffff;
+  }
 }
 
 .nhsuk-header__navigation-link:hover .nhsuk-icon__chevron-right {
@@ -5801,6 +5812,10 @@ b {
 .nhsuk-header__navigation-link:active:hover, .nhsuk-header__navigation-link:focus:hover {
   background-color: #ffeb3b;
   color: #212b32;
+}
+
+.nhsuk-header__navigation-link:active:hover .nhsuk-icon__chevron-right, .nhsuk-header__navigation-link:focus:hover .nhsuk-icon__chevron-right {
+  fill: #212b32;
 }
 
 .nhsuk-header__navigation-link:active:visited, .nhsuk-header__navigation-link:focus:visited {
@@ -5825,7 +5840,7 @@ b {
     background-color: #005eb8;
     display: block;
     margin: 0 auto;
-    max-width: 960px;
+    max-width: 1024px;
   }
   .nhsuk-header__navigation-list {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -5850,13 +5865,6 @@ b {
   .nhsuk-header__navigation-link {
     color: #ffffff;
     line-height: normal;
-  }
-  .nhsuk-header__navigation-link:active {
-    background-color: #002f5c;
-    color: #f0f4f5;
-  }
-  .nhsuk-header__navigation-link:hover, .nhsuk-header__navigation-link:active, .nhsuk-header__navigation-link.is-active {
-    background-color: #004b93;
   }
 }
 
@@ -6009,15 +6017,7 @@ b {
 }
 
 .nhsuk-header__transactional-service-name--link:hover {
-  color: #ffffff;
-}
-
-.nhsuk-header__transactional-service-name--link:focus {
-  text-decoration: none;
-}
-
-.nhsuk-header__transactional-service-name--link:focus:hover {
-  color: #212b32;
+  text-decoration: underline;
 }
 
 .nhsuk-header--transactional .nhsuk-header__link {
@@ -6062,12 +6062,16 @@ b {
 
 .nhsuk-header__link--service:focus {
   background: #ffeb3b;
-  box-shadow: 0 0 0 4px #ffeb3b;
+  box-shadow: 0 0 0 4px #ffeb3b, 0 4px 0 4px #212b32;
 }
 
 .nhsuk-header__link--service:focus .nhsuk-header__service-name {
   color: #212b32;
   text-decoration: none;
+}
+
+.nhsuk-header__link--service:focus .nhsuk-logo {
+  box-shadow: none;
 }
 
 .nhsuk-header__service-name {
@@ -6102,18 +6106,6 @@ b {
   }
 }
 
-@media (max-width: 48.0525em) {
-  .nhsuk-header__service-name {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 450px) {
-  .nhsuk-header__service-name {
-    font-size: 14px;
-  }
-}
-
 .nhsuk-header__logo--only {
   max-width: 100%;
 }
@@ -6124,6 +6116,7 @@ b {
     align-items: center;
     display: flex;
     margin-bottom: 0;
+    max-width: 270px;
     width: auto;
   }
   .nhsuk-header__logo--only .nhsuk-header__service-name {
@@ -6141,7 +6134,8 @@ b {
 }
 
 .nhsuk-header--organisation .nhsuk-header__link:hover {
-  box-shadow: 0 1px 0 0 #ffffff;
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 .nhsuk-header--organisation .nhsuk-header__link:hover .nhsuk-logo {
@@ -6150,7 +6144,7 @@ b {
 
 .nhsuk-header--organisation .nhsuk-header__link:focus {
   background: #ffeb3b;
-  box-shadow: 0 0 0 4px #ffeb3b;
+  box-shadow: 0 0 0 4px #ffeb3b, 0 4px 0 4px #212b32;
 }
 
 .nhsuk-header--organisation .nhsuk-header__link:focus .nhsuk-organisation-name,
@@ -6160,6 +6154,10 @@ b {
 
 .nhsuk-header--organisation .nhsuk-header__link:focus .nhsuk-logo {
   box-shadow: none;
+}
+
+.nhsuk-header--organisation .nhsuk-header__link:focus:hover {
+  text-decoration: none;
 }
 
 .nhsuk-header--organisation .nhsuk-header__logo .nhsuk-logo {
@@ -6270,20 +6268,21 @@ b {
   background-color: #ffffff;
 }
 
-.nhsuk-header--white .nhsuk-header__link:hover .nhsuk-logo {
-  box-shadow: none;
-}
-
-.nhsuk-header--white .nhsuk-header__link:focus .nhsuk-logo {
-  box-shadow: 4px 0 0 0 #ffeb3b, -4px 0 0 0 #ffeb3b, -4px 0 0 #ffeb3b, 0 0 0 4px #ffeb3b, 0 4px 0 4px #212b32;
-}
-
 .nhsuk-header--white .nhsuk-logo .nhsuk-logo__background {
   fill: #005eb8;
 }
 
 .nhsuk-header--white .nhsuk-logo .nhsuk-logo__text {
   fill: #ffffff;
+}
+
+.nhsuk-header--white .nhsuk-header__link:hover {
+  color: #212b32;
+  text-decoration: underline;
+}
+
+.nhsuk-header--white .nhsuk-header__link:hover .nhsuk-organisation-descriptor {
+  color: #212b32;
 }
 
 .nhsuk-header--white .nhsuk-search__submit {
@@ -6296,16 +6295,11 @@ b {
 
 .nhsuk-header--white .nhsuk-search__submit:hover {
   background-color: #004b93;
+  border-color: #004b93;
 }
 
 .nhsuk-header--white .nhsuk-search__submit:focus {
   background-color: #ffeb3b;
-}
-
-@media (min-width: 40.0625em) {
-  .nhsuk-header--white .nhsuk-search__submit:focus {
-    border: 1px solid #212b32;
-  }
 }
 
 .nhsuk-header--white .nhsuk-search__submit:focus .nhsuk-icon__search {
@@ -6315,18 +6309,17 @@ b {
 .nhsuk-header--white .autocomplete__input,
 .nhsuk-header--white .nhsuk-search__input {
   border: 1px solid #aeb7bd;
-  border-right: 0;
 }
 
 .nhsuk-header--white .autocomplete__input:focus,
 .nhsuk-header--white .nhsuk-search__input:focus {
-  border: 1px solid #212b32;
+  border: 2px solid #212b32;
 }
 
 @media (max-width: 40.0525em) {
   .nhsuk-header--white .autocomplete__input:focus,
   .nhsuk-header--white .nhsuk-search__input:focus {
-    border: 4px solid #ffeb3b;
+    border: 4px solid #212b32;
   }
 }
 
@@ -6344,9 +6337,7 @@ b {
 .nhsuk-header--white .nhsuk-header__search-toggle.is-active, .nhsuk-header--white .nhsuk-header__search-toggle:hover,
 .nhsuk-header--white .nhsuk-header__menu-toggle.is-active,
 .nhsuk-header--white .nhsuk-header__menu-toggle:hover {
-  background-color: #005eb8;
-  border-color: #005eb8;
-  box-shadow: none;
+  border-color: #004b93;
   color: #ffffff;
 }
 
@@ -6358,15 +6349,7 @@ b {
 
 .nhsuk-header--white .nhsuk-header__search-toggle:focus,
 .nhsuk-header--white .nhsuk-header__menu-toggle:focus {
-  background-color: #ffeb3b;
-  border: 0;
-  box-shadow: 0 4px 0 0 #212b32;
   color: #212b32;
-  outline: 4px solid transparent;
-  /* 1 */
-  outline-offset: 4px;
-  border: 1px solid #212b32 !important;
-  box-shadow: none;
 }
 
 .nhsuk-header--white .nhsuk-header__search-toggle:focus .nhsuk-icon,
@@ -6401,24 +6384,12 @@ b {
   color: #212b32;
 }
 
-.nhsuk-header--organisation.nhsuk-header--white .nhsuk-header__link:hover {
-  box-shadow: 0 1px 0 0 #005eb8;
-}
-
-.nhsuk-header--organisation.nhsuk-header--white .nhsuk-header__link:focus {
-  box-shadow: 0 4px 0 0 #212b32;
-}
-
-.nhsuk-header--organisation.nhsuk-header--white .nhsuk-header__link:focus .nhsuk-logo {
-  box-shadow: none;
-}
-
 .nhsuk-header--white-nav .nhsuk-header__navigation {
   background-color: #ffffff;
 }
 
 .nhsuk-header--white-nav .nhsuk-header__navigation .nhsuk-header__navigation-list {
-  border-top: 1px solid #d8dde0;
+  border-top: 1px solid #f0f4f5;
 }
 
 .nhsuk-header--white-nav .nhsuk-header__navigation .nhsuk-header__navigation-link {
@@ -6427,10 +6398,6 @@ b {
 
 .nhsuk-header--white-nav .nhsuk-header__navigation .nhsuk-header__navigation-link:visited {
   color: #005eb8;
-}
-
-.nhsuk-header--white-nav .nhsuk-header__navigation .nhsuk-header__navigation-link:hover, .nhsuk-header--white-nav .nhsuk-header__navigation .nhsuk-header__navigation-link:active, .nhsuk-header--white-nav .nhsuk-header__navigation .nhsuk-header__navigation-link.is-active {
-  background-color: transparent;
 }
 
 .nhsuk-header--white-nav .nhsuk-header__navigation .nhsuk-header__navigation-link:focus {
@@ -8009,6 +7976,7 @@ b {
 .nhsuk-summary-list__actions {
   margin: 0;
   /* [2] */
+  vertical-align: top;
 }
 
 @media (min-width: 40.0625em) {
@@ -8250,7 +8218,7 @@ b {
  * 3. Removing default screen reader behaviour
  * 4. Assigning role of table-row on desktop to give default screen reader behaviour
  * 5. Using justify content to space out elements in the row on mobile
- * 6. Assigning a minimum width incase of black cell
+ * 6. Assigning a minimum width in case of black cell
  * 7. Aligning content to the right on mobile
  * 8. Aligning mobile header to left to split it from the data
  * 9. Hiding mobile specific header from desktop view
@@ -8364,6 +8332,110 @@ b {
 .nhsuk-table__header--numeric,
 .nhsuk-table__cell--numeric {
   text-align: right;
+}
+
+/* ==========================================================================
+   #TAG
+   ========================================================================== */
+.nhsuk-tag {
+  font-weight: 600;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1;
+  background-color: #0055a6;
+  border: 1px solid #0055a6;
+  color: #ffffff;
+  display: inline-block;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  text-decoration: none;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-tag {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1;
+  }
+}
+
+@media print {
+  .nhsuk-tag {
+    font-size: 14pt;
+    line-height: 1;
+  }
+}
+
+/* Colour variants
+  ========================================================================== */
+.nhsuk-tag--white, .nhsuk-tag.is-style-white {
+  background-color: #ffffff;
+  border-color: #212b32;
+  color: #212b32;
+}
+
+.nhsuk-tag--grey, .nhsuk-tag.is-style-grey {
+  background-color: #dbe0e3;
+  border-color: #354550;
+  color: #354550;
+}
+
+.nhsuk-tag--green, .nhsuk-tag.is-style-green {
+  background-color: #cce5d8;
+  border-color: #004c23;
+  color: #004c23;
+}
+
+.nhsuk-tag--aqua-green, .nhsuk-tag.is-style-aqua-green {
+  background-color: #ccedeb;
+  border-color: #00524d;
+  color: #00524d;
+}
+
+.nhsuk-tag--blue {
+  background-color: #ccdff1;
+  border-color: #004281;
+  color: #004281;
+}
+
+.nhsuk-tag--purple, .nhsuk-tag.is-style-purple {
+  background-color: #d6cce3;
+  border-color: #240050;
+  color: #240050;
+}
+
+.nhsuk-tag--pink, .nhsuk-tag.is-style-pink {
+  background-color: #efd3e3;
+  border-color: #57133a;
+  color: #57133a;
+}
+
+.nhsuk-tag--red, .nhsuk-tag.is-style-red {
+  background-color: #f7d4d1;
+  border-color: #6b140e;
+  color: #6b140e;
+}
+
+.nhsuk-tag--orange, .nhsuk-tag.is-style-orange {
+  background-color: #ffdc8e;
+  border-color: #4d3708;
+  color: #4d3708;
+}
+
+.nhsuk-tag--yellow, .nhsuk-tag.is-style-yellow {
+  background-color: #fff59d;
+  border-color: #4d4712;
+  color: #4d4712;
+}
+
+/* Remove tag border
+  ========================================================================== */
+.nhsuk-tag--no-border {
+  border: 0;
 }
 
 /* ==========================================================================

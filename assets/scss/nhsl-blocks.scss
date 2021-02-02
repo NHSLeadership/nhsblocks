@@ -235,3 +235,22 @@ figure.is-style-nhsuk-table-responsive{
 .nhsuk-table-responsive table, .is-style-nhsuk-table-responsive table, table {
   margin: 0;
 }
+
+$tag-variants: (
+  'white',
+  'grey',
+  'green',
+  'aqua-green',
+  'purple',
+  'pink',
+  'red',
+  'orange',
+  'yellow'
+);
+.nhsuk-tag {
+  @each $colour in $tag-variants {
+    &.is-style-#{$colour} {
+      @extend .nhsuk-tag--#{$colour};
+    }
+  }
+}
