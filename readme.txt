@@ -5,7 +5,7 @@ Plugin Name:: NHS Blocks
 Plugin URI: https://digital.leadershipacademy.nhs.uk/digital-capabilities/websites/nhs-blocks-user-guide/
 Requires at least: 5.3
 Tested up to: 5.5
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 Requires PHP: 5.6
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -54,6 +54,15 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 10. Hero - a full screen width block, with optional single colour or image background and optional block of text to anchor the page and set clear purpose
 
 == Changelog ==
+
+= 1.2.3 =
+ * Fixed fatal error (white screen of death) with edge cases of hero, reveal and dashboard blocks
+ * added tag component https://service-manual.nhs.uk/design-system/components/tag
+ * corrected IE10/11 javascript bug affecting hero placement
+ * multiple accessibility improvements, particularly with screen reader and contrast issues
+ * updated to NHSUK frontend library 4.1.0 https://github.com/nhsuk/nhsuk-frontend
+ * N.B. if you are also using the Nightingale theme, tags will not display correctly unless you also update Nightingale
+ to v2.3.1
 
 = 1.2.2 =
  * Updated internal react and react-test-renderer to avoid conflict js error crashing editor
