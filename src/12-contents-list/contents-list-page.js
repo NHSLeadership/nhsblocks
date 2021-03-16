@@ -73,18 +73,28 @@ registerBlockType(
 
 
 	    	let dynamicArray = [];
+			let index = 0;
 
-	    	blocks.map( ( block, i ) => {			
+			let addToArray = (block) => {
 
-				if( ( block.name === "core/heading" ) && ( block.attributes.level === 2 ) ){
+				if ((block.name === "core/heading") && (block.attributes.level === 2)) {
 
-					let anchor = 'nhs-block-anchor-' + i;
+					let anchor = 'nhs-block-anchor-' + index++;
 
-					dynamicArray.push( { text: block.attributes.content, url: anchor, id: block.clientId } );
+					// stripping any inline styling tags
+					const text = block.attributes.content.replace(/<[^>]+>/g, '');
+					
+					dynamicArray.push({ text: text, url: anchor, id: block.clientId });
+
+				}
+
+				if (block.innerBlocks) {
+					block.innerBlocks.map(addToArray);
+				}
 					
 				}
 
-			});
+			blocks.map(addToArray);
 
 			let updateHeading = ()=>{
 
