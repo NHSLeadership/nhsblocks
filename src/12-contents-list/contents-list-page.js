@@ -8,10 +8,10 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
-const { 
-	RichText, 
-	URLInput, 
-	InnerBlocks 
+const {
+	RichText,
+	URLInput,
+	InnerBlocks
 } = wp.blockEditor;
 
 const { withSelect, subscribe, select } = wp.data;
@@ -75,34 +75,34 @@ registerBlockType(
 	    	let dynamicArray = [];
 			let index = 0;
 
-			let addToArray = (block) => {
+			let addToArray = ( block ) => {
 
-				if ((block.name === "core/heading") && (block.attributes.level === 2)) {
+				if ( ( block.name === "core/heading" ) && ( block.attributes.level === 2 ) ) {
 
 					let anchor = 'nhs-block-anchor-' + index++;
 
 					// stripping any inline styling tags
-					const text = block.attributes.content.replace(/<[^>]+>/g, '');
-					
-					dynamicArray.push({ text: text, url: anchor, id: block.clientId });
+					const text = block.attributes.content.replace( /<[^>]+>/g, '' );
+
+					dynamicArray.push( { text: text, url: anchor, id: block.clientId } );
 
 				}
 
 				if (block.innerBlocks) {
-					block.innerBlocks.map(addToArray);
-				}
-					
+					block.innerBlocks.map( addToArray );
 				}
 
-			blocks.map(addToArray);
+			}
+
+			blocks.map( addToArray );
 
 			let updateHeading = ()=>{
 
-				setAttributes({ h2titles: dynamicArray });
+				setAttributes( { h2titles: dynamicArray } );
 
 				for (var i = dynamicArray.length - 1; i >= 0; i--) {
 
-					let block = select('core/block-editor').getBlock( dynamicArray[i].id );
+					let block = select( 'core/block-editor' ).getBlock( dynamicArray[i].id );
 					block.attributes.anchor = dynamicArray[i].url;
 				}
 			}
@@ -133,20 +133,20 @@ registerBlockType(
 			        			<a className="nhsuk-contents-list__link" href={ '#' + block.url }>
 			            			{ block.text }
 			            		</a>
-			                    		
+
 							</li>
 
 		            	)
 
 					}) : (
 						<p>Press the button below to make a table of contents for this page</p>
-					) 
+					)
 
 
 					}
 
-					<p>		            
-		        	<Button 
+					<p>
+		        	<Button
 						onClick={ updateHeading  }
 						className="is-primary"
 						disabled={ is_same }
