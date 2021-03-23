@@ -243,10 +243,7 @@ function nhsblocks_block_classes( $attributes ) {
  * Queues up the gutenberg editor style
  */
 function nhsblocks_gutenberg_editor_styles() {
-	$theme = wp_get_theme(); // gets the current theme
-	if ( 'Nightingale' !== $theme->name ) {
 		wp_enqueue_style( 'nhsl-block-editor-styles', plugins_url( 'style-gutenburg.css', __FILE__ ), false, '1.1', 'all' );
-	}
 }
 
 add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' ); // Pulls the enqueued file in to standard wp process.
