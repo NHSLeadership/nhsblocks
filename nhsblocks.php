@@ -254,7 +254,7 @@ add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' )
 function nhsblocks_register_style() {
 	$theme = wp_get_theme(); // gets the current theme
 	$parent = wp_get_theme( get_template() );
-	if ( 'Nightingale' !== $theme->name && ( 'Nightingale' !== $parent->name ) ) {
+	if ( 'nightingale' !== $theme->get( 'TextDomain' ) && ( 'nightingale' !== $parent->get( 'TextDomain' ) ) ) {
 		wp_register_style( 'nhsblocks', plugins_url( 'style.min.css', __FILE__ ) );
 	}
 }
@@ -263,7 +263,8 @@ add_action( 'init', 'nhsblocks_register_style' ); // Pulls front end styling to 
 
 function nhsblocks_enqueue_style() {
 	$theme = wp_get_theme(); // gets the current theme
-	if ( 'Nightingale' !== $theme->name ) {
+	$parent = wp_get_theme( get_template() );
+	if ( 'nightingale' !== $theme->get( 'TextDomain' ) ) {
 		wp_enqueue_style( 'nhsblocks' );
 	}
 }
@@ -273,6 +274,7 @@ add_action( 'wp_enqueue_scripts', 'nhsblocks_enqueue_style' );
 
 function nhsblocks_hero_footer() {
 	$theme = wp_get_theme(); // gets the current theme
+	$parent = wp_get_theme( get_template() );
 	$scriptout = "<script>
 
 	    const heroBlock = document.querySelector('.wp-block-nhsblocks-heroblock');
@@ -280,7 +282,7 @@ function nhsblocks_hero_footer() {
 	    if ( ( heroBlock ) ) { 
 	        matches = heroBlock.matches ? heroBlock.matches('.wp-block-nhsblocks-heroblock') : heroBlock.msMatchesSelector('.wp-block-nhsblocks-heroblock');
 		    if ( matches === true ) { ";
-	if ( 'Nightingale' === $theme->name || 'Nightingale' === $theme->parent_theme ) {
+	if ( 'nightingale' === $theme->get( 'TextDomain' ) && ( 'nightingale' === $parent->get( 'TextDomain' ) ) ) {
 		$scriptout .= "
 				const mainContent = document.querySelector( 'main' );
 			    const contentInner = document.querySelector( '#contentinner' );
@@ -315,7 +317,7 @@ function nhsblocks_hero_footer() {
 			    }
 		    }
 	    } else if ( tabbedTabs ) {";
-			if ( 'Nightingale' === $theme->name || 'Nightingale' === $theme->parent_theme ) {
+			if ( 'nightingale' === $theme->get( 'TextDomain' ) && ( 'nightingale' === $parent->get( 'TextDomain' ) ) ) {
 				$scriptout .= "
 						const mainContent = document.querySelector( 'main' );
 					    const contentInner = document.querySelector( '#contentinner' );
