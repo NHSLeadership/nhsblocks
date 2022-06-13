@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Plugin Name: NHS Blocks
  * Plugin URI: https://github.com/NHSLeadership/nhsblocks
  * Description: Gutenberg native custom blocks companion plugin for the NHS Nightingale theme (can also be standalone). Based on nhsuk frontend framework.
@@ -40,7 +40,7 @@ add_filter( 'block_categories', 'nhsblocks_block_categories', 10, 2 );
 /**
  * Create the category.
  *
- * @param array $categories the details of added categories (in this case an array of 1 item).
+ * @param array   $categories the details of added categories (in this case an array of 1 item).
  * @param integer $post Unused variable, intended for future expansion of function.
  *
  * @return array
@@ -82,8 +82,8 @@ function nhsblocks_register_blocks() {
 		'nhsblocks-editor-script',                                            // label.
 		plugins_url( '/build/index.js', __FILE__ ),                        // script file.
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-data' ),        // dependencies.
-		'20201202', // version
-		'in_footer' // where to load
+		'20201202', // version.
+		'in_footer' // where to load.
 	);
 
 	register_block_type(
@@ -156,36 +156,41 @@ function nhsblocks_register_dynamic_blocks() {
 		return;
 	}
 
-	$blocks = [
+	$blocks = array(
 		'nhsblocks/contentslistpage',
-	];
+	);
 
 	foreach ( $blocks as $block ) {
 
 		register_block_type(
 			$block,
-			[
-				// https://github.com/WordPress/gutenberg/issues/4671
+			array(
+				// https://github.com/WordPress/gutenberg/issues/4671.
 				'render_callback' => function( array $attributes, string $content = null ) use ( $block ) {
 
 					return nhsblocks_block_renderer( $block, $attributes, $content );
 				},
-			]
+			)
 		);
 
 	}
 
 }
 
-
-
-
+/**
+ * Undocumented function
+ *
+ * @param string $name name.
+ * @param array  $attributes attributes.
+ * @param string $content content.
+ * @return string
+ */
 function nhsblocks_block_renderer( string $name, array $attributes, string $content = null ) {
 
-	// change template name slash to scores
+	// change template name slash to scores.
 	$template_name = str_replace( '/', '-', $name );
 
-	// Set query vars so they are accessible to the template part:
+	// Set query vars so they are accessible to the template part.
 	foreach ( $attributes as $attribute_name => $attribute_value ) {
 		set_query_var( $name . '/' . $attribute_name, $attribute_value );
 	}
@@ -195,20 +200,17 @@ function nhsblocks_block_renderer( string $name, array $attributes, string $cont
 	// get template file directory
 	$template_file = plugin_dir_path( __FILE__ ) . "/templates/{$template_name}.php";
 
-	// var_dump( $template_file );
-
-
-	// Load the template part in an output buffer:
+	// Load the template part in an output buffer:.
 	ob_start();
 	load_template( $template_file );
 	$output = ob_get_clean();
 
-	// Fall back to just the block content if there's no template part:
+	// Fall back to just the block content if there's no template part:.
 	if ( '' === $output ) {
 		$output = (string) $content;
 	}
 
-	// Clear the query vars so they don't bleed into subsequent instances of the same block type
+	// Clear the query vars so they don't bleed into subsequent instances of the same block type.
 	foreach ( $attributes as $attribute_name => $attribute_value ) {
 		set_query_var( $name . '/' . $attribute_name, null );
 	}
@@ -252,27 +254,32 @@ add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' )
  * Queues up the blocks styling for front end
  */
 function nhsblocks_register_style() {
-	$theme = wp_get_theme(); // gets the current theme
+	$theme  = wp_get_theme(); // gets the current theme.
 	$parent = wp_get_theme( get_template() );
-	if ( 'Nightingale' !== $theme->name && ( 'Nightingale' !== $parent->name ) ) {
-		wp_register_style( 'nhsblocks', plugins_url( 'style.min.css', __FILE__ ) );
-	}
+	wp_register_style( 'nhsblocks', plugins_url( 'style.min.css', __FILE__ ) );
 }
 
 add_action( 'init', 'nhsblocks_register_style' ); // Pulls front end styling to standard wp process.
 
+/**
+ * Nhsblocks enqueue style.
+ *
+ * @return void
+ */
 function nhsblocks_enqueue_style() {
-	$theme = wp_get_theme(); // gets the current theme
-	if ( 'Nightingale' !== $theme->name ) {
-		wp_enqueue_style( 'nhsblocks' );
-	}
+	$theme = wp_get_theme(); // gets the current theme.
+	wp_enqueue_style( 'nhsblocks' );
 }
 
 add_action( 'wp_enqueue_scripts', 'nhsblocks_enqueue_style' );
 
-
+/**
+ * Hero footer
+ *
+ * @return void
+ */
 function nhsblocks_hero_footer() {
-	$theme = wp_get_theme(); // gets the current theme
+	$theme     = wp_get_theme(); // gets the current theme.
 	$scriptout = "<script>
 
 	    const heroBlock = document.querySelector('.wp-block-nhsblocks-heroblock');
@@ -315,8 +322,8 @@ function nhsblocks_hero_footer() {
 			    }
 		    }
 	    } else if ( tabbedTabs ) {";
-			if ( 'Nightingale' === $theme->name || 'Nightingale' === $theme->parent_theme ) {
-				$scriptout .= "
+	if ( 'Nightingale' === $theme->name || 'Nightingale' === $theme->parent_theme ) {
+		$scriptout .= "
 						const mainContent = document.querySelector( 'main' );
 					    const contentInner = document.querySelector( '#contentinner' );
 					    const wholeDoc = document.querySelector( 'body' );
@@ -324,13 +331,13 @@ function nhsblocks_hero_footer() {
 					    const articleTitle = document.querySelector( '.entry-header' );
 					    const sectionTitle = wholeDoc.querySelector( '#nhsuk-tabbed-title' );";
 
-			} else {
-				$scriptout .= "
+	} else {
+		$scriptout .= "
 					    const mainContent = document.querySelector( 'main' );
 					    const contentInner = document.querySelector( 'article' );
 					    const wholeDoc = document.querySelector( 'body' );
 					    const articleTitle = document.querySelector( '.entry-header' );";
-			}
+	}
 
 			$scriptout .= "
 	        mainContent.insertBefore( tabbedTabs, contentInner );
@@ -383,7 +390,12 @@ function nhsblocks_hero_footer() {
 			});
 		});		
 		</script>";
-	echo $scriptout;
+	echo wp_kses(
+		$scriptout,
+		array(
+			'script' => array(),
+		)
+	);
 }
 
 add_action( 'wp_footer', 'nhsblocks_hero_footer' );
