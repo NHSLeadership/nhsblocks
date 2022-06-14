@@ -3,6 +3,7 @@
   "license": "GPL-3.0-or-later",
   "main": "src/index.js",
   "devDependencies": {
+    "@wordpress/scripts": "^23.2.0",
     "jsdoc": "^3.6.6",
     "wp-hookdoc": "^0.2.0"
   },
@@ -15,10 +16,9 @@
     "build:docs": "rm -rf hookdocs/ && jsdoc -c hookdoc-conf.json"
   },
   "dependencies": {
-    "@wordpress/scripts": "^12.6.1",
-    "cssnano": "^4.1.10",
-    "nhsuk-frontend": "^4.1.0",
-    "node-sass": "^5.0.0",
+    "cssnano": "^5.1.11",
+    "nhsuk-frontend": "^6.1.0",
+    "node-sass": "^7.0.1",
     "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1"
   }
