@@ -17,15 +17,6 @@
   @extend .nhsuk-expander;
 }
 
-/*care card extension*/
-.wp-block-nhsblocks-card1.nhsuk-care-card.is-style-urgent { /* urgent infocard*/
-  @extend .nhsuk-care-card--urgent;
-}
-
-.wp-block-nhsblocks-card1.nhsuk-care-card.is-style-immediate { /* urgent infocard*/
-  @extend .nhsuk-care-card--immediate;
-}
-
 .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card,
 .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout { /* Warning Callout */
 
