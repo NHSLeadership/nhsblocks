@@ -8355,6 +8355,7 @@ b {
   position: absolute;
   transform: rotate(45deg);
   width: 20px;
+  z-index: 1;
   /* [3] */
 }
 
