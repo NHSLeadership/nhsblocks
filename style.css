@@ -9168,16 +9168,19 @@ figure.is-style-nhsuk-table-responsive figcaption {
 }
 
 /* warning callout */
-.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card,
-.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout,
-.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout {
+.wp-block-nhsblocks-card1.is-style-warning-callout,
+.nhsuk-care-card.is-style-warning-callout,
+.nhsuk-card.nhsuk-warning-callout {
   background-color: #fff9c4;
   border: 1px solid #ffeb3b;
 }
 
-.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container,
-.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container,
-.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__heading-container {
+.wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container,
+.wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container,
+.nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container,
+.nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container,
+.nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container,
+.nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container {
   background-color: #ffeb3b;
   display: inline-block;
   top: -16px;
@@ -9186,31 +9189,46 @@ figure.is-style-nhsuk-table-responsive figcaption {
   position: relative;
 }
 
-.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container h3,
-.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container h3,
-.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__heading-container h3 {
+.wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container h3,
+.wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container h3,
+.nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container h3,
+.nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container h3,
+.nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container h3,
+.nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container h3 {
   background-color: #ffeb3b;
   color: #212b32 !important;
 }
 
-.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
-.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
-.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span {
+.wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span,
+.nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span,
+.nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span {
   color: #212b32;
 }
 
-.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__arrow,
-.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__arrow,
-.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__arrow,
-.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__arrow,
-.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__arrow,
-.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__arrow {
+.wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__arrow,
+.wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__arrow,
+.nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__arrow,
+.nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__arrow,
+.nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__arrow,
+.nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__arrow {
   display: none;
 }
 
-.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__content,
-.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__content,
-.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__content {
+.wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card__content,
+.wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__content,
+.nhsuk-care-card.is-style-warning-callout .nhsuk-card__content,
+.nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__content,
+.nhsuk-card.nhsuk-warning-callout .nhsuk-card__content,
+.nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__content {
   background-color: #fff9c4;
   padding-top: 0;
   border: none;

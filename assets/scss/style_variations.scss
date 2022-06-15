@@ -20,13 +20,14 @@
 }
 
 /* warning callout */
-.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card,
-.nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout,
-.wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout {
+.wp-block-nhsblocks-card1.is-style-warning-callout,
+.nhsuk-care-card.is-style-warning-callout,
+.nhsuk-card.nhsuk-warning-callout {
   background-color: $color_nhsuk-pale-yellow;
   border: 1px solid $color_nhsuk-yellow;
 
-  .nhsuk-care-card__heading-container{
+  .nhsuk-care-card__heading-container ,
+  .nhsuk-card--care__heading-container {
     background-color: $color_nhsuk-yellow;
     display: inline-block;
     top: -16px;
@@ -38,16 +39,17 @@
       background-color: $color_nhsuk-yellow;
       color: $color_nhsuk-black !important;
     }
+    .nhsuk-card--care__heading span,
     .nhsuk-care-card__heading span{
       color: $color_nhsuk-black;
     }
   }
 
-  .nhsuk-care-card__arrow,
+  .nhsuk-card--care__arrow,
   .nhsuk-care-card__arrow{
     display: none;
   }
-
+  .nhsuk-card__content,
   .nhsuk-care-card__content{
     background-color: $color_nhsuk-pale-yellow;
     padding-top: 0;

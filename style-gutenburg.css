@@ -12088,24 +12088,33 @@
   /* expander reveal style*/
 }
 
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card,
-.edit-post-visual-editor .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout,
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card,
-.block-editor-block-styles .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout,
-.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card,
-.block-editor-inserter__menu-help-panel .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout,
-.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout {
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout {
   background-color: #fff9c4;
   border: 1px solid #ffeb3b;
 }
 
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container,
-.edit-post-visual-editor .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container,
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__heading-container, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container,
-.block-editor-block-styles .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container,
-.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__heading-container, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container,
-.block-editor-inserter__menu-help-panel .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container,
-.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__heading-container {
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container,
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container,
+.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container,
+.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container {
   background-color: #ffeb3b;
   display: inline-block;
   top: -16px;
@@ -12114,53 +12123,98 @@
   position: relative;
 }
 
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container h3,
-.edit-post-visual-editor .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container h3,
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__heading-container h3, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container h3,
-.block-editor-block-styles .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container h3,
-.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__heading-container h3, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container h3,
-.block-editor-inserter__menu-help-panel .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container h3,
-.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__heading-container h3 {
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container h3,
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container h3,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container h3,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container h3,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container h3,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container h3, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container h3,
+.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container h3,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container h3,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container h3,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container h3,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container h3, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container h3,
+.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container h3,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container h3,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container h3,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container h3,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container h3 {
   background-color: #ffeb3b;
   color: #212b32 !important;
 }
 
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
-.edit-post-visual-editor .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
-.block-editor-block-styles .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
-.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
-.block-editor-inserter__menu-help-panel .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
-.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span {
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span {
   color: #212b32;
 }
 
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__arrow,
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__arrow,
-.edit-post-visual-editor .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__arrow,
-.edit-post-visual-editor .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__arrow,
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__arrow,
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__arrow, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__arrow,
-.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__arrow,
-.block-editor-block-styles .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__arrow,
-.block-editor-block-styles .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__arrow,
-.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__arrow,
-.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__arrow, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__arrow,
-.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__arrow,
-.block-editor-inserter__menu-help-panel .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__arrow,
-.block-editor-inserter__menu-help-panel .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__arrow,
-.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__arrow,
-.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__arrow {
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__arrow,
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__arrow,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__arrow,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__arrow,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__arrow,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__arrow, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__arrow,
+.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__arrow,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__arrow,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__arrow,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__arrow,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__arrow, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__arrow,
+.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__arrow,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__arrow,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__arrow,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__arrow,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__arrow {
   display: none;
 }
 
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__content,
-.edit-post-visual-editor .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__content,
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__content, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__content,
-.block-editor-block-styles .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__content,
-.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__content, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__content,
-.block-editor-inserter__menu-help-panel .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__content,
-.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__content {
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card__content,
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__content,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-card__content,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__content,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-card__content,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__content, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card__content,
+.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__content,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-card__content,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__content,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-card__content,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__content, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card__content,
+.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__content,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-card__content,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__content,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-card__content,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__content {
   background-color: #fff9c4;
   padding-top: 0;
   border: none;
@@ -12730,24 +12784,33 @@
   /* expander reveal style*/
 }
 
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card,
-.edit-post-visual-editor .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout,
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card,
-.block-editor-block-styles .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout,
-.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card,
-.block-editor-inserter__menu-help-panel .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout,
-.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout {
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout {
   background-color: #fff9c4;
   border: 1px solid #ffeb3b;
 }
 
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container,
-.edit-post-visual-editor .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container,
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__heading-container, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container,
-.block-editor-block-styles .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container,
-.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__heading-container, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container,
-.block-editor-inserter__menu-help-panel .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container,
-.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__heading-container {
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container,
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container,
+.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container,
+.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container {
   background-color: #ffeb3b;
   display: inline-block;
   top: -16px;
@@ -12756,53 +12819,98 @@
   position: relative;
 }
 
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container h3,
-.edit-post-visual-editor .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container h3,
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__heading-container h3, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container h3,
-.block-editor-block-styles .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container h3,
-.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__heading-container h3, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container h3,
-.block-editor-inserter__menu-help-panel .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container h3,
-.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__heading-container h3 {
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container h3,
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container h3,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container h3,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container h3,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container h3,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container h3, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container h3,
+.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container h3,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container h3,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container h3,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container h3,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container h3, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container h3,
+.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container h3,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container h3,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container h3,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container h3,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container h3 {
   background-color: #ffeb3b;
   color: #212b32 !important;
 }
 
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
-.edit-post-visual-editor .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
-.block-editor-block-styles .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
-.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
-.block-editor-inserter__menu-help-panel .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
-.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span {
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span {
   color: #212b32;
 }
 
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__arrow,
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__arrow,
-.edit-post-visual-editor .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__arrow,
-.edit-post-visual-editor .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__arrow,
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__arrow,
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__arrow, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__arrow,
-.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__arrow,
-.block-editor-block-styles .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__arrow,
-.block-editor-block-styles .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__arrow,
-.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__arrow,
-.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__arrow, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__arrow,
-.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__arrow,
-.block-editor-inserter__menu-help-panel .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__arrow,
-.block-editor-inserter__menu-help-panel .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__arrow,
-.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__arrow,
-.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__arrow {
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__arrow,
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__arrow,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__arrow,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__arrow,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__arrow,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__arrow, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__arrow,
+.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__arrow,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__arrow,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__arrow,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__arrow,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__arrow, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__arrow,
+.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__arrow,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__arrow,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__arrow,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__arrow,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__arrow {
   display: none;
 }
 
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__content,
-.edit-post-visual-editor .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__content,
-.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__content, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__content,
-.block-editor-block-styles .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__content,
-.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__content, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-care-card .nhsuk-care-card__content,
-.block-editor-inserter__menu-help-panel .nhsuk-care-card.nhsuk-care-card--type.is-style-warning-callout .nhsuk-care-card__content,
-.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout.nhsuk-warning-callout .nhsuk-care-card__content {
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card__content,
+.edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__content,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-card__content,
+.edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__content,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-card__content,
+.edit-post-visual-editor .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__content, .block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card__content,
+.block-editor-block-styles .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__content,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-card__content,
+.block-editor-block-styles .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__content,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-card__content,
+.block-editor-block-styles .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__content, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card__content,
+.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__content,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-card__content,
+.block-editor-inserter__menu-help-panel .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__content,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-card__content,
+.block-editor-inserter__menu-help-panel .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__content {
   background-color: #fff9c4;
   padding-top: 0;
   border: none;
