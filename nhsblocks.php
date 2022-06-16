@@ -256,7 +256,9 @@ add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' )
 function nhsblocks_register_style() {
 	$theme  = wp_get_theme(); // gets the current theme.
 	$parent = wp_get_theme( get_template() );
-	wp_register_style( 'nhsblocks', plugins_url( 'style.min.css', __FILE__ ) );
+	if ( 'Nightingale' !== $theme->name && ( 'Nightingale' !== $parent->name ) ) {
+		wp_register_style( 'nhsblocks', plugins_url( 'style.min.css', __FILE__ ) );
+	}
 }
 
 add_action( 'init', 'nhsblocks_register_style' ); // Pulls front end styling to standard wp process.
@@ -268,7 +270,9 @@ add_action( 'init', 'nhsblocks_register_style' ); // Pulls front end styling to 
  */
 function nhsblocks_enqueue_style() {
 	$theme = wp_get_theme(); // gets the current theme.
-	wp_enqueue_style( 'nhsblocks' );
+	if ( 'Nightingale' !== $theme->name ) {
+		wp_enqueue_style( 'nhsblocks' );
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'nhsblocks_enqueue_style' );
@@ -390,12 +394,7 @@ function nhsblocks_hero_footer() {
 			});
 		});		
 		</script>";
-	echo wp_kses(
-		$scriptout,
-		array(
-			'script' => array(),
-		)
-	);
+	echo $scriptout;
 }
 
 add_action( 'wp_footer', 'nhsblocks_hero_footer' );
