@@ -86,7 +86,7 @@ registerBlockType('nhsblocks/reveal1', {
 				</PanelBody>
 			</InspectorControls>,
 			<details className={`${className} nhsuk-details newstyle`} open>
-				<summary className="nhsuk-details__summary" role="button">
+				<summary className="nhsuk-details__summary" role="button" aria-controls="details-content-" aria-expanded="false">
 					<span className="nhsuk-details__summary-text">
 						<RichText
 							placeholder={__('Reveal Title', 'nhsblocks')}
@@ -120,7 +120,7 @@ registerBlockType('nhsblocks/reveal1', {
 
 		return (
 			<details className="nhsuk-details">
-				<summary className="nhsuk-details__summary" role="button">
+				<summary className="nhsuk-details__summary" role="button" aria-controls="details-content-" aria-expanded="false">
 					<span className="nhsuk-details__summary-text">
 						<RichText.Content value={revealTitle} />
 					</span>
