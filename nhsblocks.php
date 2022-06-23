@@ -164,13 +164,13 @@ function nhsblocks_register_dynamic_blocks() {
 
 		register_block_type(
 			$block,
-			array(
+			[
 				// https://github.com/WordPress/gutenberg/issues/4671.
 				'render_callback' => function( array $attributes, string $content = null ) use ( $block ) {
 
 					return nhsblocks_block_renderer( $block, $attributes, $content );
 				},
-			)
+			]
 		);
 
 	}
