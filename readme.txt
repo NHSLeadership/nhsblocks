@@ -59,6 +59,7 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
  * Security patch upgrade with npm version 7.19.1 and node version 16.0
  * Style fix for reveal block
  * Style fix for action and pagination link
+ * Style fix and support for nhsblocks care card block
  * Partial style support for nhs frontend framework 6.1.0 components
 
 = 1.2.4 =
