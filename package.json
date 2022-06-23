@@ -3,22 +3,34 @@
   "license": "GPL-3.0-or-later",
   "main": "src/index.js",
   "devDependencies": {
+    "@wordpress/scripts": "^23.2.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "jsdoc": "^3.6.6",
     "wp-hookdoc": "^0.2.0"
   },
   "scripts": {
-    "start": "wp-scripts start",
     "build": "wp-scripts build",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:md:docs": "wp-scripts lint-md-docs",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "packages-update": "wp-scripts packages-update",
+    "plugin-zip": "wp-scripts plugin-zip",
+    "start": "wp-scripts start",
+    "test:e2e": "wp-scripts test-e2e",
+    "test:unit": "wp-scripts test-unit-js",
     "build-scss": "cat style.scss | node_modules/.bin/node-sass --include-path node_modules/ --include-path node_modules/nhsuk-frontend/packages/nhsuk/ style.scss --output-style expanded > style.css | cat style-gutenburg.scss | node_modules/.bin/node-sass --include-path node_modules/ --include-path node_modules/nhsuk-frontend/packages/nhsuk/  style-gutenburg.scss --output-style expanded > style-gutenburg.css",
     "compress-scss": "postcss style.css > style.min.css",
     "zip": "zip -r nhsblocks.zip ./ -x .git .gitignore *.git/* .DS_Store .package.json .package-lock.json *.scss webpack.config.js nhsblocks.zip  postcss.config.css README.md .wordpress-org/**\\* .ds_store vendor/**\\* node_modules/**\\* src/**\\* webpack.config.js n",
     "build:docs": "rm -rf hookdocs/ && jsdoc -c hookdoc-conf.json"
   },
   "dependencies": {
-    "@wordpress/scripts": "^12.6.1",
-    "cssnano": "^4.1.10",
-    "nhsuk-frontend": "^4.1.0",
-    "node-sass": "^5.0.0",
+    "cssnano": "^5.1.11",
+    "nhsuk-frontend": "^6.1.0",
+    "node-sass": "^7.0.1",
     "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1"
   }
