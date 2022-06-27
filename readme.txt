@@ -4,7 +4,7 @@ Tags: gutenberg, blocks, nhs
 Plugin Name:: NHS Blocks
 Plugin URI: https://digital.leadershipacademy.nhs.uk/digital-capabilities/websites/nhs-blocks-user-guide/
 Requires at least: 5.3
-Tested up to: 5.7
+Tested up to: 6.0
 Stable tag: 1.3.0
 Requires PHP: 5.6
 License: GPLv3 or later
