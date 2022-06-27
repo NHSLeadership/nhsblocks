@@ -8,7 +8,7 @@
 
 // Generic
 @import 'node_modules/nhsuk-frontend/packages/core/generic/box-sizing';
-@import 'node_modules/nhsuk-frontend/packages/core/generic/ie';
+// @import 'node_modules/nhsuk-frontend/packages/core/generic/ie';
 
 // Elements
 @import 'node_modules/nhsuk-frontend/packages/core/elements/links';
@@ -39,7 +39,7 @@
 @import 'node_modules/nhsuk-frontend/packages/components/breadcrumb/breadcrumb';
 @import 'node_modules/nhsuk-frontend/packages/components/button/button';
 @import 'node_modules/nhsuk-frontend/packages/components/card/card';
-@import 'node_modules/nhsuk-frontend/packages/components/care-card/care-card';
+// @import 'node_modules/nhsuk-frontend/packages/components/care-card/care-card';
 @import 'node_modules/nhsuk-frontend/packages/components/checkboxes/checkboxes';
 @import 'node_modules/nhsuk-frontend/packages/components/contents-list/contents-list';
 @import 'node_modules/nhsuk-frontend/packages/components/date-input/date-input';
@@ -56,11 +56,11 @@
 @import 'node_modules/nhsuk-frontend/packages/components/input/input';
 @import 'node_modules/nhsuk-frontend/packages/components/inset-text/inset-text';
 @import 'node_modules/nhsuk-frontend/packages/components/label/label';
-@import 'node_modules/nhsuk-frontend/packages/components/list-panel/list-panel';
-@import 'node_modules/nhsuk-frontend/packages/components/nav-a-z/nav-a-z';
+// @import 'node_modules/nhsuk-frontend/packages/components/list-panel/list-panel';
+// @import 'node_modules/nhsuk-frontend/packages/components/nav-a-z/nav-a-z';
 @import 'node_modules/nhsuk-frontend/packages/components/pagination/pagination';
 @import 'node_modules/nhsuk-frontend/packages/components/radios/radios';
-@import 'node_modules/nhsuk-frontend/packages/components/review-date/review-date';
+// @import 'node_modules/nhsuk-frontend/packages/components/review-date/review-date';
 @import 'node_modules/nhsuk-frontend/packages/components/select/select';
 @import 'node_modules/nhsuk-frontend/packages/components/skip-link/skip-link';
 @import 'node_modules/nhsuk-frontend/packages/components/summary-list/summary-list';
@@ -72,4 +72,5 @@
 // Legacy components - added 16th November 2020
 @import 'assets/scss/legacy/panel/panel';
 @import 'assets/scss/legacy/promo/promo';
+@import 'assets/scss/legacy/care-card/care-card';
 @import 'assets/scss/legacy/legacy';
