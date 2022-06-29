@@ -8,7 +8,7 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
-const { URLInput } = wp.editor;
+const { URLInput } = wp.blockEditor;
 const { Fragment } = wp.element;
 const { TextControl } = wp.components;
 

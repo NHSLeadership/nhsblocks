@@ -11,7 +11,7 @@ const { registerBlockType } = wp.blocks;
 const { RichText, InnerBlocks } = wp.blockEditor;
 const { Fragment } = wp.element;
 
-const { URLInput } = wp.editor;
+const { URLInput } = wp.blockEditor;
 
 const { TextControl } = wp.components;
 
