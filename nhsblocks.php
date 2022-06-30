@@ -254,10 +254,15 @@ add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' )
  * Queues up the blocks styling for front end
  */
 function nhsblocks_register_style() {
-	$theme  = wp_get_theme(); // gets the current theme.
-	$parent = wp_get_theme( get_template() );
+	$theme          = wp_get_theme(); // gets the current theme.
+	$parent         = wp_get_theme( get_template() );
+	$plugin_version = get_bloginfo( 'version' ); // WP version by default.
 	if ( 'Nightingale' !== $theme->name && ( 'Nightingale' !== $parent->name ) ) {
-		wp_register_style( 'nhsblocks', plugins_url( 'style.min.css', __FILE__ ) );
+		$plugin_data = get_plugin_data( plugin_dir_path( __FILE__ ) . 'nhsblocks.php' );
+		if ( isset( $plugin_data['Name'] ) && ! empty( $plugin_data['Version'] ) && 'NHS Blocks' === $plugin_data['Name'] ) {
+			$plugin_version = $plugin_data['Version'];
+		}
+		wp_register_style( 'nhsblocks', plugins_url( 'style.min.css', __FILE__ ), array(), $plugin_version, 'all' );
 	}
 }
 
