@@ -1,5 +1,5 @@
 {
-  "name": "nhsla/nhsblocks",
+  "name": "nhsleadership/nhsblocks",
   "description": "Plugin for WordPress to add NHSUK Frontend style components to Gutenberg",
   "repositories":[{"type":"composer","url":"https://wpackagist.org"}],
   "type": "wordpress-plugin",
