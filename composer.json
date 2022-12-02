@@ -1,9 +1,18 @@
 {
-  "name": "nhsleadership/nhsblocks",
-  "description": "Plugin for WordPress to add NHSUK Frontend style components to Gutenberg",
-  "repositories":[{"type":"composer","url":"https://wpackagist.org"}],
-  "type": "wordpress-plugin",
-  "require": {
-    "composer/installers": "^1.3"
-  }
+    "name": "nhsleadership/nhsblocks",
+    "description": "Plugin for WordPress to add NHSUK Frontend style components to Gutenberg",
+    "authors": [
+        {
+            "name": "Mahesh Murali P",
+            "email": "mahesh.muralip@leadershipacademy.nhs.uk"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        }
+    ],
+    "type": "wordpress-plugin",
+    "minimum-stability": "stable"
 }
