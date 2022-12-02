@@ -1,12 +1,6 @@
 {
     "name": "nhsleadership/nhsblocks",
     "description": "Plugin for WordPress to add NHSUK Frontend style components to Gutenberg",
-    "authors": [
-        {
-            "name": "Mahesh Murali P",
-            "email": "mahesh.muralip@leadershipacademy.nhs.uk"
-        }
-    ],
     "repositories": [
         {
             "type": "composer",
@@ -14,5 +8,9 @@
         }
     ],
     "type": "wordpress-plugin",
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "support": {
+        "issues": "https://github.com/NHSLeadership/nhsblocks/issues",
+        "source": "https://github.com/NHSLeadership/nhsblocks"
+    }
 }
