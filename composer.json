@@ -8,7 +8,6 @@
         }
     ],
     "type": "wordpress-plugin",
-    "minimum-stability": "stable",
     "support": {
         "issues": "https://github.com/NHSLeadership/nhsblocks/issues",
         "source": "https://github.com/NHSLeadership/nhsblocks"
