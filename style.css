@@ -9283,6 +9283,12 @@ figure.is-style-nhsuk-table-responsive figcaption {
   margin: 0;
 }
 
+.components-panel__header.edit-post-sidebar__panel-tabs ul {
+  padding: 0px;
+  margin-bottom: 0px;
+  list-style: none;
+}
+
 section.nhsuk-section:nth-of-type(odd) {
   background: #f0f4f5;
 }

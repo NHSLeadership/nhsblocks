@@ -247,6 +247,12 @@ function nhsblocks_block_classes( $attributes ) {
 function nhsblocks_gutenberg_editor_styles()
 {
 	wp_enqueue_style('nhsl-block-editor-styles', plugins_url('style-gutenburg.css', __FILE__), false, '1.1', 'all');
+	$plugin_version = get_bloginfo('version'); // WP version by default.
+	$plugin_data = get_plugin_data(plugin_dir_path(__FILE__) . 'nhsblocks.php');
+	if (isset($plugin_data['Name']) && !empty($plugin_data['Version']) && 'NHS Blocks' === $plugin_data['Name']) {
+		$plugin_version = $plugin_data['Version'];
+	}
+	wp_enqueue_style('nhsblocks-editor-styles', plugins_url('style.min.css', __FILE__), false, $plugin_version, 'all');
 }
 
 add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' ); // Pulls the enqueued file in to standard wp process.
