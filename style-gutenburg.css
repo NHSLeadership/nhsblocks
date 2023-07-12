@@ -12266,6 +12266,12 @@
   margin: 0;
 }
 
+.edit-post-visual-editor .components-panel__header.edit-post-sidebar__panel-tabs ul, .block-editor-block-styles .components-panel__header.edit-post-sidebar__panel-tabs ul, .block-editor-inserter__menu-help-panel .components-panel__header.edit-post-sidebar__panel-tabs ul {
+  padding: 0px;
+  margin-bottom: 0px;
+  list-style: none;
+}
+
 .edit-post-visual-editor .wp-block, .block-editor-block-styles .wp-block, .block-editor-inserter__menu-help-panel .wp-block {
   max-width: 983px;
 }
@@ -12960,6 +12966,12 @@
 
 .edit-post-visual-editor .nhsuk-card figure, .block-editor-block-styles .nhsuk-card figure, .block-editor-inserter__menu-help-panel .nhsuk-card figure {
   margin: 0;
+}
+
+.edit-post-visual-editor .components-panel__header.edit-post-sidebar__panel-tabs ul, .block-editor-block-styles .components-panel__header.edit-post-sidebar__panel-tabs ul, .block-editor-inserter__menu-help-panel .components-panel__header.edit-post-sidebar__panel-tabs ul {
+  padding: 0px;
+  margin-bottom: 0px;
+  list-style: none;
 }
 
 .edit-post-visual-editor .is-style-panel-with-label h3, .block-editor-block-styles .is-style-panel-with-label h3, .block-editor-inserter__menu-help-panel .is-style-panel-with-label h3 {
