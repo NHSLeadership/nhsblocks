@@ -57,6 +57,7 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 
 = 1.3.8 =
  * Accessibility improvement in card region block
+ * Accessibility fix for NHS simple reveal block
 
 = 1.3.7 =
  * Fix for Bullet-points in admin screens
