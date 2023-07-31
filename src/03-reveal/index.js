@@ -128,7 +128,6 @@ registerBlockType('nhsblocks/reveal1', {
 				<div
 					className="nhsuk-details__text"
 					id="details-content-"
-					id="details-content-"
 					aria-hidden="false"
 				>
 					{withImage === true && <InnerBlocks.Content />}
