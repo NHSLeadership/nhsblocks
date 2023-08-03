@@ -1,0 +1,407 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: NHS Blocks\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-03 14:35+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.4; wp-6.2.2\n"
+"X-Domain: nhsblocks"
+
+#: src/16-action-back-link/action-link.js:70
+msgid " "
+msgstr ""
+
+#: src/04-panel/index.js:19
+msgid " bin"
+msgstr ""
+
+#: src/10-hero-block/index.js:16
+msgid " texta area and call to action"
+msgstr ""
+
+#: src/05-tags/index.js:20
+msgid ""
+" the names of your tags. Using a verb might make a user think that clicking "
+"on them will do something"
+msgstr ""
+
+#: src/16-action-back-link/action-link.js:18
+msgid "Action Link"
+msgstr ""
+
+#: src/16-action-back-link/back-link.js:56
+msgid "Action Link Text"
+msgstr ""
+
+#: src/16-action-back-link/action-link.js:79
+msgid "Add a link (type to search or paste a whole url)"
+msgstr ""
+
+#: src/10-hero-block/index.js:140
+msgid "Add some text to the header"
+msgstr ""
+
+#: src/16-action-back-link/back-link.js:18
+msgid "Back Link"
+msgstr ""
+
+#: src/16-action-back-link/back-link.js:24
+msgid "Back Link previous question pages"
+msgstr ""
+
+#: src/02-button/index.js:22
+msgid "Button"
+msgstr ""
+
+#: src/02-button/index.js:101
+msgid "Button URL"
+msgstr ""
+
+#: src/16-action-back-link/action-link.js:71
+msgid "Call to Action"
+msgstr ""
+
+#: src/08-card/index.js:123
+msgid "Card Contents"
+msgstr ""
+
+#: src/08-card/index.js:21
+msgid "Card Region"
+msgstr ""
+
+#: src/08-card/index.js:106
+msgid "Card Title"
+msgstr ""
+
+#: src/12-contents-list/contents-list-page.js:119
+#: src/12-contents-list/index.js:74 src/12-contents-list/index.js:93
+msgid "Contents"
+msgstr ""
+
+#: src/12-contents-list/index.js:21 src/12-contents-list/index.js:29
+msgid "Contents List"
+msgstr ""
+
+#: src/12-contents-list/index.js:104
+msgid "Contents List Item"
+msgstr ""
+
+#: src/12-contents-list/contents-list-page.js:58
+msgid "Contents List Page"
+msgstr ""
+
+#: src/12-contents-list/contents-list-page.js:23
+msgid "Contents List within a page"
+msgstr ""
+
+#: src/00-dashboard/index.js:201
+msgid "Dashboard Link"
+msgstr ""
+
+#: src/00-dashboard/index.js:25
+msgid "Dashboard Navigation"
+msgstr ""
+
+#: src/00-dashboard/index.js:138
+msgid "Dashboard Region"
+msgstr ""
+
+#: src/01-dodont/index.js:13
+msgid "Do and Don't List"
+msgstr ""
+
+#: build/index.js:1 src/00-dashboard/templates.js:14
+msgid "Full Width"
+msgstr ""
+
+#: src/09-row-group/index.js:19
+msgid "Grouped Items"
+msgstr ""
+
+#: src/06a-promo-group/index.js:20
+msgid "Grouped Promos"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Gutenberg native custom blocks companion plugin for the NHS Nightingale "
+"theme (can also be standalone). Based on nhsuk frontend framework."
+msgstr ""
+
+#: src/10-hero-block/index.js:15
+msgid "Hero Block"
+msgstr ""
+
+#: src/10-hero-block/index.js:139
+msgid "Hero Block Inner Text"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://github.com/NHSLeadership/nhsblocks"
+msgstr ""
+
+#: src/11-section-stripes/index.js:89
+msgid "Inner block that allows alternate grey stripes"
+msgstr ""
+
+#: src/12-contents-list/index.js:105
+msgid "List Item to go into the contents list"
+msgstr ""
+
+#: src/01-dodont/index.js:173
+msgid "List Item with Cross"
+msgstr ""
+
+#: src/01-dodont/index.js:93
+msgid "List Item with Tick"
+msgstr ""
+
+#: src/12-contents-list/contents-list-page.js:59
+#: src/12-contents-list/index.js:30
+msgid "Navigation"
+msgstr ""
+
+#: src/15-pagination/index.js:105 src/15-pagination/index.js:171
+msgid "Next"
+msgstr ""
+
+#. Name of the plugin
+msgid "NHS Blocks"
+msgstr ""
+
+#: nhsblocks.php:55
+msgid "NHS Frontend Blocks"
+msgstr ""
+
+#: src/09-row-group/templates.js:70
+msgid "One Half / One Quarter / One Quarter Columns Generic"
+msgstr ""
+
+#: src/06a-promo-group/templates.js:70
+msgid "One Half / One Quarter / One Quarter Columns Promos"
+msgstr ""
+
+#: src/06a-promo-group/index.js:126
+msgid "One Half Promo"
+msgstr ""
+
+#: src/09-row-group/index.js:131
+msgid "One Half Width"
+msgstr ""
+
+#: src/09-row-group/templates.js:44
+msgid "One Quarter / One Half / One Quarter Columns Generic"
+msgstr ""
+
+#: src/06a-promo-group/templates.js:44
+msgid "One Quarter / One Half / One Quarter Columns Promos"
+msgstr ""
+
+#: src/09-row-group/templates.js:57
+msgid "One Quarter / One Quarter / One Half Columns Generic"
+msgstr ""
+
+#: src/06a-promo-group/templates.js:57
+msgid "One Quarter / One Quarter / One Half Columns Promos"
+msgstr ""
+
+#: src/06a-promo-group/index.js:188
+msgid "One Quarter Promo"
+msgstr ""
+
+#: src/09-row-group/index.js:208
+msgid "One Quarter Width"
+msgstr ""
+
+#: src/09-row-group/templates.js:32
+msgid "One Third / Two Thirds Columns Generic"
+msgstr ""
+
+#: src/06a-promo-group/templates.js:32
+msgid "One Third / Two Thirds Columns Promos"
+msgstr ""
+
+#: src/06a-promo-group/index.js:156
+msgid "One Third Promo"
+msgstr ""
+
+#: src/09-row-group/index.js:169
+msgid "One Third Width"
+msgstr ""
+
+#: src/11-section-stripes/index.js:7
+msgid ""
+"Outer block that allows alternate grey stripes. To be used with the Full "
+"Width for Stripes template "
+msgstr ""
+
+#: src/15-pagination/index.js:21
+msgid "Pagination"
+msgstr ""
+
+#: src/06-promo/index.js:108
+msgid "Panel Link"
+msgstr ""
+
+#: src/04-panel/index.js:18
+msgid "Panel Region"
+msgstr ""
+
+#: src/04-panel/index.js:93 src/01-dodont/index.js:61
+#: src/00-dashboard/index.js:243
+msgid "Panel Title"
+msgstr ""
+
+#: src/15-pagination/index.js:74 src/15-pagination/index.js:156
+msgid "Previous"
+msgstr ""
+
+#: src/06-promo/index.js:121
+msgid "Promo Contents"
+msgstr ""
+
+#: src/06-promo/index.js:22
+msgid "Promo Region"
+msgstr ""
+
+#: src/06-promo/index.js:113
+msgid "Promo Title"
+msgstr ""
+
+#: src/07-testimonial/index.js:77
+msgid "Quote"
+msgstr ""
+
+#: src/07-testimonial/index.js:84
+msgid "Quote Name"
+msgstr ""
+
+#: src/12-contents-list/index.js:31
+msgid "Related pages"
+msgstr ""
+
+#: src/12-contents-list/contents-list-page.js:60
+msgid "Related sections on page"
+msgstr ""
+
+#: src/03-reveal/index.js:108
+msgid "Reveal Contents"
+msgstr ""
+
+#: src/03-reveal/index.js:92
+msgid "Reveal Title"
+msgstr ""
+
+#: src/13-review-date/index.js:15
+msgid "Review Date"
+msgstr ""
+
+#: src/16-action-back-link/action-link.js:24
+msgid "signpost start"
+msgstr ""
+
+#: src/07-testimonial/index.js:16
+msgid "Simple Quote"
+msgstr ""
+
+#: src/03-reveal/index.js:17
+msgid "Simple Reveal"
+msgstr ""
+
+#: src/11-section-stripes/index.js:88
+msgid "Stripe Block"
+msgstr ""
+
+#: src/11-section-stripes/index.js:6
+msgid "Stripes Block"
+msgstr ""
+
+#: src/05-tags/index.js:19
+msgid "Tag"
+msgstr ""
+
+#: src/01-dodont/index.js:134 src/01-dodont/index.js:210
+msgid "Text"
+msgstr ""
+
+#: build/index.js:1 src/00-dashboard/templates.js:38
+msgid "Three Columns"
+msgstr ""
+
+#: src/09-row-group/templates.js:22
+msgid "Three Columns Generic"
+msgstr ""
+
+#: build/index.js:1 src/00-dashboard/templates.js:111
+msgid "Three Columns on Two Rows"
+msgstr ""
+
+#: src/06a-promo-group/templates.js:22
+msgid "Three Columns Promos"
+msgstr ""
+
+#: build/index.js:1 src/00-dashboard/templates.js:84
+msgid "Three Columns then Two Columns"
+msgstr ""
+
+#: src/06a-promo-group/index.js:252
+msgid "Three Quarter Promo"
+msgstr ""
+
+#: src/09-row-group/index.js:286
+msgid "Three Quarter Width"
+msgstr ""
+
+#. Author of the plugin
+msgid "Tony Blacker, NHS Leadership Academy"
+msgstr ""
+
+#: src/16-action-back-link/action-link.js:25
+#: src/16-action-back-link/back-link.js:25
+msgid "transactional services multi-page forms"
+msgstr ""
+
+#: build/index.js:1 src/00-dashboard/templates.js:22
+msgid "Two Columns"
+msgstr ""
+
+#: build/index.js:1 src/00-dashboard/templates.js:57
+msgid "Two Columns Then Three Columns"
+msgstr ""
+
+#: src/09-row-group/templates.js:38
+msgid "Two Thirds / One Third Columns Generic"
+msgstr ""
+
+#: src/06a-promo-group/templates.js:38
+msgid "Two Thirds / One Third Columns Promos"
+msgstr ""
+
+#: src/06a-promo-group/index.js:220
+msgid "Two Thirds Promo"
+msgstr ""
+
+#: src/09-row-group/index.js:247
+msgid "Two Thirds Width"
+msgstr ""
+
+#: src/12-contents-list/index.js:22
+msgid ""
+"Use contents lists to allow users to navigate between related pages, for "
+"example about a single condition."
+msgstr ""
+
+#: src/12-contents-list/contents-list-page.js:24
+msgid ""
+"Use contents lists to allow users to navigate sections within a page. This "
+"will automatically add all h2 tags on this page to a scrollable list "
+msgstr ""
