@@ -1,24 +1,24 @@
 # WordPress Gutenberg Blocks for NHS Theme
 
 This repository houses the native Gutenberg blocks for the Nightingale WordPress theme from NHS Leadership Academy. 
-This is a standalone plugin, but is intended to be used in concert with the [Nightingale](https://wordpress.org/themes/nightingale) theme. The plugin and theme together complete the WordPress deployment of the NHSUK Frontend design.
+This is a standalone plugin, but is intended to be used in concert with the [Nightingale](https://wordpress.org/themes/nightingale) theme. The plugin and theme together complete the WordPress deployment of the NHSUK Front-end design.
 
 ## Requirements
 This plugin requires minimum Wordpress 5.0 
 
 If you are running the Gutenberg plugin as a separate entity (Gutenberg is built in to the core of WordPress - this
- ONLY applies if you also have the plugin) then the NHSBlocks plugin may have some unexpected behaviour. The
+ ONLY applies if you also have the plugin) then the NHSBlocks plugin may have some unexpected behavior. The
   NHSBlocks plugin is built to use the core version of Gutenberg included in WordPress.
  
  Whilst designed for the Nightingale WordPress theme, this plugin is a standalone and has its own css included, so 
  can be included to any WordPress site meeting the minimum requirements above. If you ARE running the Nightingale
-  theme, the plugin stylesheets will be supressed and the the theme stylesheet will cover everyting so there will be
+  theme, the plugin stylesheets will be suppressed and the the theme stylesheet will cover everything so there will be
    no duplication of css.
 
 ## Deployment Instructions
 Download the `nhsblocks.zip` from this repository. Install this to your wordpress via admin > plugins > add new > upload. Go to your wordpress admin, 
 and activate the NHS Blocks plugin. Then edit your pages, your new blocks are all homed in a new category called `NHS
- Frontend Blocks` - select any of these and edit away. Variations of the blocks are found in the right hand panel 
+ Front-end Blocks` - select any of these and edit away. Variations of the blocks are found in the right hand panel 
  under `Styles` 
  
 ## Development Instructions
@@ -34,6 +34,6 @@ Any improvements, bug fixes or amendments should also be submitted back as pull 
 
 ## Credits
 This plugin was written by Tony Blacker, NHS Leadership Academy Digital Delivery Team. It is based on the tutorial 
-provided by [Morten Rand-Hendriksen](https://mor10.com/) and extended out to match the [NHSUK Frontend library 
-components](https://nhsuk.github.io/nhsuk-frontend/components) 
+provided by [Morten Rand-Hendriksen](https://mor10.com/) and extended out to match the [NHSUK Front-end library 
+components](https://nhsuk.github.io/nhsuk-front-end/components) 
 
