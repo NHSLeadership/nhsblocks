@@ -35,5 +35,5 @@ Any improvements, bug fixes or amendments should also be submitted back as pull 
 ## Credits
 This plugin was written by Tony Blacker, NHS Leadership Academy Digital Delivery Team. It is based on the tutorial 
 provided by [Morten Rand-Hendriksen](https://mor10.com/) and extended out to match the [NHSUK Front-end library 
-components](https://nhsuk.github.io/nhsuk-front-end/components) 
+components](https://nhsuk.github.io/nhsuk-frontend/components) 
 

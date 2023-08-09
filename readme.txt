@@ -99,7 +99,7 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
  * added tag component https://service-manual.nhs.uk/design-system/components/tag
  * corrected IE10/11 javascript bug affecting hero placement
  * multiple accessibility improvements, particularly with screen reader and contrast issues
- * updated to NHSUK front-end library 4.1.0 https://github.com/nhsuk/nhsuk-front-end
+ * updated to NHSUK front-end library 4.1.0 https://github.com/nhsuk/nhsuk-frontend
  * N.B. if you are also using the Nightingale theme, tags will not display correctly unless you also update Nightingale
  to v2.3.1
 
