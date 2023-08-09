@@ -10,13 +10,13 @@ Requires PHP: 5.6
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-NHS styled blocks for WordPress as developed by the NHS Leadership Academy based on the NHS Digital Frontend library.
+NHS styled blocks for WordPress as developed by the NHS Leadership Academy based on the NHS Digital Front-end library.
 
 == Description ==
 
-NHS styled blocks for WordPress using the Gutenberg editor, based on the excellent work from the NHSUK Frontend Library. These blocks mean your WordPress site can offer the latest care cards, site promos and info panels to your users, and that all of this content will be styled to match the NHS branding guidelines.
+NHS styled blocks for WordPress using the Gutenberg editor, based on the excellent work from the NHSUK Front-end Library. These blocks mean your WordPress site can offer the latest care cards, site promos and info panels to your users, and that all of this content will be styled to match the NHS branding guidelines.
 
-This plugin is designed principally for use by NHS organisations, but can be used by anybody.
+This plugin is designed principally for use by NHS organizations, but can be used by anybody.
 
 This plugin previously required Gutenberg 7.9.1 (as a standalone plugin) to be installed and active. This requirement
 has now been removed and it uses the native Gutenberg that ships with WordPress 5.3 and higher. If you also have the
@@ -33,25 +33,25 @@ plugin, you may encounter issues.
 2. Upload the plugin files to the `/wp-content/plugins/plugin-name` directory, or install the plugin through the WordPress plugins screen directly.
 3. Activate the plugin through the 'Plugins' screen in WordPress
 4. Navigate to edit or create any page or post.
-5. When you go to add a new block to your content, you will see a new section titled "NHS Frontend". In here are all of the new blocks this plugin provides. Experiment - almost all of the blocks have style variations available.
+5. When you go to add a new block to your content, you will see a new section titled "NHS Front-end". In here are all of the new blocks this plugin provides. Experiment - almost all of the blocks have style variations available.
 
 == Frequently Asked Questions ==
 
-= Is this plugin restricted to only NHS Organisations =
+= Is this plugin restricted to only NHS Organizations =
 
 This plugin has been built specifically for use in the NHS, but it is open source code and you are free to use it on any site.
 
 == Screenshots ==
-1. This plugin adds a new type of block to your WordPress - titled NHS Frontend - with 10 new blocks based on the NHS Digital Frontend Library
+1. This plugin adds a new type of block to your WordPress - titled NHS Front-end - with 10 new blocks based on the NHS Digital Front-end Library
 2. Dashboard Layout - a graphical nav panel for users to jump to sections of your site
-3. Do / Dont lists - Simple lists in a display card with ticks and crosses to denote actions they should or should not take. Can also be used for status updates, projects etc
+3. Do / Don't lists - Simple lists in a display card with ticks and crosses to denote actions they should or should not take. Can also be used for status updates, projects etc
 4. Buttons - Restyling of buttons to match NHS Digital layouts
 5. Reveal Elements - Either simple arrow based expandable sections, or icon based with plus/minus icons
 6. Panels - Text blocks with title sections to separate your content out cleanly
 7. Promo Blocks - Clean blocks which are completely linked to inner content / external sources with title, text and optional images
 8. Testimonial / Quote - Simple display device for highlighting user feedback, personal quotes or other text you would like to highlight
 9. Grouped blocks - pre-defined layouts for displaying your content in more eye catching ways
-10. Hero - a full screen width block, with optional single colour or image background and optional block of text to anchor the page and set clear purpose
+10. Hero - a full screen width block, with optional single color or image background and optional block of text to anchor the page and set clear purpose
 
 == Changelog ==
 
@@ -87,7 +87,7 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
  * Style fix for reveal block
  * Style fix for action and pagination link
  * Style fix and support for nhsblocks care card block
- * Partial style support for nhs frontend framework 6.1.0 components
+ * Partial style support for nhs front-end framework 6.1.0 components
 
 = 1.2.4 =
  * Removed check for Nightingale theme so plugin css loads to editor view correctly, this is phase one of no longer
@@ -99,7 +99,7 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
  * added tag component https://service-manual.nhs.uk/design-system/components/tag
  * corrected IE10/11 javascript bug affecting hero placement
  * multiple accessibility improvements, particularly with screen reader and contrast issues
- * updated to NHSUK frontend library 4.1.0 https://github.com/nhsuk/nhsuk-frontend
+ * updated to NHSUK front-end library 4.1.0 https://github.com/nhsuk/nhsuk-frontend
  * N.B. if you are also using the Nightingale theme, tags will not display correctly unless you also update Nightingale
  to v2.3.1
 
@@ -127,7 +127,7 @@ Hotfix to remove react error whenever hero blocks or dashboard panels were trigg
  the Gutenberg plugin purely for the NHSBlocks plugin to work, we actively encourage you to remove the Gutenberg plugin
  from your deployment to improve stability and performance.
  * visually hidden messages modified on care cards so status is reflected to screen readers
- * removed php7.4 declaration types for backwards compatability
+ * removed php7.4 declaration types for backwards compatibility
  * updated dependencies in composer
  * Ensured default values added to all text fields to make it easier to edit, improved UX
  * Added preview styling to block chooser so you can see what each block does before selecting it.
@@ -150,21 +150,21 @@ width homepages and landing pages.
 . now)
 * Pagination - want a prev and next button. Add this block, and manually configure your previous and next links. Great
 for process flows or user guides.
-* Action link - want to suggest a user follows a link, but dont want a button. Use an action link
+* Action link - want to suggest a user follows a link, but don't want a button. Use an action link
 * Back link - let users step back a page. (This uses javascript -1, so if users land on the page from another site and
 click this they will go back where they came from....)
 Additions of style options to pre-existing blocks:
-* Core table block can now be styled like nhsuk frontend, with fully responsive tables
+* Core table block can now be styled like nhsuk front-end, with fully responsive tables
 * Images can now be amended to nhusk styling
-* Addition of warning callout option to cards. Particularly useful for Covid-19 alerts
+* Addition of warning call-out option to cards. Particularly useful for Covid-19 alerts
 Thanks to @verytwisty for all the pull requests and support, 90% of this update is her work.
-(Also some remedial work to ensure inner block compatability with Gutenberg 7.6 and some minor housekeeping with file
+(Also some remedial work to ensure inner block compatibility with Gutenberg 7.6 and some minor housekeeping with file
 structures)
 
 = 1.1.2 =
 * Added examples to show in block selector region for all blocks.
 * Amended Dashboard and Groups to be Gutenberg 7.5 compatible
-* Updated upstream NPM libraries - principle change being NHSUK Frontend library
+* Updated upstream NPM libraries - principle change being NHSUK Front-end library
 
 = 1.1.1 =
 * Minor update for stable tag update.
@@ -175,13 +175,13 @@ structures)
   * This is technical debt and will need revisiting when this feature moves out of experimental phase
 * Button default text added for better UX
 * Button link moved to right hand Inspector area for improved UX
-* Incorrect image name on dashboard block. _appears to be a breaking change - it isnt!_ Any previously created
+* Incorrect image name on dashboard block. _appears to be a breaking change - it isn't!_ Any previously created
 dashboard, when edited will come up as invalid content due to this fix. You will need to click the three dots on the
 block editor and click "resolve" to repair.
 * Corrected some funky and unusual css bugs
 
 = 1.0.5 =
-* IE10/11 compatability with Hero Block
+* IE10/11 compatibility with Hero Block
 * Additional css filters for buttons, panels and promos
 
 = 1.0.4 =
@@ -192,7 +192,7 @@ block editor and click "resolve" to repair.
 * Added css to avoid conflicts with LearnDash (Conflicts triggered by Gutenberg plugin, but not in our gift)
 
 = 1.0.1 =
-* Added Base language (English) and ensured full internationalisation. Translations welcome :)
+* Added Base language (English) and ensured full internationalization. Translations welcome :)
 * Registered all blocks so they show correctly on plugin page
 * Improved Screenshot library for clearer understanding of plugin functionality from within WordPress.org listing / wp-admin search function
 
@@ -200,14 +200,14 @@ block editor and click "resolve" to repair.
 * First stable public release of the plugin.
 * Included modules:
     * Dashboard links - designed for your home page or a section home. You can add graphical sections with text overlays linking to your inner pages.
-    * Do / Dont Lists - simple panels with lists of items with either a tick or a cross next to them.
+    * Do / Don't Lists - simple panels with lists of items with either a tick or a cross next to them.
     * Button - NHS styled buttons, available as primary (green), secondary (blue) or reverse (white)
     * Reveal - expandable areas of the screen. Available either as standard reveal (down arrow) or expander (plus icon)
     * Panels - Text areas with titles, text and buttons for call to action. Available as standard white panel, grey panel or white panel with coloured header.
     * Promo - Linked boxes with text and optional images. Available in standard or smaller text variants.
     * Testimonial - quotes or testimonials can be included with this block. Available as standard (blue text with blue left hand border) or inverted (white text with blue background and white left hand border)
     * Cards - Information cards. Coloured headers with an arrow pointing to text content. Available as standard care card, warnings (red header) or alerts (red header, black body)
-    * Grouped Items - pre configured layouts of elements, with eiter testimonials, panels or promos inside each field.
+    * Grouped Items - pre configured layouts of elements, with either testimonials, panels or promos inside each field.
     * Hero Banner - a full screen width hero image, with optional text overlay box including title and tagline. Ideal for graphically anchoring your website sections.
 
 == Development / Contributing ==
