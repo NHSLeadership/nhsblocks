@@ -8,8 +8,8 @@
  * Requires at least: 5.0
  * Tested up to: 6.0
  *
- * Version: 1.3.9.1
- * Stable tag: 1.3.9.1
+ * Version: 1.3.10
+ * Stable tag: 1.3.10
  *
  * @package nhsblocks
  */
@@ -35,7 +35,7 @@ function nhsblocks_load_textdomain() {
  *
  * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/filters/block-filters/#managing-block-categories
  */
-add_filter( 'block_categories', 'nhsblocks_block_categories', 10, 2 );
+add_filter( 'block_categories_all', 'nhsblocks_block_categories', 10, 2 );
 
 /**
  * Create the category.
