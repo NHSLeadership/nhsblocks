@@ -117,7 +117,6 @@ registerBlockType('nhsblocks/reveal1', {
 		const {
 			attributes: { revealTitle, revealText, withImage },
 		} = props;
-		let revealHtmlText = new DOMParser().parseFromString(revealText, "text/html");
 
 		return (
 			<details className="nhsuk-details">
@@ -132,7 +131,7 @@ registerBlockType('nhsblocks/reveal1', {
 					aria-hidden="false"
 				>
 					{withImage === true && <InnerBlocks.Content />}
-					<RichText.Content multiline="p" value={revealHtmlText.documentElement.textContent} />
+					<RichText.Content multiline="p" value={revealText} />
 				</div>
 			</details>
 		);
