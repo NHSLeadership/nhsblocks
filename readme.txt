@@ -57,6 +57,7 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 
 = 1.3.10 =
  * Fix for deprecated block_categories
+ * Fix for simple reveal content edit
 
 = 1.3.9.1 =
  * Readme files translation to US English
