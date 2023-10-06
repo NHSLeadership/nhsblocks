@@ -31,7 +31,7 @@
     "cssnano": "^5.1.11",
     "nhsuk-frontend": "^6.1.0",
     "node-sass": "^7.0.1",
-    "postcss": "^8.2.4",
+    "postcss": "^8.4.31",
     "postcss-cli": "^8.3.1"
   }
 }
