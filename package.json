@@ -3,8 +3,8 @@
   "license": "GPL-3.0-or-later",
   "main": "src/index.js",
   "devDependencies": {
-    "@wordpress/scripts": "^23.2.0",
-    "eslint-plugin-prettier": "^4.0.0",
+    "@wordpress/scripts": "^26.14.0",
+    "eslint-plugin-prettier": "^5.0.1",
     "jsdoc": "^4.0.2",
     "wp-hookdoc": "^0.2.0"
   },
@@ -28,10 +28,10 @@
     "build:docs": "rm -rf hookdocs/ && jsdoc -c hookdoc-conf.json"
   },
   "dependencies": {
-    "cssnano": "^5.1.11",
+    "cssnano": "^6.0.1",
     "nhsuk-frontend": "^6.1.0",
     "node-sass": "^9.0.0",
     "postcss": "^8.2.4",
-    "postcss-cli": "^8.3.1"
+    "postcss-cli": "^10.1.0"
   }
 }
