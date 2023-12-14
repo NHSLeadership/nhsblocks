@@ -57,6 +57,7 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 
 = 1.3.12 =
  * Fix for dashboard navigation block as part of our ongoing work to support wordpress 6.4
+ * Fix for deprecated richText multiline prop in simple reveal block.
 
 = 1.3.11 =
  * Package updates
