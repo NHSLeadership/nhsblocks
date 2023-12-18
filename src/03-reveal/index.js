@@ -5,13 +5,14 @@
  *  @author Tony Blacker, NHS Leadership Academy
  *  @version 1.0 22nd July 2019
  */
+
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RichText, InnerBlocks, InspectorControls } = wp.blockEditor;
+const { RichText, InnerBlocks, InspectorControls, useBlockProps } = wp.blockEditor;
 const { ToggleControl, PanelBody, PanelRow, RadioControl, clientId } =
 	wp.components;
 
-const TEMPLATE_OPTIONS = [['core/image', { align: 'right', width: 150 }]];
+const TEMPLATE_OPTIONS = [['core/image', { align: 'right', width: '150px' }]];
 
 registerBlockType('nhsblocks/reveal1', {
 	title: __('Simple Reveal', 'nhsblocks'),
@@ -54,6 +55,8 @@ registerBlockType('nhsblocks/reveal1', {
 	},
 
 	edit: (props) => {
+		const blockProps = useBlockProps();
+		//  console.log(blockProps);
 		// Lift info from props and populate various constants.
 		const {
 			attributes: { revealTitle, revealText, withImage },
@@ -104,7 +107,7 @@ registerBlockType('nhsblocks/reveal1', {
 						<InnerBlocks template={TEMPLATE_OPTIONS} />
 					)}
 					<RichText
-						multiline="p"
+						{ ...blockProps }
 						placeholder={__('Reveal Contents', 'nhsblocks')}
 						onChange={onChangeRevealText}
 						value={revealText}
@@ -114,6 +117,7 @@ registerBlockType('nhsblocks/reveal1', {
 		];
 	},
 	save: (props) => {
+		const blockProps = useBlockProps.save();
 		const {
 			attributes: { revealTitle, revealText, withImage },
 		} = props;
@@ -130,8 +134,8 @@ registerBlockType('nhsblocks/reveal1', {
 					id="details-content-"
 					aria-hidden="false"
 				>
-					{withImage === true && <InnerBlocks.Content />}
-					<RichText.Content multiline="p" value={revealText} />
+					{withImage === true && <InnerBlocks.Content/>}
+					<RichText.Content { ...blockProps } value={revealText} />
 				</div>
 			</details>
 		);

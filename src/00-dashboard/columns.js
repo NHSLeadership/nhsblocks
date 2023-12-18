@@ -195,7 +195,7 @@ const ColumnsEditContainerWrapper = withDispatch(
 )(ColumnsEditContainer);
 
 const createBlocksFromInnerBlocksTemplate = (innerBlocksTemplate) => {
-	return map(innerBlocksTemplate, ([name, attributes, innerBlocks = []]) =>
+	return innerBlocksTemplate.map(([name, attributes, innerBlocks = []]) =>
 		createBlock(
 			name,
 			attributes,
