@@ -7,7 +7,7 @@
 
  const { __ } = wp.i18n;
  const { registerBlockType } = wp.blocks;
- const { RichText, InnerBlocks, InspectorControls } = wp.blockEditor;
+ const { RichText, InnerBlocks, InspectorControls, useBlockProps } = wp.blockEditor;
  const { ToggleControl, PanelBody, PanelRow, RadioControl } = wp.components;
  const { withState } = wp.compose;
  //@todo add in Card class variations
@@ -60,6 +60,7 @@
    },
  
    edit: props => {
+	 const blockProps = useBlockProps();
 	 // Lift info from props and populate various constants.
 	 const {
 	   attributes: {
@@ -119,7 +120,7 @@
 				   />
 	   )}
 				   <RichText
-					   multiline="p"
+					   { ...blockProps }
 					   placeholder={__("Card Contents", "nhsblocks")}
 					   onChange={onChangeCardText}
 					   value={cardText}
@@ -129,6 +130,7 @@
    ] );
    },
    save: props => {
+	 const blockProps = useBlockProps.save(); 
 	 const {
 	   attributes: {
 			 cardTitle,
@@ -136,7 +138,7 @@
 		   withImage,
 	   }
 	 } = props;
- 
+
 	 return (
 		 <div className="nhsuk-grid-column-width nhsuk-care-card nhsuk-care-card--type">
 			 <div className="nhsuk-care-card__heading-container">
@@ -155,7 +157,7 @@
 			   <InnerBlocks.Content />
 	   )}
 			   <RichText.Content
-				  multiline="p"
+				  { ...blockProps }
 				  value={cardText}
 			   />
 			 </div>

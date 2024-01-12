@@ -8,7 +8,7 @@
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RichText } = wp.blockEditor;
+const { RichText, useBlockProps } = wp.blockEditor;
 //@todo add in Expander class option
 //console.info(wp.components);
 
@@ -49,6 +49,7 @@ registerBlockType('nhsblocks/quote1', {
 	},
 
 	edit: (props) => {
+		const blockProps = useBlockProps();
 		// Lift info from props and populate various constants.
 		const {
 			attributes: { quoteName, quoteText },
@@ -73,7 +74,7 @@ registerBlockType('nhsblocks/quote1', {
 				</span>
 				<div className="nhsuk-inset-text__quote">
 					<RichText
-						multiline="p"
+						{ ...blockProps }
 						placeholder={__('Quote', 'nhsblocks')}
 						onChange={onChangeQuoteText}
 						value={quoteText}
@@ -90,6 +91,7 @@ registerBlockType('nhsblocks/quote1', {
 		);
 	},
 	save: (props) => {
+		const blockProps = useBlockProps.save();
 		const {
 			attributes: { quoteName, quoteText },
 		} = props;
@@ -100,7 +102,7 @@ registerBlockType('nhsblocks/quote1', {
 					Quote / Testimonial:{' '}
 				</span>
 				<div className="nhsuk-inset-text__quote">
-					<RichText.Content multiline="p" value={quoteText} />
+					<RichText.Content { ...blockProps } value={quoteText} />
 				</div>
 				<span className="nhsuk-inset-text__quote-attribution">
 					<RichText.Content value={quoteName} />

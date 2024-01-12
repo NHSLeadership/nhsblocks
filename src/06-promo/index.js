@@ -14,6 +14,7 @@ const {
 	InnerBlocks,
 	MediaUpload,
 	InspectorControls,
+	useBlockProps
 } = wp.blockEditor;
 //@todo add in Promo class variations
 //@todo add in width variations
@@ -70,6 +71,7 @@ registerBlockType('nhsblocks/promo1', {
 	},
 
 	edit: (props) => {
+		const blockProps = useBlockProps();
 		// Lift info from props and populate various constants.
 		const {
 			attributes: { promoTitle, promoText, promoLink },
@@ -117,7 +119,7 @@ registerBlockType('nhsblocks/promo1', {
 					</h2>
 					<div className="nhsuk-card__description">
 						<RichText
-							multiline="p"
+							{ ...blockProps }
 							placeholder={__('Promo Contents', 'nhsblocks')}
 							onChange={onChangePromoText}
 							value={promoText}
@@ -128,6 +130,7 @@ registerBlockType('nhsblocks/promo1', {
 		);
 	},
 	save: (props) => {
+		const blockProps = useBlockProps.save();
 		const {
 			attributes: { promoTitle, promoText, promoLink },
 		} = props;
@@ -141,7 +144,7 @@ registerBlockType('nhsblocks/promo1', {
 						</a>
 					</h2>
 					<div className="nhsuk-card__description">
-						<RichText.Content multiline="p" value={promoText} />
+						<RichText.Content { ...blockProps } value={promoText} />
 					</div>
 				</div>
 			</div>
