@@ -72,8 +72,7 @@ registerBlockType('nhsblocks/promogroup', {
 			}
 		};
 		const createBlocksFromInnerBlocksTemplate = (innerBlocksTemplate) => {
-			return map(
-				innerBlocksTemplate,
+			return innerBlocksTemplate.map(
 				([name, attributes, innerBlocks = []]) =>
 					createBlock(
 						name,
