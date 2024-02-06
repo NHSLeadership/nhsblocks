@@ -22,16 +22,16 @@
     "start": "wp-scripts start",
     "test:e2e": "wp-scripts test-e2e",
     "test:unit": "wp-scripts test-unit-js",
-    "build-scss": "cat style.scss | node_modules/.bin/node-sass --include-path node_modules/ --include-path node_modules/nhsuk-frontend/packages/nhsuk/ style.scss --output-style expanded > style.css | cat style-gutenburg.scss | node_modules/.bin/node-sass --include-path node_modules/ --include-path node_modules/nhsuk-frontend/packages/nhsuk/  style-gutenburg.scss --output-style expanded > style-gutenburg.css",
+    "build-scss": "cat style.scss | node_modules/.bin/sass --load-path node_modules/ --load-path node_modules/nhsuk-frontend/packages/nhsuk/ style.scss --style expanded > style.css | cat style-gutenburg.scss | node_modules/.bin/sass --load-path node_modules/ --load-path node_modules/nhsuk-frontend/packages/nhsuk/  style-gutenburg.scss --style expanded > style-gutenburg.css",
     "compress-scss": "postcss style.css > style.min.css",
     "zip": "zip -r nhsblocks.zip ./ -x .git .gitignore *.git/* .DS_Store .package.json .package-lock.json *.scss webpack.config.js nhsblocks.zip  postcss.config.css README.md .wordpress-org/**\\* .ds_store vendor/**\\* node_modules/**\\* src/**\\* webpack.config.js n",
     "build:docs": "rm -rf hookdocs/ && jsdoc -c hookdoc-conf.json"
   },
   "dependencies": {
     "cssnano": "^6.0.1",
-    "nhsuk-frontend": "^6.1.0",
-    "node-sass": "^9.0.0",
+    "nhsuk-frontend": "^8.0.2",
     "postcss": "^8.4.31",
-    "postcss-cli": "^10.1.0"
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.69.5"
   }
 }
