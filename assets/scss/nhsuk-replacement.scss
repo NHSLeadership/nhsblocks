@@ -1,76 +1,76 @@
 // Core
 
 // Settings
-@import 'node_modules/nhsuk-frontend/packages/core/settings/all';
+@import 'nhsuk-frontend/packages/core/settings/_all';
 
 // Tools
-@import 'node_modules/nhsuk-frontend/packages/core/tools/all';
+@import 'nhsuk-frontend/packages/core/tools/_all';
 
 // Generic
-@import 'node_modules/nhsuk-frontend/packages/core/generic/box-sizing';
-// @import 'node_modules/nhsuk-frontend/packages/core/generic/ie';
+@import 'nhsuk-frontend/packages/core/generic/_box-sizing';
+// @import 'nhsuk-frontend/packages/core/generic/ie';
 
 // Elements
-@import 'node_modules/nhsuk-frontend/packages/core/elements/links';
+@import 'nhsuk-frontend/packages/core/elements/_links';
 
 // Objects
-@import 'node_modules/nhsuk-frontend/packages/core/objects/grid';
-@import 'node_modules/nhsuk-frontend/packages/core/objects/main-wrapper';
-@import 'node_modules/nhsuk-frontend/packages/core/objects/width-container';
+@import 'nhsuk-frontend/packages/core/objects/_grid';
+@import 'nhsuk-frontend/packages/core/objects/_main-wrapper';
+@import 'nhsuk-frontend/packages/core/objects/_width-container';
 
 // Styles
-@import 'node_modules/nhsuk-frontend/packages/core/styles/icons';
-@import 'node_modules/nhsuk-frontend/packages/core/styles/lists';
-@import 'node_modules/nhsuk-frontend/packages/core/styles/typography';
+@import 'nhsuk-frontend/packages/core/styles/_icons';
+@import 'nhsuk-frontend/packages/core/styles/_lists';
+@import 'nhsuk-frontend/packages/core/styles/_typography';
 
 // Utilities
-@import 'node_modules/nhsuk-frontend/packages/core/utilities/clearfix';
-@import 'node_modules/nhsuk-frontend/packages/core/utilities/grid-widths';
-@import 'node_modules/nhsuk-frontend/packages/core/utilities/link-nowrap';
-@import 'node_modules/nhsuk-frontend/packages/core/utilities/reading-width';
-@import 'node_modules/nhsuk-frontend/packages/core/utilities/spacing';
-@import 'node_modules/nhsuk-frontend/packages/core/utilities/typography';
-@import 'node_modules/nhsuk-frontend/packages/core/utilities/visually-hidden';
-@import 'node_modules/nhsuk-frontend/packages/core/utilities/widths';
+@import 'nhsuk-frontend/packages/core/utilities/_clearfix';
+@import 'nhsuk-frontend/packages/core/utilities/_grid-widths';
+@import 'nhsuk-frontend/packages/core/utilities/_link-nowrap';
+@import 'nhsuk-frontend/packages/core/utilities/_reading-width';
+@import 'nhsuk-frontend/packages/core/utilities/_spacing';
+@import 'nhsuk-frontend/packages/core/utilities/_typography';
+@import 'nhsuk-frontend/packages/core/utilities/_visually-hidden';
+@import 'nhsuk-frontend/packages/core/utilities/_widths';
 
 // Components
-@import 'node_modules/nhsuk-frontend/packages/components/action-link/action-link';
-@import 'node_modules/nhsuk-frontend/packages/components/back-link/back-link';
-@import 'node_modules/nhsuk-frontend/packages/components/breadcrumb/breadcrumb';
-@import 'node_modules/nhsuk-frontend/packages/components/button/button';
-@import 'node_modules/nhsuk-frontend/packages/components/card/card';
-// @import 'node_modules/nhsuk-frontend/packages/components/care-card/care-card';
-@import 'node_modules/nhsuk-frontend/packages/components/checkboxes/checkboxes';
-@import 'node_modules/nhsuk-frontend/packages/components/contents-list/contents-list';
-@import 'node_modules/nhsuk-frontend/packages/components/date-input/date-input';
-@import 'node_modules/nhsuk-frontend/packages/components/details/details';
-@import 'node_modules/nhsuk-frontend/packages/components/do-dont-list/do-dont-list';
-@import 'node_modules/nhsuk-frontend/packages/components/error-message/error-message';
-@import 'node_modules/nhsuk-frontend/packages/components/error-summary/error-summary';
-@import 'node_modules/nhsuk-frontend/packages/components/fieldset/fieldset';
-@import 'node_modules/nhsuk-frontend/packages/components/footer/footer';
-@import 'node_modules/nhsuk-frontend/packages/components/header/header';
-@import 'node_modules/nhsuk-frontend/packages/components/hero/hero';
-@import 'node_modules/nhsuk-frontend/packages/components/hint/hint';
-@import 'node_modules/nhsuk-frontend/packages/components/images/images';
-@import 'node_modules/nhsuk-frontend/packages/components/input/input';
-@import 'node_modules/nhsuk-frontend/packages/components/inset-text/inset-text';
-@import 'node_modules/nhsuk-frontend/packages/components/label/label';
-// @import 'node_modules/nhsuk-frontend/packages/components/list-panel/list-panel';
-// @import 'node_modules/nhsuk-frontend/packages/components/nav-a-z/nav-a-z';
-@import 'node_modules/nhsuk-frontend/packages/components/pagination/pagination';
-@import 'node_modules/nhsuk-frontend/packages/components/radios/radios';
-// @import 'node_modules/nhsuk-frontend/packages/components/review-date/review-date';
-@import 'node_modules/nhsuk-frontend/packages/components/select/select';
-@import 'node_modules/nhsuk-frontend/packages/components/skip-link/skip-link';
-@import 'node_modules/nhsuk-frontend/packages/components/summary-list/summary-list';
-@import 'node_modules/nhsuk-frontend/packages/components/tables/tables';
-@import 'node_modules/nhsuk-frontend/packages/components/tag/tag';
-@import 'node_modules/nhsuk-frontend/packages/components/textarea/textarea';
-@import 'node_modules/nhsuk-frontend/packages/components/warning-callout/warning-callout';
+@import 'nhsuk-frontend/packages/components/action-link/_action-link';
+@import 'nhsuk-frontend/packages/components/back-link/_back-link';
+@import 'nhsuk-frontend/packages/components/breadcrumb/_breadcrumb';
+@import 'nhsuk-frontend/packages/components/button/_button';
+@import 'nhsuk-frontend/packages/components/card/card';
+// @import 'nhsuk-frontend/packages/components/care-card/care-card';
+@import 'nhsuk-frontend/packages/components/checkboxes/_checkboxes';
+@import 'nhsuk-frontend/packages/components/contents-list/_contents-list';
+@import 'nhsuk-frontend/packages/components/date-input/_date-input';
+@import 'nhsuk-frontend/packages/components/details/_details';
+@import 'nhsuk-frontend/packages/components/do-dont-list/_do-dont-list';
+@import 'nhsuk-frontend/packages/components/error-message/_error-message';
+@import 'nhsuk-frontend/packages/components/error-summary/_error-summary';
+@import 'nhsuk-frontend/packages/components/fieldset/_fieldset';
+@import 'nhsuk-frontend/packages/components/footer/_footer';
+@import 'nhsuk-frontend/packages/components/header/_header';
+@import 'nhsuk-frontend/packages/components/hero/_hero';
+@import 'nhsuk-frontend/packages/components/hint/_hint';
+@import 'nhsuk-frontend/packages/components/images/_images';
+@import 'nhsuk-frontend/packages/components/input/_input';
+@import 'nhsuk-frontend/packages/components/inset-text/_inset-text';
+@import 'nhsuk-frontend/packages/components/label/_label';
+// @import 'nhsuk-frontend/packages/components/list-panel/list-panel';
+// @import 'nhsuk-frontend/packages/components/nav-a-z/nav-a-z';
+@import 'nhsuk-frontend/packages/components/pagination/_pagination';
+@import 'nhsuk-frontend/packages/components/radios/_radios';
+// @import 'nhsuk-frontend/packages/components/review-date/review-date';
+@import 'nhsuk-frontend/packages/components/select/_select';
+@import 'nhsuk-frontend/packages/components/skip-link/_skip-link';
+@import 'nhsuk-frontend/packages/components/summary-list/_summary-list';
+@import 'nhsuk-frontend/packages/components/tables/_tables';
+@import 'nhsuk-frontend/packages/components/tag/_tag';
+@import 'nhsuk-frontend/packages/components/textarea/_textarea';
+@import 'nhsuk-frontend/packages/components/warning-callout/_warning-callout';
 
 // Legacy components - added 16th November 2020
-@import 'assets/scss/legacy/panel/panel';
-@import 'assets/scss/legacy/promo/promo';
-@import 'assets/scss/legacy/care-card/care-card';
-@import 'assets/scss/legacy/legacy';
+@import '../assets/scss/legacy/panel/_panel';
+@import '../assets/scss/legacy/promo/_promo';
+@import '../assets/scss/legacy/care-card/_care-card';
+@import '../assets/scss/legacy/legacy';
