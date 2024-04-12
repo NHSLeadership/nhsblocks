@@ -15,7 +15,7 @@ wp.domReady(() => {
 		},
 	]);
 
-	unregisterBlockStyle('core/table', ['regular', 'stripes']);
+	unregisterBlockStyle('core/table', ['regular']);
 
 	registerBlockStyle('core/table', [
 		{

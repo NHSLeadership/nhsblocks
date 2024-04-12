@@ -17722,6 +17722,13 @@
 .edit-post-visual-editor .nhsuk-striped-blocks [data-type="nhsblocks/stripeblock"]:nth-of-type(even), .block-editor-block-styles .nhsuk-striped-blocks [data-type="nhsblocks/stripeblock"]:nth-of-type(even), .block-editor-inserter__menu-help-panel .nhsuk-striped-blocks [data-type="nhsblocks/stripeblock"]:nth-of-type(even) {
   background: #ffffff;
 }
+.edit-post-visual-editor .wp-block-table.is-style-stripes, .block-editor-block-styles .wp-block-table.is-style-stripes, .block-editor-inserter__menu-help-panel .wp-block-table.is-style-stripes {
+  border-color: var(--table--stripes-border-color);
+  border-bottom: 1px;
+}
+.edit-post-visual-editor .wp-block-table.is-style-stripes td, .block-editor-block-styles .wp-block-table.is-style-stripes td, .block-editor-inserter__menu-help-panel .wp-block-table.is-style-stripes td {
+  border: 1px solid;
+}
 .edit-post-visual-editor [data-type="nhsblocks/stripesblock"], .block-editor-block-styles [data-type="nhsblocks/stripesblock"], .block-editor-inserter__menu-help-panel [data-type="nhsblocks/stripesblock"] {
   width: 100%;
   max-width: 100%;
