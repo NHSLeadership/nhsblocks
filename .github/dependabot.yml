@@ -1,0 +1,28 @@
+version: 2
+registries:
+  git-github-com:
+    type: git
+    url: https://github.com
+    username: x-access-token
+    password: "${{secrets.GIT_GITHUB_COM_PASSWORD}}"
+  composer-repository-satispress-leadershipacademy-nhs-uk-satispre:
+    type: composer-repository
+    url: https://satispress.leadershipacademy.nhs.uk/satispress
+    username: NREnBKROtj50FxfqDmV3YMXIi0DR0ym6
+    password: "${{secrets.COMPOSER_REPOSITORY_SATISPRESS_LEADERSHIPACADEMY_NHS_UK_SATISPRE_PASSWORD}}"
+  composer-repository-composer-deliciousbrains-com:
+    type: composer-repository
+    url: https://composer.deliciousbrains.com
+    username: FD461C62ECB0ECDA24C0BA2F585515DA
+    password: "${{secrets.COMPOSER_REPOSITORY_COMPOSER_DELICIOUSBRAINS_COM_PASSWORD}}"
+
+updates:
+- package-ecosystem: composer
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 99
+  registries:
+  - composer-repository-satispress-leadershipacademy-nhs-uk-satispre
+  - composer-repository-composer-deliciousbrains-com
+  - git-github-com
