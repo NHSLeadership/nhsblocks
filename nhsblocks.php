@@ -447,6 +447,7 @@ function preprocess_block_content( $content ) {
 			$content
 		);
 	}
+	return $content;
 }
 /**
  * Ensure the block editor uses the modified content.
