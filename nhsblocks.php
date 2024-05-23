@@ -412,6 +412,61 @@ function nhsblocks_hero_footer() {
 add_action( 'wp_footer', 'nhsblocks_hero_footer' );
 
 
+/**
+ * Function to preprocess post content before it is loaded into the Block Editor.
+ *
+ * @param WP_REST_Response $response The response object.
+ * @param WP_Post          $post The original post object.
+ * @param WP_REST_Request  $request The request object.
+ * @return WP_REST_Response Modified response object.
+ */
+function preprocess_content_for_block_editor( $response, $post, $request ) {
+	if ( $request->get_param( 'context' ) === 'edit' ) {
+		$data = $response->get_data();
 
+		 // custom content manipulation.
+		$content = preprocess_block_content( $data['content']['raw'] );
+		// You can add more complex processing here
 
+		// Update the response data with the modified content
+		$data['content']['raw'] = "$content";
+		$response->set_data( $data );
+	}
+
+	return $response;
+}
+
+// Hook into the REST API response for posts
+add_filter( 'rest_prepare_post', 'preprocess_content_for_block_editor', 10, 3 );
+
+function preprocess_block_content( $content ) {
+	if ( str_contains( $content, '<details class="wp-block-nhsblocks-reveal1 nhsuk-details"><summary class="nhsuk-details__summary" role="button">' ) ) {
+		return str_replace(
+			'<details class="wp-block-nhsblocks-reveal1 nhsuk-details"><summary class="nhsuk-details__summary" role="button">',
+			'<details class="wp-block-nhsblocks-reveal1 nhsuk-details"><summary class="nhsuk-details__summary" role="button" aria-controls="details-content-" aria-expanded="false">',
+			$content
+		);
+	}
+}
+/**
+ * Ensure the block editor uses the modified content.
+ * This may be later removed after testing newer versions of WP.
+ */
+function preprocess_content_for_block_editor_page( $response, $post, $request ) {
+	if ( $request->get_param( 'context' ) === 'edit' ) {
+		$data = $response->get_data();
+
+		// custom content manipulation.
+		$content = preprocess_block_content( $data['content']['raw'] );
+
+		// Update the response data with the modified content
+		$data['content']['raw'] = $content;
+		$response->set_data( $data );
+	}
+
+	return $response;
+}
+
+// Hook into the REST API response for pages
+add_filter( 'rest_prepare_page', 'preprocess_content_for_block_editor_page', 10, 3 );
 
