@@ -446,6 +446,18 @@ function preprocess_block_content( $content ) {
 			'<details class="wp-block-nhsblocks-reveal1 nhsuk-details"><summary class="nhsuk-details__summary" role="button" aria-controls="details-content-" aria-expanded="false">',
 			$content
 		);
+	} elseif (str_contains( $content, '<div class="nhsuk-care-card__heading-container"><h3 class="nhsuk-care-card__heading"><span role="heading">' )) {
+		return str_replace(
+			'<div class="nhsuk-care-card__heading-container"><h3 class="nhsuk-care-card__heading"><span role="heading">',
+			'<div class="nhsuk-care-card__heading-container"><h3 class="nhsuk-care-card__heading"><span>',
+			$content
+		);
+	} elseif (str_contains( $content, '<div class="nhsuk-care-card__heading-container"><h3 class="nhsuk-care-card__heading"><span role="heading" aria-level="3">' )) {
+		return str_replace(
+			'<div class="nhsuk-care-card__heading-container"><h3 class="nhsuk-care-card__heading"><span role="heading" aria-level="3">',
+			'<div class="nhsuk-care-card__heading-container"><h3 class="nhsuk-care-card__heading"><span>',
+			$content
+		);
 	}
 	return $content;
 }
