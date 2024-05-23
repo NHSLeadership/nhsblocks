@@ -410,3 +410,8 @@ function nhsblocks_hero_footer() {
 }
 
 add_action( 'wp_footer', 'nhsblocks_hero_footer' );
+
+
+
+
+
