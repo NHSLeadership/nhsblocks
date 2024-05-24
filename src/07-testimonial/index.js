@@ -2,8 +2,8 @@
  *  NHS Testimonial / Quote Element
  *
  *  @reference: https://nhsuk.github.io/nhsuk-frontend/components/inset-text/index.html
- *  @author Tony Blacker, NHS Leadership Academy
- *  @version 1.0 22nd July 2019
+ *  @author Tony Blacker, Mahesh Murali P, NHS Leadership Academy
+ *  @version 1.1 24th May 2024
  */
 
 const { __ } = wp.i18n;

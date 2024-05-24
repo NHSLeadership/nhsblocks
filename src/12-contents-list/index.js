@@ -3,7 +3,7 @@
  *
  *  @reference: https://nhsuk.github.io/nhsuk-frontend/components/contents-list/index.html
  *  @author Tony Blacker, NHS Leadership Academy
- *  @version 1.0 22nd July 2019
+ *  @version 1.1 24th May 2024
  */
 
 const { __ } = wp.i18n;
@@ -108,8 +108,8 @@ registerBlockType('nhsblocks/contentslistitem', {
 	parent: ['nhsblocks/contentslist'],
 	attributes: {
 		text: {
-			type: 'array',
-			source: 'children',
+			type: 'string',
+			source: 'html',
 			selector: '.pagename',
 		},
 		url: {
@@ -193,3 +193,4 @@ registerBlockType('nhsblocks/contentslistitem', {
 		);
 	},
 });
+
