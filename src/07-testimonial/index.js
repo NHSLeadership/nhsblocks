@@ -9,8 +9,6 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { RichText, useBlockProps } = wp.blockEditor;
-//@todo add in Expander class option
-//console.info(wp.components);
 
 registerBlockType('nhsblocks/quote1', {
 	title: __('Simple Quote', 'nhsblocks'),
@@ -30,8 +28,7 @@ registerBlockType('nhsblocks/quote1', {
 	example: {
 		attributes: {
 			quoteName: 'Tony Blacker',
-			quoteText:
-				'Nightingale is an incredibly flexible theme. With NHSBlocks added in, it is amazing.',
+			quoteText: 'Nightingale is an incredibly flexible theme. With NHSBlocks added in, it is amazing.',
 		},
 	},
 	attributes: {
@@ -41,28 +38,24 @@ registerBlockType('nhsblocks/quote1', {
 			selector: '.nhsuk-inset-text__quote-attribution',
 		},
 		quoteText: {
-			type: 'array',
-			source: 'children',
-			multiline: 'p',
+			type: 'string',
+			source: 'html',
 			selector: '.nhsuk-inset-text__quote',
 		},
 	},
 
 	edit: (props) => {
 		const blockProps = useBlockProps();
-		// Lift info from props and populate various constants.
 		const {
 			attributes: { quoteName, quoteText },
 			className,
 			setAttributes,
 		} = props;
 
-		// Grab newQuoteName, set the value of quoteName to newQuoteName.
 		const onChangeQuoteName = (newQuoteName) => {
 			setAttributes({ quoteName: newQuoteName });
 		};
 
-		// Grab quoteText, set the value of quoteText to newQuotetext
 		const onChangeQuoteText = (newQuoteText) => {
 			setAttributes({ quoteText: newQuoteText });
 		};
@@ -74,7 +67,7 @@ registerBlockType('nhsblocks/quote1', {
 				</span>
 				<div className="nhsuk-inset-text__quote">
 					<RichText
-						{ ...blockProps }
+						{...blockProps}
 						placeholder={__('Quote', 'nhsblocks')}
 						onChange={onChangeQuoteText}
 						value={quoteText}
@@ -90,6 +83,7 @@ registerBlockType('nhsblocks/quote1', {
 			</div>
 		);
 	},
+
 	save: (props) => {
 		const blockProps = useBlockProps.save();
 		const {
@@ -102,7 +96,7 @@ registerBlockType('nhsblocks/quote1', {
 					Quote / Testimonial:{' '}
 				</span>
 				<div className="nhsuk-inset-text__quote">
-					<RichText.Content { ...blockProps } value={quoteText} />
+					<RichText.Content {...blockProps} value={quoteText} />
 				</div>
 				<span className="nhsuk-inset-text__quote-attribution">
 					<RichText.Content value={quoteName} />
