@@ -33,5 +33,9 @@
     "postcss": "^8.4.31",
     "postcss-cli": "^10.1.0",
     "sass": "^1.69.5"
+  },
+  "overrides": {
+    "puppeteer-core": "^22.0.0",
+    "ws": "^8.18.0"
   }
 }
