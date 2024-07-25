@@ -58,6 +58,7 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 = 1.3.16 =
  * Security update
  * Fix for simple reveal block
+ * Fix for card block
 
 = 1.3.15 =
  * Stripe option for table block
