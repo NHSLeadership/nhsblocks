@@ -156,6 +156,46 @@ registerBlockType('nhsblocks/promo1', {
 				promoTitle: {
 					type: 'string',
 					source: 'html',
+					selector: '.wp-block-nhsblocks-promo1 .nhsuk-card__content .nhsuk-card__heading',
+				},
+				promoText: {
+					type: 'string',
+					source: 'html',
+					selector: '.wp-block-nhsblocks-promo1 .nhsuk-card__description',
+				},
+				promoLink: {
+					type: 'string',
+					source: 'attribute',
+					selector: '.wp-block-nhsblocks-promo1 a.nhsuk-card__link',
+					attribute: 'href',
+				},
+			},
+			save: (props) => {
+				const blockProps = useBlockProps.save();
+				const {
+					attributes: { promoTitle, promoText, promoLink },
+				} = props;
+				var updatedTitle = promoTitle.replace("</a>", "").replace("</a>", "</a></a>");
+				return (
+					<div className="nhsuk-card nhsuk-card--clickable">
+						<InnerBlocks.Content />
+						<div className="nhsuk-card__content">
+							<h2 className="nhsuk-card__heading nhsuk-heading-m">
+								<RichText.Content {...blockProps} value={updatedTitle} />
+							</h2>
+							<div className="nhsuk-card__description">
+								<RichText.Content {...blockProps} value={promoText} />
+							</div>
+						</div>
+					</div>
+				);
+			},
+		},
+		{
+			attributes: {
+				promoTitle: {
+					type: 'string',
+					source: 'html',
 					selector: '.nhsuk-promo__heading',
 				},
 				promoText: {
