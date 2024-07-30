@@ -1,10 +1,10 @@
 === NHS Blocks ===
-Contributors: tblacker, maheshmuralip
+Contributors: tblacker, maheshmuralip, nhsleadership
 Tags: gutenberg, blocks, nhs
 Plugin Name:: NHS Blocks
 Plugin URI: https://digital.leadershipacademy.nhs.uk/digital-capabilities/websites/nhs-blocks-user-guide/
 Requires at least: 5.3
-Tested up to: 6.2
+Tested up to: 6.6
 Stable tag: 1.3.16
 Requires PHP: 5.6
 License: GPLv3 or later
