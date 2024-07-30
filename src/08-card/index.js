@@ -167,40 +167,146 @@
    },
 	 deprecated: [
 		 {
-				 attributes: {
-					 cardTitle: {
-						 type: "string",
-						 source: "html",
-						 selector: ".nhsuk-care-card__heading-text"
-					 },
-					 cardText: {
-						 type: "array",
-						 source: "children",
-						 multiline: "p",
-						 selector: ".nhsuk-care-card__content"
-					 },
+			 attributes: {
+				 cardTitle: {
+					 type: "string",
+					 source: "html",
+					 selector: ".nhsuk-care-card__heading-text"
 				 },
-			 save: ( {attributes} ) =>
+				 cardText: {
+					 type: "array",
+					 source: "children",
+					 multiline: "p",
+					 selector: ".nhsuk-care-card__content"
+				 },
+			 },
+			 save: ({ attributes }) =>
 				 <div className="nhsuk-grid-column-width nhsuk-care-card nhsuk-care-card--type">
-				 <div className="nhsuk-care-card__heading-container">
-				 <h3 className="nhsuk-care-card__heading">
-				 <span role="text">
-				 <span className="nhsuk-u-visually-hidden">Non-urgent advice: </span>
-			 <span className="nhsuk-care-card__heading-text">
-				 <RichText.Content value={attributes.cardTitle} />
-			 </span>
-			 </span>
-			 </h3>
-			 <span className="nhsuk-care-card__arrow" aria-hidden="true"></span>
-				 </div>
-				 <div className="nhsuk-care-card__content">
-				 <RichText.Content
-			 multiline="p"
-			 value={attributes.cardText}
-			 />
-			 </div>
-			 </div>,
+					 <div className="nhsuk-care-card__heading-container">
+						 <h3 className="nhsuk-care-card__heading">
+							 <span role="heading" aria-level="3">
+								 <span className="nhsuk-u-visually-hidden">Non-urgent advice: </span>
+								 <span className="nhsuk-care-card__heading-text">
+									 <RichText.Content value={attributes.cardTitle} />
+								 </span>
+							 </span>
+						 </h3>
+						 <span className="nhsuk-care-card__arrow" aria-hidden="true"></span>
+					 </div>
+					 <div className="nhsuk-care-card__content">
+						 <RichText.Content
+							 multiline="p"
+							 value={attributes.cardText}
+						 />
+					 </div>
+				 </div>,
 		 },
+		 {
+			 attributes: {
+				 cardTitle: {
+					 type: "string",
+					 source: "html",
+					 selector: ".nhsuk-care-card__heading-text"
+				 },
+				 cardText: {
+					 type: "array",
+					 source: "children",
+					 multiline: "p",
+					 selector: ".nhsuk-care-card__content"
+				 },
+			 },
+			 save: ({ attributes }) =>
+				 <div className="nhsuk-grid-column-width nhsuk-care-card nhsuk-care-card--type">
+					 <div className="nhsuk-care-card__heading-container">
+						 <h3 className="nhsuk-care-card__heading">
+							 <span role="text">
+								 <span className="nhsuk-u-visually-hidden">Non-urgent advice: </span>
+								 <span className="nhsuk-care-card__heading-text">
+									 <RichText.Content value={attributes.cardTitle} />
+								 </span>
+							 </span>
+						 </h3>
+						 <span className="nhsuk-care-card__arrow" aria-hidden="true"></span>
+					 </div>
+					 <div className="nhsuk-care-card__content">
+						 <RichText.Content
+							 multiline="p"
+							 value={attributes.cardText}
+						 />
+					 </div>
+				 </div>,
+		 },
+
+		 {
+			 attributes: {
+				 cardTitle: {
+					 type: "string",
+					 source: "html",
+					 selector: ".nhsuk-care-card__heading-text"
+				 },
+				 cardText: {
+					 type: "array",
+					 source: "children",
+					 multiline: "p",
+					 selector: ".nhsuk-care-card__content"
+				 },
+			 },
+			 save: ({ attributes }) =>
+				 <div className="nhsuk-grid-column-width nhsuk-care-card nhsuk-care-card--type">
+					 <div className="nhsuk-care-card__heading-container">
+						 <h3 className="nhsuk-care-card__heading">
+							 <span role="heading">
+								 <span className="nhsuk-u-visually-hidden">Non-urgent advice: </span>
+								 <span className="nhsuk-care-card__heading-text">
+									 <RichText.Content value={attributes.cardTitle} />
+								 </span>
+							 </span>
+						 </h3>
+						 <span className="nhsuk-care-card__arrow" aria-hidden="true"></span>
+					 </div>
+					 <div className="nhsuk-care-card__content">
+						 <RichText.Content
+							 multiline="p"
+							 value={attributes.cardText}
+						 />
+					 </div>
+				 </div>,
+		 },
+
+		 {
+			 attributes: {
+				 cardTitle: {
+					 type: "string",
+					 source: "html",
+					 selector: ".nhsuk-care-card__heading-text"
+				 },
+				 cardText: {
+					 type: "array",
+					 source: "children",
+					 multiline: "p",
+					 selector: ".nhsuk-card__content"
+				 },
+			 },
+			 save: ({ attributes }) =>
+				 <div className="nhsuk-card nhsuk-card--care">
+					 <div className="nhsuk-card--care__heading-container">
+						 <h2 className="nhsuk-card--care__heading">
+							 <span role="text" className="nhsuk-care-card__heading-text">
+								 <RichText.Content value={attributes.cardTitle} />
+							 </span>
+						 </h2>
+						 <span className="nhsuk-card--care__arrow" aria-hidden="true"></span>
+					 </div>
+					 <div className="nhsuk-card__content">
+						 <RichText.Content
+							 {...useBlockProps.save()}
+							 multiline="p"
+							 value={attributes.cardText}
+						 />
+					 </div>
+				 </div>,
+		 },
+
 	 ],
  });
  // card variations

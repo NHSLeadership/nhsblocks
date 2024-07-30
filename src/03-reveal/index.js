@@ -176,5 +176,38 @@ registerBlockType('nhsblocks/reveal1', {
 				</details>
 			),
 		},
+		{
+			attributes: {
+				revealTitle: {
+					type: 'string',
+					source: 'html',
+					selector: '.nhsuk-details__summary-text',
+				},
+				revealText: {
+					type: 'string',
+					source: 'html',
+					selector: '.nhsuk-details__text',
+				},
+			},
+			save: ({ attributes }) => (
+				<details className="nhsuk-details">
+					<summary
+						className="nhsuk-details__summary"
+						role="button"
+					>
+						<span className="nhsuk-details__summary-text">
+							`${attributes.revealTitle}`
+						</span>
+					</summary>
+					<div
+						className="nhsuk-details__text"
+						id="details-content-"
+						aria-hidden="false"
+					>
+						`${attributes.revealText}`
+					</div>
+				</details>
+			),
+		},
 	],
 });
