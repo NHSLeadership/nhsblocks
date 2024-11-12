@@ -57,6 +57,7 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 
 = 1.3.17 =
  * Fix error when trying to activate this plugin before theme selection
+ * Security update
 
 = 1.3.16 =
  * Security update
