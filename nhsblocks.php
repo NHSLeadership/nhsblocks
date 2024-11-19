@@ -8,14 +8,17 @@
  * Requires at least: 5.0
  * Tested up to: 6.2
  *
- * Version: 1.3.16
- * Stable tag: 1.3.16
+ * Version: 1.3.17
+ * Stable tag: 1.3.17
  *
  * @package nhsblocks
  */
 
 defined( 'ABSPATH' ) || exit;
 
+if (!function_exists('get_plugin_data')) {
+    require_once ABSPATH . 'wp-admin/includes/plugin.php';
+}
 /**
  * Load translations (if any) for the plugin from the /languages/ folder.
  *
