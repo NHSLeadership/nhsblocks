@@ -1,0 +1,20 @@
+version: 2
+updates:
+  # Maintain dependencies for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    target-branch: "develop"
+    schedule:
+      interval: "daily"
+    labels:
+      - "npm"
+      - "dependencies"
+  # Maintain dependencies for Composer
+  - package-ecosystem: "composer"
+    directory: "/"
+    target-branch: "develop"
+    schedule:
+      interval: "daily"
+    labels:
+      - "php"
+      - "dependencies"
