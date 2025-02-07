@@ -218,18 +218,18 @@
    * 1. Allow space for the arrow.
    * 2. Align the icon with the start of the back link.
    * 3. Align the icon with the middle of the text.
+   * 4. Make back link same height as breadcrumb.
    */
   /* ==========================================================================
       COMPONENTS / #BREADCRUMB
      ========================================================================== */
   /**
    * 1. Hide the breadcrumb on print stylesheets.
-   * 2. Bespoke spacing numbers used as there is no 20px
-   *    spacing mapped in settings/spacing.
    * 3. Don't show the full breadcrumb below tablet size.
    * 4. Typography sizing mixin, see core/tools/_typography
    * 5. and core/settings/_typography for size maps.
    * 5. .. but show a back to index page link.
+   * 6. Spacing to align the chevron with breadcrumb items
    */
   /* ==========================================================================
      COMPONENTS/ #BUTTON
@@ -548,7 +548,9 @@
    * Table container is used to ensure the table does not break the container.
    *
    * 1. Margin is removed so there isn't double spacing.
+   * 2. XS size not added because it matches the table header, so it'd be bad for hierarchy
    */
+  /* [2] */
   /* Table row hover
   ========================================================================== */
   /**
@@ -741,7 +743,7 @@
   .edit-post-visual-editor a:after, .block-editor-block-styles a:after, .block-editor-inserter__menu-help-panel a:after {
     color: #212b32;
     content: " (Link: " attr(href) ")"; /* [1] */
-    font-size: 14pt; /* [2] */
+    font-size: inherit; /* [2] */
   }
 }
 .edit-post-visual-editor .nhsuk-link--no-visited-state:link, .block-editor-block-styles .nhsuk-link--no-visited-state:link, .block-editor-inserter__menu-help-panel .nhsuk-link--no-visited-state:link {
@@ -829,19 +831,9 @@
   }
 }
 .edit-post-visual-editor .nhsuk-main-wrapper, .block-editor-block-styles .nhsuk-main-wrapper, .block-editor-inserter__menu-help-panel .nhsuk-main-wrapper {
-  padding-top: 40px;
-  padding-bottom: 40px;
   display: block; /* [1] */
-}
-@media (min-width: 40.0625em) {
-  .edit-post-visual-editor .nhsuk-main-wrapper, .block-editor-block-styles .nhsuk-main-wrapper, .block-editor-inserter__menu-help-panel .nhsuk-main-wrapper {
-    padding-top: 48px;
-  }
-}
-@media (min-width: 40.0625em) {
-  .edit-post-visual-editor .nhsuk-main-wrapper, .block-editor-block-styles .nhsuk-main-wrapper, .block-editor-inserter__menu-help-panel .nhsuk-main-wrapper {
-    padding-bottom: 48px;
-  }
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 .edit-post-visual-editor .nhsuk-main-wrapper > *:first-child, .block-editor-block-styles .nhsuk-main-wrapper > *:first-child, .block-editor-inserter__menu-help-panel .nhsuk-main-wrapper > *:first-child {
   margin-top: 0;
@@ -849,8 +841,14 @@
 .edit-post-visual-editor .nhsuk-main-wrapper > *:last-child, .block-editor-block-styles .nhsuk-main-wrapper > *:last-child, .block-editor-inserter__menu-help-panel .nhsuk-main-wrapper > *:last-child {
   margin-bottom: 0;
 }
+@media (min-width: 40.0625em) {
+  .edit-post-visual-editor .nhsuk-main-wrapper, .block-editor-block-styles .nhsuk-main-wrapper, .block-editor-inserter__menu-help-panel .nhsuk-main-wrapper {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
 .edit-post-visual-editor .nhsuk-main-wrapper--l, .block-editor-block-styles .nhsuk-main-wrapper--l, .block-editor-inserter__menu-help-panel .nhsuk-main-wrapper--l {
-  padding-top: 48px;
+  padding-top: 40px;
 }
 @media (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-main-wrapper--l, .block-editor-block-styles .nhsuk-main-wrapper--l, .block-editor-inserter__menu-help-panel .nhsuk-main-wrapper--l {
@@ -858,17 +856,13 @@
   }
 }
 .edit-post-visual-editor .nhsuk-main-wrapper--s, .block-editor-block-styles .nhsuk-main-wrapper--s, .block-editor-inserter__menu-help-panel .nhsuk-main-wrapper--s {
-  padding-bottom: 24px;
-  padding-top: 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 @media (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-main-wrapper--s, .block-editor-block-styles .nhsuk-main-wrapper--s, .block-editor-inserter__menu-help-panel .nhsuk-main-wrapper--s {
-    padding-bottom: 32px;
-  }
-}
-@media (min-width: 40.0625em) {
-  .edit-post-visual-editor .nhsuk-main-wrapper--s, .block-editor-block-styles .nhsuk-main-wrapper--s, .block-editor-inserter__menu-help-panel .nhsuk-main-wrapper--s {
-    padding-top: 32px;
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
 }
 .edit-post-visual-editor .nhsuk-width-container, .block-editor-block-styles .nhsuk-width-container, .block-editor-inserter__menu-help-panel .nhsuk-width-container {
@@ -983,8 +977,8 @@
 }
 @media print {
   .edit-post-visual-editor ol, .edit-post-visual-editor .block-editor-block-styles ol, .block-editor-block-styles .edit-post-visual-editor ol, .edit-post-visual-editor .block-editor-inserter__menu-help-panel ol, .block-editor-inserter__menu-help-panel .edit-post-visual-editor ol, .edit-post-visual-editor ul, .edit-post-visual-editor .block-editor-block-styles ul, .block-editor-block-styles .edit-post-visual-editor ul, .edit-post-visual-editor .block-editor-inserter__menu-help-panel ul, .block-editor-inserter__menu-help-panel .edit-post-visual-editor ul, .edit-post-visual-editor .nhsuk-list, .block-editor-block-styles ol, .block-editor-block-styles .block-editor-inserter__menu-help-panel ol, .block-editor-inserter__menu-help-panel .block-editor-block-styles ol, .block-editor-block-styles ul, .block-editor-block-styles .block-editor-inserter__menu-help-panel ul, .block-editor-inserter__menu-help-panel .block-editor-block-styles ul, .block-editor-block-styles .nhsuk-list, .block-editor-inserter__menu-help-panel ol, .block-editor-inserter__menu-help-panel ul, .block-editor-inserter__menu-help-panel .nhsuk-list {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 @media (min-width: 40.0625em) {
@@ -1043,7 +1037,7 @@
 .block-editor-inserter__menu-help-panel .nhsuk-heading-xl {
   font-size: 32px;
   font-size: 2rem;
-  line-height: 1.25;
+  line-height: 1.1875;
   display: block;
   font-weight: 600;
   margin-top: 0;
@@ -1056,7 +1050,7 @@
   .block-editor-inserter__menu-help-panel .nhsuk-heading-xl {
     font-size: 48px;
     font-size: 3rem;
-    line-height: 1.16667;
+    line-height: 1.125;
   }
 }
 @media print {
@@ -1064,7 +1058,7 @@
   .edit-post-visual-editor .nhsuk-heading-xl, .edit-post-visual-editor .block-editor-block-styles h1, .block-editor-block-styles .edit-post-visual-editor h1, .edit-post-visual-editor .block-editor-inserter__menu-help-panel h1, .block-editor-inserter__menu-help-panel .edit-post-visual-editor h1, .block-editor-block-styles h1,
   .block-editor-block-styles .nhsuk-heading-xl, .block-editor-block-styles .block-editor-inserter__menu-help-panel h1, .block-editor-inserter__menu-help-panel .block-editor-block-styles h1, .block-editor-inserter__menu-help-panel h1,
   .block-editor-inserter__menu-help-panel .nhsuk-heading-xl {
-    font-size: 32pt;
+    font-size: 26pt;
     line-height: 1.15;
   }
 }
@@ -1080,9 +1074,9 @@
 .edit-post-visual-editor .nhsuk-heading-l, .edit-post-visual-editor .block-editor-block-styles h2, .block-editor-block-styles .edit-post-visual-editor h2, .edit-post-visual-editor .block-editor-inserter__menu-help-panel h2, .block-editor-inserter__menu-help-panel .edit-post-visual-editor h2, .block-editor-block-styles h2,
 .block-editor-block-styles .nhsuk-heading-l, .block-editor-block-styles .block-editor-inserter__menu-help-panel h2, .block-editor-inserter__menu-help-panel .block-editor-block-styles h2, .block-editor-inserter__menu-help-panel h2,
 .block-editor-inserter__menu-help-panel .nhsuk-heading-l {
-  font-size: 24px;
-  font-size: 1.5rem;
-  line-height: 1.33333;
+  font-size: 27px;
+  font-size: 1.6875rem;
+  line-height: 1.22222;
   display: block;
   font-weight: 600;
   margin-top: 0;
@@ -1093,9 +1087,9 @@
   .edit-post-visual-editor .nhsuk-heading-l, .edit-post-visual-editor .block-editor-block-styles h2, .block-editor-block-styles .edit-post-visual-editor h2, .edit-post-visual-editor .block-editor-inserter__menu-help-panel h2, .block-editor-inserter__menu-help-panel .edit-post-visual-editor h2, .block-editor-block-styles h2,
   .block-editor-block-styles .nhsuk-heading-l, .block-editor-block-styles .block-editor-inserter__menu-help-panel h2, .block-editor-inserter__menu-help-panel .block-editor-block-styles h2, .block-editor-inserter__menu-help-panel h2,
   .block-editor-inserter__menu-help-panel .nhsuk-heading-l {
-    font-size: 32px;
-    font-size: 2rem;
-    line-height: 1.25;
+    font-size: 36px;
+    font-size: 2.25rem;
+    line-height: 1.16667;
   }
 }
 @media print {
@@ -1103,8 +1097,8 @@
   .edit-post-visual-editor .nhsuk-heading-l, .edit-post-visual-editor .block-editor-block-styles h2, .block-editor-block-styles .edit-post-visual-editor h2, .edit-post-visual-editor .block-editor-inserter__menu-help-panel h2, .block-editor-inserter__menu-help-panel .edit-post-visual-editor h2, .block-editor-block-styles h2,
   .block-editor-block-styles .nhsuk-heading-l, .block-editor-block-styles .block-editor-inserter__menu-help-panel h2, .block-editor-inserter__menu-help-panel .block-editor-block-styles h2, .block-editor-inserter__menu-help-panel h2,
   .block-editor-inserter__menu-help-panel .nhsuk-heading-l {
-    font-size: 24pt;
-    line-height: 1.05;
+    font-size: 20pt;
+    line-height: 1.2;
   }
 }
 @media (min-width: 40.0625em) {
@@ -1122,9 +1116,9 @@
 .block-editor-block-styles .nhsuk-card.is-style-panel-with-label .nhsuk-card__content h2, .block-editor-block-styles .block-editor-inserter__menu-help-panel h3, .block-editor-inserter__menu-help-panel .block-editor-block-styles h3, .block-editor-inserter__menu-help-panel h3,
 .block-editor-inserter__menu-help-panel .nhsuk-heading-m,
 .block-editor-inserter__menu-help-panel .nhsuk-card.is-style-panel-with-label .nhsuk-card__content h2 {
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 1.4;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.31818;
   display: block;
   font-weight: 600;
   margin-top: 0;
@@ -1138,9 +1132,9 @@
   .block-editor-block-styles .nhsuk-card.is-style-panel-with-label .nhsuk-card__content h2, .block-editor-block-styles .block-editor-inserter__menu-help-panel h3, .block-editor-inserter__menu-help-panel .block-editor-block-styles h3, .block-editor-inserter__menu-help-panel h3,
   .block-editor-inserter__menu-help-panel .nhsuk-heading-m,
   .block-editor-inserter__menu-help-panel .nhsuk-card.is-style-panel-with-label .nhsuk-card__content h2 {
-    font-size: 24px;
-    font-size: 1.5rem;
-    line-height: 1.33333;
+    font-size: 26px;
+    font-size: 1.625rem;
+    line-height: 1.23077;
   }
 }
 @media print {
@@ -1151,8 +1145,8 @@
   .block-editor-block-styles .nhsuk-card.is-style-panel-with-label .nhsuk-card__content h2, .block-editor-block-styles .block-editor-inserter__menu-help-panel h3, .block-editor-inserter__menu-help-panel .block-editor-block-styles h3, .block-editor-inserter__menu-help-panel h3,
   .block-editor-inserter__menu-help-panel .nhsuk-heading-m,
   .block-editor-inserter__menu-help-panel .nhsuk-card.is-style-panel-with-label .nhsuk-card__content h2 {
-    font-size: 18pt;
-    line-height: 1.15;
+    font-size: 17pt;
+    line-height: 1.25;
   }
 }
 @media (min-width: 40.0625em) {
@@ -1170,9 +1164,9 @@
 .edit-post-visual-editor .nhsuk-heading-s, .edit-post-visual-editor .block-editor-block-styles h4, .block-editor-block-styles .edit-post-visual-editor h4, .edit-post-visual-editor .block-editor-inserter__menu-help-panel h4, .block-editor-inserter__menu-help-panel .edit-post-visual-editor h4, .block-editor-block-styles h4,
 .block-editor-block-styles .nhsuk-heading-s, .block-editor-block-styles .block-editor-inserter__menu-help-panel h4, .block-editor-inserter__menu-help-panel .block-editor-block-styles h4, .block-editor-inserter__menu-help-panel h4,
 .block-editor-inserter__menu-help-panel .nhsuk-heading-s {
-  font-size: 18px;
-  font-size: 1.125rem;
-  line-height: 1.55556;
+  font-size: 19px;
+  font-size: 1.1875rem;
+  line-height: 1.42105;
   display: block;
   font-weight: 600;
   margin-top: 0;
@@ -1185,7 +1179,7 @@
   .block-editor-inserter__menu-help-panel .nhsuk-heading-s {
     font-size: 22px;
     font-size: 1.375rem;
-    line-height: 1.45455;
+    line-height: 1.36364;
   }
 }
 @media print {
@@ -1193,8 +1187,8 @@
   .edit-post-visual-editor .nhsuk-heading-s, .edit-post-visual-editor .block-editor-block-styles h4, .block-editor-block-styles .edit-post-visual-editor h4, .edit-post-visual-editor .block-editor-inserter__menu-help-panel h4, .block-editor-inserter__menu-help-panel .edit-post-visual-editor h4, .block-editor-block-styles h4,
   .block-editor-block-styles .nhsuk-heading-s, .block-editor-block-styles .block-editor-inserter__menu-help-panel h4, .block-editor-inserter__menu-help-panel .block-editor-block-styles h4, .block-editor-inserter__menu-help-panel h4,
   .block-editor-inserter__menu-help-panel .nhsuk-heading-s {
-    font-size: 18pt;
-    line-height: 1.15;
+    font-size: 15pt;
+    line-height: 1.25;
   }
 }
 @media (min-width: 40.0625em) {
@@ -1232,8 +1226,8 @@
   .edit-post-visual-editor .nhsuk-heading-xs, .edit-post-visual-editor .block-editor-block-styles h5, .block-editor-block-styles .edit-post-visual-editor h5, .edit-post-visual-editor .block-editor-inserter__menu-help-panel h5, .block-editor-inserter__menu-help-panel .edit-post-visual-editor h5, .block-editor-block-styles h5,
   .block-editor-block-styles .nhsuk-heading-xs, .block-editor-block-styles .block-editor-inserter__menu-help-panel h5, .block-editor-inserter__menu-help-panel .block-editor-block-styles h5, .block-editor-inserter__menu-help-panel h5,
   .block-editor-inserter__menu-help-panel .nhsuk-heading-xs {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 @media (min-width: 40.0625em) {
@@ -1271,8 +1265,8 @@
   .edit-post-visual-editor .nhsuk-heading-xxs, .edit-post-visual-editor .block-editor-block-styles h6, .block-editor-block-styles .edit-post-visual-editor h6, .edit-post-visual-editor .block-editor-inserter__menu-help-panel h6, .block-editor-inserter__menu-help-panel .edit-post-visual-editor h6, .block-editor-block-styles h6,
   .block-editor-block-styles .nhsuk-heading-xxs, .block-editor-block-styles .block-editor-inserter__menu-help-panel h6, .block-editor-inserter__menu-help-panel .block-editor-block-styles h6, .block-editor-inserter__menu-help-panel h6,
   .block-editor-inserter__menu-help-panel .nhsuk-heading-xxs {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 @media (min-width: 40.0625em) {
@@ -1285,46 +1279,46 @@
 }
 .edit-post-visual-editor .nhsuk-caption-xl, .block-editor-block-styles .nhsuk-caption-xl, .block-editor-inserter__menu-help-panel .nhsuk-caption-xl {
   font-weight: 400;
-  font-size: 24px;
-  font-size: 1.5rem;
-  line-height: 1.33333;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.31818;
   color: #4c6272;
   display: block;
   margin-bottom: 4px;
 }
 @media (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-caption-xl, .block-editor-block-styles .nhsuk-caption-xl, .block-editor-inserter__menu-help-panel .nhsuk-caption-xl {
-    font-size: 32px;
-    font-size: 2rem;
-    line-height: 1.25;
+    font-size: 26px;
+    font-size: 1.625rem;
+    line-height: 1.23077;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-caption-xl, .block-editor-block-styles .nhsuk-caption-xl, .block-editor-inserter__menu-help-panel .nhsuk-caption-xl {
-    font-size: 24pt;
-    line-height: 1.05;
+    font-size: 17pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-caption-l, .block-editor-block-styles .nhsuk-caption-l, .block-editor-inserter__menu-help-panel .nhsuk-caption-l {
   font-weight: 400;
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 1.4;
+  font-size: 19px;
+  font-size: 1.1875rem;
+  line-height: 1.42105;
   color: #4c6272;
   display: block;
   margin-bottom: 4px;
 }
 @media (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-caption-l, .block-editor-block-styles .nhsuk-caption-l, .block-editor-inserter__menu-help-panel .nhsuk-caption-l {
-    font-size: 24px;
-    font-size: 1.5rem;
-    line-height: 1.33333;
+    font-size: 22px;
+    font-size: 1.375rem;
+    line-height: 1.36364;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-caption-l, .block-editor-block-styles .nhsuk-caption-l, .block-editor-inserter__menu-help-panel .nhsuk-caption-l {
-    font-size: 18pt;
-    line-height: 1.15;
+    font-size: 15pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-caption-m, .block-editor-block-styles .nhsuk-caption-m, .block-editor-inserter__menu-help-panel .nhsuk-caption-m {
@@ -1344,8 +1338,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-caption-m, .block-editor-block-styles .nhsuk-caption-m, .block-editor-inserter__menu-help-panel .nhsuk-caption-m {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-caption--bottom, .block-editor-block-styles .nhsuk-caption--bottom, .block-editor-inserter__menu-help-panel .nhsuk-caption--bottom {
@@ -1364,13 +1358,13 @@
   .edit-post-visual-editor .nhsuk-body-l, .block-editor-block-styles .nhsuk-body-l, .block-editor-inserter__menu-help-panel .nhsuk-body-l {
     font-size: 24px;
     font-size: 1.5rem;
-    line-height: 1.33333;
+    line-height: 1.29167;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-body-l, .block-editor-block-styles .nhsuk-body-l, .block-editor-inserter__menu-help-panel .nhsuk-body-l {
-    font-size: 18pt;
-    line-height: 1.15;
+    font-size: 16pt;
+    line-height: 1.25;
   }
 }
 @media (min-width: 40.0625em) {
@@ -1404,8 +1398,8 @@
   .edit-post-visual-editor .nhsuk-body-m, .edit-post-visual-editor .block-editor-block-styles p, .block-editor-block-styles .edit-post-visual-editor p, .edit-post-visual-editor .block-editor-inserter__menu-help-panel p, .block-editor-inserter__menu-help-panel .edit-post-visual-editor p, .block-editor-block-styles address, .block-editor-block-styles .block-editor-inserter__menu-help-panel address, .block-editor-inserter__menu-help-panel .block-editor-block-styles address, .block-editor-block-styles p,
   .block-editor-block-styles .nhsuk-body-m, .block-editor-block-styles .block-editor-inserter__menu-help-panel p, .block-editor-inserter__menu-help-panel .block-editor-block-styles p, .block-editor-inserter__menu-help-panel address, .block-editor-inserter__menu-help-panel p,
   .block-editor-inserter__menu-help-panel .nhsuk-body-m {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 @media (min-width: 40.0625em) {
@@ -1439,8 +1433,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-body-s, .block-editor-block-styles .nhsuk-body-s, .block-editor-inserter__menu-help-panel .nhsuk-body-s {
-    font-size: 14pt;
-    line-height: 1.2;
+    font-size: 12pt;
+    line-height: 1.3;
   }
 }
 @media (min-width: 40.0625em) {
@@ -1463,13 +1457,13 @@
   .edit-post-visual-editor .nhsuk-lede-text, .block-editor-block-styles .nhsuk-lede-text, .block-editor-inserter__menu-help-panel .nhsuk-lede-text {
     font-size: 24px;
     font-size: 1.5rem;
-    line-height: 1.33333;
+    line-height: 1.29167;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-lede-text, .block-editor-block-styles .nhsuk-lede-text, .block-editor-inserter__menu-help-panel .nhsuk-lede-text {
-    font-size: 18pt;
-    line-height: 1.15;
+    font-size: 16pt;
+    line-height: 1.25;
   }
 }
 @media (min-width: 40.0625em) {
@@ -1493,7 +1487,7 @@
   .block-editor-inserter__menu-help-panel .nhsuk-lede-text ul {
     font-size: 24px;
     font-size: 1.5rem;
-    line-height: 1.33333;
+    line-height: 1.29167;
   }
 }
 @media print {
@@ -1501,8 +1495,8 @@
   .edit-post-visual-editor .nhsuk-lede-text ul, .block-editor-block-styles .nhsuk-lede-text p,
   .block-editor-block-styles .nhsuk-lede-text ul, .block-editor-inserter__menu-help-panel .nhsuk-lede-text p,
   .block-editor-inserter__menu-help-panel .nhsuk-lede-text ul {
-    font-size: 18pt;
-    line-height: 1.15;
+    font-size: 16pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-lede-text--small, .block-editor-block-styles .nhsuk-lede-text--small, .block-editor-inserter__menu-help-panel .nhsuk-lede-text--small {
@@ -1521,8 +1515,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-lede-text--small, .block-editor-block-styles .nhsuk-lede-text--small, .block-editor-inserter__menu-help-panel .nhsuk-lede-text--small {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 @media (min-width: 40.0625em) {
@@ -1943,6 +1937,306 @@
 .block-editor-block-styles b, .block-editor-inserter__menu-help-panel strong,
 .block-editor-inserter__menu-help-panel b {
   font-weight: 600;
+}
+@media print {
+  .edit-post-visual-editor .nhsuk-main-wrapper, .block-editor-block-styles .nhsuk-main-wrapper, .block-editor-inserter__menu-help-panel .nhsuk-main-wrapper {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  .edit-post-visual-editor h1,
+  .edit-post-visual-editor .nhsuk-heading-xl,
+  .edit-post-visual-editor h2,
+  .edit-post-visual-editor .nhsuk-heading-l,
+  .edit-post-visual-editor h3,
+  .edit-post-visual-editor .nhsuk-heading-m,
+  .edit-post-visual-editor .nhsuk-card.is-style-panel-with-label .nhsuk-card__content h2,
+  .edit-post-visual-editor h4,
+  .edit-post-visual-editor .nhsuk-heading-s,
+  .edit-post-visual-editor h5,
+  .edit-post-visual-editor .nhsuk-heading-xs,
+  .edit-post-visual-editor h6,
+  .edit-post-visual-editor .nhsuk-heading-xxs,
+  .edit-post-visual-editor .nhsuk-lede-text,
+  .edit-post-visual-editor .nhsuk-body-l,
+  .edit-post-visual-editor p,
+  .edit-post-visual-editor .nhsuk-body-m,
+  .edit-post-visual-editor .nhsuk-body-s,
+  .edit-post-visual-editor address,
+  .edit-post-visual-editor ol,
+  .edit-post-visual-editor ul,
+  .edit-post-visual-editor .nhsuk-list, .block-editor-block-styles h1,
+  .block-editor-block-styles .nhsuk-heading-xl,
+  .block-editor-block-styles h2,
+  .block-editor-block-styles .nhsuk-heading-l,
+  .block-editor-block-styles h3,
+  .block-editor-block-styles .nhsuk-heading-m,
+  .block-editor-block-styles .nhsuk-card.is-style-panel-with-label .nhsuk-card__content h2,
+  .block-editor-block-styles h4,
+  .block-editor-block-styles .nhsuk-heading-s,
+  .block-editor-block-styles h5,
+  .block-editor-block-styles .nhsuk-heading-xs,
+  .block-editor-block-styles h6,
+  .block-editor-block-styles .nhsuk-heading-xxs,
+  .block-editor-block-styles .nhsuk-lede-text,
+  .block-editor-block-styles .nhsuk-body-l,
+  .block-editor-block-styles p,
+  .block-editor-block-styles .nhsuk-body-m,
+  .block-editor-block-styles .nhsuk-body-s,
+  .block-editor-block-styles address,
+  .block-editor-block-styles ol,
+  .block-editor-block-styles ul,
+  .block-editor-block-styles .nhsuk-list, .block-editor-inserter__menu-help-panel h1,
+  .block-editor-inserter__menu-help-panel .nhsuk-heading-xl,
+  .block-editor-inserter__menu-help-panel h2,
+  .block-editor-inserter__menu-help-panel .nhsuk-heading-l,
+  .block-editor-inserter__menu-help-panel h3,
+  .block-editor-inserter__menu-help-panel .nhsuk-heading-m,
+  .block-editor-inserter__menu-help-panel .nhsuk-card.is-style-panel-with-label .nhsuk-card__content h2,
+  .block-editor-inserter__menu-help-panel h4,
+  .block-editor-inserter__menu-help-panel .nhsuk-heading-s,
+  .block-editor-inserter__menu-help-panel h5,
+  .block-editor-inserter__menu-help-panel .nhsuk-heading-xs,
+  .block-editor-inserter__menu-help-panel h6,
+  .block-editor-inserter__menu-help-panel .nhsuk-heading-xxs,
+  .block-editor-inserter__menu-help-panel .nhsuk-lede-text,
+  .block-editor-inserter__menu-help-panel .nhsuk-body-l,
+  .block-editor-inserter__menu-help-panel p,
+  .block-editor-inserter__menu-help-panel .nhsuk-body-m,
+  .block-editor-inserter__menu-help-panel .nhsuk-body-s,
+  .block-editor-inserter__menu-help-panel address,
+  .block-editor-inserter__menu-help-panel ol,
+  .block-editor-inserter__menu-help-panel ul,
+  .block-editor-inserter__menu-help-panel .nhsuk-list {
+    margin-bottom: 7.5pt;
+  }
+  .edit-post-visual-editor h1, .block-editor-block-styles h1, .block-editor-inserter__menu-help-panel h1 {
+    margin-bottom: 15pt !important;
+  }
+  .edit-post-visual-editor .nhsuk-body-l + h2,
+  .edit-post-visual-editor .nhsuk-body-l + .nhsuk-heading-l,
+  .edit-post-visual-editor p + h2,
+  .edit-post-visual-editor .nhsuk-body-m + h2,
+  .edit-post-visual-editor .block-editor-block-styles p + h2,
+  .block-editor-block-styles .edit-post-visual-editor p + h2,
+  .edit-post-visual-editor .block-editor-inserter__menu-help-panel p + h2,
+  .block-editor-inserter__menu-help-panel .edit-post-visual-editor p + h2,
+  .edit-post-visual-editor address + h2,
+  .edit-post-visual-editor .block-editor-block-styles address + h2,
+  .block-editor-block-styles .edit-post-visual-editor address + h2,
+  .edit-post-visual-editor .block-editor-inserter__menu-help-panel address + h2,
+  .block-editor-inserter__menu-help-panel .edit-post-visual-editor address + h2,
+  .edit-post-visual-editor p + .nhsuk-heading-l,
+  .edit-post-visual-editor .nhsuk-body-m + .nhsuk-heading-l,
+  .edit-post-visual-editor address + .nhsuk-heading-l,
+  .edit-post-visual-editor .nhsuk-body-s + h2,
+  .edit-post-visual-editor .nhsuk-body-s + .nhsuk-heading-l,
+  .edit-post-visual-editor .nhsuk-list + h2,
+  .edit-post-visual-editor ul + h2,
+  .edit-post-visual-editor .block-editor-block-styles ul + h2,
+  .block-editor-block-styles .edit-post-visual-editor ul + h2,
+  .edit-post-visual-editor .block-editor-inserter__menu-help-panel ul + h2,
+  .block-editor-inserter__menu-help-panel .edit-post-visual-editor ul + h2,
+  .edit-post-visual-editor ol + h2,
+  .edit-post-visual-editor .block-editor-block-styles ol + h2,
+  .block-editor-block-styles .edit-post-visual-editor ol + h2,
+  .edit-post-visual-editor .block-editor-inserter__menu-help-panel ol + h2,
+  .block-editor-inserter__menu-help-panel .edit-post-visual-editor ol + h2,
+  .edit-post-visual-editor .nhsuk-list + .nhsuk-heading-l,
+  .edit-post-visual-editor ul + .nhsuk-heading-l,
+  .edit-post-visual-editor ol + .nhsuk-heading-l,
+  .edit-post-visual-editor p + h3,
+  .edit-post-visual-editor .nhsuk-body-m + h3,
+  .edit-post-visual-editor .block-editor-block-styles p + h3,
+  .block-editor-block-styles .edit-post-visual-editor p + h3,
+  .edit-post-visual-editor .block-editor-inserter__menu-help-panel p + h3,
+  .block-editor-inserter__menu-help-panel .edit-post-visual-editor p + h3,
+  .edit-post-visual-editor address + h3,
+  .edit-post-visual-editor .block-editor-block-styles address + h3,
+  .block-editor-block-styles .edit-post-visual-editor address + h3,
+  .edit-post-visual-editor .block-editor-inserter__menu-help-panel address + h3,
+  .block-editor-inserter__menu-help-panel .edit-post-visual-editor address + h3,
+  .edit-post-visual-editor p + .nhsuk-heading-m,
+  .edit-post-visual-editor .nhsuk-card.is-style-panel-with-label .nhsuk-card__content p + h2,
+  .edit-post-visual-editor .nhsuk-body-m + .nhsuk-heading-m,
+  .edit-post-visual-editor .nhsuk-card.is-style-panel-with-label .nhsuk-card__content .nhsuk-body-m + h2,
+  .edit-post-visual-editor address + .nhsuk-heading-m,
+  .edit-post-visual-editor .nhsuk-card.is-style-panel-with-label .nhsuk-card__content address + h2,
+  .edit-post-visual-editor .nhsuk-body-s + h3,
+  .edit-post-visual-editor .nhsuk-body-s + .nhsuk-heading-m,
+  .edit-post-visual-editor .nhsuk-card.is-style-panel-with-label .nhsuk-card__content .nhsuk-body-s + h2,
+  .edit-post-visual-editor .nhsuk-list + h3,
+  .edit-post-visual-editor ul + h3,
+  .edit-post-visual-editor .block-editor-block-styles ul + h3,
+  .block-editor-block-styles .edit-post-visual-editor ul + h3,
+  .edit-post-visual-editor .block-editor-inserter__menu-help-panel ul + h3,
+  .block-editor-inserter__menu-help-panel .edit-post-visual-editor ul + h3,
+  .edit-post-visual-editor ol + h3,
+  .edit-post-visual-editor .block-editor-block-styles ol + h3,
+  .block-editor-block-styles .edit-post-visual-editor ol + h3,
+  .edit-post-visual-editor .block-editor-inserter__menu-help-panel ol + h3,
+  .block-editor-inserter__menu-help-panel .edit-post-visual-editor ol + h3,
+  .edit-post-visual-editor .nhsuk-list + .nhsuk-heading-m,
+  .edit-post-visual-editor .nhsuk-card.is-style-panel-with-label .nhsuk-card__content .nhsuk-list + h2,
+  .edit-post-visual-editor ul + .nhsuk-heading-m,
+  .edit-post-visual-editor .nhsuk-card.is-style-panel-with-label .nhsuk-card__content ul + h2,
+  .edit-post-visual-editor ol + .nhsuk-heading-m,
+  .edit-post-visual-editor .nhsuk-card.is-style-panel-with-label .nhsuk-card__content ol + h2,
+  .edit-post-visual-editor p + h4,
+  .edit-post-visual-editor .nhsuk-body-m + h4,
+  .edit-post-visual-editor .block-editor-block-styles p + h4,
+  .block-editor-block-styles .edit-post-visual-editor p + h4,
+  .edit-post-visual-editor .block-editor-inserter__menu-help-panel p + h4,
+  .block-editor-inserter__menu-help-panel .edit-post-visual-editor p + h4,
+  .edit-post-visual-editor address + h4,
+  .edit-post-visual-editor .block-editor-block-styles address + h4,
+  .block-editor-block-styles .edit-post-visual-editor address + h4,
+  .edit-post-visual-editor .block-editor-inserter__menu-help-panel address + h4,
+  .block-editor-inserter__menu-help-panel .edit-post-visual-editor address + h4,
+  .edit-post-visual-editor p + .nhsuk-heading-s,
+  .edit-post-visual-editor .nhsuk-body-m + .nhsuk-heading-s,
+  .edit-post-visual-editor address + .nhsuk-heading-s,
+  .edit-post-visual-editor .nhsuk-body-s + h4,
+  .edit-post-visual-editor .nhsuk-body-s + .nhsuk-heading-s,
+  .edit-post-visual-editor .nhsuk-list + h4,
+  .edit-post-visual-editor ul + h4,
+  .edit-post-visual-editor .block-editor-block-styles ul + h4,
+  .block-editor-block-styles .edit-post-visual-editor ul + h4,
+  .edit-post-visual-editor .block-editor-inserter__menu-help-panel ul + h4,
+  .block-editor-inserter__menu-help-panel .edit-post-visual-editor ul + h4,
+  .edit-post-visual-editor ol + h4,
+  .edit-post-visual-editor .block-editor-block-styles ol + h4,
+  .block-editor-block-styles .edit-post-visual-editor ol + h4,
+  .edit-post-visual-editor .block-editor-inserter__menu-help-panel ol + h4,
+  .block-editor-inserter__menu-help-panel .edit-post-visual-editor ol + h4,
+  .edit-post-visual-editor .nhsuk-list + .nhsuk-heading-s,
+  .edit-post-visual-editor ul + .nhsuk-heading-s,
+  .edit-post-visual-editor ol + .nhsuk-heading-s, .block-editor-block-styles .nhsuk-body-l + h2,
+  .block-editor-block-styles .nhsuk-body-l + .nhsuk-heading-l,
+  .block-editor-block-styles p + h2,
+  .block-editor-block-styles .nhsuk-body-m + h2,
+  .block-editor-block-styles .block-editor-inserter__menu-help-panel p + h2,
+  .block-editor-inserter__menu-help-panel .block-editor-block-styles p + h2,
+  .block-editor-block-styles address + h2,
+  .block-editor-block-styles .block-editor-inserter__menu-help-panel address + h2,
+  .block-editor-inserter__menu-help-panel .block-editor-block-styles address + h2,
+  .block-editor-block-styles p + .nhsuk-heading-l,
+  .block-editor-block-styles .nhsuk-body-m + .nhsuk-heading-l,
+  .block-editor-block-styles address + .nhsuk-heading-l,
+  .block-editor-block-styles .nhsuk-body-s + h2,
+  .block-editor-block-styles .nhsuk-body-s + .nhsuk-heading-l,
+  .block-editor-block-styles .nhsuk-list + h2,
+  .block-editor-block-styles ul + h2,
+  .block-editor-block-styles .block-editor-inserter__menu-help-panel ul + h2,
+  .block-editor-inserter__menu-help-panel .block-editor-block-styles ul + h2,
+  .block-editor-block-styles ol + h2,
+  .block-editor-block-styles .block-editor-inserter__menu-help-panel ol + h2,
+  .block-editor-inserter__menu-help-panel .block-editor-block-styles ol + h2,
+  .block-editor-block-styles .nhsuk-list + .nhsuk-heading-l,
+  .block-editor-block-styles ul + .nhsuk-heading-l,
+  .block-editor-block-styles ol + .nhsuk-heading-l,
+  .block-editor-block-styles p + h3,
+  .block-editor-block-styles .nhsuk-body-m + h3,
+  .block-editor-block-styles .block-editor-inserter__menu-help-panel p + h3,
+  .block-editor-inserter__menu-help-panel .block-editor-block-styles p + h3,
+  .block-editor-block-styles address + h3,
+  .block-editor-block-styles .block-editor-inserter__menu-help-panel address + h3,
+  .block-editor-inserter__menu-help-panel .block-editor-block-styles address + h3,
+  .block-editor-block-styles p + .nhsuk-heading-m,
+  .block-editor-block-styles .nhsuk-card.is-style-panel-with-label .nhsuk-card__content p + h2,
+  .block-editor-block-styles .nhsuk-body-m + .nhsuk-heading-m,
+  .block-editor-block-styles .nhsuk-card.is-style-panel-with-label .nhsuk-card__content .nhsuk-body-m + h2,
+  .block-editor-block-styles address + .nhsuk-heading-m,
+  .block-editor-block-styles .nhsuk-card.is-style-panel-with-label .nhsuk-card__content address + h2,
+  .block-editor-block-styles .nhsuk-body-s + h3,
+  .block-editor-block-styles .nhsuk-body-s + .nhsuk-heading-m,
+  .block-editor-block-styles .nhsuk-card.is-style-panel-with-label .nhsuk-card__content .nhsuk-body-s + h2,
+  .block-editor-block-styles .nhsuk-list + h3,
+  .block-editor-block-styles ul + h3,
+  .block-editor-block-styles .block-editor-inserter__menu-help-panel ul + h3,
+  .block-editor-inserter__menu-help-panel .block-editor-block-styles ul + h3,
+  .block-editor-block-styles ol + h3,
+  .block-editor-block-styles .block-editor-inserter__menu-help-panel ol + h3,
+  .block-editor-inserter__menu-help-panel .block-editor-block-styles ol + h3,
+  .block-editor-block-styles .nhsuk-list + .nhsuk-heading-m,
+  .block-editor-block-styles .nhsuk-card.is-style-panel-with-label .nhsuk-card__content .nhsuk-list + h2,
+  .block-editor-block-styles ul + .nhsuk-heading-m,
+  .block-editor-block-styles .nhsuk-card.is-style-panel-with-label .nhsuk-card__content ul + h2,
+  .block-editor-block-styles ol + .nhsuk-heading-m,
+  .block-editor-block-styles .nhsuk-card.is-style-panel-with-label .nhsuk-card__content ol + h2,
+  .block-editor-block-styles p + h4,
+  .block-editor-block-styles .nhsuk-body-m + h4,
+  .block-editor-block-styles .block-editor-inserter__menu-help-panel p + h4,
+  .block-editor-inserter__menu-help-panel .block-editor-block-styles p + h4,
+  .block-editor-block-styles address + h4,
+  .block-editor-block-styles .block-editor-inserter__menu-help-panel address + h4,
+  .block-editor-inserter__menu-help-panel .block-editor-block-styles address + h4,
+  .block-editor-block-styles p + .nhsuk-heading-s,
+  .block-editor-block-styles .nhsuk-body-m + .nhsuk-heading-s,
+  .block-editor-block-styles address + .nhsuk-heading-s,
+  .block-editor-block-styles .nhsuk-body-s + h4,
+  .block-editor-block-styles .nhsuk-body-s + .nhsuk-heading-s,
+  .block-editor-block-styles .nhsuk-list + h4,
+  .block-editor-block-styles ul + h4,
+  .block-editor-block-styles .block-editor-inserter__menu-help-panel ul + h4,
+  .block-editor-inserter__menu-help-panel .block-editor-block-styles ul + h4,
+  .block-editor-block-styles ol + h4,
+  .block-editor-block-styles .block-editor-inserter__menu-help-panel ol + h4,
+  .block-editor-inserter__menu-help-panel .block-editor-block-styles ol + h4,
+  .block-editor-block-styles .nhsuk-list + .nhsuk-heading-s,
+  .block-editor-block-styles ul + .nhsuk-heading-s,
+  .block-editor-block-styles ol + .nhsuk-heading-s, .block-editor-inserter__menu-help-panel .nhsuk-body-l + h2,
+  .block-editor-inserter__menu-help-panel .nhsuk-body-l + .nhsuk-heading-l,
+  .block-editor-inserter__menu-help-panel p + h2,
+  .block-editor-inserter__menu-help-panel .nhsuk-body-m + h2,
+  .block-editor-inserter__menu-help-panel address + h2,
+  .block-editor-inserter__menu-help-panel p + .nhsuk-heading-l,
+  .block-editor-inserter__menu-help-panel .nhsuk-body-m + .nhsuk-heading-l,
+  .block-editor-inserter__menu-help-panel address + .nhsuk-heading-l,
+  .block-editor-inserter__menu-help-panel .nhsuk-body-s + h2,
+  .block-editor-inserter__menu-help-panel .nhsuk-body-s + .nhsuk-heading-l,
+  .block-editor-inserter__menu-help-panel .nhsuk-list + h2,
+  .block-editor-inserter__menu-help-panel ul + h2,
+  .block-editor-inserter__menu-help-panel ol + h2,
+  .block-editor-inserter__menu-help-panel .nhsuk-list + .nhsuk-heading-l,
+  .block-editor-inserter__menu-help-panel ul + .nhsuk-heading-l,
+  .block-editor-inserter__menu-help-panel ol + .nhsuk-heading-l,
+  .block-editor-inserter__menu-help-panel p + h3,
+  .block-editor-inserter__menu-help-panel .nhsuk-body-m + h3,
+  .block-editor-inserter__menu-help-panel address + h3,
+  .block-editor-inserter__menu-help-panel p + .nhsuk-heading-m,
+  .block-editor-inserter__menu-help-panel .nhsuk-card.is-style-panel-with-label .nhsuk-card__content p + h2,
+  .block-editor-inserter__menu-help-panel .nhsuk-body-m + .nhsuk-heading-m,
+  .block-editor-inserter__menu-help-panel .nhsuk-card.is-style-panel-with-label .nhsuk-card__content .nhsuk-body-m + h2,
+  .block-editor-inserter__menu-help-panel address + .nhsuk-heading-m,
+  .block-editor-inserter__menu-help-panel .nhsuk-card.is-style-panel-with-label .nhsuk-card__content address + h2,
+  .block-editor-inserter__menu-help-panel .nhsuk-body-s + h3,
+  .block-editor-inserter__menu-help-panel .nhsuk-body-s + .nhsuk-heading-m,
+  .block-editor-inserter__menu-help-panel .nhsuk-card.is-style-panel-with-label .nhsuk-card__content .nhsuk-body-s + h2,
+  .block-editor-inserter__menu-help-panel .nhsuk-list + h3,
+  .block-editor-inserter__menu-help-panel ul + h3,
+  .block-editor-inserter__menu-help-panel ol + h3,
+  .block-editor-inserter__menu-help-panel .nhsuk-list + .nhsuk-heading-m,
+  .block-editor-inserter__menu-help-panel .nhsuk-card.is-style-panel-with-label .nhsuk-card__content .nhsuk-list + h2,
+  .block-editor-inserter__menu-help-panel ul + .nhsuk-heading-m,
+  .block-editor-inserter__menu-help-panel .nhsuk-card.is-style-panel-with-label .nhsuk-card__content ul + h2,
+  .block-editor-inserter__menu-help-panel ol + .nhsuk-heading-m,
+  .block-editor-inserter__menu-help-panel .nhsuk-card.is-style-panel-with-label .nhsuk-card__content ol + h2,
+  .block-editor-inserter__menu-help-panel p + h4,
+  .block-editor-inserter__menu-help-panel .nhsuk-body-m + h4,
+  .block-editor-inserter__menu-help-panel address + h4,
+  .block-editor-inserter__menu-help-panel p + .nhsuk-heading-s,
+  .block-editor-inserter__menu-help-panel .nhsuk-body-m + .nhsuk-heading-s,
+  .block-editor-inserter__menu-help-panel address + .nhsuk-heading-s,
+  .block-editor-inserter__menu-help-panel .nhsuk-body-s + h4,
+  .block-editor-inserter__menu-help-panel .nhsuk-body-s + .nhsuk-heading-s,
+  .block-editor-inserter__menu-help-panel .nhsuk-list + h4,
+  .block-editor-inserter__menu-help-panel ul + h4,
+  .block-editor-inserter__menu-help-panel ol + h4,
+  .block-editor-inserter__menu-help-panel .nhsuk-list + .nhsuk-heading-s,
+  .block-editor-inserter__menu-help-panel ul + .nhsuk-heading-s,
+  .block-editor-inserter__menu-help-panel ol + .nhsuk-heading-s {
+    padding-top: 0.45em;
+  }
 }
 .edit-post-visual-editor .nhsuk-u-clear:after, .block-editor-block-styles .nhsuk-u-clear:after, .block-editor-inserter__menu-help-panel .nhsuk-u-clear:after {
   clear: both;
@@ -2825,55 +3119,73 @@
 .edit-post-visual-editor .nhsuk-u-font-size-64, .block-editor-block-styles .nhsuk-u-font-size-64, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-64 {
   font-size: 48px !important;
   font-size: 3rem !important;
-  line-height: 1.16667 !important;
+  line-height: 1.125 !important;
 }
 @media (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-u-font-size-64, .block-editor-block-styles .nhsuk-u-font-size-64, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-64 {
     font-size: 64px !important;
     font-size: 4rem !important;
-    line-height: 1.125 !important;
+    line-height: 1.09375 !important;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-u-font-size-64, .block-editor-block-styles .nhsuk-u-font-size-64, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-64 {
-    font-size: 53pt !important;
+    font-size: 34pt !important;
     line-height: 1.1 !important;
   }
 }
 .edit-post-visual-editor .nhsuk-u-font-size-48, .block-editor-block-styles .nhsuk-u-font-size-48, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-48 {
   font-size: 32px !important;
   font-size: 2rem !important;
-  line-height: 1.25 !important;
+  line-height: 1.1875 !important;
 }
 @media (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-u-font-size-48, .block-editor-block-styles .nhsuk-u-font-size-48, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-48 {
     font-size: 48px !important;
     font-size: 3rem !important;
-    line-height: 1.16667 !important;
+    line-height: 1.125 !important;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-u-font-size-48, .block-editor-block-styles .nhsuk-u-font-size-48, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-48 {
-    font-size: 32pt !important;
+    font-size: 26pt !important;
     line-height: 1.15 !important;
   }
 }
-.edit-post-visual-editor .nhsuk-u-font-size-32, .block-editor-block-styles .nhsuk-u-font-size-32, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-32 {
-  font-size: 24px !important;
-  font-size: 1.5rem !important;
-  line-height: 1.33333 !important;
+.edit-post-visual-editor .nhsuk-u-font-size-36, .block-editor-block-styles .nhsuk-u-font-size-36, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-36 {
+  font-size: 27px !important;
+  font-size: 1.6875rem !important;
+  line-height: 1.22222 !important;
 }
 @media (min-width: 40.0625em) {
-  .edit-post-visual-editor .nhsuk-u-font-size-32, .block-editor-block-styles .nhsuk-u-font-size-32, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-32 {
-    font-size: 32px !important;
-    font-size: 2rem !important;
-    line-height: 1.25 !important;
+  .edit-post-visual-editor .nhsuk-u-font-size-36, .block-editor-block-styles .nhsuk-u-font-size-36, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-36 {
+    font-size: 36px !important;
+    font-size: 2.25rem !important;
+    line-height: 1.16667 !important;
   }
 }
 @media print {
-  .edit-post-visual-editor .nhsuk-u-font-size-32, .block-editor-block-styles .nhsuk-u-font-size-32, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-32 {
-    font-size: 24pt !important;
-    line-height: 1.05 !important;
+  .edit-post-visual-editor .nhsuk-u-font-size-36, .block-editor-block-styles .nhsuk-u-font-size-36, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-36 {
+    font-size: 20pt !important;
+    line-height: 1.2 !important;
+  }
+}
+.edit-post-visual-editor .nhsuk-u-font-size-26, .block-editor-block-styles .nhsuk-u-font-size-26, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-26 {
+  font-size: 22px !important;
+  font-size: 1.375rem !important;
+  line-height: 1.31818 !important;
+}
+@media (min-width: 40.0625em) {
+  .edit-post-visual-editor .nhsuk-u-font-size-26, .block-editor-block-styles .nhsuk-u-font-size-26, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-26 {
+    font-size: 26px !important;
+    font-size: 1.625rem !important;
+    line-height: 1.23077 !important;
+  }
+}
+@media print {
+  .edit-post-visual-editor .nhsuk-u-font-size-26, .block-editor-block-styles .nhsuk-u-font-size-26, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-26 {
+    font-size: 17pt !important;
+    line-height: 1.25 !important;
   }
 }
 .edit-post-visual-editor .nhsuk-u-font-size-24, .block-editor-block-styles .nhsuk-u-font-size-24, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-24 {
@@ -2885,31 +3197,31 @@
   .edit-post-visual-editor .nhsuk-u-font-size-24, .block-editor-block-styles .nhsuk-u-font-size-24, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-24 {
     font-size: 24px !important;
     font-size: 1.5rem !important;
-    line-height: 1.33333 !important;
+    line-height: 1.29167 !important;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-u-font-size-24, .block-editor-block-styles .nhsuk-u-font-size-24, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-24 {
-    font-size: 18pt !important;
-    line-height: 1.15 !important;
+    font-size: 16pt !important;
+    line-height: 1.25 !important;
   }
 }
 .edit-post-visual-editor .nhsuk-u-font-size-22, .block-editor-block-styles .nhsuk-u-font-size-22, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-22 {
-  font-size: 18px !important;
-  font-size: 1.125rem !important;
-  line-height: 1.55556 !important;
+  font-size: 19px !important;
+  font-size: 1.1875rem !important;
+  line-height: 1.42105 !important;
 }
 @media (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-u-font-size-22, .block-editor-block-styles .nhsuk-u-font-size-22, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-22 {
     font-size: 22px !important;
     font-size: 1.375rem !important;
-    line-height: 1.45455 !important;
+    line-height: 1.36364 !important;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-u-font-size-22, .block-editor-block-styles .nhsuk-u-font-size-22, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-22 {
-    font-size: 18pt !important;
-    line-height: 1.15 !important;
+    font-size: 15pt !important;
+    line-height: 1.25 !important;
   }
 }
 .edit-post-visual-editor .nhsuk-u-font-size-19, .block-editor-block-styles .nhsuk-u-font-size-19, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-19 {
@@ -2926,8 +3238,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-u-font-size-19, .block-editor-block-styles .nhsuk-u-font-size-19, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-19 {
-    font-size: 14pt !important;
-    line-height: 1.15 !important;
+    font-size: 13pt !important;
+    line-height: 1.25 !important;
   }
 }
 .edit-post-visual-editor .nhsuk-u-font-size-16, .block-editor-block-styles .nhsuk-u-font-size-16, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-16 {
@@ -2944,8 +3256,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-u-font-size-16, .block-editor-block-styles .nhsuk-u-font-size-16, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-16 {
-    font-size: 14pt !important;
-    line-height: 1.2 !important;
+    font-size: 12pt !important;
+    line-height: 1.3 !important;
   }
 }
 .edit-post-visual-editor .nhsuk-u-font-size-14, .block-editor-block-styles .nhsuk-u-font-size-14, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-14 {
@@ -2963,7 +3275,7 @@
 @media print {
   .edit-post-visual-editor .nhsuk-u-font-size-14, .block-editor-block-styles .nhsuk-u-font-size-14, .block-editor-inserter__menu-help-panel .nhsuk-u-font-size-14 {
     font-size: 12pt !important;
-    line-height: 1.2 !important;
+    line-height: 1.3 !important;
   }
 }
 .edit-post-visual-editor .nhsuk-u-font-weight-normal, .block-editor-block-styles .nhsuk-u-font-weight-normal, .block-editor-inserter__menu-help-panel .nhsuk-u-font-weight-normal {
@@ -2987,6 +3299,12 @@
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+.edit-post-visual-editor .nhsuk-u-visually-hidden::before, .block-editor-block-styles .nhsuk-u-visually-hidden::before, .block-editor-inserter__menu-help-panel .nhsuk-u-visually-hidden::before {
+  content: " ";
+}
+.edit-post-visual-editor .nhsuk-u-visually-hidden::after, .block-editor-block-styles .nhsuk-u-visually-hidden::after, .block-editor-inserter__menu-help-panel .nhsuk-u-visually-hidden::after {
+  content: " ";
 }
 .edit-post-visual-editor .nhsuk-u-width-full, .block-editor-block-styles .nhsuk-u-width-full, .block-editor-inserter__menu-help-panel .nhsuk-u-width-full {
   width: 100% !important;
@@ -3041,9 +3359,9 @@
 }
 .edit-post-visual-editor .nhsuk-action-link__link, .block-editor-block-styles .nhsuk-action-link__link, .block-editor-inserter__menu-help-panel .nhsuk-action-link__link {
   font-weight: 400;
-  font-size: 18px;
-  font-size: 1.125rem;
-  line-height: 1.55556;
+  font-size: 19px;
+  font-size: 1.1875rem;
+  line-height: 1.42105;
   display: inline-block; /* [1] */
   font-weight: 600;
   padding-left: 38px; /* [2] */
@@ -3054,13 +3372,13 @@
   .edit-post-visual-editor .nhsuk-action-link__link, .block-editor-block-styles .nhsuk-action-link__link, .block-editor-inserter__menu-help-panel .nhsuk-action-link__link {
     font-size: 22px;
     font-size: 1.375rem;
-    line-height: 1.45455;
+    line-height: 1.36364;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-action-link__link, .block-editor-block-styles .nhsuk-action-link__link, .block-editor-inserter__menu-help-panel .nhsuk-action-link__link {
-    font-size: 18pt;
-    line-height: 1.15;
+    font-size: 15pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-action-link__link:hover .nhsuk-action-link__text, .block-editor-block-styles .nhsuk-action-link__link:hover .nhsuk-action-link__text, .block-editor-inserter__menu-help-panel .nhsuk-action-link__link:hover .nhsuk-action-link__text {
@@ -3095,7 +3413,7 @@
   height: 36px;
   left: -3px;
   position: absolute;
-  top: -2px;
+  top: -3px;
   width: 36px;
 }
 @media print {
@@ -3112,12 +3430,18 @@
     height: 24px;
     left: -2px;
     margin-bottom: 0;
-    top: 2px;
+    top: 1px;
     width: 24px;
   }
 }
 .edit-post-visual-editor .nhsuk-back-link, .block-editor-block-styles .nhsuk-back-link, .block-editor-inserter__menu-help-panel .nhsuk-back-link {
-  margin-bottom: 16px;
+  margin-top: 16px;
+  line-height: 1; /* 4 */
+}
+@media (min-width: 40.0625em) {
+  .edit-post-visual-editor .nhsuk-back-link, .block-editor-block-styles .nhsuk-back-link, .block-editor-inserter__menu-help-panel .nhsuk-back-link {
+    margin-top: 24px;
+  }
 }
 .edit-post-visual-editor .nhsuk-back-link__link, .block-editor-block-styles .nhsuk-back-link__link, .block-editor-inserter__menu-help-panel .nhsuk-back-link__link {
   font-size: 14px;
@@ -3141,8 +3465,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-back-link__link, .block-editor-block-styles .nhsuk-back-link__link, .block-editor-inserter__menu-help-panel .nhsuk-back-link__link {
-    font-size: 14pt;
-    line-height: 1.2;
+    font-size: 12pt;
+    line-height: 1.3;
   }
 }
 .edit-post-visual-editor .nhsuk-back-link__link:visited, .block-editor-block-styles .nhsuk-back-link__link:visited, .block-editor-inserter__menu-help-panel .nhsuk-back-link__link:visited {
@@ -3178,6 +3502,11 @@
   top: -1px; /* 3 */
   width: 24px;
 }
+@media (min-width: 40.0625em) {
+  .edit-post-visual-editor .nhsuk-back-link__link .nhsuk-icon__chevron-left, .block-editor-block-styles .nhsuk-back-link__link .nhsuk-icon__chevron-left, .block-editor-inserter__menu-help-panel .nhsuk-back-link__link .nhsuk-icon__chevron-left {
+    top: 0; /* 3 */
+  }
+}
 .edit-post-visual-editor .nhsuk-back-link__link:visited, .block-editor-block-styles .nhsuk-back-link__link:visited, .block-editor-inserter__menu-help-panel .nhsuk-back-link__link:visited {
   color: #005eb8;
 }
@@ -3193,18 +3522,24 @@
 }
 .edit-post-visual-editor .nhsuk-breadcrumb, .block-editor-block-styles .nhsuk-breadcrumb, .block-editor-inserter__menu-help-panel .nhsuk-breadcrumb {
   /* [1] */
-  padding-bottom: 16px;
-  padding-top: 20px; /* [2] */
+  margin-top: 16px;
 }
 @media print {
   .edit-post-visual-editor .nhsuk-breadcrumb, .block-editor-block-styles .nhsuk-breadcrumb, .block-editor-inserter__menu-help-panel .nhsuk-breadcrumb {
     display: none;
   }
 }
-.edit-post-visual-editor .nhsuk-breadcrumb + .nhsuk-width-container .nhsuk-main-wrapper, .block-editor-block-styles .nhsuk-breadcrumb + .nhsuk-width-container .nhsuk-main-wrapper, .block-editor-inserter__menu-help-panel .nhsuk-breadcrumb + .nhsuk-width-container .nhsuk-main-wrapper {
-  padding-top: 0;
+@media (min-width: 40.0625em) {
+  .edit-post-visual-editor .nhsuk-breadcrumb, .block-editor-block-styles .nhsuk-breadcrumb, .block-editor-inserter__menu-help-panel .nhsuk-breadcrumb {
+    margin-top: 24px;
+  }
 }
 .edit-post-visual-editor .nhsuk-breadcrumb__list, .block-editor-block-styles .nhsuk-breadcrumb__list, .block-editor-inserter__menu-help-panel .nhsuk-breadcrumb__list {
+  font-weight: 400;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.71429;
+  /* [4] */
   list-style: none;
   margin: 0;
   padding: 0;
@@ -3212,6 +3547,19 @@
 @media (max-width: 40.0525em) {
   .edit-post-visual-editor .nhsuk-breadcrumb__list, .block-editor-block-styles .nhsuk-breadcrumb__list, .block-editor-inserter__menu-help-panel .nhsuk-breadcrumb__list {
     display: none; /* [3] */
+  }
+}
+@media (min-width: 40.0625em) {
+  .edit-post-visual-editor .nhsuk-breadcrumb__list, .block-editor-block-styles .nhsuk-breadcrumb__list, .block-editor-inserter__menu-help-panel .nhsuk-breadcrumb__list {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+@media print {
+  .edit-post-visual-editor .nhsuk-breadcrumb__list, .block-editor-block-styles .nhsuk-breadcrumb__list, .block-editor-inserter__menu-help-panel .nhsuk-breadcrumb__list {
+    font-size: 12pt;
+    line-height: 1.3;
   }
 }
 .edit-post-visual-editor .nhsuk-breadcrumb__item, .block-editor-block-styles .nhsuk-breadcrumb__item, .block-editor-inserter__menu-help-panel .nhsuk-breadcrumb__item {
@@ -3232,18 +3580,19 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-breadcrumb__item, .block-editor-block-styles .nhsuk-breadcrumb__item, .block-editor-inserter__menu-help-panel .nhsuk-breadcrumb__item {
-    font-size: 14pt;
-    line-height: 1.2;
+    font-size: 12pt;
+    line-height: 1.3;
   }
 }
 .edit-post-visual-editor .nhsuk-breadcrumb__item:not(:last-child):after, .block-editor-block-styles .nhsuk-breadcrumb__item:not(:last-child):after, .block-editor-inserter__menu-help-panel .nhsuk-breadcrumb__item:not(:last-child):after {
-  background: url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__chevron-right' xmlns='http://www.w3.org/2000/svg' fill='%23aeb7bd' height='18' width='18' viewBox='0 0 24 24' aria-hidden='true'%3E%3Cpath d='M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z'%3E%3C/path%3E%3C/svg%3E") right 0 top 4px no-repeat;
+  background: url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__chevron-right' xmlns='http://www.w3.org/2000/svg' fill='%23aeb7bd' height='18' width='18' viewBox='0 0 24 24' aria-hidden='true'%3E%3Cpath d='M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z'%3E%3C/path%3E%3C/svg%3E") right 0 top 0 no-repeat;
   content: "";
   display: inline-block;
-  height: 18px;
-  margin-left: 10px;
-  margin-right: 2px;
-  width: 18px;
+  height: 19px; /* [6] */
+  margin-left: 9px; /* [6] */
+  margin-right: 2px; /* [6] */
+  vertical-align: middle; /* [6] */
+  width: 18px; /* [6] */
 }
 .edit-post-visual-editor .nhsuk-breadcrumb__link:visited, .block-editor-block-styles .nhsuk-breadcrumb__link:visited, .block-editor-inserter__menu-help-panel .nhsuk-breadcrumb__link:visited {
   color: #005eb8;
@@ -3273,8 +3622,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-breadcrumb__back, .block-editor-block-styles .nhsuk-breadcrumb__back, .block-editor-inserter__menu-help-panel .nhsuk-breadcrumb__back {
-    font-size: 14pt;
-    line-height: 1.2;
+    font-size: 12pt;
+    line-height: 1.3;
   }
 }
 @media (min-width: 40.0625em) {
@@ -3289,8 +3638,11 @@
   height: 18px;
   left: 0;
   position: absolute;
-  top: 0;
+  top: -1px;
   width: 10px;
+}
+.edit-post-visual-editor .nhsuk-breadcrumb__backlink, .block-editor-block-styles .nhsuk-breadcrumb__backlink, .block-editor-inserter__menu-help-panel .nhsuk-breadcrumb__backlink {
+  text-decoration: none;
 }
 .edit-post-visual-editor .nhsuk-breadcrumb__backlink:visited, .block-editor-block-styles .nhsuk-breadcrumb__backlink:visited, .block-editor-inserter__menu-help-panel .nhsuk-breadcrumb__backlink:visited {
   color: #005eb8;
@@ -3333,8 +3685,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-button, .edit-post-visual-editor .wp-block-button__link, .edit-post-visual-editor .wp-block-file__button, .edit-post-visual-editor .wp-block-file a.wp-block-file__button, .edit-post-visual-editor .wp-block-file a.wp-block-file__button:active, .edit-post-visual-editor .wp-block-file a.wp-block-file__button:focus, .edit-post-visual-editor .wp-block-file a.wp-block-file__button:hover, .edit-post-visual-editor .wp-block-file a.wp-block-file__button:visited, .block-editor-block-styles .nhsuk-button, .block-editor-block-styles .wp-block-button__link, .block-editor-block-styles .wp-block-file__button, .block-editor-block-styles .wp-block-file a.wp-block-file__button, .block-editor-block-styles .wp-block-file a.wp-block-file__button:active, .block-editor-block-styles .wp-block-file a.wp-block-file__button:focus, .block-editor-block-styles .wp-block-file a.wp-block-file__button:hover, .block-editor-block-styles .wp-block-file a.wp-block-file__button:visited, .block-editor-inserter__menu-help-panel .nhsuk-button, .block-editor-inserter__menu-help-panel .wp-block-button__link, .block-editor-inserter__menu-help-panel .wp-block-file__button, .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button, .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:active, .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:focus, .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:hover, .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:visited {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 @media (min-width: 40.0625em) {
@@ -3868,23 +4220,23 @@
 }
 .edit-post-visual-editor .nhsuk-card--care__heading, .block-editor-block-styles .nhsuk-card--care__heading, .block-editor-inserter__menu-help-panel .nhsuk-card--care__heading {
   font-weight: 600;
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 1.4;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.31818;
   margin: 0;
   padding-top: 0; /* [13] */
 }
 @media (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-card--care__heading, .block-editor-block-styles .nhsuk-card--care__heading, .block-editor-inserter__menu-help-panel .nhsuk-card--care__heading {
-    font-size: 24px;
-    font-size: 1.5rem;
-    line-height: 1.33333;
+    font-size: 26px;
+    font-size: 1.625rem;
+    line-height: 1.23077;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-card--care__heading, .block-editor-block-styles .nhsuk-card--care__heading, .block-editor-inserter__menu-help-panel .nhsuk-card--care__heading {
-    font-size: 18pt;
-    line-height: 1.15;
+    font-size: 17pt;
+    line-height: 1.25;
   }
 }
 @media print {
@@ -3966,6 +4318,12 @@
 .edit-post-visual-editor .nhsuk-card--care--emergency .nhsuk-card__content a:focus, .block-editor-block-styles .nhsuk-card--care--emergency .nhsuk-card__content a:focus, .block-editor-inserter__menu-help-panel .nhsuk-card--care--emergency .nhsuk-card__content a:focus {
   color: #212b32; /* [16] */
 }
+@media print {
+  .edit-post-visual-editor .nhsuk-card--care--emergency .nhsuk-card__content, .block-editor-block-styles .nhsuk-card--care--emergency .nhsuk-card__content, .block-editor-inserter__menu-help-panel .nhsuk-card--care--emergency .nhsuk-card__content {
+    background-color: white;
+    color: #212b32;
+  }
+}
 .edit-post-visual-editor .nhsuk-card--care--emergency .nhsuk-details,
 .edit-post-visual-editor .nhsuk-card--care--emergency .nhsuk-details__summary, .block-editor-block-styles .nhsuk-card--care--emergency .nhsuk-details,
 .block-editor-block-styles .nhsuk-card--care--emergency .nhsuk-details__summary, .block-editor-inserter__menu-help-panel .nhsuk-card--care--emergency .nhsuk-details,
@@ -4031,8 +4389,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-checkboxes__item, .block-editor-block-styles .nhsuk-checkboxes__item, .block-editor-inserter__menu-help-panel .nhsuk-checkboxes__item {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-checkboxes__item:last-child,
@@ -4127,8 +4485,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-checkboxes__divider, .block-editor-block-styles .nhsuk-checkboxes__divider, .block-editor-inserter__menu-help-panel .nhsuk-checkboxes__divider {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-checkboxes__conditional, .block-editor-block-styles .nhsuk-checkboxes__conditional, .block-editor-inserter__menu-help-panel .nhsuk-checkboxes__conditional {
@@ -4222,8 +4580,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-details, .block-editor-block-styles .nhsuk-details, .block-editor-inserter__menu-help-panel .nhsuk-details {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-details__summary, .block-editor-block-styles .nhsuk-details__summary, .block-editor-inserter__menu-help-panel .nhsuk-details__summary {
@@ -4474,13 +4832,13 @@
   .edit-post-visual-editor .nhsuk-do-dont-list__label, .block-editor-block-styles .nhsuk-do-dont-list__label, .block-editor-inserter__menu-help-panel .nhsuk-do-dont-list__label {
     font-size: 24px;
     font-size: 1.5rem;
-    line-height: 1.33333;
+    line-height: 1.29167;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-do-dont-list__label, .block-editor-block-styles .nhsuk-do-dont-list__label, .block-editor-inserter__menu-help-panel .nhsuk-do-dont-list__label {
-    font-size: 18pt;
-    line-height: 1.15;
+    font-size: 16pt;
+    line-height: 1.25;
   }
 }
 @media (max-width: 40.0525em) {
@@ -4526,8 +4884,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-error-message, .block-editor-block-styles .nhsuk-error-message, .block-editor-inserter__menu-help-panel .nhsuk-error-message {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-error-summary, .block-editor-block-styles .nhsuk-error-summary, .block-editor-inserter__menu-help-panel .nhsuk-error-summary {
@@ -4557,23 +4915,23 @@
 }
 .edit-post-visual-editor .nhsuk-error-summary__title, .block-editor-block-styles .nhsuk-error-summary__title, .block-editor-inserter__menu-help-panel .nhsuk-error-summary__title {
   font-weight: 600;
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 1.4;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.31818;
   margin-top: 0;
   margin-bottom: 16px;
 }
 @media (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-error-summary__title, .block-editor-block-styles .nhsuk-error-summary__title, .block-editor-inserter__menu-help-panel .nhsuk-error-summary__title {
-    font-size: 24px;
-    font-size: 1.5rem;
-    line-height: 1.33333;
+    font-size: 26px;
+    font-size: 1.625rem;
+    line-height: 1.23077;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-error-summary__title, .block-editor-block-styles .nhsuk-error-summary__title, .block-editor-inserter__menu-help-panel .nhsuk-error-summary__title {
-    font-size: 18pt;
-    line-height: 1.15;
+    font-size: 17pt;
+    line-height: 1.25;
   }
 }
 @media (min-width: 40.0625em) {
@@ -4596,8 +4954,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-error-summary__body, .block-editor-block-styles .nhsuk-error-summary__body, .block-editor-inserter__menu-help-panel .nhsuk-error-summary__body {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-error-summary__body p, .block-editor-block-styles .nhsuk-error-summary__body p, .block-editor-inserter__menu-help-panel .nhsuk-error-summary__body p {
@@ -4661,68 +5019,68 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-fieldset__legend, .block-editor-block-styles .nhsuk-fieldset__legend, .block-editor-inserter__menu-help-panel .nhsuk-fieldset__legend {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-fieldset__legend--xl, .block-editor-block-styles .nhsuk-fieldset__legend--xl, .block-editor-inserter__menu-help-panel .nhsuk-fieldset__legend--xl {
   font-weight: 600;
   font-size: 32px;
   font-size: 2rem;
-  line-height: 1.25;
+  line-height: 1.1875;
   margin-bottom: 16px;
 }
 @media (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-fieldset__legend--xl, .block-editor-block-styles .nhsuk-fieldset__legend--xl, .block-editor-inserter__menu-help-panel .nhsuk-fieldset__legend--xl {
     font-size: 48px;
     font-size: 3rem;
-    line-height: 1.16667;
+    line-height: 1.125;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-fieldset__legend--xl, .block-editor-block-styles .nhsuk-fieldset__legend--xl, .block-editor-inserter__menu-help-panel .nhsuk-fieldset__legend--xl {
-    font-size: 32pt;
+    font-size: 26pt;
     line-height: 1.15;
   }
 }
 .edit-post-visual-editor .nhsuk-fieldset__legend--l, .block-editor-block-styles .nhsuk-fieldset__legend--l, .block-editor-inserter__menu-help-panel .nhsuk-fieldset__legend--l {
   font-weight: 600;
-  font-size: 24px;
-  font-size: 1.5rem;
-  line-height: 1.33333;
+  font-size: 27px;
+  font-size: 1.6875rem;
+  line-height: 1.22222;
   margin-bottom: 16px;
 }
 @media (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-fieldset__legend--l, .block-editor-block-styles .nhsuk-fieldset__legend--l, .block-editor-inserter__menu-help-panel .nhsuk-fieldset__legend--l {
-    font-size: 32px;
-    font-size: 2rem;
-    line-height: 1.25;
+    font-size: 36px;
+    font-size: 2.25rem;
+    line-height: 1.16667;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-fieldset__legend--l, .block-editor-block-styles .nhsuk-fieldset__legend--l, .block-editor-inserter__menu-help-panel .nhsuk-fieldset__legend--l {
-    font-size: 24pt;
-    line-height: 1.05;
+    font-size: 20pt;
+    line-height: 1.2;
   }
 }
 .edit-post-visual-editor .nhsuk-fieldset__legend--m, .block-editor-block-styles .nhsuk-fieldset__legend--m, .block-editor-inserter__menu-help-panel .nhsuk-fieldset__legend--m {
   font-weight: 600;
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 1.4;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.31818;
   margin-bottom: 16px;
 }
 @media (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-fieldset__legend--m, .block-editor-block-styles .nhsuk-fieldset__legend--m, .block-editor-inserter__menu-help-panel .nhsuk-fieldset__legend--m {
-    font-size: 24px;
-    font-size: 1.5rem;
-    line-height: 1.33333;
+    font-size: 26px;
+    font-size: 1.625rem;
+    line-height: 1.23077;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-fieldset__legend--m, .block-editor-block-styles .nhsuk-fieldset__legend--m, .block-editor-inserter__menu-help-panel .nhsuk-fieldset__legend--m {
-    font-size: 18pt;
-    line-height: 1.15;
+    font-size: 17pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-fieldset__legend--s, .block-editor-block-styles .nhsuk-fieldset__legend--s, .block-editor-inserter__menu-help-panel .nhsuk-fieldset__legend--s {
@@ -4741,8 +5099,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-fieldset__legend--s, .block-editor-block-styles .nhsuk-fieldset__legend--s, .block-editor-inserter__menu-help-panel .nhsuk-fieldset__legend--s {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-fieldset__heading, .block-editor-block-styles .nhsuk-fieldset__heading, .block-editor-inserter__menu-help-panel .nhsuk-fieldset__heading {
@@ -4827,8 +5185,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-footer__list-item, .block-editor-block-styles .nhsuk-footer__list-item, .block-editor-inserter__menu-help-panel .nhsuk-footer__list-item {
-    font-size: 14pt;
-    line-height: 1.2;
+    font-size: 12pt;
+    line-height: 1.3;
   }
 }
 @media (min-width: 48.0625em) {
@@ -4869,8 +5227,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-footer__copyright, .block-editor-block-styles .nhsuk-footer__copyright, .block-editor-inserter__menu-help-panel .nhsuk-footer__copyright {
-    font-size: 14pt;
-    line-height: 1.2;
+    font-size: 12pt;
+    line-height: 1.3;
   }
 }
 @media (max-width: 48.0525em) {
@@ -4898,14 +5256,8 @@
     margin: 0 auto;
   }
 }
-@media (max-width: 40.0525em) {
-  .edit-post-visual-editor .nhsuk-header__container, .block-editor-block-styles .nhsuk-header__container, .block-editor-inserter__menu-help-panel .nhsuk-header__container {
-    padding-bottom: 0;
-  }
-}
 @media (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-header__container, .block-editor-block-styles .nhsuk-header__container, .block-editor-inserter__menu-help-panel .nhsuk-header__container {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
     justify-content: space-between;
   }
@@ -4977,11 +5329,6 @@
 .edit-post-visual-editor .nhsuk-header__logo--only, .block-editor-block-styles .nhsuk-header__logo--only, .block-editor-inserter__menu-help-panel .nhsuk-header__logo--only {
   max-width: 100%;
 }
-@media (max-width: 40.0525em) {
-  .edit-post-visual-editor .nhsuk-header__logo--only, .block-editor-block-styles .nhsuk-header__logo--only, .block-editor-inserter__menu-help-panel .nhsuk-header__logo--only {
-    padding-bottom: 16px;
-  }
-}
 @media (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-header__logo--only .nhsuk-header__link--service, .block-editor-block-styles .nhsuk-header__logo--only .nhsuk-header__link--service, .block-editor-inserter__menu-help-panel .nhsuk-header__logo--only .nhsuk-header__link--service {
     align-items: center;
@@ -5018,9 +5365,6 @@
   .edit-post-visual-editor .nhsuk-header__search, .block-editor-block-styles .nhsuk-header__search, .block-editor-inserter__menu-help-panel .nhsuk-header__search {
     margin-left: 8px;
   }
-}
-.edit-post-visual-editor .nhsuk-header__search-no-nav, .block-editor-block-styles .nhsuk-header__search-no-nav, .block-editor-inserter__menu-help-panel .nhsuk-header__search-no-nav {
-  padding-bottom: 16px;
 }
 .edit-post-visual-editor .nhsuk-header__search-form, .block-editor-block-styles .nhsuk-header__search-form, .block-editor-inserter__menu-help-panel .nhsuk-header__search-form {
   height: 100%;
@@ -5202,7 +5546,7 @@
   color: #ffffff;
   display: block;
   font-size: inherit;
-  padding: 16px 12px;
+  padding: 16px 2px;
   text-decoration: underline;
   white-space: nowrap;
 }
@@ -5215,13 +5559,13 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-header__navigation-link, .block-editor-block-styles .nhsuk-header__navigation-link, .block-editor-inserter__menu-help-panel .nhsuk-header__navigation-link {
-    font-size: 14pt;
-    line-height: 1.2;
+    font-size: 12pt;
+    line-height: 1.3;
   }
 }
 @media (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-header__navigation-link, .block-editor-block-styles .nhsuk-header__navigation-link, .block-editor-inserter__menu-help-panel .nhsuk-header__navigation-link {
-    padding: 12px 16px;
+    padding: 12px 2px;
   }
 }
 .edit-post-visual-editor .nhsuk-header__navigation-link .nhsuk-icon__chevron-right, .block-editor-block-styles .nhsuk-header__navigation-link .nhsuk-icon__chevron-right, .block-editor-inserter__menu-help-panel .nhsuk-header__navigation-link .nhsuk-icon__chevron-right {
@@ -5285,12 +5629,10 @@
   z-index: 1;
 }
 .edit-post-visual-editor .nhsuk-header__menu-toggle.nhsuk-header__navigation-link, .block-editor-block-styles .nhsuk-header__menu-toggle.nhsuk-header__navigation-link, .block-editor-inserter__menu-help-panel .nhsuk-header__menu-toggle.nhsuk-header__navigation-link {
-  padding-right: 30px;
+  padding-right: 23px;
 }
-@media (min-width: 48.0625em) {
-  .edit-post-visual-editor .nhsuk-header__menu-toggle, .block-editor-block-styles .nhsuk-header__menu-toggle, .block-editor-inserter__menu-help-panel .nhsuk-header__menu-toggle {
-    display: none;
-  }
+.edit-post-visual-editor .nhsuk-header__menu-toggle .nhsuk-icon__chevron-down, .block-editor-block-styles .nhsuk-header__menu-toggle .nhsuk-icon__chevron-down, .block-editor-inserter__menu-help-panel .nhsuk-header__menu-toggle .nhsuk-icon__chevron-down {
+  right: -3px;
 }
 .edit-post-visual-editor .nhsuk-header__menu-toggle:focus, .block-editor-block-styles .nhsuk-header__menu-toggle:focus, .block-editor-inserter__menu-help-panel .nhsuk-header__menu-toggle:focus {
   text-decoration: none;
@@ -5323,6 +5665,8 @@
   margin: 0 16px; /* [1] */
   max-width: 960px; /* [2] */
   /* [4] */
+  display: flex;
+  gap: 24px;
   width: 100%;
 }
 @media (min-width: 48.0625em) {
@@ -5337,7 +5681,6 @@
 }
 @media (min-width: 48.0625em) {
   .edit-post-visual-editor .nhsuk-header__navigation-list, .block-editor-block-styles .nhsuk-header__navigation-list, .block-editor-inserter__menu-help-panel .nhsuk-header__navigation-list {
-    display: flex;
     justify-content: space-between;
   }
 }
@@ -5349,6 +5692,16 @@
 }
 .edit-post-visual-editor .nhsuk-navigation-container, .block-editor-block-styles .nhsuk-navigation-container, .block-editor-inserter__menu-help-panel .nhsuk-navigation-container {
   position: relative;
+}
+@media print {
+  .edit-post-visual-editor .nhsuk-navigation-container, .block-editor-block-styles .nhsuk-navigation-container, .block-editor-inserter__menu-help-panel .nhsuk-navigation-container {
+    display: none;
+  }
+}
+@media (max-width: 40.0525em) {
+  .edit-post-visual-editor .nhsuk-navigation-container, .block-editor-block-styles .nhsuk-navigation-container, .block-editor-inserter__menu-help-panel .nhsuk-navigation-container {
+    margin-top: -20px;
+  }
 }
 .edit-post-visual-editor .nhsuk-header__drop-down, .block-editor-block-styles .nhsuk-header__drop-down, .block-editor-inserter__menu-help-panel .nhsuk-header__drop-down {
   background-color: #ffffff;
@@ -5365,19 +5718,38 @@
   }
 }
 .edit-post-visual-editor .nhsuk-header__drop-down .nhsuk-header__navigation-link, .block-editor-block-styles .nhsuk-header__drop-down .nhsuk-header__navigation-link, .block-editor-inserter__menu-help-panel .nhsuk-header__drop-down .nhsuk-header__navigation-link {
+  margin: 0 16px; /* [1] */
+  max-width: 960px; /* [2] */
+  /* [4] */
+  padding: 12px 0;
+}
+@media (min-width: 48.0625em) {
+  .edit-post-visual-editor .nhsuk-header__drop-down .nhsuk-header__navigation-link, .block-editor-block-styles .nhsuk-header__drop-down .nhsuk-header__navigation-link, .block-editor-inserter__menu-help-panel .nhsuk-header__drop-down .nhsuk-header__navigation-link {
+    margin: 0 32px; /* [3] */
+  }
+}
+@media (min-width: 1024px) {
+  .edit-post-visual-editor .nhsuk-header__drop-down .nhsuk-header__navigation-link, .block-editor-block-styles .nhsuk-header__drop-down .nhsuk-header__navigation-link, .block-editor-inserter__menu-help-panel .nhsuk-header__drop-down .nhsuk-header__navigation-link {
+    margin: 0 auto;
+  }
+}
+.edit-post-visual-editor .nhsuk-header__drop-down .nhsuk-header__navigation-link:link, .block-editor-block-styles .nhsuk-header__drop-down .nhsuk-header__navigation-link:link, .block-editor-inserter__menu-help-panel .nhsuk-header__drop-down .nhsuk-header__navigation-link:link {
   color: #005eb8;
-  padding: 12px 16px;
+}
+.edit-post-visual-editor .nhsuk-header__drop-down .nhsuk-header__navigation-link:visited, .block-editor-block-styles .nhsuk-header__drop-down .nhsuk-header__navigation-link:visited, .block-editor-inserter__menu-help-panel .nhsuk-header__drop-down .nhsuk-header__navigation-link:visited {
+  color: #005eb8;
+}
+.edit-post-visual-editor .nhsuk-header__drop-down .nhsuk-header__navigation-link:hover, .block-editor-block-styles .nhsuk-header__drop-down .nhsuk-header__navigation-link:hover, .block-editor-inserter__menu-help-panel .nhsuk-header__drop-down .nhsuk-header__navigation-link:hover {
+  color: #7c2855;
+}
+.edit-post-visual-editor .nhsuk-header__drop-down .nhsuk-header__navigation-link:active, .block-editor-block-styles .nhsuk-header__drop-down .nhsuk-header__navigation-link:active, .block-editor-inserter__menu-help-panel .nhsuk-header__drop-down .nhsuk-header__navigation-link:active {
+  color: #002f5c;
+}
+.edit-post-visual-editor .nhsuk-header__drop-down .nhsuk-header__navigation-link:focus, .block-editor-block-styles .nhsuk-header__drop-down .nhsuk-header__navigation-link:focus, .block-editor-inserter__menu-help-panel .nhsuk-header__drop-down .nhsuk-header__navigation-link:focus {
+  color: #212b32;
 }
 .edit-post-visual-editor .nhsuk-header__drop-down .nhsuk-header__navigation-item, .block-editor-block-styles .nhsuk-header__drop-down .nhsuk-header__navigation-item, .block-editor-inserter__menu-help-panel .nhsuk-header__drop-down .nhsuk-header__navigation-item {
   border-top: 1px solid #f0f4f5;
-  margin-bottom: 0;
-}
-@media (min-width: 61.875em) {
-  .edit-post-visual-editor .nhsuk-header__drop-down .nhsuk-header__navigation-item, .block-editor-block-styles .nhsuk-header__drop-down .nhsuk-header__navigation-item, .block-editor-inserter__menu-help-panel .nhsuk-header__drop-down .nhsuk-header__navigation-item {
-    border-top: 0;
-    margin: 0;
-    text-align: center;
-  }
 }
 .edit-post-visual-editor .nhsuk-header__drop-down--hidden, .block-editor-block-styles .nhsuk-header__drop-down--hidden, .block-editor-inserter__menu-help-panel .nhsuk-header__drop-down--hidden {
   display: none;
@@ -5392,6 +5764,11 @@
 @media (min-width: 48.0625em) {
   .edit-post-visual-editor .nhsuk-header__navigation-item--home, .block-editor-block-styles .nhsuk-header__navigation-item--home, .block-editor-inserter__menu-help-panel .nhsuk-header__navigation-item--home {
     display: none;
+  }
+}
+@media (min-width: 40.0625em) {
+  .edit-post-visual-editor .nhsuk-header__navigation-list, .block-editor-block-styles .nhsuk-header__navigation-list, .block-editor-inserter__menu-help-panel .nhsuk-header__navigation-list {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 }
 @media (min-width: 48.0625em) {
@@ -5572,8 +5949,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-hint, .block-editor-block-styles .nhsuk-hint, .block-editor-inserter__menu-help-panel .nhsuk-hint {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-label:not(.nhsuk-label--m):not(.nhsuk-label--l):not(.nhsuk-label--xl) + .nhsuk-hint, .block-editor-block-styles .nhsuk-label:not(.nhsuk-label--m):not(.nhsuk-label--l):not(.nhsuk-label--xl) + .nhsuk-hint, .block-editor-inserter__menu-help-panel .nhsuk-label:not(.nhsuk-label--m):not(.nhsuk-label--l):not(.nhsuk-label--xl) + .nhsuk-hint {
@@ -5641,8 +6018,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-image__caption, .edit-post-visual-editor .gallery-caption, .edit-post-visual-editor .nhsuk-image figcaption, .edit-post-visual-editor .is-style-nhsuk-image figcaption, .block-editor-block-styles .nhsuk-image__caption, .block-editor-block-styles .gallery-caption, .block-editor-block-styles .nhsuk-image figcaption, .block-editor-block-styles .is-style-nhsuk-image figcaption, .block-editor-inserter__menu-help-panel .nhsuk-image__caption, .block-editor-inserter__menu-help-panel .gallery-caption, .block-editor-inserter__menu-help-panel .nhsuk-image figcaption, .block-editor-inserter__menu-help-panel .is-style-nhsuk-image figcaption {
-    font-size: 14pt;
-    line-height: 1.2;
+    font-size: 12pt;
+    line-height: 1.3;
   }
 }
 .edit-post-visual-editor .nhsuk-input, .block-editor-block-styles .nhsuk-input, .block-editor-inserter__menu-help-panel .nhsuk-input {
@@ -5670,8 +6047,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-input, .block-editor-block-styles .nhsuk-input, .block-editor-inserter__menu-help-panel .nhsuk-input {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-input:focus, .block-editor-block-styles .nhsuk-input:focus, .block-editor-inserter__menu-help-panel .nhsuk-input:focus {
@@ -5758,8 +6135,8 @@
   .edit-post-visual-editor .nhsuk-input__suffix, .block-editor-block-styles .nhsuk-input__prefix,
   .block-editor-block-styles .nhsuk-input__suffix, .block-editor-inserter__menu-help-panel .nhsuk-input__prefix,
   .block-editor-inserter__menu-help-panel .nhsuk-input__suffix {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 @media (max-width: 19.99em) {
@@ -5854,8 +6231,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-label, .block-editor-block-styles .nhsuk-label, .block-editor-inserter__menu-help-panel .nhsuk-label {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-label--xl,
@@ -5872,55 +6249,55 @@
 .edit-post-visual-editor .nhsuk-label--xl, .block-editor-block-styles .nhsuk-label--xl, .block-editor-inserter__menu-help-panel .nhsuk-label--xl {
   font-size: 32px;
   font-size: 2rem;
-  line-height: 1.25;
+  line-height: 1.1875;
 }
 @media (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-label--xl, .block-editor-block-styles .nhsuk-label--xl, .block-editor-inserter__menu-help-panel .nhsuk-label--xl {
     font-size: 48px;
     font-size: 3rem;
-    line-height: 1.16667;
+    line-height: 1.125;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-label--xl, .block-editor-block-styles .nhsuk-label--xl, .block-editor-inserter__menu-help-panel .nhsuk-label--xl {
-    font-size: 32pt;
+    font-size: 26pt;
     line-height: 1.15;
   }
 }
 .edit-post-visual-editor .nhsuk-label--l, .block-editor-block-styles .nhsuk-label--l, .block-editor-inserter__menu-help-panel .nhsuk-label--l {
-  font-size: 24px;
-  font-size: 1.5rem;
-  line-height: 1.33333;
+  font-size: 27px;
+  font-size: 1.6875rem;
+  line-height: 1.22222;
 }
 @media (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-label--l, .block-editor-block-styles .nhsuk-label--l, .block-editor-inserter__menu-help-panel .nhsuk-label--l {
-    font-size: 32px;
-    font-size: 2rem;
-    line-height: 1.25;
+    font-size: 36px;
+    font-size: 2.25rem;
+    line-height: 1.16667;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-label--l, .block-editor-block-styles .nhsuk-label--l, .block-editor-inserter__menu-help-panel .nhsuk-label--l {
-    font-size: 24pt;
-    line-height: 1.05;
+    font-size: 20pt;
+    line-height: 1.2;
   }
 }
 .edit-post-visual-editor .nhsuk-label--m, .block-editor-block-styles .nhsuk-label--m, .block-editor-inserter__menu-help-panel .nhsuk-label--m {
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 1.4;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.31818;
 }
 @media (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-label--m, .block-editor-block-styles .nhsuk-label--m, .block-editor-inserter__menu-help-panel .nhsuk-label--m {
-    font-size: 24px;
-    font-size: 1.5rem;
-    line-height: 1.33333;
+    font-size: 26px;
+    font-size: 1.625rem;
+    line-height: 1.23077;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-label--m, .block-editor-block-styles .nhsuk-label--m, .block-editor-inserter__menu-help-panel .nhsuk-label--m {
-    font-size: 18pt;
-    line-height: 1.15;
+    font-size: 17pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-label--s, .block-editor-block-styles .nhsuk-label--s, .block-editor-inserter__menu-help-panel .nhsuk-label--s {
@@ -5939,8 +6316,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-label--s, .block-editor-block-styles .nhsuk-label--s, .block-editor-inserter__menu-help-panel .nhsuk-label--s {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-label-wrapper, .block-editor-block-styles .nhsuk-label-wrapper, .block-editor-inserter__menu-help-panel .nhsuk-label-wrapper {
@@ -6049,13 +6426,13 @@
   .edit-post-visual-editor .nhsuk-pagination__title, .block-editor-block-styles .nhsuk-pagination__title, .block-editor-inserter__menu-help-panel .nhsuk-pagination__title {
     font-size: 24px;
     font-size: 1.5rem;
-    line-height: 1.33333;
+    line-height: 1.29167;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-pagination__title, .block-editor-block-styles .nhsuk-pagination__title, .block-editor-inserter__menu-help-panel .nhsuk-pagination__title {
-    font-size: 18pt;
-    line-height: 1.15;
+    font-size: 16pt;
+    line-height: 1.25;
   }
 }
 @media print {
@@ -6079,8 +6456,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-pagination__page, .block-editor-block-styles .nhsuk-pagination__page, .block-editor-inserter__menu-help-panel .nhsuk-pagination__page {
-    font-size: 14pt;
-    line-height: 1.2;
+    font-size: 12pt;
+    line-height: 1.3;
   }
 }
 .edit-post-visual-editor .nhsuk-radios__item, .block-editor-block-styles .nhsuk-radios__item, .block-editor-inserter__menu-help-panel .nhsuk-radios__item {
@@ -6104,8 +6481,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-radios__item, .block-editor-block-styles .nhsuk-radios__item, .block-editor-inserter__menu-help-panel .nhsuk-radios__item {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-radios__item:last-child,
@@ -6216,8 +6593,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-radios__divider, .block-editor-block-styles .nhsuk-radios__divider, .block-editor-inserter__menu-help-panel .nhsuk-radios__divider {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-radios__conditional, .block-editor-block-styles .nhsuk-radios__conditional, .block-editor-inserter__menu-help-panel .nhsuk-radios__conditional {
@@ -6258,8 +6635,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-select, .block-editor-block-styles .nhsuk-select, .block-editor-inserter__menu-help-panel .nhsuk-select {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-select:focus, .block-editor-block-styles .nhsuk-select:focus, .block-editor-inserter__menu-help-panel .nhsuk-select:focus {
@@ -6311,8 +6688,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-summary-list, .block-editor-block-styles .nhsuk-summary-list, .block-editor-inserter__menu-help-panel .nhsuk-summary-list {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 @media (min-width: 40.0625em) {
@@ -6452,6 +6829,78 @@
 .edit-post-visual-editor .nhsuk-table-container .nhsuk-table, .block-editor-block-styles .nhsuk-table-container .nhsuk-table, .block-editor-inserter__menu-help-panel .nhsuk-table-container .nhsuk-table {
   margin: 0; /* [1] */
 }
+.edit-post-visual-editor .nhsuk-table__caption--xl, .block-editor-block-styles .nhsuk-table__caption--xl, .block-editor-inserter__menu-help-panel .nhsuk-table__caption--xl {
+  font-size: 32px;
+  font-size: 2rem;
+  line-height: 1.1875;
+}
+@media (min-width: 40.0625em) {
+  .edit-post-visual-editor .nhsuk-table__caption--xl, .block-editor-block-styles .nhsuk-table__caption--xl, .block-editor-inserter__menu-help-panel .nhsuk-table__caption--xl {
+    font-size: 48px;
+    font-size: 3rem;
+    line-height: 1.125;
+  }
+}
+@media print {
+  .edit-post-visual-editor .nhsuk-table__caption--xl, .block-editor-block-styles .nhsuk-table__caption--xl, .block-editor-inserter__menu-help-panel .nhsuk-table__caption--xl {
+    font-size: 26pt;
+    line-height: 1.15;
+  }
+}
+.edit-post-visual-editor .nhsuk-table__caption--l, .block-editor-block-styles .nhsuk-table__caption--l, .block-editor-inserter__menu-help-panel .nhsuk-table__caption--l {
+  font-size: 27px;
+  font-size: 1.6875rem;
+  line-height: 1.22222;
+}
+@media (min-width: 40.0625em) {
+  .edit-post-visual-editor .nhsuk-table__caption--l, .block-editor-block-styles .nhsuk-table__caption--l, .block-editor-inserter__menu-help-panel .nhsuk-table__caption--l {
+    font-size: 36px;
+    font-size: 2.25rem;
+    line-height: 1.16667;
+  }
+}
+@media print {
+  .edit-post-visual-editor .nhsuk-table__caption--l, .block-editor-block-styles .nhsuk-table__caption--l, .block-editor-inserter__menu-help-panel .nhsuk-table__caption--l {
+    font-size: 20pt;
+    line-height: 1.2;
+  }
+}
+.edit-post-visual-editor .nhsuk-table__caption--m, .block-editor-block-styles .nhsuk-table__caption--m, .block-editor-inserter__menu-help-panel .nhsuk-table__caption--m {
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.31818;
+}
+@media (min-width: 40.0625em) {
+  .edit-post-visual-editor .nhsuk-table__caption--m, .block-editor-block-styles .nhsuk-table__caption--m, .block-editor-inserter__menu-help-panel .nhsuk-table__caption--m {
+    font-size: 26px;
+    font-size: 1.625rem;
+    line-height: 1.23077;
+  }
+}
+@media print {
+  .edit-post-visual-editor .nhsuk-table__caption--m, .block-editor-block-styles .nhsuk-table__caption--m, .block-editor-inserter__menu-help-panel .nhsuk-table__caption--m {
+    font-size: 17pt;
+    line-height: 1.25;
+  }
+}
+.edit-post-visual-editor .nhsuk-table__caption--s, .block-editor-block-styles .nhsuk-table__caption--s, .block-editor-inserter__menu-help-panel .nhsuk-table__caption--s {
+  font-size: 19px;
+  font-size: 1.1875rem;
+  line-height: 1.42105;
+}
+@media (min-width: 40.0625em) {
+  .edit-post-visual-editor .nhsuk-table__caption--s, .block-editor-block-styles .nhsuk-table__caption--s, .block-editor-inserter__menu-help-panel .nhsuk-table__caption--s {
+    font-size: 22px;
+    font-size: 1.375rem;
+    line-height: 1.36364;
+  }
+}
+@media print {
+  .edit-post-visual-editor .nhsuk-table__caption--s, .block-editor-block-styles .nhsuk-table__caption--s, .block-editor-inserter__menu-help-panel .nhsuk-table__caption--s {
+    font-size: 15pt;
+    line-height: 1.25;
+  }
+}
 .edit-post-visual-editor .nhsuk-table__row:hover, .block-editor-block-styles .nhsuk-table__row:hover, .block-editor-inserter__menu-help-panel .nhsuk-table__row:hover {
   background-color: #f0f4f5;
 }
@@ -6513,13 +6962,13 @@
   .edit-post-visual-editor .nhsuk-table__heading-tab, .block-editor-block-styles .nhsuk-table__heading-tab, .block-editor-inserter__menu-help-panel .nhsuk-table__heading-tab {
     font-size: 24px;
     font-size: 1.5rem;
-    line-height: 1.33333;
+    line-height: 1.29167;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-table__heading-tab, .block-editor-block-styles .nhsuk-table__heading-tab, .block-editor-inserter__menu-help-panel .nhsuk-table__heading-tab {
-    font-size: 18pt;
-    line-height: 1.15;
+    font-size: 16pt;
+    line-height: 1.25;
   }
 }
 @media (max-width: 40.0525em) {
@@ -6555,6 +7004,12 @@
   width: 1px;
   /* [1] */
 }
+.edit-post-visual-editor .nhsuk-table-responsive thead::before, .edit-post-visual-editor figure.is-style-nhsuk-table-responsive thead::before, .block-editor-block-styles .nhsuk-table-responsive thead::before, .block-editor-block-styles figure.is-style-nhsuk-table-responsive thead::before, .block-editor-inserter__menu-help-panel .nhsuk-table-responsive thead::before, .block-editor-inserter__menu-help-panel figure.is-style-nhsuk-table-responsive thead::before {
+  content: " ";
+}
+.edit-post-visual-editor .nhsuk-table-responsive thead::after, .edit-post-visual-editor figure.is-style-nhsuk-table-responsive thead::after, .block-editor-block-styles .nhsuk-table-responsive thead::after, .block-editor-block-styles figure.is-style-nhsuk-table-responsive thead::after, .block-editor-inserter__menu-help-panel .nhsuk-table-responsive thead::after, .block-editor-inserter__menu-help-panel figure.is-style-nhsuk-table-responsive thead::after {
+  content: " ";
+}
 @media (min-width: 48.0625em) {
   .edit-post-visual-editor .nhsuk-table-responsive thead, .edit-post-visual-editor figure.is-style-nhsuk-table-responsive thead, .block-editor-block-styles .nhsuk-table-responsive thead, .block-editor-block-styles figure.is-style-nhsuk-table-responsive thead, .block-editor-inserter__menu-help-panel .nhsuk-table-responsive thead, .block-editor-inserter__menu-help-panel figure.is-style-nhsuk-table-responsive thead {
     clip: auto;
@@ -6566,6 +7021,9 @@
     position: relative;
     width: auto;
     /* [2] */
+  }
+  .edit-post-visual-editor .nhsuk-table-responsive thead:before, .edit-post-visual-editor figure.is-style-nhsuk-table-responsive thead:before, .edit-post-visual-editor .nhsuk-table-responsive thead:after, .edit-post-visual-editor figure.is-style-nhsuk-table-responsive thead:after, .block-editor-block-styles .nhsuk-table-responsive thead:before, .block-editor-block-styles figure.is-style-nhsuk-table-responsive thead:before, .block-editor-block-styles .nhsuk-table-responsive thead:after, .block-editor-block-styles figure.is-style-nhsuk-table-responsive thead:after, .block-editor-inserter__menu-help-panel .nhsuk-table-responsive thead:before, .block-editor-inserter__menu-help-panel figure.is-style-nhsuk-table-responsive thead:before, .block-editor-inserter__menu-help-panel .nhsuk-table-responsive thead:after, .block-editor-inserter__menu-help-panel figure.is-style-nhsuk-table-responsive thead:after {
+    content: "";
   }
 }
 .edit-post-visual-editor .nhsuk-table-responsive .nhsuk-table__body .nhsuk-table-responsive__heading, .edit-post-visual-editor figure.is-style-nhsuk-table-responsive .nhsuk-table__body .nhsuk-table-responsive__heading, .block-editor-block-styles .nhsuk-table-responsive .nhsuk-table__body .nhsuk-table-responsive__heading, .block-editor-block-styles figure.is-style-nhsuk-table-responsive .nhsuk-table__body .nhsuk-table-responsive__heading, .block-editor-inserter__menu-help-panel .nhsuk-table-responsive .nhsuk-table__body .nhsuk-table-responsive__heading, .block-editor-inserter__menu-help-panel figure.is-style-nhsuk-table-responsive .nhsuk-table__body .nhsuk-table-responsive__heading {
@@ -6656,7 +7114,7 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-tag, .block-editor-block-styles .nhsuk-tag, .block-editor-inserter__menu-help-panel .nhsuk-tag {
-    font-size: 14pt;
+    font-size: 12pt;
     line-height: 1;
   }
 }
@@ -6737,8 +7195,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-textarea, .block-editor-block-styles .nhsuk-textarea, .block-editor-inserter__menu-help-panel .nhsuk-textarea {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-textarea:focus, .block-editor-block-styles .nhsuk-textarea:focus, .block-editor-inserter__menu-help-panel .nhsuk-textarea:focus {
@@ -6804,13 +7262,13 @@
   .edit-post-visual-editor .nhsuk-warning-callout__label, .block-editor-block-styles .nhsuk-warning-callout__label, .block-editor-inserter__menu-help-panel .nhsuk-warning-callout__label {
     font-size: 24px;
     font-size: 1.5rem;
-    line-height: 1.33333;
+    line-height: 1.29167;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-warning-callout__label, .block-editor-block-styles .nhsuk-warning-callout__label, .block-editor-inserter__menu-help-panel .nhsuk-warning-callout__label {
-    font-size: 18pt;
-    line-height: 1.15;
+    font-size: 16pt;
+    line-height: 1.25;
   }
 }
 @media (max-width: 40.0525em) {
@@ -6918,13 +7376,13 @@
   .edit-post-visual-editor .nhsuk-panel-with-label__label, .edit-post-visual-editor .nhsuk-panel.is-style-panel-with-label h3, .edit-post-visual-editor .nhsuk-panel.is-style-panel-with-label h3 .rich-text, .block-editor-block-styles .nhsuk-panel-with-label__label, .block-editor-block-styles .nhsuk-panel.is-style-panel-with-label h3, .block-editor-block-styles .nhsuk-panel.is-style-panel-with-label h3 .rich-text, .block-editor-inserter__menu-help-panel .nhsuk-panel-with-label__label, .block-editor-inserter__menu-help-panel .nhsuk-panel.is-style-panel-with-label h3, .block-editor-inserter__menu-help-panel .nhsuk-panel.is-style-panel-with-label h3 .rich-text {
     font-size: 24px;
     font-size: 1.5rem;
-    line-height: 1.33333;
+    line-height: 1.29167;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-panel-with-label__label, .edit-post-visual-editor .nhsuk-panel.is-style-panel-with-label h3, .edit-post-visual-editor .nhsuk-panel.is-style-panel-with-label h3 .rich-text, .block-editor-block-styles .nhsuk-panel-with-label__label, .block-editor-block-styles .nhsuk-panel.is-style-panel-with-label h3, .block-editor-block-styles .nhsuk-panel.is-style-panel-with-label h3 .rich-text, .block-editor-inserter__menu-help-panel .nhsuk-panel-with-label__label, .block-editor-inserter__menu-help-panel .nhsuk-panel.is-style-panel-with-label h3, .block-editor-inserter__menu-help-panel .nhsuk-panel.is-style-panel-with-label h3 .rich-text {
-    font-size: 18pt;
-    line-height: 1.15;
+    font-size: 16pt;
+    line-height: 1.25;
   }
 }
 @media (max-width: 40.0525em) {
@@ -7049,13 +7507,13 @@
   .edit-post-visual-editor .nhsuk-promo__heading, .block-editor-block-styles .nhsuk-promo__heading, .block-editor-inserter__menu-help-panel .nhsuk-promo__heading {
     font-size: 24px;
     font-size: 1.5rem;
-    line-height: 1.33333;
+    line-height: 1.29167;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-promo__heading, .block-editor-block-styles .nhsuk-promo__heading, .block-editor-inserter__menu-help-panel .nhsuk-promo__heading {
-    font-size: 18pt;
-    line-height: 1.15;
+    font-size: 16pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-promo__content, .block-editor-block-styles .nhsuk-promo__content, .block-editor-inserter__menu-help-panel .nhsuk-promo__content {
@@ -7089,8 +7547,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-promo--small .nhsuk-promo__heading, .edit-post-visual-editor .nhsuk-promo.is-style-promo-small .nhsuk-promo__heading, .block-editor-block-styles .nhsuk-promo--small .nhsuk-promo__heading, .block-editor-block-styles .nhsuk-promo.is-style-promo-small .nhsuk-promo__heading, .block-editor-inserter__menu-help-panel .nhsuk-promo--small .nhsuk-promo__heading, .block-editor-inserter__menu-help-panel .nhsuk-promo.is-style-promo-small .nhsuk-promo__heading {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 13pt;
+    line-height: 1.25;
   }
 }
 .edit-post-visual-editor .nhsuk-promo--small .nhsuk-promo__description, .edit-post-visual-editor .nhsuk-promo.is-style-promo-small .nhsuk-promo__description, .block-editor-block-styles .nhsuk-promo--small .nhsuk-promo__description, .block-editor-block-styles .nhsuk-promo.is-style-promo-small .nhsuk-promo__description, .block-editor-inserter__menu-help-panel .nhsuk-promo--small .nhsuk-promo__description, .block-editor-inserter__menu-help-panel .nhsuk-promo.is-style-promo-small .nhsuk-promo__description {
@@ -7107,8 +7565,8 @@
 }
 @media print {
   .edit-post-visual-editor .nhsuk-promo--small .nhsuk-promo__description, .edit-post-visual-editor .nhsuk-promo.is-style-promo-small .nhsuk-promo__description, .block-editor-block-styles .nhsuk-promo--small .nhsuk-promo__description, .block-editor-block-styles .nhsuk-promo.is-style-promo-small .nhsuk-promo__description, .block-editor-inserter__menu-help-panel .nhsuk-promo--small .nhsuk-promo__description, .block-editor-inserter__menu-help-panel .nhsuk-promo.is-style-promo-small .nhsuk-promo__description {
-    font-size: 14pt;
-    line-height: 1.2;
+    font-size: 12pt;
+    line-height: 1.3;
   }
 }
 .edit-post-visual-editor .nhsuk-promo-group, .block-editor-block-styles .nhsuk-promo-group, .block-editor-inserter__menu-help-panel .nhsuk-promo-group {
@@ -7281,7 +7739,7 @@
   .block-editor-inserter__menu-help-panel .nhsuk-card--care__heading {
     font-size: 24px;
     font-size: 1.5rem;
-    line-height: 1.33333;
+    line-height: 1.29167;
   }
 }
 @media print {
@@ -7289,8 +7747,8 @@
   .edit-post-visual-editor .nhsuk-card--care__heading, .block-editor-block-styles .nhsuk-care-card__heading,
   .block-editor-block-styles .nhsuk-card--care__heading, .block-editor-inserter__menu-help-panel .nhsuk-care-card__heading,
   .block-editor-inserter__menu-help-panel .nhsuk-card--care__heading {
-    font-size: 18pt;
-    line-height: 1.15;
+    font-size: 16pt;
+    line-height: 1.25;
   }
 }
 @media print {
