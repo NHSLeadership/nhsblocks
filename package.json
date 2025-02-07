@@ -3,7 +3,10 @@
   "license": "GPL-3.0-or-later",
   "main": "src/index.js",
   "devDependencies": {
-    "@wordpress/scripts": "^26.14.0",
+    "@babel/preset-env": "^7.26.7",
+    "@babel/preset-react": "^7.26.3",
+    "@wordpress/scripts": "^30.10.0",
+    "babel-loader": "^9.2.1",
     "eslint-plugin-prettier": "^5.0.1",
     "jsdoc": "^4.0.2",
     "wp-hookdoc": "^0.2.0"
