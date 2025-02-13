@@ -86,7 +86,7 @@
  
  
 	 return ( [
-		 <InspectorControls>
+		 <InspectorControls key={`inspector-controls-${clientId}`}>
 			 <PanelBody>
 				 <PanelRow>
 					 <ToggleControl
@@ -97,25 +97,27 @@
 				 </PanelRow>
 			 </PanelBody>
 		 </InspectorControls>,
-		 <div className={`${className} nhsuk-care-card`}>
-			   <div className="nhsuk-care-card__heading-container">
+		 <div key={`block-container-${clientId}`} className={`${className} nhsuk-care-card`}>
+			   <div key={`heading-container-${clientId}`} className="nhsuk-care-card__heading-container">
 				   <h3 className="nhsuk-care-card__heading">
 				   <span role="text">
 					 <span className="nhsuk-u-visually-hidden">Non-urgent advice: </span>
-					 <span className="nhsuk-care-card__heading-text">
+					 <span key={`heading-text-${clientId}`} className="nhsuk-care-card__heading-text">
 					   <RichText
 						   placeholder={__("Card Title", "nhsblocks")}
 						   value={cardTitle}
 						   onChange={onChangeCardTitle}
+						   key={`card-title-${clientId}`}
 					   />
 					 </span>
 				   </span>
 				   </h3>
 				   <span className="nhsuk-care-card__arrow" aria-hidden="true"></span>
 			   </div>
-			   <div className="nhsuk-care-card__content">
+			   <div key={`content-container-${clientId}`} className="nhsuk-care-card__content">
 		   {withImage === true && (
 			   <InnerBlocks
+			   			 key={`inner-blocks-${clientId}`} 
 						 template = {TEMPLATE_OPTIONS}
 				   />
 	   )}
@@ -124,6 +126,7 @@
 					   placeholder={__("Card Contents", "nhsblocks")}
 					   onChange={onChangeCardText}
 					   value={cardText}
+					   key={`card-text-${clientId}`} 
 				   />
 			   </div>
 		 </div>
@@ -307,6 +310,76 @@
 				 </div>,
 		 },
 
+		 {
+			attributes: {
+				cardTitle: {
+					type: "string",
+					source: "html",
+					selector: ".nhsuk-card--care__heading span strong"
+				},
+				cardText: {
+					type: "array",
+					source: "children",
+					multiline: "p",
+					selector: ".nhsuk-card__content"
+				},
+			},
+			save: ({ attributes }) =>
+				<div className="nhsuk-grid-column-width nhsuk-card nhsuk-card--care nhsuk-card--care--type">
+					<div className="nhsuk-card--care__heading-container">
+						<h2 className="nhsuk-card--care__heading">
+							<span>
+								<span className="nhsuk-u-visually-hidden">Non-urgent advice: </span>
+								<strong>
+									<RichText.Content value={attributes.cardTitle} />
+								</strong>
+							</span>
+						</h2>
+						<span className="nhsuk-card--care__arrow" aria-hidden="true"></span>
+					</div>
+					<div className="nhsuk-card__content">
+						<RichText.Content multiline="p" value={attributes.cardText} />
+					</div>
+				</div>,
+		},
+		{
+			attributes: {
+				cardTitle: {
+					type: "string",
+					source: "html",
+					selector: ".nhsuk-care-card__heading-text"
+				},
+				cardText: {
+					type: "array",
+					source: "children",
+					multiline: "p",
+					selector: ".nhsuk-care-card__content"
+				},
+			},
+			save: ({ attributes }) => {
+				return (
+					<div className="wp-block-nhsblocks-card1 nhsuk-grid-column-width nhsuk-care-card nhsuk-care-card--type nhsuk-card nhsuk-card--care nhsuk-card--care--type">
+						<div className="nhsuk-care-card__heading-container">
+							<h2 className="nhsuk-care-card__heading">
+								<span>
+									<span className="nhsuk-u-visually-hidden">Non-urgent advice: </span>
+									<span className="nhsuk-care-card__heading-text">
+										{attributes.cardTitle}
+									</span>
+								</span>
+							</h2>
+							<span className="nhsuk-care-card__arrow" aria-hidden="true"></span>
+						</div>
+						<div className="nhsuk-care-card__content">
+							{attributes.cardText && attributes.cardText.length > 0 ? (
+								<p>{attributes.cardText}</p>
+							) : null}
+						</div>
+					</div>
+				);
+			},
+		},			
+				
 	 ],
  });
  // card variations
