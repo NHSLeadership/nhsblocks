@@ -8,14 +8,16 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { RichText, InnerBlocks, InspectorControls, useBlockProps } = wp.blockEditor;
-const { ToggleControl, PanelBody, PanelRow } = wp.components;
-
-// Template options for image block
+const { ToggleControl, PanelBody, PanelRow, RadioControl } = wp.components;
+const { withState } = wp.compose;
+ 
+//@todo add in Card class variations
+//@todo add in width variations
 const TEMPLATE_OPTIONS = [
     ['core/image', {align: 'right', width: 150}],
 ];
-
-registerBlockType("nhsblocks/card1", {
+ 
+registerBlockType("nhsblocks/care-card", {
     title: __("Care Card", "nhsblocks"),
     category: "nhsblocks",
     icon: "category",
@@ -35,7 +37,7 @@ registerBlockType("nhsblocks/card1", {
             },
         ],
     },
-
+    
     attributes: {
         innerBlocks_length: {
             type: "number",
@@ -57,7 +59,7 @@ registerBlockType("nhsblocks/card1", {
             default: false,
         },
     },
-
+ 
     edit: props => {
         const blockProps = useBlockProps();
         const {
@@ -126,7 +128,7 @@ registerBlockType("nhsblocks/card1", {
             </div>
         ];
     },
-
+    
     save: props => {
         const blockProps = useBlockProps.save(); 
         const {
@@ -162,8 +164,6 @@ registerBlockType("nhsblocks/card1", {
             </div>
         );
     },
-
-    // Backward compatibility for deprecated versions
     deprecated: [
         {
             attributes: {
@@ -200,129 +200,10 @@ registerBlockType("nhsblocks/card1", {
                     </div>
                 </div>
         },
-        {
-            // Deprecated version 2
-            attributes: {
-                cardTitle: {
-                    type: "string",
-                    source: "html",
-                    selector: ".nhsuk-card--care__heading span"
-                },
-                cardText: {
-                    type: "array",
-                    source: "children",
-                    multiline: "p",
-                    selector: ".nhsuk-card__content"
-                },
-            },
-            save: ({ attributes }) => 
-                <div className="nhsuk-card nhsuk-card--care">
-                    <div className="nhsuk-card--care__heading-container">
-                        <h2 className="nhsuk-card--care__heading">
-                            <span>
-                                <span className="nhsuk-u-visually-hidden">Non-urgent advice: </span>
-                                <span className="nhsuk-card--care__heading-text">
-                                    <RichText.Content value={attributes.cardTitle} />
-                                </span>
-                            </span>
-                        </h2>
-                        <span className="nhsuk-card--care__arrow" aria-hidden="true"></span>
-                    </div>
-                    <div className="nhsuk-card__content">
-                        <RichText.Content
-                            multiline="p"
-                            value={attributes.cardText}
-                        />
-                    </div>
-                </div>
-        },
-        {
-            // Deprecated version 3
-            attributes: {
-                cardTitle: {
-                    type: "string",
-                    source: "html",
-                    selector: ".nhsuk-card--care__heading span"
-                },
-                cardText: {
-                    type: "array",
-                    source: "children",
-                    multiline: "p",
-                    selector: ".nhsuk-card__content"
-                },
-            },
-            save: ({ attributes }) => 
-                <div className="nhsuk-card nhsuk-card--care">
-                    <div className="nhsuk-card--care__heading-container">
-                        <h2 className="nhsuk-card--care__heading">
-                            <span>
-                                <span className="nhsuk-u-visually-hidden">Non-urgent advice: </span>
-                                <span className="nhsuk-card--care__heading-text">
-                                    <RichText.Content value={attributes.cardTitle} />
-                                </span>
-                            </span>
-                        </h2>
-                        <span className="nhsuk-card--care__arrow" aria-hidden="true"></span>
-                    </div>
-                    <div className="nhsuk-card__content">
-                        <RichText.Content
-                            multiline="p"
-                            value={attributes.cardText}
-                        />
-                    </div>
-                </div>
-        },
-		{
-			attributes: {
-				cardTitle: {
-					type: "string",
-					source: "html",
-					selector: ".nhsuk-card--care__heading-text",
-				},
-				cardText: {
-					type: "array",
-					source: "children",
-					multiline: "p",
-					selector: ".nhsuk-card__content",
-				},
-				withImage: {
-					type: "boolean",
-					default: false,
-				},
-			},
-			save: ({ attributes }) => {
-				const { cardTitle, cardText, withImage } = attributes;
-				return (
-					<div className="nhsuk-card nhsuk-card--care nhsuk-card--care--type">
-						<div className="nhsuk-card--care__heading-container">
-							<h2 className="nhsuk-card--care__heading">
-								<span>
-									<span className="nhsuk-u-visually-hidden">Non-urgent advice: </span>
-									<span className="nhsuk-card--care__heading-text">
-										{cardTitle ? cardTitle : 'Default Card Title'}
-									</span>
-								</span>
-							</h2>
-							<span className="nhsuk-card--care__arrow" aria-hidden="true"></span>
-						</div>
-						<div className="nhsuk-card__content">
-							{withImage === true && (
-								<InnerBlocks.Content />
-							)}
-							<RichText.Content
-								multiline="p"
-								value={cardText}
-							/>
-						</div>
-					</div>
-				);
-			},
-		},
     ],
 });
 
-// Registering block styles
-wp.blocks.registerBlockStyle('nhsblocks/care-card', {
+wp.blocks.registerBlockStyle('nhsblocks/are-card', {
     name: 'default',
     label: 'Standard Blue',
     isDefault: true

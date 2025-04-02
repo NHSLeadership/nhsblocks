@@ -109,6 +109,7 @@ function nhsblocks_register_blocks() {
 	register_block_type( 'nhsblocks/contentslistitem' );
 	register_block_type( 'nhsblocks/reviewdate' );
 	register_block_type( 'nhsblocks/stripesblock' );
+	register_block_type( 'nhsblocks/care-card' );
 
 	register_block_type( 'nhsblocks/pagination' );
 
@@ -267,13 +268,13 @@ function nhsblocks_register_style() {
 	$theme          = wp_get_theme(); // gets the current theme.
 	$parent         = wp_get_theme( get_template() );
 	$plugin_version = get_bloginfo( 'version' ); // WP version by default.
-	if ( 'Nightingale' !== $theme->name && ( 'Nightingale' !== $parent->name ) ) {
+	//if ( 'Nightingale' !== $theme->name && ( 'Nightingale' !== $parent->name ) ) {
 		$plugin_data = get_plugin_data( plugin_dir_path( __FILE__ ) . 'nhsblocks.php' );
 		if ( isset( $plugin_data['Name'] ) && ! empty( $plugin_data['Version'] ) && 'NHS Blocks' === $plugin_data['Name'] ) {
 			$plugin_version = $plugin_data['Version'];
 		}
 		wp_register_style( 'nhsblocks', plugins_url( 'style.min.css', __FILE__ ), array(), $plugin_version, 'all' );
-	}
+	//}
 }
 
 add_action( 'init', 'nhsblocks_register_style' ); // Pulls front end styling to standard wp process.
@@ -285,9 +286,9 @@ add_action( 'init', 'nhsblocks_register_style' ); // Pulls front end styling to 
  */
 function nhsblocks_enqueue_style() {
 	$theme = wp_get_theme(); // gets the current theme.
-	if ( 'Nightingale' !== $theme->name ) {
+	//if ( 'Nightingale' !== $theme->name ) {
 		wp_enqueue_style( 'nhsblocks' );
-	}
+	//}
 }
 
 add_action( 'wp_enqueue_scripts', 'nhsblocks_enqueue_style' );

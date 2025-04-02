@@ -26,3 +26,4 @@ import './14-filters';
 import './15-pagination';
 import './16-action-back-link/action-link';
 import './16-action-back-link/back-link';
+import './18-care-card';

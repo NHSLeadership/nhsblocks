@@ -7177,23 +7177,29 @@ b {
  *
  * 1. <a> needs to be white because the background colour is black.
  */
-.nhsuk-care-card--urgent .nhsuk-card--care__heading-container, .wp-block-nhsblocks-card1.is-style-urgent .nhsuk-card--care__heading-container,
+.nhsuk-care-card--urgent .nhsuk-card--care__heading-container, .wp-block-nhsblocks-care-card.is-style-urgent .nhsuk-card--care__heading-container,
+.wp-block-nhsblocks-card1.is-style-urgent .nhsuk-card--care__heading-container,
 .nhsuk-card.nhsuk-card--care--urgent .nhsuk-card--care__heading-container {
   background-color: #d5281b;
   color: #ffffff;
 }
 @media print {
-  .nhsuk-care-card--urgent, .wp-block-nhsblocks-card1.is-style-urgent,
+  .nhsuk-care-card--urgent, .wp-block-nhsblocks-care-card.is-style-urgent,
+  .wp-block-nhsblocks-card1.is-style-urgent,
   .nhsuk-card.nhsuk-card--care--urgent {
     border: 6px solid #212b32;
     color: #212b32;
     page-break-inside: avoid;
   }
 }
-.nhsuk-care-card--urgent .nhsuk-care-card__arrow:before, .wp-block-nhsblocks-card1.is-style-urgent .nhsuk-care-card__arrow:before, .nhsuk-care-card--urgent .nhsuk-care-card__arrow:after, .wp-block-nhsblocks-card1.is-style-urgent .nhsuk-care-card__arrow:after,
+.nhsuk-care-card--urgent .nhsuk-care-card__arrow:before, .wp-block-nhsblocks-care-card.is-style-urgent .nhsuk-care-card__arrow:before,
+.wp-block-nhsblocks-card1.is-style-urgent .nhsuk-care-card__arrow:before, .nhsuk-care-card--urgent .nhsuk-care-card__arrow:after, .wp-block-nhsblocks-care-card.is-style-urgent .nhsuk-care-card__arrow:after,
+.wp-block-nhsblocks-card1.is-style-urgent .nhsuk-care-card__arrow:after,
 .nhsuk-care-card--urgent .nhsuk-card--care__arrow:before,
+.wp-block-nhsblocks-care-card.is-style-urgent .nhsuk-card--care__arrow:before,
 .wp-block-nhsblocks-card1.is-style-urgent .nhsuk-card--care__arrow:before,
 .nhsuk-care-card--urgent .nhsuk-card--care__arrow:after,
+.wp-block-nhsblocks-care-card.is-style-urgent .nhsuk-card--care__arrow:after,
 .wp-block-nhsblocks-card1.is-style-urgent .nhsuk-card--care__arrow:after,
 .nhsuk-card.nhsuk-card--care--urgent .nhsuk-care-card__arrow:before,
 .nhsuk-card.nhsuk-card--care--urgent .nhsuk-care-card__arrow:after,
@@ -7202,23 +7208,29 @@ b {
   border-color: #d5281b;
 }
 
-.nhsuk-care-card--immediate .nhsuk-card--care__heading-container, .wp-block-nhsblocks-card1.is-style-immediate .nhsuk-card--care__heading-container,
+.nhsuk-care-card--immediate .nhsuk-card--care__heading-container, .wp-block-nhsblocks-care-card.is-style-immediate .nhsuk-card--care__heading-container,
+.wp-block-nhsblocks-card1.is-style-immediate .nhsuk-card--care__heading-container,
 .nhsuk-card.nhsuk-card--care--emergency .nhsuk-card--care__heading-container {
   background-color: #d5281b;
   color: #ffffff;
 }
 @media print {
-  .nhsuk-care-card--immediate, .wp-block-nhsblocks-card1.is-style-immediate,
+  .nhsuk-care-card--immediate, .wp-block-nhsblocks-care-card.is-style-immediate,
+  .wp-block-nhsblocks-card1.is-style-immediate,
   .nhsuk-card.nhsuk-card--care--emergency {
     border: 8px solid #212b32;
     color: #212b32;
     page-break-inside: avoid;
   }
 }
-.nhsuk-care-card--immediate .nhsuk-care-card__arrow:before, .wp-block-nhsblocks-card1.is-style-immediate .nhsuk-care-card__arrow:before, .nhsuk-care-card--immediate .nhsuk-care-card__arrow:after, .wp-block-nhsblocks-card1.is-style-immediate .nhsuk-care-card__arrow:after,
+.nhsuk-care-card--immediate .nhsuk-care-card__arrow:before, .wp-block-nhsblocks-care-card.is-style-immediate .nhsuk-care-card__arrow:before,
+.wp-block-nhsblocks-card1.is-style-immediate .nhsuk-care-card__arrow:before, .nhsuk-care-card--immediate .nhsuk-care-card__arrow:after, .wp-block-nhsblocks-care-card.is-style-immediate .nhsuk-care-card__arrow:after,
+.wp-block-nhsblocks-card1.is-style-immediate .nhsuk-care-card__arrow:after,
 .nhsuk-care-card--immediate .nhsuk-card--care__arrow:before,
+.wp-block-nhsblocks-care-card.is-style-immediate .nhsuk-card--care__arrow:before,
 .wp-block-nhsblocks-card1.is-style-immediate .nhsuk-card--care__arrow:before,
 .nhsuk-care-card--immediate .nhsuk-card--care__arrow:after,
+.wp-block-nhsblocks-care-card.is-style-immediate .nhsuk-card--care__arrow:after,
 .wp-block-nhsblocks-card1.is-style-immediate .nhsuk-card--care__arrow:after,
 .nhsuk-card.nhsuk-card--care--emergency .nhsuk-care-card__arrow:before,
 .nhsuk-card.nhsuk-card--care--emergency .nhsuk-care-card__arrow:after,
@@ -7226,8 +7238,10 @@ b {
 .nhsuk-card.nhsuk-card--care--emergency .nhsuk-card--care__arrow:after {
   border-color: #d5281b;
 }
-.nhsuk-care-card--immediate .nhsuk-care-card__content, .wp-block-nhsblocks-card1.is-style-immediate .nhsuk-care-card__content,
+.nhsuk-care-card--immediate .nhsuk-care-card__content, .wp-block-nhsblocks-care-card.is-style-immediate .nhsuk-care-card__content,
+.wp-block-nhsblocks-card1.is-style-immediate .nhsuk-care-card__content,
 .nhsuk-care-card--immediate .nhsuk-card__content,
+.wp-block-nhsblocks-care-card.is-style-immediate .nhsuk-card__content,
 .wp-block-nhsblocks-card1.is-style-immediate .nhsuk-card__content,
 .nhsuk-card.nhsuk-card--care--emergency .nhsuk-care-card__content,
 .nhsuk-card.nhsuk-card--care--emergency .nhsuk-card__content {
@@ -7235,38 +7249,47 @@ b {
   border: 0;
   color: #ffffff;
 }
-.nhsuk-care-card--immediate .nhsuk-care-card__content a, .wp-block-nhsblocks-card1.is-style-immediate .nhsuk-care-card__content a,
+.nhsuk-care-card--immediate .nhsuk-care-card__content a, .wp-block-nhsblocks-care-card.is-style-immediate .nhsuk-care-card__content a,
+.wp-block-nhsblocks-card1.is-style-immediate .nhsuk-care-card__content a,
 .nhsuk-care-card--immediate .nhsuk-card__content a,
+.wp-block-nhsblocks-care-card.is-style-immediate .nhsuk-card__content a,
 .wp-block-nhsblocks-card1.is-style-immediate .nhsuk-card__content a,
 .nhsuk-card.nhsuk-card--care--emergency .nhsuk-care-card__content a,
 .nhsuk-card.nhsuk-card--care--emergency .nhsuk-card__content a {
   color: #ffffff;
   /* [1] */
 }
-.nhsuk-care-card--immediate .nhsuk-care-card__content a:focus, .wp-block-nhsblocks-card1.is-style-immediate .nhsuk-care-card__content a:focus,
+.nhsuk-care-card--immediate .nhsuk-care-card__content a:focus, .wp-block-nhsblocks-care-card.is-style-immediate .nhsuk-care-card__content a:focus,
+.wp-block-nhsblocks-card1.is-style-immediate .nhsuk-care-card__content a:focus,
 .nhsuk-care-card--immediate .nhsuk-card__content a:focus,
+.wp-block-nhsblocks-care-card.is-style-immediate .nhsuk-card__content a:focus,
 .wp-block-nhsblocks-card1.is-style-immediate .nhsuk-card__content a:focus,
 .nhsuk-card.nhsuk-card--care--emergency .nhsuk-care-card__content a:focus,
 .nhsuk-card.nhsuk-card--care--emergency .nhsuk-card__content a:focus {
   color: #212b32;
   /* [1] */
 }
-.nhsuk-care-card--immediate .nhsuk-details, .wp-block-nhsblocks-card1.is-style-immediate .nhsuk-details,
+.nhsuk-care-card--immediate .nhsuk-details, .wp-block-nhsblocks-care-card.is-style-immediate .nhsuk-details,
+.wp-block-nhsblocks-card1.is-style-immediate .nhsuk-details,
 .nhsuk-care-card--immediate .nhsuk-details__summary,
+.wp-block-nhsblocks-care-card.is-style-immediate .nhsuk-details__summary,
 .wp-block-nhsblocks-card1.is-style-immediate .nhsuk-details__summary,
 .nhsuk-card.nhsuk-card--care--emergency .nhsuk-details,
 .nhsuk-card.nhsuk-card--care--emergency .nhsuk-details__summary {
   color: #ffffff;
 }
-.nhsuk-care-card--immediate .nhsuk-details__summary:hover, .wp-block-nhsblocks-card1.is-style-immediate .nhsuk-details__summary:hover,
+.nhsuk-care-card--immediate .nhsuk-details__summary:hover, .wp-block-nhsblocks-care-card.is-style-immediate .nhsuk-details__summary:hover,
+.wp-block-nhsblocks-card1.is-style-immediate .nhsuk-details__summary:hover,
 .nhsuk-card.nhsuk-card--care--emergency .nhsuk-details__summary:hover {
   color: #ffffff;
 }
-.nhsuk-care-card--immediate .nhsuk-details__summary:focus, .wp-block-nhsblocks-card1.is-style-immediate .nhsuk-details__summary:focus,
+.nhsuk-care-card--immediate .nhsuk-details__summary:focus, .wp-block-nhsblocks-care-card.is-style-immediate .nhsuk-details__summary:focus,
+.wp-block-nhsblocks-card1.is-style-immediate .nhsuk-details__summary:focus,
 .nhsuk-card.nhsuk-card--care--emergency .nhsuk-details__summary:focus {
   color: #212b32;
 }
-.nhsuk-care-card--immediate .nhsuk-action-link__link .nhsuk-icon__arrow-right-circle, .wp-block-nhsblocks-card1.is-style-immediate .nhsuk-action-link__link .nhsuk-icon__arrow-right-circle,
+.nhsuk-care-card--immediate .nhsuk-action-link__link .nhsuk-icon__arrow-right-circle, .wp-block-nhsblocks-care-card.is-style-immediate .nhsuk-action-link__link .nhsuk-icon__arrow-right-circle,
+.wp-block-nhsblocks-card1.is-style-immediate .nhsuk-action-link__link .nhsuk-icon__arrow-right-circle,
 .nhsuk-card.nhsuk-card--care--emergency .nhsuk-action-link__link .nhsuk-icon__arrow-right-circle {
   fill: #ffffff;
   /* [8] */
@@ -7278,17 +7301,23 @@ b {
   color: #ffffff;
 }
 
+.wp-block-nhsblocks-care-card.is-style-urgent,
 .wp-block-nhsblocks-card1.is-style-urgent {
   /* urgent infocard */
 }
+.wp-block-nhsblocks-care-card.is-style-urgent .nhsuk-care-card__heading-container,
 .wp-block-nhsblocks-card1.is-style-urgent .nhsuk-care-card__heading-container {
   background-color: #d5281b;
 }
 
+.wp-block-nhsblocks-care-card.is-style-immediate .nhsuk-care-card__heading-container,
+.wp-block-nhsblocks-care-card.is-style-immediate .nhsuk-card--care__heading-container,
 .wp-block-nhsblocks-card1.is-style-immediate .nhsuk-care-card__heading-container,
 .wp-block-nhsblocks-card1.is-style-immediate .nhsuk-card--care__heading-container {
   background-color: #d5281b;
 }
+.wp-block-nhsblocks-care-card.is-style-immediate .nhsuk-care-card__content,
+.wp-block-nhsblocks-care-card.is-style-immediate .nhsuk-card__content,
 .wp-block-nhsblocks-card1.is-style-immediate .nhsuk-care-card__content,
 .wp-block-nhsblocks-card1.is-style-immediate .nhsuk-card__content {
   background-color: #212b32;
@@ -7786,12 +7815,15 @@ figure.is-style-nhsuk-table-responsive figcaption {
 .nhsuk-details.is-style-expander { /* expander reveal style*/ }
 
 /* warning callout */
+.wp-block-nhsblocks-care-card.is-style-warning-callout,
 .wp-block-nhsblocks-card1.is-style-warning-callout,
 .nhsuk-care-card.is-style-warning-callout,
 .nhsuk-card.nhsuk-warning-callout {
   background-color: #fff9c4;
   border: 1px solid #ffeb3b;
 }
+.wp-block-nhsblocks-care-card.is-style-warning-callout .nhsuk-care-card__heading-container,
+.wp-block-nhsblocks-care-card.is-style-warning-callout .nhsuk-card--care__heading-container,
 .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container,
 .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container,
 .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container,
@@ -7805,6 +7837,8 @@ figure.is-style-nhsuk-table-responsive figcaption {
   padding: 8px 32px;
   position: relative;
 }
+.wp-block-nhsblocks-care-card.is-style-warning-callout .nhsuk-care-card__heading-container h3,
+.wp-block-nhsblocks-care-card.is-style-warning-callout .nhsuk-card--care__heading-container h3,
 .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container h3,
 .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container h3,
 .nhsuk-care-card.is-style-warning-callout .nhsuk-care-card__heading-container h3,
@@ -7814,6 +7848,10 @@ figure.is-style-nhsuk-table-responsive figcaption {
   background-color: #ffeb3b;
   color: #212b32 !important;
 }
+.wp-block-nhsblocks-care-card.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
+.wp-block-nhsblocks-care-card.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
+.wp-block-nhsblocks-care-card.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
+.wp-block-nhsblocks-care-card.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span,
 .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-card--care__heading span,
 .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__heading-container .nhsuk-care-card__heading span,
 .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__heading-container .nhsuk-card--care__heading span,
@@ -7828,6 +7866,8 @@ figure.is-style-nhsuk-table-responsive figcaption {
 .nhsuk-card.nhsuk-warning-callout .nhsuk-card--care__heading-container .nhsuk-care-card__heading span {
   color: #212b32;
 }
+.wp-block-nhsblocks-care-card.is-style-warning-callout .nhsuk-card--care__arrow,
+.wp-block-nhsblocks-care-card.is-style-warning-callout .nhsuk-care-card__arrow,
 .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card--care__arrow,
 .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__arrow,
 .nhsuk-care-card.is-style-warning-callout .nhsuk-card--care__arrow,
@@ -7836,6 +7876,8 @@ figure.is-style-nhsuk-table-responsive figcaption {
 .nhsuk-card.nhsuk-warning-callout .nhsuk-care-card__arrow {
   display: none;
 }
+.wp-block-nhsblocks-care-card.is-style-warning-callout .nhsuk-card__content,
+.wp-block-nhsblocks-care-card.is-style-warning-callout .nhsuk-care-card__content,
 .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-card__content,
 .wp-block-nhsblocks-card1.is-style-warning-callout .nhsuk-care-card__content,
 .nhsuk-care-card.is-style-warning-callout .nhsuk-card__content,

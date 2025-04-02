@@ -188,14 +188,14 @@
   background-color: $color_nhsuk-blue;
   color: $color_nhsuk-white;
 }
-
+.wp-block-nhsblocks-care-card.is-style-urgent,
 .wp-block-nhsblocks-card1.is-style-urgent {
   /* urgent infocard */
   .nhsuk-care-card__heading-container {
     background-color: $color_nhsuk-red;
   }
 }
-
+.wp-block-nhsblocks-care-card.is-style-immediate,
 .wp-block-nhsblocks-card1.is-style-immediate {
 
   .nhsuk-care-card__heading-container,
@@ -211,9 +211,11 @@
 }
 
 /* urgent infocard */
+.wp-block-nhsblocks-care-card.is-style-urgent,
 .wp-block-nhsblocks-card1.is-style-urgent {
   @extend .nhsuk-care-card--urgent;
 }
+.wp-block-nhsblocks-care-card.is-style-immediate,
 .wp-block-nhsblocks-card1.is-style-immediate {
   @extend .nhsuk-care-card--immediate;
 }
