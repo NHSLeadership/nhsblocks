@@ -8,8 +8,8 @@
  * Requires at least: 5.0
  * Tested up to: 6.2
  *
- * Version: 1.3.18
- * Stable tag: 1.3.18
+ * Version: 1.3.17
+ * Stable tag: 1.3.17
  *
  * @package nhsblocks
  */
@@ -111,6 +111,7 @@ function nhsblocks_register_blocks() {
 	register_block_type( 'nhsblocks/stripesblock' );
 
 	register_block_type( 'nhsblocks/pagination' );
+	register_block_type( 'nhsblocks/tabs' );
 
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		/**
@@ -413,3 +414,12 @@ function nhsblocks_hero_footer() {
 }
 
 add_action( 'wp_footer', 'nhsblocks_hero_footer' );
+
+function enqueue_block_editor_assets() {
+    wp_enqueue_style(
+        'nhsblocks-editor-style',
+        plugins_url( 'style.min.css', __FILE__ ), // Path to your editor styles
+        array( 'wp-edit-blocks' )
+    );
+}
+add_action( 'enqueue_block_editor_assets', 'enqueue_block_editor_assets' );
