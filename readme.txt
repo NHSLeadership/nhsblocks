@@ -58,6 +58,7 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 = 1.3.18 =
  * Security update
  * Upgrade Nhsuk Frontend framework to 9.1.0
+ * New tabs block initial version
 
 = 1.3.17 =
  * Fix error when trying to activate this plugin before theme selection
