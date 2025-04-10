@@ -19189,7 +19189,7 @@
     line-height: 1.25;
   }
 }
-.edit-post-visual-editor .nhsuk-tabs__list-item:before, .block-editor-block-styles .nhsuk-tabs__list-item:before, .block-editor-inserter__menu-help-panel .nhsuk-tabs__list-item:before {
+.edit-post-visual-editor .nhsuk-tabs__list-item::before, .block-editor-block-styles .nhsuk-tabs__list-item::before, .block-editor-inserter__menu-help-panel .nhsuk-tabs__list-item::before {
   color: #212b32;
   content: "—";
   margin-left: -32px;
@@ -19239,7 +19239,7 @@
     border-bottom: 1px solid #d8dde0;
     margin-bottom: 0;
   }
-  .edit-post-visual-editor .js-enabled .nhsuk-tabs__list:after, .block-editor-block-styles .js-enabled .nhsuk-tabs__list:after, .block-editor-inserter__menu-help-panel .js-enabled .nhsuk-tabs__list:after {
+  .edit-post-visual-editor .js-enabled .nhsuk-tabs__list::after, .block-editor-block-styles .js-enabled .nhsuk-tabs__list::after, .block-editor-inserter__menu-help-panel .js-enabled .nhsuk-tabs__list::after {
     clear: both;
     content: "";
     display: block;
@@ -19257,7 +19257,7 @@
     position: relative;
     text-align: center;
   }
-  .edit-post-visual-editor .js-enabled .nhsuk-tabs__list-item:before, .block-editor-block-styles .js-enabled .nhsuk-tabs__list-item:before, .block-editor-inserter__menu-help-panel .js-enabled .nhsuk-tabs__list-item:before {
+  .edit-post-visual-editor .js-enabled .nhsuk-tabs__list-item::before, .block-editor-block-styles .js-enabled .nhsuk-tabs__list-item::before, .block-editor-inserter__menu-help-panel .js-enabled .nhsuk-tabs__list-item::before {
     content: none;
   }
   .edit-post-visual-editor .js-enabled .nhsuk-tabs__list-item--selected, .block-editor-block-styles .js-enabled .nhsuk-tabs__list-item--selected, .block-editor-inserter__menu-help-panel .js-enabled .nhsuk-tabs__list-item--selected {
@@ -19287,7 +19287,7 @@
   .edit-post-visual-editor .js-enabled .nhsuk-tabs__tab:active, .edit-post-visual-editor .js-enabled .nhsuk-tabs__tab:focus, .block-editor-block-styles .js-enabled .nhsuk-tabs__tab:active, .block-editor-block-styles .js-enabled .nhsuk-tabs__tab:focus, .block-editor-inserter__menu-help-panel .js-enabled .nhsuk-tabs__tab:active, .block-editor-inserter__menu-help-panel .js-enabled .nhsuk-tabs__tab:focus {
     color: #212b32;
   }
-  .edit-post-visual-editor .js-enabled .nhsuk-tabs__tab:after, .block-editor-block-styles .js-enabled .nhsuk-tabs__tab:after, .block-editor-inserter__menu-help-panel .js-enabled .nhsuk-tabs__tab:after {
+  .edit-post-visual-editor .js-enabled .nhsuk-tabs__tab::after, .block-editor-block-styles .js-enabled .nhsuk-tabs__tab::after, .block-editor-inserter__menu-help-panel .js-enabled .nhsuk-tabs__tab::after {
     bottom: 0;
     content: "";
     left: 0;
