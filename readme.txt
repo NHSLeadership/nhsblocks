@@ -4,7 +4,7 @@ Tags: gutenberg, blocks, nhs
 Plugin Name:: NHS Blocks
 Plugin URI: https://digital.leadershipacademy.nhs.uk/digital-capabilities/websites/nhs-blocks-user-guide/
 Requires at least: 5.3
-Tested up to: 6.6
+Tested up to: 6.7
 Stable tag: 1.3.18
 Requires PHP: 5.6
 License: GPLv3 or later
@@ -57,7 +57,6 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 
 = 1.3.18 =
  * Security update
- * Upgrade Nhsuk Frontend framework to 9.1.0
 
 = 1.3.17 =
  * Fix error when trying to activate this plugin before theme selection
