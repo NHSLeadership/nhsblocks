@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: nhsblocks
 Tags: NHS, NHS Digital, NHS Frontend, National Health Service, Leadership Academy
 Description: Gutenberg native custom blocks companion plugin for the NHS Nightingale theme (can also be standalone).
-Version: 1.3.17
+Version: 1.3.18
 
 **********************************************************************************************/
 /* stylelint-disable color-no-hex */
@@ -415,6 +415,15 @@ ol, ul, .nhsuk-list {
 @media (min-width: 40.0625em) {
   ol, ul, .nhsuk-list {
     margin-bottom: 24px;
+  }
+}
+ol ol, ul ol, ol ul, ul ul, .nhsuk-list ol, .nhsuk-list ul, ol .nhsuk-list, ul .nhsuk-list, .nhsuk-list .nhsuk-list {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+@media (min-width: 40.0625em) {
+  ol ol, ul ol, ol ul, ul ul, .nhsuk-list ol, .nhsuk-list ul, ol .nhsuk-list, ul .nhsuk-list, .nhsuk-list .nhsuk-list {
+    margin-top: 8px;
   }
 }
 
@@ -2572,25 +2581,6 @@ b {
     display: none;
   }
 }
-.nhsuk-breadcrumb .nhsuk-icon__chevron-right {
-  fill: #aeb7bd;
-  height: 18px;
-  position: relative;
-  top: 5px;
-  width: 18px;
-}
-@media (min-width: 61.875em) {
-  .nhsuk-breadcrumb .nhsuk-icon__chevron-right {
-    margin: 0 3px 0 5px;
-  }
-}
-.nhsuk-breadcrumb .nhsuk-icon__chevron-left {
-  float: left;
-  height: 24px;
-  left: -8px;
-  position: relative;
-  width: 24px;
-}
 .nhsuk-breadcrumb + .nhsuk-width-container .nhsuk-main-wrapper {
   padding-top: 0;
 }
@@ -2713,7 +2703,7 @@ b {
   background-color: #007f3b;
   border: 2px solid transparent;
   border-radius: 4px;
-  box-shadow: 0 4px 0 #00401e;
+  box-shadow: 0 4px 0 rgb(0, 63.5, 29.5);
   box-sizing: border-box;
   color: #ffffff;
   cursor: pointer;
@@ -2761,7 +2751,7 @@ b {
   padding: 0;
 }
 .nhsuk-button:hover, .wp-block-button__link:hover, .wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:hover {
-  background-color: #00662f;
+  background-color: rgb(0, 101.6, 47.2);
 }
 .nhsuk-button:focus, .wp-block-button__link:focus, .wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:focus {
   background: #ffeb3b;
@@ -2776,7 +2766,7 @@ b {
   color: #ffffff;
 }
 .nhsuk-button:active, .wp-block-button__link:active, .wp-block-file__button:active, .wp-block-file a.wp-block-file__button:active {
-  background: #00401e;
+  background: rgb(0, 63.5, 29.5);
   box-shadow: none;
   color: #ffffff;
   top: 4px;
@@ -2803,7 +2793,7 @@ b {
   box-shadow: 0 4px 0 #263139;
 }
 .nhsuk-button--secondary:hover, .nhsuk-button.is-style-secondary:hover, .is-style-secondary.wp-block-button__link:hover, .is-style-secondary.wp-block-file__button:hover {
-  background-color: #384853;
+  background-color: rgb(55.6, 71.6947368421, 83.4);
 }
 .nhsuk-button--secondary:focus, .nhsuk-button.is-style-secondary:focus, .is-style-secondary.wp-block-button__link:focus, .is-style-secondary.wp-block-file__button:focus {
   background: #ffeb3b;
@@ -2827,7 +2817,7 @@ b {
   color: #212b32;
 }
 .nhsuk-button--reverse:hover, .nhsuk-button.is-style-reverse:hover, .is-style-reverse.wp-block-button__link:hover, .is-style-reverse.wp-block-file__button:hover {
-  background-color: #f2f2f2;
+  background-color: rgb(242.25, 242.25, 242.25);
   color: #212b32;
 }
 .nhsuk-button--reverse:focus, .nhsuk-button.is-style-reverse:focus, .is-style-reverse.wp-block-button__link:focus, .is-style-reverse.wp-block-file__button:focus {
@@ -2853,6 +2843,29 @@ b {
 }
 .nhsuk-button--reverse.nhsuk-button--disabled:focus, .nhsuk-button--disabled.nhsuk-button.is-style-reverse:focus, .nhsuk-button--disabled.is-style-reverse.wp-block-button__link:focus, .nhsuk-button--disabled.is-style-reverse.wp-block-file__button:focus {
   background-color: #ffffff;
+}
+
+.nhsuk-button--warning {
+  background-color: #d5281b;
+  box-shadow: 0 4px 0 rgb(106.5, 20, 13.5);
+}
+.nhsuk-button--warning:hover {
+  background-color: rgb(167.7375, 31.5, 21.2625);
+}
+.nhsuk-button--warning:focus {
+  background: #ffeb3b;
+  box-shadow: 0 4px 0 #212b32;
+  color: #212b32;
+  outline: 4px solid transparent;
+}
+.nhsuk-button--warning:active {
+  background: rgb(106.5, 20, 13.5);
+  box-shadow: none;
+  color: #ffffff;
+  top: 4px;
+}
+.nhsuk-button--warning.nhsuk-button--disabled {
+  background-color: #d5281b;
 }
 
 /**
@@ -2899,7 +2912,7 @@ b {
 .nhsuk-button[disabled]:active,
 [disabled].wp-block-button__link:active,
 [disabled].wp-block-file__button:active {
-  box-shadow: 0 4px 0 #00401e;
+  box-shadow: 0 4px 0 rgb(0, 63.5, 29.5);
   top: 0;
 }
 
@@ -3314,6 +3327,7 @@ b {
   display: block;
   fill: #005eb8;
   margin-top: -8px;
+  pointer-events: none;
   position: absolute;
   right: 24px;
   top: 50%;
@@ -3975,7 +3989,7 @@ b {
  */
 .nhsuk-error-summary {
   padding: 16px;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
   border: 4px solid #d5281b;
 }
 @media (min-width: 40.0625em) {
@@ -3985,7 +3999,7 @@ b {
 }
 @media (min-width: 40.0625em) {
   .nhsuk-error-summary {
-    margin-bottom: 56px;
+    margin-bottom: 48px;
   }
 }
 @media (min-width: 40.0625em) {
@@ -4255,6 +4269,7 @@ b {
 @media (min-width: 48.0625em) {
   .nhsuk-footer {
     display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -4379,9 +4394,20 @@ b {
 }
 
 .nhsuk-header__container {
-  margin: 0 16px;
-  max-width: 960px;
+  margin: 0 16px; /* [1] */
+  max-width: 960px; /* [2] */
+  /* [4] */
   padding: 20px 0;
+}
+@media (min-width: 48.0625em) {
+  .nhsuk-header__container {
+    margin: 0 32px; /* [3] */
+  }
+}
+@media (min-width: 1024px) {
+  .nhsuk-header__container {
+    margin: 0 auto;
+  }
 }
 @media (max-width: 40.0525em) {
   .nhsuk-header__container {
@@ -4393,12 +4419,6 @@ b {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
     justify-content: space-between;
-    margin: 0 32px;
-  }
-}
-@media (min-width: 61.875em) {
-  .nhsuk-header__container {
-    margin: 0 auto;
   }
 }
 
@@ -4451,7 +4471,7 @@ b {
   display: block;
 }
 .nhsuk-header__link:hover .nhsuk-logo {
-  box-shadow: 0 0 0 4px #003d78;
+  box-shadow: 0 0 0 4px rgb(0, 61.1, 119.6);
 }
 .nhsuk-header__link:focus {
   box-shadow: none;
@@ -4557,6 +4577,7 @@ b {
 .nhsuk-search__input::placeholder {
   color: #4c6272;
   font-size: 16px;
+  opacity: 1;
 }
 .nhsuk-search__input:-ms-input-placeholder {
   color: #4c6272;
@@ -4631,7 +4652,7 @@ b {
     width: 27px;
   }
   .nhsuk-search__submit:hover {
-    background-color: #003d78;
+    background-color: rgb(0, 61.1, 119.6);
     border: 1px solid #ffffff;
   }
   .nhsuk-search__submit:hover .nhsuk-icon {
@@ -4666,7 +4687,7 @@ b {
     width: 27px;
   }
   .nhsuk-search__submit:hover {
-    background-color: #003d78;
+    background-color: rgb(0, 61.1, 119.6);
     border: 1px solid #ffffff;
   }
   .nhsuk-search__submit:hover .nhsuk-icon__search {
@@ -4906,6 +4927,12 @@ b {
 @media (min-width: 48.0625em) {
   .nhsuk-header__navigation-item--home {
     display: none;
+  }
+}
+
+@media (min-width: 48.0625em) {
+  .nhsuk-header__navigation-list--left-aligned {
+    justify-content: initial;
   }
 }
 
@@ -5230,7 +5257,7 @@ b {
   border: 2px solid #4c6272; /* 2 */
   border-radius: 0;
   box-sizing: border-box;
-  height: 40px;
+  min-height: 40px;
   margin-top: 0;
   padding: 4px;
   width: 100%;
@@ -5319,7 +5346,7 @@ b {
   cursor: default;
   display: inline-block;
   flex: 0 0 auto;
-  height: 40px;
+  min-height: 40px;
   min-width: 2.5rem;
   padding: 4px;
   text-align: center;
@@ -5450,14 +5477,18 @@ b {
 }
 
 /* Modifiers that make labels look more like their equivalent headings */
+.nhsuk-label--xl,
+.nhsuk-label--l,
+.nhsuk-label--m {
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
 .nhsuk-label--xl {
   font-size: 32px;
   font-size: 2rem;
   line-height: 1.25;
-  display: block;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 40px;
 }
 @media (min-width: 40.0625em) {
   .nhsuk-label--xl {
@@ -5472,20 +5503,11 @@ b {
     line-height: 1.15;
   }
 }
-@media (min-width: 40.0625em) {
-  .nhsuk-label--xl {
-    margin-bottom: 48px;
-  }
-}
 
 .nhsuk-label--l {
   font-size: 24px;
   font-size: 1.5rem;
   line-height: 1.33333;
-  display: block;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 16px;
 }
 @media (min-width: 40.0625em) {
   .nhsuk-label--l {
@@ -5500,20 +5522,11 @@ b {
     line-height: 1.05;
   }
 }
-@media (min-width: 40.0625em) {
-  .nhsuk-label--l {
-    margin-bottom: 24px;
-  }
-}
 
 .nhsuk-label--m {
   font-size: 20px;
   font-size: 1.25rem;
   line-height: 1.4;
-  display: block;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 16px;
 }
 @media (min-width: 40.0625em) {
   .nhsuk-label--m {
@@ -5528,20 +5541,13 @@ b {
     line-height: 1.15;
   }
 }
-@media (min-width: 40.0625em) {
-  .nhsuk-label--m {
-    margin-bottom: 24px;
-  }
-}
 
 .nhsuk-label--s {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
-  display: block;
   font-weight: 600;
   margin-top: 0;
-  margin-bottom: 16px;
 }
 @media (min-width: 40.0625em) {
   .nhsuk-label--s {
@@ -5554,11 +5560,6 @@ b {
   .nhsuk-label--s {
     font-size: 14pt;
     line-height: 1.15;
-  }
-}
-@media (min-width: 40.0625em) {
-  .nhsuk-label--s {
-    margin-bottom: 24px;
   }
 }
 
@@ -5910,6 +5911,14 @@ b {
 /* ==========================================================================
    COMPONENTS/ #SELECT
    ========================================================================== */
+/**
+ * Select input sizing
+ * 1. Uses rems so that safari input scales with font size
+ * 2. This min-width was chosen because:
+ *    - it makes the Select wider than it is tall (which is what users expect)
+ *    - 20ex + 3ex matches the 'width-10' variant of the input component
+ *    - it fits comfortably on screens as narrow as 240px wide
+ */
 .nhsuk-select {
   font-weight: 400;
   font-size: 16px;
@@ -5917,7 +5926,8 @@ b {
   line-height: 1.5;
   border: 2px solid #4c6272;
   box-sizing: border-box;
-  height: 40px;
+  height: 2.5rem; /* [1] */
+  min-width: 23ex; /* [2] */
   max-width: 100%;
   padding: 4px;
 }
@@ -6366,8 +6376,8 @@ b {
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1;
-  background-color: #0055a6;
-  border: 1px solid #0055a6;
+  background-color: rgb(0, 84.6, 165.6);
+  border: 1px solid rgb(0, 84.6, 165.6);
   color: #ffffff;
   display: inline-block;
   outline: 2px solid transparent;
@@ -6401,57 +6411,57 @@ b {
 }
 
 .nhsuk-tag--grey, .nhsuk-tag.is-style-grey {
-  background-color: #dbe0e3;
-  border-color: #354550;
-  color: #354550;
+  background-color: rgb(219.2, 223.6, 226.8);
+  border-color: rgb(53.2, 68.6, 79.8);
+  color: rgb(53.2, 68.6, 79.8);
 }
 
 .nhsuk-tag--green, .nhsuk-tag.is-style-green {
-  background-color: #cce5d8;
-  border-color: #004c23;
-  color: #004c23;
+  background-color: rgb(204, 229.4, 215.8);
+  border-color: rgb(0, 76.2, 35.4);
+  color: rgb(0, 76.2, 35.4);
 }
 
 .nhsuk-tag--aqua-green, .nhsuk-tag.is-style-aqua-green {
-  background-color: #ccedeb;
-  border-color: #00524d;
-  color: #00524d;
+  background-color: rgb(204, 236.8, 234.6);
+  border-color: rgb(0, 82, 76.5);
+  color: rgb(0, 82, 76.5);
 }
 
 .nhsuk-tag--blue {
-  background-color: #ccdff1;
-  border-color: #004281;
-  color: #004281;
+  background-color: rgb(204, 222.8, 240.8);
+  border-color: rgb(0, 65.8, 128.8);
+  color: rgb(0, 65.8, 128.8);
 }
 
 .nhsuk-tag--purple, .nhsuk-tag.is-style-purple {
-  background-color: #d6cce3;
-  border-color: #240050;
-  color: #240050;
+  background-color: rgb(214.2, 204, 226.8);
+  border-color: rgb(35.7, 0, 79.8);
+  color: rgb(35.7, 0, 79.8);
 }
 
 .nhsuk-tag--pink, .nhsuk-tag.is-style-pink {
-  background-color: #efd3e3;
-  border-color: #57133a;
-  color: #57133a;
+  background-color: rgb(238.8, 211.4, 227);
+  border-color: rgb(87, 18.5, 57.5);
+  color: rgb(87, 18.5, 57.5);
 }
 
 .nhsuk-tag--red, .nhsuk-tag.is-style-red {
-  background-color: #f7d4d1;
-  border-color: #6b140e;
-  color: #6b140e;
+  background-color: rgb(246.6, 212, 209.4);
+  border-color: rgb(106.5, 20, 13.5);
+  color: rgb(106.5, 20, 13.5);
 }
 
 .nhsuk-tag--orange, .nhsuk-tag.is-style-orange {
-  background-color: #ffdc8e;
-  border-color: #4d3708;
-  color: #4d3708;
+  background-color: rgb(255, 219.5, 141.5);
+  border-color: rgb(76.5, 55.2, 8.4);
+  color: rgb(76.5, 55.2, 8.4);
 }
 
 .nhsuk-tag--yellow, .nhsuk-tag.is-style-yellow {
   background-color: #fff59d;
-  border-color: #4d4712;
-  color: #4d4712;
+  border-color: rgb(76.5, 70.5, 17.7);
+  color: rgb(76.5, 70.5, 17.7);
 }
 
 /* Remove tag border
