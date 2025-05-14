@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "cssnano": "^6.0.1",
-    "nhsuk-frontend": "^8.0.2",
+    "nhsuk-frontend": "^9.5.2",
     "postcss": "^8.4.31",
     "postcss-cli": "^10.1.0",
     "sass": "^1.69.5"
