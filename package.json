@@ -3,7 +3,7 @@
   "license": "GPL-3.0-or-later",
   "main": "src/index.js",
   "devDependencies": {
-    "@wordpress/scripts": "^30.7.0",
+    "@wordpress/scripts": "^30.18.0",
     "eslint-plugin-prettier": "^5.0.1",
     "jsdoc": "^4.0.2",
     "wp-hookdoc": "^0.2.0"
