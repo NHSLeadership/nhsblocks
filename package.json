@@ -4,7 +4,7 @@
   "main": "src/index.js",
   "devDependencies": {
     "@wordpress/scripts": "^30.7.0",
-    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-prettier": "^5.5.3",
     "jsdoc": "^4.0.2",
     "wp-hookdoc": "^0.2.0"
   },
