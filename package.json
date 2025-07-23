@@ -32,7 +32,7 @@
     "nhsuk-frontend": "^8.0.2",
     "postcss": "^8.4.31",
     "postcss-cli": "^10.1.0",
-    "sass": "^1.69.5"
+    "sass": "^1.89.2"
   },
   "overrides": {
     "puppeteer-core": "^22.0.0",
