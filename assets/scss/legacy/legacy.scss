@@ -1,3 +1,11 @@
+@use 'nhsuk-frontend/packages/core/settings' as *;
+@use 'nhsuk-frontend/packages/core/tools' as *;
+@use 'nhsuk-frontend/packages/components/' as *;
+
+@use '../legacy/panel/panel';
+@use '../legacy/promo/promo';
+
+
 .nhsuk-panel-with-label {
   width: 100%;
 

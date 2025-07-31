@@ -18,25 +18,29 @@
  * 7. Prevent additional padding on headings
  * 8. Give the action link icon sufficient contrast when used in the immediate variant
  */
+@use 'nhsuk-frontend/packages/core/settings' as *;
+@use 'nhsuk-frontend/packages/core/tools' as *;
 
 .nhsuk-care,
 .nhsuk-care-card {
-  @include nhsuk-responsive-margin(7, 'bottom');
-  @include nhsuk-responsive-margin(7, 'top');
-  @include care-card($color_nhsuk-blue, $color_nhsuk-white, 4px);
-  /* [1] */
+   /* [1] */
   border: 1px solid transparent;
   /* [2] */
+
+  @include nhsuk-responsive-margin(7, 'bottom');
+  @include nhsuk-responsive-margin(7, 'top');
+  @include nhsuk-care-card($color_nhsuk-blue, $color_nhsuk-white, 4px);
+ 
 }
 
 .nhsuk-care-card__heading-container,
 .nhsuk-card--care__heading-container {
-  @include nhsuk-responsive-padding(5, 'left');
-  @include nhsuk-responsive-padding(5, 'right');
-
   padding-bottom: nhsuk-spacing(3);
   padding-top: nhsuk-spacing(3);
   position: relative;
+
+  @include nhsuk-responsive-padding(5, 'left');
+  @include nhsuk-responsive-padding(5, 'right');
 }
 
 .nhsuk-care-card__arrow,
@@ -54,9 +58,9 @@
   width: 20px;
   z-index: 1;
   /* [3] */
-  @include print-hide();
+  @include nhsuk-print-hide();
 
-  @include mq($from: tablet) {
+  @include nhsuk-media-query($from: tablet) {
     left: 38px;
     /* [4] */
   }
@@ -79,34 +83,35 @@
 
 .nhsuk-care-card__heading,
 .nhsuk-card--care__heading {
-  @include nhsuk-font(24, $weight: bold);
-  @include print-color($nhsuk-print-text-color);
-
   margin: 0;
   padding-top: 0;
   /* [7] */
+
+  @include nhsuk-font(26, $weight: bold);
+  @include nhsuk-print-color($nhsuk-print-text-color);
 }
 
 .nhsuk-care-card__content,
 .nhsuk-card__content {
-  @include top-and-bottom();
-  @include nhsuk-responsive-padding(5, 'bottom');
-  @include nhsuk-responsive-padding(5, 'left');
-  @include nhsuk-responsive-padding(5, 'right');
-
   background-color: $color_nhsuk-white;
   border: 1px solid $color_nhsuk-grey-4;
   border-top: 0;
   padding-top: nhsuk-spacing(5);
   /* [5] */
 
-  @include mq($from: tablet) {
+  @include nhsuk-top-and-bottom();
+  @include nhsuk-responsive-padding(5, 'bottom');
+  @include nhsuk-responsive-padding(5, 'left');
+  @include nhsuk-responsive-padding(5, 'right');
+
+
+  @include nhsuk-media-query($from: tablet) {
     padding-bottom: nhsuk-spacing(5);
     padding-top: 36px;
     /* [5] */
   }
 
-  @include print-color($nhsuk-print-text-color);
+  @include nhsuk-print-color($nhsuk-print-text-color);
 
 }
 
@@ -118,7 +123,7 @@
 
 .nhsuk-care-card--urgent,
 .nhsuk-card.nhsuk-card--care--urgent {
-  @include care-card($color_nhsuk-red, $color_nhsuk-white, 6px);
+  @include nhsuk-care-card($color_nhsuk-red, $color_nhsuk-white, 6px);
 
   .nhsuk-care-card__arrow,
   .nhsuk-card--care__arrow {
@@ -131,7 +136,7 @@
 
 .nhsuk-care-card--immediate,
 .nhsuk-card.nhsuk-card--care--emergency {
-  @include care-card($color_nhsuk-red, $color_nhsuk-white, 8px);
+  @include nhsuk-care-card($color_nhsuk-red, $color_nhsuk-white, 8px);
 
   .nhsuk-care-card__arrow,
   .nhsuk-card--care__arrow {
