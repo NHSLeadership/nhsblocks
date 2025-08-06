@@ -11,11 +11,19 @@
 /* button extension*/
 .nhsuk-button.is-style-secondary { /* secondary button style*/
   @extend .nhsuk-button--secondary;
+
+  color: $color_nhsuk-blue !important;
+  box-shadow: 0 4px 0 $color_nhsuk-blue !important;
+  background-color: transparent !important;
 }
 
 /* reverse button style*/
 .nhsuk-button.is-style-reverse {
   @extend .nhsuk-button--reverse;
+
+  background-color: $color_nhsuk-white !important;
+  color: $color_nhsuk-black !important;
+  box-shadow: 0 $button-shadow-size 0 $nhsuk-reverse-button-shadow-color !important; // s0
 }
 
 /* reveal extension*/

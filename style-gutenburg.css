@@ -9311,9 +9311,19 @@ button.nhsuk-back-link__link {
 // @version 1.0 22nd July 2019
 */
 /* button extension*/
-.nhsuk-button.is-style-secondary { /* secondary button style*/ }
+.nhsuk-button.is-style-secondary { /* secondary button style*/
+  color: #005eb8 !important;
+  box-shadow: 0 4px 0 #005eb8 !important;
+  background-color: transparent !important;
+}
 
 /* reverse button style*/
+.nhsuk-button.is-style-reverse {
+  background-color: #ffffff !important;
+  color: #212b32 !important;
+  box-shadow: 0 4px 0 rgb(178.5, 178.5, 178.5) !important;
+}
+
 /* reveal extension*/
 .nhsuk-details.is-style-expander { /* expander reveal style*/ }
 
@@ -9772,11 +9782,6 @@ section.nhsuk-section::after,
 .block-editor-block-styles .nhsuk-list--cross .editor-rich-text,
 .block-editor-inserter__menu-help-panel .nhsuk-list--cross .editor-rich-text {
   padding-left: 34px;
-}
-.edit-post-visual-editor .nhsuk-button:before,
-.block-editor-block-styles .nhsuk-button:before,
-.block-editor-inserter__menu-help-panel .nhsuk-button:before {
-  position: relative !important;
 }
 .edit-post-visual-editor .wp-block-nhsblocks-panel1,
 .block-editor-block-styles .wp-block-nhsblocks-panel1,

@@ -9492,9 +9492,19 @@ figure.is-style-nhsuk-table-responsive figcaption {
 // @version 1.0 22nd July 2019
 */
 /* button extension*/
-.nhsuk-button.is-style-secondary { /* secondary button style*/ }
+.nhsuk-button.is-style-secondary { /* secondary button style*/
+  color: #005eb8 !important;
+  box-shadow: 0 4px 0 #005eb8 !important;
+  background-color: transparent !important;
+}
 
 /* reverse button style*/
+.nhsuk-button.is-style-reverse {
+  background-color: #ffffff !important;
+  color: #212b32 !important;
+  box-shadow: 0 4px 0 rgb(178.5, 178.5, 178.5) !important;
+}
+
 /* reveal extension*/
 .nhsuk-details.is-style-expander { /* expander reveal style*/ }
 
