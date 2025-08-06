@@ -57,6 +57,7 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 
 = 1.4.0 =
  * NHSUK-Frontend upgrade to 9.x
+ * Security update
 
 = 1.3.20 =
  * Security updates
