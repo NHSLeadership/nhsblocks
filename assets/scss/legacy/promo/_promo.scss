@@ -14,6 +14,9 @@
  *    box and an image.
  */
 
+@use 'nhsuk-frontend/packages/core/settings' as *;
+@use 'nhsuk-frontend/packages/core/tools' as *;
+
 .nhsuk-promo {
   margin-bottom: nhsuk-spacing(5) + $nhsuk-box-shadow-link; /* [1] */
   width: 100%;
@@ -68,24 +71,24 @@
 }
 
 .nhsuk-promo__img {
-  @include print-hide();
-
   border-bottom: 1px solid $color_nhsuk-grey-5; /* [8] */
   display: block;
   width: 100%;
 
+  @include nhsuk-print-hide();
+
 }
 
 .nhsuk-promo__heading {
-  @include nhsuk-font(24, $weight: bold);
-
   display: inline-block;
   margin-bottom: nhsuk-spacing(3);
   text-decoration: underline;
+
+  @include nhsuk-font(26, $weight: bold);
 }
 
 .nhsuk-promo__content {
-  @include top-and-bottom();
+  @include nhsuk-top-and-bottom();
   @include nhsuk-responsive-padding(5);
 }
 
@@ -103,11 +106,11 @@
 .nhsuk-promo--small {
 
   .nhsuk-promo__heading {
-    @include nhsuk-typography-responsive(19);
+    @include nhsuk-font-size(19);
   }
 
   .nhsuk-promo__description {
-    @include nhsuk-typography-responsive(16);
+    @include nhsuk-font-size(16);
   }
 
 }
@@ -122,20 +125,20 @@
  */
 
 .nhsuk-promo-group {
-  @include flex();
+  @include nhsuk-flex();
 
   margin-bottom: nhsuk-spacing(5) + $nhsuk-box-shadow-link;
 
-  @include mq($until: desktop) {
+  @include nhsuk-media-query($until: desktop) {
     margin-bottom: nhsuk-spacing(4) + $nhsuk-box-shadow-link;
   }
 
 }
 
 .nhsuk-promo-group__item {
-  @include flex-item();
+  @include nhsuk-flex-item();
 
-  @include mq($until: desktop) {
+  @include nhsuk-media-query($until: desktop) {
     margin-bottom: nhsuk-spacing(4) + $nhsuk-box-shadow-link;
 
     &:last-child {

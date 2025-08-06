@@ -35,8 +35,7 @@
     "sass": "^1.69.5"
   },
   "overrides": {
-    "puppeteer-core": "^22.0.0",
-    "ws": "^8.18.0",
-    "@babel/runtime": "^7.26.10"
+    "webpack-dev-server": "5.2.2",
+    "@babel/runtime": "7.26.10"
   }
 }
