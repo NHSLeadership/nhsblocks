@@ -1,6 +1,4 @@
 
-@use 'nhsuk-frontend/packages/core/settings' as *;
-@use 'nhsuk-frontend/packages/core/tools' as *;
 
 section.nhsuk-section:nth-of-type(odd){
     background: $color_nhsuk-grey-5;

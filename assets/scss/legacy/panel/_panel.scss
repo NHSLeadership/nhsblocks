@@ -2,8 +2,6 @@
    COMPONENTS / #PANEL
    ========================================================================== */
 
-@use 'nhsuk-frontend/packages/core/settings' as *;
-@use 'nhsuk-frontend/packages/core/tools' as *;
 .nhsuk-panel {
   width: 100%;
   @include nhsuk-panel($color_nhsuk-white, $nhsuk-text-color);

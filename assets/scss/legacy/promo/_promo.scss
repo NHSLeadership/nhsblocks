@@ -14,8 +14,6 @@
  *    box and an image.
  */
 
-@use 'nhsuk-frontend/packages/core/settings' as *;
-@use 'nhsuk-frontend/packages/core/tools' as *;
 
 .nhsuk-promo {
   margin-bottom: nhsuk-spacing(5) + $nhsuk-box-shadow-link; /* [1] */
