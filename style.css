@@ -8281,9 +8281,9 @@ figure.is-style-nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row td {
    COMPONENTS / #PANEL
    ========================================================================== */
 .nhsuk-panel {
+  width: 100%;
   background-color: #ffffff;
   color: #212b32;
-  width: 100%;
 }
 .nhsuk-panel > *:first-child {
   margin-top: 0;
@@ -8549,20 +8549,20 @@ figure.is-style-nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row td {
   font-weight: 600;
 }
 .nhsuk-promo__heading {
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 1.4;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.31818;
 }
 @media (min-width: 40.0625em) {
   .nhsuk-promo__heading {
-    font-size: 24px;
-    font-size: 1.5rem;
-    line-height: 1.29167;
+    font-size: 26px;
+    font-size: 1.625rem;
+    line-height: 1.23077;
   }
 }
 @media print {
   .nhsuk-promo__heading {
-    font-size: 16pt;
+    font-size: 17pt;
     line-height: 1.25;
   }
 }
@@ -8808,22 +8808,22 @@ figure.is-style-nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row td {
 }
 .nhsuk-care-card__heading,
 .nhsuk-card--care__heading {
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 1.4;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.31818;
 }
 @media (min-width: 40.0625em) {
   .nhsuk-care-card__heading,
   .nhsuk-card--care__heading {
-    font-size: 24px;
-    font-size: 1.5rem;
-    line-height: 1.29167;
+    font-size: 26px;
+    font-size: 1.625rem;
+    line-height: 1.23077;
   }
 }
 @media print {
   .nhsuk-care-card__heading,
   .nhsuk-card--care__heading {
-    font-size: 16pt;
+    font-size: 17pt;
     line-height: 1.25;
   }
 }
@@ -9516,9 +9516,19 @@ figure.is-style-nhsuk-table-responsive figcaption {
 // @version 1.0 22nd July 2019
 */
 /* button extension*/
-.nhsuk-button.is-style-secondary, .is-style-secondary.wp-block-button__link, .is-style-secondary.wp-block-file__button, .wp-block-file a.is-style-secondary.wp-block-file__button { /* secondary button style*/ }
+.nhsuk-button.is-style-secondary, .is-style-secondary.wp-block-button__link, .is-style-secondary.wp-block-file__button, .wp-block-file a.is-style-secondary.wp-block-file__button { /* secondary button style*/
+  color: #005eb8 !important;
+  box-shadow: 0 4px 0 #005eb8 !important;
+  background-color: transparent !important;
+}
 
 /* reverse button style*/
+.nhsuk-button.is-style-reverse, .is-style-reverse.wp-block-button__link, .is-style-reverse.wp-block-file__button, .wp-block-file a.is-style-reverse.wp-block-file__button {
+  background-color: #ffffff !important;
+  color: #212b32 !important;
+  box-shadow: 0 4px 0 rgb(178.5, 178.5, 178.5) !important;
+}
+
 /* reveal extension*/
 .nhsuk-details.is-style-expander { /* expander reveal style*/ }
 

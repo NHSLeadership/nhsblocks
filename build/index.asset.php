@@ -1,1 +1,1 @@
-<?php return array('dependencies' => array('lodash', 'react-jsx-runtime'), 'version' => 'd4cec148b032d467017e');
+<?php return array('dependencies' => array('lodash', 'react-jsx-runtime'), 'version' => '91affd25d0bdb84c4e8f');

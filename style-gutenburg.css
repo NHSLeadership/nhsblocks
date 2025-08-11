@@ -16589,9 +16589,9 @@
   }
 }
 .edit-post-visual-editor .nhsuk-panel, .block-editor-block-styles .nhsuk-panel, .block-editor-inserter__menu-help-panel .nhsuk-panel {
+  width: 100%;
   background-color: #ffffff;
   color: #212b32;
-  width: 100%;
 }
 .edit-post-visual-editor .nhsuk-panel > *:first-child, .block-editor-block-styles .nhsuk-panel > *:first-child, .block-editor-inserter__menu-help-panel .nhsuk-panel > *:first-child {
   margin-top: 0;
@@ -16825,20 +16825,20 @@
   font-weight: 600;
 }
 .edit-post-visual-editor .nhsuk-promo__heading, .block-editor-block-styles .nhsuk-promo__heading, .block-editor-inserter__menu-help-panel .nhsuk-promo__heading {
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 1.4;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.31818;
 }
 @media (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-promo__heading, .block-editor-block-styles .nhsuk-promo__heading, .block-editor-inserter__menu-help-panel .nhsuk-promo__heading {
-    font-size: 24px;
-    font-size: 1.5rem;
-    line-height: 1.29167;
+    font-size: 26px;
+    font-size: 1.625rem;
+    line-height: 1.23077;
   }
 }
 @media print {
   .edit-post-visual-editor .nhsuk-promo__heading, .block-editor-block-styles .nhsuk-promo__heading, .block-editor-inserter__menu-help-panel .nhsuk-promo__heading {
-    font-size: 16pt;
+    font-size: 17pt;
     line-height: 1.25;
   }
 }
@@ -17084,18 +17084,18 @@
 .edit-post-visual-editor .nhsuk-card--care__heading, .block-editor-block-styles .nhsuk-care-card__heading,
 .block-editor-block-styles .nhsuk-card--care__heading, .block-editor-inserter__menu-help-panel .nhsuk-care-card__heading,
 .block-editor-inserter__menu-help-panel .nhsuk-card--care__heading {
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 1.4;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.31818;
 }
 @media (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-care-card__heading,
   .edit-post-visual-editor .nhsuk-card--care__heading, .block-editor-block-styles .nhsuk-care-card__heading,
   .block-editor-block-styles .nhsuk-card--care__heading, .block-editor-inserter__menu-help-panel .nhsuk-care-card__heading,
   .block-editor-inserter__menu-help-panel .nhsuk-card--care__heading {
-    font-size: 24px;
-    font-size: 1.5rem;
-    line-height: 1.29167;
+    font-size: 26px;
+    font-size: 1.625rem;
+    line-height: 1.23077;
   }
 }
 @media print {
@@ -17103,7 +17103,7 @@
   .edit-post-visual-editor .nhsuk-card--care__heading, .block-editor-block-styles .nhsuk-care-card__heading,
   .block-editor-block-styles .nhsuk-card--care__heading, .block-editor-inserter__menu-help-panel .nhsuk-care-card__heading,
   .block-editor-inserter__menu-help-panel .nhsuk-card--care__heading {
-    font-size: 16pt;
+    font-size: 17pt;
     line-height: 1.25;
   }
 }
@@ -17652,7 +17652,16 @@
 .edit-post-visual-editor .has-nhs-warm-yellow-background-color, .block-editor-block-styles .has-nhs-warm-yellow-background-color, .block-editor-inserter__menu-help-panel .has-nhs-warm-yellow-background-color {
   background-color: #ffb81c;
 }
-.edit-post-visual-editor .nhsuk-button.is-style-secondary, .edit-post-visual-editor .is-style-secondary.wp-block-button__link, .edit-post-visual-editor .is-style-secondary.wp-block-file__button, .edit-post-visual-editor .wp-block-file a.is-style-secondary.wp-block-file__button, .block-editor-block-styles .nhsuk-button.is-style-secondary, .block-editor-block-styles .is-style-secondary.wp-block-button__link, .block-editor-block-styles .is-style-secondary.wp-block-file__button, .block-editor-block-styles .wp-block-file a.is-style-secondary.wp-block-file__button, .block-editor-inserter__menu-help-panel .nhsuk-button.is-style-secondary, .block-editor-inserter__menu-help-panel .is-style-secondary.wp-block-button__link, .block-editor-inserter__menu-help-panel .is-style-secondary.wp-block-file__button, .block-editor-inserter__menu-help-panel .wp-block-file a.is-style-secondary.wp-block-file__button { /* secondary button style*/ }
+.edit-post-visual-editor .nhsuk-button.is-style-secondary, .edit-post-visual-editor .is-style-secondary.wp-block-button__link, .edit-post-visual-editor .is-style-secondary.wp-block-file__button, .edit-post-visual-editor .wp-block-file a.is-style-secondary.wp-block-file__button, .block-editor-block-styles .nhsuk-button.is-style-secondary, .block-editor-block-styles .is-style-secondary.wp-block-button__link, .block-editor-block-styles .is-style-secondary.wp-block-file__button, .block-editor-block-styles .wp-block-file a.is-style-secondary.wp-block-file__button, .block-editor-inserter__menu-help-panel .nhsuk-button.is-style-secondary, .block-editor-inserter__menu-help-panel .is-style-secondary.wp-block-button__link, .block-editor-inserter__menu-help-panel .is-style-secondary.wp-block-file__button, .block-editor-inserter__menu-help-panel .wp-block-file a.is-style-secondary.wp-block-file__button { /* secondary button style*/
+  color: #005eb8 !important;
+  box-shadow: 0 4px 0 #005eb8 !important;
+  background-color: transparent !important;
+}
+.edit-post-visual-editor .nhsuk-button.is-style-reverse, .edit-post-visual-editor .is-style-reverse.wp-block-button__link, .edit-post-visual-editor .is-style-reverse.wp-block-file__button, .edit-post-visual-editor .wp-block-file a.is-style-reverse.wp-block-file__button, .block-editor-block-styles .nhsuk-button.is-style-reverse, .block-editor-block-styles .is-style-reverse.wp-block-button__link, .block-editor-block-styles .is-style-reverse.wp-block-file__button, .block-editor-block-styles .wp-block-file a.is-style-reverse.wp-block-file__button, .block-editor-inserter__menu-help-panel .nhsuk-button.is-style-reverse, .block-editor-inserter__menu-help-panel .is-style-reverse.wp-block-button__link, .block-editor-inserter__menu-help-panel .is-style-reverse.wp-block-file__button, .block-editor-inserter__menu-help-panel .wp-block-file a.is-style-reverse.wp-block-file__button {
+  background-color: #ffffff !important;
+  color: #212b32 !important;
+  box-shadow: 0 4px 0 rgb(178.5, 178.5, 178.5) !important;
+}
 .edit-post-visual-editor .nhsuk-details.is-style-expander, .block-editor-block-styles .nhsuk-details.is-style-expander, .block-editor-inserter__menu-help-panel .nhsuk-details.is-style-expander { /* expander reveal style*/ }
 .edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout,
 .edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout,
@@ -18233,16 +18242,22 @@
 .edit-post-visual-editor .nhsuk-list--cross .editor-rich-text, .block-editor-block-styles .nhsuk-list--cross .editor-rich-text, .block-editor-inserter__menu-help-panel .nhsuk-list--cross .editor-rich-text {
   padding-left: 34px;
 }
-.edit-post-visual-editor .nhsuk-button:before, .edit-post-visual-editor .wp-block-button__link:before, .edit-post-visual-editor .wp-block-file__button:before, .edit-post-visual-editor .wp-block-file a.wp-block-file__button:before, .edit-post-visual-editor .wp-block-file a.wp-block-file__button:active:before, .edit-post-visual-editor .wp-block-file a.wp-block-file__button:focus:before, .edit-post-visual-editor .wp-block-file a.wp-block-file__button:hover:before, .edit-post-visual-editor .wp-block-file a.wp-block-file__button:visited:before, .edit-post-visual-editor .block-editor-block-styles .wp-block-button__link:before, .block-editor-block-styles .edit-post-visual-editor .wp-block-button__link:before, .edit-post-visual-editor .block-editor-block-styles .wp-block-file__button:before, .block-editor-block-styles .edit-post-visual-editor .wp-block-file__button:before, .edit-post-visual-editor .block-editor-block-styles .wp-block-file a.wp-block-file__button:before, .block-editor-block-styles .wp-block-file .edit-post-visual-editor a.wp-block-file__button:before, .edit-post-visual-editor .block-editor-block-styles .wp-block-file a.wp-block-file__button:active:before, .block-editor-block-styles .wp-block-file .edit-post-visual-editor a.wp-block-file__button:active:before, .edit-post-visual-editor .block-editor-block-styles .wp-block-file a.wp-block-file__button:focus:before, .block-editor-block-styles .wp-block-file .edit-post-visual-editor a.wp-block-file__button:focus:before, .edit-post-visual-editor .block-editor-block-styles .wp-block-file a.wp-block-file__button:hover:before, .block-editor-block-styles .wp-block-file .edit-post-visual-editor a.wp-block-file__button:hover:before, .edit-post-visual-editor .block-editor-block-styles .wp-block-file a.wp-block-file__button:visited:before, .block-editor-block-styles .wp-block-file .edit-post-visual-editor a.wp-block-file__button:visited:before, .edit-post-visual-editor .block-editor-inserter__menu-help-panel .wp-block-button__link:before, .block-editor-inserter__menu-help-panel .edit-post-visual-editor .wp-block-button__link:before, .edit-post-visual-editor .block-editor-inserter__menu-help-panel .wp-block-file__button:before, .block-editor-inserter__menu-help-panel .edit-post-visual-editor .wp-block-file__button:before, .edit-post-visual-editor .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:before, .block-editor-inserter__menu-help-panel .wp-block-file .edit-post-visual-editor a.wp-block-file__button:before, .edit-post-visual-editor .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:active:before, .block-editor-inserter__menu-help-panel .wp-block-file .edit-post-visual-editor a.wp-block-file__button:active:before, .edit-post-visual-editor .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:focus:before, .block-editor-inserter__menu-help-panel .wp-block-file .edit-post-visual-editor a.wp-block-file__button:focus:before, .edit-post-visual-editor .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:hover:before, .block-editor-inserter__menu-help-panel .wp-block-file .edit-post-visual-editor a.wp-block-file__button:hover:before, .edit-post-visual-editor .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:visited:before, .block-editor-inserter__menu-help-panel .wp-block-file .edit-post-visual-editor a.wp-block-file__button:visited:before, .block-editor-block-styles .nhsuk-button:before, .block-editor-block-styles .edit-post-visual-editor .wp-block-button__link:before, .edit-post-visual-editor .block-editor-block-styles .wp-block-button__link:before, .block-editor-block-styles .edit-post-visual-editor .wp-block-file__button:before, .edit-post-visual-editor .block-editor-block-styles .wp-block-file__button:before, .block-editor-block-styles .edit-post-visual-editor .wp-block-file a.wp-block-file__button:before, .edit-post-visual-editor .wp-block-file .block-editor-block-styles a.wp-block-file__button:before, .block-editor-block-styles .edit-post-visual-editor .wp-block-file a.wp-block-file__button:active:before, .edit-post-visual-editor .wp-block-file .block-editor-block-styles a.wp-block-file__button:active:before, .block-editor-block-styles .edit-post-visual-editor .wp-block-file a.wp-block-file__button:focus:before, .edit-post-visual-editor .wp-block-file .block-editor-block-styles a.wp-block-file__button:focus:before, .block-editor-block-styles .edit-post-visual-editor .wp-block-file a.wp-block-file__button:hover:before, .edit-post-visual-editor .wp-block-file .block-editor-block-styles a.wp-block-file__button:hover:before, .block-editor-block-styles .edit-post-visual-editor .wp-block-file a.wp-block-file__button:visited:before, .edit-post-visual-editor .wp-block-file .block-editor-block-styles a.wp-block-file__button:visited:before, .block-editor-block-styles .wp-block-button__link:before, .block-editor-block-styles .wp-block-file__button:before, .block-editor-block-styles .wp-block-file a.wp-block-file__button:before, .block-editor-block-styles .wp-block-file a.wp-block-file__button:active:before, .block-editor-block-styles .wp-block-file a.wp-block-file__button:focus:before, .block-editor-block-styles .wp-block-file a.wp-block-file__button:hover:before, .block-editor-block-styles .wp-block-file a.wp-block-file__button:visited:before, .block-editor-block-styles .block-editor-inserter__menu-help-panel .wp-block-button__link:before, .block-editor-inserter__menu-help-panel .block-editor-block-styles .wp-block-button__link:before, .block-editor-block-styles .block-editor-inserter__menu-help-panel .wp-block-file__button:before, .block-editor-inserter__menu-help-panel .block-editor-block-styles .wp-block-file__button:before, .block-editor-block-styles .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:before, .block-editor-inserter__menu-help-panel .wp-block-file .block-editor-block-styles a.wp-block-file__button:before, .block-editor-block-styles .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:active:before, .block-editor-inserter__menu-help-panel .wp-block-file .block-editor-block-styles a.wp-block-file__button:active:before, .block-editor-block-styles .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:focus:before, .block-editor-inserter__menu-help-panel .wp-block-file .block-editor-block-styles a.wp-block-file__button:focus:before, .block-editor-block-styles .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:hover:before, .block-editor-inserter__menu-help-panel .wp-block-file .block-editor-block-styles a.wp-block-file__button:hover:before, .block-editor-block-styles .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:visited:before, .block-editor-inserter__menu-help-panel .wp-block-file .block-editor-block-styles a.wp-block-file__button:visited:before, .block-editor-inserter__menu-help-panel .nhsuk-button:before, .block-editor-inserter__menu-help-panel .edit-post-visual-editor .wp-block-button__link:before, .edit-post-visual-editor .block-editor-inserter__menu-help-panel .wp-block-button__link:before, .block-editor-inserter__menu-help-panel .edit-post-visual-editor .wp-block-file__button:before, .edit-post-visual-editor .block-editor-inserter__menu-help-panel .wp-block-file__button:before, .block-editor-inserter__menu-help-panel .edit-post-visual-editor .wp-block-file a.wp-block-file__button:before, .edit-post-visual-editor .wp-block-file .block-editor-inserter__menu-help-panel a.wp-block-file__button:before, .block-editor-inserter__menu-help-panel .edit-post-visual-editor .wp-block-file a.wp-block-file__button:active:before, .edit-post-visual-editor .wp-block-file .block-editor-inserter__menu-help-panel a.wp-block-file__button:active:before, .block-editor-inserter__menu-help-panel .edit-post-visual-editor .wp-block-file a.wp-block-file__button:focus:before, .edit-post-visual-editor .wp-block-file .block-editor-inserter__menu-help-panel a.wp-block-file__button:focus:before, .block-editor-inserter__menu-help-panel .edit-post-visual-editor .wp-block-file a.wp-block-file__button:hover:before, .edit-post-visual-editor .wp-block-file .block-editor-inserter__menu-help-panel a.wp-block-file__button:hover:before, .block-editor-inserter__menu-help-panel .edit-post-visual-editor .wp-block-file a.wp-block-file__button:visited:before, .edit-post-visual-editor .wp-block-file .block-editor-inserter__menu-help-panel a.wp-block-file__button:visited:before, .block-editor-inserter__menu-help-panel .block-editor-block-styles .wp-block-button__link:before, .block-editor-block-styles .block-editor-inserter__menu-help-panel .wp-block-button__link:before, .block-editor-inserter__menu-help-panel .block-editor-block-styles .wp-block-file__button:before, .block-editor-block-styles .block-editor-inserter__menu-help-panel .wp-block-file__button:before, .block-editor-inserter__menu-help-panel .block-editor-block-styles .wp-block-file a.wp-block-file__button:before, .block-editor-block-styles .wp-block-file .block-editor-inserter__menu-help-panel a.wp-block-file__button:before, .block-editor-inserter__menu-help-panel .block-editor-block-styles .wp-block-file a.wp-block-file__button:active:before, .block-editor-block-styles .wp-block-file .block-editor-inserter__menu-help-panel a.wp-block-file__button:active:before, .block-editor-inserter__menu-help-panel .block-editor-block-styles .wp-block-file a.wp-block-file__button:focus:before, .block-editor-block-styles .wp-block-file .block-editor-inserter__menu-help-panel a.wp-block-file__button:focus:before, .block-editor-inserter__menu-help-panel .block-editor-block-styles .wp-block-file a.wp-block-file__button:hover:before, .block-editor-block-styles .wp-block-file .block-editor-inserter__menu-help-panel a.wp-block-file__button:hover:before, .block-editor-inserter__menu-help-panel .block-editor-block-styles .wp-block-file a.wp-block-file__button:visited:before, .block-editor-block-styles .wp-block-file .block-editor-inserter__menu-help-panel a.wp-block-file__button:visited:before, .block-editor-inserter__menu-help-panel .wp-block-button__link:before, .block-editor-inserter__menu-help-panel .wp-block-file__button:before, .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:before, .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:active:before, .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:focus:before, .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:hover:before, .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:visited:before {
-  position: relative !important;
-}
 .edit-post-visual-editor .wp-block-nhsblocks-panel1, .block-editor-block-styles .wp-block-nhsblocks-panel1, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-panel1 {
   /* remove ability to add extra blocks inside panels, but leave ability to remove and move current inner blocks */
 }
 .edit-post-visual-editor .wp-block-nhsblocks-panel1 .editor-default-block-appender, .edit-post-visual-editor .wp-block-nhsblocks-panel1 .editor-block-list__insertion-point, .block-editor-block-styles .wp-block-nhsblocks-panel1 .editor-default-block-appender, .block-editor-block-styles .wp-block-nhsblocks-panel1 .editor-block-list__insertion-point, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-panel1 .editor-default-block-appender, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-panel1 .editor-block-list__insertion-point {
   display: none;
 }
-.edit-post-visual-editor .nhsuk-button.is-style-secondary, .edit-post-visual-editor .is-style-secondary.wp-block-button__link, .edit-post-visual-editor .is-style-secondary.wp-block-file__button, .edit-post-visual-editor .wp-block-file a.is-style-secondary.wp-block-file__button, .block-editor-block-styles .nhsuk-button.is-style-secondary, .block-editor-block-styles .is-style-secondary.wp-block-button__link, .block-editor-block-styles .is-style-secondary.wp-block-file__button, .block-editor-block-styles .wp-block-file a.is-style-secondary.wp-block-file__button, .block-editor-inserter__menu-help-panel .nhsuk-button.is-style-secondary, .block-editor-inserter__menu-help-panel .is-style-secondary.wp-block-button__link, .block-editor-inserter__menu-help-panel .is-style-secondary.wp-block-file__button, .block-editor-inserter__menu-help-panel .wp-block-file a.is-style-secondary.wp-block-file__button { /* secondary button style*/ }
+.edit-post-visual-editor .nhsuk-button.is-style-secondary, .edit-post-visual-editor .is-style-secondary.wp-block-button__link, .edit-post-visual-editor .is-style-secondary.wp-block-file__button, .edit-post-visual-editor .wp-block-file a.is-style-secondary.wp-block-file__button, .block-editor-block-styles .nhsuk-button.is-style-secondary, .block-editor-block-styles .is-style-secondary.wp-block-button__link, .block-editor-block-styles .is-style-secondary.wp-block-file__button, .block-editor-block-styles .wp-block-file a.is-style-secondary.wp-block-file__button, .block-editor-inserter__menu-help-panel .nhsuk-button.is-style-secondary, .block-editor-inserter__menu-help-panel .is-style-secondary.wp-block-button__link, .block-editor-inserter__menu-help-panel .is-style-secondary.wp-block-file__button, .block-editor-inserter__menu-help-panel .wp-block-file a.is-style-secondary.wp-block-file__button { /* secondary button style*/
+  color: #005eb8 !important;
+  box-shadow: 0 4px 0 #005eb8 !important;
+  background-color: transparent !important;
+}
+.edit-post-visual-editor .nhsuk-button.is-style-reverse, .edit-post-visual-editor .is-style-reverse.wp-block-button__link, .edit-post-visual-editor .is-style-reverse.wp-block-file__button, .edit-post-visual-editor .wp-block-file a.is-style-reverse.wp-block-file__button, .block-editor-block-styles .nhsuk-button.is-style-reverse, .block-editor-block-styles .is-style-reverse.wp-block-button__link, .block-editor-block-styles .is-style-reverse.wp-block-file__button, .block-editor-block-styles .wp-block-file a.is-style-reverse.wp-block-file__button, .block-editor-inserter__menu-help-panel .nhsuk-button.is-style-reverse, .block-editor-inserter__menu-help-panel .is-style-reverse.wp-block-button__link, .block-editor-inserter__menu-help-panel .is-style-reverse.wp-block-file__button, .block-editor-inserter__menu-help-panel .wp-block-file a.is-style-reverse.wp-block-file__button {
+  background-color: #ffffff !important;
+  color: #212b32 !important;
+  box-shadow: 0 4px 0 rgb(178.5, 178.5, 178.5) !important;
+}
 .edit-post-visual-editor .nhsuk-details.is-style-expander, .block-editor-block-styles .nhsuk-details.is-style-expander, .block-editor-inserter__menu-help-panel .nhsuk-details.is-style-expander { /* expander reveal style*/ }
 .edit-post-visual-editor .wp-block-nhsblocks-card1.is-style-warning-callout,
 .edit-post-visual-editor .nhsuk-care-card.is-style-warning-callout,
