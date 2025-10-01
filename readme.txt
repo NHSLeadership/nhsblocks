@@ -57,6 +57,7 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 
 = 1.3.21 =
  * Adds optional chevron icon toggle for enhanced link indication in promo region block
+ * Security update
 
 = 1.3.20 =
  * Security updates
