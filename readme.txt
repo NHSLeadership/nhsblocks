@@ -55,6 +55,13 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 
 == Changelog ==
 
+= 1.3.22 =
+  * Reverts code that caused a display issue when viewing Promo Region blocks inside Column blocks
+
+= 1.3.21 =
+ * Adds optional chevron icon toggle for enhanced link indication in promo region block
+ * Security update
+
 = 1.3.20 =
  * Security updates
 
