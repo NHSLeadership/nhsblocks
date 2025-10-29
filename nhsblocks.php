@@ -6,10 +6,10 @@
  * Author: Tony Blacker, NHS Leadership Academy
  * License: GPL v3
  * Requires at least: 5.0
- * Tested up to: 6.5
+ * Tested up to: 6.8.3
  *
- * Version: 1.3.20
- * Stable tag: 1.3.20
+ * Version: 1.3.22
+ * Stable tag: 1.3.22
  *
  * @package nhsblocks
  */

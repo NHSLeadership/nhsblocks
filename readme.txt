@@ -4,8 +4,8 @@ Tags: gutenberg, blocks, nhs
 Plugin Name:: NHS Blocks
 Plugin URI: https://digital.leadershipacademy.nhs.uk/digital-capabilities/websites/nhs-blocks-user-guide/
 Requires at least: 5.3
-Tested up to: 6.7
-Stable tag: 1.3.20
+Tested up to: 6.8.3
+Stable tag: 1.3.22
 Requires PHP: 5.6
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -54,6 +54,12 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 10. Hero - a full screen width block, with optional single color or image background and optional block of text to anchor the page and set clear purpose
 
 == Changelog ==
+= 1.3.22 =
+  * Reverts code that caused a display issue when viewing Promo Region blocks inside Column blocks
+
+= 1.3.21 =
+ * Adds optional chevron icon toggle for enhanced link indication in promo region block
+ * Security update
 
 = 1.3.20 =
  * Security updates
