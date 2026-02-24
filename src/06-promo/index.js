@@ -6,7 +6,6 @@
  *  @version 1.1 30 Sep 2025
  */
 
-import { PanelBody, ToggleControl } from '@wordpress/components';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
