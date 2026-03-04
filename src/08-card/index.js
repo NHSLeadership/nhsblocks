@@ -349,16 +349,18 @@ const { RawHTML } = wp.element;
 			attributes: {
 				// Capture the entire span markup, including the visually-hidden span + text
 				cardTitle: {
-				type: "string",
-				source: "html",
-				selector: ".nhsuk-card--care__heading > span",
+					type: "string",
+					source: "html",
+					selector: ".nhsuk-card--care__heading > span",
 				},
 				// Capture whatever is inside content div (plain text OR HTML)
+				
 				cardText: {
-				type: "string",
-				source: "html",
-				selector: ".nhsuk-card__content",
+					type: "array",
+					source: "children",
+					selector: ".nhsuk-card__content",
 				},
+
 			},
 
 			save: ({ attributes }) => (
@@ -416,6 +418,44 @@ const { RawHTML } = wp.element;
 			</div>
 			),
 		},
+		{
+			attributes: {
+				// Grab inner HTML of the span inside the legacy h2
+				// This yields: <span class="nhsuk-u-visually-hidden">Non-urgent advice: </span>New Test
+				cardTitle: {
+				type: "string",
+				source: "html",
+				selector: ".nhsuk-card--care__heading > span",
+				},
+
+				// Grab inner HTML of legacy content div (plain text or inline markup)
+				cardText: {
+				type: "string",
+				source: "html",
+				selector: ".nhsuk-card__content",
+				},
+			},
+
+			save: ({ attributes }) => (
+				<div className="wp-block-nhsblocks-card1 nhsuk-grid-column-width nhsuk-card nhsuk-card--care nhsuk-card--care--type">
+				<div className="nhsuk-card--care__heading-container">
+					<h2 className="nhsuk-card--care__heading">
+					{/* Recreate the legacy <span> wrapper exactly */}
+					<RichText.Content tagName="span" value={attributes.cardTitle} />
+					</h2>
+					<span className="nhsuk-card--care__arrow" aria-hidden="true"></span>
+				</div>
+
+				{/* Recreate the legacy content div exactly (no extra wrapper) */}
+				<RichText.Content
+					tagName="div"
+					className="nhsuk-card__content"
+					value={attributes.cardText}
+				/>
+				</div>
+			),
+		}
+		
 	 ],
  });
  // card variations

@@ -56,7 +56,7 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 == Changelog ==
 
 = 1.3.24 =
-  * Accessibility immprovement and JS fix for cards block
+  * Accessibility improvement and JS fix for cards block
 
 = 1.3.23 =
   * Security updates

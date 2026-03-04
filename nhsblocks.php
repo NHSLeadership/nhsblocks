@@ -9,7 +9,7 @@
  * Tested up to: 6.8.3
  *
  * Version: 1.3.24
- * Stable tag: 1.3.20
+ * Stable tag: 1.3.24
  *
  * @package nhsblocks
  */
