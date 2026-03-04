@@ -374,8 +374,11 @@ const { RawHTML } = wp.element;
 				</div>
 
 				<div className="nhsuk-card__content">
-					{/* Output the exact legacy content (plain text or HTML) */}
-					<RawHTML>{attributes.cardText}</RawHTML>
+					<RichText.Content
+						tagName="div"
+						className="nhsuk-card__content"
+						value={attributes.cardText}
+					/>
 				</div>
 				</div>
 			),
