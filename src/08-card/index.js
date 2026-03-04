@@ -15,9 +15,7 @@
  const TEMPLATE_OPTIONS = [
 	 ['core/image', {align: 'right', width: 150}],
  ];
- 
-const { RawHTML } = wp.element;
- 
+  
  registerBlockType("nhsblocks/card1", {
    title: __("Card Region", "nhsblocks"),
    category: "nhsblocks",
