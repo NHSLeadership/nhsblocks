@@ -4,24 +4,26 @@ This project uses npm `overrides` to temporarily address security
 vulnerabilities reported in development-only dependencies introduced
 by `@wordpress/scripts`.
 
-These dependencies are used only during local build, linting, and testing.
-They are not bundled or shipped with the WordPress plugin.
+These dependencies are used only during local development
+(build, linting, and testing). They are **not bundled or shipped**
+with the WordPress plugin.
 
 ### Current overrides
 
-- minimatch → 10.2.1  
-  Reason: Fixes ReDoS vulnerability (GHSA-3ppc-4f35-3m26 / CVE-2026-26996)
+- minimatch → ^10.2.3  
+  Reason: Addresses a ReDoS vulnerability in glob matching used by
+  ESLint and webpack-related tooling.
 
-- ws → 8.18.0  
-  Reason: Transitive dependency vulnerability in dev tooling
+- webpack-dev-server → ^5.2.1  
+  Reason: Patches known dev-server vulnerabilities (e.g. CVE-2025-30359 /
+  CVE-2025-30360). Development-only.
 
-- puppeteer-core → 22.0.0  
-  Reason: Transitive dependency vulnerability in dev tooling
-
-- @babel/runtime → 7.26.10  
-  Reason: Security advisory in older transitive versions
+- serialize-javascript → ^7.0.5  
+  Reason: Addresses high-severity vulnerabilities reported in
+  transitive usage via `copy-webpack-plugin`. Development-only.
 
 ### Review policy
 
 Overrides are reviewed during routine dependency updates and removed
-once upstream packages (e.g. `@wordpress/scripts`) adopt patched versions.
+once upstream tooling (e.g. `@wordpress/scripts`) adopts patched
+versions natively.
