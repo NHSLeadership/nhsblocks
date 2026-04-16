@@ -18,7 +18,7 @@ with the WordPress plugin.
   Reason: Patches known dev-server vulnerabilities (e.g. CVE-2025-30359 /
   CVE-2025-30360). Development-only.
 
-- serialize-javascript → ^8.0.1  
+- serialize-javascript → ^7.0.5  
   Reason: Addresses high-severity vulnerabilities reported in
   transitive usage via `copy-webpack-plugin`. Development-only.
 

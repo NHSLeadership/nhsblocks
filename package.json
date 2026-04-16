@@ -1,5 +1,9 @@
 {
   "name": "nhsblocks",
+  "engines": {
+    "node": ">=18.12.0",
+    "npm": ">=9.0.0"
+  },
   "license": "GPL-3.0-or-later",
   "main": "src/index.js",
   "devDependencies": {
