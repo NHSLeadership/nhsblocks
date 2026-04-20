@@ -1,9 +1,13 @@
 {
   "name": "nhsblocks",
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=9.0.0"
+  },
   "license": "GPL-3.0-or-later",
   "main": "src/index.js",
   "devDependencies": {
-    "@wordpress/scripts": "^30.21.0",
+    "@wordpress/scripts": "^32.0.0",
     "eslint-plugin-prettier": "^5.0.1",
     "jsdoc": "^4.0.2",
     "wp-hookdoc": "^0.2.0"
@@ -35,9 +39,8 @@
     "sass": "^1.89.2"
   },
   "overrides": {
-    "minimatch": "10.2.1",
-    "puppeteer-core": "^22.0.0",
-    "ws": "^8.18.0",
-    "@babel/runtime": "^7.26.10"
+    "minimatch": "^10.2.3",
+    "webpack-dev-server": "^5.2.1",
+    "serialize-javascript": "^7.0.5"
   }
 }

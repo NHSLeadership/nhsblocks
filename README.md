@@ -20,7 +20,11 @@ Download the `nhsblocks.zip` from this repository. Install this to your wordpres
 and activate the NHS Blocks plugin. Then edit your pages, your new blocks are all homed in a new category called `NHS
  Front-end Blocks` - select any of these and edit away. Variations of the blocks are found in the right hand panel 
  under `Styles` 
- 
+
+## Development requirements
+- Node.js ≥ 20
+- npm ≥ 9
+
 ## Development Instructions
 To develop your own modifications, you will need to download the full [repo from GitHub](https://github.com/NHSLeadership/nhsblocks) - ideally you should be in your `wp-content/plugins` folder.
 - Technical documentation can be found at https://nhsleadership.github.io/nhsblocks/index.html
