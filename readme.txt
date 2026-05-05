@@ -57,7 +57,7 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 
 = 1.4.0 =
   * Adds new NHS tabs block
-  * Secuity updates
+  * Security updates
 
 = 1.3.25 =
   * Address security advisories in build and test dependencies.

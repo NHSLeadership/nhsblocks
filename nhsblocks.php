@@ -111,7 +111,7 @@ function nhsblocks_register_blocks() {
 	register_block_type( 'nhsblocks/stripesblock' );
 
 	register_block_type( 'nhsblocks/pagination' );
-	register_block_type( 'nhsblocks/tabs' );
+	register_block_type( 'nhsblocks/nhstabs' );
 
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		/**
