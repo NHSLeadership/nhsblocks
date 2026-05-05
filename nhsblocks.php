@@ -8,8 +8,8 @@
  * Requires at least: 5.0
  * Tested up to: 6.8.3
  *
- * Version: 1.3.25
- * Stable tag: 1.3.25
+ * Version: 1.4.0
+ * Stable tag: 1.4.0
  *
  * @package nhsblocks
  */
@@ -111,6 +111,7 @@ function nhsblocks_register_blocks() {
 	register_block_type( 'nhsblocks/stripesblock' );
 
 	register_block_type( 'nhsblocks/pagination' );
+	register_block_type( 'nhsblocks/tabs' );
 
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		/**
@@ -287,6 +288,15 @@ function nhsblocks_enqueue_style() {
 	$theme = wp_get_theme(); // gets the current theme.
 	if ( 'Nightingale' !== $theme->name ) {
 		wp_enqueue_style( 'nhsblocks' );
+
+		wp_enqueue_script(
+			'nhsblocks-frontend',
+			plugins_url( 'build/nhsblocks-frontend.min.js', __FILE__ ),
+			array(),
+			filemtime( plugin_dir_path( __FILE__ ) . 'build/nhsblocks-frontend.min.js' ),
+			true
+		);
+
 	}
 }
 

@@ -349,3 +349,114 @@
 	@include clearfix();
   }
 }
+
+/* ==================================================
+   NHS Tabs – Editor preview styles (SAFE)
+   ================================================== */
+
+/* -------------------------------
+   Panel preview (DO NOT reset layout)
+   ------------------------------- */
+
+.editor-styles-wrapper .nhsuk-tabs__panel {
+    border: 1px solid #d8dde0;
+    padding: 12px;
+    margin-bottom: 12px;
+    background: #ffffff;
+}
+
+/* Hide non-active panels ONLY */
+.editor-styles-wrapper .nhsuk-tabs__panel--hidden {
+    display: none;
+}
+
+/* -------------------------------
+   Fake tab strip (editor-only)
+   ------------------------------- */
+
+.editor-styles-wrapper .nhsuk-tabs__list {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px 0;
+    border-bottom: 2px solid #d8dde0;
+}
+
+/* LI = wrapper only */
+.editor-styles-wrapper .nhsuk-tabs__list-item {
+    margin: 0;
+    padding: 0;
+    border-bottom: 2px solid transparent;
+}
+
+/* A = actual tab UI */
+.editor-styles-wrapper .nhsuk-tabs__tab {
+    display: block;
+    padding: 6px 10px;
+    font-size: 14px;
+    line-height: 1.3;
+    background: #f0f4f5;
+    border-radius: 4px 4px 0 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Selected tab */
+.editor-styles-wrapper .nhsuk-tabs__list-item--selected {
+    border-bottom-color: #005eb8;
+}
+
+.editor-styles-wrapper
+.nhsuk-tabs__list-item--selected
+.nhsuk-tabs__tab {
+    background: #ffffff;
+    font-weight: bold;
+}
+
+/* nhstabs-styles.css */
+/* nhstabs-styles.css */
+/* nhstabs editor styles */
+
+/* ===============================
+   Tabs block – style variations
+   Change TAB HEADER BACKGROUND
+   =============================== */
+
+/* =========================
+   Tabs – Blue style (EDITOR)
+   ========================= */
+
+.editor-styles-wrapper
+.block-editor-block-list__block[data-type="nhsblocks/nhstabs"][class*="is-style-blue"]
+.nhsuk-tabs__tab {
+  background-color: #005eb8;
+  color: #ffffff;
+}
+
+.editor-styles-wrapper
+.block-editor-block-list__block[data-type="nhsblocks/nhstabs"][class*="is-style-blue"]
+.nhsuk-tabs__list-item--selected
+.nhsuk-tabs__tab {
+  background-color: #003087; // darker NHS blue for selected
+  color: #ffffff;
+}
+
+/* =========================
+   Tabs – Reverse style (EDITOR)
+   ========================= */
+
+.editor-styles-wrapper
+.block-editor-block-list__block[data-type="nhsblocks/nhstabs"][class*="is-style-reverse"]
+.nhsuk-tabs__tab {
+  background-color: #212b32;
+  color: #ffffff;
+}
+
+.editor-styles-wrapper
+.block-editor-block-list__block[data-type="nhsblocks/nhstabs"][class*="is-style-reverse"]
+.nhsuk-tabs__list-item--selected
+.nhsuk-tabs__tab {
+  background-color: #ffffff;
+  color: #212b32;
+}

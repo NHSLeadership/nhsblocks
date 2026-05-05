@@ -17772,6 +17772,127 @@
 .edit-post-visual-editor .nhsuk-table-responsive table, .edit-post-visual-editor .is-style-nhsuk-table-responsive table, .edit-post-visual-editor table, .block-editor-block-styles .nhsuk-table-responsive table, .block-editor-block-styles .is-style-nhsuk-table-responsive table, .block-editor-block-styles table, .block-editor-inserter__menu-help-panel .nhsuk-table-responsive table, .block-editor-inserter__menu-help-panel .is-style-nhsuk-table-responsive table, .block-editor-inserter__menu-help-panel table {
   margin: 0;
 }
+.edit-post-visual-editor, .block-editor-block-styles, .block-editor-inserter__menu-help-panel {
+  /* =====================================================
+     NHS Tabs 
+     ===================================================== */
+}
+.edit-post-visual-editor .wp-block-nhsblocks-nhstabs .nhsuk-tabs, .block-editor-block-styles .wp-block-nhsblocks-nhstabs .nhsuk-tabs, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs .nhsuk-tabs {
+  max-width: 100%;
+}
+.edit-post-visual-editor .wp-block-nhsblocks-nhstabs .nhsuk-tabs__list, .block-editor-block-styles .wp-block-nhsblocks-nhstabs .nhsuk-tabs__list, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs .nhsuk-tabs__list {
+  display: block;
+  width: 100%;
+}
+.edit-post-visual-editor .wp-block-nhsblocks-nhstabs .nhsuk-tabs__list-item, .block-editor-block-styles .wp-block-nhsblocks-nhstabs .nhsuk-tabs__list-item, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs .nhsuk-tabs__list-item {
+  min-width: 0;
+  max-width: 100%;
+}
+.edit-post-visual-editor .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab, .block-editor-block-styles .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab {
+  display: block;
+  white-space: normal;
+  overflow-wrap: break-word;
+  min-width: 0;
+  background-color: transparent; /* critical */
+}
+.edit-post-visual-editor, .block-editor-block-styles, .block-editor-inserter__menu-help-panel {
+  /* Hide inactive panels */
+}
+.edit-post-visual-editor .wp-block-nhsblocks-nhstabs .nhsuk-tabs__panel--hidden, .block-editor-block-styles .wp-block-nhsblocks-nhstabs .nhsuk-tabs__panel--hidden, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs .nhsuk-tabs__panel--hidden {
+  display: none !important;
+}
+.edit-post-visual-editor, .block-editor-block-styles, .block-editor-inserter__menu-help-panel {
+  /* -----------------------------------------------------
+     Mobile behaviour (below NHS breakpoint)
+     ----------------------------------------------------- */
+}
+@media (max-width: 48.0625em) {
+  .edit-post-visual-editor .wp-block-nhsblocks-nhstabs .nhsuk-tabs__list-item::before, .block-editor-block-styles .wp-block-nhsblocks-nhstabs .nhsuk-tabs__list-item::before, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs .nhsuk-tabs__list-item::before {
+    margin-left: -14px;
+  }
+  .edit-post-visual-editor, .block-editor-block-styles, .block-editor-inserter__menu-help-panel {
+    /* Tabs behave like navigation (no visited purple) */
+  }
+  .edit-post-visual-editor .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab,
+  .edit-post-visual-editor .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:link,
+  .edit-post-visual-editor .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:visited,
+  .edit-post-visual-editor .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:hover,
+  .edit-post-visual-editor .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:focus,
+  .edit-post-visual-editor .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:active, .block-editor-block-styles .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab,
+  .block-editor-block-styles .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:link,
+  .block-editor-block-styles .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:visited,
+  .block-editor-block-styles .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:hover,
+  .block-editor-block-styles .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:focus,
+  .block-editor-block-styles .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:active, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab,
+  .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:link,
+  .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:visited,
+  .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:hover,
+  .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:focus,
+  .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:active {
+    color: inherit;
+    text-decoration: none;
+    background-color: transparent;
+  }
+  .edit-post-visual-editor, .block-editor-block-styles, .block-editor-inserter__menu-help-panel {
+    /* Blue & Reverse fall back to Standard on mobile */
+  }
+  .edit-post-visual-editor .wp-block-nhsblocks-nhstabs.is-style-blue .nhsuk-tabs__list-item,
+  .edit-post-visual-editor .wp-block-nhsblocks-nhstabs.is-style-reverse .nhsuk-tabs__list-item, .block-editor-block-styles .wp-block-nhsblocks-nhstabs.is-style-blue .nhsuk-tabs__list-item,
+  .block-editor-block-styles .wp-block-nhsblocks-nhstabs.is-style-reverse .nhsuk-tabs__list-item, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs.is-style-blue .nhsuk-tabs__list-item,
+  .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs.is-style-reverse .nhsuk-tabs__list-item {
+    background-color: transparent;
+  }
+}
+.edit-post-visual-editor, .block-editor-block-styles, .block-editor-inserter__menu-help-panel {
+  /* -----------------------------------------------------
+     Desktop (NHS breakpoint)
+     ----------------------------------------------------- */
+}
+@media (min-width: 48.0625em) {
+  .edit-post-visual-editor .wp-block-nhsblocks-nhstabs .nhsuk-tabs__list, .block-editor-block-styles .wp-block-nhsblocks-nhstabs .nhsuk-tabs__list, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs .nhsuk-tabs__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .edit-post-visual-editor .wp-block-nhsblocks-nhstabs .nhsuk-tabs__list-item, .block-editor-block-styles .wp-block-nhsblocks-nhstabs .nhsuk-tabs__list-item, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs .nhsuk-tabs__list-item {
+    flex: 1 1 auto;
+  }
+  .edit-post-visual-editor, .block-editor-block-styles, .block-editor-inserter__menu-help-panel {
+    /* =========================
+       Tabs – Blue (DESKTOP)
+       ========================= */
+  }
+  .edit-post-visual-editor .wp-block-nhsblocks-nhstabs.is-style-blue .nhsuk-tabs__list-item, .block-editor-block-styles .wp-block-nhsblocks-nhstabs.is-style-blue .nhsuk-tabs__list-item, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs.is-style-blue .nhsuk-tabs__list-item {
+    background-color: #005eb8;
+  }
+  .edit-post-visual-editor .wp-block-nhsblocks-nhstabs.is-style-blue .nhsuk-tabs__list-item--selected, .block-editor-block-styles .wp-block-nhsblocks-nhstabs.is-style-blue .nhsuk-tabs__list-item--selected, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs.is-style-blue .nhsuk-tabs__list-item--selected {
+    background-color: #003087;
+  }
+  .edit-post-visual-editor .wp-block-nhsblocks-nhstabs.is-style-blue .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab, .block-editor-block-styles .wp-block-nhsblocks-nhstabs.is-style-blue .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs.is-style-blue .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab {
+    background-color: inherit;
+    color: #ffffff;
+  }
+  .edit-post-visual-editor .wp-block-nhsblocks-nhstabs.is-style-blue .nhsuk-tabs__tab, .block-editor-block-styles .wp-block-nhsblocks-nhstabs.is-style-blue .nhsuk-tabs__tab, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs.is-style-blue .nhsuk-tabs__tab {
+    color: #ffffff;
+  }
+  .edit-post-visual-editor, .block-editor-block-styles, .block-editor-inserter__menu-help-panel {
+    /* =========================
+       Tabs – Reverse (DESKTOP)
+       ========================= */
+  }
+  .edit-post-visual-editor .wp-block-nhsblocks-nhstabs.is-style-reverse .nhsuk-tabs__list-item, .block-editor-block-styles .wp-block-nhsblocks-nhstabs.is-style-reverse .nhsuk-tabs__list-item, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs.is-style-reverse .nhsuk-tabs__list-item {
+    background-color: #212b32;
+  }
+  .edit-post-visual-editor .wp-block-nhsblocks-nhstabs.is-style-reverse .nhsuk-tabs__list-item--selected, .block-editor-block-styles .wp-block-nhsblocks-nhstabs.is-style-reverse .nhsuk-tabs__list-item--selected, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs.is-style-reverse .nhsuk-tabs__list-item--selected {
+    background-color: #ffffff;
+  }
+  .edit-post-visual-editor .wp-block-nhsblocks-nhstabs.is-style-reverse .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab, .block-editor-block-styles .wp-block-nhsblocks-nhstabs.is-style-reverse .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs.is-style-reverse .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab {
+    background-color: inherit;
+    color: #212b32;
+  }
+  .edit-post-visual-editor .wp-block-nhsblocks-nhstabs.is-style-reverse .nhsuk-tabs__tab, .block-editor-block-styles .wp-block-nhsblocks-nhstabs.is-style-reverse .nhsuk-tabs__tab, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhstabs.is-style-reverse .nhsuk-tabs__tab {
+    color: #ffffff;
+  }
+}
 .edit-post-visual-editor section.nhsuk-section:nth-of-type(odd), .block-editor-block-styles section.nhsuk-section:nth-of-type(odd), .block-editor-inserter__menu-help-panel section.nhsuk-section:nth-of-type(odd) {
   background: #f0f4f5;
 }
@@ -18223,4 +18344,96 @@
   clear: both;
   content: "";
   display: block;
+}
+
+/* ==================================================
+   NHS Tabs – Editor preview styles (SAFE)
+   ================================================== */
+/* -------------------------------
+   Panel preview (DO NOT reset layout)
+   ------------------------------- */
+.editor-styles-wrapper .nhsuk-tabs__panel {
+  border: 1px solid #d8dde0;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: #ffffff;
+}
+
+/* Hide non-active panels ONLY */
+.editor-styles-wrapper .nhsuk-tabs__panel--hidden {
+  display: none;
+}
+
+/* -------------------------------
+   Fake tab strip (editor-only)
+   ------------------------------- */
+.editor-styles-wrapper .nhsuk-tabs__list {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px 0;
+  border-bottom: 2px solid #d8dde0;
+}
+
+/* LI = wrapper only */
+.editor-styles-wrapper .nhsuk-tabs__list-item {
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px solid transparent;
+}
+
+/* A = actual tab UI */
+.editor-styles-wrapper .nhsuk-tabs__tab {
+  display: block;
+  padding: 6px 10px;
+  font-size: 14px;
+  line-height: 1.3;
+  background: #f0f4f5;
+  border-radius: 4px 4px 0 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Selected tab */
+.editor-styles-wrapper .nhsuk-tabs__list-item--selected {
+  border-bottom-color: #005eb8;
+}
+
+.editor-styles-wrapper .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab {
+  background: #ffffff;
+  font-weight: bold;
+}
+
+/* nhstabs-styles.css */
+/* nhstabs-styles.css */
+/* nhstabs editor styles */
+/* ===============================
+   Tabs block – style variations
+   Change TAB HEADER BACKGROUND
+   =============================== */
+/* =========================
+   Tabs – Blue style (EDITOR)
+   ========================= */
+.editor-styles-wrapper .block-editor-block-list__block[data-type="nhsblocks/nhstabs"][class*=is-style-blue] .nhsuk-tabs__tab {
+  background-color: #005eb8;
+  color: #ffffff;
+}
+
+.editor-styles-wrapper .block-editor-block-list__block[data-type="nhsblocks/nhstabs"][class*=is-style-blue] .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab {
+  background-color: #003087;
+  color: #ffffff;
+}
+
+/* =========================
+   Tabs – Reverse style (EDITOR)
+   ========================= */
+.editor-styles-wrapper .block-editor-block-list__block[data-type="nhsblocks/nhstabs"][class*=is-style-reverse] .nhsuk-tabs__tab {
+  background-color: #212b32;
+  color: #ffffff;
+}
+
+.editor-styles-wrapper .block-editor-block-list__block[data-type="nhsblocks/nhstabs"][class*=is-style-reverse] .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab {
+  background-color: #ffffff;
+  color: #212b32;
 }

@@ -254,3 +254,127 @@ $tag-variants: (
     }
   }
 }
+
+/* =====================================================
+   NHS Tabs 
+   ===================================================== */
+
+.wp-block-nhsblocks-nhstabs .nhsuk-tabs {
+  max-width: 100%;
+}
+
+.wp-block-nhsblocks-nhstabs .nhsuk-tabs__list {
+  display: block;
+  width: 100%;
+}
+
+.wp-block-nhsblocks-nhstabs .nhsuk-tabs__list-item {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab {
+  display: block;
+  white-space: normal;
+  overflow-wrap: break-word;
+  min-width: 0;
+  background-color: transparent; /* critical */
+}
+
+/* Hide inactive panels */
+.wp-block-nhsblocks-nhstabs .nhsuk-tabs__panel--hidden {
+  display: none !important;
+}
+
+/* -----------------------------------------------------
+   Mobile behaviour (below NHS breakpoint)
+   ----------------------------------------------------- */
+@media (max-width: 48.0625em) {
+
+  .wp-block-nhsblocks-nhstabs .nhsuk-tabs__list-item::before {
+    margin-left: -14px;
+  }
+
+  /* Tabs behave like navigation (no visited purple) */
+  .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab,
+  .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:link,
+  .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:visited,
+  .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:hover,
+  .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:focus,
+  .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:active {
+    color: inherit;
+    text-decoration: none;
+    background-color: transparent;
+  }
+
+  /* Blue & Reverse fall back to Standard on mobile */
+  .wp-block-nhsblocks-nhstabs.is-style-blue .nhsuk-tabs__list-item,
+  .wp-block-nhsblocks-nhstabs.is-style-reverse .nhsuk-tabs__list-item {
+    background-color: transparent;
+  }
+}
+
+/* -----------------------------------------------------
+   Desktop (NHS breakpoint)
+   ----------------------------------------------------- */
+@media (min-width: 48.0625em) {
+
+  .wp-block-nhsblocks-nhstabs .nhsuk-tabs__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .wp-block-nhsblocks-nhstabs .nhsuk-tabs__list-item {
+    flex: 1 1 auto;
+  }
+
+  /* =========================
+     Tabs – Blue (DESKTOP)
+     ========================= */
+
+  .wp-block-nhsblocks-nhstabs.is-style-blue
+  .nhsuk-tabs__list-item {
+    background-color: $color_nhsuk-blue;
+  }
+
+  .wp-block-nhsblocks-nhstabs.is-style-blue
+  .nhsuk-tabs__list-item--selected {
+    background-color: $color_nhsuk-dark-blue;
+  }
+
+  .wp-block-nhsblocks-nhstabs.is-style-blue
+  .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab {
+    background-color: inherit;
+    color: $color_nhsuk-white;
+  }
+
+  .wp-block-nhsblocks-nhstabs.is-style-blue
+  .nhsuk-tabs__tab {
+    color: $color_nhsuk-white;
+  }
+
+  /* =========================
+     Tabs – Reverse (DESKTOP)
+     ========================= */
+
+  .wp-block-nhsblocks-nhstabs.is-style-reverse
+  .nhsuk-tabs__list-item {
+    background-color: $color_nhsuk-black;
+  }
+
+  .wp-block-nhsblocks-nhstabs.is-style-reverse
+  .nhsuk-tabs__list-item--selected {
+    background-color: $color_nhsuk-white;
+  }
+
+  .wp-block-nhsblocks-nhstabs.is-style-reverse
+  .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab {
+    background-color: inherit;
+    color: $color_nhsuk-black;
+  }
+
+  .wp-block-nhsblocks-nhstabs.is-style-reverse
+  .nhsuk-tabs__tab {
+    color: $color_nhsuk-white;
+  }
+}
