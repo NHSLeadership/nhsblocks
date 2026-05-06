@@ -2,7 +2,7 @@
  * NHS Tabs
  *
  * @reference https://service-manual.nhs.uk/design-system/components/tabs
- * @author Mahesh Murali Poovapilly, NHS Leadership Academy
+ * @author Mahesh Murali Poovampilly, NHS Leadership Academy
  * @version 1.0
  */
 
@@ -27,10 +27,13 @@ const DEFAULT_TABS = [
 ];
 
 // Small helper: unique-ish, readable id
-const makeTabId = (index) => `tab-${Date.now()}-${index}`;
+const slugify = (text) =>
+    text.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+const makeTabId = (label, prefix) => `${slugify(label)}-${prefix}`;
 const makeDefaultLabel = (index) => sprintf(__('Tab %d', 'nhsblocks'), index + 1);
 
 registerBlockType('nhsblocks/nhstabs', {
+    apiVersion: 2,
     title: __('Tabs', 'nhsblocks'),
     category: 'nhsblocks',
     icon: 'editor-table',
@@ -79,10 +82,10 @@ registerBlockType('nhsblocks/nhstabs', {
          * This is the key fix for the "Group settings" issue after add/remove/tab count changes.
          */
         const keepTabsSelected = () => {
-            // Select parent block
+            // Select parent block.
             dispatchBE.selectBlock(clientId);
 
-            // Ensure the "Block" settings panel is shown (not Document)
+            // Ensure the "Block" settings panel is shown (not Document).
             if (dispatchUI && typeof dispatchUI.openGeneralSidebar === 'function') {
                 dispatchUI.openGeneralSidebar('edit-post/block');
             }
@@ -92,17 +95,75 @@ registerBlockType('nhsblocks/nhstabs', {
          * Ensure we always have at least MIN_TABS (in case old content / bad data)
          */
         useEffect(() => {
+
+            const prefix = Date.now().toString().slice(-3);
+
+            const slugify = (text) =>
+                text.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+
+            const legacyBaseIds = ['past-day', 'past-week', 'past-month', 'past-year'];
+
+            const isLegacy = (id) => {
+                if (!id) return false;
+
+                // Match:
+                // past-week
+                // past-week-bbbe
+                // past-week-1234
+                return legacyBaseIds.some(base => id === base || id.startsWith(`${base}-`));
+            };
+
+            // Initialise.
             if (!tabs || tabs.length < MIN_TABS) {
-                const safeTabs = new Array(MIN_TABS).fill(null).map((_, i) => ({
-                    id: makeTabId(i),
-                    label: makeDefaultLabel(i),
-                }));
+
+                const safeTabs = new Array(MIN_TABS).fill(null).map((_, i) => {
+                    const label = makeDefaultLabel(i);
+                    return {
+                        id: `${slugify(label)}-${prefix}`,
+                        label,
+                    };
+                });
+
                 setAttributes({ tabs: safeTabs, activeTab: 0 });
 
-                // After attributes set, keep block selected
                 setTimeout(keepTabsSelected, 0);
+                return;
             }
-            // eslint-disable-next-line react-hooks/exhaustive-deps
+
+            // Fix ALL legacy formats (this is the key change)
+            const needsFix = tabs.some(tab => isLegacy(tab.id));
+
+            if (needsFix) {
+
+                const updated = tabs.map((tab, i) => {
+                    if (isLegacy(tab.id)) {
+
+                        // extract base (past-week from past-week-bbbe)
+                        const base = tab.id.split('-').slice(0, 2).join('-');
+
+                        return {
+                            ...tab,
+                            id: `${base}-${prefix}`
+                        };
+                    }
+                    return tab;
+                });
+
+                setAttributes({ tabs: updated });
+
+                const innerBlocks = selectBE.getBlocks(clientId) || [];
+                innerBlocks.forEach((block, idx) => {
+                    if (block.name !== 'core/group') return;
+
+                    const newId = updated[idx]?.id;
+                    if (newId) {
+                        dispatchBE.updateBlockAttributes(block.clientId, {
+                            anchor: newId,
+                        });
+                    }
+                });
+            }
+
         }, []);
 
         /**
@@ -191,9 +252,13 @@ registerBlockType('nhsblocks/nhstabs', {
             if (tabs.length >= MAX_TABS) return;
 
             const newIndex = tabs.length;
+            const newLabel = makeDefaultLabel(newIndex);
+
+            const prefix = Date.now().toString().slice(-3);
+
             const newTab = {
-                id: makeTabId(newIndex),
-                label: makeDefaultLabel(newIndex),
+                id: makeTabId(newLabel, prefix),
+                label: newLabel,
             };
 
             setAttributes({ tabs: [...tabs, newTab], activeTab: newIndex });
@@ -201,10 +266,8 @@ registerBlockType('nhsblocks/nhstabs', {
             const panelBlock = createPanelBlock(newTab.id);
             insertPanelBlock(panelBlock);
 
-            // Ensure correct panel visible
             syncPanelVisibility(newIndex);
 
-            // Keep Tabs selected (after Gutenberg has processed insertion)
             setTimeout(keepTabsSelected, 0);
         };
 
@@ -249,9 +312,12 @@ registerBlockType('nhsblocks/nhstabs', {
             // Add until count matches
             while (currentTabs.length < desired) {
                 const newIndex = currentTabs.length;
+                const newLabel = makeDefaultLabel(newIndex);
+                const prefix = Date.now().toString().slice(-3);
+
                 const newTab = {
-                    id: makeTabId(newIndex),
-                    label: makeDefaultLabel(newIndex),
+                    id: makeTabId(newLabel, prefix),
+                    label: newLabel,
                 };
                 currentTabs.push(newTab);
 
@@ -300,12 +366,14 @@ registerBlockType('nhsblocks/nhstabs', {
                 <InspectorControls>
                     <PanelBody title={__('Tabs settings', 'nhsblocks')} initialOpen>
                         <TextControl
+                            __nextHasNoMarginBottom
                             label={__('Tabs title', 'nhsblocks')}
                             value={title}
                             onChange={(value) => setAttributes({ title: value })}
                         />
 
                         <RangeControl
+                            __nextHasNoMarginBottom
                             label={__('Number of tabs', 'nhsblocks')}
                             value={tabs.length}
                             onChange={(val) => setTabCount(val)}
@@ -333,6 +401,7 @@ registerBlockType('nhsblocks/nhstabs', {
 
                         {tabs.map((tab, index) => (
                             <TextControl
+                                __nextHasNoMarginBottom
                                 key={tab.id}
                                 label={sprintf(__('Tab %d label', 'nhsblocks'), index + 1)}
                                 value={tab.label}
