@@ -8,28 +8,37 @@
 
 const { __, sprintf } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-
 const { Fragment, useEffect } = wp.element;
-
 const { InspectorControls, InnerBlocks, useBlockProps } = wp.blockEditor;
-
 const { PanelBody, TextControl, Button, RangeControl } = wp.components;
 
-// You can tweak these limits safely
+// Limits
 const MIN_TABS = 2;
 const MAX_TABS = 6;
+const DEFAULT_TAB_COUNT = 4;
 
-const DEFAULT_TABS = [
-    { id: 'past-day', label: 'Past day' },
-    { id: 'past-week', label: 'Past week' },
-    { id: 'past-month', label: 'Past month' },
-    { id: 'past-year', label: 'Past year' },
-];
+// Helpers
+const slugify = (text = '') =>
+    String(text)
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, '-')
+        .replace(/[^a-z0-9-]/g, '');
 
-// Small helper: unique-ish, readable id
-const slugify = (text) =>
-    text.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-const makeTabId = (label, prefix) => `${slugify(label)}-${prefix}`;
+const pad3 = (n) => String(n).padStart(3, '0');
+
+/**
+ * Returns a 3-digit numeric prefix derived from Date.now().
+ * Guaranteed 3 digits, e.g. "042", "917".
+ */
+const make3DigitPrefix = () => pad3(Number(String(Date.now()).slice(-3)));
+
+/**
+ * Make tab id using label + 3-digit prefix (no "past-*").
+ * Example: "tab-1-917" or "eligibility-842".
+ */
+const makeTabId = (label, prefix3) => `${slugify(label)}-${prefix3}`;
+
 const makeDefaultLabel = (index) => sprintf(__('Tab %d', 'nhsblocks'), index + 1);
 
 registerBlockType('nhsblocks/nhstabs', {
@@ -50,26 +59,40 @@ registerBlockType('nhsblocks/nhstabs', {
 
     attributes: {
         title: { type: 'string', default: 'Contents' },
-        tabs: { type: 'array', default: DEFAULT_TABS },
-        activeTab: { type: 'number', default: 0 }, // editor state
+
+        tabs: {
+            type: 'array',
+            default: new Array(DEFAULT_TAB_COUNT).fill(null).map((_, i) => ({
+                id: `tab-${i + 1}`,
+                label: makeDefaultLabel(i),
+            })),
+        },
+
+        activeTab: { type: 'number', default: 0 },
+
+        tabsPrefix: { type: 'string', default: '' },
     },
 
     example: {
         attributes: {
             title: 'Contents',
-            tabs: DEFAULT_TABS,
+            tabs: [
+                { id: 'tab-1-001', label: 'Tab 1' },
+                { id: 'tab-2-001', label: 'Tab 2' },
+                { id: 'tab-3-001', label: 'Tab 3' },
+                { id: 'tab-4-001', label: 'Tab 4' },
+            ],
             activeTab: 0,
+            tabsPrefix: '001',
         },
     },
 
     edit: (props) => {
         const { attributes, setAttributes, clientId } = props;
-        const { title, tabs, activeTab } = attributes;
+        const { title, tabs, activeTab, tabsPrefix } = attributes;
 
         const selectBE = wp.data.select('core/block-editor');
         const dispatchBE = wp.data.dispatch('core/block-editor');
-
-        // Sidebar UI store (so we can force block settings sidebar back to our Tabs block)
         const dispatchUI = wp.data.dispatch('core/edit-post');
 
         const blockProps = useBlockProps({
@@ -77,93 +100,101 @@ registerBlockType('nhsblocks/nhstabs', {
             'data-module': 'nhsuk-tabs',
         });
 
-        /**
-         * Keep the Tabs block selected so the Inspector doesn't switch to the inner Group block.
-         * This is the key fix for the "Group settings" issue after add/remove/tab count changes.
-         */
         const keepTabsSelected = () => {
-            // Select parent block.
             dispatchBE.selectBlock(clientId);
 
-            // Ensure the "Block" settings panel is shown (not Document).
             if (dispatchUI && typeof dispatchUI.openGeneralSidebar === 'function') {
                 dispatchUI.openGeneralSidebar('edit-post/block');
             }
         };
 
         /**
-         * Ensure we always have at least MIN_TABS (in case old content / bad data)
+         * One-time init:
+         * - Ensure we have a stable 3-digit prefix (tabsPrefix)
+         * - Ensure tabs exist and each has an id
+         * - Ensure inner Group anchors match tab ids
+         * - Migrate any legacy ids starting with "past-" to new id format
          */
         useEffect(() => {
+            // 1) Ensure prefix exists + reduce collision risk if duplicated in the same editor session
+            let prefix = tabsPrefix;
 
-            const prefix = Date.now().toString().slice(-3);
+            if (!prefix) {
+                prefix = make3DigitPrefix();
+            }
 
-            const slugify = (text) =>
-                text.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+            // If another nhstabs block already uses this same prefix, bump it (still 3 digits).
+            try {
+                const allBlocks = wp.data.select('core/block-editor').getBlocks() || [];
+                const used = new Set(
+                    allBlocks
+                        .filter((b) => b.name === 'nhsblocks/nhstabs' && b.clientId !== clientId)
+                        .map((b) => b.attributes?.tabsPrefix)
+                        .filter(Boolean)
+                );
 
-            const legacyBaseIds = ['past-day', 'past-week', 'past-month', 'past-year'];
+                let guard = 0;
+                while (used.has(prefix) && guard < 50) {
+                    // bump within 000-999 and keep 3 digits
+                    prefix = pad3((Number(prefix) + 1) % 1000);
+                    guard++;
+                }
+            } catch (e) {
+                // ignore if editor store not ready
+            }
 
-            const isLegacy = (id) => {
-                if (!id) return false;
+            if (prefix !== tabsPrefix) {
+                setAttributes({ tabsPrefix: prefix });
+            }
 
-                // Match:
-                // past-week
-                // past-week-bbbe
-                // past-week-1234
-                return legacyBaseIds.some(base => id === base || id.startsWith(`${base}-`));
-            };
+            // 2) Ensure tabs exist + have ids
+            const hasTabs = Array.isArray(tabs) && tabs.length > 0;
 
-            // Initialise.
-            if (!tabs || tabs.length < MIN_TABS) {
-
-                const safeTabs = new Array(MIN_TABS).fill(null).map((_, i) => {
+            // If tabs empty, create defaults
+            if (!hasTabs) {
+                const created = new Array(DEFAULT_TAB_COUNT).fill(null).map((_, i) => {
                     const label = makeDefaultLabel(i);
-                    return {
-                        id: `${slugify(label)}-${prefix}`,
-                        label,
-                    };
+                    return { id: makeTabId(label, prefix), label };
                 });
 
-                setAttributes({ tabs: safeTabs, activeTab: 0 });
-
+                setAttributes({ tabs: created, activeTab: 0 });
                 setTimeout(keepTabsSelected, 0);
                 return;
             }
 
-            // Fix ALL legacy formats (this is the key change)
-            const needsFix = tabs.some(tab => isLegacy(tab.id));
+            // If tabs exist but some missing id, or legacy past-* ids, normalise them
+            const legacy = (id) => typeof id === 'string' && (id === 'past-day' || id === 'past-week' || id === 'past-month' || id === 'past-year' || id.startsWith('past-'));
+            const needsNormalise =
+                tabs.some((t) => !t?.id) || tabs.some((t) => legacy(t.id));
 
-            if (needsFix) {
+            if (needsNormalise) {
+                const normalised = tabs.map((t, i) => {
+                    const label = t?.label || makeDefaultLabel(i);
 
-                const updated = tabs.map((tab, i) => {
-                    if (isLegacy(tab.id)) {
-
-                        // extract base (past-week from past-week-bbbe)
-                        const base = tab.id.split('-').slice(0, 2).join('-');
-
-                        return {
-                            ...tab,
-                            id: `${base}-${prefix}`
-                        };
+                    // If missing id or legacy past-*, replace with new format
+                    if (!t?.id || legacy(t.id)) {
+                        return { ...t, label, id: makeTabId(label, prefix) };
                     }
-                    return tab;
+
+                    return { ...t, label };
                 });
 
-                setAttributes({ tabs: updated });
+                setAttributes({ tabs: normalised });
 
+                // Update inner group anchors to match (index mapping)
                 const innerBlocks = selectBE.getBlocks(clientId) || [];
                 innerBlocks.forEach((block, idx) => {
                     if (block.name !== 'core/group') return;
 
-                    const newId = updated[idx]?.id;
-                    if (newId) {
-                        dispatchBE.updateBlockAttributes(block.clientId, {
-                            anchor: newId,
-                        });
-                    }
-                });
-            }
+                    const newId = normalised[idx]?.id;
+                    if (!newId) return;
 
+                    dispatchBE.updateBlockAttributes(block.clientId, { anchor: newId });
+                });
+
+                setTimeout(keepTabsSelected, 0);
+            }
+            // eslint-disable-next-line react-hooks/exhaustive-deps
         }, []);
 
         /**
@@ -188,16 +219,12 @@ registerBlockType('nhsblocks/nhstabs', {
                     ...kept,
                 ].join(' ');
 
-                dispatchBE.updateBlockAttributes(block.clientId, {
-                    className: nextClasses,
-                });
+                dispatchBE.updateBlockAttributes(block.clientId, { className: nextClasses });
             });
         };
 
-        /**
-         * Any time activeTab or tab count changes, re-sync panel visibility.
-         */
         useEffect(() => {
+            if (!Array.isArray(tabs) || tabs.length === 0) return;
             syncPanelVisibility(activeTab);
             // eslint-disable-next-line react-hooks/exhaustive-deps
         }, [activeTab, tabs?.length]);
@@ -209,13 +236,12 @@ registerBlockType('nhsblocks/nhstabs', {
         };
 
         const updateTabLabel = (index, value) => {
-            const updated = tabs.map((tab, i) => (i === index ? { ...tab, label: value } : tab));
+            const updated = (tabs || []).map((tab, i) =>
+                i === index ? { ...tab, label: value } : tab
+            );
             setAttributes({ tabs: updated });
         };
 
-        /**
-         * Create a new panel Group block (core/group) with the correct anchor + classes.
-         */
         const createPanelBlock = (tabId) => {
             return wp.blocks.createBlock(
                 'core/group',
@@ -231,101 +257,77 @@ registerBlockType('nhsblocks/nhstabs', {
             );
         };
 
-        /**
-         * Insert blocks but try NOT to move selection (WP versions vary).
-         * We always re-select Tabs afterwards anyway.
-         */
         const insertPanelBlock = (block) => {
             try {
-                // Some WP versions support 4th arg "updateSelection" (false)
                 dispatchBE.insertBlocks(block, undefined, clientId, false);
             } catch (e) {
-                // Fallback signature
                 dispatchBE.insertBlocks(block, undefined, clientId);
             }
         };
 
-        /**
-         * Add a tab + corresponding panel at the end.
-         */
         const addTab = () => {
-            if (tabs.length >= MAX_TABS) return;
+            if ((tabs || []).length >= MAX_TABS) return;
 
-            const newIndex = tabs.length;
+            const newIndex = (tabs || []).length;
             const newLabel = makeDefaultLabel(newIndex);
 
-            const prefix = Date.now().toString().slice(-3);
+            // Use stable block prefix if available, otherwise generate
+            const prefix = tabsPrefix || make3DigitPrefix();
 
             const newTab = {
                 id: makeTabId(newLabel, prefix),
                 label: newLabel,
             };
 
-            setAttributes({ tabs: [...tabs, newTab], activeTab: newIndex });
+            setAttributes({ tabs: [...(tabs || []), newTab], activeTab: newIndex });
 
             const panelBlock = createPanelBlock(newTab.id);
             insertPanelBlock(panelBlock);
 
             syncPanelVisibility(newIndex);
-
             setTimeout(keepTabsSelected, 0);
         };
 
-        /**
-         * Remove current tab (activeTab) + corresponding panel.
-         */
         const removeCurrentTab = () => {
-            if (tabs.length <= MIN_TABS) return;
+            if ((tabs || []).length <= MIN_TABS) return;
 
             const removeIndex = activeTab;
-            const nextTabs = tabs.filter((_, idx) => idx !== removeIndex);
+            const nextTabs = (tabs || []).filter((_, idx) => idx !== removeIndex);
 
-            // Remove the matching inner group block at same index
             const innerBlocks = selectBE.getBlocks(clientId) || [];
             const toRemove = innerBlocks[removeIndex];
             if (toRemove) {
                 dispatchBE.removeBlocks(toRemove.clientId);
             }
 
-            // Clamp active tab to new length
             const nextActive = Math.max(0, Math.min(removeIndex, nextTabs.length - 1));
             setAttributes({ tabs: nextTabs, activeTab: nextActive });
 
             syncPanelVisibility(nextActive);
-
-            // Keep Tabs selected after removal
             setTimeout(keepTabsSelected, 0);
         };
 
-        /**
-         * Adjust tab count to a specific number (RangeControl).
-         * Adds/removes from the end to reach target.
-         */
         const setTabCount = (target) => {
-            // RangeControl can briefly send undefined/null
             if (typeof target !== 'number') return;
 
             const desired = Math.max(MIN_TABS, Math.min(MAX_TABS, target));
+            const prefix = tabsPrefix || make3DigitPrefix();
 
-            let currentTabs = [...tabs];
+            let currentTabs = [...(tabs || [])];
 
-            // Add until count matches
             while (currentTabs.length < desired) {
                 const newIndex = currentTabs.length;
                 const newLabel = makeDefaultLabel(newIndex);
-                const prefix = Date.now().toString().slice(-3);
 
                 const newTab = {
                     id: makeTabId(newLabel, prefix),
                     label: newLabel,
                 };
-                currentTabs.push(newTab);
 
-                const panelBlock = createPanelBlock(newTab.id);
-                insertPanelBlock(panelBlock);
+                currentTabs.push(newTab);
+                insertPanelBlock(createPanelBlock(newTab.id));
             }
 
-            // Remove from end until count matches
             while (currentTabs.length > desired) {
                 const removeIndex = currentTabs.length - 1;
                 currentTabs.pop();
@@ -339,16 +341,21 @@ registerBlockType('nhsblocks/nhstabs', {
 
             const nextActive = Math.max(0, Math.min(activeTab, currentTabs.length - 1));
             setAttributes({ tabs: currentTabs, activeTab: nextActive });
-            syncPanelVisibility(nextActive);
 
-            // Keep Tabs selected after bulk operations
+            syncPanelVisibility(nextActive);
             setTimeout(keepTabsSelected, 0);
         };
 
-        /**
-         * Template applies only on first insert.
-         * After that, we manage add/remove via insertBlocks/removeBlocks.
-         */
+        // If tabs not ready yet, render a minimal placeholder (prevents key warnings & UI flicker)
+        if (!Array.isArray(tabs) || tabs.length === 0 || tabs.some((t) => !t?.id)) {
+            return (
+                <div {...blockProps}>
+                    <h2 className="nhsuk-tabs__title">{title}</h2>
+                    <p>{__('Initialising tabs…', 'nhsblocks')}</p>
+                </div>
+            );
+        }
+
         const template = (tabs || []).map((tab, index) => [
             'core/group',
             {
@@ -442,7 +449,11 @@ registerBlockType('nhsblocks/nhstabs', {
                         })}
                     </ul>
 
-                    <InnerBlocks template={template} templateLock={false} />
+                    <InnerBlocks
+                        template={template}
+                        allowedBlocks={['core/group']}
+                        templateLock={false}
+                    />
                 </div>
             </Fragment>
         );
@@ -463,16 +474,20 @@ registerBlockType('nhsblocks/nhstabs', {
                 <ul className="nhsuk-tabs__list">
                     {(tabs || []).map((tab, index) => (
                         <li
-                            key={tab.id}
+                            key={tab?.id || `tab-${index}`}
                             className={
                                 index === 0
                                     ? 'nhsuk-tabs__list-item nhsuk-tabs__list-item--selected'
                                     : 'nhsuk-tabs__list-item'
                             }
                         >
-                            <a className="nhsuk-tabs__tab" href={`#${tab.id}`}>
-                                {tab.label}
+                            <a
+                                className="nhsuk-tabs__tab"
+                                href={tab?.id ? `#${tab.id}` : undefined}
+                            >
+                                {tab?.label || ''}
                             </a>
+
                         </li>
                     ))}
                 </ul>
