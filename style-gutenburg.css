@@ -18347,7 +18347,7 @@
 }
 
 /* ==================================================
-   NHS Tabs – Editor preview styles (SAFE)
+   NHS Tabs – Editor preview styles 
    ================================================== */
 /* -------------------------------
    Panel preview (DO NOT reset layout)
@@ -18365,7 +18365,7 @@
 }
 
 /* -------------------------------
-   Fake tab strip (editor-only)
+    (editor-only)
    ------------------------------- */
 .editor-styles-wrapper .nhsuk-tabs__list {
   display: flex;
@@ -18380,7 +18380,6 @@
 .editor-styles-wrapper .nhsuk-tabs__list-item {
   margin: 0;
   padding: 0;
-  border-bottom: 2px solid transparent;
 }
 
 /* A = actual tab UI */
@@ -18390,24 +18389,23 @@
   font-size: 14px;
   line-height: 1.3;
   background: #f0f4f5;
-  border-radius: 4px 4px 0 0;
-  text-decoration: none;
+  text-decoration: underline;
   color: inherit;
 }
 
 /* Selected tab */
-.editor-styles-wrapper .nhsuk-tabs__list-item--selected {
-  border-bottom-color: #005eb8;
-}
-
-.editor-styles-wrapper .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab {
-  background: #ffffff;
+.editor-styles-wrapper .block-editor-block-list__block[data-type="nhsblocks/nhstabs"] .nhsuk-tabs__tab {
+  background-color: #d8dde0;
+  color: #212b32;
   font-weight: bold;
 }
 
-/* nhstabs-styles.css */
-/* nhstabs-styles.css */
-/* nhstabs editor styles */
+.editor-styles-wrapper .block-editor-block-list__block[data-type="nhsblocks/nhstabs"] .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab {
+  background-color: #ffffff;
+  color: #212b32;
+  text-decoration: none;
+}
+
 /* ===============================
    Tabs block – style variations
    Change TAB HEADER BACKGROUND
@@ -18421,8 +18419,8 @@
 }
 
 .editor-styles-wrapper .block-editor-block-list__block[data-type="nhsblocks/nhstabs"][class*=is-style-blue] .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab {
-  background-color: #003087;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #212b32;
 }
 
 /* =========================
