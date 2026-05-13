@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: nhsblocks
 Tags: NHS, NHS Digital, NHS Frontend, National Health Service, Leadership Academy
 Description: Gutenberg native custom blocks companion plugin for the NHS Nightingale theme (can also be standalone).
-Version: 1.3.25
+Version: 1.4.0
 
 **********************************************************************************************/
 /* stylelint-disable color-no-hex */
@@ -8054,6 +8054,104 @@ figure.is-style-nhsuk-table-responsive figcaption {
   margin: 0;
 }
 
+/* =====================================================
+   NHS Tabs 
+   ===================================================== */
+.wp-block-nhsblocks-nhstabs.nhsuk-tabs {
+  max-width: 100%;
+}
+
+.wp-block-nhsblocks-nhstabs .nhsuk-tabs__list {
+  display: block;
+  width: 100%;
+}
+
+.wp-block-nhsblocks-nhstabs .nhsuk-tabs__list-item {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab {
+  display: block;
+  white-space: normal;
+  overflow-wrap: break-word;
+  min-width: 0;
+  background-color: transparent; /* critical */
+}
+
+/* Hide inactive panels */
+.wp-block-nhsblocks-nhstabs .nhsuk-tabs__panel--hidden {
+  display: none !important;
+}
+
+/* -----------------------------------------------------
+   Mobile behaviour (below NHS breakpoint)
+   ----------------------------------------------------- */
+@media (max-width: 48.0625em) {
+  .wp-block-nhsblocks-nhstabs .nhsuk-tabs__list-item::before {
+    margin-left: -14px;
+  }
+  /* Tabs behave like navigation (no visited purple) */
+  .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab,
+  .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:link,
+  .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:visited,
+  .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:hover,
+  .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:focus,
+  .wp-block-nhsblocks-nhstabs .nhsuk-tabs__tab:active {
+    color: inherit;
+    text-decoration: none;
+    background-color: transparent;
+  }
+  /* Blue & Reverse fall back to Standard on mobile */
+  .wp-block-nhsblocks-nhstabs.is-style-blue .nhsuk-tabs__list-item,
+  .wp-block-nhsblocks-nhstabs.is-style-reverse .nhsuk-tabs__list-item {
+    background-color: transparent;
+  }
+}
+/* -----------------------------------------------------
+   Desktop (NHS breakpoint)
+   ----------------------------------------------------- */
+@media (min-width: 48.0625em) {
+  .wp-block-nhsblocks-nhstabs .nhsuk-tabs__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .wp-block-nhsblocks-nhstabs .nhsuk-tabs__list-item {
+    flex: 1 1 auto;
+  }
+  /* =========================
+     Tabs – Blue (DESKTOP)
+     ========================= */
+  .wp-block-nhsblocks-nhstabs.is-style-blue .nhsuk-tabs__list-item {
+    background-color: #005eb8;
+  }
+  .wp-block-nhsblocks-nhstabs.is-style-blue .nhsuk-tabs__list-item--selected {
+    background-color: #003087;
+  }
+  .wp-block-nhsblocks-nhstabs.is-style-blue .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab {
+    background-color: inherit;
+    color: #ffffff;
+  }
+  .wp-block-nhsblocks-nhstabs.is-style-blue .nhsuk-tabs__tab {
+    color: #ffffff;
+  }
+  /* =========================
+     Tabs – Reverse (DESKTOP)
+     ========================= */
+  .wp-block-nhsblocks-nhstabs.is-style-reverse .nhsuk-tabs__list-item {
+    background-color: #212b32;
+  }
+  .wp-block-nhsblocks-nhstabs.is-style-reverse .nhsuk-tabs__list-item--selected {
+    background-color: #ffffff;
+  }
+  .wp-block-nhsblocks-nhstabs.is-style-reverse .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab {
+    background-color: inherit;
+    color: #212b32;
+  }
+  .wp-block-nhsblocks-nhstabs.is-style-reverse .nhsuk-tabs__tab {
+    color: #ffffff;
+  }
+}
 /*
 // variations to styling required for gutenberg native blocks
 // @author Tony Blacker, NHS Leadership Academy
