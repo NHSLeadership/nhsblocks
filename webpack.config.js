@@ -2,6 +2,15 @@ const defaultConfig = require("./node_modules/@wordpress/scripts/config/webpack.
 
 module.exports = {
   ...defaultConfig,
+
+  entry: {
+    ...defaultConfig.entry(),
+    'nhsblocks-frontend': {
+      import: './src/frontend.js',
+      filename: 'nhsblocks-frontend.min.js',
+    },
+  },
+
   module: {
     ...defaultConfig.module,
     rules: [
