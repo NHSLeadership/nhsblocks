@@ -41,6 +41,7 @@
   "overrides": {
     "minimatch": "^10.2.3",
     "webpack-dev-server": "^5.2.1",
-    "serialize-javascript": "^7.0.5"
+    "serialize-javascript": "^7.0.5",
+    "linkify-it": "^5.0.2"
   }
 }

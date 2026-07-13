@@ -49,8 +49,18 @@ with the WordPress plugin.
   Reason: Addresses high-severity vulnerabilities reported in
   transitive usage via `copy-webpack-plugin`. Development-only.
 
+- linkify-it → ^5.0.2  
+  Reason: Addresses a high-severity vulnerability (GHSA-22p9-wv53-3rq4)
+  affecting markdown link parsing in transitive development dependencies
+  used by `markdownlint` and `@wordpress/scripts`. Development-only.
+
+
 ### Review policy
 
 Overrides are reviewed during routine dependency updates and removed
 once upstream tooling (e.g. `@wordpress/scripts`) adopts patched
 versions natively.
+
+Where possible, overrides are applied only to development-time tooling
+dependencies and are validated by running the project's build, linting,
+and test processes after installation.

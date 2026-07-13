@@ -57,6 +57,7 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 
 = 1.4.1 =
   * Change tabs block api version to 3
+  * Security updates
 
 = 1.4.0 =
   * Adds new NHS tabs block
