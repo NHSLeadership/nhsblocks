@@ -16,6 +16,7 @@ const TEMPLATE_OPTIONS = [['core/image', { align: 'right', width: '150px' }]];
 
 registerBlockType('nhsblocks/reveal1', {
 	title: __('Simple Reveal', 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	icon: 'plus-alt',
 	styles: [
@@ -55,12 +56,13 @@ registerBlockType('nhsblocks/reveal1', {
 	},
 
 	edit: (props) => {
-		const blockProps = useBlockProps();
+		const blockProps = useBlockProps({
+			className: 'nhsuk-details newstyle',
+		});
 		//  console.log(blockProps);
 		// Lift info from props and populate various constants.
 		const {
 			attributes: { revealTitle, revealText, withImage },
-			className,
 			setAttributes,
 		} = props;
 
@@ -88,7 +90,7 @@ registerBlockType('nhsblocks/reveal1', {
 					</PanelRow>
 				</PanelBody>
 			</InspectorControls>,
-			<details className={`${className} nhsuk-details newstyle`} open>
+			<details {...blockProps} open>
 				<summary className="nhsuk-details__summary" role="button" aria-controls="details-content-" aria-expanded="false">
 					<span className="nhsuk-details__summary-text">
 						<RichText
@@ -107,7 +109,6 @@ registerBlockType('nhsblocks/reveal1', {
 						<InnerBlocks template={TEMPLATE_OPTIONS} />
 					)}
 					<RichText
-						{ ...blockProps }
 						placeholder={__('Reveal Contents', 'nhsblocks')}
 						onChange={onChangeRevealText}
 						value={revealText}
@@ -117,13 +118,16 @@ registerBlockType('nhsblocks/reveal1', {
 		];
 	},
 	save: (props) => {
-		const blockProps = useBlockProps.save();
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-details',
+		});
+
 		const {
 			attributes: { revealTitle, revealText, withImage },
 		} = props;
 
 		return (
-			<details className="nhsuk-details">
+			<details {...blockProps}>
 				<summary className="nhsuk-details__summary" role="button" aria-controls="details-content-" aria-expanded="false">
 					<span className="nhsuk-details__summary-text">
 						<RichText.Content value={revealTitle} />
@@ -135,7 +139,7 @@ registerBlockType('nhsblocks/reveal1', {
 					aria-hidden="false"
 				>
 					{withImage === true && <InnerBlocks.Content/>}
-					<RichText.Content { ...blockProps } value={revealText} />
+					<RichText.Content value={revealText} />
 				</div>
 			</details>
 		);

@@ -16,12 +16,14 @@ const {
 	MediaUpload,
 	InnerBlocks,
 	__experimentalBlockVariationPicker,
+	useBlockProps,
 } = wp.blockEditor;
 const { useDispatch, useSelect } = wp.data;
 import { map } from 'lodash';
 import * as Templates from './templates.js';
 
 registerBlockType('nhsblocks/dashboardnav', {
+	apiVersion: 3,
 	title: __('Dashboard Navigation', 'nhsblocks'),
 	category: 'nhsblocks',
 	icon: 'tagcloud',
@@ -33,6 +35,11 @@ registerBlockType('nhsblocks/dashboardnav', {
 	},
 
 	edit: (props) => {
+
+		const blockProps = useBlockProps({
+			className: 'nhsuk-grid-row',
+		});
+
 		const { clientId, name } = props;
 		const {
 			attributes: { template },
@@ -88,16 +95,19 @@ registerBlockType('nhsblocks/dashboardnav', {
 			);
 		};
 		if (hasInnerBlocks) {
+			
 			return (
-				<div className="nhsuk-grid-row">
+				<div {...blockProps}>
 					<div className="nhsuk-panel-group nhsuk-grid-column-full nhsuk-dashboard">
 						<InnerBlocks template={Templates.GRID_OPTIONS} />
 					</div>
 				</div>
 			);
+
 		}
+		
 		return (
-			<div className="nhsuk-grid-row">
+			<div {...blockProps}>
 				<div className="nhsuk-panel-group nhsuk-grid-column-full nhsuk-dashboard">
 					<__experimentalBlockVariationPicker
 						variations={Templates.GRID_OPTIONS}
@@ -118,13 +128,19 @@ registerBlockType('nhsblocks/dashboardnav', {
 				</div>
 			</div>
 		);
+
 	},
 	save: (props) => {
 		const {
 			attributes: { template },
 		} = props;
+
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-grid-row',
+		});
+
 		return (
-			<div className="nhsuk-grid-row">
+			<div {...blockProps}>
 				<div className="nhsuk-panel-group nhsuk-dashboard">
 					<InnerBlocks.Content />
 				</div>
@@ -134,6 +150,7 @@ registerBlockType('nhsblocks/dashboardnav', {
 });
 
 registerBlockType('nhsblocks/dashpanel', {
+	apiVersion: 3,
 	title: __('Dashboard Region', 'nhsblocks'),
 	description: __(
 		'Simple image background with text and link to give Dashboard navigation panel'
@@ -165,11 +182,21 @@ registerBlockType('nhsblocks/dashpanel', {
 	},
 
 	edit: (props) => {
-		// Lift info from props and populate various constants.
+		const { setAttributes, attributes } = props;
+		const {
+			overlayColor,
+			backgroundImage,
+			panelTitle,
+			panelLink,
+			className,
+		} = attributes;
 
-		const { setAttributes, attributes, className } = props;
-		const { overlayColor, backgroundImage, panelTitle, panelLink } =
-			attributes;
+		const blockProps = useBlockProps({
+			className: [
+				'nhsuk-panel-group__item',
+				className,
+			].filter(Boolean).join(' '),
+		});
 		// Grab newPanelLink, set the value of panelLink to newPanelLink.
 		const onChangePanelLink = (newPanelLink) => {
 			setAttributes({ panelLink: newPanelLink });
@@ -227,7 +254,7 @@ registerBlockType('nhsblocks/dashpanel', {
 					/>
 				</div>
 			</InspectorControls>,
-			<div className={`${className} nhsuk-panel-group__item`}>
+			<div {...blockProps}>
 				<div
 					className="nhsuk-panel-with-label"
 					style={{
@@ -255,18 +282,26 @@ registerBlockType('nhsblocks/dashpanel', {
 	},
 	save: (props) => {
 		// console.info(props);
-
 		const {
-			attributes: {
-				overlayColor,
-				backgroundImage,
-				panelTitle,
-				panelLink,
-			},
+				attributes: {
+					overlayColor,
+					backgroundImage,
+					panelTitle,
+					panelLink,
+					className,
+				},
 		} = props;
 
+		const blockProps = useBlockProps.save({
+			className: [
+				'nhsuk-panel-group__item',
+				className,
+			].filter(Boolean).join(' '),
+		});
+
+
 		return (
-			<div className="nhsuk-panel-group__item">
+			<div {...blockProps}>
 				<a href={panelLink} className="nhsuk-promo__link-wrapper">
 					<div
 						className="nhsuk-panel-with-label"

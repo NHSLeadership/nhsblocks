@@ -7,7 +7,7 @@
  */
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RichText, InnerBlocks } = wp.blockEditor;
+const { RichText, InnerBlocks, useBlockProps } = wp.blockEditor;
 //@todo add in Panel class variations
 //@todo add in width variations
 const TEMPLATE_OPTIONS = [
@@ -16,6 +16,7 @@ const TEMPLATE_OPTIONS = [
 ];
 registerBlockType('nhsblocks/panel1', {
 	title: __('Panel Region', 'nhsblocks'),
+	apiVersion: 3,
 	description: __(
 		'By default this block includes a title, block of text and button link. You can remove the button' +
 			' if you wish by clicking it then clicking three dots on the navigation bar at the top of the page then the' +
@@ -73,6 +74,9 @@ registerBlockType('nhsblocks/panel1', {
 	},
 
 	edit: (props) => {
+		const blockProps = useBlockProps({
+			className: 'nhsuk-card',
+		});
 		// Lift info from props and populate various constants.
 		const {
 			attributes: { panelTitle },
@@ -86,7 +90,7 @@ registerBlockType('nhsblocks/panel1', {
 		};
 
 		return (
-			<div className={`${className} nhsuk-card`}>
+			<div {...blockProps}>
 				<div className="nhsuk-card__content">
 					<h2>
 						<RichText
@@ -103,12 +107,15 @@ registerBlockType('nhsblocks/panel1', {
 		);
 	},
 	save: (props) => {
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-card',
+		});
 		const {
 			attributes: { panelTitle, className },
 		} = props;
 
 		return (
-			<div className={`${className} nhsuk-card`}>
+			<div {...blockProps}>
 				<div className="nhsuk-card__content">
 					<h2>
 						<RichText.Content value={panelTitle} />

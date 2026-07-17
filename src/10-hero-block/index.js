@@ -8,11 +8,18 @@
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RichText, InspectorControls, ColorPalette, MediaUpload, InnerBlocks } =
-	wp.blockEditor;
+const {
+    RichText,
+    InspectorControls,
+    ColorPalette,
+    MediaUpload,
+    InnerBlocks,
+    useBlockProps,
+} = wp.blockEditor;
 
 registerBlockType('nhsblocks/heroblock', {
 	title: __('Hero Block', 'nhsblocks'),
+	apiVersion: 3,
 	description: __(
 		'Full width zone, designed to go at the top of your page with an optional image background,' +
 			' texta area and call to action',
@@ -88,7 +95,7 @@ registerBlockType('nhsblocks/heroblock', {
 				</div>
 			</InspectorControls>,
 			<section
-				className={`${className}  nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description`}
+				className={`${className || ''} nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description`}
 				style={{
 					backgroundColor: `${overlayColor}`,
 					backgroundImage: `url(${backgroundImage})`,
@@ -111,16 +118,17 @@ registerBlockType('nhsblocks/heroblock', {
 	save: (props) => {
 		const { attributes, className } = props;
 		const { overlayColor, backgroundImage } = attributes;
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description',
+			style: {
+				backgroundImage: `url(${backgroundImage})`,
+				backgroundSize: 'cover',
+				backgroundPosition: 'center',
+				backgroundColor: `${overlayColor}`,
+			},
+		});
 		return (
-			<section
-				className="nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description"
-				style={{
-					backgroundImage: `url(${backgroundImage})`,
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
-					backgroundColor: `${overlayColor}`,
-				}}
-			>
+			<section {...blockProps}>
 				<div className="nhsuk-hero__overlay">
 					<div className="nhsuk-width-container">
 						<div className="nhsuk-grid-row">
@@ -137,6 +145,7 @@ registerBlockType('nhsblocks/heroblock', {
 
 registerBlockType('nhsblocks/heroinner', {
 	title: __('Hero Block Inner Text', 'nhsblocks'),
+	apiVersion: 3,
 	description: __('Add some text to the header', 'nhsblocks'),
 	category: 'nhsblocks',
 	parent: ['nhsblocks/heroblock'],
@@ -209,8 +218,11 @@ registerBlockType('nhsblocks/heroinner', {
 	save: (props) => {
 		const { attributes, className } = props;
 		const { fontColor } = attributes;
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-hero-content',
+		});
 		return (
-			<div className="nhsuk-hero-content">
+			<div {...blockProps}>
 				<RichText.Content
 					tagName="h1"
 					className="nhsuk-u-margin-bottom-3"

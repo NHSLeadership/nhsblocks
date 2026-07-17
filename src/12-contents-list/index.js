@@ -9,7 +9,7 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
-const { RichText, URLInput, InnerBlocks } = wp.blockEditor;
+const { RichText, URLInput, InnerBlocks, useBlockProps } = wp.blockEditor;
 
 const { Fragment } = wp.element;
 
@@ -19,6 +19,7 @@ const { TextControl } = wp.components;
 
 registerBlockType('nhsblocks/contentslist', {
 	title: __('Contents List', 'nhsblocks'),
+	apiVersion: 3,
 	description: __(
 		'Use contents lists to allow users to navigate between related pages, for example about a single condition.',
 		'nhsblocks'
@@ -56,6 +57,9 @@ registerBlockType('nhsblocks/contentslist', {
 		],
 	},
 	edit: (props) => {
+		const blockProps = useBlockProps({
+			className: 'nhsuk-contents-list',
+		});
 		const {
 			className,
 			setAttributes,
@@ -66,7 +70,7 @@ registerBlockType('nhsblocks/contentslist', {
 
 		return (
 			<nav
-				className="{ className } nhsuk-contents-list"
+				{...blockProps}
 				role="navigation"
 				aria-label="Pages in this guide"
 			>
@@ -83,9 +87,12 @@ registerBlockType('nhsblocks/contentslist', {
 		);
 	},
 	save: (props) => {
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-contents-list',
+		});
 		return (
 			<nav
-				className="nhsuk-contents-list"
+				{...blockProps}
 				role="navigation"
 				aria-label="Pages in this guide"
 			>
@@ -102,6 +109,7 @@ registerBlockType('nhsblocks/contentslist', {
 
 registerBlockType('nhsblocks/contentslistitem', {
 	title: __('Contents List Item', 'nhsblocks'),
+	apiVersion: 3,
 	description: __('List Item to go into the contents list', 'nhsblocks'),
 	category: 'nhsblocks',
 	icon: 'editor-ul',
@@ -120,6 +128,9 @@ registerBlockType('nhsblocks/contentslistitem', {
 		},
 	},
 	edit: (props) => {
+		const blockProps = useBlockProps({
+			className: 'nhsuk-contents-list__item',
+		});
 		const {
 			className,
 			setAttributes,
@@ -127,7 +138,7 @@ registerBlockType('nhsblocks/contentslistitem', {
 			attributes: { text, url },
 		} = props;
 		return (
-			<li className="nhsuk-contents-list__item">
+			<li {...blockProps}>
 				{isSelected ? (
 					<div>
 						<TextControl
@@ -149,7 +160,7 @@ registerBlockType('nhsblocks/contentslistitem', {
 						{url ? (
 							<a
 								className="nhsuk-contents-list__link"
-								href="{ url }"
+								href={url}
 							>
 								{text}
 							</a>
@@ -165,9 +176,9 @@ registerBlockType('nhsblocks/contentslistitem', {
 	},
 	save: (props) => {
 		const {
-			className,
 			attributes: { text, url },
 		} = props;
+
 		return (
 			<Fragment>
 				{url ? (

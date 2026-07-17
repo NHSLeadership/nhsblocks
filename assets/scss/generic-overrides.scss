@@ -59,3 +59,11 @@
 .gallery-caption {
   @extend .nhsuk-image__caption;
 }
+
+.editor-styles-wrapper {
+	font-family: $nhsuk-font, $nhsuk-font-fallback;
+}
+
+.editor-post-title__input {
+	font-family: $nhsuk-font, $nhsuk-font-fallback;
+}

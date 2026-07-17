@@ -7,10 +7,11 @@
  */
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RichText, InnerBlocks } = wp.blockEditor;
+const { RichText, InnerBlocks, useBlockProps } = wp.blockEditor;
 
 registerBlockType('nhsblocks/dodont', {
 	title: __("Do and Don't List", 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	icon: 'yes-alt',
 	example: {
@@ -41,21 +42,23 @@ registerBlockType('nhsblocks/dodont', {
 	},
 
 	edit: (props) => {
-		// Lift info from props and populate various constants.
 		const {
 			attributes: { panelTitle },
-			className,
 			setAttributes,
 		} = props;
 
-		// Grab newPanelTitle, set the value of panelTitle to newPanelTitle.
+		const blockProps = useBlockProps({
+			className: 'nhsuk-do-dont-list',
+		});
+
 		const onChangePanelTitle = (newPanelTitle) => {
 			setAttributes({ panelTitle: newPanelTitle });
 		};
+
 		const ALLOWED_BLOCKS = [];
 
 		return (
-			<div className="nhsuk-do-dont-list">
+			<div {...blockProps}>
 				<h3 className="nhsuk-do-dont-list__label">
 					<RichText
 						placeholder={__('Panel Title', 'nhsblocks')}
@@ -70,14 +73,16 @@ registerBlockType('nhsblocks/dodont', {
 		);
 	},
 	save: (props) => {
-		// console.info(props);
-
 		const {
-			attributes: { panelTitle, panelText },
+			attributes: { panelTitle },
 		} = props;
 
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-do-dont-list',
+		});
+
 		return (
-			<div className="nhsuk-do-dont-list">
+			<div {...blockProps}>
 				<h3 className="nhsuk-do-dont-list__label">
 					<RichText.Content value={panelTitle} />
 				</h3>
@@ -91,6 +96,7 @@ registerBlockType('nhsblocks/dodont', {
 
 registerBlockType('nhsblocks/doitem', {
 	title: __('List Item with Tick', 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	icon: 'yes',
 	parent: ['nhsblocks/dodont'],
@@ -103,6 +109,9 @@ registerBlockType('nhsblocks/doitem', {
 	},
 
 	edit: (props) => {
+
+		const blockProps = useBlockProps();
+
 		// Lift info from props and populate various constants.
 		const {
 			attributes: { panelText },
@@ -115,7 +124,7 @@ registerBlockType('nhsblocks/doitem', {
 		};
 
 		return (
-			<li>
+			<li {...blockProps}>
 				<svg
 					className="nhsuk-icon nhsuk-icon__tick"
 					xmlns="http://www.w3.org/2000/svg"
@@ -141,13 +150,14 @@ registerBlockType('nhsblocks/doitem', {
 	},
 	save: (props) => {
 		// console.info(props);
+		const blockProps = useBlockProps.save();
 
 		const {
 			attributes: { panelText },
 		} = props;
 
 		return (
-			<li>
+			<li {...blockProps}>
 				<svg
 					className="nhsuk-icon nhsuk-icon__tick"
 					xmlns="http://www.w3.org/2000/svg"
@@ -171,6 +181,7 @@ registerBlockType('nhsblocks/doitem', {
 
 registerBlockType('nhsblocks/dontitem', {
 	title: __('List Item with Cross', 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	icon: 'no-alt',
 	parent: ['nhsblocks/dodont'],
@@ -183,6 +194,7 @@ registerBlockType('nhsblocks/dontitem', {
 	},
 
 	edit: (props) => {
+		const blockProps = useBlockProps();
 		// Lift info from props and populate various constants.
 		const {
 			attributes: { panelText },
@@ -195,7 +207,7 @@ registerBlockType('nhsblocks/dontitem', {
 		};
 
 		return (
-			<li>
+			<li {...blockProps}	>
 				<svg
 					className="nhsuk-icon nhsuk-icon__cross"
 					xmlns="http://www.w3.org/2000/svg"
@@ -217,13 +229,14 @@ registerBlockType('nhsblocks/dontitem', {
 	},
 	save: (props) => {
 		// console.info(props);
+   		const blockProps = useBlockProps.save();
 
 		const {
 			attributes: { panelText },
 		} = props;
 
 		return (
-			<li>
+			<li {...blockProps}>
 				<svg
 					className="nhsuk-icon nhsuk-icon__cross"
 					xmlns="http://www.w3.org/2000/svg"

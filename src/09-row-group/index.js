@@ -9,7 +9,12 @@
 //const { useState, setState } = wp.element;
 const { __ } = wp.i18n;
 const { registerBlockType, createBlock } = wp.blocks;
-const { InnerBlocks, __experimentalBlockVariationPicker } = wp.blockEditor;
+const {
+    InnerBlocks,
+    __experimentalBlockVariationPicker,
+    useBlockProps,
+} = wp.blockEditor;
+
 const { useDispatch, useSelect } = wp.data;
 import { map } from 'lodash';
 
@@ -17,6 +22,7 @@ import * as Templates from './templates.js';
 
 registerBlockType('nhsblocks/rowgroup', {
 	title: __('Grouped Items', 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	icon: 'layout',
 	example: {},
@@ -27,6 +33,9 @@ registerBlockType('nhsblocks/rowgroup', {
 	},
 
 	edit: (props) => {
+		const blockProps = useBlockProps({
+			className: 'nhsuk-grid-row',
+		});
 		const { clientId, name } = props;
 		const {
 			attributes: { template },
@@ -82,7 +91,7 @@ registerBlockType('nhsblocks/rowgroup', {
 		};
 		if (hasInnerBlocks) {
 			return (
-				<div className="nhsuk-grid-row">
+				<div {...blockProps}>
 					<div className="nhsuk-panel-group nhsuk-grid-column-full">
 						<InnerBlocks template={Templates.GRID_OPTIONS} />
 					</div>
@@ -113,11 +122,14 @@ registerBlockType('nhsblocks/rowgroup', {
 		);
 	},
 	save: (props) => {
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-grid-row',
+		});
 		const {
 			attributes: { template },
 		} = props;
 		return (
-			<div className="nhsuk-grid-row">
+			<div {...blockProps}>
 				<div className="nhsuk-panel-group nhsuk-grid-column-full">
 					<InnerBlocks.Content />
 				</div>
@@ -128,6 +140,7 @@ registerBlockType('nhsblocks/rowgroup', {
 
 registerBlockType('nhsblocks/onehalf', {
 	title: __('One Half Width', 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	parent: ['nhsblocks/rowgroup'],
 	attributes: {
@@ -137,6 +150,9 @@ registerBlockType('nhsblocks/onehalf', {
 	},
 
 	edit: (props) => {
+		const blockProps = useBlockProps({
+			className: 'nhsuk-grid-column-one-half',
+		});
 		const {
 			attributes: { template },
 			setAttributes,
@@ -146,7 +162,7 @@ registerBlockType('nhsblocks/onehalf', {
 		};
 		const showTemplateSelector = template === null || !template;
 		return (
-			<div className="nhsuk-grid-column-one-half">
+			<div {...blockProps}>
 				<InnerBlocks
 					template={showTemplateSelector ? null : template}
 				/>
@@ -154,11 +170,14 @@ registerBlockType('nhsblocks/onehalf', {
 		);
 	},
 	save: (props) => {
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-grid-column-one-half',
+		});
 		const {
 			attributes: { template },
 		} = props;
 		return (
-			<div className="nhsuk-grid-column-one-half">
+			<div {...blockProps}>
 				<InnerBlocks.Content />
 			</div>
 		);
@@ -166,6 +185,7 @@ registerBlockType('nhsblocks/onehalf', {
 });
 registerBlockType('nhsblocks/onethird', {
 	title: __('One Third Width', 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	parent: ['nhsblocks/rowgroup'],
 	attributes: {
@@ -175,6 +195,9 @@ registerBlockType('nhsblocks/onethird', {
 	},
 
 	edit: (props) => {
+		const blockProps = useBlockProps({
+			className: 'nhsuk-grid-column-one-third',
+		});
 		const {
 			attributes: { template },
 			setAttributes,
@@ -184,7 +207,7 @@ registerBlockType('nhsblocks/onethird', {
 		};
 		const showTemplateSelector = template === null || !template;
 		return (
-			<div className="nhsuk-grid-column-one-third">
+			<div {...blockProps}>
 				<InnerBlocks
 					template={showTemplateSelector ? null : template}
 				/>
@@ -192,11 +215,14 @@ registerBlockType('nhsblocks/onethird', {
 		);
 	},
 	save: (props) => {
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-grid-column-one-third',
+		});
 		const {
 			attributes: { template },
 		} = props;
 		return (
-			<div className="nhsuk-grid-column-one-third">
+			<div {...blockProps}>
 				<InnerBlocks.Content />
 			</div>
 		);
@@ -205,6 +231,7 @@ registerBlockType('nhsblocks/onethird', {
 
 registerBlockType('nhsblocks/onequarter', {
 	title: __('One Quarter Width', 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	parent: ['nhsblocks/rowgroup'],
 	attributes: {
@@ -214,6 +241,9 @@ registerBlockType('nhsblocks/onequarter', {
 	},
 
 	edit: (props) => {
+		const blockProps = useBlockProps({
+			className: 'nhsuk-grid-column-one-quarter',
+		});
 		const {
 			attributes: { template },
 			setAttributes,
@@ -223,7 +253,7 @@ registerBlockType('nhsblocks/onequarter', {
 		};
 		const showTemplateSelector = template === null || !template;
 		return (
-			<div className="nhsuk-grid-column-one-quarter">
+			<div {...blockProps}>
 				<InnerBlocks
 					template={showTemplateSelector ? null : template}
 				/>
@@ -231,11 +261,14 @@ registerBlockType('nhsblocks/onequarter', {
 		);
 	},
 	save: (props) => {
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-grid-column-one-quarter',
+		});
 		const {
 			attributes: { template },
 		} = props;
 		return (
-			<div className="nhsuk-grid-column-one-quarter">
+			<div {...blockProps}>
 				<InnerBlocks.Content />
 			</div>
 		);
@@ -244,6 +277,7 @@ registerBlockType('nhsblocks/onequarter', {
 
 registerBlockType('nhsblocks/twothirds', {
 	title: __('Two Thirds Width', 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	parent: ['nhsblocks/rowgroup'],
 	attributes: {
@@ -253,6 +287,9 @@ registerBlockType('nhsblocks/twothirds', {
 	},
 
 	edit: (props) => {
+		const blockProps = useBlockProps({
+			className: 'nhsuk-grid-column-two-thirds',
+		});
 		const {
 			attributes: { template },
 			setAttributes,
@@ -262,7 +299,7 @@ registerBlockType('nhsblocks/twothirds', {
 		};
 		const showTemplateSelector = template === null || !template;
 		return (
-			<div className="nhsuk-grid-column-two-thirds">
+			<div {...blockProps}>
 				<InnerBlocks
 					template={showTemplateSelector ? null : template}
 				/>
@@ -270,11 +307,14 @@ registerBlockType('nhsblocks/twothirds', {
 		);
 	},
 	save: (props) => {
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-grid-column-two-thirds',
+		});
 		const {
 			attributes: { template },
 		} = props;
 		return (
-			<div className="nhsuk-grid-column-two-thirds">
+			<div {...blockProps}>
 				<InnerBlocks.Content />
 			</div>
 		);
@@ -283,6 +323,7 @@ registerBlockType('nhsblocks/twothirds', {
 
 registerBlockType('nhsblocks/threequarters', {
 	title: __('Three Quarter Width', 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	parent: ['nhsblocks/rowgroup'],
 	attributes: {
@@ -292,6 +333,9 @@ registerBlockType('nhsblocks/threequarters', {
 	},
 
 	edit: (props) => {
+		const blockProps = useBlockProps({
+			className: 'nhsuk-grid-column-three-quarters',
+		});
 		const {
 			attributes: { template },
 			setAttributes,
@@ -301,7 +345,7 @@ registerBlockType('nhsblocks/threequarters', {
 		};
 		const showTemplateSelector = template === null || !template;
 		return (
-			<div className="nhsuk-grid-column-three-quarters">
+			<div {...blockProps}>
 				<InnerBlocks
 					template={showTemplateSelector ? null : template}
 				/>
@@ -309,11 +353,14 @@ registerBlockType('nhsblocks/threequarters', {
 		);
 	},
 	save: (props) => {
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-grid-column-three-quarters',
+		});
 		const {
 			attributes: { template },
 		} = props;
 		return (
-			<div className="nhsuk-grid-column-three-quarters">
+			<div {...blockProps}>
 				<InnerBlocks.Content />
 			</div>
 		);

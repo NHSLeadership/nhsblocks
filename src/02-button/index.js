@@ -9,17 +9,19 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const {
-	RichText,
-	InspectorControls,
-	BlockControls,
-	BlockVerticalAlignmentToolbar,
-	URLInputButton,
+    RichText,
+    InspectorControls,
+    BlockControls,
+    BlockVerticalAlignmentToolbar,
+    URLInputButton,
+    useBlockProps,
 } = wp.blockEditor;
 //@todo align
 //@todo extended classes
 
 registerBlockType('nhsblocks/nhsbutton', {
 	title: __('Button', 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	icon: 'admin-links',
 	styles: [
@@ -68,11 +70,16 @@ registerBlockType('nhsblocks/nhsbutton', {
 	edit: (props) => {
 		// Props parameter holds all the info.
 		//console.info(props);
+		const blockProps = useBlockProps();
 
+		const styleClasses =
+			blockProps.className
+				?.split(' ')
+				.filter((c) => c.startsWith('is-style-'))
+				.join(' ') || '';
 		// Lift info from props and populate various constants.
 		const {
 			attributes: { buttonLabel, buttonLink, verticalAlignment },
-			className,
 			setAttributes,
 		} = props;
 
@@ -111,22 +118,29 @@ registerBlockType('nhsblocks/nhsbutton', {
 					value={verticalAlignment}
 				/>
 			</BlockControls>,
-			<div className={`${className} nhsuk-button`}>
-				<RichText
-					value={buttonLabel}
-					onChange={onChangeButtonLabel}
-					placeholder="Button label"
-				/>
+			<div {...blockProps}>
+				<div className={`nhsuk-button ${styleClasses}`}>
+					<RichText
+						value={buttonLabel}
+						onChange={onChangeButtonLabel}
+						placeholder="Button label"
+					/>
+				</div>
 			</div>,
 		];
 	},
 	save: (props) => {
+	
 		const {
 			attributes: { buttonLabel, buttonLink },
 		} = props;
+		const blockProps = useBlockProps.save({
+			href: buttonLink,
+			className: 'nhsuk-button',
+		});
 		// console.info(props);
 		return (
-			<a href={buttonLink} className="nhsuk-button">
+			<a {...blockProps}>
 				<RichText.Content value={buttonLabel} />
 			</a>
 		);

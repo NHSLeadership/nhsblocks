@@ -1,9 +1,10 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { InnerBlocks } = wp.blockEditor;
+const { InnerBlocks, useBlockProps } = wp.blockEditor;
 
 registerBlockType('nhsblocks/stripesblock', {
 	title: __('Stripes Block', 'nhsblocks'),
+	apiVersion: 3,
 	description: __(
 		'Outer block that allows alternate grey stripes. To be used with the Full Width for Stripes template ',
 		'nhsblocks'
@@ -86,6 +87,7 @@ registerBlockType('nhsblocks/stripesblock', {
 
 registerBlockType('nhsblocks/stripeblock', {
 	title: __('Stripe Block', 'nhsblocks'),
+	apiVersion: 3,
 	description: __(
 		'Inner block that allows alternate grey stripes',
 		'nhsblocks'
@@ -103,15 +105,29 @@ registerBlockType('nhsblocks/stripeblock', {
 			.map((block) => block.name)
 			.filter((blockName) => blockName !== 'nhsblocks/stripeblock');
 
+
+		const blockProps = useBlockProps({
+				className: 'nhsuk-section',
+			});
+
+
+		
 		return (
-			<div className="nhsuk-width-container">
-				<InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
-			</div>
+				<section {...blockProps}>
+					<div className="nhsuk-width-container">
+						<InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
+					</div>
+				</section>
 		);
+
 	},
-	save: (props) => {
+	save: () => {
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-section',
+		});
+
 		return (
-			<section className="nhsuk-section">
+			<section {...blockProps}>
 				<div className="nhsuk-width-container">
 					<InnerBlocks.Content />
 				</div>

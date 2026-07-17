@@ -7853,6 +7853,14 @@ b {
   box-shadow: 0 0 0 16px #ffeb3b inset;
 }
 
+.editor-styles-wrapper {
+  font-family: Frutiger W01, Arial, Sans-serif;
+}
+
+.editor-post-title__input {
+  font-family: Frutiger W01, Arial, Sans-serif;
+}
+
 .nhsuk-care-card {
   width: 100%;
 }
