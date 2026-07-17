@@ -8,11 +8,12 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { format } = wp.date;
-const { RichText, InnerBlocks } = wp.blockEditor;
+const { RichText, InnerBlocks, useBlockProps } = wp.blockEditor;
 const { dispatch, subscribe, select, withSelect } = wp.data;
 
 registerBlockType('nhsblocks/reviewdate', {
 	title: __('Review Date', 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	icon: 'update',
 	example: {
@@ -35,6 +36,9 @@ registerBlockType('nhsblocks/reviewdate', {
 		if (savedDate) {
 			const postDate = new Date(savedDate);
 			const formattedDate = format('d F Y', postDate);
+			const blockProps = useBlockProps({
+				className: 'nhsuk-review-date',
+			});
 
 			if (lastSaved !== formattedDate) {
 				if (typeof lastSaved === 'undefined') {
@@ -46,7 +50,7 @@ registerBlockType('nhsblocks/reviewdate', {
 			}
 
 			return (
-				<div className="nhsuk-review-date">
+				<div {...blockProps}>
 					<p className="nhsuk-body-s">
 						Page last reviewed:{' '}
 						<span className="last-saved-date">{lastSaved}</span>
@@ -56,13 +60,16 @@ registerBlockType('nhsblocks/reviewdate', {
 		}
 	}),
 	save: (props) => {
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-review-date',
+		});
 		const {
 			className,
 			attributes: { lastSaved },
 		} = props;
 
 		return (
-			<div className="nhsuk-review-date">
+			<div {...blockProps}>
 				<p className="nhsuk-body-s">
 					Page last reviewed:{' '}
 					<span className="last-saved-date">{lastSaved}</span>

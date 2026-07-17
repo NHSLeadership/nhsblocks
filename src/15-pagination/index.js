@@ -8,10 +8,8 @@
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RichText, InnerBlocks } = wp.blockEditor;
+const { RichText, InnerBlocks, URLInput, useBlockProps } = wp.blockEditor;
 const { Fragment } = wp.element;
-
-const { URLInput } = wp.blockEditor;
 
 const { TextControl } = wp.components;
 
@@ -19,6 +17,7 @@ import arrow from './arrow';
 
 registerBlockType('nhsblocks/pagination', {
 	title: __('Pagination', 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	icon: 'arrow-right-alt',
 	example: {
@@ -54,6 +53,9 @@ registerBlockType('nhsblocks/pagination', {
 		},
 	},
 	edit: (props) => {
+		const blockProps = useBlockProps({
+			className: 'nhsuk-pagination',
+		});
 		const {
 			className,
 			isSelected,
@@ -63,7 +65,7 @@ registerBlockType('nhsblocks/pagination', {
 
 		return (
 			<nav
-				className="nhsuk-pagination"
+				{...blockProps}
 				role="navigation"
 				aria-label="Pagination"
 			>
@@ -135,6 +137,9 @@ registerBlockType('nhsblocks/pagination', {
 		);
 	},
 	save: (props) => {
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-pagination',
+		});
 		const {
 			className,
 			attributes: { prevLink, nextLink, prevText, nextText },
@@ -142,7 +147,7 @@ registerBlockType('nhsblocks/pagination', {
 
 		return (
 			<nav
-				className="nhsuk-pagination"
+				{...blockProps}
 				role="navigation"
 				aria-label="Pagination"
 			>
