@@ -17440,7 +17440,7 @@
   list-style: none;
 }
 .edit-post-visual-editor .wp-block, .block-editor-block-styles .wp-block, .block-editor-inserter__menu-help-panel .wp-block {
-  max-width: 983px;
+  max-width: 840px;
 }
 .edit-post-visual-editor .wp-block[data-align=wide], .block-editor-block-styles .wp-block[data-align=wide], .block-editor-inserter__menu-help-panel .wp-block[data-align=wide] { /* it can be "data-align=full" and also "right", "left" and "center" */
   max-width: 1228px;
@@ -18410,4 +18410,51 @@
 .editor-styles-wrapper .block-editor-block-list__block[data-type="nhsblocks/nhstabs"][class*=is-style-reverse] .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab {
   background-color: #ffffff;
   color: #212b32;
+}
+
+.block-editor-block-list__block.wp-block {
+  max-width: 840px;
+}
+
+.block-editor-block-list__block.wp-block-nhsblocks-tags {
+  display: block;
+}
+
+.wp-block-nhsblocks-doitem .block-editor-rich-text__editable,
+.wp-block-nhsblocks-dontitem .block-editor-rich-text__editable {
+  padding-left: 34px;
+}
+
+.editor-styles-wrapper .wp-block[data-align=full]:has(> .nhsuk-striped-blocks) {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.block-editor-block-list__block.wp-block-nhsblocks-nhsbutton {
+  display: block;
+}
+
+.wp-block-nhsblocks-nhsbutton .nhsuk-button::before, .wp-block-nhsblocks-nhsbutton .edit-post-visual-editor .wp-block-button__link::before, .edit-post-visual-editor .wp-block-nhsblocks-nhsbutton .wp-block-button__link::before, .wp-block-nhsblocks-nhsbutton .edit-post-visual-editor .wp-block-file__button::before, .edit-post-visual-editor .wp-block-nhsblocks-nhsbutton .wp-block-file__button::before, .wp-block-nhsblocks-nhsbutton .block-editor-block-styles .wp-block-button__link::before, .block-editor-block-styles .wp-block-nhsblocks-nhsbutton .wp-block-button__link::before, .wp-block-nhsblocks-nhsbutton .block-editor-block-styles .wp-block-file__button::before, .block-editor-block-styles .wp-block-nhsblocks-nhsbutton .wp-block-file__button::before, .wp-block-nhsblocks-nhsbutton .block-editor-inserter__menu-help-panel .wp-block-button__link::before, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhsbutton .wp-block-button__link::before, .wp-block-nhsblocks-nhsbutton .block-editor-inserter__menu-help-panel .wp-block-file__button::before, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhsbutton .wp-block-file__button::before,
+.wp-block-nhsblocks-nhsbutton .nhsuk-button::after,
+.wp-block-nhsblocks-nhsbutton .edit-post-visual-editor .wp-block-button__link::after,
+.edit-post-visual-editor .wp-block-nhsblocks-nhsbutton .wp-block-button__link::after,
+.wp-block-nhsblocks-nhsbutton .edit-post-visual-editor .wp-block-file__button::after,
+.edit-post-visual-editor .wp-block-nhsblocks-nhsbutton .wp-block-file__button::after,
+.wp-block-nhsblocks-nhsbutton .block-editor-block-styles .wp-block-button__link::after,
+.block-editor-block-styles .wp-block-nhsblocks-nhsbutton .wp-block-button__link::after,
+.wp-block-nhsblocks-nhsbutton .block-editor-block-styles .wp-block-file__button::after,
+.block-editor-block-styles .wp-block-nhsblocks-nhsbutton .wp-block-file__button::after,
+.wp-block-nhsblocks-nhsbutton .block-editor-inserter__menu-help-panel .wp-block-button__link::after,
+.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhsbutton .wp-block-button__link::after,
+.wp-block-nhsblocks-nhsbutton .block-editor-inserter__menu-help-panel .wp-block-file__button::after,
+.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhsbutton .wp-block-file__button::after {
+  pointer-events: none;
+}
+
+.wp-block-nhsblocks-nhsbutton .block-editor-rich-text__editable {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+  cursor: text;
+  user-select: text;
 }

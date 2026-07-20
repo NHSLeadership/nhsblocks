@@ -116,8 +116,8 @@ registerBlockType('nhsblocks/contentslistitem', {
 	parent: ['nhsblocks/contentslist'],
 	attributes: {
 		text: {
-			type: 'array',
-			source: 'children',
+			type: 'string',
+			source: 'html',
 			selector: '.pagename',
 		},
 		url: {

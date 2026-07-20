@@ -42,9 +42,8 @@ registerBlockType('nhsblocks/quote1', {
 			selector: '.nhsuk-inset-text__quote-attribution',
 		},
 		quoteText: {
-			type: 'array',
-			source: 'children',
-			multiline: 'p',
+			type: 'string',
+			source: 'html',
 			selector: '.nhsuk-inset-text__quote',
 		},
 	},

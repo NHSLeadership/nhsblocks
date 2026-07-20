@@ -16,6 +16,8 @@ const {
     URLInputButton,
     useBlockProps,
 } = wp.blockEditor;
+const { Fragment } = wp.element;
+
 //@todo align
 //@todo extended classes
 
@@ -96,38 +98,40 @@ registerBlockType('nhsblocks/nhsbutton', {
 			setAttributes({ verticalAlignment: alignment });
 		};
 
-		return [
-			<InspectorControls>
-				<div>
-					<strong>
-						Add a link for this button by clicking the chain icon
-						below.
-					</strong>
-					<URLInputButton
-						className="nhsblocks-dropdown__input"
-						label={__('Button URL', 'nhsblocks')}
-						onChange={onChangeButtonLink}
-						url={buttonLink}
-					/>
-				</div>
-			</InspectorControls>,
+		return (
+			<Fragment>
+				<InspectorControls>
+					<div>
+						<strong>
+							Add a link for this button by clicking the chain icon
+							below.
+						</strong>
+						<URLInputButton
+							className="nhsblocks-dropdown__input"
+							label={__('Button URL', 'nhsblocks')}
+							onChange={onChangeButtonLink}
+							url={buttonLink}
+						/>
+					</div>
+				</InspectorControls>
 
-			<BlockControls>
-				<BlockVerticalAlignmentToolbar
-					onChange={onChangeAlignment}
-					value={verticalAlignment}
-				/>
-			</BlockControls>,
-			<div {...blockProps}>
-				<div className={`nhsuk-button ${styleClasses}`}>
-					<RichText
-						value={buttonLabel}
-						onChange={onChangeButtonLabel}
-						placeholder="Button label"
+				<BlockControls>
+					<BlockVerticalAlignmentToolbar
+						onChange={onChangeAlignment}
+						value={verticalAlignment}
 					/>
+				</BlockControls>
+				<div {...blockProps}>
+					<div className={`nhsuk-button ${styleClasses}`}>
+						<RichText
+							value={buttonLabel}
+							onChange={onChangeButtonLabel}
+							placeholder="Button label"
+						/>
+					</div>
 				</div>
-			</div>,
-		];
+			</Fragment>
+		);
 	},
 	save: (props) => {
 	

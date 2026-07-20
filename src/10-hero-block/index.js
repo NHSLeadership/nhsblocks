@@ -56,7 +56,16 @@ registerBlockType('nhsblocks/heroblock', {
 		const TEMPLATE_OPTIONS = [['nhsblocks/heroinner', {}]];
 		const { setAttributes, attributes, className } = props;
 		const { overlayColor, backgroundImage } = attributes;
-
+		const blockProps = useBlockProps({
+			className:
+				'nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description',
+			style: {
+				backgroundColor: overlayColor,
+				backgroundImage: `url(${backgroundImage})`,
+				backgroundSize: 'cover',
+				backgroundPosition: 'center',
+			},
+		});
 		function onOverlayColorChange(changes) {
 			setAttributes({
 				overlayColor: changes,
@@ -67,53 +76,47 @@ registerBlockType('nhsblocks/heroblock', {
 				backgroundImage: imageObject.sizes.full.url,
 			});
 		}
-		return [
-			<InspectorControls>
-				<div>
-					<strong>Select a background image:</strong>
-					<MediaUpload
-						onSelect={onImageSelect}
-						type="image"
-						value={backgroundImage}
-						render={({ open }) => (
-							<button
-								className="button button-primary button-hero"
-								onClick={open}
-							>
-								Upload Image!
-							</button>
-						)}
-					/>
-				</div>
-				<div>
-					<strong>OR</strong> Select a background color: <br />
-					<i>(this will be ignored if you chose an image above)</i>
-					<ColorPalette
-						value={overlayColor}
-						onChange={onOverlayColorChange}
-					/>
-				</div>
-			</InspectorControls>,
-			<section
-				className={`${className || ''} nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description`}
-				style={{
-					backgroundColor: `${overlayColor}`,
-					backgroundImage: `url(${backgroundImage})`,
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
-				}}
-			>
-				<div className="nhsuk-hero__overlay">
-					<div className="nhsuk-width-container">
-						<div className="nhsuk-grid-row">
-							<div className="nhsuk-grid-column-two-thirds">
-								<InnerBlocks template={TEMPLATE_OPTIONS} />
+		return (
+			<>
+				<InspectorControls>
+					<div>
+						<strong>Select a background image:</strong>
+						<MediaUpload
+							onSelect={onImageSelect}
+							type="image"
+							value={backgroundImage}
+							render={({ open }) => (
+								<button
+									className="button button-primary button-hero"
+									onClick={open}
+								>
+									Upload Image!
+								</button>
+							)}
+						/>
+					</div>
+					<div>
+						<strong>OR</strong> Select a background color: <br />
+						<i>(this will be ignored if you chose an image above)</i>
+						<ColorPalette
+							value={overlayColor}
+							onChange={onOverlayColorChange}
+						/>
+					</div>
+				</InspectorControls>
+				<section {...blockProps}>
+					<div className="nhsuk-hero__overlay">
+						<div className="nhsuk-width-container">
+							<div className="nhsuk-grid-row">
+								<div className="nhsuk-grid-column-two-thirds">
+									<InnerBlocks template={TEMPLATE_OPTIONS} />
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>,
-		];
+				</section>
+			</>
+		);
 	},
 	save: (props) => {
 		const { attributes, className } = props;
@@ -152,13 +155,13 @@ registerBlockType('nhsblocks/heroinner', {
 	icon: 'nametag',
 	attributes: {
 		texttitle: {
-			type: 'array',
-			source: 'children',
+			type: 'string',
+			source: 'html',
 			selector: 'h1',
 		},
 		texttext: {
-			type: 'array',
-			source: 'children',
+			type: 'string',
+			source: 'html',
 			selector: 'p',
 		},
 		fontColor: {
@@ -184,36 +187,38 @@ registerBlockType('nhsblocks/heroinner', {
 				fontColor: changes,
 			});
 		}
-		return [
-			<InspectorControls>
-				<div>
-					<strong>Select a font color:</strong>
-					<ColorPalette
-						value={fontColor}
-						onChange={onTextColorChange}
+		return (
+			<>
+				<InspectorControls>
+					<div>
+						<strong>Select a font color:</strong>
+						<ColorPalette
+							value={fontColor}
+							onChange={onTextColorChange}
+						/>
+					</div>
+				</InspectorControls>
+				<div className="nhsuk-hero-content">
+					<RichText
+						tagName="h1"
+						className="nhsuk-u-margin-bottom-3"
+						value={attributes.texttitle}
+						onChange={onTitleChange}
+						placeholder="Enter your text here!"
+						style={{ color: fontColor }}
 					/>
+					<RichText
+						tagName="p"
+						className="nhsuk-body-l nhsuk-u-margin-bottom-0"
+						value={attributes.texttext}
+						onChange={onTextChange}
+						placeholder="Enter your text here!"
+						style={{ color: fontColor }}
+					/>
+					<span className="nhsuk-hero__arrow" aria-hidden="true"></span>
 				</div>
-			</InspectorControls>,
-			<div className="nhsuk-hero-content">
-				<RichText
-					tagName="h1"
-					className="nhsuk-u-margin-bottom-3"
-					value={attributes.texttitle}
-					onChange={onTitleChange}
-					placeholder="Enter your text here!"
-					style={{ color: fontColor }}
-				/>
-				<RichText
-					tagName="p"
-					className="nhsuk-body-l nhsuk-u-margin-bottom-0"
-					value={attributes.texttext}
-					onChange={onTextChange}
-					placeholder="Enter your text here!"
-					style={{ color: fontColor }}
-				/>
-				<span className="nhsuk-hero__arrow" aria-hidden="true"></span>
-			</div>,
-		];
+			</>
+		);
 	},
 	save: (props) => {
 		const { attributes, className } = props;

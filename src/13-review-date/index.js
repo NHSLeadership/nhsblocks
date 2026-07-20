@@ -8,8 +8,10 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { format } = wp.date;
-const { RichText, InnerBlocks, useBlockProps } = wp.blockEditor;
-const { dispatch, subscribe, select, withSelect } = wp.data;
+const { useBlockProps } = wp.blockEditor;
+const { useEffect } = wp.element;
+const { useSelect } = wp.data;
+
 
 registerBlockType('nhsblocks/reviewdate', {
 	title: __('Review Date', 'nhsblocks'),
@@ -28,37 +30,42 @@ registerBlockType('nhsblocks/reviewdate', {
 			selector: '.last-saved-date',
 		},
 	},
-	edit: withSelect((select) => {
-		return {
-			savedDate: select('core/editor').getEditedPostAttribute('modified'),
-		};
-	})(({ savedDate, className, setAttributes, attributes: { lastSaved } }) => {
-		if (savedDate) {
-			const postDate = new Date(savedDate);
-			const formattedDate = format('d F Y', postDate);
-			const blockProps = useBlockProps({
-				className: 'nhsuk-review-date',
-			});
+	edit: (props) => {
+		const {
+			setAttributes,
+			attributes: { lastSaved },
+		} = props;
 
-			if (lastSaved !== formattedDate) {
-				if (typeof lastSaved === 'undefined') {
-					setAttributes({ lastSaved: formattedDate });
-					dispatch('core/editor').savePost();
-				} else {
-					setAttributes({ lastSaved: formattedDate });
-				}
+		const blockProps = useBlockProps({
+			className: 'nhsuk-review-date',
+		});
+
+		const savedDate = useSelect(
+			(select) => select('core/editor').getEditedPostAttribute('modified'),
+			[]
+		);
+
+		const formattedDate = savedDate
+			? format('d F Y', new Date(savedDate))
+			: lastSaved;
+
+		useEffect(() => {
+			if (savedDate && lastSaved !== formattedDate) {
+				setAttributes({ lastSaved: formattedDate });
 			}
+		}, [savedDate, formattedDate, lastSaved, setAttributes]);
 
-			return (
-				<div {...blockProps}>
-					<p className="nhsuk-body-s">
-						Page last reviewed:{' '}
-						<span className="last-saved-date">{lastSaved}</span>
-					</p>
-				</div>
-			);
-		}
-	}),
+		return (
+			<div {...blockProps}>
+				<p className="nhsuk-body-s">
+					Page last reviewed:{' '}
+					<span className="last-saved-date">
+						{lastSaved || formattedDate}
+					</span>
+				</p>
+			</div>
+		);
+	},
 	save: (props) => {
 		const blockProps = useBlockProps.save({
 			className: 'nhsuk-review-date',

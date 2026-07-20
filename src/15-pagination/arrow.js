@@ -3,7 +3,7 @@ const arrow = {};
 arrow.left = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		ariaHidden="true"
+		aria-hidden="true"
 		className="nhsuk-icon nhsuk-icon__arrow-left"
 		viewBox="0 0 24 24"
 	>
@@ -14,7 +14,7 @@ arrow.left = (
 arrow.right = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		ariaHidden="true"
+		aria-hidden="true"
 		className="nhsuk-icon nhsuk-icon__arrow-right"
 		viewBox="0 0 24 24"
 	>

@@ -67,9 +67,8 @@ registerBlockType("nhsblocks/card1", {
 			selector: ".nhsuk-care-card__heading-text",
 		},
 		cardText: {
-			type: "array",
-			source: "children",
-			multiline: "p",
+			type: "string",
+			source: "html",
 			selector: ".nhsuk-care-card__content",
 		},
 		withImage: {

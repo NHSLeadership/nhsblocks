@@ -112,7 +112,7 @@ registerBlockType('nhsblocks/tags', {
 			setAttributes({ tagLabel: newtagLabel });
 		};
 
-		return [
+		return (
 			<strong {...blockProps}>
 				<span className={`nhsuk-tag ${styleClasses}`}>
 					<RichText
@@ -121,8 +121,8 @@ registerBlockType('nhsblocks/tags', {
 						placeholder="Tag label"
 					/>
 				</span>
-			</strong>,
-		];
+			</strong>
+		);
 	},
 	save: (props) => {
 

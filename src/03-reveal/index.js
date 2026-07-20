@@ -9,6 +9,7 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { RichText, InnerBlocks, InspectorControls, useBlockProps } = wp.blockEditor;
+const { Fragment } = wp.element;
 const { ToggleControl, PanelBody, PanelRow, RadioControl, clientId } =
 	wp.components;
 
@@ -76,46 +77,48 @@ registerBlockType('nhsblocks/reveal1', {
 			setAttributes({ revealText: newRevealText });
 		};
 
-		return [
-			<InspectorControls>
-				<PanelBody>
-					<PanelRow>
-						<ToggleControl
-							label="Include an image?"
-							checked={withImage}
-							onChange={(newval) =>
-								setAttributes({ withImage: newval })
-							}
-						/>
-					</PanelRow>
-				</PanelBody>
-			</InspectorControls>,
-			<details {...blockProps} open>
-				<summary className="nhsuk-details__summary" role="button" aria-controls="details-content-" aria-expanded="false">
-					<span className="nhsuk-details__summary-text">
+		return (
+			<Fragment>
+				<InspectorControls>
+					<PanelBody>
+						<PanelRow>
+							<ToggleControl
+								label="Include an image?"
+								checked={withImage}
+								onChange={(newval) =>
+									setAttributes({ withImage: newval })
+								}
+							/>
+						</PanelRow>
+					</PanelBody>
+				</InspectorControls>
+				<details {...blockProps} open>
+					<summary className="nhsuk-details__summary" role="button" aria-controls="details-content-" aria-expanded="false">
+						<span className="nhsuk-details__summary-text">
+							<RichText
+								placeholder={__('Reveal Title', 'nhsblocks')}
+								value={revealTitle}
+								onChange={onChangeRevealTitle}
+							/>
+						</span>
+					</summary>
+					<div
+						className="nhsuk-details__text"
+						id="details-content-"
+						aria-hidden="false"
+					>
+						{withImage === true && (
+							<InnerBlocks template={TEMPLATE_OPTIONS} />
+						)}
 						<RichText
-							placeholder={__('Reveal Title', 'nhsblocks')}
-							value={revealTitle}
-							onChange={onChangeRevealTitle}
+							placeholder={__('Reveal Contents', 'nhsblocks')}
+							onChange={onChangeRevealText}
+							value={revealText}
 						/>
-					</span>
-				</summary>
-				<div
-					className="nhsuk-details__text"
-					id="details-content-"
-					aria-hidden="false"
-				>
-					{withImage === true && (
-						<InnerBlocks template={TEMPLATE_OPTIONS} />
-					)}
-					<RichText
-						placeholder={__('Reveal Contents', 'nhsblocks')}
-						onChange={onChangeRevealText}
-						value={revealText}
-					/>
-				</div>
-			</details>,
-		];
+					</div>
+				</details>
+			</Fragment>
+		);
 	},
 	save: (props) => {
 		const blockProps = useBlockProps.save({

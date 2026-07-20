@@ -35,12 +35,14 @@ registerBlockType('nhsblocks/actionlink', {
 			type: 'string',
 			source: 'html',
 			selector: '.nhsuk-action-link__text',
+			default: '',
 		},
 		actionLink: {
 			type: 'string',
 			source: 'attribute',
 			attribute: 'href',
 			selector: 'a.nhsuk-action-link__link',
+			default: '',
 		},
 		arrowsvgs: {
 			type: 'string',
@@ -57,7 +59,11 @@ registerBlockType('nhsblocks/actionlink', {
 			className,
 			setAttributes,
 			isSelected,
-			attributes: { actionText, actionLink, arrowssvgs },
+			
+			attributes: {
+				actionText = '',
+				actionLink = '',
+			},
 		} = props;
 
 		return (
@@ -80,7 +86,7 @@ registerBlockType('nhsblocks/actionlink', {
 							}
 						/>
 						<URLInput
-							value={actionLink}
+							value={actionLink || ''}
 							placeholder={__(
 								'Add a link (type to search or paste a whole url)',
 								'nhsblocks'

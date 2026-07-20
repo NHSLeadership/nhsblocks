@@ -8,6 +8,7 @@
 
 const { __ } = wp.i18n;
 const { registerBlockType, createBlock } = wp.blocks;
+const { Fragment } = wp.element;
 const {
 	RichText,
 	InspectorControls,
@@ -218,67 +219,69 @@ registerBlockType('nhsblocks/dashpanel', {
 			setAttributes({ panelTitle: newPanelTitle });
 		};
 
-		return [
-			<InspectorControls>
-				<div>
-					<strong>Add a link for this panel</strong>
-					<URLInputButton
-						className="nhsblocks-dropdown__input"
-						label={__('Dashboard Link', 'nhsblocks')}
-						onChange={onChangePanelLink}
-						url={panelLink}
-					/>
-				</div>
-				<div>
-					<strong>Select a background image:</strong>
-					<MediaUpload
-						onSelect={onImageSelect}
-						type="image"
-						value={backgroundImage}
-						render={({ open }) => (
-							<button
-								className="button button-primary button-hero"
-								onClick={open}
-							>
-								Upload Image!
-							</button>
-						)}
-					/>
-				</div>
-				<div>
-					<strong>OR</strong> Select a background color: <br />
-					<i>(this will be ignored if you choose an image above)</i>
-					<ColorPalette
-						value={overlayColor}
-						onChange={onOverlayColorChange}
-					/>
-				</div>
-			</InspectorControls>,
-			<div {...blockProps}>
-				<div
-					className="nhsuk-panel-with-label"
-					style={{
-						backgroundColor: `${overlayColor}`,
-						backgroundImage: `url(${backgroundImage})`,
-						backgroundSize: 'cover',
-						backgroundPosition: 'center',
-					}}
-				>
-					<h3 className="nhsuk-panel-with-label__label">
-						<RichText
-							placeholder={__('Panel Title', 'nhsblocks')}
-							value={panelTitle}
-							onChange={onChangePanelTitle}
+		return (
+			<Fragment>
+				<InspectorControls>
+					<div>
+						<strong>Add a link for this panel</strong>
+						<URLInputButton
+							className="nhsblocks-dropdown__input"
+							label={__('Dashboard Link', 'nhsblocks')}
+							onChange={onChangePanelLink}
+							url={panelLink}
 						/>
-					</h3>
-					<img
-						src="/wp-content/plugins/nhsblocks/assets/pixel_trans.png"
-						className="nhsuk-dashboard__image"
-						alt=""
-					/>
+					</div>
+					<div>
+						<strong>Select a background image:</strong>
+						<MediaUpload
+							onSelect={onImageSelect}
+							type="image"
+							value={backgroundImage}
+							render={({ open }) => (
+								<button
+									className="button button-primary button-hero"
+									onClick={open}
+								>
+									Upload Image!
+								</button>
+							)}
+						/>
+					</div>
+					<div>
+						<strong>OR</strong> Select a background color: <br />
+						<i>(this will be ignored if you choose an image above)</i>
+						<ColorPalette
+							value={overlayColor}
+							onChange={onOverlayColorChange}
+						/>
+					</div>
+				</InspectorControls>
+				<div {...blockProps}>
+					<div
+						className="nhsuk-panel-with-label"
+						style={{
+							backgroundColor: `${overlayColor}`,
+							backgroundImage: `url(${backgroundImage})`,
+							backgroundSize: 'cover',
+							backgroundPosition: 'center',
+						}}
+					>
+						<h3 className="nhsuk-panel-with-label__label">
+							<RichText
+								placeholder={__('Panel Title', 'nhsblocks')}
+								value={panelTitle}
+								onChange={onChangePanelTitle}
+							/>
+						</h3>
+						<img
+							src="/wp-content/plugins/nhsblocks/assets/pixel_trans.png"
+							className="nhsuk-dashboard__image"
+							alt=""
+						/>
+					</div>
 				</div>
-			</div>,
-		];
+			</Fragment>
+		);
 	},
 	save: (props) => {
 		// console.info(props);
