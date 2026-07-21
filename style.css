@@ -8260,12 +8260,10 @@ figure.is-style-nhsuk-table-responsive figcaption {
 
 /* Hero fix so it works on all templates */
 .wp-block-nhsblocks-heroblock {
-  left: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
   max-width: 100vw;
   position: relative;
-  right: 50%;
   width: 100vw;
 }
 

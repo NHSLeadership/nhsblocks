@@ -444,38 +444,38 @@
 }
 
 .block-editor-block-list__block.wp-block {
-  max-width: 840px;
+	max-width: 840px;
 }
 
 .block-editor-block-list__block.wp-block-nhsblocks-tags {
-  display: block;
+	display: block;
 }
 
 .wp-block-nhsblocks-doitem .block-editor-rich-text__editable,
 .wp-block-nhsblocks-dontitem .block-editor-rich-text__editable {
-  padding-left: 34px;
+	padding-left: 34px;
 }
 
 
-.editor-styles-wrapper .wp-block[data-align="full"]:has(> .nhsuk-striped-blocks) {
-  margin-left: auto;
-  margin-right: auto;
+.editor-styles-wrapper .wp-block .nhsuk-striped-blocks{
+	max-width: 840px;
+	margin: auto;
 }
 
 
 .block-editor-block-list__block.wp-block-nhsblocks-nhsbutton {
-    display: block;
+	display: block;
 }
 
 .wp-block-nhsblocks-nhsbutton .nhsuk-button::before,
 .wp-block-nhsblocks-nhsbutton .nhsuk-button::after {
-    pointer-events: none;
+	pointer-events: none;
 }
 
 .wp-block-nhsblocks-nhsbutton .block-editor-rich-text__editable {
-    position: relative;
-    z-index: 2;
-    pointer-events: auto;
-    cursor: text;
-    user-select: text;
+	position: relative;
+	z-index: 2;
+	pointer-events: auto;
+	cursor: text;
+	user-select: text;
 }
