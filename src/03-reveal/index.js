@@ -93,7 +93,7 @@ registerBlockType('nhsblocks/reveal1', {
 					</PanelBody>
 				</InspectorControls>
 				<details {...blockProps} open>
-					<summary className="nhsuk-details__summary" role="button" aria-controls="details-content-" aria-expanded="false">
+					<summary className="nhsuk-details__summary">
 						<span className="nhsuk-details__summary-text">
 							<RichText
 								placeholder={__('Reveal Title', 'nhsblocks')}
@@ -102,11 +102,7 @@ registerBlockType('nhsblocks/reveal1', {
 							/>
 						</span>
 					</summary>
-					<div
-						className="nhsuk-details__text"
-						id="details-content-"
-						aria-hidden="false"
-					>
+					<div className="nhsuk-details__text">
 						{withImage === true && (
 							<InnerBlocks template={TEMPLATE_OPTIONS} />
 						)}
@@ -131,16 +127,12 @@ registerBlockType('nhsblocks/reveal1', {
 
 		return (
 			<details {...blockProps}>
-				<summary className="nhsuk-details__summary" role="button" aria-controls="details-content-" aria-expanded="false">
+				<summary className="nhsuk-details__summary">
 					<span className="nhsuk-details__summary-text">
 						<RichText.Content value={revealTitle} />
 					</span>
 				</summary>
-				<div
-					className="nhsuk-details__text"
-					id="details-content-"
-					aria-hidden="false"
-				>
+				<div className="nhsuk-details__text">
 					{withImage === true && <InnerBlocks.Content/>}
 					<RichText.Content value={revealText} />
 				</div>
@@ -212,6 +204,50 @@ registerBlockType('nhsblocks/reveal1', {
 						aria-hidden="false"
 					>
 						`${attributes.revealText}`
+					</div>
+				</details>
+			),
+		},
+		{
+			attributes: {
+				revealTitle: {
+					type: 'string',
+					source: 'html',
+					selector: '.nhsuk-details__summary-text',
+				},
+				revealText: {
+					type: 'string',
+					source: 'html',
+					selector: '.nhsuk-details__text',
+				},
+				withImage: {
+					type: 'boolean',
+					default: false,
+				},
+			},
+
+			save: ({ attributes }) => (
+				<details className="nhsuk-details">
+					<summary
+						className="nhsuk-details__summary"
+						role="button"
+						aria-controls="details-content-"
+						aria-expanded="false"
+					>
+						<span className="nhsuk-details__summary-text">
+							<RichText.Content value={attributes.revealTitle} />
+						</span>
+					</summary>
+
+					<div
+						className="nhsuk-details__text"
+						id="details-content-"
+						aria-hidden="false"
+					>
+						{attributes.withImage === true && (
+							<InnerBlocks.Content />
+						)}
+						<RichText.Content value={attributes.revealText} />
 					</div>
 				</details>
 			),
