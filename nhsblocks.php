@@ -6,7 +6,7 @@
  * Author: Tony Blacker, NHS Leadership Academy
  * License: GPL v3
  * Requires at least: 5.0
- * Tested up to: 6.8.3
+ * Tested up to: 6.9.5
  *
  * Version: 1.4.1
  * Stable tag: 1.4.1
