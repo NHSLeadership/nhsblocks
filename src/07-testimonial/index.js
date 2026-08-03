@@ -14,6 +14,7 @@ const { RichText, useBlockProps } = wp.blockEditor;
 
 registerBlockType('nhsblocks/quote1', {
 	title: __('Simple Quote', 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	icon: 'format-quote',
 	styles: [
@@ -41,15 +42,16 @@ registerBlockType('nhsblocks/quote1', {
 			selector: '.nhsuk-inset-text__quote-attribution',
 		},
 		quoteText: {
-			type: 'array',
-			source: 'children',
-			multiline: 'p',
+			type: 'string',
+			source: 'html',
 			selector: '.nhsuk-inset-text__quote',
 		},
 	},
 
 	edit: (props) => {
-		const blockProps = useBlockProps();
+		const blockProps = useBlockProps({
+			className: 'nhsuk-inset-text',
+		});
 		// Lift info from props and populate various constants.
 		const {
 			attributes: { quoteName, quoteText },
@@ -68,13 +70,12 @@ registerBlockType('nhsblocks/quote1', {
 		};
 
 		return (
-			<div className={`${className} nhsuk-inset-text`}>
+			<div {...blockProps}>
 				<span className="nhsuk-u-visually-hidden">
 					Quote / Testimonial:{' '}
 				</span>
 				<div className="nhsuk-inset-text__quote">
 					<RichText
-						{ ...blockProps }
 						placeholder={__('Quote', 'nhsblocks')}
 						onChange={onChangeQuoteText}
 						value={quoteText}
@@ -91,18 +92,20 @@ registerBlockType('nhsblocks/quote1', {
 		);
 	},
 	save: (props) => {
-		const blockProps = useBlockProps.save();
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-inset-text',
+		});
 		const {
 			attributes: { quoteName, quoteText },
 		} = props;
 
 		return (
-			<div className="nhsuk-inset-text">
+			<div {...blockProps}>
 				<span className="nhsuk-u-visually-hidden">
 					Quote / Testimonial:{' '}
 				</span>
 				<div className="nhsuk-inset-text__quote">
-					<RichText.Content { ...blockProps } value={quoteText} />
+					<RichText.Content value={quoteText} />
 				</div>
 				<span className="nhsuk-inset-text__quote-attribution">
 					<RichText.Content value={quoteName} />

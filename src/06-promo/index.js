@@ -21,6 +21,7 @@ const {
 
 registerBlockType('nhsblocks/promo1', {
 	title: __('Promo Region', 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	icon: 'megaphone',
 	styles: [
@@ -71,11 +72,12 @@ registerBlockType('nhsblocks/promo1', {
 	},
 
 	edit: (props) => {
-		const blockProps = useBlockProps();
+		const blockProps = useBlockProps({
+			className: 'nhsuk-card nhsuk-card--clickable',
+		});
 		// Lift info from props and populate various constants.
 		const {
 			attributes: { promoTitle, promoText, promoLink },
-			className,
 			setAttributes,
 		} = props;
 
@@ -101,7 +103,7 @@ registerBlockType('nhsblocks/promo1', {
 		const ALLOWED_BLOCKS = ['core/image'];
 
 		return (
-			<div className={`${className} nhsuk-card nhsuk-card--clickable`}>
+			<div {...blockProps}>
 				<InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
 				<div className="nhsuk-card__content">
 					<h2 className="nhsuk-card__heading nhsuk-heading-m">
@@ -119,7 +121,6 @@ registerBlockType('nhsblocks/promo1', {
 					</h2>
 					<div className="nhsuk-card__description">
 						<RichText
-							{ ...blockProps }
 							placeholder={__('Promo Contents', 'nhsblocks')}
 							onChange={onChangePromoText}
 							value={promoText}
@@ -130,12 +131,14 @@ registerBlockType('nhsblocks/promo1', {
 		);
 	},
 	save: (props) => {
-		const blockProps = useBlockProps.save();
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-card nhsuk-card--clickable',
+		});
 		const {
 			attributes: { promoTitle, promoText, promoLink },
 		} = props;
 		return (
-			<div className="nhsuk-card nhsuk-card--clickable">
+			<div {...blockProps}>
 				<InnerBlocks.Content />
 				<div className="nhsuk-card__content">
 					<h2 className="nhsuk-card__heading nhsuk-heading-m">
@@ -144,7 +147,7 @@ registerBlockType('nhsblocks/promo1', {
 						</a>
 					</h2>
 					<div className="nhsuk-card__description">
-						<RichText.Content { ...blockProps } value={promoText} />
+						<RichText.Content value={promoText} />
 					</div>
 				</div>
 			</div>

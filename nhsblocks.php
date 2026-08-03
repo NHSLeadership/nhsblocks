@@ -8,8 +8,8 @@
  * Requires at least: 5.0
  * Tested up to: 6.8.3
  *
- * Version: 1.4.0
- * Stable tag: 1.4.0
+ * Version: 1.4.1
+ * Stable tag: 1.4.1
  *
  * @package nhsblocks
  */
@@ -248,18 +248,23 @@ function nhsblocks_block_classes( $attributes ) {
 /**
  * Queues up the gutenberg editor style
  */
-function nhsblocks_gutenberg_editor_styles()
-{
-	wp_enqueue_style('nhsl-block-editor-styles', plugins_url('style-gutenburg.css', __FILE__), false, '1.1', 'all');
-	$plugin_version = get_bloginfo('version'); // WP version by default.
-	$plugin_data = get_plugin_data(plugin_dir_path(__FILE__) . 'nhsblocks.php');
-	if (isset($plugin_data['Name']) && !empty($plugin_data['Version']) && 'NHS Blocks' === $plugin_data['Name']) {
+function nhsblocks_gutenberg_editor_styles() {
+
+	if ( ! is_admin() ) {
+		return;
+	}
+
+	wp_enqueue_style( 'nhsl-block-editor-styles', plugins_url( 'style-gutenburg.css', __FILE__ ), array(), '1.1', 'all' );
+
+	$plugin_version = get_bloginfo( 'version' ); // WP version by default.
+	$plugin_data    = get_plugin_data( plugin_dir_path( __FILE__ ) . 'nhsblocks.php' );
+	if ( isset( $plugin_data['Name'] ) && ! empty( $plugin_data['Version'] ) && 'NHS Blocks' === $plugin_data['Name'] ) {
 		$plugin_version = $plugin_data['Version'];
 	}
-	wp_enqueue_style('nhsblocks-editor-styles', plugins_url('style.min.css', __FILE__), false, $plugin_version, 'all');
+	wp_enqueue_style( 'nhsblocks-editor-styles', plugins_url( 'style.min.css', __FILE__ ), array(), $plugin_version, 'all' );
 }
 
-add_action( 'enqueue_block_editor_assets', 'nhsblocks_gutenberg_editor_styles' ); // Pulls the enqueued file in to standard wp process.
+add_action( 'enqueue_block_assets', 'nhsblocks_gutenberg_editor_styles' ); // Pulls the enqueued file in to standard wp process.
 
 /**
  * Queues up the blocks styling for front end

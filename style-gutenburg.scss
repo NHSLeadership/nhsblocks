@@ -14,7 +14,7 @@
   @import 'assets/scss/style_variations'; //gutenberg blocks style variations
 
   .wp-block {
-	max-width : 983px;
+	max-width : 840px;
   }
 
   .wp-block[data-align=wide] { /* it can be "data-align=full" and also "right", "left" and "center" */
@@ -24,14 +24,10 @@
   .block-editor-block-list__block {
 	font-family : $nhsuk-font, $nhsuk-font-fallback;
 	font-size   : 16px;
-
-
   }
-
   // start importing the theme specific settings
 
   @import 'assets/scss/nhs-colours'; // nhs colour pallette
-  @import 'assets/scss/generic-overrides'; // generic over-rides to remove default wordpress styling issues
   @import 'assets/scss/nhsl-blocks'; // specific elements for nhsl-blocks plugin
   @import 'assets/scss/stripe-blocks';
   [data-type="nhsblocks/stripesblock"] {
@@ -445,4 +441,41 @@
 .editor-styles-wrapper .block-editor-block-list__block[data-type="nhsblocks/nhstabs"][class*="is-style-reverse"] .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab {
 	background-color: #ffffff;
 	color: #212b32;
+}
+
+.block-editor-block-list__block.wp-block {
+	max-width: 840px;
+}
+
+.block-editor-block-list__block.wp-block-nhsblocks-tags {
+	display: block;
+}
+
+.wp-block-nhsblocks-doitem .block-editor-rich-text__editable,
+.wp-block-nhsblocks-dontitem .block-editor-rich-text__editable {
+	padding-left: 34px;
+}
+
+
+.editor-styles-wrapper .wp-block .nhsuk-striped-blocks{
+	max-width: 840px;
+	margin: auto;
+}
+
+
+.block-editor-block-list__block.wp-block-nhsblocks-nhsbutton {
+	display: block;
+}
+
+.wp-block-nhsblocks-nhsbutton .nhsuk-button::before,
+.wp-block-nhsblocks-nhsbutton .nhsuk-button::after {
+	pointer-events: none;
+}
+
+.wp-block-nhsblocks-nhsbutton .block-editor-rich-text__editable {
+	position: relative;
+	z-index: 2;
+	pointer-events: auto;
+	cursor: text;
+	user-select: text;
 }

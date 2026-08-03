@@ -49,8 +49,39 @@ with the WordPress plugin.
   Reason: Addresses high-severity vulnerabilities reported in
   transitive usage via `copy-webpack-plugin`. Development-only.
 
+- linkify-it → ^5.0.2  
+  Reason: Addresses a high-severity vulnerability (GHSA-22p9-wv53-3rq4)
+  affecting markdown link parsing in transitive development dependencies
+  used by `markdownlint` and `@wordpress/scripts`. Development-only.
+
+- adm-zip → ^0.6.0
+  Reason: Addresses a high-severity vulnerability involving crafted ZIP
+  files causing excessive memory allocation (GHSA-xcpc-8h2w-3j85) in
+  transitive development dependencies used by `@wordpress/scripts`.
+  Development-only.
+
+- markdown-it → ^14.3.0  
+  Reason: Addresses a vulnerability affecting markdown parsing
+  (GHSA-6v5v-wf23-fmfq) in transitive development dependencies used by
+  `markdownlint` and `@wordpress/scripts`. Development-only.
+
+- uuid → ^11.1.1  
+  Reason: Addresses a vulnerability in UUID generation and buffer
+  handling (GHSA-w5hq-g745-h8pq) present in transitive development
+  dependencies used by `webpack-dev-server`. Development-only.
+
 ### Review policy
 
 Overrides are reviewed during routine dependency updates and removed
 once upstream tooling (e.g. `@wordpress/scripts`) adopts patched
 versions natively.
+
+Where possible, overrides are applied only to development-time tooling
+dependencies and are validated by running the project's build, linting,
+and test processes after installation.
+
+Any remaining npm audit findings are assessed on a case-by-case basis.
+Where vulnerabilities exist only within development dependencies and
+are not included in the distributed plugin package, the project may
+accept the residual risk while awaiting upstream remediation.
+

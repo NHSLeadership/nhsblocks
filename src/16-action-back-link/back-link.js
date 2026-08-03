@@ -8,7 +8,7 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
-const { URLInput } = wp.blockEditor;
+const { URLInput, useBlockProps } = wp.blockEditor;
 const { Fragment } = wp.element;
 const { TextControl } = wp.components;
 
@@ -16,6 +16,7 @@ import arrows from './arrows';
 
 registerBlockType('nhsblocks/backlink', {
 	title: __('Back Link', 'nhsblocks'),
+	apiVersion: 3,
 	description:
 		'Use back links to help users go back to the previous page in a multi-page transaction.',
 	category: 'nhsblocks',
@@ -38,6 +39,9 @@ registerBlockType('nhsblocks/backlink', {
 		},
 	},
 	edit: (props) => {
+		const blockProps = useBlockProps({
+			className: 'nhsuk-back-link',
+		});
 		const {
 			className,
 			setAttributes,
@@ -46,13 +50,14 @@ registerBlockType('nhsblocks/backlink', {
 		} = props;
 
 		return (
-			<div className="nhsuk-back-link">
+			<div {...blockProps}>
 				<a className="nhsuk-back-link__link js-back-link">
 					{arrows.back}
 					{backText}
 				</a>
 				{isSelected ? (
 					<TextControl
+						__next40pxDefaultSize
 						label={__('Action Link Text', 'nhsblocks')}
 						value={backText}
 						onChange={(backText) => setAttributes({ backText })}
@@ -62,12 +67,16 @@ registerBlockType('nhsblocks/backlink', {
 		);
 	},
 	save: (props) => {
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-back-link',
+		});
+
 		const {
 			attributes: { backText },
 		} = props;
 
 		return (
-			<div className="nhsuk-back-link">
+			<div {...blockProps}>
 				<a
 					className="nhsuk-back-link__link js-back-link"
 					onClick="window.history.back()"

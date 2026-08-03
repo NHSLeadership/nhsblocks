@@ -3,7 +3,7 @@
  *
  * @reference https://service-manual.nhs.uk/design-system/components/tabs
  * @author Mahesh Murali Poovampilly, NHS Leadership Academy
- * @version 1.0
+ * @version 1.1.0
  */
 
 const { __, sprintf } = wp.i18n;
@@ -58,7 +58,7 @@ const rebuildTabsWithLabelIds = (tabs = [], prefix, fallbackLabelFn) => {
 };
 
 registerBlockType('nhsblocks/nhstabs', {
-    apiVersion: 2,
+    apiVersion: 3,
     title: __('Tabs', 'nhsblocks'),
     category: 'nhsblocks',
     icon: 'editor-table',

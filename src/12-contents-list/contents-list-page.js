@@ -9,7 +9,7 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
-const { RichText, URLInput, InnerBlocks } = wp.blockEditor;
+const { RichText, URLInput, InnerBlocks, useBlockProps } = wp.blockEditor;
 
 const { withSelect, subscribe, select } = wp.data;
 
@@ -21,6 +21,7 @@ const { Button, TextControl } = wp.components;
 
 registerBlockType('nhsblocks/contentslistpage', {
 	title: __('Contents List within a page', 'nhsblocks'),
+	apiVersion: 3,
 	description: __(
 		'Use contents lists to allow users to navigate sections within a page. This will automatically add all h2 tags on this page to a scrollable list ',
 		'nhsblocks'
@@ -108,8 +109,10 @@ registerBlockType('nhsblocks/contentslistpage', {
 				);
 			});
 
+		const blockProps = useBlockProps();	
+
 		return (
-			<div>
+			<div {...blockProps}>
 				<nav
 					className="{ className } nhsuk-contents-list"
 					role="navigation"

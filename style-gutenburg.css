@@ -17135,6 +17135,12 @@
 .edit-post-visual-editor .nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination__link:hover, .block-editor-block-styles .nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination__link:hover, .block-editor-inserter__menu-help-panel .nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination__link:hover {
   box-shadow: 0 0 0 16px #ffeb3b inset;
 }
+.edit-post-visual-editor .editor-styles-wrapper, .block-editor-block-styles .editor-styles-wrapper, .block-editor-inserter__menu-help-panel .editor-styles-wrapper {
+  font-family: Frutiger W01, Arial, Sans-serif;
+}
+.edit-post-visual-editor .editor-post-title__input, .block-editor-block-styles .editor-post-title__input, .block-editor-inserter__menu-help-panel .editor-post-title__input {
+  font-family: Frutiger W01, Arial, Sans-serif;
+}
 .edit-post-visual-editor .has-white-color, .block-editor-block-styles .has-white-color, .block-editor-inserter__menu-help-panel .has-white-color {
   color: #ffffff;
 }
@@ -17410,12 +17416,10 @@
   /* Hero fix so it works on all templates */
 }
 .edit-post-visual-editor .wp-block-nhsblocks-heroblock, .block-editor-block-styles .wp-block-nhsblocks-heroblock, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-heroblock {
-  left: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
   max-width: 100vw;
   position: relative;
-  right: 50%;
   width: 100vw;
 }
 .edit-post-visual-editor .nhsuk-card .nhsuk-card__description, .block-editor-block-styles .nhsuk-card .nhsuk-card__description, .block-editor-inserter__menu-help-panel .nhsuk-card .nhsuk-card__description {
@@ -17434,7 +17438,7 @@
   list-style: none;
 }
 .edit-post-visual-editor .wp-block, .block-editor-block-styles .wp-block, .block-editor-inserter__menu-help-panel .wp-block {
-  max-width: 983px;
+  max-width: 840px;
 }
 .edit-post-visual-editor .wp-block[data-align=wide], .block-editor-block-styles .wp-block[data-align=wide], .block-editor-inserter__menu-help-panel .wp-block[data-align=wide] { /* it can be "data-align=full" and also "right", "left" and "center" */
   max-width: 1228px;
@@ -17544,36 +17548,6 @@
 }
 .edit-post-visual-editor .has-nhs-warm-yellow-background-color, .block-editor-block-styles .has-nhs-warm-yellow-background-color, .block-editor-inserter__menu-help-panel .has-nhs-warm-yellow-background-color {
   background-color: #ffb81c;
-}
-.edit-post-visual-editor .nhsuk-width-container--full, .block-editor-block-styles .nhsuk-width-container--full, .block-editor-inserter__menu-help-panel .nhsuk-width-container--full {
-  margin: 0;
-  max-width: none;
-}
-.edit-post-visual-editor .nhsuk-card-group, .block-editor-block-styles .nhsuk-card-group, .block-editor-inserter__menu-help-panel .nhsuk-card-group {
-  margin-left: 0;
-  margin-right: 0;
-}
-.edit-post-visual-editor .wp-block-button__link, .edit-post-visual-editor .wp-block-file__button, .edit-post-visual-editor .wp-block-file a.wp-block-file__button, .edit-post-visual-editor .wp-block-file a.wp-block-file__button:active, .edit-post-visual-editor .wp-block-file a.wp-block-file__button:focus, .edit-post-visual-editor .wp-block-file a.wp-block-file__button:hover, .edit-post-visual-editor .wp-block-file a.wp-block-file__button:visited, .block-editor-block-styles .wp-block-button__link, .block-editor-block-styles .wp-block-file__button, .block-editor-block-styles .wp-block-file a.wp-block-file__button, .block-editor-block-styles .wp-block-file a.wp-block-file__button:active, .block-editor-block-styles .wp-block-file a.wp-block-file__button:focus, .block-editor-block-styles .wp-block-file a.wp-block-file__button:hover, .block-editor-block-styles .wp-block-file a.wp-block-file__button:visited, .block-editor-inserter__menu-help-panel .wp-block-button__link, .block-editor-inserter__menu-help-panel .wp-block-file__button, .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button, .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:active, .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:focus, .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:hover, .block-editor-inserter__menu-help-panel .wp-block-file a.wp-block-file__button:visited {
-  border-radius: 4px;
-  background: #006747;
-  font-size: #ffffff;
-  padding: 1px 8px;
-  position: relative;
-  top: -5px;
-  margin-bottom: 5px;
-}
-.edit-post-visual-editor .nhsuk-button--reverse:visited, .edit-post-visual-editor .nhsuk-button.is-style-reverse:visited, .edit-post-visual-editor .is-style-reverse.wp-block-button__link:visited, .edit-post-visual-editor .is-style-reverse.wp-block-file__button:visited, .block-editor-block-styles .nhsuk-button--reverse:visited, .block-editor-block-styles .nhsuk-button.is-style-reverse:visited, .block-editor-block-styles .is-style-reverse.wp-block-button__link:visited, .block-editor-block-styles .is-style-reverse.wp-block-file__button:visited, .block-editor-inserter__menu-help-panel .nhsuk-button--reverse:visited, .block-editor-inserter__menu-help-panel .nhsuk-button.is-style-reverse:visited, .block-editor-inserter__menu-help-panel .is-style-reverse.wp-block-button__link:visited, .block-editor-inserter__menu-help-panel .is-style-reverse.wp-block-file__button:visited {
-  color: #212b32;
-}
-.edit-post-visual-editor .nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item--previous, .edit-post-visual-editor .nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item--next, .block-editor-block-styles .nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item--previous, .block-editor-block-styles .nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item--next, .block-editor-inserter__menu-help-panel .nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item--previous, .block-editor-inserter__menu-help-panel .nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item--next {
-  width: 30%;
-}
-.edit-post-visual-editor .nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item, .block-editor-block-styles .nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item, .block-editor-inserter__menu-help-panel .nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination-item {
-  width: 8%;
-  float: left;
-}
-.edit-post-visual-editor .nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination__link:hover, .block-editor-block-styles .nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination__link:hover, .block-editor-inserter__menu-help-panel .nhsuk-pagination .nhsuk-pagination__list .nhsuk-pagination__link:hover {
-  box-shadow: 0 0 0 16px #ffeb3b inset;
 }
 .edit-post-visual-editor .nhsuk-care-card, .block-editor-block-styles .nhsuk-care-card, .block-editor-inserter__menu-help-panel .nhsuk-care-card {
   width: 100%;
@@ -18147,12 +18121,10 @@
   /* Hero fix so it works on all templates */
 }
 .edit-post-visual-editor .wp-block-nhsblocks-heroblock, .block-editor-block-styles .wp-block-nhsblocks-heroblock, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-heroblock {
-  left: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
   max-width: 100vw;
   position: relative;
-  right: 50%;
   width: 100vw;
 }
 .edit-post-visual-editor .nhsuk-card .nhsuk-card__description, .block-editor-block-styles .nhsuk-card .nhsuk-card__description, .block-editor-inserter__menu-help-panel .nhsuk-card .nhsuk-card__description {
@@ -18434,4 +18406,51 @@
 .editor-styles-wrapper .block-editor-block-list__block[data-type="nhsblocks/nhstabs"][class*=is-style-reverse] .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab {
   background-color: #ffffff;
   color: #212b32;
+}
+
+.block-editor-block-list__block.wp-block {
+  max-width: 840px;
+}
+
+.block-editor-block-list__block.wp-block-nhsblocks-tags {
+  display: block;
+}
+
+.wp-block-nhsblocks-doitem .block-editor-rich-text__editable,
+.wp-block-nhsblocks-dontitem .block-editor-rich-text__editable {
+  padding-left: 34px;
+}
+
+.editor-styles-wrapper .wp-block .nhsuk-striped-blocks {
+  max-width: 840px;
+  margin: auto;
+}
+
+.block-editor-block-list__block.wp-block-nhsblocks-nhsbutton {
+  display: block;
+}
+
+.wp-block-nhsblocks-nhsbutton .nhsuk-button::before, .wp-block-nhsblocks-nhsbutton .edit-post-visual-editor .wp-block-button__link::before, .edit-post-visual-editor .wp-block-nhsblocks-nhsbutton .wp-block-button__link::before, .wp-block-nhsblocks-nhsbutton .edit-post-visual-editor .wp-block-file__button::before, .edit-post-visual-editor .wp-block-nhsblocks-nhsbutton .wp-block-file__button::before, .wp-block-nhsblocks-nhsbutton .block-editor-block-styles .wp-block-button__link::before, .block-editor-block-styles .wp-block-nhsblocks-nhsbutton .wp-block-button__link::before, .wp-block-nhsblocks-nhsbutton .block-editor-block-styles .wp-block-file__button::before, .block-editor-block-styles .wp-block-nhsblocks-nhsbutton .wp-block-file__button::before, .wp-block-nhsblocks-nhsbutton .block-editor-inserter__menu-help-panel .wp-block-button__link::before, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhsbutton .wp-block-button__link::before, .wp-block-nhsblocks-nhsbutton .block-editor-inserter__menu-help-panel .wp-block-file__button::before, .block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhsbutton .wp-block-file__button::before,
+.wp-block-nhsblocks-nhsbutton .nhsuk-button::after,
+.wp-block-nhsblocks-nhsbutton .edit-post-visual-editor .wp-block-button__link::after,
+.edit-post-visual-editor .wp-block-nhsblocks-nhsbutton .wp-block-button__link::after,
+.wp-block-nhsblocks-nhsbutton .edit-post-visual-editor .wp-block-file__button::after,
+.edit-post-visual-editor .wp-block-nhsblocks-nhsbutton .wp-block-file__button::after,
+.wp-block-nhsblocks-nhsbutton .block-editor-block-styles .wp-block-button__link::after,
+.block-editor-block-styles .wp-block-nhsblocks-nhsbutton .wp-block-button__link::after,
+.wp-block-nhsblocks-nhsbutton .block-editor-block-styles .wp-block-file__button::after,
+.block-editor-block-styles .wp-block-nhsblocks-nhsbutton .wp-block-file__button::after,
+.wp-block-nhsblocks-nhsbutton .block-editor-inserter__menu-help-panel .wp-block-button__link::after,
+.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhsbutton .wp-block-button__link::after,
+.wp-block-nhsblocks-nhsbutton .block-editor-inserter__menu-help-panel .wp-block-file__button::after,
+.block-editor-inserter__menu-help-panel .wp-block-nhsblocks-nhsbutton .wp-block-file__button::after {
+  pointer-events: none;
+}
+
+.wp-block-nhsblocks-nhsbutton .block-editor-rich-text__editable {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+  cursor: text;
+  user-select: text;
 }

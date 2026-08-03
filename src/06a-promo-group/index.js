@@ -9,7 +9,7 @@
 //const { useState, setState } = wp.element;
 const { __ } = wp.i18n;
 const { registerBlockType, createBlock } = wp.blocks;
-const { InnerBlocks, __experimentalBlockVariationPicker } = wp.blockEditor;
+const { InnerBlocks, __experimentalBlockVariationPicker, useBlockProps } = wp.blockEditor;
 const { useDispatch, useSelect } = wp.data;
 
 import { map } from 'lodash';
@@ -18,6 +18,7 @@ import * as Templates from './templates.js';
 
 registerBlockType('nhsblocks/promogroup', {
 	title: __('Grouped Promos', 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	icon: 'layout',
 	example: {},
@@ -28,6 +29,11 @@ registerBlockType('nhsblocks/promogroup', {
 	},
 
 	edit: (props) => {
+
+		const blockProps = useBlockProps({
+				className: 'nhsuk-grid-row nhsuk-card-group',
+			});
+
 		const { clientId, name } = props;
 		const {
 			attributes: { template },
@@ -83,13 +89,13 @@ registerBlockType('nhsblocks/promogroup', {
 		};
 		if (hasInnerBlocks) {
 			return (
-				<div className="nhsuk-grid-row nhsuk-card-group">
+				<div {...blockProps}>
 					<InnerBlocks template={Templates.GRID_OPTIONS} />
 				</div>
 			);
 		}
 		return (
-			<div className="nhsuk-grid-row nhsuk-card-group">
+			<div {...blockProps}>
 				<__experimentalBlockVariationPicker
 					variations={Templates.GRID_OPTIONS}
 					onSelect={(nextVariation) => {
@@ -110,11 +116,16 @@ registerBlockType('nhsblocks/promogroup', {
 		);
 	},
 	save: (props) => {
+
+		const blockProps = useBlockProps.save({
+				className: 'nhsuk-grid-row nhsuk-card-group',
+			});
+
 		const {
 			attributes: { template },
 		} = props;
 		return (
-			<div className="nhsuk-grid-row nhsuk-card-group">
+			<div {...blockProps}>
 				<InnerBlocks.Content />
 			</div>
 		);
@@ -123,6 +134,7 @@ registerBlockType('nhsblocks/promogroup', {
 
 registerBlockType('nhsblocks/onehalfpro', {
 	title: __('One Half Promo', 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	parent: ['nhsblocks/promogroup'],
 	attributes: {
@@ -131,11 +143,16 @@ registerBlockType('nhsblocks/onehalfpro', {
 		},
 	},
 	edit: (props) => {
+
+		const blockProps = useBlockProps({
+				className: 'nhsuk-grid-column-one-half nhsuk-card-group__item',
+			});
+
 		const {
 			attributes: { template },
 		} = props;
 		return (
-			<div className="nhsuk-grid-column-one-half  nhsuk-card-group__item">
+			<div {...blockProps}>
 				<InnerBlocks
 					template={Templates.TEMPLATE_OPTIONS_PRO}
 					templateLock="all"
@@ -144,8 +161,13 @@ registerBlockType('nhsblocks/onehalfpro', {
 		);
 	},
 	save: (props) => {
+
+		const blockProps = useBlockProps.save({
+				className: 'nhsuk-grid-column-one-half nhsuk-card-group__item',
+			});
+
 		return (
-			<div className="nhsuk-grid-column-one-half nhsuk-card-group__item">
+			<div {...blockProps}>
 				<InnerBlocks.Content />
 			</div>
 		);
@@ -153,6 +175,7 @@ registerBlockType('nhsblocks/onehalfpro', {
 });
 registerBlockType('nhsblocks/onethirdpro', {
 	title: __('One Third Promo', 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	parent: ['nhsblocks/promogroup'],
 	attributes: {
@@ -161,12 +184,17 @@ registerBlockType('nhsblocks/onethirdpro', {
 		},
 	},
 	edit: (props) => {
+
+		const blockProps = useBlockProps({
+			className: 'nhsuk-grid-column-one-third nhsuk-card-group__item',
+		});
+
 		const {
 			attributes: { template },
 			setAttributes,
 		} = props;
 		return (
-			<div className="nhsuk-grid-column-one-third nhsuk-card-group__item">
+			<div {...blockProps}>
 				<InnerBlocks
 					template={Templates.TEMPLATE_OPTIONS_PRO}
 					templateLock="all"
@@ -175,8 +203,13 @@ registerBlockType('nhsblocks/onethirdpro', {
 		);
 	},
 	save: (props) => {
+
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-grid-column-one-third nhsuk-card-group__item',
+		});
+
 		return (
-			<div className="nhsuk-grid-column-one-third nhsuk-card-group__item">
+			<div {...blockProps}>
 				<InnerBlocks.Content />
 			</div>
 		);
@@ -185,6 +218,7 @@ registerBlockType('nhsblocks/onethirdpro', {
 
 registerBlockType('nhsblocks/onequarterpro', {
 	title: __('One Quarter Promo', 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	parent: ['nhsblocks/promogroup'],
 	attributes: {
@@ -193,12 +227,17 @@ registerBlockType('nhsblocks/onequarterpro', {
 		},
 	},
 	edit: (props) => {
+
+		const blockProps = useBlockProps({
+				className: 'nhsuk-grid-column-one-quarter nhsuk-card-group__item',
+			});
+
 		const {
 			attributes: { template },
 			setAttributes,
 		} = props;
 		return (
-			<div className="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
+			<div {...blockProps}>
 				<InnerBlocks
 					template={Templates.TEMPLATE_OPTIONS_PRO}
 					templateLock="all"
@@ -207,8 +246,13 @@ registerBlockType('nhsblocks/onequarterpro', {
 		);
 	},
 	save: (props) => {
+
+		const blockProps = useBlockProps.save({
+				className: 'nhsuk-grid-column-one-quarter nhsuk-card-group__item',
+			});
+
 		return (
-			<div className="nhsuk-grid-column-one-quarter nhsuk-card-group__item">
+			<div {...blockProps}>
 				<InnerBlocks.Content />
 			</div>
 		);
@@ -217,6 +261,7 @@ registerBlockType('nhsblocks/onequarterpro', {
 
 registerBlockType('nhsblocks/twothirdspro', {
 	title: __('Two Thirds Promo', 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	parent: ['nhsblocks/promogroup'],
 	attributes: {
@@ -225,12 +270,17 @@ registerBlockType('nhsblocks/twothirdspro', {
 		},
 	},
 	edit: (props) => {
+
+		const blockProps = useBlockProps({
+			className: 'nhsuk-grid-column-two-thirds nhsuk-card-group__item',
+		});
+
 		const {
 			attributes: { template },
 			setAttributes,
 		} = props;
 		return (
-			<div className="nhsuk-grid-column-two-thirds nhsuk-card-group__item">
+			<div {...blockProps}>
 				<InnerBlocks
 					template={Templates.TEMPLATE_OPTIONS_PRO}
 					templateLock="all"
@@ -239,8 +289,13 @@ registerBlockType('nhsblocks/twothirdspro', {
 		);
 	},
 	save: (props) => {
+
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-grid-column-two-thirds nhsuk-card-group__item',
+		});
+
 		return (
-			<div className="nhsuk-grid-column-two-thirds nhsuk-card-group__item">
+			<div {...blockProps}>
 				<InnerBlocks.Content />
 			</div>
 		);
@@ -249,6 +304,7 @@ registerBlockType('nhsblocks/twothirdspro', {
 
 registerBlockType('nhsblocks/threequarterspro', {
 	title: __('Three Quarter Promo', 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	parent: ['nhsblocks/promogroup'],
 	attributes: {
@@ -257,12 +313,17 @@ registerBlockType('nhsblocks/threequarterspro', {
 		},
 	},
 	edit: (props) => {
+
+		const blockProps = useBlockProps({
+				className: 'nhsuk-grid-column-three-quarters nhsuk-card-group__item',
+			});
+
 		const {
 			attributes: { template },
 			setAttributes,
 		} = props;
 		return (
-			<div className="nhsuk-grid-column-three-quarters nhsuk-card-group__item">
+			<div {...blockProps}>
 				<InnerBlocks
 					template={Templates.TEMPLATE_OPTIONS_PRO}
 					templateLock="all"
@@ -271,8 +332,13 @@ registerBlockType('nhsblocks/threequarterspro', {
 		);
 	},
 	save: (props) => {
+
+		const blockProps = useBlockProps.save({
+				className: 'nhsuk-grid-column-three-quarters nhsuk-card-group__item',
+			});
+
 		return (
-			<div className="nhsuk-grid-column-three-quarters nhsuk-card-group__item">
+			<div {...blockProps}>
 				<InnerBlocks.Content />
 			</div>
 		);

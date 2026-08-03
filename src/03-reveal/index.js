@@ -9,6 +9,7 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { RichText, InnerBlocks, InspectorControls, useBlockProps } = wp.blockEditor;
+const { Fragment } = wp.element;
 const { ToggleControl, PanelBody, PanelRow, RadioControl, clientId } =
 	wp.components;
 
@@ -16,6 +17,7 @@ const TEMPLATE_OPTIONS = [['core/image', { align: 'right', width: '150px' }]];
 
 registerBlockType('nhsblocks/reveal1', {
 	title: __('Simple Reveal', 'nhsblocks'),
+	apiVersion: 3,
 	category: 'nhsblocks',
 	icon: 'plus-alt',
 	styles: [
@@ -55,12 +57,13 @@ registerBlockType('nhsblocks/reveal1', {
 	},
 
 	edit: (props) => {
-		const blockProps = useBlockProps();
+		const blockProps = useBlockProps({
+			className: 'nhsuk-details newstyle',
+		});
 		//  console.log(blockProps);
 		// Lift info from props and populate various constants.
 		const {
 			attributes: { revealTitle, revealText, withImage },
-			className,
 			setAttributes,
 		} = props;
 
@@ -74,68 +77,64 @@ registerBlockType('nhsblocks/reveal1', {
 			setAttributes({ revealText: newRevealText });
 		};
 
-		return [
-			<InspectorControls>
-				<PanelBody>
-					<PanelRow>
-						<ToggleControl
-							label="Include an image?"
-							checked={withImage}
-							onChange={(newval) =>
-								setAttributes({ withImage: newval })
-							}
-						/>
-					</PanelRow>
-				</PanelBody>
-			</InspectorControls>,
-			<details className={`${className} nhsuk-details newstyle`} open>
-				<summary className="nhsuk-details__summary" role="button" aria-controls="details-content-" aria-expanded="false">
-					<span className="nhsuk-details__summary-text">
+		return (
+			<Fragment>
+				<InspectorControls>
+					<PanelBody>
+						<PanelRow>
+							<ToggleControl
+								label="Include an image?"
+								checked={withImage}
+								onChange={(newval) =>
+									setAttributes({ withImage: newval })
+								}
+							/>
+						</PanelRow>
+					</PanelBody>
+				</InspectorControls>
+				<details {...blockProps} open>
+					<summary className="nhsuk-details__summary">
+						<span className="nhsuk-details__summary-text">
+							<RichText
+								placeholder={__('Reveal Title', 'nhsblocks')}
+								value={revealTitle}
+								onChange={onChangeRevealTitle}
+							/>
+						</span>
+					</summary>
+					<div className="nhsuk-details__text">
+						{withImage === true && (
+							<InnerBlocks template={TEMPLATE_OPTIONS} />
+						)}
 						<RichText
-							placeholder={__('Reveal Title', 'nhsblocks')}
-							value={revealTitle}
-							onChange={onChangeRevealTitle}
+							placeholder={__('Reveal Contents', 'nhsblocks')}
+							onChange={onChangeRevealText}
+							value={revealText}
 						/>
-					</span>
-				</summary>
-				<div
-					className="nhsuk-details__text"
-					id="details-content-"
-					aria-hidden="false"
-				>
-					{withImage === true && (
-						<InnerBlocks template={TEMPLATE_OPTIONS} />
-					)}
-					<RichText
-						{ ...blockProps }
-						placeholder={__('Reveal Contents', 'nhsblocks')}
-						onChange={onChangeRevealText}
-						value={revealText}
-					/>
-				</div>
-			</details>,
-		];
+					</div>
+				</details>
+			</Fragment>
+		);
 	},
 	save: (props) => {
-		const blockProps = useBlockProps.save();
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-details',
+		});
+
 		const {
 			attributes: { revealTitle, revealText, withImage },
 		} = props;
 
 		return (
-			<details className="nhsuk-details">
-				<summary className="nhsuk-details__summary" role="button" aria-controls="details-content-" aria-expanded="false">
+			<details {...blockProps}>
+				<summary className="nhsuk-details__summary">
 					<span className="nhsuk-details__summary-text">
 						<RichText.Content value={revealTitle} />
 					</span>
 				</summary>
-				<div
-					className="nhsuk-details__text"
-					id="details-content-"
-					aria-hidden="false"
-				>
+				<div className="nhsuk-details__text">
 					{withImage === true && <InnerBlocks.Content/>}
-					<RichText.Content { ...blockProps } value={revealText} />
+					<RichText.Content value={revealText} />
 				</div>
 			</details>
 		);
@@ -205,6 +204,50 @@ registerBlockType('nhsblocks/reveal1', {
 						aria-hidden="false"
 					>
 						`${attributes.revealText}`
+					</div>
+				</details>
+			),
+		},
+		{
+			attributes: {
+				revealTitle: {
+					type: 'string',
+					source: 'html',
+					selector: '.nhsuk-details__summary-text',
+				},
+				revealText: {
+					type: 'string',
+					source: 'html',
+					selector: '.nhsuk-details__text',
+				},
+				withImage: {
+					type: 'boolean',
+					default: false,
+				},
+			},
+
+			save: ({ attributes }) => (
+				<details className="nhsuk-details">
+					<summary
+						className="nhsuk-details__summary"
+						role="button"
+						aria-controls="details-content-"
+						aria-expanded="false"
+					>
+						<span className="nhsuk-details__summary-text">
+							<RichText.Content value={attributes.revealTitle} />
+						</span>
+					</summary>
+
+					<div
+						className="nhsuk-details__text"
+						id="details-content-"
+						aria-hidden="false"
+					>
+						{attributes.withImage === true && (
+							<InnerBlocks.Content />
+						)}
+						<RichText.Content value={attributes.revealText} />
 					</div>
 				</details>
 			),

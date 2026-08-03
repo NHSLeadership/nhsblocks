@@ -8,7 +8,7 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
-const { URLInput } = wp.blockEditor;
+const { URLInput, useBlockProps } = wp.blockEditor;
 const { Fragment } = wp.element;
 const { TextControl } = wp.components;
 
@@ -16,6 +16,7 @@ import arrows from './arrows';
 
 registerBlockType('nhsblocks/actionlink', {
 	title: __('Action Link', 'nhsblocks'),
+	apiVersion: 3,
 	description:
 		'Use action links to help users get to the next stage of a journey quickly by signposting the start of a digital service.',
 	category: 'nhsblocks',
@@ -34,12 +35,14 @@ registerBlockType('nhsblocks/actionlink', {
 			type: 'string',
 			source: 'html',
 			selector: '.nhsuk-action-link__text',
+			default: '',
 		},
 		actionLink: {
 			type: 'string',
 			source: 'attribute',
 			attribute: 'href',
 			selector: 'a.nhsuk-action-link__link',
+			default: '',
 		},
 		arrowsvgs: {
 			type: 'string',
@@ -49,15 +52,22 @@ registerBlockType('nhsblocks/actionlink', {
 		},
 	},
 	edit: (props) => {
+		const blockProps = useBlockProps({
+			className: 'nhsuk-action-link',
+		});
 		const {
 			className,
 			setAttributes,
 			isSelected,
-			attributes: { actionText, actionLink, arrowssvgs },
+			
+			attributes: {
+				actionText = '',
+				actionLink = '',
+			},
 		} = props;
 
 		return (
-			<div className="nhsuk-action-link">
+			<div {...blockProps}>
 				<a className="nhsuk-action-link__link">
 					{arrows.action}
 					<span className="nhsuk-action-link__text">
@@ -67,6 +77,7 @@ registerBlockType('nhsblocks/actionlink', {
 				{isSelected ? (
 					<div>
 						<TextControl
+							__next40pxDefaultSize
 							label={__(' ', 'nhsblocks')}
 							placeholder={__('Call to Action', 'nhsblocks')}
 							value={actionText}
@@ -75,7 +86,7 @@ registerBlockType('nhsblocks/actionlink', {
 							}
 						/>
 						<URLInput
-							value={actionLink}
+							value={actionLink || ''}
 							placeholder={__(
 								'Add a link (type to search or paste a whole url)',
 								'nhsblocks'
@@ -90,13 +101,16 @@ registerBlockType('nhsblocks/actionlink', {
 		);
 	},
 	save: (props) => {
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-action-link',
+		});
 		const {
 			className,
 			attributes: { actionText, actionLink, arrowssvgs },
 		} = props;
 
 		return (
-			<div className="nhsuk-action-link">
+			<div {...blockProps}>
 				<a className="nhsuk-action-link__link" href={actionLink}>
 					{arrows.action}
 					<span className="nhsuk-action-link__text">

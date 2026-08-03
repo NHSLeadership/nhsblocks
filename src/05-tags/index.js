@@ -9,14 +9,17 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const {
-	RichText,
-	InspectorControls,
-	BlockControls,
-	BlockVerticalAlignmentToolbar,
+    RichText,
+    InspectorControls,
+    BlockControls,
+    BlockVerticalAlignmentToolbar,
+    useBlockProps,
 } = wp.blockEditor;
+
 
 registerBlockType('nhsblocks/tags', {
 	title: __('Tag', 'nhsblocks'),
+	apiVersion: 3,
 	description: __(
 		'Tags are just used to indicate a status. Do not add links. Use adjectives rather than verbs for' +
 			' the names of your tags. Using a verb might make a user think that clicking on them will do something',
@@ -90,7 +93,13 @@ registerBlockType('nhsblocks/tags', {
 	// https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-edit-save/
 	edit: (props) => {
 		// Props parameter holds all the info.
+		const blockProps = useBlockProps();
 
+		const styleClasses =
+			blockProps.className
+				?.split(' ')
+				.filter((c) => c.startsWith('is-style-'))
+				.join(' ') || '';
 		// Lift info from props and populate various constants.
 		const {
 			attributes: { tagLabel },
@@ -103,22 +112,29 @@ registerBlockType('nhsblocks/tags', {
 			setAttributes({ tagLabel: newtagLabel });
 		};
 
-		return [
-			<strong className={`${className} nhsuk-tag`}>
-				<RichText
-					value={tagLabel}
-					onChange={onChangetagLabel}
-					placeholder="Tag label"
-				/>
-			</strong>,
-		];
+		return (
+			<strong {...blockProps}>
+				<span className={`nhsuk-tag ${styleClasses}`}>
+					<RichText
+						value={tagLabel}
+						onChange={onChangetagLabel}
+						placeholder="Tag label"
+					/>
+				</span>
+			</strong>
+		);
 	},
 	save: (props) => {
+
+		const blockProps = useBlockProps.save({
+			className: 'nhsuk-tag',
+		});
+
 		const {
 			attributes: { tagLabel },
 		} = props;
 		return (
-			<strong className="nhsuk-tag">
+			<strong {...blockProps}>
 				<RichText.Content value={tagLabel} />
 			</strong>
 		);
