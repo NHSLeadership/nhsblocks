@@ -10,6 +10,7 @@ We take security and the protection of private data extremely seriously. If you 
   - [General Security Enquiries](#general-security-enquiries)
   - [Dependency overrides (npm)](#dependency-overrides-npm)
     - [Current overrides](#current-overrides)
+    - [Known accepted risks](#known-accepted-risks)
     - [Review policy](#review-policy)
 
 ## Reporting a vulnerability
@@ -23,52 +24,69 @@ This creates a private channel for discussion and allows us to coordinate a fix 
 
 ## General Security Enquiries
 
-If you have general enquiries regarding our cybersecurity, please reach out to us at [cybersecurity@nhs.net](cybersecurity@nhs.net)
+If you have general enquiries regarding our cybersecurity, please reach out to us at [cybersecurity@nhs.net](mailto:cybersecurity@nhs.net)
 
 ## Dependency overrides (npm)
 
 This project uses npm `overrides` to temporarily address security
-vulnerabilities reported in development-only dependencies introduced
-by `@wordpress/scripts`.
+vulnerabilities reported in build-time dependencies, mainly those
+introduced by `@wordpress/scripts`.
 
-These dependencies are used only during local development
-(build, linting, and testing). They are **not bundled or shipped**
-with the WordPress plugin.
+These dependencies are used only during local development and build
+(building, linting, testing and compiling CSS). They are **not bundled
+or shipped** with the WordPress plugin. Running
+`npm audit --omit=dev` reports no vulnerabilities.
 
 ### Current overrides
-
-- minimatch → ^10.2.3  
-  Reason: Addresses a ReDoS vulnerability in glob matching used by
-  ESLint and webpack-related tooling.
-
-- webpack-dev-server → ^5.2.1  
-  Reason: Patches known dev-server vulnerabilities (e.g. CVE-2025-30359 /
-  CVE-2025-30360). Development-only.
 
 - serialize-javascript → ^7.0.5  
   Reason: Addresses high-severity vulnerabilities reported in
   transitive usage via `copy-webpack-plugin`. Development-only.
 
-- linkify-it → ^5.0.2  
-  Reason: Addresses a high-severity vulnerability (GHSA-22p9-wv53-3rq4)
-  affecting markdown link parsing in transitive development dependencies
-  used by `markdownlint` and `@wordpress/scripts`. Development-only.
-
-- adm-zip → ^0.6.0
-  Reason: Addresses a high-severity vulnerability involving crafted ZIP
-  files causing excessive memory allocation (GHSA-xcpc-8h2w-3j85) in
-  transitive development dependencies used by `@wordpress/scripts`.
-  Development-only.
-
-- markdown-it → ^14.3.0  
-  Reason: Addresses a vulnerability affecting markdown parsing
-  (GHSA-6v5v-wf23-fmfq) in transitive development dependencies used by
-  `markdownlint` and `@wordpress/scripts`. Development-only.
-
 - uuid → ^11.1.1  
   Reason: Addresses a vulnerability in UUID generation and buffer
   handling (GHSA-w5hq-g745-h8pq) present in transitive development
   dependencies used by `webpack-dev-server`. Development-only.
+
+- shell-quote → ^1.12.0  
+  Reason: Addresses a vulnerability (TODO: advisory ID) in transitive
+  development dependencies. Development-only.
+
+- katex → 0.19.0  
+  Reason: Addresses a vulnerability (TODO: advisory ID) in transitive
+  development dependencies. Development-only.
+
+- smol-toml → 1.9.0  
+  Reason: Addresses a vulnerability (TODO: advisory ID) in transitive
+  development dependencies. Development-only.
+
+- js-yaml → 5.4.3  
+  Reason: Addresses a vulnerability (TODO: advisory ID) in transitive
+  development dependencies. Development-only.
+
+- postcss-selector-parser → 7.1.6  
+  Reason: Addresses a vulnerability (TODO: advisory ID) in a transitive
+  dependency of `cssnano`. `cssnano` is declared under `dependencies`
+  but is used at build time only, to generate `style.min.css`. It is
+  not executed at runtime and is not shipped with the plugin.
+
+### Known accepted risks
+
+- braces (<= 3.0.3) — GHSA-vfj7-8cjw-p6xm / CVE-2026-93687  
+  Issue: Stack exhaustion (denial of service) when parsing deeply nested
+  brace patterns.  
+  Status: No patched version of `braces` has been released, so it cannot
+  be resolved with an override or `npm audit fix`. The
+  `npm audit fix --force` suggestion downgrades `@wordpress/scripts` to
+  an unsupported version and is not used.  
+  Exposure: `braces` is present only via `@wordpress/scripts`
+  (`fast-glob` → `micromatch` and `webpack-dev-server` → `chokidar`).
+  It is a build-time dependency, is not shipped with the plugin, and is
+  only exercised by local build tooling. `npm audit --omit=dev`
+  reports 0 vulnerabilities.  
+  Action: Residual risk accepted. Once a patched `braces` is released,
+  add an override and remove this entry.  
+  Tracking: [micromatch/braces#70](https://github.com/micromatch/braces/issues/70)
 
 ### Review policy
 
@@ -76,12 +94,11 @@ Overrides are reviewed during routine dependency updates and removed
 once upstream tooling (e.g. `@wordpress/scripts`) adopts patched
 versions natively.
 
-Where possible, overrides are applied only to development-time tooling
+Where possible, overrides are applied only to build-time tooling
 dependencies and are validated by running the project's build, linting,
 and test processes after installation.
 
 Any remaining npm audit findings are assessed on a case-by-case basis.
-Where vulnerabilities exist only within development dependencies and
+Where vulnerabilities exist only within build-time dependencies and
 are not included in the distributed plugin package, the project may
 accept the residual risk while awaiting upstream remediation.
-
