@@ -37,20 +37,11 @@ These dependencies are used only during local development and build
 or shipped** with the WordPress plugin. Running
 `npm audit --omit=dev` reports no vulnerabilities.
 
-### Current overrides
+### Current overrides (as of 1.4.4)
 
 - serialize-javascript → ^7.0.5  
   Reason: Addresses high-severity vulnerabilities reported in
   transitive usage via `copy-webpack-plugin`. Development-only.
-
-- uuid → ^11.1.1  
-  Reason: Addresses a vulnerability in UUID generation and buffer
-  handling (GHSA-w5hq-g745-h8pq) present in transitive development
-  dependencies used by `webpack-dev-server`. Development-only.
-
-- shell-quote → ^1.12.0  
-  Reason: Addresses a vulnerability (TODO: advisory ID) in transitive
-  development dependencies. Development-only.
 
 - katex → 0.19.0  
   Reason: Addresses a vulnerability (TODO: advisory ID) in transitive

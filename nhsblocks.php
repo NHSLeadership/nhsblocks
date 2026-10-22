@@ -8,8 +8,8 @@
  * Requires at least: 5.0
  * Tested up to: 6.9.5
  *
- * Version: 1.4.3
- * Stable tag: 1.4.3
+ * Version: 1.4.4
+ * Stable tag: 1.4.4
  *
  * @package nhsblocks
  */
