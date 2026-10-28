@@ -5,7 +5,7 @@ Plugin Name:: NHS Blocks
 Plugin URI: https://digital.leadershipacademy.nhs.uk/digital-capabilities/websites/nhs-blocks-user-guide/
 Requires at least: 5.3
 Tested up to: 6.9.5
-Stable tag: 1.4.3
+Stable tag: 1.4.4
 Requires PHP: 5.6
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -54,6 +54,12 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 10. Hero - a full screen width block, with optional single color or image background and optional block of text to anchor the page and set clear purpose
 
 == Changelog ==
+
+= 1.4.4 =
+  * npm package updates
+  * Security documentation updates
+  * Dependency override cleanup
+  * Dependency security fixes
 
 = 1.4.3 =
   * Security updates
