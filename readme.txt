@@ -59,6 +59,7 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
   * npm package updates
   * Security documentation updates
   * Dependency override cleanup
+  * Dependency security fixes
 
 = 1.4.3 =
   * Security updates
