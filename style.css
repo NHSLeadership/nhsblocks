@@ -12266,6 +12266,14 @@ figure.is-style-nhsuk-table-responsive .nhsuk-table-responsive__heading,
   }
 }
 .nhsuk-panel {
+  padding: 24px;
+}
+@media (min-width: 40.0625em) {
+  .nhsuk-panel {
+    padding: 32px;
+  }
+}
+.nhsuk-panel {
   width: 100%;
 }
 

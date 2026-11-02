@@ -14099,6 +14099,14 @@
   }
 }
 .edit-post-visual-editor .nhsuk-panel, .block-editor-block-styles .nhsuk-panel, .block-editor-inserter__menu-help-panel .nhsuk-panel {
+  padding: 24px;
+}
+@media (min-width: 40.0625em) {
+  .edit-post-visual-editor .nhsuk-panel, .block-editor-block-styles .nhsuk-panel, .block-editor-inserter__menu-help-panel .nhsuk-panel {
+    padding: 32px;
+  }
+}
+.edit-post-visual-editor .nhsuk-panel, .block-editor-block-styles .nhsuk-panel, .block-editor-inserter__menu-help-panel .nhsuk-panel {
   width: 100%;
 }
 .edit-post-visual-editor, .block-editor-block-styles, .block-editor-inserter__menu-help-panel {

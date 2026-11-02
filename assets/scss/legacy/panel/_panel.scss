@@ -6,6 +6,7 @@
 
 .nhsuk-panel {
   @include nhsuk-card(nhsuk-colour("white"), $nhsuk-text-colour);
+  @include nhsuk-responsive-padding(5);
   width: 100%;
 }
 
