@@ -41,7 +41,7 @@ registerBlockType('nhsblocks/actionlink', {
 			type: 'string',
 			source: 'attribute',
 			attribute: 'href',
-			selector: 'a.nhsuk-action-link__link',
+			selector: 'a.nhsuk-action-link',
 			default: '',
 		},
 		arrowsvgs: {
@@ -52,9 +52,7 @@ registerBlockType('nhsblocks/actionlink', {
 		},
 	},
 	edit: (props) => {
-		const blockProps = useBlockProps({
-			className: 'nhsuk-action-link',
-		});
+		const blockProps = useBlockProps();
 		const {
 			className,
 			setAttributes,
@@ -68,7 +66,7 @@ registerBlockType('nhsblocks/actionlink', {
 
 		return (
 			<div {...blockProps}>
-				<a className="nhsuk-action-link__link">
+				<a className="nhsuk-action-link">
 					{arrows.action}
 					<span className="nhsuk-action-link__text">
 						{actionText}
@@ -101,17 +99,14 @@ registerBlockType('nhsblocks/actionlink', {
 		);
 	},
 	save: (props) => {
-		const blockProps = useBlockProps.save({
-			className: 'nhsuk-action-link',
-		});
+		const blockProps = useBlockProps.save();
 		const {
-			className,
-			attributes: { actionText, actionLink, arrowssvgs },
+			attributes: { actionText, actionLink },
 		} = props;
 
 		return (
 			<div {...blockProps}>
-				<a className="nhsuk-action-link__link" href={actionLink}>
+				<a className="nhsuk-action-link" href={actionLink}>
 					{arrows.action}
 					<span className="nhsuk-action-link__text">
 						{actionText}
@@ -120,4 +115,50 @@ registerBlockType('nhsblocks/actionlink', {
 			</div>
 		);
 	},
+	deprecated: [
+		{
+			// nhsuk-frontend 8.x/9.x markup: wrapper div and nhsuk-action-link__link.
+			apiVersion: 3,
+			attributes: {
+				actionText: {
+					type: 'string',
+					source: 'html',
+					selector: '.nhsuk-action-link__text',
+					default: '',
+				},
+				actionLink: {
+					type: 'string',
+					source: 'attribute',
+					attribute: 'href',
+					selector: 'a.nhsuk-action-link__link',
+					default: '',
+				},
+				arrowsvgs: {
+					type: 'string',
+					source: 'html',
+					selector: 'svg',
+					default: arrows.action,
+				},
+			},
+			save: (props) => {
+				const blockProps = useBlockProps.save({
+					className: 'nhsuk-action-link',
+				});
+				const {
+					attributes: { actionText, actionLink },
+				} = props;
+
+				return (
+					<div {...blockProps}>
+						<a className="nhsuk-action-link__link" href={actionLink}>
+							{arrows.actionLegacy}
+							<span className="nhsuk-action-link__text">
+								{actionText}
+							</span>
+						</a>
+					</div>
+				);
+			},
+		},
+	],
 });

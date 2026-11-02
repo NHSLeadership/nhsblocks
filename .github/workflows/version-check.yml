@@ -1,0 +1,18 @@
+name: Version check
+# Fails if the plugin version is not the same in every file, or readme.txt has no changelog entry for it.
+on:
+  pull_request:
+  push:
+    branches: [master, main]
+permissions:
+  contents: read
+jobs:
+  version-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check version numbers
+        run: node scripts/version.js check

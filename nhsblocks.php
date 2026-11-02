@@ -8,8 +8,8 @@
  * Requires at least: 5.0
  * Tested up to: 6.9.5
  *
- * Version: 1.4.4
- * Stable tag: 1.4.4
+ * Version: 2.0.0
+ * Stable tag: 2.0.0
  *
  * @package nhsblocks
  */
@@ -32,6 +32,33 @@ add_action( 'init', 'nhsblocks_load_textdomain' );
 function nhsblocks_load_textdomain() {
 	load_plugin_textdomain( 'nhsblocks', false, basename( __DIR__ ) . '/languages' );
 }
+
+/**
+ * Warn admins when the active Nightingale theme is too old for this plugin's block markup.
+ * Only runs when Nightingale (or a child theme of it) is the active theme.
+ */
+function nhsblocks_nightingale_version_notice() {
+	if ( ! current_user_can( 'update_themes' ) || 'nightingale' !== get_template() ) {
+		return;
+	}
+	$required = '3.0.0';
+	$version  = wp_get_theme( get_template() )->get( 'Version' );
+	if ( ! $version || version_compare( $version, $required, '>=' ) ) {
+		return;
+	}
+	printf(
+		'<div class="notice notice-warning"><p>%s</p></div>',
+		esc_html(
+			sprintf(
+				/* translators: 1: required Nightingale version, 2: installed Nightingale version. */
+				__( 'NHS Blocks needs the Nightingale theme version %1$s or newer. You have version %2$s. Please update the Nightingale theme so your blocks display correctly.', 'nhsblocks' ),
+				$required,
+				$version
+			)
+		)
+	);
+}
+add_action( 'admin_notices', 'nhsblocks_nightingale_version_notice' );
 
 /**
  * Add custom "nhsblocks" block category.
@@ -80,12 +107,16 @@ function nhsblocks_register_blocks() {
 		return;
 	}
 
+	// The build creates a version hash that changes whenever build/index.js changes.
+	$asset_file = plugin_dir_path( __FILE__ ) . 'build/index.asset.php';
+	$asset      = file_exists( $asset_file ) ? include $asset_file : array();
+
 	// Register the block editor script.
 	wp_register_script(
 		'nhsblocks-editor-script',                                            // label.
 		plugins_url( '/build/index.js', __FILE__ ),                        // script file.
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-data' ),        // dependencies.
-		'20201202', // version.
+		isset( $asset['version'] ) ? $asset['version'] : filemtime( plugin_dir_path( __FILE__ ) . 'build/index.js' ), // version.
 		'in_footer' // where to load.
 	);
 
@@ -254,13 +285,13 @@ function nhsblocks_gutenberg_editor_styles() {
 		return;
 	}
 
-	wp_enqueue_style( 'nhsl-block-editor-styles', plugins_url( 'style-gutenburg.css', __FILE__ ), array(), '1.1', 'all' );
-
 	$plugin_version = get_bloginfo( 'version' ); // WP version by default.
 	$plugin_data    = get_plugin_data( plugin_dir_path( __FILE__ ) . 'nhsblocks.php' );
 	if ( isset( $plugin_data['Name'] ) && ! empty( $plugin_data['Version'] ) && 'NHS Blocks' === $plugin_data['Name'] ) {
 		$plugin_version = $plugin_data['Version'];
 	}
+	// Use the plugin version so browsers download the new editor CSS after each update.
+	wp_enqueue_style( 'nhsl-block-editor-styles', plugins_url( 'style-gutenburg.css', __FILE__ ), array(), $plugin_version, 'all' );
 	wp_enqueue_style( 'nhsblocks-editor-styles', plugins_url( 'style.min.css', __FILE__ ), array(), $plugin_version, 'all' );
 }
 
@@ -349,7 +380,7 @@ function nhsblocks_hero_footer() {
 			    	heroBlock.style.marginBottom = '70px';
 			    }
 			    if ( breadCrumb ) { 
-			    	wholeDoc.removeChild( breadCrumb );
+			    	breadCrumb.parentNode.removeChild( breadCrumb );
 			    }
 			    if ( sectionTitle ) { 
 			    	removeElements( document.querySelectorAll('#nhsuk-tabbed-title') );
@@ -376,7 +407,7 @@ function nhsblocks_hero_footer() {
 			$scriptout .= "
 	        mainContent.insertBefore( tabbedTabs, contentInner );
 	        if ( breadCrumb ) {
-			    	wholeDoc.removeChild( breadCrumb );
+			    	breadCrumb.parentNode.removeChild( breadCrumb );
 			    }
 			    if ( sectionTitle ) {
 			    	removeElements( document.querySelectorAll( '#nhsuk-tabbed-title' ) );
