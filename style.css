@@ -13605,8 +13605,27 @@ figure.is-style-nhsuk-table-responsive figcaption {
     color: #ffffff;
   }
 }
-.nhsuk-back-link__link > .nhsuk-icon__chevron-left {
+.nhsuk-back-link:has(> .nhsuk-back-link__link) {
+  padding-left: 0;
+  cursor: auto;
+}
+.nhsuk-back-link:has(> .nhsuk-back-link__link)::before {
+  content: none;
   display: none;
+}
+
+.nhsuk-back-link__link {
+  display: inline-block;
+  position: relative;
+  padding-left: 16px;
+}
+.nhsuk-back-link__link > .nhsuk-icon__chevron-left {
+  position: absolute;
+  top: -1px;
+  left: -8px;
+  width: 24px;
+  height: 24px;
+  fill: currentcolor;
 }
 
 /*
