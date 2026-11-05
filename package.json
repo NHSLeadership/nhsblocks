@@ -39,7 +39,7 @@
     "sass": "^1.89.2"
   },
   "overrides": {
-    "minimatch": "^10.2.3",
+    "minimatch": "^11.0.0",
     "webpack-dev-server": "^5.2.1",
     "serialize-javascript": "^7.0.5"
   }
