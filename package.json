@@ -8,8 +8,8 @@
   "main": "src/index.js",
   "devDependencies": {
     "@wordpress/scripts": "^32.1.0",
-    "eslint-plugin-prettier": "^5.0.1",
-    "jsdoc": "^4.0.2",
+    "eslint-plugin-prettier": "^5.5.7",
+    "jsdoc": "^4.0.5",
     "wp-hookdoc": "^0.2.0"
   },
   "scripts": {
@@ -32,8 +32,8 @@
     "build:docs": "rm -rf hookdocs/ && jsdoc -c hookdoc-conf.json"
   },
   "dependencies": {
-    "cssnano": "^6.0.1",
-    "nhsuk-frontend": "^8.0.2",
+    "cssnano": "^6.1.2",
+    "nhsuk-frontend": "^8.3.0",
     "postcss": "^8.5.14",
     "postcss-cli": "^10.1.0",
     "sass": "^1.89.2"
