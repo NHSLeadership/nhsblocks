@@ -34,12 +34,12 @@
   "dependencies": {
     "cssnano": "^6.1.2",
     "nhsuk-frontend": "^8.3.0",
-    "postcss": "^8.5.14",
+    "postcss": "^8.5.32",
     "postcss-cli": "^10.1.0",
     "sass": "^1.89.2"
   },
   "overrides": {
-    "minimatch": "^11.0.0",
+    "minimatch": "^11.0.4",
     "webpack-dev-server": "^5.2.1",
     "serialize-javascript": "^7.0.5"
   }
