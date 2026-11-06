@@ -454,7 +454,7 @@ registerBlockType('nhsblocks/nhstabs', {
                 </InspectorControls>
 
                 <div {...blockProps}>
-                    <h2 className="nhsuk-tabs__title">{title}</h2>
+                    <h2 className="nhsuk-tabs__heading">{title}</h2>
 
                     <ul className="nhsuk-tabs__list">
                         {(tabs || []).map((tab, index) => {
@@ -504,7 +504,7 @@ registerBlockType('nhsblocks/nhstabs', {
 
         return (
             <div {...blockProps}>
-                <h2 className="nhsuk-tabs__title">{title}</h2>
+                <h2 className="nhsuk-tabs__heading">{title}</h2>
 
                 <ul className="nhsuk-tabs__list">
                     {(tabs || []).map((tab, index) => (
@@ -530,4 +530,66 @@ registerBlockType('nhsblocks/nhstabs', {
             </div>
         );
     },
+    deprecated: [
+        {
+            // nhsuk-frontend 8.x/9.x markup: nhsuk-tabs__title.
+            apiVersion: 3,
+            supports: {
+                align: true,
+            },
+            attributes: {
+                title: { type: 'string', default: 'Contents' },
+
+                // Defaults must exist for preview. IDs will be normalised on mount.
+                tabs: {
+                    type: 'array',
+                    default: new Array(DEFAULT_TAB_COUNT).fill(null).map((_, i) => ({
+                        id: `tab-${i + 1}`,
+                        label: makeDefaultLabel(i),
+                    })),
+                },
+
+                activeTab: { type: 'number', default: 0 },
+
+                // Stable per-block suffix, e.g. "001"
+                tabsPrefix: { type: 'string', default: '' },
+            },
+            save: ({ attributes }) => {
+                const { title, tabs } = attributes;
+
+                const blockProps = useBlockProps.save({
+                    className: 'nhsuk-tabs',
+                    'data-module': 'nhsuk-tabs',
+                });
+
+                return (
+                    <div {...blockProps}>
+                        <h2 className="nhsuk-tabs__title">{title}</h2>
+
+                        <ul className="nhsuk-tabs__list">
+                            {(tabs || []).map((tab, index) => (
+                                <li
+                                    key={tab?.id || `tab-${index}`}
+                                    className={
+                                        index === 0
+                                            ? 'nhsuk-tabs__list-item nhsuk-tabs__list-item--selected'
+                                            : 'nhsuk-tabs__list-item'
+                                    }
+                                >
+                                    <a
+                                        className="nhsuk-tabs__tab"
+                                        href={tab?.id ? `#${tab.id}` : undefined}
+                                    >
+                                        {tab?.label || ''}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <InnerBlocks.Content />
+                    </div>
+                );
+            },
+        },
+    ],
 });

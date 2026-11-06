@@ -1,3 +1,6 @@
+@use 'settings' as *;
+@use 'generic-overrides' as _generic-overrides;
+
 
 
 .nhsuk-care-card {
@@ -78,40 +81,40 @@
 
 //reversed quote tweak
 .nhsuk-inset-text--rev, .is-style-quote-reverse {
-  background: $color_nhsuk-blue;
-  border: 10px solid $color_nhsuk-blue;
-  box-shadow: inset 12px 0px 0px 0px $color_nhsuk-white;
+  background: nhsuk-colour("blue");
+  border: 10px solid nhsuk-colour("blue");
+  box-shadow: inset 12px 0px 0px 0px nhsuk-colour("white");
   box-sizing: border-box;
   padding-left: 30px;
   margin: 1rem 0;
-  color: $color_nhsuk-white;
+  color: nhsuk-colour("white");
   width: 100%;
 }
 //warning and alert inset text
 #content .nhsuk-main-wrapper .nhsuk-inset-text.is-style-quote-warning, .nhsuk-inset-text.is-style-quote-warning {
-  border-left-color: $color_nhsuk-yellow;
+  border-left-color: nhsuk-colour("yellow");
 }
 #content .nhsuk-main-wrapper .nhsuk-inset-text.is-style-quote-warning-reverse, .nhsuk-inset-text.is-style-quote-warning-reverse {
-  background: $color_nhsuk-yellow;
-  border: 10px solid $color_nhsuk-yellow;
-  box-shadow: inset 12px 0px 0px 0px $color_nhsuk-black;
+  background: nhsuk-colour("yellow");
+  border: 10px solid nhsuk-colour("yellow");
+  box-shadow: inset 12px 0px 0px 0px nhsuk-colour("black");
   box-sizing: border-box;
   padding-left: 30px;
   margin: 1rem 0;
-  color: $color_nhsuk-black;
+  color: nhsuk-colour("black");
   width: 100%;
 }
 #content .nhsuk-main-wrapper .nhsuk-inset-text.is-style-quote-alert, .is-style-quote-alert.nhsuk-inset-text {
-  border-left-color: $color_nhsuk-red;
+  border-left-color: nhsuk-colour("red");
 }
 #content .nhsuk-main-wrapper .nhsuk-inset-text.is-style-quote-alert-reverse, .is-style-quote-alert-reverse.nhsuk-inset-text {
-  background: $color_nhsuk-red;
-  border: 10px solid $color_nhsuk-red;
-  box-shadow: inset 12px 0px 0px 0px $color_nhsuk-white;
+  background: nhsuk-colour("red");
+  border: 10px solid nhsuk-colour("red");
+  box-shadow: inset 12px 0px 0px 0px nhsuk-colour("white");
   box-sizing: border-box;
   padding-left: 30px;
   margin: 1rem 0;
-  color: $color_nhsuk-white;
+  color: nhsuk-colour("white");
   width: 100%;
 }
 
@@ -144,7 +147,8 @@
 
 figure.is-style-nhsuk-table-responsive{
 
-  @extend .nhsuk-table-responsive;
+  @extend .nhsuk-table;
+  @extend .nhsuk-table--responsive;
 
   thead, tr, th, td {
     border: 0;
@@ -158,7 +162,7 @@ figure.is-style-nhsuk-table-responsive{
   }
 
   thead th {
-    border-bottom: 2px solid $color_nhsuk-grey-4;
+    border-bottom: 2px solid nhsuk-colour("grey-4");
   }
 
   th {
@@ -171,7 +175,7 @@ figure.is-style-nhsuk-table-responsive{
     font-size: 1rem;
     line-height: 1.5;
     padding: 8px 16px 8px 0;
-    border-bottom: 1px solid $color_nhsuk-grey-4;
+    border-bottom: 1px solid nhsuk-colour("grey-4");
     text-align: left;
     vertical-align: top;
   }
@@ -334,7 +338,7 @@ $tag-variants: (
 
   .wp-block-nhsblocks-nhstabs.is-style-blue
   .nhsuk-tabs__list-item {
-    background-color: $color_nhsuk-blue;
+    background-color: nhsuk-colour("blue");
   }
 
   .wp-block-nhsblocks-nhstabs.is-style-blue
@@ -345,12 +349,12 @@ $tag-variants: (
   .wp-block-nhsblocks-nhstabs.is-style-blue
   .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab {
     background-color: inherit;
-    color: $color_nhsuk-white;
+    color: nhsuk-colour("white");
   }
 
   .wp-block-nhsblocks-nhstabs.is-style-blue
   .nhsuk-tabs__tab {
-    color: $color_nhsuk-white;
+    color: nhsuk-colour("white");
   }
 
   /* =========================
@@ -359,22 +363,51 @@ $tag-variants: (
 
   .wp-block-nhsblocks-nhstabs.is-style-reverse
   .nhsuk-tabs__list-item {
-    background-color: $color_nhsuk-black;
+    background-color: nhsuk-colour("black");
   }
 
   .wp-block-nhsblocks-nhstabs.is-style-reverse
   .nhsuk-tabs__list-item--selected {
-    background-color: $color_nhsuk-white;
+    background-color: nhsuk-colour("white");
   }
 
   .wp-block-nhsblocks-nhstabs.is-style-reverse
   .nhsuk-tabs__list-item--selected .nhsuk-tabs__tab {
     background-color: inherit;
-    color: $color_nhsuk-black;
+    color: nhsuk-colour("black");
   }
 
   .wp-block-nhsblocks-nhstabs.is-style-reverse
   .nhsuk-tabs__tab {
-    color: $color_nhsuk-white;
+    color: nhsuk-colour("white");
+  }
+}
+
+// Back link blocks saved before 2.0 put .nhsuk-back-link on the wrapper div
+// and their own chevron SVG inside a.nhsuk-back-link__link. Suppress the
+// wrapper's nhsuk-frontend 10 ::before chevron (it sits outside the anchor)
+// and keep the legacy SVG so the visible arrow stays clickable.
+.nhsuk-back-link:has(> .nhsuk-back-link__link) {
+  padding-left: 0;
+  cursor: auto;
+
+  &::before {
+    content: none;
+    display: none;
+  }
+}
+
+.nhsuk-back-link__link {
+  display: inline-block;
+  position: relative;
+  padding-left: nhsuk-spacing(3);
+
+  > .nhsuk-icon__chevron-left {
+    position: absolute;
+    top: -1px;
+    left: -8px;
+    width: 24px;
+    height: 24px;
+    fill: currentcolor;
   }
 }

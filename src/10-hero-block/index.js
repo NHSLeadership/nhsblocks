@@ -105,15 +105,14 @@ registerBlockType('nhsblocks/heroblock', {
 					</div>
 				</InspectorControls>
 				<section {...blockProps}>
-					<div className="nhsuk-hero__overlay">
-						<div className="nhsuk-width-container">
-							<div className="nhsuk-grid-row">
-								<div className="nhsuk-grid-column-two-thirds">
-									<InnerBlocks template={TEMPLATE_OPTIONS} />
-								</div>
+					<div className="nhsuk-width-container">
+						<div className="nhsuk-grid-row">
+							<div className="nhsuk-grid-column-two-thirds">
+								<InnerBlocks template={TEMPLATE_OPTIONS} />
 							</div>
 						</div>
 					</div>
+					<div className="nhsuk-hero__overlay"></div>
 				</section>
 			</>
 		);
@@ -132,18 +131,59 @@ registerBlockType('nhsblocks/heroblock', {
 		});
 		return (
 			<section {...blockProps}>
-				<div className="nhsuk-hero__overlay">
-					<div className="nhsuk-width-container">
-						<div className="nhsuk-grid-row">
-							<div className="nhsuk-grid-column-two-thirds">
-								<InnerBlocks.Content />
-							</div>
+				<div className="nhsuk-width-container">
+					<div className="nhsuk-grid-row">
+						<div className="nhsuk-grid-column-two-thirds">
+							<InnerBlocks.Content />
 						</div>
 					</div>
 				</div>
+				<div className="nhsuk-hero__overlay"></div>
 			</section>
 		);
 	},
+	deprecated: [
+		{
+			// nhsuk-frontend 8.x/9.x markup: content nested inside nhsuk-hero__overlay.
+			apiVersion: 3,
+			attributes: {
+				overlayColor: {
+					type: 'string',
+					default: '#005eb8',
+				},
+				backgroundImage: {
+					type: 'string',
+					default: '/wp-content/plugins/nhsblocks/assets/pixel_trans.png',
+				},
+			},
+			save: (props) => {
+				const { attributes, className } = props;
+				const { overlayColor, backgroundImage } = attributes;
+				const blockProps = useBlockProps.save({
+					className: 'nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description',
+					style: {
+						backgroundImage: `url(${backgroundImage})`,
+						backgroundSize: 'cover',
+						backgroundPosition: 'center',
+						backgroundColor: `${overlayColor}`,
+					},
+				});
+				return (
+					<section {...blockProps}>
+						<div className="nhsuk-hero__overlay">
+							<div className="nhsuk-width-container">
+								<div className="nhsuk-grid-row">
+									<div className="nhsuk-grid-column-two-thirds">
+										<InnerBlocks.Content />
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				);
+			},
+		},
+	],
 });
 
 registerBlockType('nhsblocks/heroinner', {
@@ -198,7 +238,7 @@ registerBlockType('nhsblocks/heroinner', {
 						/>
 					</div>
 				</InspectorControls>
-				<div className="nhsuk-hero-content">
+				<div className="nhsuk-hero__content">
 					<RichText
 						tagName="h1"
 						className="nhsuk-u-margin-bottom-3"
@@ -224,7 +264,7 @@ registerBlockType('nhsblocks/heroinner', {
 		const { attributes, className } = props;
 		const { fontColor } = attributes;
 		const blockProps = useBlockProps.save({
-			className: 'nhsuk-hero-content',
+			className: 'nhsuk-hero__content',
 		});
 		return (
 			<div {...blockProps}>
@@ -244,4 +284,93 @@ registerBlockType('nhsblocks/heroinner', {
 			</div>
 		);
 	},
+	deprecated: [
+		{
+			// nhsuk-frontend 8.x/9.x markup: nhsuk-hero-content class.
+			apiVersion: 3,
+			attributes: {
+				texttitle: {
+					type: 'string',
+					source: 'html',
+					selector: 'h1',
+				},
+				texttext: {
+					type: 'string',
+					source: 'html',
+					selector: 'p',
+				},
+				fontColor: {
+					type: 'string',
+					default: '#ffffff',
+				},
+			},
+			save: (props) => {
+				const { attributes, className } = props;
+				const { fontColor } = attributes;
+				const blockProps = useBlockProps.save({
+					className: 'nhsuk-hero-content',
+				});
+				return (
+					<div {...blockProps}>
+						<RichText.Content
+							tagName="h1"
+							className="nhsuk-u-margin-bottom-3"
+							style={{ color: fontColor }}
+							value={attributes.texttitle}
+						/>
+						<RichText.Content
+							tagName="p"
+							className="nhsuk-body-l nhsuk-u-margin-bottom-0"
+							style={{ color: fontColor }}
+							value={attributes.texttext}
+						/>
+						<span className="nhsuk-hero__arrow" aria-hidden="true"></span>
+					</div>
+				);
+			},
+		},
+		{
+			// Content saved without the inline font colour style.
+			apiVersion: 3,
+			attributes: {
+				texttitle: {
+					type: 'string',
+					source: 'html',
+					selector: 'h1',
+				},
+				texttext: {
+					type: 'string',
+					source: 'html',
+					selector: 'p',
+				},
+				fontColor: {
+					type: 'string',
+					default: '#ffffff',
+				},
+			},
+			save: ({ attributes }) => {
+				const blockProps = useBlockProps.save({
+					className: 'nhsuk-hero-content',
+				});
+				return (
+					<div {...blockProps}>
+						<RichText.Content
+							tagName="h1"
+							className="nhsuk-u-margin-bottom-3"
+							value={attributes.texttitle}
+						/>
+						<RichText.Content
+							tagName="p"
+							className="nhsuk-body-l nhsuk-u-margin-bottom-0"
+							value={attributes.texttext}
+						/>
+						<span
+							className="nhsuk-hero__arrow"
+							aria-hidden="true"
+						></span>
+					</div>
+				);
+			},
+		},
+	],
 });

@@ -37,7 +37,7 @@ These dependencies are used only during local development and build
 or shipped** with the WordPress plugin. Running
 `npm audit --omit=dev` reports no vulnerabilities.
 
-### Current overrides (as of 1.4.4)
+### Current overrides (as of 2.0.0)
 
 - serialize-javascript → ^7.0.5  
   Reason: Addresses high-severity vulnerabilities reported in
@@ -60,6 +60,22 @@ or shipped** with the WordPress plugin. Running
   dependency of `cssnano`. `cssnano` is declared under `dependencies`
   but is used at build time only, to generate `style.min.css`. It is
   not executed at runtime and is not shipped with the plugin.
+
+- minimatch (>=7.0.0 <11.0.1) → ^11.0.5  
+  Reason: Addresses GHSA-g3hv-75wg-m249 (moderate, denial of service via
+  globparts amplification) in `minimatch` 10.x, pulled in by
+  `@wordpress/scripts` through `eslint`, `@eslint/config-array`,
+  `@typescript-eslint/typescript-estree` and `markdownlint-cli`. The
+  `minimatch` 3.x copies are not affected and are left unchanged.
+  Development-only.
+
+- deepmerge (>=4.2.0) → 4.1.1  
+  Reason: Addresses GHSA-gcqx-w48m-w2h4 (low, prototype poisoning in
+  `mergeObject()`), which affects 4.2.0 to 4.3.1. No patched release
+  exists, so the override pins the last unaffected version. Used only by
+  `@svgr/plugin-svgo` (via `@svgr/webpack` → `@wordpress/scripts`) to
+  merge SVGO configuration at build time. Development-only. Remove this
+  override once a patched `deepmerge` is released or upstream drops it.
 
 ### Known accepted risks
 
