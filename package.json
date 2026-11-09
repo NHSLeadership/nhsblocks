@@ -44,6 +44,8 @@
     "katex": "0.19.0",
     "smol-toml": "1.9.0",
     "js-yaml": "5.4.3",
-    "postcss-selector-parser": "7.1.6"
+    "postcss-selector-parser": "7.1.6",
+    "minimatch": "^11.0.5",
+    "deepmerge": "4.1.1"
   }
 }
