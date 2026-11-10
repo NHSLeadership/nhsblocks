@@ -8269,7 +8269,7 @@
 .edit-post-visual-editor .nhsuk-details__text > *:last-child, .block-editor-block-styles .nhsuk-details__text > *:last-child, .block-editor-inserter__menu-help-panel .nhsuk-details__text > *:last-child {
   margin-bottom: 0;
 }
-@media screen\0  {
+@media screen� {
   .edit-post-visual-editor .nhsuk-details, .block-editor-block-styles .nhsuk-details, .block-editor-inserter__menu-help-panel .nhsuk-details {
     margin-top: 8px;
     padding: 16px 0;
@@ -8287,7 +8287,7 @@
     margin-bottom: 16px;
   }
 }
-@media screen\0  and (min-width: 40.0625em) {
+@media screen� and (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-details__summary-text, .block-editor-block-styles .nhsuk-details__summary-text, .block-editor-inserter__menu-help-panel .nhsuk-details__summary-text {
     margin-bottom: 24px;
   }
@@ -8506,7 +8506,7 @@
     padding-right: 32px;
   }
 }
-@media screen\0  {
+@media screen� {
   .edit-post-visual-editor .nhsuk-expander, .edit-post-visual-editor .nhsuk-details.is-style-expander, .block-editor-block-styles .nhsuk-expander, .block-editor-block-styles .nhsuk-details.is-style-expander, .block-editor-inserter__menu-help-panel .nhsuk-expander, .block-editor-inserter__menu-help-panel .nhsuk-details.is-style-expander {
     margin-top: 0;
     padding: 0;
@@ -8522,18 +8522,18 @@
     line-height: 1.3181818182;
   }
 }
-@media screen\0  and (min-width: 40.0625em) {
+@media screen� and (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-expander .nhsuk-details__summary-text, .edit-post-visual-editor .nhsuk-details.is-style-expander .nhsuk-details__summary-text, .block-editor-block-styles .nhsuk-expander .nhsuk-details__summary-text, .block-editor-block-styles .nhsuk-details.is-style-expander .nhsuk-details__summary-text, .block-editor-inserter__menu-help-panel .nhsuk-expander .nhsuk-details__summary-text, .block-editor-inserter__menu-help-panel .nhsuk-details.is-style-expander .nhsuk-details__summary-text {
     font-size: 1.625rem;
     line-height: 1.2307692308;
   }
 }
-@media screen\0  {
+@media screen� {
   .edit-post-visual-editor .nhsuk-expander .nhsuk-details__summary-text, .edit-post-visual-editor .nhsuk-details.is-style-expander .nhsuk-details__summary-text, .block-editor-block-styles .nhsuk-expander .nhsuk-details__summary-text, .block-editor-block-styles .nhsuk-details.is-style-expander .nhsuk-details__summary-text, .block-editor-inserter__menu-help-panel .nhsuk-expander .nhsuk-details__summary-text, .block-editor-inserter__menu-help-panel .nhsuk-details.is-style-expander .nhsuk-details__summary-text {
     margin-bottom: 16px;
   }
 }
-@media screen\0  and (min-width: 40.0625em) {
+@media screen� and (min-width: 40.0625em) {
   .edit-post-visual-editor .nhsuk-expander .nhsuk-details__summary-text, .edit-post-visual-editor .nhsuk-details.is-style-expander .nhsuk-details__summary-text, .block-editor-block-styles .nhsuk-expander .nhsuk-details__summary-text, .block-editor-block-styles .nhsuk-details.is-style-expander .nhsuk-details__summary-text, .block-editor-inserter__menu-help-panel .nhsuk-expander .nhsuk-details__summary-text, .block-editor-inserter__menu-help-panel .nhsuk-details.is-style-expander .nhsuk-details__summary-text {
     margin-bottom: 24px;
   }
@@ -10085,7 +10085,7 @@
 }
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {
   .edit-post-visual-editor .nhsuk-header__navigation, .block-editor-block-styles .nhsuk-header__navigation, .block-editor-inserter__menu-help-panel .nhsuk-header__navigation {
-    border: 0;
+    border-color: Canvas;
   }
 }
 .edit-post-visual-editor .nhsuk-header__navigation-list, .block-editor-block-styles .nhsuk-header__navigation-list, .block-editor-inserter__menu-help-panel .nhsuk-header__navigation-list {

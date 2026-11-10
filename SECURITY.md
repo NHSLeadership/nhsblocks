@@ -61,17 +61,17 @@ or shipped** with the WordPress plugin. Running
   but is used at build time only, to generate `style.min.css`. It is
   not executed at runtime and is not shipped with the plugin.
 
-- minimatch (>=7.0.0 <11.0.1) → ^11.0.5  
+- minimatch → ^11.0.5  
   Reason: Addresses GHSA-g3hv-75wg-m249 (moderate, denial of service via
-  globparts amplification) in `minimatch` 10.x, pulled in by
+  globparts amplification), which affects 7.0.0 to 11.0.0. Pulled in by
   `@wordpress/scripts` through `eslint`, `@eslint/config-array`,
   `@typescript-eslint/typescript-estree` and `markdownlint-cli`. The
-  `minimatch` 3.x copies are not affected and are left unchanged.
-  Development-only.
+  override applies to all copies, including older 3.x copies; build and
+  linting have been validated with it. Development-only.
 
-- deepmerge (>=4.2.0) → 4.1.1  
+- deepmerge → 4.1.1  
   Reason: Addresses GHSA-gcqx-w48m-w2h4 (low, prototype poisoning in
-  `mergeObject()`), which affects 4.2.0 to 4.3.1. No patched release
+  `mergeObject()`), which affects 4.2.0 and later. No patched release
   exists, so the override pins the last unaffected version. Used only by
   `@svgr/plugin-svgo` (via `@svgr/webpack` → `@wordpress/scripts`) to
   merge SVGO configuration at build time. Development-only. Remove this
