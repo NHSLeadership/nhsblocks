@@ -65,6 +65,11 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
   * Show an admin notice when used with a Nightingale theme older than 3.0.0. Nightingale 3.0.0 or newer is recommended
   * Use version numbers that change with each release for block editor CSS and JavaScript, so browsers download the new files after updating
 
+= 1.4.5 =
+  * npm package updates
+  * Dependency security fixes (minimatch, deepmerge overrides)
+  * Security documentation updates
+
 = 1.4.4 =
   * npm package updates
   * Security documentation updates
