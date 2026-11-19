@@ -3,5 +3,5 @@
 		'lodash',
 		'react-jsx-runtime'
 	),
-	'version' => 'ebc936ea143149461b29'
+	'version' => '19fa21c0aeb562c36eb0'
 );

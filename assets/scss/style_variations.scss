@@ -1,3 +1,6 @@
+@use 'settings' as *;
+@use 'nhsl-blocks' as _nhsl-blocks;
+
 /*
 // variations to styling required for gutenberg native blocks
 // @author Tony Blacker, NHS Leadership Academy
@@ -5,12 +8,20 @@
 */
 
 /* button extension*/
-.nhsuk-button.is-style-secondary { /* secondary button style*/
+// WordPress button selectors are listed explicitly because generic-overrides'
+// `@extend .nhsuk-button` cannot reach this downstream module under @use.
+.nhsuk-button.is-style-secondary,
+.is-style-secondary.wp-block-button__link,
+.is-style-secondary.wp-block-file__button,
+.wp-block-file a.is-style-secondary.wp-block-file__button { /* secondary button style*/
   @extend .nhsuk-button--secondary;
 }
 
 /* reverse button style*/
-.nhsuk-button.is-style-reverse {
+.nhsuk-button.is-style-reverse,
+.is-style-reverse.wp-block-button__link,
+.is-style-reverse.wp-block-file__button,
+.wp-block-file a.is-style-reverse.wp-block-file__button {
   @extend .nhsuk-button--reverse;
 }
 
@@ -23,12 +34,12 @@
 .wp-block-nhsblocks-card1.is-style-warning-callout,
 .nhsuk-care-card.is-style-warning-callout,
 .nhsuk-card.nhsuk-warning-callout {
-  background-color: $color_nhsuk-pale-yellow;
-  border: 1px solid $color_nhsuk-yellow;
+  background-color: nhsuk-colour("pale-yellow");
+  border: 1px solid nhsuk-colour("yellow");
 
   .nhsuk-care-card__heading-container ,
   .nhsuk-card--care__heading-container {
-    background-color: $color_nhsuk-yellow;
+    background-color: nhsuk-colour("yellow");
     display: inline-block;
     top: -16px;
     margin-bottom: 8px;
@@ -36,12 +47,12 @@
     position: relative;
 
     h3{
-      background-color: $color_nhsuk-yellow;
-      color: $color_nhsuk-black !important;
+      background-color: nhsuk-colour("yellow");
+      color: nhsuk-colour("black") !important;
     }
     .nhsuk-card--care__heading span,
     .nhsuk-care-card__heading span{
-      color: $color_nhsuk-black;
+      color: nhsuk-colour("black");
     }
   }
 
@@ -51,7 +62,7 @@
   }
   .nhsuk-card__content,
   .nhsuk-care-card__content{
-    background-color: $color_nhsuk-pale-yellow;
+    background-color: nhsuk-colour("pale-yellow");
     padding-top: 0;
     border: none;
   }
@@ -59,7 +70,7 @@
 
 .nhsuk-care-card__heading-container {
   h3 {
-    color: $color_nhsuk-white !important;
+    color: nhsuk-colour("white") !important;
     margin: 0 !important;
   }
 }
@@ -74,20 +85,120 @@
 
 }
 
+// One list can hold both ticks and crosses, so colour each tick by itself.
+.nhsuk-do-dont-list,
+.wp-block-nhsblocks-dodont {
+  .nhsuk-icon--tick,
+  .nhsuk-icon__tick {
+    fill: nhsuk-colour("green");
+  }
+
+  // Legacy (8.x/9.x) saved tick: a stroked line, not a filled shape.
+  .nhsuk-icon__tick[fill="none"] {
+    fill: none;
+    stroke: nhsuk-colour("green");
+  }
+}
+
 /* inset text inverted link amendment */
 .nhsuk-inset-text is-style-quote-reverse {
   .nhsuk-inset-text__quote {
     a {
-      color: $color_nhsuk-white;
+      color: nhsuk-colour("white");
       font-weight: 700;
     }
   }
 }
 
-.nhsuk-hero__overlay {
-  margin-bottom: 50px;
+// nhsuk-frontend 10.x hero: the overlay is an empty, absolutely positioned
+// sibling after the width container.
+.wp-block-nhsblocks-heroblock {
+  > .nhsuk-width-container {
+    margin-bottom: 50px;
+
+    @media only screen {
+      min-height: 200px;
+    }
+
+    @include nhsuk-media-query($from: tablet) {
+      min-height: 320px;
+    }
+  }
+
   .nhsuk-grid-column-two-thirds {
     padding: 0;
+  }
+}
+
+// Legacy (8.x/9.x) saved markup where content is nested inside the overlay.
+.nhsuk-hero__overlay:not(:empty) {
+  position: relative;
+  margin-bottom: 50px;
+
+  @media only screen {
+    min-height: 200px;
+  }
+
+  @include nhsuk-media-query($from: tablet) {
+    min-height: 320px;
+  }
+
+  // 10.x hides the overlay in forced-colour mode, but here it holds the text.
+  @media screen and (forced-colors: active), (-ms-high-contrast: active) {
+    display: block;
+    min-height: 0;
+  }
+
+  .nhsuk-grid-column-two-thirds {
+    padding: 0;
+  }
+}
+
+// Legacy (8.x/9.x) saved hero: put the blue box back where 8.x had it,
+// overlapping the bottom of the image, instead of the 10.x layout.
+.nhsuk-hero--image-description .nhsuk-hero__overlay:not(:empty) {
+  .nhsuk-hero-content {
+    top: 70px;
+    bottom: auto;
+    margin-top: 0;
+    margin-bottom: 24px;
+    padding: 24px;
+
+    @media (min-width: 23.4375em) {
+      width: 85%;
+    }
+
+    @include nhsuk-media-query($from: tablet) {
+      position: absolute;
+      top: auto;
+      bottom: -48px;
+      max-width: 35em;
+      margin-bottom: 0;
+      padding: 32px 40px;
+    }
+
+    @media print {
+      position: relative;
+      top: 0;
+      bottom: 0;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    @media screen and (forced-colors: active), (-ms-high-contrast: active) {
+      position: relative;
+      top: 0;
+      bottom: 0;
+      padding: 32px 0 0;
+    }
+  }
+
+  .nhsuk-hero__arrow {
+    left: 32px;
+
+    @include nhsuk-media-query($from: tablet) {
+      left: 46px;
+    }
   }
 }
 
