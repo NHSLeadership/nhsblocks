@@ -64,6 +64,7 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
   * Move Sass to the module system (@use) instead of @import
   * Show an admin notice when used with a Nightingale theme older than 3.0.0. Nightingale 3.0.0 or newer is recommended
   * Use version numbers that change with each release for block editor CSS and JavaScript, so browsers download the new files after updating
+  * Update organisation name to NHS College of Leadership and Management, and update the website link and author
 
 = 1.4.5 =
   * npm package updates
