@@ -1,5 +1,6 @@
 {
   "name": "nhsblocks",
+  "version": "2.0.0",
   "engines": {
     "node": ">=20.0.0",
     "npm": ">=9.0.0"
@@ -27,14 +28,16 @@
     "start": "wp-scripts start",
     "test:e2e": "wp-scripts test-e2e",
     "test:unit": "wp-scripts test-unit-js",
-    "build-scss": "cat style.scss | node_modules/.bin/sass --load-path node_modules/ --load-path node_modules/nhsuk-frontend/packages/nhsuk/ style.scss --style expanded > style.css | cat style-gutenburg.scss | node_modules/.bin/sass --load-path node_modules/ --load-path node_modules/nhsuk-frontend/packages/nhsuk/  style-gutenburg.scss --style expanded > style-gutenburg.css",
+    "build-scss": "cat style.scss | node_modules/.bin/sass --load-path node_modules/ style.scss --style expanded > style.css | cat style-gutenburg.scss | node_modules/.bin/sass --load-path node_modules/  style-gutenburg.scss --style expanded > style-gutenburg.css",
     "compress-scss": "postcss style.css > style.min.css",
-    "zip": "zip -r nhsblocks.zip ./ -x .git .gitignore *.git/* .DS_Store .package.json .package-lock.json *.scss webpack.config.js nhsblocks.zip  postcss.config.css README.md .wordpress-org/**\\* .ds_store vendor/**\\* node_modules/**\\* src/**\\* webpack.config.js n",
-    "build:docs": "rm -rf hookdocs/ && jsdoc -c hookdoc-conf.json"
+    "zip": "zip -r nhsblocks.zip ./ -x .git .gitignore *.git/* .DS_Store .package.json .package-lock.json *.scss webpack.config.js nhsblocks.zip  postcss.config.css README.md RELEASING.md .npmrc scripts/**\\* .wordpress-org/**\\* .ds_store vendor/**\\* node_modules/**\\* src/**\\* webpack.config.js n",
+    "build:docs": "rm -rf hookdocs/ && jsdoc -c hookdoc-conf.json",
+    "set-version": "node scripts/version.js set",
+    "check-version": "node scripts/version.js check"
   },
   "dependencies": {
     "cssnano": "^8.0.10",
-    "nhsuk-frontend": "^8.0.2",
+    "nhsuk-frontend": "^10.7.1",
     "postcss": "^8.5.14",
     "postcss-cli": "^12.0.0",
     "sass": "^1.89.2"

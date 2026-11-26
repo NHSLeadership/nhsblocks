@@ -1,0 +1,11 @@
+// Shared Sass API for the plugin: nhsuk-frontend settings, tools and helpers
+// plus plugin colour variables and legacy mixins. Emits no CSS, so any partial
+// can safely use:
+//   @use 'settings' as *;
+// $color_nhsuk-dark-blue and $color_nhsuk-pink are hidden because the plugin
+// defines its own values in _colour-vars.scss.
+@forward 'nhsuk-frontend/dist/nhsuk/core/settings' hide $color_nhsuk-dark-blue, $color_nhsuk-pink;
+@forward 'nhsuk-frontend/dist/nhsuk/core/tools';
+@forward 'nhsuk-frontend/dist/nhsuk/core/helpers';
+@forward 'colour-vars';
+@forward 'legacy/mixins';

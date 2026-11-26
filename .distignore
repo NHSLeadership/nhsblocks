@@ -22,3 +22,6 @@ README.md
 style.scss
 style-gutenberg.scss
 webpack.config.js
+/scripts
+RELEASING.md
+.npmrc

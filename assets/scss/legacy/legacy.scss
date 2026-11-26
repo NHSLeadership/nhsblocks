@@ -1,9 +1,13 @@
+@use '../settings' as *;
+@use 'panel/panel' as _legacy-panel;
+@use 'promo/promo' as _legacy-promo;
+
 .nhsuk-panel-with-label {
   width: 100%;
 
   .nhsuk-panel-with-label__label {
 	a, a:visited {
-	  color: $color_nhsuk-white;
+	  color: nhsuk-colour("white");
 	}
   }
 

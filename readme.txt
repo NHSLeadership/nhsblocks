@@ -4,13 +4,13 @@ Tags: gutenberg, blocks, nhs
 Plugin Name:: NHS Blocks
 Plugin URI: https://digital.leadershipacademy.nhs.uk/digital-capabilities/websites/nhs-blocks-user-guide/
 Requires at least: 5.3
-Tested up to: 6.9.5
-Stable tag: 1.4.5
+Tested up to: 7.1
+Stable tag: 2.0.0
 Requires PHP: 5.6
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-NHS styled blocks for WordPress as developed by the NHS Leadership Academy based on the NHS Digital Front-end library.
+NHS styled blocks for WordPress, developed by the digital team at the NHS College of Leadership and Management and based on the NHS.UK frontend library.
 
 == Description ==
 
@@ -54,6 +54,17 @@ This plugin has been built specifically for use in the NHS, but it is open sourc
 10. Hero - a full screen width block, with optional single color or image background and optional block of text to anchor the page and set clear purpose
 
 == Changelog ==
+
+= 2.0.0 =
+  * Major update: upgrade NHS.UK frontend from 8.x to 10.7
+  * Update block markup for action link, back link, do/don't, hero, pagination and tabs. Existing blocks are updated to the new markup when the page is opened in the editor and saved
+  * Add compatibility styles so blocks saved with older versions can still display on the front end without re-saving
+  * Show do/don't list ticks in green, for both old and new saved blocks
+  * Keep the 8.x look for hero banners that have not been re-saved yet
+  * Move Sass to the module system (@use) instead of @import
+  * Show an admin notice when used with a Nightingale theme older than 3.0.0. Nightingale 3.0.0 or newer is recommended
+  * Use version numbers that change with each release for block editor CSS and JavaScript, so browsers download the new files after updating
+  * Update organisation name to NHS College of Leadership and Management, and update the website link and author
 
 = 1.4.5 =
   * npm package updates

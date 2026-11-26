@@ -34,14 +34,12 @@ registerBlockType('nhsblocks/backlink', {
 		backText: {
 			type: 'string',
 			source: 'html',
-			selector: '.nhsuk-back-link span',
+			selector: 'a.nhsuk-back-link',
 			default: 'Go back',
 		},
 	},
 	edit: (props) => {
-		const blockProps = useBlockProps({
-			className: 'nhsuk-back-link',
-		});
+		const blockProps = useBlockProps();
 		const {
 			className,
 			setAttributes,
@@ -51,10 +49,7 @@ registerBlockType('nhsblocks/backlink', {
 
 		return (
 			<div {...blockProps}>
-				<a className="nhsuk-back-link__link js-back-link">
-					{arrows.back}
-					{backText}
-				</a>
+				<a className="nhsuk-back-link">{backText}</a>
 				{isSelected ? (
 					<TextControl
 						__next40pxDefaultSize
@@ -67,9 +62,7 @@ registerBlockType('nhsblocks/backlink', {
 		);
 	},
 	save: (props) => {
-		const blockProps = useBlockProps.save({
-			className: 'nhsuk-back-link',
-		});
+		const blockProps = useBlockProps.save();
 
 		const {
 			attributes: { backText },
@@ -78,14 +71,49 @@ registerBlockType('nhsblocks/backlink', {
 		return (
 			<div {...blockProps}>
 				<a
-					className="nhsuk-back-link__link js-back-link"
+					className="nhsuk-back-link js-back-link"
 					onClick="window.history.back()"
 					href="#"
 				>
-					{arrows.back}
-					<span>{backText}</span>
+					{backText}
 				</a>
 			</div>
 		);
 	},
+	deprecated: [
+		{
+			// nhsuk-frontend 8.x/9.x markup: chevron SVG and nhsuk-back-link__link.
+			apiVersion: 3,
+			attributes: {
+				backText: {
+					type: 'string',
+					source: 'html',
+					selector: '.nhsuk-back-link span',
+					default: 'Go back',
+				},
+			},
+			save: (props) => {
+				const blockProps = useBlockProps.save({
+					className: 'nhsuk-back-link',
+				});
+
+				const {
+					attributes: { backText },
+				} = props;
+
+				return (
+					<div {...blockProps}>
+						<a
+							className="nhsuk-back-link__link js-back-link"
+							onClick="window.history.back()"
+							href="#"
+						>
+							{arrows.back}
+							<span>{backText}</span>
+						</a>
+					</div>
+				);
+			},
+		},
+	],
 });

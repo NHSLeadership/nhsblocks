@@ -37,7 +37,7 @@ These dependencies are used only during local development and build
 or shipped** with the WordPress plugin. Running
 `npm audit --omit=dev` reports no vulnerabilities.
 
-### Current overrides (as of 1.4.5)
+### Current overrides (as of 2.0.0)
 
 - serialize-javascript → ^7.0.5  
   Reason: Addresses high-severity vulnerabilities reported in

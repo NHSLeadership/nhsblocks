@@ -1,3 +1,6 @@
+@use 'settings' as *;
+@use 'nhsuk-replacement' as _nhsuk-replacement;
+
 .nhsuk-width-container--full {
   margin: 0;
   max-width: none;
@@ -23,8 +26,8 @@
   .wp-block-button__link, .wp-block-file__button, .wp-block-file a.wp-block-file__button, .wp-block-file a.wp-block-file__button:active, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:visited {
     @extend .nhsuk-button;
     border-radius: 4px;
-    background: $nhsuk-button-color;
-    font-size: $nhsuk-button-text-color;
+    background: $color_nhsuk-dark-green;
+    font-size: nhsuk-colour("white");
     padding: 1px 8px;
     position: relative;
     top: -5px;
@@ -34,7 +37,7 @@
 
 //when button is a link, something goes wonky
 .nhsuk-button--reverse:visited {
-  color: $color_nhsuk-black;
+  color: nhsuk-colour("black");
 }
 
 
@@ -52,7 +55,7 @@
     }
 
     .nhsuk-pagination__link:hover {
-      box-shadow: 0 0 0 16px $color_nhsuk-yellow inset;
+      box-shadow: 0 0 0 16px nhsuk-colour("yellow") inset;
     }
   }
 }
@@ -61,9 +64,9 @@
 }
 
 .editor-styles-wrapper {
-	font-family: $nhsuk-font, $nhsuk-font-fallback;
+	font-family: $nhsuk-font-family;
 }
 
 .editor-post-title__input {
-	font-family: $nhsuk-font, $nhsuk-font-fallback;
+	font-family: $nhsuk-font-family;
 }

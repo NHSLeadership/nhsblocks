@@ -1,25 +1,25 @@
 @charset "UTF-8";
 /*********************************************************************************************
 Plugin Name: NHS Blocks
-Plugin URI: http://www.leadershipacademy.nhs.uk/
-Author: Tony Blacker, NHS Leadership Academy
+Plugin URI: https://leadershipcollege.nhs.uk/
+Author: Mahesh Murali P and Tony Blacker
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: nhsblocks
-Tags: NHS, NHS Digital, NHS Frontend, National Health Service, Leadership Academy
+Tags: NHS, NHS Digital, NHS Frontend, National Health Service, NHS College of Leadership and Management
 Description: Gutenberg native custom blocks companion plugin for the NHS Nightingale theme (can also be standalone).
-Version: 1.4.5
+Version: 2.0.0
 
 **********************************************************************************************/
 
 // Components
-@import 'assets/scss/nhsuk-replacement';
+@use 'assets/scss/nhsuk-replacement' as _nhsuk-replacement;
 
 
 // start importing the theme specific settings
 
-@import 'assets/scss/nhs-colours'; // nhs colour pallette
-@import 'assets/scss/generic-overrides'; // generic over-rides to remove default wordpress styling issues
-@import 'assets/scss/nhsl-blocks'; // specific elements for nhsl-blocks plugin
-@import 'assets/scss/style_variations';//gutenberg blocks style variations
-@import 'assets/scss/stripe-blocks';//gutenberg blocks stripe
+@use 'assets/scss/nhs-colours' as _nhs-colours; // nhs colour pallette
+@use 'assets/scss/generic-overrides' as _generic-overrides; // generic over-rides to remove default wordpress styling issues
+@use 'assets/scss/nhsl-blocks' as _nhsl-blocks; // specific elements for nhsl-blocks plugin
+@use 'assets/scss/style_variations' as _style_variations;//gutenberg blocks style variations
+@use 'assets/scss/stripe-blocks' as _stripe-blocks;//gutenberg blocks stripe

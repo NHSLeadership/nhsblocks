@@ -1,6 +1,6 @@
 # WordPress Gutenberg Blocks for NHS Theme
 
-This repository houses the native Gutenberg blocks for the Nightingale WordPress theme from NHS Leadership Academy. 
+This repository houses the native Gutenberg blocks for the Nightingale WordPress theme from the NHS College of Leadership and Management. 
 This is a standalone plugin, but is intended to be used in concert with the [Nightingale](https://wordpress.org/themes/nightingale) theme. The plugin and theme together complete the WordPress deployment of the NHSUK Front-end design.
 
 ## Requirements

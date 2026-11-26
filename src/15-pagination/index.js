@@ -156,6 +156,7 @@ registerBlockType('nhsblocks/pagination', {
 						<a
 							className="nhsuk-pagination__link nhsuk-pagination__link--prev"
 							href={prevLink}
+							rel="prev"
 						>
 							<span className="nhsuk-pagination__title">
 								{__('Previous', 'nhsblocks')}
@@ -171,6 +172,7 @@ registerBlockType('nhsblocks/pagination', {
 						<a
 							className="nhsuk-pagination__link nhsuk-pagination__link--next"
 							href={nextLink}
+							rel="next"
 						>
 							<span className="nhsuk-pagination__title">
 								{__('Next', 'nhsblocks')}
@@ -187,6 +189,86 @@ registerBlockType('nhsblocks/pagination', {
 		);
 	},
 	deprecated: [
+		{
+			// nhsuk-frontend 8.x/9.x icons.
+			apiVersion: 3,
+			attributes: {
+				prevLink: {
+					type: 'string',
+					source: 'attribute',
+					attribute: 'href',
+					selector: 'a.nhsuk-pagination__link--prev',
+				},
+				nextLink: {
+					type: 'string',
+					source: 'attribute',
+					attribute: 'href',
+					selector: 'a.nhsuk-pagination__link--next',
+				},
+				prevText: {
+					type: 'string',
+					source: 'html',
+					selector: '.prev-text',
+					default: 'Page Title',
+				},
+				nextText: {
+					type: 'string',
+					source: 'html',
+					selector: '.next-text',
+					default: 'Page Title',
+				},
+			},
+			save: (props) => {
+				const blockProps = useBlockProps.save({
+					className: 'nhsuk-pagination',
+				});
+				const {
+					className,
+					attributes: { prevLink, nextLink, prevText, nextText },
+				} = props;
+
+				return (
+					<nav
+						{...blockProps}
+						role="navigation"
+						aria-label="Pagination"
+					>
+						<ul className="nhsuk-list nhsuk-pagination__list">
+							<li className="nhsuk-pagination-item--previous">
+								<a
+									className="nhsuk-pagination__link nhsuk-pagination__link--prev"
+									href={prevLink}
+								>
+									<span className="nhsuk-pagination__title">
+										{__('Previous', 'nhsblocks')}
+									</span>
+									<span className="nhsuk-u-visually-hidden">:</span>
+									<span className="nhsuk-pagination__page prev-text">
+										{prevText}
+									</span>
+									{arrow.leftLegacy}
+								</a>
+							</li>
+							<li className="nhsuk-pagination-item--next">
+								<a
+									className="nhsuk-pagination__link nhsuk-pagination__link--next"
+									href={nextLink}
+								>
+									<span className="nhsuk-pagination__title">
+										{__('Next', 'nhsblocks')}
+									</span>
+									<span className="nhsuk-u-visually-hidden">:</span>
+									<span className="nhsuk-pagination__page next-text">
+										{nextText}
+									</span>
+									{arrow.rightLegacy}
+								</a>
+							</li>
+						</ul>
+					</nav>
+				);
+			},
+		},
 		{
 			attributes: {
 				
