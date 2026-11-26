@@ -10,7 +10,7 @@ Requires PHP: 5.6
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-NHS styled blocks for WordPress as developed by the NHS Leadership Academy based on the NHS Digital Front-end library.
+NHS styled blocks for WordPress, developed by the digital team at the NHS College of Leadership and Management and based on the NHS.UK frontend library.
 
 == Description ==
 
